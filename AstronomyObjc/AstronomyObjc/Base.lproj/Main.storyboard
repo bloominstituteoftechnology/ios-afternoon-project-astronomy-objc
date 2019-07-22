@@ -49,6 +49,7 @@
                                     <constraint firstItem="da9-Od-la2" firstAttribute="leading" secondItem="5fZ-ru-fB8" secondAttribute="leading" id="jwj-6G-GoX"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="imageView" destination="da9-Od-la2" id="MSb-Rw-ceA"/>
                                     <segue destination="b0J-Ht-Lj8" kind="show" identifier="CellSegue" id="ccS-rr-Gvq"/>
                                 </connections>
                             </collectionViewCell>
@@ -115,6 +116,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UXg-4B-xWc"/>
                     </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="AWd-XG-ygc" id="npC-fk-2M6"/>
+                        <outlet property="idAndDateLabel" destination="yfi-Fa-fkL" id="IrI-Fv-kfQ"/>
+                        <outlet property="solAndCameraLabel" destination="FsS-Cy-ORX" id="tq0-5j-hHp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cf3-rP-xF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
