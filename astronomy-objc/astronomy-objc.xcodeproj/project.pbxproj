@@ -14,6 +14,7 @@
 		E8146CAD22E65D110045BBA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8146CAC22E65D110045BBA7 /* Main.storyboard */; };
 		E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CAF22E65E6F0045BBA7 /* PhotosCollectionViewController.swift */; };
 		E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */; };
+		E8146CB622E670900045BBA7 /* SolController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB522E670900045BBA7 /* SolController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		E8146CAE22E65E6E0045BBA7 /* astronomy-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "astronomy-objc-Bridging-Header.h"; sourceTree = "<group>"; };
 		E8146CAF22E65E6F0045BBA7 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		E8146CB422E670900045BBA7 /* SolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolController.h; sourceTree = "<group>"; };
+		E8146CB522E670900045BBA7 /* SolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			children = (
 				E8146C9622E649910045BBA7 /* AppDelegate.h */,
 				E8146C9722E649910045BBA7 /* AppDelegate.m */,
+				E8146CB722E670960045BBA7 /* Model Controller */,
 				E8146CB122E65E790045BBA7 /* View Controllers */,
 				E8146CAC22E65D110045BBA7 /* Main.storyboard */,
 				E8146CA122E649920045BBA7 /* LaunchScreen.storyboard */,
@@ -80,6 +84,15 @@
 				E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E8146CB722E670960045BBA7 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E8146CB422E670900045BBA7 /* SolController.h */,
+				E8146CB522E670900045BBA7 /* SolController.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +169,7 @@
 				E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */,
 				E8146CA622E649920045BBA7 /* main.m in Sources */,
 				E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */,
+				E8146CB622E670900045BBA7 /* SolController.m in Sources */,
 				E8146C9822E649910045BBA7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
