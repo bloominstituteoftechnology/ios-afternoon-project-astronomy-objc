@@ -20,6 +20,11 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 	
 	NSLog(@"url: %@", url);
 	
+	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		
+		
+		
+	}] resume];
 	
 	
 }
