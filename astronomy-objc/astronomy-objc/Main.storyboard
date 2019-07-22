@@ -52,7 +52,6 @@
                                             <constraint firstAttribute="bottom" secondItem="xlN-QE-XWB" secondAttribute="bottom" id="x4l-Q0-qQ8"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="xlN-QE-XWB" id="jDL-o0-Zt0"/>
                                             <segue destination="kgd-gk-9pr" kind="show" identifier="ShowDetail" id="LAJ-Rh-Myv"/>
                                         </connections>
                                     </collectionViewCell>
@@ -128,9 +127,6 @@
                                         <rect key="frame" x="0.0" y="57" width="343" height="30"/>
                                         <accessibility key="accessibilityConfiguration" identifier="PhotoDetailViewController.SaveButton"/>
                                         <state key="normal" title="Save to Photo Library"/>
-                                        <connections>
-                                            <action selector="save:" destination="kgd-gk-9pr" eventType="touchUpInside" id="ROY-9I-JfD"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -149,8 +145,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="4ed-4v-HFq"/>
                     <connections>
-                        <outlet property="cameraLabel" destination="9gd-7b-dyz" id="dG4-JQ-QmJ"/>
-                        <outlet property="detailLabel" destination="PDa-7E-DHh" id="ge4-Ld-wmV"/>
                         <outlet property="imageView" destination="33C-GV-pNd" id="GKy-q9-3KS"/>
                     </connections>
                 </viewController>
