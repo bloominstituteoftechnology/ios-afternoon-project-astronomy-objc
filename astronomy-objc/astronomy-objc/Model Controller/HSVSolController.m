@@ -27,9 +27,11 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 			return;
 		}
 			
+		NSError *erro;
 		
+		NSJSONSerialization *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
 		
-		
+		NSLog(@"%a", jsonDictionary);
 		
 		
 	}] resume];
