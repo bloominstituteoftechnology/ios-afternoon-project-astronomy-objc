@@ -1,5 +1,5 @@
 //
-//  SolController.h
+//  HSVSolController.h
 //  astronomy-objc
 //
 //  Created by Hector Steven on 7/22/19.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SolController : NSObject
+@interface HSVSolController : NSObject
+
+- (void)fetchSolsWithCompletion:(void (^)(NSError *))completion;
 
 @end
 

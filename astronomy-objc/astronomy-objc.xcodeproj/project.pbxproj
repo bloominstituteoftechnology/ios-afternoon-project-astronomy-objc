@@ -14,7 +14,7 @@
 		E8146CAD22E65D110045BBA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8146CAC22E65D110045BBA7 /* Main.storyboard */; };
 		E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CAF22E65E6F0045BBA7 /* PhotosCollectionViewController.swift */; };
 		E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */; };
-		E8146CB622E670900045BBA7 /* SolController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB522E670900045BBA7 /* SolController.m */; };
+		E8146CBA22E6722C0045BBA7 /* HSVSolController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB922E6722C0045BBA7 /* HSVSolController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		E8146CAE22E65E6E0045BBA7 /* astronomy-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "astronomy-objc-Bridging-Header.h"; sourceTree = "<group>"; };
 		E8146CAF22E65E6F0045BBA7 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
-		E8146CB422E670900045BBA7 /* SolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolController.h; sourceTree = "<group>"; };
-		E8146CB522E670900045BBA7 /* SolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolController.m; sourceTree = "<group>"; };
+		E8146CB822E6722C0045BBA7 /* HSVSolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVSolController.h; sourceTree = "<group>"; };
+		E8146CB922E6722C0045BBA7 /* HSVSolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVSolController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 		E8146CB722E670960045BBA7 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E8146CB422E670900045BBA7 /* SolController.h */,
-				E8146CB522E670900045BBA7 /* SolController.m */,
+				E8146CB822E6722C0045BBA7 /* HSVSolController.h */,
+				E8146CB922E6722C0045BBA7 /* HSVSolController.m */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -121,6 +121,7 @@
 		E8146C8B22E649910045BBA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HSV;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Hector Steven";
 				TargetAttributes = {
@@ -166,10 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8146CBA22E6722C0045BBA7 /* HSVSolController.m in Sources */,
 				E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */,
 				E8146CA622E649920045BBA7 /* main.m in Sources */,
 				E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */,
-				E8146CB622E670900045BBA7 /* SolController.m in Sources */,
 				E8146C9822E649910045BBA7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
