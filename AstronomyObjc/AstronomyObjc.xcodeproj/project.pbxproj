@@ -17,6 +17,7 @@
 		4263C85F22E65F2900B3FE7F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4263C85E22E65F2900B3FE7F /* ImageCollectionViewCell.swift */; };
 		4263C86422E6678A00B3FE7F /* TXCMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4263C86322E6678A00B3FE7F /* TXCMarsPhoto.m */; };
 		4263C86722E668BA00B3FE7F /* TXCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4263C86622E668BA00B3FE7F /* TXCCamera.m */; };
+		4263C86A22E66BF900B3FE7F /* TXCMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4263C86922E66BF900B3FE7F /* TXCMarsRoverClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		4263C86322E6678A00B3FE7F /* TXCMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCMarsPhoto.m; sourceTree = "<group>"; };
 		4263C86522E668BA00B3FE7F /* TXCCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCCamera.h; sourceTree = "<group>"; };
 		4263C86622E668BA00B3FE7F /* TXCCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCCamera.m; sourceTree = "<group>"; };
+		4263C86822E66BF900B3FE7F /* TXCMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCMarsRoverClient.h; sourceTree = "<group>"; };
+		4263C86922E66BF900B3FE7F /* TXCMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCMarsRoverClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				4263C86322E6678A00B3FE7F /* TXCMarsPhoto.m */,
 				4263C86522E668BA00B3FE7F /* TXCCamera.h */,
 				4263C86622E668BA00B3FE7F /* TXCCamera.m */,
+				4263C86822E66BF900B3FE7F /* TXCMarsRoverClient.h */,
+				4263C86922E66BF900B3FE7F /* TXCMarsRoverClient.m */,
 				4263C84922E6589500B3FE7F /* Main.storyboard */,
 				4263C84C22E6589600B3FE7F /* Assets.xcassets */,
 				4263C84E22E6589600B3FE7F /* LaunchScreen.storyboard */,
@@ -164,6 +169,7 @@
 				4263C85322E6589600B3FE7F /* main.m in Sources */,
 				4263C85D22E65A4000B3FE7F /* PhotoDetailViewController.swift in Sources */,
 				4263C84522E6589500B3FE7F /* AppDelegate.m in Sources */,
+				4263C86A22E66BF900B3FE7F /* TXCMarsRoverClient.m in Sources */,
 				4263C86422E6678A00B3FE7F /* TXCMarsPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
