@@ -13,6 +13,7 @@
 		EC344A8C22E648830020BFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC344A8B22E648830020BFE8 /* Assets.xcassets */; };
 		EC344A8F22E648830020BFE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC344A8D22E648830020BFE8 /* LaunchScreen.storyboard */; };
 		EC344A9222E648830020BFE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344A9122E648830020BFE8 /* main.m */; };
+		EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344A9E22E655680020BFE8 /* KRCNetwork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		EC344A8E22E648830020BFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC344A9022E648830020BFE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC344A9122E648830020BFE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC344A9D22E655680020BFE8 /* KRCNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCNetwork.h; sourceTree = "<group>"; };
+		EC344A9E22E655680020BFE8 /* KRCNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCNetwork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		EC344A8122E648800020BFE8 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				EC344A9C22E6552C0020BFE8 /* Utilities */,
 				EC344A9822E648B20020BFE8 /* App */,
 				EC344A9B22E648DC0020BFE8 /* View Controllers */,
 				EC344A9A22E648CD0020BFE8 /* Storyboards */,
@@ -103,6 +107,15 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		EC344A9C22E6552C0020BFE8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EC344A9D22E655680020BFE8 /* KRCNetwork.h */,
+				EC344A9E22E655680020BFE8 /* KRCNetwork.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +142,7 @@
 		EC344A7722E648800020BFE8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KRC;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Christopher Aronson";
 				TargetAttributes = {
@@ -174,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC344A8722E648800020BFE8 /* ViewController.m in Sources */,
+				EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */,
 				EC344A9222E648830020BFE8 /* main.m in Sources */,
 				EC344A8422E648800020BFE8 /* AppDelegate.m in Sources */,
 			);
