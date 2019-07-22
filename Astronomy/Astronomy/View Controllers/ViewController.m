@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "KRCNetwork.h"
+#import "KRCRoverController.h"
 
 @interface ViewController ()
 
@@ -18,16 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    KRCNetwork *call = [[KRCNetwork alloc] init];
-    NSURL *url = [NSURL URLWithString:@"https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=bnqLeQQBboxLPczeBIjFzWTTYaNlGdCnVtJlGaJZ"];
+    KRCRoverController *roverController = [[KRCRoverController alloc] init];
     
-    [call NetworkCallForURL:url completion:^(NSDictionary * _Nullable json, NSError * _Nullable error) {
+    [roverController fetchSolWithCompletion:^(NSDictionary * _Nullable json, NSError * _Nullable error) {
         
         if (error) {
-            NSLog(@"%@", error);
+            NSLog(@"Error!!!!!!");
         } else {
-            NSLog(@"%@", json);
+            NSLog(@"SOL Fetch Complete");
         }
+        
     }];
 }
 

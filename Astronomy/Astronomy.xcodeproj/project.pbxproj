@@ -15,6 +15,7 @@
 		EC344A9222E648830020BFE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344A9122E648830020BFE8 /* main.m */; };
 		EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344A9E22E655680020BFE8 /* KRCNetwork.m */; };
 		EC344AA322E65F640020BFE8 /* KRCSOL.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344AA222E65F640020BFE8 /* KRCSOL.m */; };
+		EC344AA822E662C00020BFE8 /* KRCRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344AA722E662C00020BFE8 /* KRCRoverController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		EC344A9E22E655680020BFE8 /* KRCNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCNetwork.m; sourceTree = "<group>"; };
 		EC344AA122E65F640020BFE8 /* KRCSOL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCSOL.h; sourceTree = "<group>"; };
 		EC344AA222E65F640020BFE8 /* KRCSOL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCSOL.m; sourceTree = "<group>"; };
+		EC344AA622E662C00020BFE8 /* KRCRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCRoverController.h; sourceTree = "<group>"; };
+		EC344AA722E662C00020BFE8 /* KRCRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCRoverController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 		EC344A8122E648800020BFE8 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				EC344AA522E6623C0020BFE8 /* Model Controller */,
 				EC344AA022E65F3B0020BFE8 /* Models */,
 				EC344A9C22E6552C0020BFE8 /* Utilities */,
 				EC344A9822E648B20020BFE8 /* App */,
@@ -135,6 +139,15 @@
 				EC344AA222E65F640020BFE8 /* KRCSOL.m */,
 			);
 			path = SOL;
+			sourceTree = "<group>";
+		};
+		EC344AA522E6623C0020BFE8 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC344AA622E662C00020BFE8 /* KRCRoverController.h */,
+				EC344AA722E662C00020BFE8 /* KRCRoverController.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +224,7 @@
 				EC344A8722E648800020BFE8 /* ViewController.m in Sources */,
 				EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */,
 				EC344A9222E648830020BFE8 /* main.m in Sources */,
+				EC344AA822E662C00020BFE8 /* KRCRoverController.m in Sources */,
 				EC344AA322E65F640020BFE8 /* KRCSOL.m in Sources */,
 				EC344A8422E648800020BFE8 /* AppDelegate.m in Sources */,
 			);

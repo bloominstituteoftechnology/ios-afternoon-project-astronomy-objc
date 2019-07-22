@@ -10,12 +10,8 @@
 
 typedef void (^KRCNetworkCompletion)(NSDictionary * _Nullable, NSError * _Nullable);
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface KRCNetwork : NSObject
 
-- (void)NetworkCallForURL:(NSURL *)url completion: (KRCNetworkCompletion)completion;
+- (void)networkCallForURL:(NSURL  * _Nonnull)url completion: (KRCNetworkCompletion _Nonnull)completion;
 
 @end
-
-NS_ASSUME_NONNULL_END

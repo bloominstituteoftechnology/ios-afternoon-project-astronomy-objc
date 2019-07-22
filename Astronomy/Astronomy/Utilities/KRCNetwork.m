@@ -10,7 +10,7 @@
 
 @implementation KRCNetwork
 
-- (void)NetworkCallForURL:(NSURL *)url completion: (KRCNetworkCompletion)completion {
+- (void)networkCallForURL:(NSURL *)url completion: (KRCNetworkCompletion)completion {
     
     NSURLSessionTask *networkTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
