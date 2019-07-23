@@ -13,7 +13,7 @@
 @implementation TXCMarsRoverClient
 
 NSString *apiKey = @"5KgQqJgMjQ0odutTJgNvZbRjh86tV1lSXZBzg3Ri";
-static NSString *baseURL = @"https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?5KgQqJgMjQ0odutTJgNvZbRjh86tV1lSXZBzg3Ri";
+static NSString *baseURL = @"https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=5KgQqJgMjQ0odutTJgNvZbRjh86tV1lSXZBzg3Ri";
 
 
 - (void)fetchPhotoManifestCompletionBlock:(TXCManifestFetcherCompletionBlock)completionBlock {

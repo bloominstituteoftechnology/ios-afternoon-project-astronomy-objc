@@ -13,8 +13,8 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        _solNumber = [dictionary[@"photos"] intValue];
-        _totalPhotos = [dictionary[@"photos"][@"total_photos"] intValue];
+        _solNumber = [dictionary[@"sol"] intValue];
+        _totalPhotos = [dictionary[@"total_photos"] intValue];
     }
     return self;
 }

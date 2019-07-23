@@ -11,7 +11,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-@objc(TXCPhotosCollectionViewController)
+//@objc(TXCPhotosCollectionViewController)
 class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
