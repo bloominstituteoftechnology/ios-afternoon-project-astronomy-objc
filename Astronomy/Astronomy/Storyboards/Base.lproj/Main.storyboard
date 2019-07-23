@@ -24,13 +24,39 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="IAX-or-WMm">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="IAX-or-WMm" customClass="PhotoCollectionViewCell" customModule="Astronomy" customModuleProvider="target">
                                 <rect key="frame" x="57" y="0.0" width="300" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-h5-4cr">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="KLO-h5-4cr" secondAttribute="height" multiplier="1:1" id="dcU-0Y-Ubv"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-LN-iHU">
+                                            <rect key="frame" x="8" y="308" width="284" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="KLO-h5-4cr" firstAttribute="leading" secondItem="IAX-or-WMm" secondAttribute="leading" id="2DQ-c5-1vf"/>
+                                    <constraint firstItem="LSc-LN-iHU" firstAttribute="top" secondItem="KLO-h5-4cr" secondAttribute="bottom" constant="8" id="Cqd-Jj-fHJ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="LSc-LN-iHU" secondAttribute="trailing" id="d7b-F0-dR1"/>
+                                    <constraint firstItem="KLO-h5-4cr" firstAttribute="top" secondItem="IAX-or-WMm" secondAttribute="top" id="g5X-TR-ZkR"/>
+                                    <constraint firstAttribute="trailing" secondItem="KLO-h5-4cr" secondAttribute="trailing" id="yQH-rQ-cFm"/>
+                                    <constraint firstItem="LSc-LN-iHU" firstAttribute="leading" secondItem="IAX-or-WMm" secondAttribute="leadingMargin" id="yxr-Bm-l0O"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="detailLabel" destination="LSc-LN-iHU" id="BnI-4w-vDH"/>
+                                    <outlet property="photoImageView" destination="KLO-h5-4cr" id="Mii-iw-UzT"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

@@ -17,6 +17,7 @@
 		EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344A9E22E655680020BFE8 /* KRCNetwork.m */; };
 		EC344AA322E65F640020BFE8 /* KRCSOL.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344AA222E65F640020BFE8 /* KRCSOL.m */; };
 		EC344AA822E662C00020BFE8 /* KRCRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344AA722E662C00020BFE8 /* KRCRoverController.m */; };
+		EC48372322E7D2EB00F7809B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48372222E7D2EB00F7809B /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EC344AA222E65F640020BFE8 /* KRCSOL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCSOL.m; sourceTree = "<group>"; };
 		EC344AA622E662C00020BFE8 /* KRCRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCRoverController.h; sourceTree = "<group>"; };
 		EC344AA722E662C00020BFE8 /* KRCRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCRoverController.m; sourceTree = "<group>"; };
+		EC48372222E7D2EB00F7809B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +81,13 @@
 		EC344A8122E648800020BFE8 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				EC344A9822E648B20020BFE8 /* App */,
 				EC344AA522E6623C0020BFE8 /* Model Controller */,
 				EC344AA022E65F3B0020BFE8 /* Models */,
-				EC344A9C22E6552C0020BFE8 /* Utilities */,
-				EC344A9822E648B20020BFE8 /* App */,
+				EC48371F22E7D25200F7809B /* Cell */,
 				EC344A9B22E648DC0020BFE8 /* View Controllers */,
 				EC344A9A22E648CD0020BFE8 /* Storyboards */,
+				EC344A9C22E6552C0020BFE8 /* Utilities */,
 				EC344A9922E648C00020BFE8 /* Resources */,
 			);
 			path = Astronomy;
@@ -163,6 +166,14 @@
 			path = "Model Controller";
 			sourceTree = "<group>";
 		};
+		EC48371F22E7D25200F7809B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC48372222E7D2EB00F7809B /* PhotoCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */,
+				EC48372322E7D2EB00F7809B /* PhotoCollectionViewCell.swift in Sources */,
 				EC2BF09222E7AABB00FC8400 /* KRCPhotoInfo.m in Sources */,
 				EC2BF09522E7B5BE00FC8400 /* RoverPhotoCollectionViewController.swift in Sources */,
 				EC344A9222E648830020BFE8 /* main.m in Sources */,
