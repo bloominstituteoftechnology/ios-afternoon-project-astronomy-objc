@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NS_SWIFT_NAME(Sol)
 
 NS_ASSUME_NONNULL_BEGIN
+NS_SWIFT_NAME(Sol)
 
 @interface HSVSol : NSObject
 
