@@ -36,7 +36,37 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 }
 
 
-- (void)fetchSolImageListWithCompletion:(void (^)(NSError * _Nullable))completion{
+- (void)fetchSolImageListWithSol:(int)sol Completion:(void (^)(NSError * _Nullable))completion{
+	NSURL *url = [[NSURL alloc] initWithString:baseSolImagesUrl];
+	
+	NSLog(@"url: %@", url);
+	
+	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		if (error){
+			completion(error);
+			return;
+		}
+		
+		NSError *jsonError ;
+		
+		NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+		
+		if (jsonError){
+			NSLog(@"error with NSJSONSerialization: %@", jsonError);
+			completion(jsonError);
+			return;
+		}
+		
+//		NSArray *solArr = jsonDictionary[@"photo_manifest"][@"photos"];
+//		
+//		[self getInternalSolsWitArr:solArr];
+//		
+//		
+		completion(nil);
+	}] resume];
+	
+	
+	
 	
 	
 }
