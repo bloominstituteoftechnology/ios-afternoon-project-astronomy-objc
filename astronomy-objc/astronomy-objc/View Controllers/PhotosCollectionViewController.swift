@@ -20,8 +20,10 @@ class PhotosCollectionViewController: UIViewController {
 		collectionView.dataSource = self
 		collectionView.delegate = self
 		
-		solController.fetchSols { (_) in
-			
+		solController.fetchSols { (error) in
+			if let error = error {
+				print("Error: \(error)")
+			}
 		}
 		
 		
