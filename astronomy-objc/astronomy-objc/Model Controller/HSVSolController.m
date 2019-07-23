@@ -59,30 +59,30 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 		}
 		
 		NSArray *solArr = jsonDictionary[@"photo_manifest"][@"photos"];
-		
-		
-		NSMutableArray *sols = [[NSMutableArray alloc] init];
-		//NSInteger solCount = [solArr count];
-		
-		for(int i = 0; i < 10; i++) {
-			
-			int solNumber = [solArr[i][@"sol"] intValue];
-			int totalPhotos = [solArr[i][@"total_photos"] intValue];
-			NSString *earthDate = solArr[i][@"earth_date"];
-			NSArray *cameras = solArr[i][@"cameras"];
-			
-			HSVSol *sol = [[HSVSol alloc] initWithSol:solNumber totalPhotos:totalPhotos earthDate:earthDate cameras:cameras];
-			[sols addObject:sol];
 
-		}
-		[self.internalSol addObjectsFromArray:sols];
-		NSLog(@"%li", [self.internalSol count]);
+		[self getInternalSolsWitArr:solArr];
 		
 		
 		completion(nil);
 	}] resume];
 	
 	
+}
+
+- (void)getInternalSolsWitArr:(NSArray *)arr {
+	//NSInteger solCount = [solArr count];
+	for(int i = 0; i < 10; i++) {
+		
+		int solNumber = [arr[i][@"sol"] intValue];
+		int totalPhotos = [arr[i][@"total_photos"] intValue];
+		NSString *earthDate = arr[i][@"earth_date"];
+		NSArray *cameras = arr[i][@"cameras"];
+		
+		HSVSol *sol = [[HSVSol alloc] initWithSol:solNumber totalPhotos:totalPhotos earthDate:earthDate cameras:cameras];
+		[self.internalSol addObject:sol];
+	}
+	
+	NSLog(@"%li", [self.internalSol count]);
 }
 
 
