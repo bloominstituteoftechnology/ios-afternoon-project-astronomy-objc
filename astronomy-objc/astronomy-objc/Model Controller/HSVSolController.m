@@ -8,19 +8,31 @@
 
 #import "HSVSolController.h"
 
+@interface HSVSolController ()
+
+@property (nonatomic, copy) NSMutableArray *_internalSol;
+
+@end
+
+
 @implementation HSVSolController
 
 - (instancetype)init
 {
 	self = [super init];
 	if (self) {
-		
+		__internalSol = [[NSMutableArray alloc] init];
 	}
 	return self;
 }
 
 static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG";
 static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=22&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG#";
+
+
+- (NSArray *)Sols{
+	return [self _internalSol];
+}
 
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError * _Nullable))completion{

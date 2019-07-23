@@ -16,6 +16,10 @@ NS_SWIFT_NAME(SolController)
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError *))completion;
 
+- (NSArray *)Sols;
+
+
+
 @end
 
 
