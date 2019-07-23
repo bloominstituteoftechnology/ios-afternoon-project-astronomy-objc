@@ -10,15 +10,18 @@
 
 @implementation HSVSol
 
--(instancetype)initWithSol:(int)sol totalPhotos:(int)totalPhotos earthDate:(NSString *)earthDate {
+- (instancetype)initWithSol:(int)sol totalPhotos:(int)totalPhotos earthDate:(NSString *)earthDate cameras:(NSArray *)cameras;
+{
 	self = [super init];
 	if (self) {
 		_sol = sol;
 		_totalPhotos = totalPhotos;
 		_earthDate = earthDate;
+		_cameras = cameras;
 	}
 	return self;
 }
+
 
 
 @end
