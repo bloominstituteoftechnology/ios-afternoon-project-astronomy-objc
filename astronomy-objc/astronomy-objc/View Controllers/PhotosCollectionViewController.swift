@@ -30,12 +30,8 @@ class PhotosCollectionViewController: UIViewController {
 			
 			solController?.fetchSolImageList(withSol: Int32(solNumber), completion: { error in
 				if let error = error { print(error) }
-				
-				
-				
 			})
 		}
-
 		
 	}
 

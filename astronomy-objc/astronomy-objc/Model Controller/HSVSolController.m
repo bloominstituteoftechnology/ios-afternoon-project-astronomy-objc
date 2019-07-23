@@ -8,11 +8,12 @@
 
 #import "HSVSolController.h"
 #import "../Models/HSVSol.h"
+#import "astronomy_objc-Swift.h"
 
 @interface HSVSolController ()
 
 @property (nonatomic, copy) NSMutableArray<HSVSol *> *internalSol;
-
+@property (nonatomic, copy) NSMutableArray<HSVSolPhoto *> *internalSolPhotoList;
 @end
 
 
@@ -23,6 +24,7 @@
 	self = [super init];
 	if (self) {
 		_internalSol = [[NSMutableArray alloc] init];
+		_internalSolPhotoList = [[NSMutableArray alloc] init];
 	}
 	return self;
 }

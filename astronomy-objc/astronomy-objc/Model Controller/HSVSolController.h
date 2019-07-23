@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 //#import "astronomy_objc-Swift.h"
 
 NS_SWIFT_NAME(SolController)
