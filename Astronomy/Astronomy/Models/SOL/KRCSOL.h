@@ -12,4 +12,6 @@
 
 @property (nonatomic, nonnull, readonly) NSNumber *sol;
 
+- (instancetype _Nonnull)initWithSol:(NSNumber * _Nonnull)sol;
+
 @end

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC2BF09222E7AABB00FC8400 /* KRCPhotoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2BF09122E7AABB00FC8400 /* KRCPhotoInfo.m */; };
+		EC2BF09522E7B5BE00FC8400 /* RoverPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2BF09422E7B5BE00FC8400 /* RoverPhotoCollectionViewController.swift */; };
 		EC344A8422E648800020BFE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344A8322E648800020BFE8 /* AppDelegate.m */; };
-		EC344A8722E648800020BFE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344A8622E648800020BFE8 /* ViewController.m */; };
 		EC344A8A22E648800020BFE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC344A8822E648800020BFE8 /* Main.storyboard */; };
 		EC344A8C22E648830020BFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC344A8B22E648830020BFE8 /* Assets.xcassets */; };
 		EC344A8F22E648830020BFE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC344A8D22E648830020BFE8 /* LaunchScreen.storyboard */; };
@@ -19,11 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC2BF09022E7AABB00FC8400 /* KRCPhotoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCPhotoInfo.h; sourceTree = "<group>"; };
+		EC2BF09122E7AABB00FC8400 /* KRCPhotoInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCPhotoInfo.m; sourceTree = "<group>"; };
+		EC2BF09322E7B5BD00FC8400 /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC2BF09422E7B5BE00FC8400 /* RoverPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		EC344A7F22E648800020BFE8 /* Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC344A8222E648800020BFE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC344A8322E648800020BFE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EC344A8522E648800020BFE8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EC344A8622E648800020BFE8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC344A8922E648800020BFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC344A8B22E648830020BFE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC344A8E22E648830020BFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC2BF08F22E7AA8700FC8400 /* PhotoInfo */ = {
+			isa = PBXGroup;
+			children = (
+				EC2BF09022E7AABB00FC8400 /* KRCPhotoInfo.h */,
+				EC2BF09122E7AABB00FC8400 /* KRCPhotoInfo.m */,
+			);
+			path = PhotoInfo;
+			sourceTree = "<group>";
+		};
 		EC344A7622E648800020BFE8 = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +121,8 @@
 		EC344A9B22E648DC0020BFE8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC344A8522E648800020BFE8 /* ViewController.h */,
-				EC344A8622E648800020BFE8 /* ViewController.m */,
+				EC2BF09322E7B5BD00FC8400 /* Astronomy-Bridging-Header.h */,
+				EC2BF09422E7B5BE00FC8400 /* RoverPhotoCollectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -127,6 +139,7 @@
 		EC344AA022E65F3B0020BFE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EC2BF08F22E7AA8700FC8400 /* PhotoInfo */,
 				EC344AA422E6621B0020BFE8 /* SOL */,
 			);
 			path = Models;
@@ -182,6 +195,7 @@
 				TargetAttributes = {
 					EC344A7E22E648800020BFE8 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -221,8 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC344A8722E648800020BFE8 /* ViewController.m in Sources */,
 				EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */,
+				EC2BF09222E7AABB00FC8400 /* KRCPhotoInfo.m in Sources */,
+				EC2BF09522E7B5BE00FC8400 /* RoverPhotoCollectionViewController.swift in Sources */,
 				EC344A9222E648830020BFE8 /* main.m in Sources */,
 				EC344AA822E662C00020BFE8 /* KRCRoverController.m in Sources */,
 				EC344AA322E65F640020BFE8 /* KRCSOL.m in Sources */,
@@ -368,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66AJPZAPLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/Astronomy/Resources/Info.plist";
@@ -377,6 +393,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.christopheraronson.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/View Controllers/Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -385,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66AJPZAPLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/Astronomy/Resources/Info.plist";
@@ -394,6 +414,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.christopheraronson.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/View Controllers/Astronomy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
