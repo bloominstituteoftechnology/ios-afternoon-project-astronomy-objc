@@ -9,10 +9,21 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
+	
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		updateViews()
+
+		
 	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		
+	}
+	
 	
 	@IBAction func save(_ sender: Any) {
 //		guard let image = imageView.image else { return }

@@ -10,10 +10,11 @@ import UIKit
 
 
 class PhotosCollectionViewController: UIViewController {
-	
-	
-	
 	@IBOutlet var collectionView: UICollectionView!
+	
+	var solNumber: Int?
+
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -29,7 +30,20 @@ class PhotosCollectionViewController: UIViewController {
 		
 		
 	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		if let solNumber = solNumber {
+			NSLog("SolNumber: \(solNumber)")
+			
+		}
+	}
+
+
 }
+
+
+
 
 extension PhotosCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

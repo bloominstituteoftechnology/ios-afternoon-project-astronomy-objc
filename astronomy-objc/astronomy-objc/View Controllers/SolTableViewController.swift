@@ -43,9 +43,14 @@ class SolTableViewController: UITableViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "SolPhotosSegue" {
-			guard let indexPath = tableView.indexPathForSelectedRow,
+			
+			
+			guard let vc = segue.destination as? PhotosCollectionViewController,
+					let indexPath = tableView.indexPathForSelectedRow,
 					let sol = solController.sols()[indexPath.row] as? Sol else { return }
-			print(sol.sol)
+			
+			vc.solNumber = Int(sol.sol);
+			
 		}
 	}
 	
