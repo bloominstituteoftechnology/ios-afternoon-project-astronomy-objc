@@ -7,6 +7,7 @@
 //
 
 #import "HSVSolController.h"
+#import "../Models/HSVSol.h"
 
 @interface HSVSolController ()
 
@@ -58,14 +59,15 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 		}
 		
 		NSArray *solArr = jsonDictionary[@"photo_manifest"][@"photos"];
-		
 		NSInteger solCount = [solArr count];
-		
-		
+		NSMutableArray<HSVSol *> *sols;
 		
 		NSLog(@"%ld", (long)solCount);
 		
 		for(int i = 0; i < (int)solCount; i++) {
+			
+			NSString *soleInt = solArr[0][@"sol"];
+//			HSVSol *sol = [HSVSol alloc] initWithSol: totalPhotos:<#(int)#> earthDate:<#(nonnull NSString *)#>
 //			NSLog(@"photos: %ld", )
 		}
 		
