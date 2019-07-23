@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D49271A22E7C32300551DC6 /* MBMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D49271922E7C32300551DC6 /* MBMarsRover.m */; };
+		3D49271D22E7C36400551DC6 /* MBSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D49271C22E7C36400551DC6 /* MBSolDescription.m */; };
+		3D49272022E7C3C400551DC6 /* MBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D49271F22E7C3C400551DC6 /* MBCache.m */; };
+		3D49272322E7C44100551DC6 /* MBMarsPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D49272222E7C44100551DC6 /* MBMarsPhotoReference.m */; };
+		3D49272622E7C46800551DC6 /* MBCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D49272522E7C46800551DC6 /* MBCamera.m */; };
 		3DA6AA1022E6621A0010861B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6AA0F22E6621A0010861B /* AppDelegate.m */; };
-		3DA6AA1322E6621A0010861B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6AA1222E6621A0010861B /* ViewController.m */; };
 		3DA6AA1622E6621A0010861B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6AA1422E6621A0010861B /* Main.storyboard */; };
 		3DA6AA1822E6621B0010861B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6AA1722E6621B0010861B /* Assets.xcassets */; };
 		3DA6AA1B22E6621B0010861B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6AA1922E6621B0010861B /* LaunchScreen.storyboard */; };
@@ -19,11 +23,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D49271822E7C32300551DC6 /* MBMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMarsRover.h; sourceTree = "<group>"; };
+		3D49271922E7C32300551DC6 /* MBMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMarsRover.m; sourceTree = "<group>"; };
+		3D49271B22E7C36400551DC6 /* MBSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSolDescription.h; sourceTree = "<group>"; };
+		3D49271C22E7C36400551DC6 /* MBSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBSolDescription.m; sourceTree = "<group>"; };
+		3D49271E22E7C3C400551DC6 /* MBCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBCache.h; sourceTree = "<group>"; };
+		3D49271F22E7C3C400551DC6 /* MBCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCache.m; sourceTree = "<group>"; };
+		3D49272122E7C44100551DC6 /* MBMarsPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMarsPhotoReference.h; sourceTree = "<group>"; };
+		3D49272222E7C44100551DC6 /* MBMarsPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMarsPhotoReference.m; sourceTree = "<group>"; };
+		3D49272422E7C46800551DC6 /* MBCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBCamera.h; sourceTree = "<group>"; };
+		3D49272522E7C46800551DC6 /* MBCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCamera.m; sourceTree = "<group>"; };
 		3DA6AA0B22E6621A0010861B /* ObjCAstronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCAstronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA6AA0E22E6621A0010861B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DA6AA0F22E6621A0010861B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3DA6AA1122E6621A0010861B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3DA6AA1222E6621A0010861B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3DA6AA1522E6621A0010861B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DA6AA1722E6621B0010861B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DA6AA1A22E6621B0010861B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +58,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D49271522E7C2C600551DC6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3DAF530422E7595400A336B1 /* PhotoCollectionViewCell.swift */,
+				3DAF530622E7596F00A336B1 /* PhotosCollectionViewController.swift */,
+				3DAF530822E759A000A336B1 /* PhotoDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3D49271622E7C2D700551DC6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3DA6AA1422E6621A0010861B /* Main.storyboard */,
+				3DA6AA1922E6621B0010861B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3D49271722E7C2EA00551DC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DA6AA1C22E6621B0010861B /* Info.plist */,
+				3DA6AA1722E6621B0010861B /* Assets.xcassets */,
+				3DA6AA1D22E6621B0010861B /* main.m */,
+				3DA6AA0E22E6621A0010861B /* AppDelegate.h */,
+				3DA6AA0F22E6621A0010861B /* AppDelegate.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D49272722E7C48F00551DC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D49271822E7C32300551DC6 /* MBMarsRover.h */,
+				3D49271922E7C32300551DC6 /* MBMarsRover.m */,
+				3D49271B22E7C36400551DC6 /* MBSolDescription.h */,
+				3D49271C22E7C36400551DC6 /* MBSolDescription.m */,
+				3D49271E22E7C3C400551DC6 /* MBCache.h */,
+				3D49271F22E7C3C400551DC6 /* MBCache.m */,
+				3D49272122E7C44100551DC6 /* MBMarsPhotoReference.h */,
+				3D49272222E7C44100551DC6 /* MBMarsPhotoReference.m */,
+				3D49272422E7C46800551DC6 /* MBCamera.h */,
+				3D49272522E7C46800551DC6 /* MBCamera.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3DA6AA0222E6621A0010861B = {
 			isa = PBXGroup;
 			children = (
@@ -65,18 +125,10 @@
 		3DA6AA0D22E6621A0010861B /* ObjCAstronomy */ = {
 			isa = PBXGroup;
 			children = (
-				3DA6AA0E22E6621A0010861B /* AppDelegate.h */,
-				3DA6AA0F22E6621A0010861B /* AppDelegate.m */,
-				3DA6AA1122E6621A0010861B /* ViewController.h */,
-				3DA6AA1222E6621A0010861B /* ViewController.m */,
-				3DA6AA1422E6621A0010861B /* Main.storyboard */,
-				3DAF530422E7595400A336B1 /* PhotoCollectionViewCell.swift */,
-				3DAF530622E7596F00A336B1 /* PhotosCollectionViewController.swift */,
-				3DAF530822E759A000A336B1 /* PhotoDetailViewController.swift */,
-				3DA6AA1722E6621B0010861B /* Assets.xcassets */,
-				3DA6AA1922E6621B0010861B /* LaunchScreen.storyboard */,
-				3DA6AA1C22E6621B0010861B /* Info.plist */,
-				3DA6AA1D22E6621B0010861B /* main.m */,
+				3D49272722E7C48F00551DC6 /* Model */,
+				3D49271522E7C2C600551DC6 /* View Controllers */,
+				3D49271622E7C2D700551DC6 /* Storyboards */,
+				3D49271722E7C2EA00551DC6 /* Resources */,
 				3DAF530322E7595400A336B1 /* ObjCAstronomy-Bridging-Header.h */,
 			);
 			path = ObjCAstronomy;
@@ -108,6 +160,7 @@
 		3DA6AA0322E6621A0010861B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MB;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Mitchell Budge";
 				TargetAttributes = {
@@ -153,12 +206,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D49272322E7C44100551DC6 /* MBMarsPhotoReference.m in Sources */,
 				3DAF530922E759A000A336B1 /* PhotoDetailViewController.swift in Sources */,
-				3DA6AA1322E6621A0010861B /* ViewController.m in Sources */,
 				3DAF530522E7595400A336B1 /* PhotoCollectionViewCell.swift in Sources */,
 				3DA6AA1E22E6621B0010861B /* main.m in Sources */,
 				3DAF530722E7596F00A336B1 /* PhotosCollectionViewController.swift in Sources */,
+				3D49271A22E7C32300551DC6 /* MBMarsRover.m in Sources */,
+				3D49271D22E7C36400551DC6 /* MBSolDescription.m in Sources */,
 				3DA6AA1022E6621A0010861B /* AppDelegate.m in Sources */,
+				3D49272022E7C3C400551DC6 /* MBCache.m in Sources */,
+				3D49272622E7C46800551DC6 /* MBCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +360,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K3F959XXFV;
-				INFOPLIST_FILE = ObjCAstronomy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObjCAstronomy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,7 +381,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K3F959XXFV;
-				INFOPLIST_FILE = ObjCAstronomy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObjCAstronomy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

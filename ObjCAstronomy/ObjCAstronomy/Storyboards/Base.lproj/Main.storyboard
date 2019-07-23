@@ -33,7 +33,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="J65-Pi-958" customClass="ImageCollectionViewCell" customModule="ObjCAstronomy" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="J65-Pi-958" customClass="PhotoCollectionViewCell" customModule="ObjCAstronomy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -52,7 +52,7 @@
                                             <constraint firstItem="GdH-cv-wQJ" firstAttribute="leading" secondItem="J65-Pi-958" secondAttribute="leading" id="en3-BL-6cd"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="GdH-cv-wQJ" id="4zf-u5-Ce0"/>
+                                            <outlet property="imageView" destination="GdH-cv-wQJ" id="L7S-sC-idg"/>
                                             <segue destination="C1Q-5I-vr6" kind="show" identifier="ShowDetail" id="wjS-kx-8rP"/>
                                         </connections>
                                     </collectionViewCell>
