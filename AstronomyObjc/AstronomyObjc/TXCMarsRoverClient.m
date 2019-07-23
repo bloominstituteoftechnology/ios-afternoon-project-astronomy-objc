@@ -20,6 +20,8 @@ static NSString *baseURL = @"https://api.nasa.gov/mars-photos/api/v1/manifests/c
     NSURL *url = [NSURL URLWithString:baseURL];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSLog(@"URL: %@", url);
         if (error) {
             NSLog(@"Error fetching manifest: %@", error);
             completionBlock(nil, error);
@@ -34,12 +36,14 @@ static NSString *baseURL = @"https://api.nasa.gov/mars-photos/api/v1/manifests/c
             return;
         }
         
+        NSLog(@"JSON: %@", json[@"photo_manifest"][@"photos"][0][@"sol"]);
         //        NSLog(@"JSON: %@", json);
-        NSArray *photosArray = json[@"photos"]; // Array of dictionary objects
+        NSArray *photosArray = json[@"photo_manifest"][@"photos"];
+        NSLog(@"PhotoArray: %@", photosArray); // Array of dictionary objects
         NSMutableArray *sols = [[NSMutableArray alloc] init];
         for (NSDictionary *dict in photosArray) {
             TXCSol *sol = [[TXCSol alloc] initWithDictionary:dict];
-            
+
             if (sol) {
                 [sols addObject:sol];
             }
