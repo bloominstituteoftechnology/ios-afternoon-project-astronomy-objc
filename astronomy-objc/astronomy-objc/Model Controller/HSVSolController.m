@@ -28,7 +28,7 @@
 }
 
 static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG";
-static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=22&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG#";
+static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=22&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG";
 
 
 - (NSArray *)Sols{
@@ -57,6 +57,8 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 			return;
 		}
 		
+		NSLog(@"%@", jsonDictionary);
+		
 //		NSArray *solArr = jsonDictionary[@"photo_manifest"][@"photos"];
 //		
 //		[self getInternalSolsWitArr:solArr];
@@ -64,11 +66,6 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 //		
 		completion(nil);
 	}] resume];
-	
-	
-	
-	
-	
 }
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError * _Nullable))completion{

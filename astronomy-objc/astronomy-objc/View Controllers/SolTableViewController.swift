@@ -49,7 +49,8 @@ class SolTableViewController: UITableViewController {
 					let indexPath = tableView.indexPathForSelectedRow,
 					let sol = solController.sols()[indexPath.row] as? Sol else { return }
 			
-			vc.solNumber = Int(sol.sol);
+			vc.solNumber = Int(sol.sol)
+			vc.solController = solController
 			
 		}
 	}

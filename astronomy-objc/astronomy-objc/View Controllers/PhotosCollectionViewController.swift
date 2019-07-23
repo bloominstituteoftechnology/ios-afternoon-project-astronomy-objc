@@ -13,30 +13,30 @@ class PhotosCollectionViewController: UIViewController {
 	@IBOutlet var collectionView: UICollectionView!
 	
 	var solNumber: Int?
-
+	var solController: SolController?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		collectionView.dataSource = self
 		collectionView.delegate = self
-		
-//		solController.fetchSols { (error) in
-//			if let error = error {
-//				print("Error: \(error)")
-//			}
-//		}
-		
-		
-		
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		if let solNumber = solNumber {
+			
 			NSLog("SolNumber: \(solNumber)")
 			
+			solController?.fetchSolImageList(withSol: Int32(solNumber), completion: { error in
+				if let error = error { print(error) }
+				
+				
+				
+			})
 		}
+
+		
 	}
 
 
