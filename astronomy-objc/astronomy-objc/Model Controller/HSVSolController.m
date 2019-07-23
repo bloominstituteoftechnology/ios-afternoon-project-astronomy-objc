@@ -36,6 +36,11 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 }
 
 
+- (void)fetchSolImageListWithCompletion:(void (^)(NSError * _Nullable))completion{
+	
+	
+}
+
 - (void)fetchSolsWithCompletion:(void (^)(NSError * _Nullable))completion{
 	
 	NSURL *url = [[NSURL alloc] initWithString:baseSolUrl];

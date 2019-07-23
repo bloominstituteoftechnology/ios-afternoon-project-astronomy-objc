@@ -16,6 +16,8 @@ NS_SWIFT_NAME(SolController)
 
 @interface HSVSolController : NSObject
 
+- (void)fetchSolImageListWithCompletion:(void (^)(NSError *))completion;
+
 - (void)fetchSolsWithCompletion:(void (^)(NSError *))completion;
 
 - (NSArray *)Sols;
