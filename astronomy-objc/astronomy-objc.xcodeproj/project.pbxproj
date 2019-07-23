@@ -16,6 +16,7 @@
 		E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */; };
 		E8146CBA22E6722C0045BBA7 /* HSVSolController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB922E6722C0045BBA7 /* HSVSolController.m */; };
 		E8146CC022E6CFFC0045BBA7 /* HSVSol.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CBF22E6CFFC0045BBA7 /* HSVSol.m */; };
+		E8146CC322E6E0E20045BBA7 /* SolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CC222E6E0E20045BBA7 /* SolTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E8146CB922E6722C0045BBA7 /* HSVSolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVSolController.m; sourceTree = "<group>"; };
 		E8146CBE22E6CFFC0045BBA7 /* HSVSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVSol.h; sourceTree = "<group>"; };
 		E8146CBF22E6CFFC0045BBA7 /* HSVSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVSol.m; sourceTree = "<group>"; };
+		E8146CC222E6E0E20045BBA7 /* SolTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		E8146CB122E65E790045BBA7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E8146CC222E6E0E20045BBA7 /* SolTableViewController.swift */,
 				E8146CAF22E65E6F0045BBA7 /* PhotosCollectionViewController.swift */,
 				E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */,
 			);
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8146CBA22E6722C0045BBA7 /* HSVSolController.m in Sources */,
+				E8146CC322E6E0E20045BBA7 /* SolTableViewController.swift in Sources */,
 				E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */,
 				E8146CC022E6CFFC0045BBA7 /* HSVSol.m in Sources */,
 				E8146CA622E649920045BBA7 /* main.m in Sources */,

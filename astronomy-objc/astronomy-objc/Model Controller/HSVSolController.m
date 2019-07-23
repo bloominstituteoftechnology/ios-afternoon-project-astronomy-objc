@@ -11,7 +11,7 @@
 
 @interface HSVSolController ()
 
-@property (nonatomic, copy) NSMutableArray *internalSol;
+@property (nonatomic, copy) NSMutableArray<HSVSol *> *internalSol;
 
 @end
 
@@ -70,8 +70,8 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 }
 
 - (void)getInternalSolsWitArr:(NSArray *)arr {
-	//NSInteger solCount = [solArr count];
-	for(int i = 0; i < 10; i++) {
+	NSInteger solCount = [arr count];
+	for(int i = 0; i < (int)solCount; i++) {
 		
 		int solNumber = [arr[i][@"sol"] intValue];
 		int totalPhotos = [arr[i][@"total_photos"] intValue];
