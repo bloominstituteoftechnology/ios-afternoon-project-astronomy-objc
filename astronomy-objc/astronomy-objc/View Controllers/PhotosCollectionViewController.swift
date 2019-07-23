@@ -20,7 +20,7 @@ class PhotosCollectionViewController: UIViewController {
 		collectionView.dataSource = self
 		collectionView.delegate = self
 		
-		solController.fetchSols { (error) in
+		solController.fetchSols { (_) in
 			
 		}
 		

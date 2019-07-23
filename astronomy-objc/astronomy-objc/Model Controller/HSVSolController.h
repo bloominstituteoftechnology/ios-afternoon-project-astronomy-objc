@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "astronomy_objc-Swift.h"
 
-NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(SolController)
+//NS_ASSUME_NONNULL_BEGIN
 
 @interface HSVSolController : NSObject
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError *))completion;
 
 @end
-NS_ASSUME_NONNULL_END
+//NS_ASSUME_NONNULL_END
 

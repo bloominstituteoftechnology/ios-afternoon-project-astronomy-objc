@@ -10,20 +10,20 @@
 
 @implementation HSVSolController
 
-//- (instancetype)init
-//{
-//	self = [super init];
-//	if (self) {
-//		
-//	}
-//	return self;
-//}
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		
+	}
+	return self;
+}
 
 static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG";
 static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=22&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG#";
 
 
-- (void)fetchSolsWithCompletion:(void (^)(NSError *))completion{
+- (void)fetchSolsWithCompletion:(void (^)(NSError * _Nullable))completion{
 	
 	NSURL *url = [[NSURL alloc] initWithString:baseSolUrl];
 	
@@ -31,14 +31,14 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 	
 	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error){
-			NSLog(@"Error with url sessions: %@", error);
+			NSLog(@"Error with url sessions: %@",  error);
 			completion(error);
 			return;
 		}
 			
-		NSError *jsonError;
+		NSError *jsonError ;
 		
-		NSJSONSerialization *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+		NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 		
 		if (jsonError){
 			NSLog(@"error with NSJSONSerialization: %@", jsonError);
@@ -46,11 +46,7 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 			return;
 		}
 		
-		
-		
-		
-		
-		NSLog(@"%@", jsonDictionary);
+		NSLog(@"%@", [jsonDictionary[@"photo_manifest"][@"photos"] count]);
 		
 		
 		
