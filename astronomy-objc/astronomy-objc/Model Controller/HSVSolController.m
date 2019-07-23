@@ -10,7 +10,7 @@
 
 @interface HSVSolController ()
 
-@property (nonatomic, copy) NSMutableArray *_internalSol;
+@property (nonatomic, copy) NSMutableArray *internalSol;
 
 @end
 
@@ -21,7 +21,7 @@
 {
 	self = [super init];
 	if (self) {
-		__internalSol = [[NSMutableArray alloc] init];
+		_internalSol = [[NSMutableArray alloc] init];
 	}
 	return self;
 }
@@ -31,7 +31,7 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 
 
 - (NSArray *)Sols{
-	return [self _internalSol];
+	return self.internalSol;
 }
 
 
@@ -57,7 +57,18 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 			return;
 		}
 		
-		NSLog(@"%@", jsonDictionary[@"photo_manifest"][@"photos"][0]);
+		NSArray *solArr = jsonDictionary[@"photo_manifest"][@"photos"];
+		
+		NSInteger solCount = [solArr count];
+		
+		
+		
+		NSLog(@"%ld", (long)solCount);
+		
+		for(int i = 0; i < (int)solCount; i++) {
+//			NSLog(@"photos: %ld", )
+		}
+		
 		
 		
 		completion(nil);
