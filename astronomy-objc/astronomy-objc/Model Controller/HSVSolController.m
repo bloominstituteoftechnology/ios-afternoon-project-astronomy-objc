@@ -57,9 +57,17 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 			return;
 		}
 		
-		NSLog(@"%@", jsonDictionary);
+		NSArray *photosArr = jsonDictionary[@"photos"];
 		
-//		NSArray *solArr = jsonDictionary[@"photo_manifest"][@"photos"];
+		for(NSDictionary *dic in photosArr) {
+			NSString *imgSrc = dic[@"img_src"];
+			
+			NSLog(@"%@", imgSrc);
+		}
+		
+		NSLog(@"%li", [photosArr count]);
+		
+//		NSArray *solImageArr = jsonDictionary[@"photo_manifest"][0][@"photos"];
 //		
 //		[self getInternalSolsWitArr:solArr];
 //		
