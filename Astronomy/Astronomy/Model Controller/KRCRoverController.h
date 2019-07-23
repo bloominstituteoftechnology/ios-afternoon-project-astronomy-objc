@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KRCSOL.h"
+typedef void (^KRCRoverCompletion)(NSError * _Nullable);
 
-typedef void (^KRCRoverCompletion)(NSDictionary * _Nullable, NSError * _Nullable);
-
+NS_SWIFT_NAME(RoverController)
 @interface KRCRoverController : NSObject
 
-@property (nonatomic, nonnull, copy, readonly) NSArray *sols;
+@property (nonatomic, nonnull, copy, readonly) NSArray<KRCSOL *> *sols;
 @property (nonatomic, nonnull, copy, readonly) NSArray *photoURLs;
 
 - (NSArray * _Nonnull)sols;

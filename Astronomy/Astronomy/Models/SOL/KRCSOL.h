@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(Sol)
 @interface KRCSOL : NSObject
 
 @property (nonatomic, nonnull, readonly) NSNumber *sol;

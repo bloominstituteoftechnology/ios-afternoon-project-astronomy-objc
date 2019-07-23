@@ -8,41 +8,42 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class RoverPhotoCollectionViewController: UICollectionViewController {
     
     let solLabel = UILabel()
-
+    let roverController = RoverController()
+    var currentSolIndex = 0;
+    var currentSol: Sol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureTitleView()
+        
+        roverController.fetchSol { error in
+            
+            if let error = error {
+                print("There was an error getting sols from nasa: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                self.selectSol()
+                self.setSolLabel()
+                self.configureTitleView()
+            }
+        }
     }
-
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+
     }
     
     // MARK: UICollectionViewDataSource
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
         return cell
     }
 
@@ -72,11 +73,39 @@ class RoverPhotoCollectionViewController: UICollectionViewController {
         navigationItem.titleView = stackView
     }
     
+    private func setSolLabel() {
+        
+        guard let solNumber = currentSol?.sol.intValue else { return }
+        
+        solLabel.text = "sol: \(solNumber)"
+    }
+    
+    private func selectSol() {
+        
+        currentSol = roverController.sols[currentSolIndex]
+    }
+    
     @IBAction func goToPreviousSol(_ sender: Any?) {
-
+        
+        if currentSolIndex == 0 {
+            return
+        }
+        
+        currentSolIndex -= 1
+        
+        selectSol()
+        setSolLabel()
     }
     
     @IBAction func goToNextSol(_ sender: Any?) {
-
+        
+        if currentSolIndex == (roverController.sols.count - 1) {
+            return
+        }
+        
+        currentSolIndex += 1
+        
+        selectSol()
+        setSolLabel()
     }
 }

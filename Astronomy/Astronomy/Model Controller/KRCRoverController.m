@@ -57,13 +57,13 @@
     [[self networkController] networkCallForURL:[self solURL] completion:^(NSDictionary * _Nullable json, NSError * _Nullable error) {
         
         if (error) {
-            completion(nil, error);
+            completion(error);
             return;
         }
         
         [self parseSolJson:json];
         
-        completion(json, nil);
+        completion(nil);
         
     }];
 }
@@ -81,13 +81,13 @@
     [[self networkController] networkCallForURL:url completion:^(NSDictionary * _Nullable json, NSError * _Nullable error) {
         
         if (error) {
-            completion(nil, error);
+            completion(error);
             return;
         }
         
         [self parsePhotoJson:json];
         
-        completion(json, nil);
+        completion(nil);
     }];
     
 }
