@@ -10,6 +10,15 @@
 
 @implementation HSVSolController
 
+//- (instancetype)init
+//{
+//	self = [super init];
+//	if (self) {
+//		
+//	}
+//	return self;
+//}
+
 static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG";
 static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=22&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG#";
 
@@ -27,11 +36,22 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 			return;
 		}
 			
-		NSError *erro;
+		NSError *jsonError;
 		
-		NSJSONSerialization *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+		NSJSONSerialization *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 		
-		NSLog(@"%a", jsonDictionary);
+		if (jsonError){
+			NSLog(@"error with NSJSONSerialization: %@", jsonError);
+			completion(jsonError);
+			return;
+		}
+		
+		
+		
+		
+		
+		NSLog(@"%@", jsonDictionary);
+		
 		
 		
 	}] resume];

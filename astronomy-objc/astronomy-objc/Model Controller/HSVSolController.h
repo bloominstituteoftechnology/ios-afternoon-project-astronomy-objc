@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "astronomy_objc-Swift.h"
 
-NS_ASSUME_NONNULL_BEGIN
+NS_SWIFT_NAME(SolController)
 
 @interface HSVSolController : NSObject
 
@@ -16,4 +17,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+

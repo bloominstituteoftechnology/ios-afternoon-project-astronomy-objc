@@ -10,6 +10,8 @@ import UIKit
 
 
 class PhotosCollectionViewController: UIViewController {
+	let solController = SolController()
+	
 	
 	@IBOutlet var collectionView: UICollectionView!
 	override func viewDidLoad() {
@@ -17,6 +19,15 @@ class PhotosCollectionViewController: UIViewController {
 		
 		collectionView.dataSource = self
 		collectionView.delegate = self
+		
+		solController.fetchSols { (error) in
+			if let error = error {
+				print("error fetching with: \(error)")
+			}
+		}
+		
+		
+		
 	}
 }
 
