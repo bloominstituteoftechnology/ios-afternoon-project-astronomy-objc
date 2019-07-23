@@ -10,4 +10,15 @@
 
 @implementation HSVSol
 
+-(instancetype)initWithSol:(int)sol totalPhotos:(int)totalPhotos earthDate:(NSString *)earthDate {
+	self = [super init];
+	if (self) {
+		_sol = sol;
+		_totalPhotos = totalPhotos;
+		_earthDate = earthDate;
+	}
+	return self;
+}
+
+
 @end

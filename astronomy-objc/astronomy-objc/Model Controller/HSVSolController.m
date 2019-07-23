@@ -45,7 +45,7 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 			return;
 		}
 		
-		NSLog(@"%@", jsonDictionary[@"photo_manifest"][@"photos"]);
+		NSLog(@"%@", jsonDictionary[@"photo_manifest"][@"photos"][0]);
 		
 		
 		completion(nil);

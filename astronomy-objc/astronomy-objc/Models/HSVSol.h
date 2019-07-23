@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HSVSol : NSObject
 
+@property (nonatomic, readonly) int sol;
+@property (nonatomic, readonly) int totalPhotos;
+@property (nonatomic, readonly, copy) NSString *earthDate;
+@property (nonatomic, readonly, copy) NSArray<NSString *> *cameras;
+
+
+-(instancetype)initWithSol:(int)sol totalPhotos:(int)totalPhotos earthDate:(NSString *)earthDate;
+
 @end
 
 NS_ASSUME_NONNULL_END
