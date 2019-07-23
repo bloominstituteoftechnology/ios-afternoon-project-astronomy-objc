@@ -21,9 +21,7 @@ class PhotosCollectionViewController: UIViewController {
 		collectionView.delegate = self
 		
 		solController.fetchSols { (error) in
-			if let error = error {
-				print("error fetching with: \(error)")
-			}
+			
 		}
 		
 		
