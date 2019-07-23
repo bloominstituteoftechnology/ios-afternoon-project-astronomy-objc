@@ -8,15 +8,20 @@
 
 import UIKit
 
+
 private let reuseIdentifier = "Cell"
 
+@objc(TXCPhotosCollectionViewController)
 class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        let marsRoverClient = TXCMarsRoverClient()
+        marsRoverClient.fetchPhotoManifestCompletionBlock { (sols, error) in
+            NSLog("Count: \(sols.count)")
+            NSLog("Sols: \(sols)")
+        }
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)

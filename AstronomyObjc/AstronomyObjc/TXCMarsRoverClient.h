@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TXCMarsRoverClient : NSObject
 
+typedef void (^TXCManifestFetcherCompletionBlock)(NSArray *, NSError *);
 
+- (void)fetchPhotoManifestCompletionBlock:(TXCManifestFetcherCompletionBlock)completionBlock;
 
 @end
 
