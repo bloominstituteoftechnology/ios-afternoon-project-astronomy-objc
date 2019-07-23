@@ -15,6 +15,7 @@
 		E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CAF22E65E6F0045BBA7 /* PhotosCollectionViewController.swift */; };
 		E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */; };
 		E8146CBA22E6722C0045BBA7 /* HSVSolController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CB922E6722C0045BBA7 /* HSVSolController.m */; };
+		E8146CC022E6CFFC0045BBA7 /* HSVSol.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CBF22E6CFFC0045BBA7 /* HSVSol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		E8146CB222E6699A0045BBA7 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		E8146CB822E6722C0045BBA7 /* HSVSolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVSolController.h; sourceTree = "<group>"; };
 		E8146CB922E6722C0045BBA7 /* HSVSolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVSolController.m; sourceTree = "<group>"; };
+		E8146CBE22E6CFFC0045BBA7 /* HSVSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVSol.h; sourceTree = "<group>"; };
+		E8146CBF22E6CFFC0045BBA7 /* HSVSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVSol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			children = (
 				E8146C9622E649910045BBA7 /* AppDelegate.h */,
 				E8146C9722E649910045BBA7 /* AppDelegate.m */,
+				E8146CC122E6D0000045BBA7 /* Models */,
 				E8146CB722E670960045BBA7 /* Model Controller */,
 				E8146CB122E65E790045BBA7 /* View Controllers */,
 				E8146CAC22E65D110045BBA7 /* Main.storyboard */,
@@ -93,6 +97,15 @@
 				E8146CB922E6722C0045BBA7 /* HSVSolController.m */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		E8146CC122E6D0000045BBA7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8146CBE22E6CFFC0045BBA7 /* HSVSol.h */,
+				E8146CBF22E6CFFC0045BBA7 /* HSVSol.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +182,7 @@
 			files = (
 				E8146CBA22E6722C0045BBA7 /* HSVSolController.m in Sources */,
 				E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */,
+				E8146CC022E6CFFC0045BBA7 /* HSVSol.m in Sources */,
 				E8146CA622E649920045BBA7 /* main.m in Sources */,
 				E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */,
 				E8146C9822E649910045BBA7 /* AppDelegate.m in Sources */,
