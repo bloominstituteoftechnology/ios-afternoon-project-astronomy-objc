@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-//#import "astronomy_objc-Swift.h"
+@class HSVSolPhoto;
 
 NS_SWIFT_NAME(SolController)
 
-
 @interface HSVSolController : NSObject
 
-- (void)fetchSolImageListWithSol:(int)sol Completion:(void (^)(NSError *))completion;
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError *))completion;
+
+- (void)fetchSolImageListWithSol:(int)sol Completion:(void (^)(NSArray <HSVSolPhoto *> * , NSError *))completion;
 
 - (NSArray *)Sols;
 

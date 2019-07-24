@@ -13,7 +13,7 @@
 @interface HSVSolController ()
 
 @property (nonatomic, copy) NSMutableArray<HSVSol *> *internalSol;
-@property (nonatomic, copy) NSMutableArray<HSVSolPhoto *> *internalSolPhotoList;
+
 @end
 
 
@@ -24,7 +24,7 @@
 	self = [super init];
 	if (self) {
 		_internalSol = [[NSMutableArray alloc] init];
-		_internalSolPhotoList = [[NSMutableArray alloc] init];
+		
 	}
 	return self;
 }
@@ -38,14 +38,14 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 }
 
 
-- (void)fetchSolImageListWithSol:(int)sol Completion:(void (^)(NSError * _Nullable))completion{
+- (void)fetchSolImageListWithSol:(int)sol Completion:(void (^)(NSArray<HSVSolPhoto *> * _Nullable , NSError * _Nullable))completion{
 	NSURL *url = [[NSURL alloc] initWithString:baseSolImagesUrl];
 	
 	NSLog(@"url: %@", url);
 	
 	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error){
-			completion(error);
+			completion(nil, error);
 			return;
 		}
 		
@@ -55,15 +55,18 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 		
 		if (jsonError){
 			NSLog(@"error with NSJSONSerialization: %@", jsonError);
-			completion(jsonError);
+			completion(nil, jsonError);
 			return;
 		}
 		
 		NSArray *photosArr = jsonDictionary[@"photos"];
 		
 		for(NSDictionary *dic in photosArr) {
+			
+			
 			NSString *imgSrc = dic[@"img_src"];
 			
+			//HSVSolPhoto *solPhot = [HSVSolPhoto alloc] initWithImg_src:<#(NSString * _Nonnull)#> sol:<#(NSString * _Nonnull)#> earthDate:<#(NSString * _Nonnull)#> cameraName:<#(NSString * _Nonnull)#> roverName:<#(NSString * _Nonnull)#>
 			NSLog(@"%@", imgSrc);
 		}
 		
@@ -74,7 +77,7 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 //		[self getInternalSolsWitArr:solArr];
 //		
 //		
-		completion(nil);
+//		completion( , nil);
 	}] resume];
 }
 
