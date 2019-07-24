@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(PhotoInfo)
 @interface KRCPhotoInfo : NSObject
 
-@property (nonatomic, nonnull, readonly) NSURL *photoURL;
+@property (nonatomic, nonnull, readonly) NSString *photoURL;
 
-- (instancetype _Nonnull)initWithURL:(NSURL * _Nonnull)url;
+- (instancetype _Nonnull)initWithURL:(NSString * _Nonnull)url;
 
 @end

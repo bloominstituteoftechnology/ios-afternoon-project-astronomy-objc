@@ -31,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-h5-4cr">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-h5-4cr">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="KLO-h5-4cr" secondAttribute="height" multiplier="1:1" id="dcU-0Y-Ubv"/>
@@ -89,4 +89,7 @@
             <point key="canvasLocation" x="340.57971014492756" y="157.36607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Blank" width="100" height="100"/>
+    </resources>
 </document>

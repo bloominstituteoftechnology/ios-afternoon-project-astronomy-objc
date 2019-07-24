@@ -10,7 +10,7 @@
 
 @implementation KRCPhotoInfo
 
-- (instancetype)initWithURL:(NSURL *)url {
+- (instancetype)initWithURL:(NSString *)url {
     
     self = [super init];
     

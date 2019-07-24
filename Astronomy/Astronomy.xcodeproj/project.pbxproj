@@ -18,6 +18,7 @@
 		EC344AA322E65F640020BFE8 /* KRCSOL.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344AA222E65F640020BFE8 /* KRCSOL.m */; };
 		EC344AA822E662C00020BFE8 /* KRCRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC344AA722E662C00020BFE8 /* KRCRoverController.m */; };
 		EC48372322E7D2EB00F7809B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48372222E7D2EB00F7809B /* PhotoCollectionViewCell.swift */; };
+		EC48372522E7E33800F7809B /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48372422E7E33800F7809B /* URL+Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EC344AA622E662C00020BFE8 /* KRCRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCRoverController.h; sourceTree = "<group>"; };
 		EC344AA722E662C00020BFE8 /* KRCRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCRoverController.m; sourceTree = "<group>"; };
 		EC48372222E7D2EB00F7809B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC48372422E7E33800F7809B /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		EC344A9C22E6552C0020BFE8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				EC48372422E7E33800F7809B /* URL+Secure.swift */,
 				EC344A9D22E655680020BFE8 /* KRCNetwork.h */,
 				EC344A9E22E655680020BFE8 /* KRCNetwork.m */,
 			);
@@ -249,6 +252,7 @@
 				EC344A9F22E655680020BFE8 /* KRCNetwork.m in Sources */,
 				EC48372322E7D2EB00F7809B /* PhotoCollectionViewCell.swift in Sources */,
 				EC2BF09222E7AABB00FC8400 /* KRCPhotoInfo.m in Sources */,
+				EC48372522E7E33800F7809B /* URL+Secure.swift in Sources */,
 				EC2BF09522E7B5BE00FC8400 /* RoverPhotoCollectionViewController.swift in Sources */,
 				EC344A9222E648830020BFE8 /* main.m in Sources */,
 				EC344AA822E662C00020BFE8 /* KRCRoverController.m in Sources */,

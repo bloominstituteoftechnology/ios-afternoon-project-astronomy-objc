@@ -92,6 +92,19 @@
     
 }
 
+- (void)fetchImageFromUrl:(NSURL * _Nonnull)url completion:(KRCNetworkImageCompletion _Nonnull)completion {
+    
+    [[self networkController] networkCallForImage:url completion:^(NSData * _Nullable imageData, NSError * _Nullable error) {
+        
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        completion(imageData, nil);
+    }];
+}
+
 - (void)parseSolJson:(NSDictionary * _Nonnull)json {
     NSLog(@"In parseSolJson");
     
@@ -110,12 +123,14 @@
 - (void)parsePhotoJson:(NSDictionary *)json {
     NSLog(@"In parsePhotoJson");
     
+    [[self internalSols] removeAllObjects];
+    
     NSArray *photos = [json objectForKey:@"photos"];
 
     for (int i = 0; i < photos.count; i++) {
         
         NSDictionary *photosDictionary = [photos objectAtIndex:i];
-        NSURL *photoURL = [photosDictionary objectForKey:@"img_src"];
+        NSString *photoURL = [photosDictionary objectForKey:@"img_src"];
         
         KRCPhotoInfo *photoInfo = [[KRCPhotoInfo alloc] initWithURL:photoURL];
         [[self internalPhotoURLs] addObject:photoInfo];

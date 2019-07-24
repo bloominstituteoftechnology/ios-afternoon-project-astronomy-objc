@@ -34,4 +34,21 @@
     [networkTask resume];
 }
 
+- (void)networkCallForImage:(NSURL * _Nonnull)url completion:(KRCNetworkImageCompletion _Nonnull)completion {
+    
+    NSURLSessionTask *networkTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        completion(data, nil);
+        
+    }];
+    
+    [networkTask resume];
+    
+}
+
 @end

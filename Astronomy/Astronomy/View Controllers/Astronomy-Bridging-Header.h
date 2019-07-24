@@ -3,3 +3,4 @@
 //
 #import "KRCRoverController.h"
 #import "KRCSOL.h"
+#import "KRCPhotoInfo.h"

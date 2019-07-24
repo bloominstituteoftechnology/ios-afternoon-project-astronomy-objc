@@ -8,19 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "KRCSOL.h"
+#import "KRCPhotoInfo.h"
+
 typedef void (^KRCRoverCompletion)(NSError * _Nullable);
+typedef void (^KRCNetworkImageCompletion)(NSData * _Nullable, NSError * _Nullable);
 
 NS_SWIFT_NAME(RoverController)
 @interface KRCRoverController : NSObject
 
 @property (nonatomic, nonnull, copy, readonly) NSArray<KRCSOL *> *sols;
-@property (nonatomic, nonnull, copy, readonly) NSArray *photoURLs;
+@property (nonatomic, nonnull, copy, readonly) NSArray<KRCPhotoInfo *> *photoURLs;
 
 - (NSArray * _Nonnull)sols;
 
 - (void)fetchSolWithCompletion:(KRCRoverCompletion _Nonnull)completion;
 
 - (void)fetchPhotosFromSol:(NSNumber * _Nonnull)sol completion:(KRCRoverCompletion _Nonnull)completion;
+
+- (void)fetchImageFromUrl:(NSURL * _Nonnull)url completion:(KRCNetworkImageCompletion _Nonnull)completion;
 
 - (void)parseSolJson:(NSDictionary * _Nonnull)json;
 

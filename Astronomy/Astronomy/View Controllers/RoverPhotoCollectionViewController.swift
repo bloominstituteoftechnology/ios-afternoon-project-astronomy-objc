@@ -13,7 +13,12 @@ class RoverPhotoCollectionViewController: UICollectionViewController {
     let solLabel = UILabel()
     let roverController = RoverController()
     var currentSolIndex = 0;
-    var currentSol: Sol?
+    var currentSol: Sol? {
+        didSet {
+            self.callPhotosInfoFetch()
+            self.collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +31,10 @@ class RoverPhotoCollectionViewController: UICollectionViewController {
             
             DispatchQueue.main.async {
                 self.selectSol()
-                self.setSolLabel()
-                self.configureTitleView()
             }
         }
+        
+        collectionView.reloadData()
     }
 
     // MARK: - Navigation
@@ -39,11 +44,21 @@ class RoverPhotoCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return roverController.photoURLs.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
+        
+        print("Loading Image")
+        
+        cell.photoURL = roverController.photoURLs[indexPath.row].photoURL
+        cell.roverController = roverController
+        
+        cell.photoImageView.image = #imageLiteral(resourceName: "Blank")
+        
+        cell.loadImage()
+        
         return cell
     }
 
@@ -83,6 +98,21 @@ class RoverPhotoCollectionViewController: UICollectionViewController {
     private func selectSol() {
         
         currentSol = roverController.sols[currentSolIndex]
+        collectionView.reloadData()
+    }
+    
+    private func callPhotosInfoFetch() {
+        
+        guard let sol = currentSol?.sol else { return }
+        
+        roverController.fetchPhotos(fromSol: sol) { (error) in
+            
+            DispatchQueue.main.async {
+                self.setSolLabel()
+                self.configureTitleView()
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     @IBAction func goToPreviousSol(_ sender: Any?) {
@@ -95,6 +125,7 @@ class RoverPhotoCollectionViewController: UICollectionViewController {
         
         selectSol()
         setSolLabel()
+        collectionView.reloadData()
     }
     
     @IBAction func goToNextSol(_ sender: Any?) {
@@ -107,5 +138,8 @@ class RoverPhotoCollectionViewController: UICollectionViewController {
         
         selectSol()
         setSolLabel()
+        collectionView.reloadData()
     }
 }
+
+
