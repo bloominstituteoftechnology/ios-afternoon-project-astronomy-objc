@@ -47,10 +47,6 @@ extension PhotosCollectionViewController: UICollectionViewDelegate, UICollection
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath)
 		
-		guard let solImage = solImageListController.solImageList()[indexPath.row] as? SolPhoto else { return cell }
-		
-		let photoUrl = solImage.img_src
-		print(photoUrl)
 		
 		return cell
 	}

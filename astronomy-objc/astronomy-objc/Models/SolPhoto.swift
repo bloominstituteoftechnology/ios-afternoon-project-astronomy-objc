@@ -8,20 +8,18 @@
 
 import Foundation
 
-
-@objc(HSVSolPhoto)
 class SolPhoto: NSObject {
-	@objc let img_src: String
-	@objc let sol: String
-	@objc let earthDate: String
+	let img_src: String
+	let sol: String
+	let earthDate: String
 	
-	@objc let cameraName: String
+	let cameraName: String
 	
-	@objc let roverName: String
+	let roverName: String
 	
 	
 	
-	@objc init(img_src: String, sol: String, earthDate: String, cameraName: String, roverName: String) {
+	init(img_src: String, sol: String, earthDate: String, cameraName: String, roverName: String) {
 		self.img_src = img_src
 		self.sol = sol
 		self.earthDate = earthDate
