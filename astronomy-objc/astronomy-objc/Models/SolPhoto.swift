@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+@objc(HSVSolPhot)
 class SolPhoto: NSObject {
 	@objc let img_src: String
 	@objc let sol: String
@@ -39,7 +39,6 @@ class SolPhoto: NSObject {
 			let earthDate = dictionary["earth_date"] as? String,
 			let camera = dictionary["camera"] as? [String : Any], let cameraName = camera["name"] as? String,
 			let rover =  dictionary["rover"] as? [String: Any], let roverName = rover["name"] as? String else { return nil}
-		
 		
 		self.init(img_src: imgSrc, sol:sol, earthDate:earthDate, cameraName: cameraName, roverName: roverName)
 	}

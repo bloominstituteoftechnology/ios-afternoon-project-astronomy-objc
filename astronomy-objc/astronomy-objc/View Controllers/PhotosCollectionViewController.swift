@@ -28,12 +28,14 @@ class PhotosCollectionViewController: UIViewController {
 			
 			NSLog("SolNumber: \(solNumber)")
 			
-			solImageListController.fetchImageList(withSol: Int32(solNumber) ) { (_) in
-				
-				DispatchQueue.main.async {
-					self.collectionView.reloadData()
-				}
-			}
+			
+//
+//			solImageListController.fetchImageList(withSol: Int32(solNumber) ) { (_) in
+//
+//				DispatchQueue.main.async {
+//					self.collectionView.reloadData()
+//				}
+//			}
 		}
 		
 	}

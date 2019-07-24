@@ -32,49 +32,49 @@
 
 static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=22&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG";
 
-- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSError *error ))completion{
-	NSString *newbase = [[NSString alloc] initWithFormat:@"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=%i&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG", sol];
-	
-	NSURL *url = [[NSURL alloc] initWithString:newbase];
-	
-	NSLog(@"url: %@", url);
-	
-	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-		if (error){
-			completion(error);
-			return;
-		}
-		
-		NSError *jsonError ;
-		
-		NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-		
-		if (jsonError){
-			NSLog(@"error with NSJSONSerialization: %@", jsonError);
-			completion(jsonError);
-			return;
-		}
-		
-		NSArray *photosArr = jsonDictionary[@"photos"];
-
-		NSLog(@"%@", photosArr[2]);
-		
-		NSLog(@"%@", photosArr[2][@"camera"][@"name"]);
-		
-//		for (NSDictionary *dict in photosArr) {
-//			NSString *earthDate = dict[@"earth_date"];
-//			NSURL *img_src = dict[@"img_src"];
+- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSArray<HSVSolPhoto *> *,NSError *error ))completion{
+//	NSString *newbase = [[NSString alloc] initWithFormat:@"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=%i&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG", sol];
 //
+//	NSURL *url = [[NSURL alloc] initWithString:newbase];
 //
+//	NSLog(@"url: %@", url);
 //
+//	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//		if (error){
+//			completion(error);
+//			return;
 //		}
-		
-		
-//		[self.internalSolImageList addObjectsFromArray:photosArr];
-		completion(nil);
-		
-//		NSLog(@"count: %li", [photosArr count]);
-	}] resume];
+//
+//		NSError *jsonError ;
+//
+//		NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+//
+//		if (jsonError){
+//			NSLog(@"error with NSJSONSerialization: %@", jsonError);
+//			completion(jsonError);
+//			return;
+//		}
+//
+//		NSArray *photosArr = jsonDictionary[@"photos"];
+//
+//		NSLog(@"%@", photosArr[2]);
+//
+//		NSLog(@"%@", photosArr[2][@"camera"][@"name"]);
+//
+////		for (NSDictionary *dict in photosArr) {
+////			NSString *earthDate = dict[@"earth_date"];
+////			NSURL *img_src = dict[@"img_src"];
+////
+////
+////
+////		}
+//
+//
+////		[self.internalSolImageList addObjectsFromArray:photosArr];
+//		completion(nil);
+//
+////		NSLog(@"count: %li", [photosArr count]);
+//	}] resume];
 }
 
 - (void)fetchImageWithUrl:(NSURL *)url Completion:(void (^)(NSError *error ))completion{

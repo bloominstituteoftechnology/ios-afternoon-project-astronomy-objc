@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-
+@class HSVSolPhoto;
 NS_SWIFT_NAME(SolImageListController)
 
 @interface HSVSolImageListController : NSObject
 
-- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSError *error ))completion;
+//- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSArray<HSVSolPhoto *> *, NSError *error ))completion;
+//- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSArray<HSVSolPhoto *> *, NSError *error ))completion;
 
 - (NSArray *)solImageList;
 
