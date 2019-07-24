@@ -29,9 +29,6 @@ class PhotosCollectionViewController: UIViewController {
 			NSLog("SolNumber: \(solNumber)")
 			
 			
-			solController?.fetchSolImageList(withSol: Int32(solNumber), completion: { (list, error) in
-				print(list)
-			})
 			
 		}
 		

@@ -73,7 +73,7 @@
 				E8146C9622E649910045BBA7 /* AppDelegate.h */,
 				E8146C9722E649910045BBA7 /* AppDelegate.m */,
 				E8146CC122E6D0000045BBA7 /* Models */,
-				E8146CB722E670960045BBA7 /* Model Controller */,
+				E8146CB722E670960045BBA7 /* Model Controllers */,
 				E8146CB122E65E790045BBA7 /* View Controllers */,
 				E8146CAC22E65D110045BBA7 /* Main.storyboard */,
 				E8146CA122E649920045BBA7 /* LaunchScreen.storyboard */,
@@ -95,13 +95,13 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		E8146CB722E670960045BBA7 /* Model Controller */ = {
+		E8146CB722E670960045BBA7 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E8146CB822E6722C0045BBA7 /* HSVSolController.h */,
 				E8146CB922E6722C0045BBA7 /* HSVSolController.m */,
 			);
-			path = "Model Controller";
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		E8146CC122E6D0000045BBA7 /* Models */ = {
