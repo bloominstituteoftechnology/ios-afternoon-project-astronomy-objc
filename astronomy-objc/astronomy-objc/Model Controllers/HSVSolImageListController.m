@@ -56,7 +56,21 @@ static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/ro
 		}
 		
 		NSArray *photosArr = jsonDictionary[@"photos"];
-		[self.internalSolImageList addObjectsFromArray:photosArr];
+
+		NSLog(@"%@", photosArr[2]);
+		
+		NSLog(@"%@", photosArr[2][@"camera"][@"name"]);
+		
+//		for (NSDictionary *dict in photosArr) {
+//			NSString *earthDate = dict[@"earth_date"];
+//			NSURL *img_src = dict[@"img_src"];
+//
+//
+//
+//		}
+		
+		
+//		[self.internalSolImageList addObjectsFromArray:photosArr];
 		completion(nil);
 		
 //		NSLog(@"count: %li", [photosArr count]);
