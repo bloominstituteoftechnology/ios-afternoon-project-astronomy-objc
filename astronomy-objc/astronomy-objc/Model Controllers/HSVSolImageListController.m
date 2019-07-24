@@ -26,6 +26,9 @@
 	return self;
 }
 
+- (NSArray *)solImageList{
+	return [_internalSolImageList copy];
+}
 
 static NSString *baseSolImagesUrl = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=22&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG";
 

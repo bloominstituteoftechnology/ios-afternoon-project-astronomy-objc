@@ -30,8 +30,10 @@ class PhotosCollectionViewController: UIViewController {
 			
 			solImageListController.fetchImageList(withSol: Int32(solNumber) ) { (_) in
 				
+				DispatchQueue.main.async {
+					self.collectionView.reloadData()
+				}
 			}
-			
 		}
 		
 	}
@@ -39,12 +41,9 @@ class PhotosCollectionViewController: UIViewController {
 
 }
 
-
-
-
 extension PhotosCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 0
+		return solImageListController.solImageList()?.count ?? 0
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

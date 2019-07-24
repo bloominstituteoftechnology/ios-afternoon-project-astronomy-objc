@@ -15,6 +15,8 @@ NS_SWIFT_NAME(SolImageListController)
 
 - (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSError *error ))completion;
 
+- (NSArray *)solImageList;
+
 - (void)Test;
 
 @end
