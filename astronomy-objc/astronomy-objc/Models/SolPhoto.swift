@@ -9,13 +9,13 @@
 import Foundation
 
 class SolPhoto: NSObject {
-	let img_src: String
-	let sol: String
-	let earthDate: String
+	@objc let img_src: String
+	@objc let sol: String
+	@objc let earthDate: String
 	
-	let cameraName: String
+	@objc let cameraName: String
 	
-	let roverName: String
+	@objc let roverName: String
 	
 	
 	
@@ -26,4 +26,10 @@ class SolPhoto: NSObject {
 		self.cameraName = cameraName
 		self.roverName = roverName
 	}
+	
+//	@objc convenience init?(dictionary: [String : Any]) {
+//		
+//		//self.init(img_src: String, sol: String, earthDate: String, cameraName: String, roverName: String);
+//	}
+	
 }
