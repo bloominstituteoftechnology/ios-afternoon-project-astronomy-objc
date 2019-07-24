@@ -3,5 +3,6 @@
 //
 
 #import "HSVSolController.h"
+#import "HSVSolImageListController.h"
 #import "HSVSol.h"
 

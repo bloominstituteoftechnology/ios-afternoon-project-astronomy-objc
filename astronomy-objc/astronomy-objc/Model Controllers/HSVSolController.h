@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class HSVSolPhoto;
+
 
 NS_SWIFT_NAME(SolController)
 
@@ -17,8 +17,6 @@ NS_SWIFT_NAME(SolController)
 
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError *error ))completion;
-
-- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSArray <HSVSolPhoto *> *imageList, NSError *error))completion;
 
 - (NSArray *)Sols;
 

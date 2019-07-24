@@ -13,7 +13,7 @@ class PhotosCollectionViewController: UIViewController {
 	@IBOutlet var collectionView: UICollectionView!
 	
 	var solNumber: Int?
-	var solController: SolController?
+	let solImageListController = SolImageListController()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,7 +28,9 @@ class PhotosCollectionViewController: UIViewController {
 			
 			NSLog("SolNumber: \(solNumber)")
 			
-			
+			solImageListController.fetchImageList(withSol: Int32(solNumber) ) { (_) in
+				
+			}
 			
 		}
 		
