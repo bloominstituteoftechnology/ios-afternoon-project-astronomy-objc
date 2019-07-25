@@ -8,12 +8,13 @@
 
 #import "HSVSolController.h"
 #import "../Models/HSVSol.h"
+#import "../Models/HSVSolPhotDescription.h"
 #import "astronomy_objc-Swift.h"
 
 @interface HSVSolController ()
 
 @property (nonatomic, copy) NSMutableArray<HSVSol *> *internalSol;
-
+@property (nonatomic, copy) NSMutableArray<HSVSolPhotDescription *> *internalPhotosDescriptionList;
 @end
 
 
@@ -24,7 +25,7 @@
 	self = [super init];
 	if (self) {
 		_internalSol = [[NSMutableArray alloc] init];
-		
+		_internalPhotosDescriptionList = [[NSMutableArray alloc] init];
 	}
 	return self;
 }
@@ -36,6 +37,11 @@ static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifest
 - (NSArray *)Sols{
 	return self.internalSol;
 }
+
+- (NSArray *)SolPhotosDescription{
+	return self.internalPhotosDescriptionList;
+}
+
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError *error))completion{
 	
@@ -69,6 +75,15 @@ static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifest
 	
 	
 }
+
+
+
+
+
+
+
+
+
 
 #pragma mark - Private
 

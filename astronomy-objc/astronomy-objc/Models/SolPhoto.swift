@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@objc(HSVSolPhot)
+@objc(HSVSolPhoto)
 class SolPhoto: NSObject {
 	@objc let img_src: String
 	@objc let sol: String

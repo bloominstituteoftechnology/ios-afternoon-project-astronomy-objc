@@ -18,6 +18,7 @@
 		E8146CC022E6CFFC0045BBA7 /* HSVSol.m in Sources */ = {isa = PBXBuildFile; fileRef = E8146CBF22E6CFFC0045BBA7 /* HSVSol.m */; };
 		E8146CC322E6E0E20045BBA7 /* SolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8146CC222E6E0E20045BBA7 /* SolTableViewController.swift */; };
 		E899039422E82A8500BD12E0 /* HSVSolImageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = E899039322E82A8500BD12E0 /* HSVSolImageListController.m */; };
+		E89903AD22E9719600BD12E0 /* HSVSolPhotDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E89903AC22E9719600BD12E0 /* HSVSolPhotDescription.m */; };
 		E8EA0CC722E7CA16006480DE /* SolPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA0CC622E7CA16006480DE /* SolPhoto.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		E8146CC222E6E0E20045BBA7 /* SolTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolTableViewController.swift; sourceTree = "<group>"; };
 		E899039222E82A8500BD12E0 /* HSVSolImageListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVSolImageListController.h; sourceTree = "<group>"; };
 		E899039322E82A8500BD12E0 /* HSVSolImageListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVSolImageListController.m; sourceTree = "<group>"; };
+		E89903AB22E9719600BD12E0 /* HSVSolPhotDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVSolPhotDescription.h; sourceTree = "<group>"; };
+		E89903AC22E9719600BD12E0 /* HSVSolPhotDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVSolPhotDescription.m; sourceTree = "<group>"; };
 		E8EA0CC622E7CA16006480DE /* SolPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +118,8 @@
 				E8146CBE22E6CFFC0045BBA7 /* HSVSol.h */,
 				E8146CBF22E6CFFC0045BBA7 /* HSVSol.m */,
 				E8EA0CC622E7CA16006480DE /* SolPhoto.swift */,
+				E89903AB22E9719600BD12E0 /* HSVSolPhotDescription.h */,
+				E89903AC22E9719600BD12E0 /* HSVSolPhotDescription.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				E899039422E82A8500BD12E0 /* HSVSolImageListController.m in Sources */,
 				E8146CB022E65E6F0045BBA7 /* PhotosCollectionViewController.swift in Sources */,
 				E8146CC022E6CFFC0045BBA7 /* HSVSol.m in Sources */,
+				E89903AD22E9719600BD12E0 /* HSVSolPhotDescription.m in Sources */,
 				E8146CA622E649920045BBA7 /* main.m in Sources */,
 				E8146CB322E6699A0045BBA7 /* PhotoDetailViewController.swift in Sources */,
 				E8146C9822E649910045BBA7 /* AppDelegate.m in Sources */,
