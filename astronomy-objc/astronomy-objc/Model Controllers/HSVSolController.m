@@ -114,14 +114,28 @@ static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifest
 			[self.internalPhotosDescriptionList addObject:spd];
 		}
 		
-//		NSLog(@"count: %li", self.internalPhotosDescriptionList.count);
-		
 		completion(nil);
 	}] resume];
 	
 }
 
-
+- (void)fetchImageWithURL:(NSURL *)url Completion:(void (^)(NSError *error ))completion {
+	
+	NSLog(@"%@", url);
+	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		if (error){
+			completion(error);
+			return;
+		}
+		
+		
+		
+		
+		
+		completion(nil);
+	}] resume];
+	  
+}
 
 
 
