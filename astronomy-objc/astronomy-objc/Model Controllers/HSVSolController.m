@@ -7,15 +7,14 @@
 //
 
 #import "HSVSolController.h"
-#import "HSVSol.h"
-#import "HSVSolPhotDescription.h"
+#import "../Models/HSVSol.h"
+#import "../Models/HSVSolPhotDescription.h"
 #import "astronomy_objc-Swift.h"
 
 @interface HSVSolController ()
 
 @property (nonatomic, copy) NSMutableArray<HSVSol *> *internalSol;
-@property (nonatomic, copy) NSMutableArray<HSVSolPhotDescription*> *internalSolPhotoDescription;
-
+@property (nonatomic, copy) NSMutableArray<HSVSolPhotDescription *> *internalPhotosDescriptionList;
 @end
 
 
@@ -26,7 +25,7 @@
 	self = [super init];
 	if (self) {
 		_internalSol = [[NSMutableArray alloc] init];
-		_internalSolPhotoDescription = [[NSMutableArray alloc] init];
+		_internalPhotosDescriptionList = [[NSMutableArray alloc] init];
 	}
 	return self;
 }
@@ -39,8 +38,8 @@ static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifest
 	return self.internalSol;
 }
 
-- (NSArray *)SolPhotoDescription{
-	return _internalSolPhotoDescription;
+- (NSArray *)SolPhotosDescription{
+	return self.internalPhotosDescriptionList;
 }
 
 
@@ -66,8 +65,11 @@ static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifest
 			return;
 		}
 		
-		NSLog(@"%@", jsonDictionary);
+		NSArray *solArr = jsonDictionary[@"photo_manifest"][@"photos"];
 
+		[self getInternalSolsWitArr:solArr];
+		
+		
 		completion(nil);
 	}] resume];
 	
@@ -75,36 +77,49 @@ static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifest
 }
 
 
-- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSError *error ))completion{
+
+
+- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSError *error ))completion {
+	
 	NSString *newbase = [[NSString alloc] initWithFormat:@"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=%i&api_key=3Gj8mRPLnRIWJUHtRHrcuy5ZL57sOwNaLX35rBCG", sol];
 	NSURL *url = [[NSURL alloc] initWithString:newbase];
-
 	NSLog(@"url: %@", url);
-	
+
 	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error){
 			completion(error);
 			return;
 		}
-		
-		NSError *jsonError ;
+		NSError *jsonError;
 		
 		NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-		
+
 		if (jsonError){
 			NSLog(@"error with NSJSONSerialization: %@", jsonError);
 			completion(jsonError);
 			return;
 		}
 		
-		NSLog(@"%@", jsonDictionary);
+//		NSLog(@"Dictionary is: \n%@", jsonDictionary[@"photos"][0]);
+		NSArray *jsonArr  = jsonDictionary[@"photos"];
 		
-		completion( nil);
+		for(int i = 0; i < (int)jsonArr.count; i++) {
+			NSString *sol = jsonDictionary[@"photos"][i][@"sol"];
+			NSString *img_src = jsonDictionary[@"photos"][i][@"img_src"];
+			NSString *earthDate = jsonDictionary[@"photos"][i][@"earth_date"];
+			NSString *cameraName = jsonDictionary[@"photos"][i][@"camera"][@"name"];
+			NSString *rovername = jsonDictionary[@"photos"][i][@"camera"][@"name"];
+			
+			HSVSolPhotDescription *spd = [[HSVSolPhotDescription alloc] initWithSol:sol img_src:img_src earthDate:earthDate cameraName:cameraName roverName:rovername];
+			[self.internalPhotosDescriptionList addObject:spd];
+		}
 		
+//		NSLog(@"count: %li", self.internalPhotosDescriptionList.count);
+		
+		completion(nil);
 	}] resume];
+	
 }
-
-
 
 
 

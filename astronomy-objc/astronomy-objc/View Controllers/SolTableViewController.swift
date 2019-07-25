@@ -50,7 +50,7 @@ class SolTableViewController: UITableViewController {
 					let sol = solController.sols()[indexPath.row] as? Sol else { return }
 			
 			vc.solNumber = Int(sol.sol)
-			
+			vc.solController = solController
 			
 		}
 	}

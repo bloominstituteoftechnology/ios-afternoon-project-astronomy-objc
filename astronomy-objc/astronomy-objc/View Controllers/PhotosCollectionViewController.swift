@@ -20,6 +20,8 @@ class PhotosCollectionViewController: UIViewController {
 		
 		collectionView.dataSource = self
 		collectionView.delegate = self
+		
+		
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -29,19 +31,20 @@ class PhotosCollectionViewController: UIViewController {
 			NSLog("SolNumber: \(solNumber)")
 			
 			solController?.fetchImageList(withSol: Int32(solNumber), completion: { _ in
+				print("received")
 				DispatchQueue.main.async {
 					self.collectionView.reloadData()
 				}
 			})
 			
-		
+			
 		}
 	}
 }
 
 extension PhotosCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return  solController?.solPhotoDescription()?.count ?? 0
+		return  solController?.solPhotosDescription()?.count ?? 0
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
