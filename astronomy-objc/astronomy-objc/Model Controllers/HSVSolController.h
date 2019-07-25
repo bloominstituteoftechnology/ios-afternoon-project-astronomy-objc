@@ -9,18 +9,19 @@
 #import <Foundation/Foundation.h>
 
 
+@class HSVSolPhotDescription;
 
 NS_SWIFT_NAME(SolController)
 
-
 @interface HSVSolController : NSObject
-
 
 - (void)fetchSolsWithCompletion:(void (^)(NSError *error ))completion;
 
 - (NSArray *)Sols;
 
+- (void)fetchImageListWithSol:(int)sol Completion:(void (^)(NSError *error ))completion;
 
+- (NSArray *)SolPhotoDescription;
 
 @end
 

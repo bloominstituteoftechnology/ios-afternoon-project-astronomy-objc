@@ -28,12 +28,11 @@
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary{
 	
 	NSLog(@"%@", dictionary);
-	_sol = @"";
-	_img_src = @"";
-	_earthDate = @"";
-	_earthDate = @"";
-	_cameraName = @"";
-	_rovername = @"";
+	_sol = dictionary[@"sol"];
+	_img_src = dictionary[@"img_src"];
+	_earthDate = dictionary[@"earth_date"];
+	_cameraName = dictionary[@"camera"][@"name"];
+	_rovername = dictionary[@"camera"][@"name"];
 	
 	return  self;
 }

@@ -12,7 +12,8 @@ import UIKit
 class PhotosCollectionViewController: UIViewController {
 	@IBOutlet var collectionView: UICollectionView!
 	var solNumber: Int?
-
+	
+	var solController: SolController?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -26,7 +27,13 @@ class PhotosCollectionViewController: UIViewController {
 		if let solNumber = solNumber {
 			
 			NSLog("SolNumber: \(solNumber)")
-	
+			
+			solController?.fetchImageList(withSol: Int32(solNumber), completion: { _ in
+				DispatchQueue.main.async {
+					self.collectionView.reloadData()
+				}
+			})
+			
 		
 		}
 	}
@@ -34,7 +41,7 @@ class PhotosCollectionViewController: UIViewController {
 
 extension PhotosCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return  0
+		return  solController?.solPhotoDescription()?.count ?? 0
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

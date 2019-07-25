@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(SolPhotoDescription)
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HSVSolPhotDescription : NSObject
@@ -23,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype) initWithSol:(NSString *)sol img_src:(NSString *)img_src earthDate:(NSString *)earthDate cameraName:(NSString *)cameraName roverName:(NSString *)roverName;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
+
+
 
 @end
 
