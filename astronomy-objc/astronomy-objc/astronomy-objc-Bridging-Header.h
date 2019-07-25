@@ -5,4 +5,5 @@
 #import "HSVSolController.h"
 #import "HSVSolImageListController.h"
 #import "HSVSol.h"
+#import "HSVSolPhotDescription.h"
 

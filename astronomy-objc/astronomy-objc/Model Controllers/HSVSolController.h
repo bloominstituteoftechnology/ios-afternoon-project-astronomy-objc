@@ -23,7 +23,7 @@ NS_SWIFT_NAME(SolController)
 
 - (NSArray *)SolPhotosDescription;
 
-- (void)fetchImageWithURL:(NSURL *)url Completion:(void (^)(NSError *error ))completion;
+- (void)fetchImageWithURL:(NSURL *)url Completion:(void (^)(NSData *, NSError *error ))completion;
 
 
 

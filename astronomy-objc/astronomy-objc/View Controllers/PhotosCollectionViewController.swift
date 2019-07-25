@@ -48,9 +48,21 @@ extension PhotosCollectionViewController: UICollectionViewDelegate, UICollection
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath)
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath) as? PhotosCollectionCell,
+			let solPhoto = solController?.solPhotosDescription()[indexPath.row] as? SolPhotoDescription else { return  UICollectionViewCell()}
+		let url = URL(string: solPhoto.img_src)
 		
-		
+		solController?.fetchImage(with: url, completion: { (data, error) in
+			if let error = error {
+				print(error)
+			}
+			
+			if let data = data {
+				DispatchQueue.main.async {
+					cell.imageView.image = UIImage(data: data)
+				}
+		}
+		})
 		return cell
 	}
 	

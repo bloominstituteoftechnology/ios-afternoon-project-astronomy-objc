@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype) initWithSol:(NSString *)sol img_src:(NSString *)img_src earthDate:(NSString *)earthDate cameraName:(NSString *)cameraName roverName:(NSString *)roverName;
 
-- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
+
 
 
 

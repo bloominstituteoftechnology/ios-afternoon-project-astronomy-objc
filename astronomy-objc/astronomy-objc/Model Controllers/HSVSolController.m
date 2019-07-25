@@ -119,20 +119,19 @@ static NSString *baseSolUrl = @"https://api.nasa.gov/mars-photos/api/v1/manifest
 	
 }
 
-- (void)fetchImageWithURL:(NSURL *)url Completion:(void (^)(NSError *error ))completion {
+- (void)fetchImageWithURL:(NSURL *)url Completion:(void (^)(NSData *,NSError *error ))completion {
 	
 	NSLog(@"%@", url);
 	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error){
-			completion(error);
+			completion(nil,error);
+			return;
+		}
+		if (!data) {
 			return;
 		}
 		
-		
-		
-		
-		
-		completion(nil);
+		completion(data, nil);
 	}] resume];
 	  
 }
