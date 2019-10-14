@@ -53,6 +53,7 @@
 		33923FDE23552867007D6D59 /* REPRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPRoverController.m; sourceTree = "<group>"; };
 		33923FE023552870007D6D59 /* REPCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPCache.h; sourceTree = "<group>"; };
 		33923FE123552870007D6D59 /* REPCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPCache.m; sourceTree = "<group>"; };
+		33923FE323552CDE007D6D59 /* REPRoverControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPRoverControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +160,7 @@
 		33923FDB2355284A007D6D59 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				33923FE323552CDE007D6D59 /* REPRoverControllerDelegate.h */,
 				33923FE023552870007D6D59 /* REPCache.h */,
 				33923FE123552870007D6D59 /* REPCache.m */,
 			);

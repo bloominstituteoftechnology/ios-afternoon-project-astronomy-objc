@@ -4,3 +4,6 @@
 
 #import "REPRoverInfo.h"
 #import "REPRoverPhotoReference.h"
+#import "REPRoverController.h"
+#import "REPCache.h"
+#import "REPRoverControllerDelegate.h"

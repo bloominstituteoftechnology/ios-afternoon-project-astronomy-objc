@@ -7,11 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "REPRoverControllerDelegate.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
+NS_SWIFT_NAME(RoverController)
 @interface REPRoverController : NSObject
 
-@end
+typedef void (^REPNetworkCompletionBlock)(NSError *_Nullable);
 
-NS_ASSUME_NONNULL_END
+@property (nonatomic, readonly, nonnull) NSArray<NSURL *> *currentSolPhotos;
+@property (nonatomic, nullable) NSString *currentRover;
+@property (nonatomic, readonly) NSUInteger currentSolIndex;
+@property (weak, nullable) id <REPRoverControllerDelegate> delegate;
+
+- (instancetype _Nonnull)initWithRoverNamed:(NSString *_Nonnull)name;
+- (void)nextSol;
+- (void)previousSol;
+
+@end
