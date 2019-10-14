@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA5235515D6007D6D59 /* AppDelegate.swift */; };
-		33923FAA235515D6007D6D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA9235515D6007D6D59 /* ViewController.swift */; };
+		33923FAA235515D6007D6D59 /* MarsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA9235515D6007D6D59 /* MarsCollectionViewController.swift */; };
 		33923FAD235515D6007D6D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33923FAB235515D6007D6D59 /* Main.storyboard */; };
 		33923FAF235515D7007D6D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33923FAE235515D7007D6D59 /* Assets.xcassets */; };
 		33923FB2235515D7007D6D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33923FB0235515D7007D6D59 /* LaunchScreen.storyboard */; };
@@ -18,7 +18,7 @@
 		33923FA2235515D6007D6D59 /* Astronomy Combo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy Combo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33923FA5235515D6007D6D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33923FA7235515D6007D6D59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		33923FA9235515D6007D6D59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33923FA9235515D6007D6D59 /* MarsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCollectionViewController.swift; sourceTree = "<group>"; };
 		33923FAC235515D6007D6D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33923FAE235515D7007D6D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33923FB1235515D7007D6D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			children = (
 				33923FA5235515D6007D6D59 /* AppDelegate.swift */,
 				33923FA7235515D6007D6D59 /* SceneDelegate.swift */,
-				33923FA9235515D6007D6D59 /* ViewController.swift */,
+				33923FA9235515D6007D6D59 /* MarsCollectionViewController.swift */,
 				33923FAB235515D6007D6D59 /* Main.storyboard */,
 				33923FAE235515D7007D6D59 /* Assets.xcassets */,
 				33923FB0235515D7007D6D59 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33923FAA235515D6007D6D59 /* ViewController.swift in Sources */,
+				33923FAA235515D6007D6D59 /* MarsCollectionViewController.swift in Sources */,
 				33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
