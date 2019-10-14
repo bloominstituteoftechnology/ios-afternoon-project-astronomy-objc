@@ -16,6 +16,9 @@
 		33923FCF23551A2B007D6D59 /* REPRoverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FCE23551A2B007D6D59 /* REPRoverInfo.m */; };
 		33923FD223551BB1007D6D59 /* REPRoverPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FD123551BB1007D6D59 /* REPRoverPhotoReference.m */; };
 		33923FD423551CE3007D6D59 /* RoverManifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 33923FD323551CE3007D6D59 /* RoverManifest.json */; };
+		33923FD6235526BC007D6D59 /* PhotoResults.json in Resources */ = {isa = PBXBuildFile; fileRef = 33923FD5235526BC007D6D59 /* PhotoResults.json */; };
+		33923FDF23552867007D6D59 /* REPRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FDE23552867007D6D59 /* REPRoverController.m */; };
+		33923FE223552870007D6D59 /* REPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FE123552870007D6D59 /* REPCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,11 @@
 		33923FD023551BB1007D6D59 /* REPRoverPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPRoverPhotoReference.h; sourceTree = "<group>"; };
 		33923FD123551BB1007D6D59 /* REPRoverPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPRoverPhotoReference.m; sourceTree = "<group>"; };
 		33923FD323551CE3007D6D59 /* RoverManifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoverManifest.json; sourceTree = "<group>"; };
+		33923FD5235526BC007D6D59 /* PhotoResults.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhotoResults.json; sourceTree = "<group>"; };
+		33923FDD23552867007D6D59 /* REPRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPRoverController.h; sourceTree = "<group>"; };
+		33923FDE23552867007D6D59 /* REPRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPRoverController.m; sourceTree = "<group>"; };
+		33923FE023552870007D6D59 /* REPCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPCache.h; sourceTree = "<group>"; };
+		33923FE123552870007D6D59 /* REPCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +94,12 @@
 		33923FA4235515D6007D6D59 /* Astronomy Combo */ = {
 			isa = PBXGroup;
 			children = (
+				33923FDC23552854007D6D59 /* Views */,
+				33923FDA23552814007D6D59 /* Model Controller */,
 				33923FBB235519BD007D6D59 /* Models */,
 				33923FBA235516A0007D6D59 /* ViewControllers */,
 				33923FB923551693007D6D59 /* Misc */,
+				33923FDB2355284A007D6D59 /* Helpers */,
 			);
 			path = "Astronomy Combo";
 			sourceTree = "<group>";
@@ -131,8 +142,34 @@
 				33923FC423551A0D007D6D59 /* Astronomy_ComboTests.swift */,
 				33923FC623551A0D007D6D59 /* Info.plist */,
 				33923FD323551CE3007D6D59 /* RoverManifest.json */,
+				33923FD5235526BC007D6D59 /* PhotoResults.json */,
 			);
 			path = "Astronomy ComboTests";
+			sourceTree = "<group>";
+		};
+		33923FDA23552814007D6D59 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33923FDD23552867007D6D59 /* REPRoverController.h */,
+				33923FDE23552867007D6D59 /* REPRoverController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		33923FDB2355284A007D6D59 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				33923FE023552870007D6D59 /* REPCache.h */,
+				33923FE123552870007D6D59 /* REPCache.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		33923FDC23552854007D6D59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33923FD423551CE3007D6D59 /* RoverManifest.json in Resources */,
+				33923FD6235526BC007D6D59 /* PhotoResults.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +279,9 @@
 			files = (
 				33923FAA235515D6007D6D59 /* MarsCollectionViewController.swift in Sources */,
 				33923FD223551BB1007D6D59 /* REPRoverPhotoReference.m in Sources */,
+				33923FE223552870007D6D59 /* REPCache.m in Sources */,
 				33923FCF23551A2B007D6D59 /* REPRoverInfo.m in Sources */,
+				33923FDF23552867007D6D59 /* REPRoverController.m in Sources */,
 				33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
