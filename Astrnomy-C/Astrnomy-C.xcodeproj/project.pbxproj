@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5C9A36E23550699009AFA06 /* JSPhotosController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A36D23550699009AFA06 /* JSPhotosController.m */; };
+		B5C9A373235507D1009AFA06 /* JSNasaApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A372235507D1009AFA06 /* JSNasaApi.m */; };
 		B5F347DD2354FFB500FCD842 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F347DC2354FFB500FCD842 /* AppDelegate.m */; };
 		B5F347E02354FFB500FCD842 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F347DF2354FFB500FCD842 /* SceneDelegate.m */; };
 		B5F347E62354FFB600FCD842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F347E42354FFB600FCD842 /* Main.storyboard */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5C9A36C23550699009AFA06 /* JSPhotosController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPhotosController.h; sourceTree = "<group>"; };
+		B5C9A36D23550699009AFA06 /* JSPhotosController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPhotosController.m; sourceTree = "<group>"; };
+		B5C9A371235507D1009AFA06 /* JSNasaApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSNasaApi.h; sourceTree = "<group>"; };
+		B5C9A372235507D1009AFA06 /* JSNasaApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSNasaApi.m; sourceTree = "<group>"; };
 		B5F347D82354FFB500FCD842 /* Astrnomy-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astrnomy-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F347DB2354FFB500FCD842 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5F347DC2354FFB500FCD842 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 		B5F347F52355004900FCD842 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5C9A36C23550699009AFA06 /* JSPhotosController.h */,
+				B5C9A36D23550699009AFA06 /* JSPhotosController.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -104,6 +112,8 @@
 				B5F347E72354FFB800FCD842 /* Assets.xcassets */,
 				B5F347EC2354FFB800FCD842 /* Info.plist */,
 				B5F347FC235501B200FCD842 /* Astrnomy-C-Bridging-Header.h */,
+				B5C9A371235507D1009AFA06 /* JSNasaApi.h */,
+				B5C9A372235507D1009AFA06 /* JSNasaApi.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -217,8 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C9A373235507D1009AFA06 /* JSNasaApi.m in Sources */,
 				B5F347DD2354FFB500FCD842 /* AppDelegate.m in Sources */,
 				B5F347FE235501B300FCD842 /* PhotosCollectionVC.swift in Sources */,
+				B5C9A36E23550699009AFA06 /* JSPhotosController.m in Sources */,
 				B5F347EE2354FFB800FCD842 /* main.m in Sources */,
 				B5F347E02354FFB500FCD842 /* SceneDelegate.m in Sources */,
 				B5F348022355030F00FCD842 /* PhotoCell.swift in Sources */,
@@ -365,14 +377,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Astrnomy-C/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Astrnomy-C/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambda.Astrnomy-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astrnomy-C/View Controllers/Astrnomy-C-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrnomy-C/Resources/Astrnomy-C-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,14 +398,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Astrnomy-C/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Astrnomy-C/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambda.Astrnomy-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astrnomy-C/View Controllers/Astrnomy-C-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrnomy-C/Resources/Astrnomy-C-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,15 +8,22 @@
 
 import Foundation
 
-struct Photo: NSObject {
-    let id: Int
-    let sol: Int
-    let camera: Camera
-    let earthDate: Date
+class Photo: NSObject {
+    var id: Int?
+    var sol: Int?
+//    let camera: Camera?
+    var earthDate: Date?
     
-    let imageURL: URL
+    var imageURL: URL?
+	
+//	init(id: Int, sol: Int, earthDate: Date, imageURLString: String) {
+//		self.id = id
+//		self.sol = sol
+//		self.earthDate = earthDate
+//		self.imageURL = URL(string: imageURLString)
+//	}
 
-    static let dateFormatter: DateFormatter = {
+    let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone(abbreviation: "GMT")
@@ -31,7 +38,20 @@ struct Photo: NSObject {
 //        return result
 //    }
 	
-	@objc init(dictionary: Dictionary) {
-		#warning("Break down photo dictionary")
+	
+	@objc init(dictionary: Dictionary<String, Any>) {
+		
+		if let id = dictionary["id"] as? Int {
+			self.id = id
+		}
+		if let sol = dictionary["isold"] as? Int {
+			self.sol = sol
+		}
+		if let dateString = dictionary["earthDate"] as? String, let date = dateFormatter.date(from: dateString) {
+			self.earthDate = date
+		}
+		if let urlString = dictionary["imageSrc"] as? String, let url = URL(string: urlString) {
+			self.imageURL = url
+		}
 	}
 }
