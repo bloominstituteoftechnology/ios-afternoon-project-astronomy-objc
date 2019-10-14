@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA5235515D6007D6D59 /* AppDelegate.swift */; };
-		33923FA8235515D6007D6D59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA7235515D6007D6D59 /* SceneDelegate.swift */; };
 		33923FAA235515D6007D6D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA9235515D6007D6D59 /* ViewController.swift */; };
 		33923FAD235515D6007D6D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33923FAB235515D6007D6D59 /* Main.storyboard */; };
 		33923FAF235515D7007D6D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33923FAE235515D7007D6D59 /* Assets.xcassets */; };
@@ -140,7 +139,6 @@
 			files = (
 				33923FAA235515D6007D6D59 /* ViewController.swift in Sources */,
 				33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */,
-				33923FA8235515D6007D6D59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
 				INFOPLIST_FILE = "Astronomy Combo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
 				INFOPLIST_FILE = "Astronomy Combo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
