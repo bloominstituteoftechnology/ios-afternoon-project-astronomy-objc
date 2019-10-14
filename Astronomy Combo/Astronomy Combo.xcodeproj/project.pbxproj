@@ -15,6 +15,7 @@
 		33923FC523551A0D007D6D59 /* Astronomy_ComboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FC423551A0D007D6D59 /* Astronomy_ComboTests.swift */; };
 		33923FCF23551A2B007D6D59 /* REPRoverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FCE23551A2B007D6D59 /* REPRoverInfo.m */; };
 		33923FD223551BB1007D6D59 /* REPRoverPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FD123551BB1007D6D59 /* REPRoverPhotoReference.m */; };
+		33923FD423551CE3007D6D59 /* RoverManifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 33923FD323551CE3007D6D59 /* RoverManifest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		33923FCE23551A2B007D6D59 /* REPRoverInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPRoverInfo.m; sourceTree = "<group>"; };
 		33923FD023551BB1007D6D59 /* REPRoverPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPRoverPhotoReference.h; sourceTree = "<group>"; };
 		33923FD123551BB1007D6D59 /* REPRoverPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPRoverPhotoReference.m; sourceTree = "<group>"; };
+		33923FD323551CE3007D6D59 /* RoverManifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RoverManifest.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			children = (
 				33923FC423551A0D007D6D59 /* Astronomy_ComboTests.swift */,
 				33923FC623551A0D007D6D59 /* Info.plist */,
+				33923FD323551CE3007D6D59 /* RoverManifest.json */,
 			);
 			path = "Astronomy ComboTests";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33923FD423551CE3007D6D59 /* RoverManifest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

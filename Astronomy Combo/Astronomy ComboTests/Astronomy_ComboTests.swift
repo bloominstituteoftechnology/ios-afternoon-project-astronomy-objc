@@ -19,6 +19,19 @@ class Astronomy_ComboTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+	func getData() -> Data {
+		let bundle = Bundle(for: type(of: self))
+		let url = bundle.url(forResource: "RoverManifest", withExtension: "json")!
+		let data = try! Data(contentsOf: url)
+		return data
+	}
+
+	func testData() {
+		let data = getData()
+		XCTAssertNotNil(data)
+		print(data)
+	}
+
 	func testRoverInfo() {
 		let info = RoverInfo()
 	}
