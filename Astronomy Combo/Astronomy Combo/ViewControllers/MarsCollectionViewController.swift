@@ -11,11 +11,23 @@ import UIKit
 class MarsCollectionViewController: UICollectionViewController {
 
 	lazy var roverController: RoverController = {
-		let controller = RoverController()
+		let controller = RoverController(roverNamed: "Curiosity")
 		controller.delegate = self
 		return controller;
 	}()
+}
 
+extension MarsCollectionViewController {
+
+	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return roverController.currentSolPhotos.count
+	}
+
+	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+
+		return cell
+	}
 
 }
 

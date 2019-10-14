@@ -9,6 +9,7 @@
 #import "REPRoverController.h"
 #import "REPRoverControllerDelegate.h"
 #import "REPRoverInfo.h"
+#import "REPRoverPhotoReference.h"
 
 @interface REPRoverController()
 
@@ -22,7 +23,6 @@
 
 static NSString const *baseURL = @"https://api.nasa.gov/mars-photos/api/v1/";
 static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
-
 
 // MARK: - Properties
 - (NSArray<NSURL *> *)currentSolPhotos {
@@ -38,12 +38,21 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 	[self loadRoverManifest];
 }
 
+- (NSUInteger)currentSol {
+	if (!self.roverManifest) {
+		return 0;
+	}
+	REPRoverPhotoReference *reference = self.roverManifest.photosReferences[self.currentSolIndex];
+	return reference.sol;
+}
+
 // MARK: - init
 - (instancetype)initWithRoverNamed:(NSString *)name {
 	if (self = [super init]){
 		_currentRover = name;
 		_internalSolPhotos = @[];
 		_internalSolIndex = 0;
+		[self loadRoverManifest];
 	}
 	return self;
 }
@@ -92,9 +101,6 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 			self.internalSolIndex = 0;
 			self.roverManifest = [[REPRoverInfo alloc] initWithDictionary:jsonDict];
 			[self loadSolImageList];
-//			if (self.delegate) {
-//				[self.delegate roverControllerLoadedData:self];
-//			}
 		}
 	}];
 	[task resume];
@@ -102,18 +108,52 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 
 - (void)loadSolImageList {
 	NSURL *url = [NSURL URLWithString:baseURL];
-	url = [url URLByAppendingPathComponent:@"manifests"];
+	url = [url URLByAppendingPathComponent:@"rovers"];
 	url = [url URLByAppendingPathComponent:self.currentRover];
+	url = [url URLByAppendingPathComponent:@"photos"];
 
+
+	REPRoverPhotoReference *reference = self.roverManifest.photosReferences[self.currentSolIndex];
+	NSString *currentSol = [NSString stringWithFormat:@"%li", reference.sol];
 	NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
-	components.queryItems = @[[NSURLQueryItem queryItemWithName:@"api_key" value:apiKey]];
+	components.queryItems = @[
+		[NSURLQueryItem queryItemWithName:@"api_key" value:apiKey],
+		[NSURLQueryItem queryItemWithName:@"sol" value:currentSol]
+	];
 
 	url = components.URL;
 
 	NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
-		
+		if (error) {
+			NSLog(@"Error loading manifest: %@", error);
+			return;
+		}
 
+		if (data) {
+			NSError *jsonError;
+			NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+			if (jsonError) {
+				NSLog(@"Error decoding manifest: %@", jsonError);
+				return;
+			}
+
+			NSArray *photosArray = jsonDict[@"photos"];
+			NSMutableArray<NSURL *> *photoURLs = [NSMutableArray array];
+			for (NSDictionary *photoDict in photosArray) {
+				NSString *photoURLString = photoDict[@"img_src"];
+
+				NSURLComponents *components = [NSURLComponents componentsWithString:photoURLString];
+				[components setScheme:@"https"];
+				NSURL *photoURL = components.URL;
+				[photoURLs addObject:photoURL];
+			}
+			self.internalSolPhotos = [photoURLs copy];
+
+			if (self.delegate) {
+				[self.delegate roverControllerLoadedData:self];
+			}
+		}
 	}];
 	[task resume];
 }
