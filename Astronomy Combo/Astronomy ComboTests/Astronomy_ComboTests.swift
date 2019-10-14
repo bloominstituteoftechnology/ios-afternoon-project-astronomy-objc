@@ -33,7 +33,23 @@ class Astronomy_ComboTests: XCTestCase {
 	}
 
 	func testRoverInfo() {
-		let info = RoverInfo()
+		let jsonDict = try! JSONSerialization.jsonObject(with: getData(), options: []) as! [String: Any]
+
+		let info = RoverInfo(dictionary: jsonDict)
+		XCTAssertEqual("Curiosity", info?.name)
+		XCTAssertEqual(2281, info?.photosReferences.count)
+	}
+
+	func testPhotoReference() {
+		let jsonDict = try! JSONSerialization.jsonObject(with: getData(), options: []) as! [String: Any]
+
+		let info = RoverInfo(dictionary: jsonDict)
+
+		let firstRover = info?.photosReferences[1]
+
+		XCTAssertEqual(1, firstRover?.sol)
+		XCTAssertEqual(16, firstRover?.totalPhotos)
+		XCTAssertEqual("MAHLI", firstRover?.cameras.first)
 	}
 
 }

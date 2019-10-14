@@ -15,5 +15,6 @@ NS_SWIFT_NAME(RoverInfo)
 @property (nonatomic, readonly, nonnull) NSString *name;
 @property (nonatomic, readonly, nonnull) NSArray<REPRoverPhotoReference *> *photosReferences;
 
+- (instancetype _Nullable )initWithDictionary:(NSDictionary *_Nonnull)dictionary;
 
 @end
