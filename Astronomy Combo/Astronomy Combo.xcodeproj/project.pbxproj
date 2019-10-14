@@ -12,7 +12,20 @@
 		33923FAD235515D6007D6D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33923FAB235515D6007D6D59 /* Main.storyboard */; };
 		33923FAF235515D7007D6D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33923FAE235515D7007D6D59 /* Assets.xcassets */; };
 		33923FB2235515D7007D6D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33923FB0235515D7007D6D59 /* LaunchScreen.storyboard */; };
+		33923FC523551A0D007D6D59 /* Astronomy_ComboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FC423551A0D007D6D59 /* Astronomy_ComboTests.swift */; };
+		33923FCF23551A2B007D6D59 /* REPRoverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FCE23551A2B007D6D59 /* REPRoverInfo.m */; };
+		33923FD223551BB1007D6D59 /* REPRoverPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FD123551BB1007D6D59 /* REPRoverPhotoReference.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33923FC723551A0D007D6D59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33923F9A235515D6007D6D59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33923FA1235515D6007D6D59;
+			remoteInfo = "Astronomy Combo";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		33923FA2235515D6007D6D59 /* Astronomy Combo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy Combo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +35,25 @@
 		33923FAE235515D7007D6D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33923FB1235515D7007D6D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33923FB3235515D7007D6D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33923FC223551A0D007D6D59 /* Astronomy ComboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Astronomy ComboTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33923FC423551A0D007D6D59 /* Astronomy_ComboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronomy_ComboTests.swift; sourceTree = "<group>"; };
+		33923FC623551A0D007D6D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33923FCC23551A2B007D6D59 /* Astronomy Combo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy Combo-Bridging-Header.h"; sourceTree = "<group>"; };
+		33923FCD23551A2B007D6D59 /* REPRoverInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPRoverInfo.h; sourceTree = "<group>"; };
+		33923FCE23551A2B007D6D59 /* REPRoverInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPRoverInfo.m; sourceTree = "<group>"; };
+		33923FD023551BB1007D6D59 /* REPRoverPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPRoverPhotoReference.h; sourceTree = "<group>"; };
+		33923FD123551BB1007D6D59 /* REPRoverPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPRoverPhotoReference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		33923F9F235515D6007D6D59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33923FBF23551A0D007D6D59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				33923FA4235515D6007D6D59 /* Astronomy Combo */,
+				33923FC323551A0D007D6D59 /* Astronomy ComboTests */,
 				33923FA3235515D6007D6D59 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				33923FA2235515D6007D6D59 /* Astronomy Combo.app */,
+				33923FC223551A0D007D6D59 /* Astronomy ComboTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +84,7 @@
 		33923FA4235515D6007D6D59 /* Astronomy Combo */ = {
 			isa = PBXGroup;
 			children = (
+				33923FBB235519BD007D6D59 /* Models */,
 				33923FBA235516A0007D6D59 /* ViewControllers */,
 				33923FB923551693007D6D59 /* Misc */,
 			);
@@ -63,6 +94,7 @@
 		33923FB923551693007D6D59 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				33923FCC23551A2B007D6D59 /* Astronomy Combo-Bridging-Header.h */,
 				33923FA5235515D6007D6D59 /* AppDelegate.swift */,
 				33923FAB235515D6007D6D59 /* Main.storyboard */,
 				33923FAE235515D7007D6D59 /* Assets.xcassets */,
@@ -78,6 +110,26 @@
 				33923FA9235515D6007D6D59 /* MarsCollectionViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		33923FBB235519BD007D6D59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33923FCD23551A2B007D6D59 /* REPRoverInfo.h */,
+				33923FCE23551A2B007D6D59 /* REPRoverInfo.m */,
+				33923FD023551BB1007D6D59 /* REPRoverPhotoReference.h */,
+				33923FD123551BB1007D6D59 /* REPRoverPhotoReference.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33923FC323551A0D007D6D59 /* Astronomy ComboTests */ = {
+			isa = PBXGroup;
+			children = (
+				33923FC423551A0D007D6D59 /* Astronomy_ComboTests.swift */,
+				33923FC623551A0D007D6D59 /* Info.plist */,
+			);
+			path = "Astronomy ComboTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,18 +152,42 @@
 			productReference = 33923FA2235515D6007D6D59 /* Astronomy Combo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		33923FC123551A0D007D6D59 /* Astronomy ComboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33923FC923551A0D007D6D59 /* Build configuration list for PBXNativeTarget "Astronomy ComboTests" */;
+			buildPhases = (
+				33923FBE23551A0D007D6D59 /* Sources */,
+				33923FBF23551A0D007D6D59 /* Frameworks */,
+				33923FC023551A0D007D6D59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33923FC823551A0D007D6D59 /* PBXTargetDependency */,
+			);
+			name = "Astronomy ComboTests";
+			productName = "Astronomy ComboTests";
+			productReference = 33923FC223551A0D007D6D59 /* Astronomy ComboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		33923F9A235515D6007D6D59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = REP;
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Red_Egg Productions";
 				TargetAttributes = {
 					33923FA1235515D6007D6D59 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+					};
+					33923FC123551A0D007D6D59 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 33923FA1235515D6007D6D59;
 					};
 				};
 			};
@@ -129,6 +205,7 @@
 			projectRoot = "";
 			targets = (
 				33923FA1235515D6007D6D59 /* Astronomy Combo */,
+				33923FC123551A0D007D6D59 /* Astronomy ComboTests */,
 			);
 		};
 /* End PBXProject section */
@@ -144,6 +221,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33923FC023551A0D007D6D59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -152,11 +236,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				33923FAA235515D6007D6D59 /* MarsCollectionViewController.swift in Sources */,
+				33923FD223551BB1007D6D59 /* REPRoverPhotoReference.m in Sources */,
+				33923FCF23551A2B007D6D59 /* REPRoverInfo.m in Sources */,
 				33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33923FBE23551A0D007D6D59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33923FC523551A0D007D6D59 /* Astronomy_ComboTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33923FC823551A0D007D6D59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33923FA1235515D6007D6D59 /* Astronomy Combo */;
+			targetProxy = 33923FC723551A0D007D6D59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		33923FAB235515D6007D6D59 /* Main.storyboard */ = {
@@ -296,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
 				INFOPLIST_FILE = "Astronomy Combo/Misc/Info.plist";
@@ -306,6 +409,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.Astronomy-Combo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Combo/Misc/Astronomy Combo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -315,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
 				INFOPLIST_FILE = "Astronomy Combo/Misc/Info.plist";
@@ -325,8 +431,49 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.Astronomy-Combo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Combo/Misc/Astronomy Combo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		33923FCA23551A0D007D6D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				INFOPLIST_FILE = "Astronomy ComboTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.Astronomy-ComboTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astronomy Combo.app/Astronomy Combo";
+			};
+			name = Debug;
+		};
+		33923FCB23551A0D007D6D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				INFOPLIST_FILE = "Astronomy ComboTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.Astronomy-ComboTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astronomy Combo.app/Astronomy Combo";
 			};
 			name = Release;
 		};
@@ -347,6 +494,15 @@
 			buildConfigurations = (
 				33923FB7235515D7007D6D59 /* Debug */,
 				33923FB8235515D7007D6D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33923FC923551A0D007D6D59 /* Build configuration list for PBXNativeTarget "Astronomy ComboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33923FCA23551A0D007D6D59 /* Debug */,
+				33923FCB23551A0D007D6D59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
