@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		753C0FCD23562BC10062BEB4 /* Astronomy-objc-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBB023551D74006007D8 /* Astronomy-objc-Bridging-Header.h */; };
+		753C0FD423566B2C0062BEB4 /* FetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 753C0FD323566B2C0062BEB4 /* FetchPhotoOperation.m */; };
 		75D0F27D2355ABA700ACADCF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0F27C2355ABA700ACADCF /* ImageCollectionViewCell.swift */; };
 		75F2FB9923551D3C006007D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FB9823551D3C006007D8 /* AppDelegate.m */; };
 		75F2FB9C23551D3C006007D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FB9B23551D3C006007D8 /* SceneDelegate.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		753C0FD223566B2C0062BEB4 /* FetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchPhotoOperation.h; sourceTree = "<group>"; };
+		753C0FD323566B2C0062BEB4 /* FetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchPhotoOperation.m; sourceTree = "<group>"; };
 		75D0F27C2355ABA700ACADCF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		75F2FB9423551D3C006007D8 /* Astronomy-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F2FB9723551D3C006007D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		753C0FD123566AE30062BEB4 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				753C0FD223566B2C0062BEB4 /* FetchPhotoOperation.h */,
+				753C0FD323566B2C0062BEB4 /* FetchPhotoOperation.m */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 		75D0F27E2355AC2D00ACADCF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		75F2FB9623551D3C006007D8 /* Astronomy-objc */ = {
 			isa = PBXGroup;
 			children = (
+				753C0FD123566AE30062BEB4 /* Operation */,
 				75D0F27F2355ACA400ACADCF /* Views */,
 				75F2FBC923552D0F006007D8 /* Networking */,
 				75F2FBB723551E1C006007D8 /* Model */,
@@ -223,6 +236,7 @@
 				75F2FBCC23553E16006007D8 /* BYMarsRoverClient.m in Sources */,
 				75D0F27D2355ABA700ACADCF /* ImageCollectionViewCell.swift in Sources */,
 				75F2FBB423551D86006007D8 /* MainCollectionViewController.swift in Sources */,
+				753C0FD423566B2C0062BEB4 /* FetchPhotoOperation.m in Sources */,
 				75F2FBAA23551D3D006007D8 /* main.m in Sources */,
 				75F2FBCF23559340006007D8 /* BYCache.m in Sources */,
 				75F2FB9C23551D3C006007D8 /* SceneDelegate.m in Sources */,
