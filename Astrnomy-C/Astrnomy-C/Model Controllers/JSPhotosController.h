@@ -8,14 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+@class JSRover;
 @class Photos;
-typedef void(^myCompletion)(BOOL);
+typedef void(^myCompletion)(NSArray<NSObject *> *_Nullable);
 
 NS_SWIFT_NAME(PhotosController)
 @interface JSPhotosController : NSObject
 
-@property (nonatomic, readonly) NSArray *photos;
+NS_ASSUME_NONNULL_BEGIN
 
-- (void)fetchNasaPhotos:(myCompletion)completion;
+@property NSArray *photos;
+
+- (NSURL *)urlForManifestFromRover:(NSString *)roverName;
+- (NSURL *)urlForPhotosFromRover:(NSString *)roverName onSol:(NSNumber *)sol;
+- (void)fetchManifestFromRover:(NSString *)roverName withCompletion:(myCompletion _Nullable)block;
+- (void)fetchPhotosFromRover:(NSString *)roverName onSol:(NSNumber *)sol withCompletion:(myCompletion _Nullable)block;
+
+NS_ASSUME_NONNULL_END
 
 @end

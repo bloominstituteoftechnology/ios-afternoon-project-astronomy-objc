@@ -9,12 +9,12 @@
 #import "JSPhotosController.h"
 #import "Astrnomy_C-Swift.h"
 #import "JSNasaApi.h"
+#import "JSRover.h"
 
 @interface JSPhotosController ()
 
-@property NSString *baseURLString;
+@property NSURL *baseURL;
 @property NSString *apiKey;
-@property (nonatomic, readwrite) NSMutableArray *internalPhotos;
 
 @end
 
@@ -23,64 +23,112 @@
 - (instancetype)init {
 	self = [super init];
 	if (self) {
-		_baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos";
+		_baseURL = [[NSURL alloc] initWithString:@"https://api.nasa.gov/mars-photos/api/v1"];
 		_apiKey = [[[JSNasaApi alloc] init] apiKey];
-		_internalPhotos = [[NSMutableArray alloc] init];
+		_photos = @[];
 	}
 	return self;
 }
 
-- (NSArray *)photos {
-	return [self.internalPhotos copy];
+- (NSURL *)urlForManifestFromRover:(NSString *)roverName {
+	NSURL *url = self.baseURL;
+	url = [url URLByAppendingPathComponent:@"manifests"];
+	url = [url URLByAppendingPathComponent:roverName];
+	
+	NSURLComponents *urlcomponents = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:true];
+	[urlcomponents setQueryItems:@[
+		[NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey]
+	]];
+	
+	return urlcomponents.URL;
 }
 
-- (void)fetchNasaPhotos:(myCompletion)completion {
-	NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:self.baseURLString];
+- (NSURL *)urlForPhotosFromRover:(NSString *)roverName onSol:(NSNumber *)sol {
+	NSURL *url = self.baseURL;
+	url = [url URLByAppendingPathComponent:@"rovers"];
+	url = [url URLByAppendingPathComponent:roverName];
+	url = [url URLByAppendingPathComponent:@"photos"];
+	
+	NSURLComponents *urlcomponents = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:true];
+	[urlcomponents setQueryItems:@[
+		[NSURLQueryItem queryItemWithName:@"sol" value:[sol stringValue]],
+		[NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey]
+	]];
+	
+	return urlcomponents.URL;
+}
+
+- (void)fetchManifestFromRover:(NSString *)roverName withCompletion:(myCompletion)block {
+	NSURL *url = [self urlForManifestFromRover:roverName];
+	
+	NSURLSessionDataTask *task =
+	[[NSURLSession sharedSession] dataTaskWithURL:url
+								completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
 		
-		NSArray *queryItems = @[
-			[NSURLQueryItem queryItemWithName:@"sol" value:@"1000"],
-			[NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey]
-		];
+		if (error) {
+			NSLog(@"Error fetching forecast: %@", error);
+			block(nil);
+			return;
+		}
 		
-		urlComponents.queryItems = queryItems;
+		// parse the data
+		NSError *jsonError = nil;
+		NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+		if (jsonError) {
+			NSLog(@"JSON Error: %@", jsonError);
+			block(nil);
+			return;
+		}
 		
-		NSURL *url = urlComponents.URL;
-		NSLog(@"URL: %@", url);
+//		NSLog(@"JSON: %@", json);
 		
-		NSURLSessionDataTask *task =
-		[[NSURLSession sharedSession] dataTaskWithURL:url
-									completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
-			
-			if (error) {
-				NSLog(@"Error fetching forecast: %@", error);
-				completion(false);
-				return;
+		JSRover *rover = [[JSRover alloc] initWithDictionary:json];
+
+		self.photos = [rover.soldescriptions copy];
+		block(@[rover]);
+	}];
+	[task resume];
+}
+
+- (void)fetchPhotosFromRover:(NSString *)roverName onSol:(NSNumber *)sol withCompletion:(myCompletion)block {
+	NSURL *url = [self urlForPhotosFromRover:roverName onSol:sol];
+	
+	NSURLSessionDataTask *task =
+	[[NSURLSession sharedSession] dataTaskWithURL:url
+								completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+		
+		if (error) {
+			NSLog(@"Error fetching forecast: %@", error);
+			block(nil);
+			return;
+		}
+		
+		// parse the data
+		NSError *jsonError = nil;
+		NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+		if (jsonError) {
+			NSLog(@"JSON Error: %@", jsonError);
+			block(nil);
+			return;
+		}
+		
+		//			NSLog(@"JSON: %@", json);
+		
+		NSArray *rawPhotos = json[@"photos"];
+		NSMutableArray *photos = [[NSMutableArray alloc] init];
+		
+		if (![rawPhotos isKindOfClass:NSNull.self]) {
+			for (NSDictionary *photoDict in rawPhotos) {
+				[photos addObject:[[Photo alloc] initWithDictionary:photoDict]];
 			}
 			
-			// parse the data
-			NSError *jsonError = nil;
-			NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-			if (jsonError) {
-				NSLog(@"JSON Error: %@", jsonError);
-				completion(nil);
-				return;
-			}
-			
-//			NSLog(@"JSON: %@", json);
-			
-			NSArray *photos = json[@"photos"];
-			if (![photos isKindOfClass:NSNull.self]) {
-				for (NSDictionary *photoDict in photos) {
-					[self.internalPhotos addObject:[[Photo alloc] initWithDictionary:photoDict]];
-				}
-				
-				
-				completion(true);
-			}
-			
-			completion(false);
-		}];
-		[task resume];
+			self.photos = [photos copy];
+			block(photos);
+		}
+		
+		block(nil);
+	}];
+	[task resume];
 }
 
 @end
