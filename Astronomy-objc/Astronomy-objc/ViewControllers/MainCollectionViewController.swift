@@ -34,6 +34,8 @@ class MainCollectionViewController: UICollectionViewController {
             DispatchQueue.main.async { self.collectionView?.reloadData() }
         }
     }
+    
+    let cache = BYCache()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,14 +70,23 @@ class MainCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCollectionViewCell else { fatalError("cannot make imageCell") }
-        print(photoReferences)
+        
+        
         let photoReference = photoReferences[indexPath.row]
+        
+        if let cacheData = cache.value(forKey: photoReference.refernceId.stringValue) {
+            cell.imageView.image = UIImage(data: cacheData)
+            return cell
+        }
+        
         let url = photoReference.imageURL
+        
         client.fetchImage(fromPhotoURL: url) { (data, error) in
             if let error = error {
                 print("error fetching image: \(error)")
             }
             guard let data = data else { return }
+            self.cache.cacheValue(forKey: photoReference.refernceId.stringValue, value: data)
             DispatchQueue.main.async {
                 cell.imageView.image = UIImage(data: data)
             }
