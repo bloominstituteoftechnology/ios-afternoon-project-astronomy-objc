@@ -19,7 +19,7 @@
 		75F2FBC023551FB6006007D8 /* BYMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBBF23551FB6006007D8 /* BYMarsRover.m */; };
 		75F2FBC223552A80006007D8 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBC123552A80006007D8 /* Camera.swift */; };
 		75F2FBC823552B21006007D8 /* BYMarsPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBC723552B21006007D8 /* BYMarsPhotoReference.m */; };
-		75F2FBCC23553E16006007D8 /* BYMarseRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBCB23553E16006007D8 /* BYMarseRoverClient.m */; };
+		75F2FBCC23553E16006007D8 /* BYMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBCB23553E16006007D8 /* BYMarsRoverClient.m */; };
 		75F2FBCF23559340006007D8 /* BYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBCE23559340006007D8 /* BYCache.m */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +44,8 @@
 		75F2FBC123552A80006007D8 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		75F2FBC623552B21006007D8 /* BYMarsPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYMarsPhotoReference.h; sourceTree = "<group>"; };
 		75F2FBC723552B21006007D8 /* BYMarsPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYMarsPhotoReference.m; sourceTree = "<group>"; };
-		75F2FBCA23553E16006007D8 /* BYMarseRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYMarseRoverClient.h; sourceTree = "<group>"; };
-		75F2FBCB23553E16006007D8 /* BYMarseRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYMarseRoverClient.m; sourceTree = "<group>"; };
+		75F2FBCA23553E16006007D8 /* BYMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYMarsRoverClient.h; sourceTree = "<group>"; };
+		75F2FBCB23553E16006007D8 /* BYMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYMarsRoverClient.m; sourceTree = "<group>"; };
 		75F2FBCD23559340006007D8 /* BYCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYCache.h; sourceTree = "<group>"; };
 		75F2FBCE23559340006007D8 /* BYCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,8 +115,8 @@
 		75F2FBC923552D0F006007D8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				75F2FBCA23553E16006007D8 /* BYMarseRoverClient.h */,
-				75F2FBCB23553E16006007D8 /* BYMarseRoverClient.m */,
+				75F2FBCA23553E16006007D8 /* BYMarsRoverClient.h */,
+				75F2FBCB23553E16006007D8 /* BYMarsRoverClient.m */,
 				75F2FBCD23559340006007D8 /* BYCache.h */,
 				75F2FBCE23559340006007D8 /* BYCache.m */,
 			);
@@ -199,7 +199,7 @@
 				75F2FBBD23551F0B006007D8 /* BYSolDescription.m in Sources */,
 				75F2FBC823552B21006007D8 /* BYMarsPhotoReference.m in Sources */,
 				75F2FBC023551FB6006007D8 /* BYMarsRover.m in Sources */,
-				75F2FBCC23553E16006007D8 /* BYMarseRoverClient.m in Sources */,
+				75F2FBCC23553E16006007D8 /* BYMarsRoverClient.m in Sources */,
 				75F2FBB423551D86006007D8 /* MainCollectionViewController.swift in Sources */,
 				75F2FBAA23551D3D006007D8 /* main.m in Sources */,
 				75F2FBCF23559340006007D8 /* BYCache.m in Sources */,

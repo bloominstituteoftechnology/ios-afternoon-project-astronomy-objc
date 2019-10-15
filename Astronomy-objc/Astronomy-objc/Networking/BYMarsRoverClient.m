@@ -6,11 +6,11 @@
 //  Copyright © 2019 bradleyyin. All rights reserved.
 //
 
-#import "BYMarseRoverClient.h"
+#import "BYMarsRoverClient.h"
 #import "BYMarsRover.h"
 #import "BYMarsPhotoReference.h"
 
-@implementation BYMarseRoverClient
+@implementation BYMarsRoverClient
 
 static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
 static NSString *apiKey = @"bSNJ3GS68u6y5tr1lPJZB4pIGHFzt7thLao353IK";
