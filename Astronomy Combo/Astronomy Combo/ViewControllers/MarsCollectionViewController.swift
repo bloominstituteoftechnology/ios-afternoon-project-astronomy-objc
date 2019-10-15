@@ -36,6 +36,14 @@ class MarsCollectionViewController: UICollectionViewController {
 	@IBAction func nextButtonPushed(_ sender: UIBarButtonItem) {
 		roverController.nextSol()
 	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let detailVC = segue.destination as? MarsDetailViewController {
+			guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+			detailVC.roverController = roverController
+			detailVC.photoURL = roverController.currentSolPhotos[indexPath.row]
+		}
+	}
 }
 
 extension MarsCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -47,6 +55,7 @@ extension MarsCollectionViewController: UICollectionViewDelegateFlowLayout {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarsCell", for: indexPath)
 		guard let marsCell = cell as? MarsCollectionViewCell else { return cell }
 		marsCell.photoURL = roverController.currentSolPhotos[indexPath.row]
+		marsCell.roverController = roverController
 
 		return marsCell
 	}
