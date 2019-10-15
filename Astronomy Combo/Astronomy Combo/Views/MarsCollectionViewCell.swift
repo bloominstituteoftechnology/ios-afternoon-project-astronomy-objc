@@ -15,6 +15,7 @@ class MarsCollectionViewCell: UICollectionViewCell {
 			updateViews()
 		}
 	}
+	var roverController: RoverController?
 
 	private var dataTask: URLSessionDataTask?
 
@@ -26,6 +27,14 @@ class MarsCollectionViewCell: UICollectionViewCell {
 	private func updateViews() {
 		if let url = photoURL {
 			dataTask?.cancel()
+			if let cachedData = roverController?.cache.item(forKey: url.absoluteString) {
+				let image = UIImage(data: cachedData)
+				DispatchQueue.main.async {
+					self.imageView.image = image
+				}
+				return
+			}
+
 			dataTask = URLSession.shared.dataTask(with: url) { (imageData, response, error) in
 				if let error = error {
 					NSLog("Error loading image: \(error)")
@@ -33,6 +42,7 @@ class MarsCollectionViewCell: UICollectionViewCell {
 				}
 
 				guard let imageData = imageData else { return }
+				self.roverController?.cache.cacheItem(withKey: url.absoluteString, item: imageData)
 				let image = UIImage(data: imageData)
 				DispatchQueue.main.async {
 					self.imageView.image = image

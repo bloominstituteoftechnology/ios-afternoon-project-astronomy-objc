@@ -10,7 +10,7 @@
 
 @interface REPCache : NSObject
 
-- (void)cacheItemWithKey:(NSString *)key item:(NSData *)data;
-- (NSData *)itemForKey:(NSString *)key;
+- (void)cacheItemWithKey:(NSString * _Nonnull)key item:(NSData * _Nonnull)data;
+- (NSData * _Nullable)itemForKey:(NSString * _Nonnull)key;
 
 @end

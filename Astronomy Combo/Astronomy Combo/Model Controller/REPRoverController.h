@@ -20,7 +20,7 @@ typedef void (^REPNetworkCompletionBlock)(NSError *_Nullable);
 @property (nonatomic, readonly) NSUInteger currentSolIndex;
 @property (nonatomic, readonly) NSUInteger currentSol;
 @property (weak, nullable) id <REPRoverControllerDelegate> delegate;
-@property (nonatomic, readonly) REPCache *cache;
+@property (nonatomic, readonly, nonnull) REPCache *cache;
 
 - (instancetype _Nonnull)initWithRoverNamed:(NSString *_Nonnull)name;
 - (void)nextSol;
