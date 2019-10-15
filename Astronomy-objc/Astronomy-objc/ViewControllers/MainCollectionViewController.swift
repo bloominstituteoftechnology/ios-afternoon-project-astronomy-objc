@@ -8,9 +8,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "ImageCell"
 
 class MainCollectionViewController: UICollectionViewController {
+    
+    let client = 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,6 @@ class MainCollectionViewController: UICollectionViewController {
     */
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Main Collection View Controller-->
         <scene sceneID="jj2-DZ-7M8">
             <objects>
-                <collectionViewController id="hCF-cV-EYK" sceneMemberID="viewController">
+                <collectionViewController id="hCF-cV-EYK" customClass="MainCollectionViewController" customModule="Astronomy_objc" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="SGh-Y1-VVh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e3c-fc-CVB">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="e3c-fc-CVB" customClass="ImageCollectionViewCell" customModule="Astronomy_objc" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="197" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Im0-iw-crq">
@@ -47,6 +47,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="197" height="200"/>
                                 <connections>
+                                    <outlet property="imageView" destination="SRK-A8-TcG" id="Afr-vL-sQW"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="PhotoDetailShowSegue" id="ccR-9W-O11"/>
                                 </connections>
                             </collectionViewCell>
