@@ -18,7 +18,7 @@ typedef void (^BYImageCompletionBlock)(NSData *, NSError *);
 @interface BYMarseRoverClient : NSObject
 - (void)fetchMarsRoverWithName:(NSString *)name completionBlock:(BYRoverCompletionBlock)completionBlock;
 - (void)fetchPhotosFromRover:(BYMarsRover *)rover onSol:(NSNumber *)sol completionBlock:(BYPhotoReferenceCompletionBlock)completionBlock;
-- (void)fetchImageFromPhotoReference:(NSArray<BYMarsPhotoReference *> *)photoReference completionBlock:(BYImageCompletionBlock)completionBlock;
+- (void)fetchImageFromPhotoURL:(NSURL *)photoURL completionBlock:(BYImageCompletionBlock)completionBlock;
 
 @end
 

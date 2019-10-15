@@ -126,13 +126,36 @@ static NSString *apiKey = @"bSNJ3GS68u6y5tr1lPJZB4pIGHFzt7thLao353IK";
           NSMutableArray *photoReferences = [[NSMutableArray alloc] init];
           
           for (NSDictionary *photo in photoArray) {
-              BYMarsPhotoReference *photoReference = [[BYMarsPhotoReference alloc] init];
+              BYMarsPhotoReference *photoReference = [[BYMarsPhotoReference alloc] initWithDictionary:photo];
+              [photoReferences addObject:photoReference];
           }
           
           
-          completionBlock(rover, nil);
+          completionBlock(photoReferences, nil);
       }];
       [task resume];
+}
+
+- (void)fetchImageFromPhotoURL:(NSURL*)photoURL completionBlock:(BYImageCompletionBlock)completionBlock {
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:photoURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        // Handle the responses (error vs. data)
+
+        // Call the completion block as needed
+        // check the errors
+        
+        if (error) {
+            NSLog(@"Error fetching photo: %@", error);
+            completionBlock(nil, error);
+            return;
+        }
+        
+        // parse the data
+        
+        
+        completionBlock(data, nil);
+    }];
+    [task resume];
 }
 
 @end
