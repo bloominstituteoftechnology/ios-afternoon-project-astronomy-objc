@@ -87,6 +87,12 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 
 	url = components.URL;
 
+	NSData* cachedData = [self.cache itemForKey:url.absoluteString];
+	if (cachedData) {
+		[self decodeRoverManifestWithData:cachedData];
+		return;
+	}
+
 	NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
 		if (error) {
@@ -95,6 +101,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 		}
 
 		if (data) {
+			[self.cache cacheItemWithKey:url.absoluteString item:data];
 			[self decodeRoverManifestWithData:data];
 		}
 	}];
@@ -136,6 +143,12 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 
 	url = components.URL;
 
+	NSData* cachedData = [self.cache itemForKey:url.absoluteString];
+	if (cachedData) {
+		[self decodeImageListFromData:cachedData];
+		return;
+	}
+
 	self.imageListTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
 		if (error) {
@@ -144,6 +157,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 		}
 
 		if (data) {
+			[self.cache cacheItemWithKey:url.absoluteString item:data];
 			[self decodeImageListFromData:data];
 		}
 	}];
