@@ -15,7 +15,7 @@
 @property (nonnull) NSNumber *refernceId;
 @property (nonnull) NSNumber *sol;
 @property (nonnull) Camera *camera;
-@property (nonnull) NSDate *earthDate;
+@property (nonnull) NSString *earthDate;
 @property (nonnull) NSURL *imageURL;
 
 - (instancetype)initWithDictionary:(NSDictionary *_Nonnull)dictionary;

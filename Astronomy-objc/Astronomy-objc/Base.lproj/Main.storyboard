@@ -75,17 +75,60 @@
             </objects>
             <point key="canvasLocation" x="628.98550724637687" y="99.776785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DetailViewController" customModule="Astronomy_objc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijr-Nu-4Z5">
+                                <rect key="frame" x="195" y="108" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9g7-Tl-kOF">
+                                <rect key="frame" x="20" y="149" width="374" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="xsn-h4-kpI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAz-Oc-LtK">
+                                <rect key="frame" x="167" y="520" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1c-A6-5rz">
+                                <rect key="frame" x="177" y="479" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iAz-Oc-LtK" firstAttribute="top" secondItem="m1c-A6-5rz" secondAttribute="bottom" constant="20" id="5j1-rV-Uy1"/>
+                            <constraint firstItem="Ijr-Nu-4Z5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="C7X-v7-68S"/>
+                            <constraint firstItem="9g7-Tl-kOF" firstAttribute="top" secondItem="Ijr-Nu-4Z5" secondAttribute="bottom" constant="20" id="D1M-GV-ziO"/>
+                            <constraint firstItem="Ijr-Nu-4Z5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KyZ-Et-h4s"/>
+                            <constraint firstItem="m1c-A6-5rz" firstAttribute="top" secondItem="9g7-Tl-kOF" secondAttribute="bottom" constant="30" id="SII-SB-0hN"/>
+                            <constraint firstItem="9g7-Tl-kOF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eji-gg-ugM"/>
+                            <constraint firstItem="iAz-Oc-LtK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fAi-h7-YMA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9g7-Tl-kOF" secondAttribute="trailing" constant="20" id="rb8-kF-TMn"/>
+                            <constraint firstItem="m1c-A6-5rz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vh6-vZ-l7j"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="869-Mj-UXS"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="m1c-A6-5rz" id="Xat-kN-vep"/>
+                        <outlet property="earthDateLabel" destination="iAz-Oc-LtK" id="sPN-uM-3eV"/>
+                        <outlet property="imageView" destination="9g7-Tl-kOF" id="Nj7-iG-rrL"/>
+                        <outlet property="solLabel" destination="Ijr-Nu-4Z5" id="iEu-0C-vAN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -58,15 +58,19 @@ class MainCollectionViewController: UICollectionViewController {
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "PhotoDetailShowSegue" {
+            guard let detailVC = segue.destination as? DetailViewController, let indexPath = collectionView.indexPathsForSelectedItems?.first, let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return }
+            let photoReference = photoReferences[indexPath.row]
+            detailVC.photoReference = photoReference
+            detailVC.photo = cell.imageView.image
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
