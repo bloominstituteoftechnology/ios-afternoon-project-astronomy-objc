@@ -25,6 +25,7 @@
     NSError *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
 
+    XCTAssertNil(error);
     NSLog(@"Error: %@", error);
     NSLog(@"JSON: %@", json);
 
@@ -33,8 +34,8 @@
     NSLog(@"rover: %@", rover);
 
     XCTAssertNotNil(rover);
-//    XCTAssertEqualObjects(@"Curiosity", rover.name);
-//    XCTAssertEqual(366206, rover.totalPhotos);
+    XCTAssertEqualObjects(@"Curiosity", rover.name);
+    XCTAssertEqual(366206, rover.totalPhotos);
 
 }
 

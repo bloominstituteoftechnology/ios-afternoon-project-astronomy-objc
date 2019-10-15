@@ -12,7 +12,8 @@
 @implementation MJRPhotoReference
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
 
         _sol = [dictionary[@"sol"] intValue];
         _totalPhotos = [dictionary[@"total_photos"] intValue];

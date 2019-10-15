@@ -26,6 +26,18 @@ class RoverPhotosCollectionViewController: UICollectionViewController {
             guard let rover = rover else { return }
             print("Mars Rover: \(rover)")
         }
+
+        marsRoverClient.fetchPhotos(fromRoverNamed: "curiosity", onSol: 1000) { (roverPhotos, error) in
+            if let error = error {
+                print("Error fetching photos with rover: Curiosity on Sol: 2 \(error)")
+                return
+            }
+
+            DispatchQueue.main.async {
+                guard let photos = roverPhotos else { return }
+                print("Photo count: \(photos.count)")
+            }
+        }
     }
 
     /*

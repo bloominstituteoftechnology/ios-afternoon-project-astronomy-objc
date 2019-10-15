@@ -22,6 +22,7 @@
 		375F89AA2355596E002C27D8 /* MJRPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F89A92355596E002C27D8 /* MJRPhotoReference.m */; };
 		375F89B223557D2A002C27D8 /* Astronomy_ObjcNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F89B123557D2A002C27D8 /* Astronomy_ObjcNetworkTests.m */; };
 		375F89BB2355AD81002C27D8 /* Rover.json in Resources */ = {isa = PBXBuildFile; fileRef = 375F89BA2355AD81002C27D8 /* Rover.json */; };
+		375F89BE2356289D002C27D8 /* MJRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F89BD2356289D002C27D8 /* MJRCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		375F89B323557D2A002C27D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		375F89B923557D6D002C27D8 /* LSIFileHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
 		375F89BA2355AD81002C27D8 /* Rover.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Rover.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		375F89BC2356289D002C27D8 /* MJRCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRCache.h; sourceTree = "<group>"; };
+		375F89BD2356289D002C27D8 /* MJRCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				375F89A82355596E002C27D8 /* MJRPhotoReference.h */,
 				375F89A92355596E002C27D8 /* MJRPhotoReference.m */,
 				375F89A3235522F5002C27D8 /* Camera.swift */,
+				375F89BC2356289D002C27D8 /* MJRCache.h */,
+				375F89BD2356289D002C27D8 /* MJRCache.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 			files = (
 				375F899B23551FB8002C27D8 /* MJRMarsRoverClient.m in Sources */,
 				375F899E23551FD2002C27D8 /* MJRMarsRover.m in Sources */,
+				375F89BE2356289D002C27D8 /* MJRCache.m in Sources */,
 				375F896423550D37002C27D8 /* AppDelegate.m in Sources */,
 				375F897523550D39002C27D8 /* main.m in Sources */,
 				375F897D23551798002C27D8 /* RoverPhotosCollectionViewController.swift in Sources */,

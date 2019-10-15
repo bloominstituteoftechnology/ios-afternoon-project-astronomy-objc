@@ -4,3 +4,5 @@
 
 #import "MJRMarsRoverClient.h"
 #import "MJRMarsRover.h"
+#import "MJRPhotoReference.h"
+
