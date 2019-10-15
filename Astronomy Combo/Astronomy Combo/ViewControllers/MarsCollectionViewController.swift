@@ -60,6 +60,11 @@ extension MarsCollectionViewController: UICollectionViewDelegateFlowLayout {
 		return marsCell
 	}
 
+	override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		guard let marsCell = cell as? MarsCollectionViewCell else { return }
+		marsCell.cancelLoad()
+	}
+
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let half = (view.frame.width / 2) - 20
 		return CGSize(width: half, height: half)

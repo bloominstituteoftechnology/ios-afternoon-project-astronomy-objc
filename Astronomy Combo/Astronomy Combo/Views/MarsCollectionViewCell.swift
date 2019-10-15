@@ -24,9 +24,13 @@ class MarsCollectionViewCell: UICollectionViewCell {
 		imageView.image = nil
 	}
 
+	func cancelLoad() {
+		dataTask?.cancel()
+	}
+
 	private func updateViews() {
 		if let url = photoURL {
-			dataTask?.cancel()
+			cancelLoad()
 			if let cachedData = roverController?.cache.item(forKey: url.absoluteString) {
 				let image = UIImage(data: cachedData)
 				DispatchQueue.main.async {
