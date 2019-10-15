@@ -17,19 +17,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1xZ-lJ-ZXq">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="135" height="130"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oKW-Ub-cbo">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MarsCell" id="oKW-Ub-cbo" customClass="MarsCollectionViewCell" customModule="Astronomy_Combo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eCS-3d-RIh">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veQ-kA-O6v">
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rGf-Kf-Ffb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="rGf-Kf-Ffb" firstAttribute="leading" secondItem="veQ-kA-O6v" secondAttribute="leading" id="8Jm-xo-wSh"/>
+                                                <constraint firstAttribute="bottom" secondItem="rGf-Kf-Ffb" secondAttribute="bottom" id="TEm-99-cqH"/>
+                                                <constraint firstAttribute="trailing" secondItem="rGf-Kf-Ffb" secondAttribute="trailing" id="cZO-wu-UKB"/>
+                                                <constraint firstItem="rGf-Kf-Ffb" firstAttribute="top" secondItem="veQ-kA-O6v" secondAttribute="top" id="l0U-Tg-tr0"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="veQ-kA-O6v" firstAttribute="leading" secondItem="eCS-3d-RIh" secondAttribute="leading" id="Hl0-UE-KM5"/>
+                                        <constraint firstAttribute="bottom" secondItem="veQ-kA-O6v" secondAttribute="bottom" id="OH5-xH-8pq"/>
+                                        <constraint firstAttribute="trailing" secondItem="veQ-kA-O6v" secondAttribute="trailing" id="R2F-e1-CtR"/>
+                                        <constraint firstItem="veQ-kA-O6v" firstAttribute="top" secondItem="eCS-3d-RIh" secondAttribute="top" id="d9v-Le-G6O"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="135" height="130"/>
+                                <connections>
+                                    <outlet property="imageView" destination="rGf-Kf-Ffb" id="KLx-cd-QRy"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -40,7 +67,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98z-m4-Rnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="137"/>
+            <point key="canvasLocation" x="57.971014492753625" y="136.60714285714286"/>
         </scene>
     </scenes>
 </document>
