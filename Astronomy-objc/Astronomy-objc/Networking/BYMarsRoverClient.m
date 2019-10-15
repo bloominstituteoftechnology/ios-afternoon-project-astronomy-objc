@@ -137,7 +137,10 @@ static NSString *apiKey = @"bSNJ3GS68u6y5tr1lPJZB4pIGHFzt7thLao353IK";
 }
 
 - (void)fetchImageFromPhotoURL:(NSURL*)photoURL completionBlock:(BYImageCompletionBlock)completionBlock {
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:photoURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLComponents *components = [NSURLComponents componentsWithURL:photoURL resolvingAgainstBaseURL:YES];
+    components.scheme = @"https";
+    NSURL *securePhotoURL = components.URL;
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:securePhotoURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         // Handle the responses (error vs. data)
 

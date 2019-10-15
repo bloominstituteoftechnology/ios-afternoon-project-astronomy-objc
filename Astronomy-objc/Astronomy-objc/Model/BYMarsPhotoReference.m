@@ -7,6 +7,7 @@
 //
 
 #import "BYMarsPhotoReference.h"
+#import "Astronomy_objc-Swift.h"
 
 @implementation BYMarsPhotoReference
 
@@ -21,10 +22,10 @@
         NSNumber *cameraRoverId = cameraDictionary[@"rover_id"];
         NSString *cameraFullName = cameraDictionary[@"full_name"];
         
-        _camera = [[BYCamera alloc] initWithId:[cameraId intValue] name:name roverId:[cameraRoverId intValue] fullName:cameraFullName];
+        _camera = [[Camera alloc] initWithId:[cameraId intValue] name:name roverId:[cameraRoverId intValue] fullName:cameraFullName];
         
         _earthDate = dictionary[@"earth_date"];
-        _imageURL = dictionary[@"img_src"];
+        _imageURL = [NSURL URLWithString:dictionary[@"img_src"]] ;
     }
     return self;
 }

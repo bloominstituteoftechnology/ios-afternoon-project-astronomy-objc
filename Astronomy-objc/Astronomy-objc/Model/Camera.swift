@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc(BYCamera)
+//@objc(BYCamera)
 class Camera: NSObject {
     let id: Int
     let name: String

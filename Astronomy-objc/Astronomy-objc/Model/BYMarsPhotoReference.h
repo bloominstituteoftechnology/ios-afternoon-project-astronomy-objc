@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Astronomy_objc-Swift.h"
 
 
+@class Camera;
 @interface BYMarsPhotoReference : NSObject
 
 @property (nonnull) NSNumber *refernceId;
 @property (nonnull) NSNumber *sol;
-@property (nonnull) BYCamera *camera;
+@property (nonnull) Camera *camera;
 @property (nonnull) NSDate *earthDate;
 @property (nonnull) NSURL *imageURL;
 
