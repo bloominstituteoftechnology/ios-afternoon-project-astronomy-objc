@@ -24,8 +24,8 @@ class PhotosCollectionVC: UICollectionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		photosControler.fetchNasaPhotos { (success) in
-			if success {
+		photosControler.fetchManifest(fromRover: "curiosity") { (results) in
+			if results != nil {
 				print("Retreived \(self.photosControler.photos.count) photos")
 				DispatchQueue.main.async {
 					self.collectionView.reloadData()

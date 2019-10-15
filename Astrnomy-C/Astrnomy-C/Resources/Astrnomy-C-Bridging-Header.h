@@ -3,3 +3,7 @@
 //
 
 #import "JSPhotosController.h"
+#import "JSRover.h"
+#import "JSSolDescription.h"
+#import "JSCamera.h"
+#import "JSCache.h"
