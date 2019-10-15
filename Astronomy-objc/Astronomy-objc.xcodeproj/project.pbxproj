@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		753C0FCD23562BC10062BEB4 /* Astronomy-objc-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBB023551D74006007D8 /* Astronomy-objc-Bridging-Header.h */; };
 		75D0F27D2355ABA700ACADCF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0F27C2355ABA700ACADCF /* ImageCollectionViewCell.swift */; };
 		75F2FB9923551D3C006007D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FB9823551D3C006007D8 /* AppDelegate.m */; };
 		75F2FB9C23551D3C006007D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FB9B23551D3C006007D8 /* SceneDelegate.m */; };
@@ -213,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753C0FCD23562BC10062BEB4 /* Astronomy-objc-Bridging-Header.h in Sources */,
 				75F2FBC223552A80006007D8 /* Camera.swift in Sources */,
 				75F2FB9923551D3C006007D8 /* AppDelegate.m in Sources */,
 				75F2FBBD23551F0B006007D8 /* BYSolDescription.m in Sources */,

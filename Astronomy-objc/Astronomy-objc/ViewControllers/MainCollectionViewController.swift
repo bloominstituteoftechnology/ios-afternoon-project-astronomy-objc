@@ -12,18 +12,40 @@ private let reuseIdentifier = "ImageCell"
 
 class MainCollectionViewController: UICollectionViewController {
     
-    let client = 
+    private let client = BYMarsRoverClient()
+    private var roverInfo: BYMarsRover? {
+        didSet {
+            solDescription = roverInfo?.solDescriptions[100]
+        }
+    }
+    private var solDescription: BYSolDescription? {
+        didSet {
+            if let rover = roverInfo,
+                let sol = solDescription?.sol {
+                client.fetchPhotos(from: rover, onSol: sol) { (photoRefs, error) in
+                    if let e = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(e)"); return }
+                    self.photoReferences = photoRefs ?? []
+                }
+            }
+        }
+    }
+    private var photoReferences = [BYMarsPhotoReference]() {
+        didSet {
+            DispatchQueue.main.async { self.collectionView?.reloadData() }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        client.fetchMarsRover(withName: "curiosity") { (rover, error) in
+            if let error = error {
+                NSLog("Error fetching info for curiosity: \(error)")
+                return
+            }
+            
+            self.roverInfo = rover
+        }
     }
 
     /*
@@ -41,16 +63,30 @@ class MainCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoReferences.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCollectionViewCell else { fatalError("cannot make imageCell") }
+        print(photoReferences)
+        let photoReference = photoReferences[indexPath.row]
+        let url = photoReference.imageURL
+        client.fetchImage(fromPhotoURL: url) { (data, error) in
+            if let error = error {
+                print("error fetching image: \(error)")
+            }
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                cell.imageView.image = UIImage(data: data)
+            }
+            
+        }
+        
+        
         return cell
     }
+    
+
 
     // MARK: UICollectionViewDelegate
 
@@ -84,3 +120,4 @@ class MainCollectionViewController: UICollectionViewController {
     */
 
 }
+

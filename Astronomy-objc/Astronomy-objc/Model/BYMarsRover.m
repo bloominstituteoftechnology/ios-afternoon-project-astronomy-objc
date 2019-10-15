@@ -31,7 +31,15 @@
         _maxSol = dictionary[@"max_sol"];
         _maxDate = dictionary[@"max_date"];
         _numberOfPhotos = dictionary[@"total_photos"];
-        _solDescriptions = dictionary[@"photos"];
+        NSArray *solDescriptionsArray = dictionary[@"photos"];
+        NSMutableArray *solArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *solDictionary in solDescriptionsArray) {
+            
+            BYSolDescription *solDescription = [[BYSolDescription alloc] initWithDictionary:solDictionary];
+            [solArray addObject:solDescription];
+        }
+        _solDescriptions = [solArray copy];
+
     }
     return self;
 }
