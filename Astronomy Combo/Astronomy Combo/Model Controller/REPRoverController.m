@@ -69,7 +69,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 }
 
 - (void)previousSol {
-	if (self.currentSolIndex - 1 >= 0) {
+	if (self.currentSolIndex != 0) {
 		self.internalSolIndex--;
 		[self loadSolImageList];
 	}
