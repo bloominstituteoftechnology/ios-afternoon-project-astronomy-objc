@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		335D2D6B235547E60034512B /* MarsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D2D6A235547E60034512B /* MarsDetailViewController.swift */; };
 		33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA5235515D6007D6D59 /* AppDelegate.swift */; };
 		33923FAA235515D6007D6D59 /* MarsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FA9235515D6007D6D59 /* MarsCollectionViewController.swift */; };
 		33923FAD235515D6007D6D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33923FAB235515D6007D6D59 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		335D2D6A235547E60034512B /* MarsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsDetailViewController.swift; sourceTree = "<group>"; };
 		33923FA2235515D6007D6D59 /* Astronomy Combo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy Combo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33923FA5235515D6007D6D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33923FA9235515D6007D6D59 /* MarsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				33923FA9235515D6007D6D59 /* MarsCollectionViewController.swift */,
+				335D2D6A235547E60034512B /* MarsDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				33923FCF23551A2B007D6D59 /* REPRoverInfo.m in Sources */,
 				33923FE523553B76007D6D59 /* MarsCollectionViewCell.swift in Sources */,
 				33923FDF23552867007D6D59 /* REPRoverController.m in Sources */,
+				335D2D6B235547E60034512B /* MarsDetailViewController.swift in Sources */,
 				33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
