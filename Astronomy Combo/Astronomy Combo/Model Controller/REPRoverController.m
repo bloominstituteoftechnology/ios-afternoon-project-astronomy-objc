@@ -16,6 +16,7 @@
 @property (nonatomic) NSArray<NSURL *> *internalSolPhotos;
 @property (nonatomic) NSUInteger internalSolIndex;
 @property (nonatomic) REPRoverInfo *roverManifest;
+@property (nonatomic) NSURLSessionDataTask *imageListTask;
 
 @end
 
@@ -107,6 +108,9 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 }
 
 - (void)loadSolImageList {
+	if (self.imageListTask) {
+		[self.imageListTask cancel];
+	}
 	NSURL *url = [NSURL URLWithString:baseURL];
 	url = [url URLByAppendingPathComponent:@"rovers"];
 	url = [url URLByAppendingPathComponent:self.currentRover];
@@ -123,7 +127,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 
 	url = components.URL;
 
-	NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+	self.imageListTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
 		if (error) {
 			NSLog(@"Error loading manifest: %@", error);
@@ -155,7 +159,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 			}
 		}
 	}];
-	[task resume];
+	[self.imageListTask resume];
 }
 
 @end
