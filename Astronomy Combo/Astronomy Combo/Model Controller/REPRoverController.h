@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "REPRoverControllerDelegate.h"
+@class REPCache;
 
 NS_SWIFT_NAME(RoverController)
 @interface REPRoverController : NSObject
@@ -19,6 +20,7 @@ typedef void (^REPNetworkCompletionBlock)(NSError *_Nullable);
 @property (nonatomic, readonly) NSUInteger currentSolIndex;
 @property (nonatomic, readonly) NSUInteger currentSol;
 @property (weak, nullable) id <REPRoverControllerDelegate> delegate;
+@property (nonatomic, readonly) REPCache *cache;
 
 - (instancetype _Nonnull)initWithRoverNamed:(NSString *_Nonnull)name;
 - (void)nextSol;

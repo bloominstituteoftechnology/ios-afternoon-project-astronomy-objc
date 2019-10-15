@@ -10,6 +10,7 @@
 #import "REPRoverControllerDelegate.h"
 #import "REPRoverInfo.h"
 #import "REPRoverPhotoReference.h"
+#import "REPCache.h"
 
 @interface REPRoverController()
 
@@ -53,6 +54,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 		_currentRover = name;
 		_internalSolPhotos = @[];
 		_internalSolIndex = 0;
+		_cache = [[REPCache alloc] init];
 		[self loadRoverManifest];
 	}
 	return self;
@@ -93,18 +95,25 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 		}
 
 		if (data) {
-			NSError *jsonError;
-			NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-			if (jsonError) {
-				NSLog(@"Error decoding manifest: %@", jsonError);
-				return;
-			}
-			self.internalSolIndex = 0;
-			self.roverManifest = [[REPRoverInfo alloc] initWithDictionary:jsonDict];
-			[self loadSolImageList];
+			[self decodeRoverManifestWithData:data];
 		}
 	}];
 	[task resume];
+}
+
+- (void)decodeRoverManifestWithData:(NSData *)data {
+	NSError *jsonError;
+	NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+	if (jsonError) {
+		NSLog(@"Error decoding manifest: %@", jsonError);
+		return;
+	}
+	self.internalSolIndex = 0;
+	self.roverManifest = [[REPRoverInfo alloc] initWithDictionary:jsonDict];
+	if (self.delegate) {
+		[self.delegate roverControllerLoadedData:self];
+	}
+	[self loadSolImageList];
 }
 
 - (void)loadSolImageList {
@@ -135,31 +144,35 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 		}
 
 		if (data) {
-			NSError *jsonError;
-			NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-			if (jsonError) {
-				NSLog(@"Error decoding manifest: %@", jsonError);
-				return;
-			}
-
-			NSArray *photosArray = jsonDict[@"photos"];
-			NSMutableArray<NSURL *> *photoURLs = [NSMutableArray array];
-			for (NSDictionary *photoDict in photosArray) {
-				NSString *photoURLString = photoDict[@"img_src"];
-
-				NSURLComponents *components = [NSURLComponents componentsWithString:photoURLString];
-				[components setScheme:@"https"];
-				NSURL *photoURL = components.URL;
-				[photoURLs addObject:photoURL];
-			}
-			self.internalSolPhotos = [photoURLs copy];
-
-			if (self.delegate) {
-				[self.delegate roverControllerLoadedData:self];
-			}
+			[self decodeImageListFromData:data];
 		}
 	}];
 	[self.imageListTask resume];
+}
+
+- (void)decodeImageListFromData:(NSData *)data {
+	NSError *jsonError;
+	NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+	if (jsonError) {
+		NSLog(@"Error decoding manifest: %@", jsonError);
+		return;
+	}
+
+	NSArray *photosArray = jsonDict[@"photos"];
+	NSMutableArray<NSURL *> *photoURLs = [NSMutableArray array];
+	for (NSDictionary *photoDict in photosArray) {
+		NSString *photoURLString = photoDict[@"img_src"];
+
+		NSURLComponents *components = [NSURLComponents componentsWithString:photoURLString];
+		[components setScheme:@"https"];
+		NSURL *photoURL = components.URL;
+		[photoURLs addObject:photoURL];
+	}
+	self.internalSolPhotos = [photoURLs copy];
+
+	if (self.delegate) {
+		[self.delegate roverControllerLoadedData:self];
+	}
 }
 
 @end
