@@ -11,7 +11,7 @@
 @class BYMarsPhotoReference;
 //typedef NS_ENUM (NSInteger, State) {isReady, isExeciting, isFinished};
 
-@interface FetchPhotoOperation : NSOperation
+@interface BYFetchPhotoOperation : NSOperation
 
 - (instancetype)initWithPhotoReference:(BYMarsPhotoReference *)photoReference;
 

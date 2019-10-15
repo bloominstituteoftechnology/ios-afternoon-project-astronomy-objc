@@ -36,6 +36,9 @@ class MainCollectionViewController: UICollectionViewController {
     }
     
     let cache = BYCache()
+    
+    private let photoFetchQueue = OperationQueue()
+    private var fetchDictionary: [Int: Operation] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +99,37 @@ class MainCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    private func loadImage(forCell cell: ImageCollectionViewCell, forItemAt indexPath: IndexPath) {
+            
+            let photoReference = photoReferences[indexPath.item]
+            
+            let photoFetchOperation = FetchPhotoOperation(marsPhotoReference: photoReference)
+            let saveCacheOperation = BlockOperation {
+                self.cache.cache(value: photoFetchOperation.imageData!, for: photoReference.id)
+            }
+            let setUpImageViewOperation = BlockOperation {
+                DispatchQueue.main.async {
+                    
+                    cell.imageView.image = UIImage(data: photoFetchOperation.imageData!)
+                    
+                }
+            }
+            if let imageData = cache.value(for: photoReference.id) {
+                let image = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    cell.imageView.image = image
+                    print("loaded cache image")
+                    return
+                }
+            }
+
+            saveCacheOperation.addDependency(photoFetchOperation)
+            setUpImageViewOperation.addDependency(photoFetchOperation)
+            photoFetchQueue.addOperations([photoFetchOperation, saveCacheOperation, setUpImageViewOperation], waitUntilFinished: true)
+            
+            fetchDictionary[photoReference.id] = photoFetchOperation
+        }
     
 
 

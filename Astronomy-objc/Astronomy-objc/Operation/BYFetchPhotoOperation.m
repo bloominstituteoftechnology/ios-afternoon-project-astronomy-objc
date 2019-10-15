@@ -6,10 +6,10 @@
 //  Copyright © 2019 bradleyyin. All rights reserved.
 //
 
-#import "FetchPhotoOperation.h"
+#import "BYFetchPhotoOperation.h"
 #import "BYMarsPhotoReference.h"
 
-@interface FetchPhotoOperation ()
+@interface BYFetchPhotoOperation ()
 
 @property BYMarsPhotoReference *photoReference;
 @property NSData *imageData;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation FetchPhotoOperation
+@implementation BYFetchPhotoOperation
 
 @synthesize executing, finished, cancelled;
 
