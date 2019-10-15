@@ -24,6 +24,18 @@ class MarsCollectionViewController: UICollectionViewController {
 		flowLayout.itemSize = CGSize(width: half, height: half)
 		collectionView.collectionViewLayout = flowLayout
 	}
+
+	private func updateViews() {
+		navigationItem.title = "Sol \(roverController.currentSol)"
+	}
+
+	@IBAction func previousButtonPushed(_ sender: UIBarButtonItem) {
+		roverController.previousSol()
+	}
+
+	@IBAction func nextButtonPushed(_ sender: UIBarButtonItem) {
+		roverController.nextSol()
+	}
 }
 
 extension MarsCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -49,6 +61,7 @@ extension MarsCollectionViewController: REPRoverControllerDelegate {
 	func roverControllerLoadedData(_ controller: RoverController) {
 		DispatchQueue.main.async {
 			self.collectionView.reloadData()
+			self.updateViews()
 		}
 	}
 }

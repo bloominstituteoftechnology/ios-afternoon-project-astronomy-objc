@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHZ-Oj-YNM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="suF-ka-EvN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mars Collection View Controller-->
+        <!--Sold on Sols-->
         <scene sceneID="YqW-39-B9q">
             <objects>
                 <collectionViewController id="gHZ-Oj-YNM" customClass="MarsCollectionViewController" customModule="Astronomy_Combo" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,8 +64,38 @@
                             <outlet property="delegate" destination="gHZ-Oj-YNM" id="jG3-lD-mMt"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Sold on Sols" id="62U-E4-8rk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="Kw5-GS-PXe">
+                            <connections>
+                                <action selector="previousButtonPushed:" destination="gHZ-Oj-YNM" id="HaV-ap-Y9f"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="nwP-nO-y0p">
+                            <connections>
+                                <action selector="nextButtonPushed:" destination="gHZ-Oj-YNM" id="aUk-Kh-Yg7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98z-m4-Rnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.11594202898561" y="136.60714285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sIz-bt-hbS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="suF-ka-EvN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bPE-eO-YPQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gHZ-Oj-YNM" kind="relationship" relationship="rootViewController" id="RkY-mX-WRJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSZ-pf-TPw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57.971014492753625" y="136.60714285714286"/>
         </scene>

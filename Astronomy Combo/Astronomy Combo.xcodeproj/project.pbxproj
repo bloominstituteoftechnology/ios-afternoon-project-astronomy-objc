@@ -97,10 +97,10 @@
 		33923FA4235515D6007D6D59 /* Astronomy Combo */ = {
 			isa = PBXGroup;
 			children = (
+				33923FBA235516A0007D6D59 /* ViewControllers */,
 				33923FDC23552854007D6D59 /* Views */,
 				33923FDA23552814007D6D59 /* Model Controller */,
 				33923FBB235519BD007D6D59 /* Models */,
-				33923FBA235516A0007D6D59 /* ViewControllers */,
 				33923FB923551693007D6D59 /* Misc */,
 				33923FDB2355284A007D6D59 /* Helpers */,
 			);
