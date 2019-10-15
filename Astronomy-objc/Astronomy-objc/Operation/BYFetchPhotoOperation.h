@@ -12,8 +12,11 @@
 //typedef NS_ENUM (NSInteger, State) {isReady, isExeciting, isFinished};
 
 @interface BYFetchPhotoOperation : NSOperation
-
+@property NSData *imageData;
 - (instancetype)initWithPhotoReference:(BYMarsPhotoReference *)photoReference;
+@property (nonatomic) BOOL isExecuting;
+@property (nonatomic) BOOL isFinished;
+@property (nonatomic) BOOL isCancelled;
 
 @end
 

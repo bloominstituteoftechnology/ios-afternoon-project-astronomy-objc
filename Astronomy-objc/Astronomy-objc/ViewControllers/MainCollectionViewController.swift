@@ -74,27 +74,27 @@ class MainCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCollectionViewCell else { fatalError("cannot make imageCell") }
         
-        
-        let photoReference = photoReferences[indexPath.row]
-        
-        if let cacheData = cache.value(forKey: photoReference.refernceId.stringValue) {
-            cell.imageView.image = UIImage(data: cacheData)
-            return cell
-        }
-        
-        let url = photoReference.imageURL
-        
-        client.fetchImage(fromPhotoURL: url) { (data, error) in
-            if let error = error {
-                print("error fetching image: \(error)")
-            }
-            guard let data = data else { return }
-            self.cache.cacheValue(forKey: photoReference.refernceId.stringValue, value: data)
-            DispatchQueue.main.async {
-                cell.imageView.image = UIImage(data: data)
-            }
-            
-        }
+        loadImage(forCell: cell, forItemAt: indexPath)
+//        let photoReference = photoReferences[indexPath.row]
+//
+//        if let cacheData = cache.value(forKey: photoReference.refernceId.stringValue) {
+//            cell.imageView.image = UIImage(data: cacheData)
+//            return cell
+//        }
+//
+//        let url = photoReference.imageURL
+//
+//        client.fetchImage(fromPhotoURL: url) { (data, error) in
+//            if let error = error {
+//                print("error fetching image: \(error)")
+//            }
+//            guard let data = data else { return }
+//            self.cache.cacheValue(forKey: photoReference.refernceId.stringValue, value: data)
+//            DispatchQueue.main.async {
+//                cell.imageView.image = UIImage(data: data)
+//            }
+//
+//        }
         
         
         return cell
@@ -104,9 +104,9 @@ class MainCollectionViewController: UICollectionViewController {
             
             let photoReference = photoReferences[indexPath.item]
             
-            let photoFetchOperation = FetchPhotoOperation(marsPhotoReference: photoReference)
+        let photoFetchOperation = BYFetchPhotoOperation(photoReference: photoReference)!
             let saveCacheOperation = BlockOperation {
-                self.cache.cache(value: photoFetchOperation.imageData!, for: photoReference.id)
+                self.cache.cacheValue(forKey: photoReference.refernceId.stringValue, value: photoFetchOperation.imageData)
             }
             let setUpImageViewOperation = BlockOperation {
                 DispatchQueue.main.async {
@@ -115,7 +115,7 @@ class MainCollectionViewController: UICollectionViewController {
                     
                 }
             }
-            if let imageData = cache.value(for: photoReference.id) {
+        if let imageData = cache.value(forKey: photoReference.refernceId.stringValue) {
                 let image = UIImage(data: imageData)
                 DispatchQueue.main.async {
                     cell.imageView.image = image
@@ -126,9 +126,10 @@ class MainCollectionViewController: UICollectionViewController {
 
             saveCacheOperation.addDependency(photoFetchOperation)
             setUpImageViewOperation.addDependency(photoFetchOperation)
+        
             photoFetchQueue.addOperations([photoFetchOperation, saveCacheOperation, setUpImageViewOperation], waitUntilFinished: true)
             
-            fetchDictionary[photoReference.id] = photoFetchOperation
+        fetchDictionary[photoReference.refernceId.intValue] = photoFetchOperation
         }
     
 

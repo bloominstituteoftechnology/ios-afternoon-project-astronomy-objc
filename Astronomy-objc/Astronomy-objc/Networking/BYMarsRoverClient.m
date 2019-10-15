@@ -61,8 +61,7 @@ static NSString *apiKey = @"bSNJ3GS68u6y5tr1lPJZB4pIGHFzt7thLao353IK";
             return;
         }
         
-        // TODO: Parse the data
-        NSLog(@"JSON: %@", json);
+        //NSLog(@"JSON: %@", json);
         //Convert from dictionary to a [Quake] using NSArray
         NSDictionary *photoManifest = json[@"photo_manifest"];
         
@@ -120,7 +119,7 @@ static NSString *apiKey = @"bSNJ3GS68u6y5tr1lPJZB4pIGHFzt7thLao353IK";
           }
           
           // TODO: Parse the data
-          NSLog(@"JSON: %@", json);
+          //NSLog(@"JSON: %@", json);
           //Convert from dictionary to a [Quake] using NSArray
           NSArray *photoArray = json[@"photos"];
           NSMutableArray *photoReferences = [[NSMutableArray alloc] init];
