@@ -8,6 +8,7 @@
 
 #import "BYMarseRoverClient.h"
 #import "BYMarsRover.h"
+#import "BYMarsPhotoReference.h"
 
 @implementation BYMarseRoverClient
 
@@ -121,9 +122,13 @@ static NSString *apiKey = @"bSNJ3GS68u6y5tr1lPJZB4pIGHFzt7thLao353IK";
           // TODO: Parse the data
           NSLog(@"JSON: %@", json);
           //Convert from dictionary to a [Quake] using NSArray
-          NSDictionary *photoManifest = json[@"photo_manifest"];
+          NSArray *photoArray = json[@"photos"];
+          NSMutableArray *photoReferences = [[NSMutableArray alloc] init];
           
-          BYMarsRover *rover = [[BYMarsRover alloc] initWithDictionary:photoManifest];
+          for (NSDictionary *photo in photoArray) {
+              BYMarsPhotoReference *photoReference = [[BYMarsPhotoReference alloc] init];
+          }
+          
           
           completionBlock(rover, nil);
       }];

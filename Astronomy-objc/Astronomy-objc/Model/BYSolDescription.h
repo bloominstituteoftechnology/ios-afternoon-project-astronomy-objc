@@ -10,9 +10,11 @@
 
 @interface BYSolDescription : NSObject
 
-@property int sol;
-@property int totalPhotos;
-@property NSArray<NSString *> *cameras;
+@property (nonnull) NSNumber *sol;
+@property (nonnull) NSNumber *totalPhotos;
+@property (nonnull) NSArray<NSString *> *cameras;
+
+- (instancetype)initWithDictionary:(NSDictionary *_Nonnull)dictionary;
 
 @end
 

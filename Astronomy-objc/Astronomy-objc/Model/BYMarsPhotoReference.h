@@ -12,8 +12,12 @@
 
 @interface BYMarsPhotoReference : NSObject
 
-@property NSNumber *refernceId;
-@property NSNumber *sol;
-@property BYCamera *camera;
+@property (nonnull) NSNumber *refernceId;
+@property (nonnull) NSNumber *sol;
+@property (nonnull) BYCamera *camera;
+@property (nonnull) NSDate *earthDate;
+@property (nonnull) NSURL *imageURL;
+
+- (instancetype)initWithDictionary:(NSDictionary *_Nonnull)dictionary;
 @end
 

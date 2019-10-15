@@ -10,11 +10,11 @@
 
 @implementation BYSolDescription
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _cameras = [[NSArray alloc] init];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    if (self = [super init]) {
+        _sol = dictionary[@"sol"];
+        _totalPhotos = dictionary[@"total_photos"];
+        _cameras = dictionary[@"cameras"];
     }
     return self;
 }
