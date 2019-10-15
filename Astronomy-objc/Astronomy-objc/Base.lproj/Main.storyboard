@@ -57,7 +57,19 @@
                             <outlet property="delegate" destination="hCF-cV-EYK" id="6Wt-w1-0mI"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="KwN-JF-GxQ"/>
+                    <navigationItem key="navigationItem" id="KwN-JF-GxQ">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="prev" id="X7z-Ww-5J7">
+                            <connections>
+                                <action selector="previous:" destination="hCF-cV-EYK" id="hUE-7j-Dry"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="next" id="h0n-zu-iLO">
+                            <connections>
+                                <action selector="next:" destination="hCF-cV-EYK" id="wbf-Sf-Fve"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiw-hx-q97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

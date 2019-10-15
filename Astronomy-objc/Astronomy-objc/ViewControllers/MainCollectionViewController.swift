@@ -12,16 +12,22 @@ private let reuseIdentifier = "ImageCell"
 
 class MainCollectionViewController: UICollectionViewController {
     
+    
+    
     private let client = BYMarsRoverClient()
     private var roverInfo: BYMarsRover? {
         didSet {
             solDescription = roverInfo?.solDescriptions[100]
         }
     }
+    private var solOffset = 0
     private var solDescription: BYSolDescription? {
         didSet {
             if let rover = roverInfo,
                 let sol = solDescription?.sol {
+                DispatchQueue.main.async {
+                    self.title = self.solDescription?.sol.stringValue
+                }
                 client.fetchPhotos(from: rover, onSol: sol) { (photoRefs, error) in
                     if let e = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(e)"); return }
                     self.photoReferences = photoRefs ?? []
@@ -42,7 +48,6 @@ class MainCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         client.fetchMarsRover(withName: "curiosity") { (rover, error) in
             if let error = error {
                 NSLog("Error fetching info for curiosity: \(error)")
@@ -132,38 +137,15 @@ class MainCollectionViewController: UICollectionViewController {
         fetchDictionary[photoReference.refernceId.intValue] = photoFetchOperation
         }
     
-
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+    @IBAction func next(_ sender: Any) {
+        solOffset += 1
+        solDescription = roverInfo?.solDescriptions[100 + solOffset]
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    @IBAction func previous(_ sender: Any) {
+        solOffset -= 1
+        solDescription = roverInfo?.solDescriptions[100 + solOffset]
     }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
 
 }
 
