@@ -11,17 +11,10 @@ import Foundation
 class Photo: NSObject {
     var id: Int?
     var sol: Int?
-//    let camera: Camera?
+    var camera: Camera?
     var earthDate: Date?
     
     var imageURL: URL?
-	
-//	init(id: Int, sol: Int, earthDate: Date, imageURLString: String) {
-//		self.id = id
-//		self.sol = sol
-//		self.earthDate = earthDate
-//		self.imageURL = URL(string: imageURLString)
-//	}
 
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -30,14 +23,6 @@ class Photo: NSObject {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-    
-//    static var jsonDecoder: JSONDecoder {
-//        let result = JSONDecoder()
-//        result.keyDecodingStrategy = .convertFromSnakeCase
-//        result.dateDecodingStrategy = .formatted(dateFormatter)
-//        return result
-//    }
-	
 	
 	@objc init(dictionary: Dictionary<String, Any>) {
 		
