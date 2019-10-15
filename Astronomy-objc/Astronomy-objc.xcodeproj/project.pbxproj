@@ -20,6 +20,7 @@
 		75F2FBC223552A80006007D8 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBC123552A80006007D8 /* Camera.swift */; };
 		75F2FBC823552B21006007D8 /* BYMarsPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBC723552B21006007D8 /* BYMarsPhotoReference.m */; };
 		75F2FBCC23553E16006007D8 /* BYMarseRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBCB23553E16006007D8 /* BYMarseRoverClient.m */; };
+		75F2FBCF23559340006007D8 /* BYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2FBCE23559340006007D8 /* BYCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		75F2FBC723552B21006007D8 /* BYMarsPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYMarsPhotoReference.m; sourceTree = "<group>"; };
 		75F2FBCA23553E16006007D8 /* BYMarseRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYMarseRoverClient.h; sourceTree = "<group>"; };
 		75F2FBCB23553E16006007D8 /* BYMarseRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYMarseRoverClient.m; sourceTree = "<group>"; };
+		75F2FBCD23559340006007D8 /* BYCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYCache.h; sourceTree = "<group>"; };
+		75F2FBCE23559340006007D8 /* BYCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 			children = (
 				75F2FBCA23553E16006007D8 /* BYMarseRoverClient.h */,
 				75F2FBCB23553E16006007D8 /* BYMarseRoverClient.m */,
+				75F2FBCD23559340006007D8 /* BYCache.h */,
+				75F2FBCE23559340006007D8 /* BYCache.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				75F2FBCC23553E16006007D8 /* BYMarseRoverClient.m in Sources */,
 				75F2FBB423551D86006007D8 /* MainCollectionViewController.swift in Sources */,
 				75F2FBAA23551D3D006007D8 /* main.m in Sources */,
+				75F2FBCF23559340006007D8 /* BYCache.m in Sources */,
 				75F2FB9C23551D3C006007D8 /* SceneDelegate.m in Sources */,
 				75F2FBB223551D74006007D8 /* DetailViewController.swift in Sources */,
 			);

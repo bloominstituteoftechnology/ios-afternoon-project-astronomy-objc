@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class BYMarsRover;
+@class BYMarsPhotoReference;
+
+typedef void (^BYRoverCompletionBlock)(BYMarsRover *, NSError *);
+typedef void (^BYPhotoReferenceCompletionBlock)(NSArray<BYMarsPhotoReference *> *, NSError *);
+typedef void (^BYImageCompletionBlock)(NSData *, NSError *);
 
 @interface BYMarseRoverClient : NSObject
+- (void)fetchMarsRoverWithName:(NSString *)name completionBlock:(BYRoverCompletionBlock)completionBlock;
+- (void)fetchPhotosFromRover:(BYMarsRover *)rover onSol:(NSNumber *)sol completionBlock:(BYPhotoReferenceCompletionBlock)completionBlock;
+- (void)fetchImageFromPhotoReference:(NSArray<BYMarsPhotoReference *> *)photoReference completionBlock:(BYImageCompletionBlock)completionBlock;
 
 @end
 
-NS_ASSUME_NONNULL_END
