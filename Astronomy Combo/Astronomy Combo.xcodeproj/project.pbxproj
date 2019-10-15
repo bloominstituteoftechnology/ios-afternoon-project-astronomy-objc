@@ -21,6 +21,7 @@
 		33923FDF23552867007D6D59 /* REPRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FDE23552867007D6D59 /* REPRoverController.m */; };
 		33923FE223552870007D6D59 /* REPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 33923FE123552870007D6D59 /* REPCache.m */; };
 		33923FE523553B76007D6D59 /* MarsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33923FE423553B76007D6D59 /* MarsCollectionViewCell.swift */; };
+		33D1EA272356838F00EF7867 /* REPNetworkLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1EA262356838F00EF7867 /* REPNetworkLoadOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		33923FE123552870007D6D59 /* REPCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPCache.m; sourceTree = "<group>"; };
 		33923FE323552CDE007D6D59 /* REPRoverControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPRoverControllerDelegate.h; sourceTree = "<group>"; };
 		33923FE423553B76007D6D59 /* MarsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCollectionViewCell.swift; sourceTree = "<group>"; };
+		33D1EA252356838F00EF7867 /* REPNetworkLoadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPNetworkLoadOperation.h; sourceTree = "<group>"; };
+		33D1EA262356838F00EF7867 /* REPNetworkLoadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPNetworkLoadOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 				33923FE323552CDE007D6D59 /* REPRoverControllerDelegate.h */,
 				33923FE023552870007D6D59 /* REPCache.h */,
 				33923FE123552870007D6D59 /* REPCache.m */,
+				33D1EA252356838F00EF7867 /* REPNetworkLoadOperation.h */,
+				33D1EA262356838F00EF7867 /* REPNetworkLoadOperation.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				33923FE223552870007D6D59 /* REPCache.m in Sources */,
 				33923FCF23551A2B007D6D59 /* REPRoverInfo.m in Sources */,
 				33923FE523553B76007D6D59 /* MarsCollectionViewCell.swift in Sources */,
+				33D1EA272356838F00EF7867 /* REPNetworkLoadOperation.m in Sources */,
 				33923FDF23552867007D6D59 /* REPRoverController.m in Sources */,
 				335D2D6B235547E60034512B /* MarsDetailViewController.swift in Sources */,
 				33923FA6235515D6007D6D59 /* AppDelegate.swift in Sources */,
