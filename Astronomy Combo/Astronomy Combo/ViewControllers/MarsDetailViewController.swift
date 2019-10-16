@@ -11,7 +11,8 @@ import UIKit
 class MarsDetailViewController: UIViewController {
 
 	@IBOutlet weak var imageView: UIImageView!
-	
+	@IBOutlet weak var scrollView: UIScrollView!
+
 	var photoURL: URL? {
 		didSet {
 			updateViews()
@@ -21,6 +22,10 @@ class MarsDetailViewController: UIViewController {
 
 	private func updateViews() {
 		loadViewIfNeeded()
+
+		scrollView.minimumZoomScale = 1
+		scrollView.maximumZoomScale = 10
+
 		guard let url = photoURL else { return }
 
 		if let cachedData = roverController?.cache.item(forKey: url.absoluteString) {
@@ -49,4 +54,10 @@ class MarsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+extension MarsDetailViewController: UIScrollViewDelegate {
+	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+		return imageView
+	}
 }
