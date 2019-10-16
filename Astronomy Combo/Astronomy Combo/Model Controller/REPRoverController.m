@@ -103,6 +103,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 		if (data) {
 			[self.cache cacheItemWithKey:url.absoluteString item:data];
 			[self decodeRoverManifestWithData:data];
+			NSLog(@"loaded manifest");
 		}
 	}];
 	[task resume];
@@ -152,13 +153,14 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 	self.imageListTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
 		if (error) {
-			NSLog(@"Error loading manifest: %@", error);
+			NSLog(@"Error loading photo list: %@", error);
 			return;
 		}
 
 		if (data) {
 			[self.cache cacheItemWithKey:url.absoluteString item:data];
 			[self decodeImageListFromData:data];
+			NSLog(@"loaded photo list");
 		}
 	}];
 	[self.imageListTask resume];
@@ -168,7 +170,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 	NSError *jsonError;
 	NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 	if (jsonError) {
-		NSLog(@"Error decoding manifest: %@", jsonError);
+		NSLog(@"Error decoding photo list: %@", jsonError);
 		return;
 	}
 
