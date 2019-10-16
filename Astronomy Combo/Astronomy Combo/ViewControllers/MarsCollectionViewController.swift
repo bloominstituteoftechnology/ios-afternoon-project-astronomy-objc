@@ -54,8 +54,8 @@ extension MarsCollectionViewController: UICollectionViewDelegateFlowLayout {
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarsCell", for: indexPath)
 		guard let marsCell = cell as? MarsCollectionViewCell else { return cell }
-		marsCell.photoURL = roverController.currentSolPhotos[indexPath.row]
 		marsCell.roverController = roverController
+		marsCell.photoURL = roverController.currentSolPhotos[indexPath.row]
 
 		return marsCell
 	}
