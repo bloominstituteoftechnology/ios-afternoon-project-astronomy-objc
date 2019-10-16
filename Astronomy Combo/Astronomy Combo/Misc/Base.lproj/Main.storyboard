@@ -72,11 +72,18 @@
                                 <action selector="previousButtonPushed:" destination="gHZ-Oj-YNM" id="HaV-ap-Y9f"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="nwP-nO-y0p">
-                            <connections>
-                                <action selector="nextButtonPushed:" destination="gHZ-Oj-YNM" id="aUk-Kh-Yg7"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="fastForward" id="nwP-nO-y0p">
+                                <connections>
+                                    <action selector="nextButtonPushed:" destination="gHZ-Oj-YNM" id="aUk-Kh-Yg7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="b9a-76-wqg">
+                                <connections>
+                                    <action selector="searchButtonPushed:" destination="gHZ-Oj-YNM" id="1eN-UV-7Ri"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98z-m4-Rnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

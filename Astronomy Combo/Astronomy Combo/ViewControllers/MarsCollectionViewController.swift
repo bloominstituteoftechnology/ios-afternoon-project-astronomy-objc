@@ -37,6 +37,19 @@ class MarsCollectionViewController: UICollectionViewController {
 		roverController.nextSol()
 	}
 
+	@IBAction func searchButtonPushed(_ sender: UIBarButtonItem) {
+		let alertVC = UIAlertController(title: "Choose a Rover", message: nil, preferredStyle: .actionSheet)
+		alertVC.addAction(UIAlertAction(title: "Curiosity", style: .default, handler: roverSelectionChanged(_:)))
+		alertVC.addAction(UIAlertAction(title: "Spirit", style: .default, handler: roverSelectionChanged(_:)))
+		alertVC.addAction(UIAlertAction(title: "Opportunity", style: .default, handler: roverSelectionChanged(_:)))
+		alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+		present(alertVC, animated: true)
+	}
+
+	func roverSelectionChanged(_ action: UIAlertAction) {
+		roverController.currentRover = action.title
+	}
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let detailVC = segue.destination as? MarsDetailViewController {
 			guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
