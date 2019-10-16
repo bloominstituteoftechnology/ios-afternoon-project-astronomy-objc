@@ -65,15 +65,19 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 - (void)nextSol {
 	if (self.currentSolIndex + 1 < self.roverManifest.photosReferences.count) {
 		self.internalSolIndex++;
-		[self loadSolImageList];
+	} else {
+		self.internalSolIndex = 0;
 	}
+	[self loadSolImageList];
 }
 
 - (void)previousSol {
 	if (self.currentSolIndex != 0) {
 		self.internalSolIndex--;
-		[self loadSolImageList];
+	} else {
+		self.internalSolIndex = self.roverManifest.photosReferences.count - 1;
 	}
+	[self loadSolImageList];
 }
 
 // MARK: - Network loading
