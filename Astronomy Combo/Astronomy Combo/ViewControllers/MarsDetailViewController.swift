@@ -21,6 +21,7 @@ class MarsDetailViewController: UIViewController {
 	var roverController: RoverController?
 
 	private func updateViews() {
+		navigationItem.title = "Mars Image"
 		loadViewIfNeeded()
 
 		scrollView.minimumZoomScale = 1
@@ -32,6 +33,7 @@ class MarsDetailViewController: UIViewController {
 			let image = UIImage(data: cachedData)
 			DispatchQueue.main.async {
 				self.imageView.image = image
+				self.navigationItem.title = "Mars Image: \(image?.size.width ?? 0) x \(image?.size.height ?? 0)"
 			}
 			return
 		}
@@ -47,6 +49,7 @@ class MarsDetailViewController: UIViewController {
 			let image = UIImage(data: imageData)
 			DispatchQueue.main.async {
 				self.imageView.image = image
+				self.navigationItem.title = "Mars Image: \(image?.size.width ?? 0) x \(image?.size.height ?? 0)"
 			}
 		}.resume()
 	}
