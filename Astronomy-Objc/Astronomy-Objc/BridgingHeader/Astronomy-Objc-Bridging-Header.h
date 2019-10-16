@@ -5,4 +5,6 @@
 #import "MJRMarsRoverClient.h"
 #import "MJRMarsRover.h"
 #import "MJRPhotoReference.h"
+#import "MJRConcurrentOperation.h"
+#import "MJRFetchPhotoOperation.h"
 

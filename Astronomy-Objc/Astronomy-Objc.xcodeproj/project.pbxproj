@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37282BA62356BE5F00D596B3 /* MJRConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282BA52356BE5F00D596B3 /* MJRConcurrentOperation.m */; };
+		37282BA92356C94200D596B3 /* MJRFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282BA82356C94200D596B3 /* MJRFetchPhotoOperation.m */; };
+		37282BAD2356F3AF00D596B3 /* NSURL+MJRHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282BAC2356F3AF00D596B3 /* NSURL+MJRHTTPS.m */; };
 		375F896423550D37002C27D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F896323550D37002C27D8 /* AppDelegate.m */; };
 		375F896723550D37002C27D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F896623550D37002C27D8 /* SceneDelegate.m */; };
 		375F896D23550D37002C27D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375F896B23550D37002C27D8 /* Main.storyboard */; };
@@ -43,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37282BA42356BE5F00D596B3 /* MJRConcurrentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRConcurrentOperation.h; sourceTree = "<group>"; };
+		37282BA52356BE5F00D596B3 /* MJRConcurrentOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRConcurrentOperation.m; sourceTree = "<group>"; };
+		37282BA72356C94200D596B3 /* MJRFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRFetchPhotoOperation.h; sourceTree = "<group>"; };
+		37282BA82356C94200D596B3 /* MJRFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRFetchPhotoOperation.m; sourceTree = "<group>"; };
+		37282BAB2356F3AF00D596B3 /* NSURL+MJRHTTPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+MJRHTTPS.h"; sourceTree = "<group>"; };
+		37282BAC2356F3AF00D596B3 /* NSURL+MJRHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+MJRHTTPS.m"; sourceTree = "<group>"; };
 		375F895F23550D37002C27D8 /* Astronomy-Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		375F896223550D37002C27D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		375F896323550D37002C27D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +110,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37282BA32356BE3300D596B3 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				37282BA42356BE5F00D596B3 /* MJRConcurrentOperation.h */,
+				37282BA52356BE5F00D596B3 /* MJRConcurrentOperation.m */,
+				37282BA72356C94200D596B3 /* MJRFetchPhotoOperation.h */,
+				37282BA82356C94200D596B3 /* MJRFetchPhotoOperation.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		37282BAA2356F37500D596B3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37282BAB2356F3AF00D596B3 /* NSURL+MJRHTTPS.h */,
+				37282BAC2356F3AF00D596B3 /* NSURL+MJRHTTPS.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		375F895623550D37002C27D8 = {
 			isa = PBXGroup;
 			children = (
@@ -126,11 +155,13 @@
 		375F896123550D37002C27D8 /* Astronomy-Objc */ = {
 			isa = PBXGroup;
 			children = (
+				37282BA32356BE3300D596B3 /* Operations */,
 				375F899523551BEF002C27D8 /* Networking */,
 				375F899423551BE2002C27D8 /* Model */,
 				375F899023551B2A002C27D8 /* Views */,
 				375F899223551B77002C27D8 /* ViewControllers */,
 				375F898F23551B1C002C27D8 /* Storyboards */,
+				37282BAA2356F37500D596B3 /* Helpers */,
 				375F899123551B3B002C27D8 /* Resources */,
 				375F899323551B98002C27D8 /* BridgingHeader */,
 			);
@@ -361,7 +392,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				375F899B23551FB8002C27D8 /* MJRMarsRoverClient.m in Sources */,
+				37282BA92356C94200D596B3 /* MJRFetchPhotoOperation.m in Sources */,
+				37282BA62356BE5F00D596B3 /* MJRConcurrentOperation.m in Sources */,
 				375F899E23551FD2002C27D8 /* MJRMarsRover.m in Sources */,
+				37282BAD2356F3AF00D596B3 /* NSURL+MJRHTTPS.m in Sources */,
 				375F89BE2356289D002C27D8 /* MJRCache.m in Sources */,
 				375F896423550D37002C27D8 /* AppDelegate.m in Sources */,
 				375F897523550D39002C27D8 /* main.m in Sources */,

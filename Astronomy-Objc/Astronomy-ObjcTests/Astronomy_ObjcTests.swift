@@ -7,11 +7,14 @@
 //
 
 import XCTest
+@testable import Astronomy_Objc
+
 
 class Astronomy_ObjcTests: XCTestCase {
 
     func testExample() {
-        
+        let concurrentOperation = MJRConcurrentOperation()
+        concurrentOperation.state()
     }
 
 }
