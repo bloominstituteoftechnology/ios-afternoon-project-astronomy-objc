@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(NetworkLoadOperation)
 @interface REPNetworkLoadOperation : NSOperation
 
 @property (nonatomic, readonly) NSURL *url;

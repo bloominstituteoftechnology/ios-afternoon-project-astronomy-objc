@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(Cache)
 @interface REPCache : NSObject
 
 - (void)cacheItemWithKey:(NSString * _Nonnull)key item:(NSData * _Nonnull)data;

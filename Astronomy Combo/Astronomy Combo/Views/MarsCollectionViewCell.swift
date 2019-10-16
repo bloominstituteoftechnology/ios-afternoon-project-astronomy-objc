@@ -17,7 +17,7 @@ class MarsCollectionViewCell: UICollectionViewCell {
 	}
 	var roverController: RoverController?
 
-	private var dataTask: URLSessionDataTask?
+	private var networkLoadOperation: NetworkLoadOperation?
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
@@ -25,10 +25,15 @@ class MarsCollectionViewCell: UICollectionViewCell {
 	}
 
 	func cancelLoad() {
-		dataTask?.cancel()
+		networkLoadOperation?.cancel()
+		networkLoadOperation = nil
 	}
 
 	private func updateViews() {
+		loadImage()
+	}
+
+	private func loadImage() {
 		if let url = photoURL {
 			cancelLoad()
 			if let cachedData = roverController?.cache.item(forKey: url.absoluteString) {
@@ -36,23 +41,33 @@ class MarsCollectionViewCell: UICollectionViewCell {
 				DispatchQueue.main.async {
 					self.imageView.image = image
 				}
+				NSLog("loaded from cache")
 				return
 			}
 
-			dataTask = URLSession.shared.dataTask(with: url) { (imageData, response, error) in
-				if let error = error {
-					NSLog("Error loading image: \(error)")
-					return
-				}
-
-				guard let imageData = imageData else { return }
-				self.roverController?.cache.cacheItem(withKey: url.absoluteString, item: imageData)
-				let image = UIImage(data: imageData)
-				DispatchQueue.main.async {
-					self.imageView.image = image
+			let netOp = NetworkLoadOperation(url: url)
+			let cacheOp = BlockOperation {// [weak self] in
+				NSLog("cache run")
+				if let imageData = self.networkLoadOperation?.loadedData {
+					self.roverController?.cache.cacheItem(withKey: url.absoluteString, item: imageData)
 				}
 			}
-			dataTask?.resume()
+			let completionOp = BlockOperation {// [weak self] in
+				NSLog("completion run")
+				if let imageData = self.networkLoadOperation?.loadedData {
+					self.imageView.image = UIImage(data: imageData)
+					NSLog("loaded from net")
+				}
+			}
+
+			networkLoadOperation = netOp
+			cacheOp.addDependency(netOp)
+			completionOp.addDependency(netOp)
+
+			roverController?.fetchQueue.addOperation(netOp)
+			roverController?.fetchQueue.addOperation(cacheOp)
+			OperationQueue.main.addOperation(completionOp)
+//			netOp.start()
 		}
 	}
 }

@@ -71,7 +71,7 @@ extension MarsCollectionViewController: UICollectionViewDelegateFlowLayout {
 	}
 }
 
-extension MarsCollectionViewController: REPRoverControllerDelegate {
+extension MarsCollectionViewController: RoverControllerDelegate {
 	func roverControllerLoadedData(_ controller: RoverController) {
 		DispatchQueue.main.async {
 			self.collectionView.reloadData()

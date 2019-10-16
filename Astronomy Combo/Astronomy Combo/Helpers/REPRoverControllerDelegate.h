@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class REPRoverController;
+NS_SWIFT_NAME(RoverControllerDelegate)
 @protocol REPRoverControllerDelegate <NSObject>
 
 - (void)roverControllerLoadedData:(REPRoverController *_Nonnull)controller;

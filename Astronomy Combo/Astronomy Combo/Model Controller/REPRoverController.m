@@ -55,6 +55,7 @@ static NSString const *apiKey = @"qPsPa3fha2BfdNhwEPExvkMJXp0EgCCTCz82qd3z";
 		_internalSolPhotos = @[];
 		_internalSolIndex = 0;
 		_cache = [[REPCache alloc] init];
+		_fetchQueue = [[NSOperationQueue alloc] init];
 		[self loadRoverManifest];
 	}
 	return self;

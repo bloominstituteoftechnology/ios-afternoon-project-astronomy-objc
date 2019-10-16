@@ -17,6 +17,8 @@
 @property (nonatomic, getter = isExecuting) BOOL executing;
 @property (nonatomic, getter = isFinished) BOOL finished;
 
+@property (nonatomic) dispatch_queue_t stateQueue;
+
 @end
 
 @implementation REPNetworkLoadOperation
@@ -37,41 +39,62 @@
 }
 
 - (BOOL)isReady {
-	return [super isReady] && _ready;
+	__block bool value;
+	dispatch_sync(self.stateQueue, ^{
+		value = [super isReady] && _ready;
+	});
+	return value;
 }
 
 - (BOOL)isExecuting {
-	return _executing;
+	__block bool value;
+	dispatch_sync(self.stateQueue, ^{
+		value = _executing;
+	});
+	return value;
 }
 
 - (BOOL)isFinished {
-	return _finished;
+	__block bool value;
+	dispatch_sync(self.stateQueue, ^{
+		value = _finished;
+	});
+	return value;
 }
 
 - (void)setReady:(BOOL)ready {
 	[self willChangeValueForKey:@"isReady"];
-	_ready = ready;
+	dispatch_sync(self.stateQueue, ^{
+		_ready = ready;
+	});
 	[self didChangeValueForKey:@"isReady"];
 }
 
 - (void)setExecuting:(BOOL)executing {
 	[self willChangeValueForKey:@"isExecuting"];
-	_executing = executing;
+	dispatch_sync(self.stateQueue, ^{
+		_executing = executing;
+	});
 	[self didChangeValueForKey:@"isExecuting"];
 }
 
 - (void)setFinished:(BOOL)finished {
 	[self willChangeValueForKey:@"isFinished"];
-	_finished = finished;
+	dispatch_sync(self.stateQueue, ^{
+		_finished = finished;
+	});
 	[self didChangeValueForKey:@"isFinished"];
 }
 
 - (instancetype)initWithURL:(NSURL *)url {
 	if (self = [super init]) {
 		_internalURL = url;
-		_ready = YES;
-		_executing = NO;
-		_finished = NO;
+		_stateQueue = dispatch_queue_create("com.astronomy.combo", DISPATCH_QUEUE_SERIAL);
+		dispatch_sync(self.stateQueue, ^{
+			_ready = YES;
+			_executing = NO;
+			_finished = NO;
+		});
 	}
 	return self;
 }
@@ -95,6 +118,8 @@
 		}
 
 		self.internalLoadedData = data;
+		self.executing = NO;
+		self.finished = YES;
 	}];
 	[self.dataTask resume];
 }
