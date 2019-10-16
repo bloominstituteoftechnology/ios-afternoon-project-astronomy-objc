@@ -26,7 +26,7 @@ class MarsCollectionViewController: UICollectionViewController {
 	}
 
 	private func updateViews() {
-		navigationItem.title = "Sol \(roverController.currentSol)"
+		navigationItem.title = "\(roverController.currentRover ?? "") Sol \(roverController.currentSol)"
 	}
 
 	@IBAction func previousButtonPushed(_ sender: UIBarButtonItem) {

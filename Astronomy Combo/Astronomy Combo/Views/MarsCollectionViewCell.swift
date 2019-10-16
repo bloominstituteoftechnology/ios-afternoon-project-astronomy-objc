@@ -41,22 +41,18 @@ class MarsCollectionViewCell: UICollectionViewCell {
 				DispatchQueue.main.async {
 					self.imageView.image = image
 				}
-				NSLog("loaded from cache")
 				return
 			}
 
 			let netOp = NetworkLoadOperation(url: url)
 			let cacheOp = BlockOperation {// [weak self] in
-				NSLog("cache run")
 				if let imageData = self.networkLoadOperation?.loadedData {
 					self.roverController?.cache.cacheItem(withKey: url.absoluteString, item: imageData)
 				}
 			}
 			let completionOp = BlockOperation {// [weak self] in
-				NSLog("completion run")
 				if let imageData = self.networkLoadOperation?.loadedData {
 					self.imageView.image = UIImage(data: imageData)
-					NSLog("loaded from net")
 				}
 			}
 
@@ -67,7 +63,6 @@ class MarsCollectionViewCell: UICollectionViewCell {
 			roverController?.fetchQueue.addOperation(netOp)
 			roverController?.fetchQueue.addOperation(cacheOp)
 			OperationQueue.main.addOperation(completionOp)
-//			netOp.start()
 		}
 	}
 }
