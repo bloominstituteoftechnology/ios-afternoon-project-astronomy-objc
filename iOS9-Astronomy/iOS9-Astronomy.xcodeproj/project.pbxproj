@@ -7,53 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32307A33237B53DB002E869F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A32237B53DB002E869F /* AppDelegate.m */; };
-		32307A36237B53DB002E869F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A35237B53DB002E869F /* SceneDelegate.m */; };
-		32307A39237B53DB002E869F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A38237B53DB002E869F /* ViewController.m */; };
-		32307A3C237B53DB002E869F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32307A3A237B53DB002E869F /* Main.storyboard */; };
-		32307A3E237B53DD002E869F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32307A3D237B53DD002E869F /* Assets.xcassets */; };
-		32307A41237B53DD002E869F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32307A3F237B53DD002E869F /* LaunchScreen.storyboard */; };
-		32307A44237B53DD002E869F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A43237B53DD002E869F /* main.m */; };
-		32307A4E237B53DD002E869F /* iOS9_AstronomyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A4D237B53DD002E869F /* iOS9_AstronomyTests.m */; };
+		32307A78237B5728002E869F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A77237B5728002E869F /* AppDelegate.m */; };
+		32307A7B237B5728002E869F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A7A237B5728002E869F /* SceneDelegate.m */; };
+		32307A7E237B5728002E869F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A7D237B5728002E869F /* ViewController.m */; };
+		32307A81237B5728002E869F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32307A7F237B5728002E869F /* Main.storyboard */; };
+		32307A83237B5729002E869F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32307A82237B5729002E869F /* Assets.xcassets */; };
+		32307A86237B5729002E869F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32307A84237B5729002E869F /* LaunchScreen.storyboard */; };
+		32307A89237B5729002E869F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A88237B5729002E869F /* main.m */; };
+		32307A96237B579C002E869F /* JLCMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A95237B579C002E869F /* JLCMarsPhoto.m */; };
+		32307A99237B57A9002E869F /* JLCMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A98237B57A9002E869F /* JLCMarsRover.m */; };
+		32307A9C237B57B8002E869F /* JLCSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A9B237B57B8002E869F /* JLCSolDescription.m */; };
+		32307A9F237B57C4002E869F /* JLCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A9E237B57C4002E869F /* JLCCamera.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		32307A4A237B53DD002E869F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 32307A26237B53DB002E869F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 32307A2D237B53DB002E869F;
-			remoteInfo = "iOS9-Astronomy";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		32307A2E237B53DB002E869F /* iOS9-Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS9-Astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32307A31237B53DB002E869F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		32307A32237B53DB002E869F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		32307A34237B53DB002E869F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		32307A35237B53DB002E869F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		32307A37237B53DB002E869F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		32307A38237B53DB002E869F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		32307A3B237B53DB002E869F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		32307A3D237B53DD002E869F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		32307A40237B53DD002E869F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		32307A42237B53DD002E869F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32307A43237B53DD002E869F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32307A49237B53DD002E869F /* iOS9-AstronomyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS9-AstronomyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32307A4D237B53DD002E869F /* iOS9_AstronomyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS9_AstronomyTests.m; sourceTree = "<group>"; };
-		32307A4F237B53DD002E869F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32307A73237B5728002E869F /* iOS9-Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS9-Astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32307A76237B5728002E869F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		32307A77237B5728002E869F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		32307A79237B5728002E869F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		32307A7A237B5728002E869F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		32307A7C237B5728002E869F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		32307A7D237B5728002E869F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		32307A80237B5728002E869F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		32307A82237B5729002E869F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32307A85237B5729002E869F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32307A87237B5729002E869F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32307A88237B5729002E869F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32307A94237B579C002E869F /* JLCMarsPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCMarsPhoto.h; sourceTree = "<group>"; };
+		32307A95237B579C002E869F /* JLCMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCMarsPhoto.m; sourceTree = "<group>"; };
+		32307A97237B57A9002E869F /* JLCMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCMarsRover.h; sourceTree = "<group>"; };
+		32307A98237B57A9002E869F /* JLCMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCMarsRover.m; sourceTree = "<group>"; };
+		32307A9A237B57B8002E869F /* JLCSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCSolDescription.h; sourceTree = "<group>"; };
+		32307A9B237B57B8002E869F /* JLCSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCSolDescription.m; sourceTree = "<group>"; };
+		32307A9D237B57C4002E869F /* JLCCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCCamera.h; sourceTree = "<group>"; };
+		32307A9E237B57C4002E869F /* JLCCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		32307A2B237B53DB002E869F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		32307A46237B53DD002E869F /* Frameworks */ = {
+		32307A70237B5728002E869F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,61 +54,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32307A25237B53DB002E869F = {
+		32307A6A237B5728002E869F = {
 			isa = PBXGroup;
 			children = (
-				32307A30237B53DB002E869F /* iOS9-Astronomy */,
-				32307A4C237B53DD002E869F /* iOS9-AstronomyTests */,
-				32307A2F237B53DB002E869F /* Products */,
+				32307A75237B5728002E869F /* iOS9-Astronomy */,
+				32307A74237B5728002E869F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		32307A2F237B53DB002E869F /* Products */ = {
+		32307A74237B5728002E869F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32307A2E237B53DB002E869F /* iOS9-Astronomy.app */,
-				32307A49237B53DD002E869F /* iOS9-AstronomyTests.xctest */,
+				32307A73237B5728002E869F /* iOS9-Astronomy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32307A30237B53DB002E869F /* iOS9-Astronomy */ = {
+		32307A75237B5728002E869F /* iOS9-Astronomy */ = {
 			isa = PBXGroup;
 			children = (
-				32307A31237B53DB002E869F /* AppDelegate.h */,
-				32307A32237B53DB002E869F /* AppDelegate.m */,
-				32307A34237B53DB002E869F /* SceneDelegate.h */,
-				32307A35237B53DB002E869F /* SceneDelegate.m */,
-				32307A37237B53DB002E869F /* ViewController.h */,
-				32307A38237B53DB002E869F /* ViewController.m */,
-				32307A3A237B53DB002E869F /* Main.storyboard */,
-				32307A3D237B53DD002E869F /* Assets.xcassets */,
-				32307A3F237B53DD002E869F /* LaunchScreen.storyboard */,
-				32307A42237B53DD002E869F /* Info.plist */,
-				32307A43237B53DD002E869F /* main.m */,
+				32307A92237B5768002E869F /* Models */,
+				32307A93237B5771002E869F /* Model Controllers */,
+				32307A90237B5742002E869F /* View Controllers */,
+				32307A91237B574F002E869F /* Storyboards */,
+				32307A8F237B5735002E869F /* Resources */,
+				32307A87237B5729002E869F /* Info.plist */,
 			);
 			path = "iOS9-Astronomy";
 			sourceTree = "<group>";
 		};
-		32307A4C237B53DD002E869F /* iOS9-AstronomyTests */ = {
+		32307A8F237B5735002E869F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				32307A4D237B53DD002E869F /* iOS9_AstronomyTests.m */,
-				32307A4F237B53DD002E869F /* Info.plist */,
+				32307A76237B5728002E869F /* AppDelegate.h */,
+				32307A77237B5728002E869F /* AppDelegate.m */,
+				32307A79237B5728002E869F /* SceneDelegate.h */,
+				32307A7A237B5728002E869F /* SceneDelegate.m */,
+				32307A82237B5729002E869F /* Assets.xcassets */,
+				32307A88237B5729002E869F /* main.m */,
 			);
-			path = "iOS9-AstronomyTests";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		32307A90237B5742002E869F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32307A7C237B5728002E869F /* ViewController.h */,
+				32307A7D237B5728002E869F /* ViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		32307A91237B574F002E869F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				32307A7F237B5728002E869F /* Main.storyboard */,
+				32307A84237B5729002E869F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		32307A92237B5768002E869F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32307A94237B579C002E869F /* JLCMarsPhoto.h */,
+				32307A95237B579C002E869F /* JLCMarsPhoto.m */,
+				32307A97237B57A9002E869F /* JLCMarsRover.h */,
+				32307A98237B57A9002E869F /* JLCMarsRover.m */,
+				32307A9A237B57B8002E869F /* JLCSolDescription.h */,
+				32307A9B237B57B8002E869F /* JLCSolDescription.m */,
+				32307A9D237B57C4002E869F /* JLCCamera.h */,
+				32307A9E237B57C4002E869F /* JLCCamera.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32307A93237B5771002E869F /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32307A2D237B53DB002E869F /* iOS9-Astronomy */ = {
+		32307A72237B5728002E869F /* iOS9-Astronomy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32307A52237B53DD002E869F /* Build configuration list for PBXNativeTarget "iOS9-Astronomy" */;
+			buildConfigurationList = 32307A8C237B5729002E869F /* Build configuration list for PBXNativeTarget "iOS9-Astronomy" */;
 			buildPhases = (
-				32307A2A237B53DB002E869F /* Sources */,
-				32307A2B237B53DB002E869F /* Frameworks */,
-				32307A2C237B53DB002E869F /* Resources */,
+				32307A6F237B5728002E869F /* Sources */,
+				32307A70237B5728002E869F /* Frameworks */,
+				32307A71237B5728002E869F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -125,46 +153,25 @@
 			);
 			name = "iOS9-Astronomy";
 			productName = "iOS9-Astronomy";
-			productReference = 32307A2E237B53DB002E869F /* iOS9-Astronomy.app */;
+			productReference = 32307A73237B5728002E869F /* iOS9-Astronomy.app */;
 			productType = "com.apple.product-type.application";
-		};
-		32307A48237B53DD002E869F /* iOS9-AstronomyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 32307A55237B53DD002E869F /* Build configuration list for PBXNativeTarget "iOS9-AstronomyTests" */;
-			buildPhases = (
-				32307A45237B53DD002E869F /* Sources */,
-				32307A46237B53DD002E869F /* Frameworks */,
-				32307A47237B53DD002E869F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				32307A4B237B53DD002E869F /* PBXTargetDependency */,
-			);
-			name = "iOS9-AstronomyTests";
-			productName = "iOS9-AstronomyTests";
-			productReference = 32307A49237B53DD002E869F /* iOS9-AstronomyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		32307A26237B53DB002E869F /* Project object */ = {
+		32307A6B237B5728002E869F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JLC;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "jake connerly";
 				TargetAttributes = {
-					32307A2D237B53DB002E869F = {
+					32307A72237B5728002E869F = {
 						CreatedOnToolsVersion = 11.2;
-					};
-					32307A48237B53DD002E869F = {
-						CreatedOnToolsVersion = 11.2;
-						TestTargetID = 32307A2D237B53DB002E869F;
 					};
 				};
 			};
-			buildConfigurationList = 32307A29237B53DB002E869F /* Build configuration list for PBXProject "iOS9-Astronomy" */;
+			buildConfigurationList = 32307A6E237B5728002E869F /* Build configuration list for PBXProject "iOS9-Astronomy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,80 +179,60 @@
 				en,
 				Base,
 			);
-			mainGroup = 32307A25237B53DB002E869F;
-			productRefGroup = 32307A2F237B53DB002E869F /* Products */;
+			mainGroup = 32307A6A237B5728002E869F;
+			productRefGroup = 32307A74237B5728002E869F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32307A2D237B53DB002E869F /* iOS9-Astronomy */,
-				32307A48237B53DD002E869F /* iOS9-AstronomyTests */,
+				32307A72237B5728002E869F /* iOS9-Astronomy */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		32307A2C237B53DB002E869F /* Resources */ = {
+		32307A71237B5728002E869F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32307A41237B53DD002E869F /* LaunchScreen.storyboard in Resources */,
-				32307A3E237B53DD002E869F /* Assets.xcassets in Resources */,
-				32307A3C237B53DB002E869F /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		32307A47237B53DD002E869F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				32307A86237B5729002E869F /* LaunchScreen.storyboard in Resources */,
+				32307A83237B5729002E869F /* Assets.xcassets in Resources */,
+				32307A81237B5728002E869F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		32307A2A237B53DB002E869F /* Sources */ = {
+		32307A6F237B5728002E869F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32307A39237B53DB002E869F /* ViewController.m in Sources */,
-				32307A33237B53DB002E869F /* AppDelegate.m in Sources */,
-				32307A44237B53DD002E869F /* main.m in Sources */,
-				32307A36237B53DB002E869F /* SceneDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		32307A45237B53DD002E869F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				32307A4E237B53DD002E869F /* iOS9_AstronomyTests.m in Sources */,
+				32307A9F237B57C4002E869F /* JLCCamera.m in Sources */,
+				32307A9C237B57B8002E869F /* JLCSolDescription.m in Sources */,
+				32307A7E237B5728002E869F /* ViewController.m in Sources */,
+				32307A78237B5728002E869F /* AppDelegate.m in Sources */,
+				32307A89237B5729002E869F /* main.m in Sources */,
+				32307A7B237B5728002E869F /* SceneDelegate.m in Sources */,
+				32307A96237B579C002E869F /* JLCMarsPhoto.m in Sources */,
+				32307A99237B57A9002E869F /* JLCMarsRover.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		32307A4B237B53DD002E869F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 32307A2D237B53DB002E869F /* iOS9-Astronomy */;
-			targetProxy = 32307A4A237B53DD002E869F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		32307A3A237B53DB002E869F /* Main.storyboard */ = {
+		32307A7F237B5728002E869F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				32307A3B237B53DB002E869F /* Base */,
+				32307A80237B5728002E869F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		32307A3F237B53DD002E869F /* LaunchScreen.storyboard */ = {
+		32307A84237B5729002E869F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				32307A40237B53DD002E869F /* Base */,
+				32307A85237B5729002E869F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -253,7 +240,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		32307A50237B53DD002E869F /* Debug */ = {
+		32307A8A237B5729002E869F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -311,7 +298,7 @@
 			};
 			name = Debug;
 		};
-		32307A51237B53DD002E869F /* Release */ = {
+		32307A8B237B5729002E869F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -363,7 +350,7 @@
 			};
 			name = Release;
 		};
-		32307A53237B53DD002E869F /* Debug */ = {
+		32307A8D237B5729002E869F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -380,7 +367,7 @@
 			};
 			name = Debug;
 		};
-		32307A54237B53DD002E869F /* Release */ = {
+		32307A8E237B5729002E869F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -394,80 +381,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakeconnerly.iOS9-Astronomy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		32307A56237B53DD002E869F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM84C6XKT7;
-				INFOPLIST_FILE = "iOS9-AstronomyTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jakeconnerly.iOS9-AstronomyTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS9-Astronomy.app/iOS9-Astronomy";
-			};
-			name = Debug;
-		};
-		32307A57237B53DD002E869F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM84C6XKT7;
-				INFOPLIST_FILE = "iOS9-AstronomyTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jakeconnerly.iOS9-AstronomyTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS9-Astronomy.app/iOS9-Astronomy";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32307A29237B53DB002E869F /* Build configuration list for PBXProject "iOS9-Astronomy" */ = {
+		32307A6E237B5728002E869F /* Build configuration list for PBXProject "iOS9-Astronomy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				32307A50237B53DD002E869F /* Debug */,
-				32307A51237B53DD002E869F /* Release */,
+				32307A8A237B5729002E869F /* Debug */,
+				32307A8B237B5729002E869F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32307A52237B53DD002E869F /* Build configuration list for PBXNativeTarget "iOS9-Astronomy" */ = {
+		32307A8C237B5729002E869F /* Build configuration list for PBXNativeTarget "iOS9-Astronomy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				32307A53237B53DD002E869F /* Debug */,
-				32307A54237B53DD002E869F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32307A55237B53DD002E869F /* Build configuration list for PBXNativeTarget "iOS9-AstronomyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				32307A56237B53DD002E869F /* Debug */,
-				32307A57237B53DD002E869F /* Release */,
+				32307A8D237B5729002E869F /* Debug */,
+				32307A8E237B5729002E869F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 32307A26237B53DB002E869F /* Project object */;
+	rootObject = 32307A6B237B5728002E869F /* Project object */;
 }
