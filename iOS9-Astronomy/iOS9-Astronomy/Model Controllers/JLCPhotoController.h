@@ -10,17 +10,19 @@
 #import "JLCMarsRover.h"
 #import "JLCMarsPhoto.h"
 
-NS_ASSUME_NONNULL_BEGIN
+//NS_ASSUME_NONNULL_BEGIN
+
+
 
 @interface JLCPhotoController : NSObject
 
 @property (nonatomic, readonly) JLCMarsRover *rover;
 
-@property (nonatomic) NSArray *photos;
+@property (nonatomic) NSArray<JLCMarsPhoto *> *photos;
 
 - (void)fetchPhotosfromSol:(double)sol
-                  completion:(void (^)(JLCMarsPhoto *photo, NSError *error))completion;
+                  completion:(void (^)(NSArray<JLCMarsPhoto *> *photo, NSError *error))completion;
 
 @end
 
-NS_ASSUME_NONNULL_END
+//NS_ASSUME_NONNULL_END

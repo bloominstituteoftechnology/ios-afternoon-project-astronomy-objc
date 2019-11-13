@@ -6,3 +6,4 @@
 #import "JLCMarsRover.h"
 #import "JLCCamera.h"
 #import "JLCCache.h"
+#import "JLCPhotoController.h"

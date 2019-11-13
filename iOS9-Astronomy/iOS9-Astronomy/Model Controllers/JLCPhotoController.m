@@ -16,7 +16,7 @@ static NSString *const baseURLString = @"https://api.nasa.gov/mars-photos/api/v1
 static NSString *const apiKey = @"vQblSa0mIwQQsaR8gD7E0a6oj84C13qSLOpDyaSO";
 
 - (void)fetchPhotosfromSol:(double)sol
-                completion:(void (^)(JLCMarsPhoto * _Nonnull, NSError * _Nonnull))completion {
+                completion:(void (^)(JLCMarsPhoto *photo, NSError *error))completion {
     
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
@@ -61,14 +61,14 @@ static NSString *const apiKey = @"vQblSa0mIwQQsaR8gD7E0a6oj84C13qSLOpDyaSO";
         
         
         NSArray *photosArray = json[@"photos"];
-        NSMutableArray *photos = [[NSMutableArray alloc] init];
+        NSMutableArray *roverPhotos = [[NSMutableArray alloc] init];
         
         for (NSDictionary *dictionary in photosArray) {
             JLCMarsPhoto *photo = [[JLCMarsPhoto alloc] initWithDictionary:dictionary];
-            [photos addObject:photo];
+            [roverPhotos addObject:photo];
         }
-        self.photos = photos;
-        completion(photos, nil);
+        self.photos = roverPhotos;
+        completion(roverPhotos, nil);
     }];
     [task resume];
     
