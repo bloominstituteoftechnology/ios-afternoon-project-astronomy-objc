@@ -21,6 +21,7 @@
 		32307AAB237BA3C1002E869F /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32307AAA237BA3C1002E869F /* PhotosCollectionViewController.swift */; };
 		32307AAE237BA3F6002E869F /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32307AAD237BA3F6002E869F /* PhotoDetailViewController.swift */; };
 		32307AB1237BA482002E869F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32307AB0237BA482002E869F /* PhotoCollectionViewCell.swift */; };
+		32307AB5237BB6F3002E869F /* JLCPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307AB4237BB6F3002E869F /* JLCPhotoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +45,12 @@
 		32307AA4237B639F002E869F /* JLCCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCCamera.m; sourceTree = "<group>"; };
 		32307AA6237B7536002E869F /* JLCCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCCache.h; sourceTree = "<group>"; };
 		32307AA7237B7536002E869F /* JLCCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCCache.m; sourceTree = "<group>"; };
-		32307AA9237BA3C1002E869F /* iOS9-Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS9-Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 		32307AAA237BA3C1002E869F /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		32307AAD237BA3F6002E869F /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		32307AB0237BA482002E869F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		32307AB2237BA5A3002E869F /* iOS9-Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS9-Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		32307AB3237BB6F3002E869F /* JLCPhotoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCPhotoController.h; sourceTree = "<group>"; };
+		32307AB4237BB6F3002E869F /* JLCPhotoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCPhotoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +87,6 @@
 				32307A93237B5771002E869F /* Model Controllers */,
 				32307AAF237BA45F002E869F /* Custom Views */,
 				32307A90237B5742002E869F /* View Controllers */,
-				32307AAC237BA3CF002E869F /* Bridging Headers */,
 				32307A91237B574F002E869F /* Storyboards */,
 				32307A8F237B5735002E869F /* Resources */,
 				32307A87237B5729002E869F /* Info.plist */,
@@ -110,6 +112,7 @@
 			children = (
 				32307AAA237BA3C1002E869F /* PhotosCollectionViewController.swift */,
 				32307AAD237BA3F6002E869F /* PhotoDetailViewController.swift */,
+				32307AB2237BA5A3002E869F /* iOS9-Astronomy-Bridging-Header.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -143,16 +146,10 @@
 		32307A93237B5771002E869F /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				32307AB3237BB6F3002E869F /* JLCPhotoController.h */,
+				32307AB4237BB6F3002E869F /* JLCPhotoController.m */,
 			);
 			path = "Model Controllers";
-			sourceTree = "<group>";
-		};
-		32307AAC237BA3CF002E869F /* Bridging Headers */ = {
-			isa = PBXGroup;
-			children = (
-				32307AA9237BA3C1002E869F /* iOS9-Astronomy-Bridging-Header.h */,
-			);
-			path = "Bridging Headers";
 			sourceTree = "<group>";
 		};
 		32307AAF237BA45F002E869F /* Custom Views */ = {
@@ -237,6 +234,7 @@
 			files = (
 				32307AA5237B639F002E869F /* JLCCamera.m in Sources */,
 				32307A9C237B57B8002E869F /* JLCSolDescription.m in Sources */,
+				32307AB5237BB6F3002E869F /* JLCPhotoController.m in Sources */,
 				32307A78237B5728002E869F /* AppDelegate.m in Sources */,
 				32307A89237B5729002E869F /* main.m in Sources */,
 				32307A7B237B5728002E869F /* SceneDelegate.m in Sources */,

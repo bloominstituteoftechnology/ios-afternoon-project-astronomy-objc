@@ -10,4 +10,10 @@ import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = #imageLiteral(resourceName: "marvin")
+    }
+    
+    @IBOutlet weak var imageView: UIImageView!
 }

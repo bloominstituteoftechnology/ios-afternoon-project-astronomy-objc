@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3NC-Zs-Zij">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MarsPhotoCell" id="3NC-Zs-Zij" customClass="PhotoCollectionViewCell" customModule="iOS9_Astronomy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JbB-EG-3Mj">
@@ -43,6 +43,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="150" height="150"/>
                                 <connections>
+                                    <outlet property="imageView" destination="3OH-No-vxN" id="gbC-lY-giR"/>
                                     <segue destination="4Ll-Sp-6qD" kind="show" identifier="ShowDetailSegue" id="CUv-Tt-nf7"/>
                                 </connections>
                             </collectionViewCell>
