@@ -17,7 +17,8 @@
 		32307A96237B579C002E869F /* JLCMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A95237B579C002E869F /* JLCMarsPhoto.m */; };
 		32307A99237B57A9002E869F /* JLCMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A98237B57A9002E869F /* JLCMarsRover.m */; };
 		32307A9C237B57B8002E869F /* JLCSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A9B237B57B8002E869F /* JLCSolDescription.m */; };
-		32307A9F237B57C4002E869F /* JLCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307A9E237B57C4002E869F /* JLCCamera.m */; };
+		32307AA5237B639F002E869F /* JLCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307AA4237B639F002E869F /* JLCCamera.m */; };
+		32307AA8237B7536002E869F /* JLCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307AA7237B7536002E869F /* JLCCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +40,10 @@
 		32307A98237B57A9002E869F /* JLCMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCMarsRover.m; sourceTree = "<group>"; };
 		32307A9A237B57B8002E869F /* JLCSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCSolDescription.h; sourceTree = "<group>"; };
 		32307A9B237B57B8002E869F /* JLCSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCSolDescription.m; sourceTree = "<group>"; };
-		32307A9D237B57C4002E869F /* JLCCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCCamera.h; sourceTree = "<group>"; };
-		32307A9E237B57C4002E869F /* JLCCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCCamera.m; sourceTree = "<group>"; };
+		32307AA3237B639F002E869F /* JLCCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCCamera.h; sourceTree = "<group>"; };
+		32307AA4237B639F002E869F /* JLCCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCCamera.m; sourceTree = "<group>"; };
+		32307AA6237B7536002E869F /* JLCCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCCache.h; sourceTree = "<group>"; };
+		32307AA7237B7536002E869F /* JLCCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +126,10 @@
 				32307A98237B57A9002E869F /* JLCMarsRover.m */,
 				32307A9A237B57B8002E869F /* JLCSolDescription.h */,
 				32307A9B237B57B8002E869F /* JLCSolDescription.m */,
-				32307A9D237B57C4002E869F /* JLCCamera.h */,
-				32307A9E237B57C4002E869F /* JLCCamera.m */,
+				32307AA3237B639F002E869F /* JLCCamera.h */,
+				32307AA4237B639F002E869F /* JLCCamera.m */,
+				32307AA6237B7536002E869F /* JLCCache.h */,
+				32307AA7237B7536002E869F /* JLCCache.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32307A9F237B57C4002E869F /* JLCCamera.m in Sources */,
+				32307AA5237B639F002E869F /* JLCCamera.m in Sources */,
 				32307A9C237B57B8002E869F /* JLCSolDescription.m in Sources */,
 				32307A7E237B5728002E869F /* ViewController.m in Sources */,
 				32307A78237B5728002E869F /* AppDelegate.m in Sources */,
@@ -215,6 +220,7 @@
 				32307A7B237B5728002E869F /* SceneDelegate.m in Sources */,
 				32307A96237B579C002E869F /* JLCMarsPhoto.m in Sources */,
 				32307A99237B57A9002E869F /* JLCMarsRover.m in Sources */,
+				32307AA8237B7536002E869F /* JLCCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

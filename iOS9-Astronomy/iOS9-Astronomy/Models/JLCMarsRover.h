@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JLCMarsRover : NSObject
 
+@property (nonatomic, copy, readonly) NSString *name;
+@property(nonatomic, readonly) double maxSol;
+
+-(instancetype)initWithName:(NSString *)name
+                     maxSol:(double) maxSol;
+
+- (nullable instancetype)initWithDictionary:(NSDictionary *)roverDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

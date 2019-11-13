@@ -11,6 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JLCCamera : NSObject
+    
+@property (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, copy, readonly) NSString *fullName;
+
+- (instancetype)initWithName:(NSString *)name
+                    fullName:(NSString *)fullName;
+
+- (nullable instancetype)initWithDictionary:(NSDictionary *)cameraDictionary;
 
 @end
 

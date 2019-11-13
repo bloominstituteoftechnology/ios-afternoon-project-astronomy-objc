@@ -1,5 +1,5 @@
 //
-//  JLCSolDescription.h
+//  JLCCache.h
 //  iOS9-Astronomy
 //
 //  Created by Jake Connerly on 11/12/19.
@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JLCSolDescription : NSObject
-
+@interface JLCCache : NSCache
 
 @end
 
