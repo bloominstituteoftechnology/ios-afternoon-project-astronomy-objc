@@ -18,26 +18,23 @@ class PhotosCollectionViewController: UICollectionViewController {
                 self.collectionView.reloadData()
             }
         }
-        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPhotos()
     }
-
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        guard let photoDetailVC = segue.destination as? PhotoDetailViewController,
+            let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+        let photo = photos[indexPath.item]
+        photoDetailVC.photo = photo
     }
-    */
     
     private func fetchPhotos() {
-        
         photoController.fetchPhotosfromSol(2) { (photos, error) in
             if let error = error {
                 NSLog("Error fetching photos from sol#\(2) with:\(error)")

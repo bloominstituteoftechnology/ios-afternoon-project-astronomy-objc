@@ -10,20 +10,48 @@
 
 
 
-@implementation JLCCache
+@interface LSICache ()
 
+@property (nonatomic, strong) NSMutableDictionary *cache;
+@property (nonatomic, strong) dispatch_queue_t queue;
 
+@end
 
-- (void)setObject:(id)obj forKey:(id)key {
+@implementation LSICache
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _cache = [NSMutableDictionary dictionary];
+        _queue = dispatch_queue_create("com.LambdaSchool.Astronomy.CacheQueue", DISPATCH_QUEUE_SERIAL);
+    }
+    return self;
 }
 
-- (id)objectForKey:(id)key {
-    return [self objectForKey:key];
+- (void)cacheValue:(id)value forKey:(id)key
+{
+    dispatch_async(self.queue, ^{
+        self.cache[key] = value;
+    });
 }
 
-- (void)removeAllObjects {
-    
+- (id)cachedValueForKey:(id)key
+{
+    __block id result = nil;
+    dispatch_sync(self.queue, ^{
+        result = self.cache[key];
+    });
+    return result;
 }
+
+- (void)clear
+{
+    dispatch_async(self.queue, ^{
+        [self.cache removeAllObjects];
+    });
+}
+
 
 
 @end

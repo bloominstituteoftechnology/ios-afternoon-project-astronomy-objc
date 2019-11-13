@@ -10,21 +10,19 @@
 
 @implementation JLCMarsRover
 
-- (instancetype)initWithName:(NSString *)name maxSol:(double)maxSol {
+- (instancetype)initWithName:(NSString *)name {
     self = [super init];
     if (self) {
         _name = name;
-        _maxSol = maxSol;
     }
     return self;
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)roverDictionary {
-    NSString *name = roverDictionary[@"name"];
-    NSString *maxSolStr = roverDictionary[@"max_sol"];
-    double maxSol = [maxSolStr doubleValue];
+    NSDictionary *internalRoverDictionary = roverDictionary[@"rover"];
+    NSString *name = internalRoverDictionary[@"name"];
     
-    return [self initWithName:name maxSol:maxSol];
+    return [self initWithName:name];
 }
 
 @end

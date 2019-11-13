@@ -16,8 +16,6 @@
 
 @interface JLCPhotoController : NSObject
 
-@property (nonatomic, readonly) JLCMarsRover *rover;
-
 @property (nonatomic) NSArray<JLCMarsPhoto *> *photos;
 
 - (void)fetchPhotosfromSol:(double)sol
