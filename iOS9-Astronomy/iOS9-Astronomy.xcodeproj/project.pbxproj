@@ -22,6 +22,7 @@
 		32307AAE237BA3F6002E869F /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32307AAD237BA3F6002E869F /* PhotoDetailViewController.swift */; };
 		32307AB1237BA482002E869F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32307AB0237BA482002E869F /* PhotoCollectionViewCell.swift */; };
 		32307AB5237BB6F3002E869F /* JLCPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32307AB4237BB6F3002E869F /* JLCPhotoController.m */; };
+		32307AB7237BCBD4002E869F /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32307AB6237BCBD4002E869F /* URL+Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		32307AB2237BA5A3002E869F /* iOS9-Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS9-Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 		32307AB3237BB6F3002E869F /* JLCPhotoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCPhotoController.h; sourceTree = "<group>"; };
 		32307AB4237BB6F3002E869F /* JLCPhotoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCPhotoController.m; sourceTree = "<group>"; };
+		32307AB6237BCBD4002E869F /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		32307A8F237B5735002E869F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				32307AB6237BCBD4002E869F /* URL+Secure.swift */,
 				32307A76237B5728002E869F /* AppDelegate.h */,
 				32307A77237B5728002E869F /* AppDelegate.m */,
 				32307A79237B5728002E869F /* SceneDelegate.h */,
@@ -244,6 +247,7 @@
 				32307AAE237BA3F6002E869F /* PhotoDetailViewController.swift in Sources */,
 				32307AB1237BA482002E869F /* PhotoCollectionViewCell.swift in Sources */,
 				32307AA8237B7536002E869F /* JLCCache.m in Sources */,
+				32307AB7237BCBD4002E869F /* URL+Secure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

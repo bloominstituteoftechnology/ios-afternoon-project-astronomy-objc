@@ -7,6 +7,9 @@
 //
 
 #import "JLCMarsPhoto.h"
+#import "iOS9-Astronomy-Bridging-Header.h"
+#import "iOS9_Astronomy-Swift.h"
+
 
 @implementation JLCMarsPhoto
 
@@ -29,7 +32,7 @@
     JLCCamera *camera = photoDictionary[@"camera"];
     NSString *earthDateStr = photoDictionary[@"earth_date"];
     NSString *imageURLString = photoDictionary[@"img_src"];
-    NSURL *imageURL = [[NSURL alloc] initWithString:imageURLString];
+    NSURL *imageURL = [[NSURL alloc] initWithString:imageURLString].usingHTTPS;
     
     return [self initWithID:identifier sol:sol camera:camera earthDate:earthDateStr imageURL:imageURL];
 }
