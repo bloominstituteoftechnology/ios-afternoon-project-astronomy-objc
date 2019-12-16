@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface JLRCache : NSObject
+NS_SWIFT_NAME(Cache)
+@interface JLRCache : NSCache
 
 @end
-
-NS_ASSUME_NONNULL_END

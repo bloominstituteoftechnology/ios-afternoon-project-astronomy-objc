@@ -5,3 +5,4 @@
 #import "JLRCamera.h"
 #import "JLRSolDescription.h"
 #import "JLRMarsRover.h"
+#import "JLRCache.h"
