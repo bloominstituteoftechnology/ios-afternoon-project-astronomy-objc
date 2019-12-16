@@ -13,6 +13,7 @@
 		590C1E4823A825BE008CDDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 590C1E4723A825BE008CDDE9 /* Assets.xcassets */; };
 		590C1E4B23A825BE008CDDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590C1E4923A825BE008CDDE9 /* LaunchScreen.storyboard */; };
 		590C1E4E23A825BE008CDDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E4D23A825BE008CDDE9 /* main.m */; };
+		590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		590C1E4A23A825BE008CDDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		590C1E4C23A825BE008CDDE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		590C1E4D23A825BE008CDDE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		590C1E5523A82AE0008CDDE9 /* Astronomy-Hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
+		590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoReference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 				590C1E3C23A825BB008CDDE9 /* AppDelegate.m */,
 				590C1E3E23A825BB008CDDE9 /* SceneDelegate.h */,
 				590C1E3F23A825BB008CDDE9 /* SceneDelegate.m */,
+				590C1E5423A82ACD008CDDE9 /* Model */,
 				590C1E4423A825BB008CDDE9 /* Main.storyboard */,
 				590C1E4723A825BE008CDDE9 /* Assets.xcassets */,
 				590C1E4923A825BE008CDDE9 /* LaunchScreen.storyboard */,
@@ -69,6 +73,15 @@
 				590C1E4D23A825BE008CDDE9 /* main.m */,
 			);
 			path = "Astronomy-Hybrid";
+			sourceTree = "<group>";
+		};
+		590C1E5423A82ACD008CDDE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */,
+				590C1E5523A82AE0008CDDE9 /* Astronomy-Hybrid-Bridging-Header.h */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +115,7 @@
 				TargetAttributes = {
 					590C1E3723A825BB008CDDE9 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -144,6 +158,7 @@
 				590C1E3D23A825BB008CDDE9 /* AppDelegate.m in Sources */,
 				590C1E4E23A825BE008CDDE9 /* main.m in Sources */,
 				590C1E4023A825BB008CDDE9 /* SceneDelegate.m in Sources */,
+				590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4525544Q4;
 				INFOPLIST_FILE = "Astronomy-Hybrid/Info.plist";
@@ -292,6 +308,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IsaacLyons.Astronomy-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Hybrid/Model/Astronomy-Hybrid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -300,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4525544Q4;
 				INFOPLIST_FILE = "Astronomy-Hybrid/Info.plist";
@@ -309,6 +329,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IsaacLyons.Astronomy-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Hybrid/Model/Astronomy-Hybrid-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
