@@ -36,8 +36,12 @@ class PhotosCollectionViewController: UICollectionViewController {
                 return
             }
             
-            self.rover = rover
             print("Rover: \(rover.name)")
+            self.rover = rover
+            
+            DispatchQueue.main.async {
+                self.title = "\(rover.name) Rover"
+            }
         }
     }
 
