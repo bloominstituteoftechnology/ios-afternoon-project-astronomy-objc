@@ -25,14 +25,14 @@
     return self;
 }
 
-- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)cameraDictionary
 {
-    NSString *name = dictionary[@"name"];
-    NSString *identificationString = dictionary[@"identification"];
+    NSString *name = cameraDictionary[@"name"];
+    NSString *identificationString = cameraDictionary[@"identification"];
     double identification = [identificationString doubleValue];
-    NSString *roverIdString = dictionary[@"rover_id"];
+    NSString *roverIdString = cameraDictionary[@"rover_id"];
     double roverId = [roverIdString doubleValue];
-    NSString *fullName = dictionary[@"full_name"];
+    NSString *fullName = cameraDictionary[@"full_name"];
     
     if (!name || !identificationString || !roverIdString || !fullName) {
         return nil;

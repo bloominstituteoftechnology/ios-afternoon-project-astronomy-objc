@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
+NS_SWIFT_NAME(SolDescription)
 @interface JLRSolDescription : NSObject
+//TODO: Make it Codable & Equatable
 
+@property (nonatomic, copy, readonly, nonnull) NSArray<NSString *> *cameras;
+@property (nonatomic, readonly) double sol;
+@property (nonatomic, readonly) double totalPhotos;
+
+- (nonnull instancetype)initWithCamera:(nonnull NSArray<NSString *> *)cameras
+                                   sol:(double)sol
+                           totalPhotos:(double)totalPhotos;
+
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)solDescriptionDictionary;
 @end
-
-NS_ASSUME_NONNULL_END

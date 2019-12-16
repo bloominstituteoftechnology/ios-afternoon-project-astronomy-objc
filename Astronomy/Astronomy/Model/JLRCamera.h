@@ -11,7 +11,7 @@
 NS_SWIFT_NAME(Camera)
 @interface JLRCamera : NSObject
 
-//Make it Codable & Equatable
+//TODO: Make it Codable & Equatable
 
 @property (nonatomic, copy, readonly, nonnull) NSString *name;
 @property (nonatomic, readonly) double identification;
@@ -23,6 +23,6 @@ NS_SWIFT_NAME(Camera)
                              roverId:(double)roverId
                             fullName:(nonnull NSString *)fullName;
 
-- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)cameraDictionary;
 
 @end

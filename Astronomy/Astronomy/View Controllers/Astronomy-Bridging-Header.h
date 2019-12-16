@@ -3,3 +3,4 @@
 //
 
 #import "JLRCamera.h"
+#import "JLRSolDescription.h"
