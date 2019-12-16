@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  MarsPhoto.swift
 //  Astronomy Objc
 //
 //  Created by Gi Pyo Kim on 12/16/19.
 //  Copyright © 2019 GIPGIP Studio. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-@interface ViewController : UIViewController
-
-
-@end
-
+@objc class MarsPhoto: NSObject {
+    
+}

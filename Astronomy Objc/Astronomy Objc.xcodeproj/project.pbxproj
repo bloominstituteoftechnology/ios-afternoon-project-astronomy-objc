@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		A6CC363B23A82784008EA141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC363A23A82784008EA141 /* AppDelegate.m */; };
 		A6CC363E23A82784008EA141 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC363D23A82784008EA141 /* SceneDelegate.m */; };
-		A6CC364123A82784008EA141 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC364023A82784008EA141 /* ViewController.m */; };
-		A6CC364423A82784008EA141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CC364223A82784008EA141 /* Main.storyboard */; };
 		A6CC364623A82785008EA141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CC364523A82785008EA141 /* Assets.xcassets */; };
 		A6CC364923A82785008EA141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CC364723A82785008EA141 /* LaunchScreen.storyboard */; };
 		A6CC364C23A82785008EA141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC364B23A82785008EA141 /* main.m */; };
+		A6CC365723A82EB0008EA141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CC365623A82EB0008EA141 /* Main.storyboard */; };
+		A6CC365E23A83AEE008EA141 /* GIPMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC365D23A83AEE008EA141 /* GIPMarsRover.m */; };
+		A6CC366223A83C71008EA141 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366123A83C71008EA141 /* PhotosCollectionViewController.swift */; };
+		A6CC366423A83C92008EA141 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366323A83C92008EA141 /* DetailViewController.swift */; };
+		A6CC366623A83D3F008EA141 /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366523A83D3F008EA141 /* MarsPhoto.swift */; };
+		A6CC366923A840D7008EA141 /* GIPSol.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366823A840D7008EA141 /* GIPSol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +26,19 @@
 		A6CC363A23A82784008EA141 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A6CC363C23A82784008EA141 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A6CC363D23A82784008EA141 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A6CC363F23A82784008EA141 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A6CC364023A82784008EA141 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A6CC364323A82784008EA141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6CC364523A82785008EA141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6CC364823A82785008EA141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6CC364A23A82785008EA141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6CC364B23A82785008EA141 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6CC365623A82EB0008EA141 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A6CC365C23A83AEE008EA141 /* GIPMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPMarsRover.h; sourceTree = "<group>"; };
+		A6CC365D23A83AEE008EA141 /* GIPMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPMarsRover.m; sourceTree = "<group>"; };
+		A6CC366023A83C71008EA141 /* Astronomy Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy Objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6CC366123A83C71008EA141 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		A6CC366323A83C92008EA141 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A6CC366523A83D3F008EA141 /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
+		A6CC366723A840D7008EA141 /* GIPSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPSol.h; sourceTree = "<group>"; };
+		A6CC366823A840D7008EA141 /* GIPSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPSol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +71,49 @@
 		A6CC363823A82784008EA141 /* Astronomy Objc */ = {
 			isa = PBXGroup;
 			children = (
+				A6CC365523A82E88008EA141 /* View Controllers */,
+				A6CC365B23A83088008EA141 /* Storyboards */,
 				A6CC363923A82784008EA141 /* AppDelegate.h */,
 				A6CC363A23A82784008EA141 /* AppDelegate.m */,
 				A6CC363C23A82784008EA141 /* SceneDelegate.h */,
 				A6CC363D23A82784008EA141 /* SceneDelegate.m */,
-				A6CC363F23A82784008EA141 /* ViewController.h */,
-				A6CC364023A82784008EA141 /* ViewController.m */,
-				A6CC364223A82784008EA141 /* Main.storyboard */,
 				A6CC364523A82785008EA141 /* Assets.xcassets */,
-				A6CC364723A82785008EA141 /* LaunchScreen.storyboard */,
 				A6CC364A23A82785008EA141 /* Info.plist */,
 				A6CC364B23A82785008EA141 /* main.m */,
+				A6CC365F23A83AF5008EA141 /* Models */,
 			);
 			path = "Astronomy Objc";
+			sourceTree = "<group>";
+		};
+		A6CC365523A82E88008EA141 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6CC366123A83C71008EA141 /* PhotosCollectionViewController.swift */,
+				A6CC366323A83C92008EA141 /* DetailViewController.swift */,
+				A6CC366023A83C71008EA141 /* Astronomy Objc-Bridging-Header.h */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A6CC365B23A83088008EA141 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A6CC365623A82EB0008EA141 /* Main.storyboard */,
+				A6CC364723A82785008EA141 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A6CC365F23A83AF5008EA141 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6CC365C23A83AEE008EA141 /* GIPMarsRover.h */,
+				A6CC365D23A83AEE008EA141 /* GIPMarsRover.m */,
+				A6CC366523A83D3F008EA141 /* MarsPhoto.swift */,
+				A6CC366723A840D7008EA141 /* GIPSol.h */,
+				A6CC366823A840D7008EA141 /* GIPSol.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,11 +142,13 @@
 		A6CC362E23A82784008EA141 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GIP;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "GIPGIP Studio";
 				TargetAttributes = {
 					A6CC363523A82784008EA141 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -133,9 +175,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CC365723A82EB0008EA141 /* Main.storyboard in Resources */,
 				A6CC364923A82785008EA141 /* LaunchScreen.storyboard in Resources */,
 				A6CC364623A82785008EA141 /* Assets.xcassets in Resources */,
-				A6CC364423A82784008EA141 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6CC364123A82784008EA141 /* ViewController.m in Sources */,
 				A6CC363B23A82784008EA141 /* AppDelegate.m in Sources */,
+				A6CC366923A840D7008EA141 /* GIPSol.m in Sources */,
+				A6CC365E23A83AEE008EA141 /* GIPMarsRover.m in Sources */,
+				A6CC366623A83D3F008EA141 /* MarsPhoto.swift in Sources */,
 				A6CC364C23A82785008EA141 /* main.m in Sources */,
+				A6CC366423A83C92008EA141 /* DetailViewController.swift in Sources */,
+				A6CC366223A83C71008EA141 /* PhotosCollectionViewController.swift in Sources */,
 				A6CC363E23A82784008EA141 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,14 +202,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A6CC364223A82784008EA141 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A6CC364323A82784008EA141 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A6CC364723A82785008EA141 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +327,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
 				INFOPLIST_FILE = "Astronomy Objc/Info.plist";
@@ -298,6 +337,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Astronomy-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/View Controllers/Astronomy Objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
 				INFOPLIST_FILE = "Astronomy Objc/Info.plist";
@@ -315,6 +358,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Astronomy-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/View Controllers/Astronomy Objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
