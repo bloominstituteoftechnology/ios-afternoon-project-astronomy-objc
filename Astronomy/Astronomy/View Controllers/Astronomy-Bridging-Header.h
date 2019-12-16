@@ -4,3 +4,4 @@
 
 #import "JLRCamera.h"
 #import "JLRSolDescription.h"
+#import "JLRMarsRover.h"

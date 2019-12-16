@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JLRMarsRover : NSObject
 
-@end
+@property (nonatomic, copy, readonly, nonnull) NSString *name;
 
-NS_ASSUME_NONNULL_END
+- (nonnull instancetype)initWithName:(nonnull NSString *)name;
+
+- (nullable instancetype)initWithRoverDictionary:(nonnull NSDictionary *)roverDictionary;
+
+@end
