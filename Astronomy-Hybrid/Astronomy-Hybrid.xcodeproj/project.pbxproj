@@ -14,6 +14,8 @@
 		590C1E4B23A825BE008CDDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590C1E4923A825BE008CDDE9 /* LaunchScreen.storyboard */; };
 		590C1E4E23A825BE008CDDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E4D23A825BE008CDDE9 /* main.m */; };
 		590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */; };
+		590C1E5B23A8312F008CDDE9 /* MarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */; };
+		590C1E5E23A832C1008CDDE9 /* MarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5D23A832C1008CDDE9 /* MarsRover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		590C1E4D23A825BE008CDDE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		590C1E5523A82AE0008CDDE9 /* Astronomy-Hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
 		590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoReference.swift; sourceTree = "<group>"; };
+		590C1E5923A8312F008CDDE9 /* MarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverClient.h; sourceTree = "<group>"; };
+		590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverClient.m; sourceTree = "<group>"; };
+		590C1E5C23A832C1008CDDE9 /* MarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRover.h; sourceTree = "<group>"; };
+		590C1E5D23A832C1008CDDE9 /* MarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				590C1E3C23A825BB008CDDE9 /* AppDelegate.m */,
 				590C1E3E23A825BB008CDDE9 /* SceneDelegate.h */,
 				590C1E3F23A825BB008CDDE9 /* SceneDelegate.m */,
+				590C1E5823A83079008CDDE9 /* Networking */,
 				590C1E5423A82ACD008CDDE9 /* Model */,
 				590C1E4423A825BB008CDDE9 /* Main.storyboard */,
 				590C1E4723A825BE008CDDE9 /* Assets.xcassets */,
@@ -79,9 +86,20 @@
 			isa = PBXGroup;
 			children = (
 				590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */,
+				590C1E5C23A832C1008CDDE9 /* MarsRover.h */,
+				590C1E5D23A832C1008CDDE9 /* MarsRover.m */,
 				590C1E5523A82AE0008CDDE9 /* Astronomy-Hybrid-Bridging-Header.h */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		590C1E5823A83079008CDDE9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				590C1E5923A8312F008CDDE9 /* MarsRoverClient.h */,
+				590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				590C1E3D23A825BB008CDDE9 /* AppDelegate.m in Sources */,
+				590C1E5E23A832C1008CDDE9 /* MarsRover.m in Sources */,
 				590C1E4E23A825BE008CDDE9 /* main.m in Sources */,
 				590C1E4023A825BB008CDDE9 /* SceneDelegate.m in Sources */,
+				590C1E5B23A8312F008CDDE9 /* MarsRoverClient.m in Sources */,
 				590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
