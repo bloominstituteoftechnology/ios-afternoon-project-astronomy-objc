@@ -15,6 +15,11 @@
 		808AFF6623A82375004CE9E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF6523A82375004CE9E5 /* main.m */; };
 		808AFF7723A8264D004CE9E5 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF7623A8264D004CE9E5 /* PhotoCollectionViewController.swift */; };
 		808AFF7923A82675004CE9E5 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF7823A82675004CE9E5 /* PhotoDetailViewController.swift */; };
+		808AFF7B23A82A6B004CE9E5 /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF7A23A82A6B004CE9E5 /* MarsPhoto.swift */; };
+		808AFF7F23A82AB5004CE9E5 /* JLRCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF7E23A82AB5004CE9E5 /* JLRCache.m */; };
+		808AFF8223A832CF004CE9E5 /* JLRMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF8123A832CF004CE9E5 /* JLRMarsRover.m */; };
+		808AFF8523A832E3004CE9E5 /* JLRSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF8423A832E3004CE9E5 /* JLRSolDescription.m */; };
+		808AFF8823A832EB004CE9E5 /* JLRCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF8723A832EB004CE9E5 /* JLRCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,15 @@
 		808AFF7523A8264C004CE9E5 /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 		808AFF7623A8264D004CE9E5 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		808AFF7823A82675004CE9E5 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		808AFF7A23A82A6B004CE9E5 /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
+		808AFF7D23A82AB5004CE9E5 /* JLRCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLRCache.h; sourceTree = "<group>"; };
+		808AFF7E23A82AB5004CE9E5 /* JLRCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLRCache.m; sourceTree = "<group>"; };
+		808AFF8023A832CF004CE9E5 /* JLRMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLRMarsRover.h; sourceTree = "<group>"; };
+		808AFF8123A832CF004CE9E5 /* JLRMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLRMarsRover.m; sourceTree = "<group>"; };
+		808AFF8323A832E3004CE9E5 /* JLRSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLRSolDescription.h; sourceTree = "<group>"; };
+		808AFF8423A832E3004CE9E5 /* JLRSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLRSolDescription.m; sourceTree = "<group>"; };
+		808AFF8623A832EB004CE9E5 /* JLRCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLRCamera.h; sourceTree = "<group>"; };
+		808AFF8723A832EB004CE9E5 /* JLRCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLRCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,7 @@
 		808AFF5223A82371004CE9E5 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				808AFF7C23A82A6F004CE9E5 /* Model */,
 				808AFF6E23A823D3004CE9E5 /* View Controllers */,
 				808AFF6D23A823A7004CE9E5 /* Storyboard */,
 				808AFF6C23A82399004CE9E5 /* Resources */,
@@ -103,6 +118,22 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		808AFF7C23A82A6F004CE9E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				808AFF7A23A82A6B004CE9E5 /* MarsPhoto.swift */,
+				808AFF7D23A82AB5004CE9E5 /* JLRCache.h */,
+				808AFF7E23A82AB5004CE9E5 /* JLRCache.m */,
+				808AFF8023A832CF004CE9E5 /* JLRMarsRover.h */,
+				808AFF8123A832CF004CE9E5 /* JLRMarsRover.m */,
+				808AFF8323A832E3004CE9E5 /* JLRSolDescription.h */,
+				808AFF8423A832E3004CE9E5 /* JLRSolDescription.m */,
+				808AFF8623A832EB004CE9E5 /* JLRCamera.h */,
+				808AFF8723A832EB004CE9E5 /* JLRCamera.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +160,7 @@
 		808AFF4823A82371004CE9E5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JLR;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lambda School";
 				TargetAttributes = {
@@ -175,10 +207,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				808AFF5523A82371004CE9E5 /* AppDelegate.m in Sources */,
+				808AFF7B23A82A6B004CE9E5 /* MarsPhoto.swift in Sources */,
+				808AFF8523A832E3004CE9E5 /* JLRSolDescription.m in Sources */,
+				808AFF8223A832CF004CE9E5 /* JLRMarsRover.m in Sources */,
 				808AFF6623A82375004CE9E5 /* main.m in Sources */,
 				808AFF5823A82371004CE9E5 /* SceneDelegate.m in Sources */,
 				808AFF7923A82675004CE9E5 /* PhotoDetailViewController.swift in Sources */,
+				808AFF7F23A82AB5004CE9E5 /* JLRCache.m in Sources */,
 				808AFF7723A8264D004CE9E5 /* PhotoCollectionViewController.swift in Sources */,
+				808AFF8823A832EB004CE9E5 /* JLRCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

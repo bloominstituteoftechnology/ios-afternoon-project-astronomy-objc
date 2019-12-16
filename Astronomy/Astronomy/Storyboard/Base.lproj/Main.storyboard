@@ -108,6 +108,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ez6-kA-wSd"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="bnM-2s-ZPR" id="Xqu-dX-WfG"/>
+                        <outlet property="detailLabel" destination="nlM-8U-m2C" id="FGJ-08-orF"/>
+                        <outlet property="imageView" destination="pOm-gA-y0p" id="u8e-g9-ZsC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
