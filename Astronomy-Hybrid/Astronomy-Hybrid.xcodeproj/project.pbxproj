@@ -16,6 +16,7 @@
 		590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */; };
 		590C1E5B23A8312F008CDDE9 /* MarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */; };
 		590C1E5E23A832C1008CDDE9 /* MarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5D23A832C1008CDDE9 /* MarsRover.m */; };
+		590C1E6123A83AFD008CDDE9 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E6023A83AFD008CDDE9 /* PhotosCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverClient.m; sourceTree = "<group>"; };
 		590C1E5C23A832C1008CDDE9 /* MarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRover.h; sourceTree = "<group>"; };
 		590C1E5D23A832C1008CDDE9 /* MarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRover.m; sourceTree = "<group>"; };
+		590C1E6023A83AFD008CDDE9 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				590C1E3C23A825BB008CDDE9 /* AppDelegate.m */,
 				590C1E3E23A825BB008CDDE9 /* SceneDelegate.h */,
 				590C1E3F23A825BB008CDDE9 /* SceneDelegate.m */,
+				590C1E5F23A83ADB008CDDE9 /* View Controllers */,
 				590C1E5823A83079008CDDE9 /* Networking */,
 				590C1E5423A82ACD008CDDE9 /* Model */,
 				590C1E4423A825BB008CDDE9 /* Main.storyboard */,
@@ -100,6 +103,14 @@
 				590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		590C1E5F23A83ADB008CDDE9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				590C1E6023A83AFD008CDDE9 /* PhotosCollectionViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				590C1E3D23A825BB008CDDE9 /* AppDelegate.m in Sources */,
 				590C1E5E23A832C1008CDDE9 /* MarsRover.m in Sources */,
 				590C1E4E23A825BE008CDDE9 /* main.m in Sources */,
+				590C1E6123A83AFD008CDDE9 /* PhotosCollectionViewController.swift in Sources */,
 				590C1E4023A825BB008CDDE9 /* SceneDelegate.m in Sources */,
 				590C1E5B23A8312F008CDDE9 /* MarsRoverClient.m in Sources */,
 				590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */,
