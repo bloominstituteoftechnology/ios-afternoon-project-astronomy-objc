@@ -53,16 +53,23 @@
 
 - (void)fetchMarsRoverNamed:(NSString *)name completion:(void (^)(MarsRover * _Nullable, NSError * _Nullable))completion {
     NSURL *url = [self urlForRoverNamed:name];
+    NSLog(@"%@", [url description]);
     [self fetchFromURL:url completion:^(NSDictionary * _Nullable dictionary, NSError * _Nullable error) {
-        NSLog(@"Fetched!");
+        //NSLog(@"Fetched!");
+        if (error) {
+            return completion(nil, error);
+        }
+        
+        NSDictionary *manifest = dictionary[@"photo_manifest"];
+        
+        completion([[MarsRover alloc] initWithDictionary:manifest], nil);
     }];
 }
 
 - (NSURL *)urlForRoverNamed:(NSString *)name {
-    NSURL *url = [[[self.baseURL
-                    URLByAppendingPathComponent:@"rovers"]
-                   URLByAppendingPathComponent:name]
-                  URLByAppendingPathComponent:@"photos"];
+    NSURL *url = [[self.baseURL
+                   URLByAppendingPathComponent:@"manifests"]
+                  URLByAppendingPathComponent:name];
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
     NSURLQueryItem *apiKeyItem = [NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey];

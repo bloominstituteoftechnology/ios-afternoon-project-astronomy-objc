@@ -26,7 +26,18 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
         client.fetchMarsRoverNamed("curiosity") { rover, error in
-            //<#code#>
+            if let error = error {
+                NSLog("\(error)")
+                return
+            }
+            
+            guard let rover = rover else {
+                NSLog("No rover returned")
+                return
+            }
+            
+            self.rover = rover
+            print("Rover: \(rover.name)")
         }
     }
 
