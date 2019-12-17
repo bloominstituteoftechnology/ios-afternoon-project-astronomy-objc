@@ -15,11 +15,5 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageView.image = #imageLiteral(resourceName: "MarsPlaceholder")
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        imageView.image = #imageLiteral(resourceName: <#T##String#>)
-//
-//    }
-    
     @IBOutlet weak var imageView: UIImageView!
 }

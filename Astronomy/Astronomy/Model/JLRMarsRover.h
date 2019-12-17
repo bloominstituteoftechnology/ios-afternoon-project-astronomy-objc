@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class JLRSolDescription;
+
 NS_SWIFT_NAME(MarsRover)
 @interface JLRMarsRover : NSObject
 
 @property (nonatomic, copy, readonly, nonnull) NSString *name;
+@property (nonatomic, copy, readonly, nonnull) NSArray<JLRSolDescription *> *solDescriptions;
 
-- (nonnull instancetype)initWithName:(nonnull NSString *)name;
+- (nonnull instancetype)initWithName:(nonnull NSString *)name
+                     solDescriptions:(nonnull NSArray<JLRSolDescription *> *)solDescriptions;
 
 - (nullable instancetype)initWithRoverDictionary:(nonnull NSDictionary *)roverDictionary;
 
