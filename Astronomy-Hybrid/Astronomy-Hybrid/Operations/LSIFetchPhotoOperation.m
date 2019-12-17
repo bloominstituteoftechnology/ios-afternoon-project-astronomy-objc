@@ -8,6 +8,7 @@
 
 #import "LSIFetchPhotoOperation.h"
 #import "Astronomy_Hybrid-Swift.h"
+#import "NSURL+LSISecure.h"
 
 @interface LSIFetchPhotoOperation ()
 
@@ -15,6 +16,9 @@
 
 @property (nonatomic, readwrite) MarsPhotoReference *photoReference;
 @property (nonatomic, readwrite) NSURLSessionDataTask *task;
+
+typedef NS_ENUM(int, State) {isReady, isExecuting, isFinished};
+@property State state;
 
 @end
 
@@ -24,6 +28,7 @@
     self = [super init];
     if (self) {
         _photoReference = photoReference;
+        self.state = isReady;
     }
     return self;
 }
@@ -33,7 +38,9 @@
 }
 
 - (void)start {
-    self.task = [[NSURLSession sharedSession] dataTaskWithURL:[self.photoReference imageURL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    self.state = isExecuting;
+    
+    self.task = [[NSURLSession sharedSession] dataTaskWithURL:[[self.photoReference imageURL] usingHTTPS] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error);
             return;
@@ -43,7 +50,7 @@
             self.imageData = data;
         }
         
-        
+        self.state = isFinished;
     }];
     
     [self.task resume];
@@ -51,6 +58,18 @@
 
 - (void)cancel {
     [self.task cancel];
+}
+
+- (BOOL)isReady {
+    return self.state == isReady;
+}
+
+- (BOOL)isExecuting {
+    return self.state == isExecuting;
+}
+
+- (BOOL)isFinished {
+    return self.state == isFinished;
 }
 
 @end

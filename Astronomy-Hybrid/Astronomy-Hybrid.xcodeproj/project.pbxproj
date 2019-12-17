@@ -19,6 +19,7 @@
 		590C1E6123A83AFD008CDDE9 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E6023A83AFD008CDDE9 /* PhotosCollectionViewController.swift */; };
 		590C1E6423A85140008CDDE9 /* LSISol.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E6323A85140008CDDE9 /* LSISol.m */; };
 		5934406023A9924A007DE8A9 /* LSIFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5934405F23A9924A007DE8A9 /* LSIFetchPhotoOperation.m */; };
+		5934406423A99D22007DE8A9 /* NSURL+LSISecure.m in Sources */ = {isa = PBXBuildFile; fileRef = 5934406323A99D22007DE8A9 /* NSURL+LSISecure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		590C1E6323A85140008CDDE9 /* LSISol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSISol.m; sourceTree = "<group>"; };
 		5934405E23A9924A007DE8A9 /* LSIFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIFetchPhotoOperation.h; sourceTree = "<group>"; };
 		5934405F23A9924A007DE8A9 /* LSIFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIFetchPhotoOperation.m; sourceTree = "<group>"; };
+		5934406223A99D22007DE8A9 /* NSURL+LSISecure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+LSISecure.h"; sourceTree = "<group>"; };
+		5934406323A99D22007DE8A9 /* NSURL+LSISecure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+LSISecure.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 				590C1E3C23A825BB008CDDE9 /* AppDelegate.m */,
 				590C1E3E23A825BB008CDDE9 /* SceneDelegate.h */,
 				590C1E3F23A825BB008CDDE9 /* SceneDelegate.m */,
+				5934406123A99CFD007DE8A9 /* Utilities */,
 				5934405D23A99233007DE8A9 /* Operations */,
 				590C1E5F23A83ADB008CDDE9 /* View Controllers */,
 				590C1E5823A83079008CDDE9 /* Networking */,
@@ -129,6 +133,15 @@
 				5934405F23A9924A007DE8A9 /* LSIFetchPhotoOperation.m */,
 			);
 			path = Operations;
+			sourceTree = "<group>";
+		};
+		5934406123A99CFD007DE8A9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5934406223A99D22007DE8A9 /* NSURL+LSISecure.h */,
+				5934406323A99D22007DE8A9 /* NSURL+LSISecure.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +218,7 @@
 			files = (
 				590C1E3D23A825BB008CDDE9 /* AppDelegate.m in Sources */,
 				590C1E5E23A832C1008CDDE9 /* LSIMarsRover.m in Sources */,
+				5934406423A99D22007DE8A9 /* NSURL+LSISecure.m in Sources */,
 				5934406023A9924A007DE8A9 /* LSIFetchPhotoOperation.m in Sources */,
 				590C1E4E23A825BE008CDDE9 /* main.m in Sources */,
 				590C1E6123A83AFD008CDDE9 /* PhotosCollectionViewController.swift in Sources */,

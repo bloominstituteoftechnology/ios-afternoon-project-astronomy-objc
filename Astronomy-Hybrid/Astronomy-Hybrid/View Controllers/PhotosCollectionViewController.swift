@@ -12,6 +12,8 @@ private let reuseIdentifier = "ImageCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
+    //MARK: Properties
+    
     let client = MarsRoverClient()
     var rover: MarsRover? {
         didSet {
@@ -44,6 +46,8 @@ class PhotosCollectionViewController: UICollectionViewController {
             collectionView.reloadData()
         }
     }
+    
+    private let photoFetchQueue = OperationQueue()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +99,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
+        loadImage(forCell: cell, forItemAt: indexPath)
     
         return cell
     }
@@ -130,5 +134,28 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    //MARK: Private
+    
+    private func loadImage(forCell cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        let photoReference = photos[indexPath.item]
+        
+        let fetchOperation = LSIFetchPhotoOperation(photoReference: photoReference)
+        
+        let setCellImage = BlockOperation {
+            guard let image = UIImage(data: fetchOperation.imageData ?? Data()) else { return }
+            if self.collectionView.indexPath(for: cell) == indexPath {
+                // set the image for the cell
+                print("Cell image set for cell \(indexPath.item)")
+            }
+        }
+        
+        setCellImage.addDependency(fetchOperation)
+        
+        photoFetchQueue.addOperations([fetchOperation], waitUntilFinished: false)
+        OperationQueue.main.addOperations([setCellImage], waitUntilFinished: false)
+        
+    }
 
 }
