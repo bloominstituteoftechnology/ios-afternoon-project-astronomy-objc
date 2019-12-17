@@ -16,6 +16,6 @@
 - (nonnull instancetype)initWithSol:(int)sol
                         totalPhotos:(int)totalPhotos;
 
-- (nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
 @end

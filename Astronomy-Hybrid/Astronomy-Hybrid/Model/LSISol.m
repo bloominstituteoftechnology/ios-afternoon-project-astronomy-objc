@@ -19,4 +19,15 @@
     return self;
 }
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    NSNumber *sol = dictionary[@"sol"];
+    NSNumber *totalPhotos = dictionary[@"total_photos"];
+    
+    if (!sol || !totalPhotos) {
+        return nil;
+    }
+    
+    return [self initWithSol:[sol intValue] totalPhotos:[totalPhotos intValue]];
+}
+
 @end
