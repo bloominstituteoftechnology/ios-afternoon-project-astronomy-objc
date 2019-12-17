@@ -72,4 +72,14 @@ typedef NS_ENUM(int, State) {isReady, isExecuting, isFinished};
     return self.state == isFinished;
 }
 
++ (NSSet<NSString *> *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
+    NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+    
+    if ([key isEqualToString:@"isReady"] || [key isEqualToString:@"isExecuting"] || [key isEqualToString:@"isFinished"]) {
+        keyPaths = [keyPaths setByAddingObject:@"state"];
+    }
+    
+    return keyPaths;
+}
+
 @end
