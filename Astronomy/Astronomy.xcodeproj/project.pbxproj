@@ -21,6 +21,7 @@
 		808AFF8523A832E3004CE9E5 /* JLRSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF8423A832E3004CE9E5 /* JLRSolDescription.m */; };
 		808AFF8823A832EB004CE9E5 /* JLRCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF8723A832EB004CE9E5 /* JLRCamera.m */; };
 		808AFF8B23A8528C004CE9E5 /* JLRMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF8A23A8528C004CE9E5 /* JLRMarsRoverClient.m */; };
+		808AFF8E23A88EFF004CE9E5 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808AFF8D23A88EFF004CE9E5 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		808AFF8723A832EB004CE9E5 /* JLRCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLRCamera.m; sourceTree = "<group>"; };
 		808AFF8923A8528C004CE9E5 /* JLRMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLRMarsRoverClient.h; sourceTree = "<group>"; };
 		808AFF8A23A8528C004CE9E5 /* JLRMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLRMarsRoverClient.m; sourceTree = "<group>"; };
+		808AFF8D23A88EFF004CE9E5 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				808AFF7C23A82A6F004CE9E5 /* Model */,
+				808AFF8F23A88F03004CE9E5 /* Views */,
 				808AFF6E23A823D3004CE9E5 /* View Controllers */,
 				808AFF8C23A85292004CE9E5 /* Networking */,
 				808AFF6D23A823A7004CE9E5 /* Storyboard */,
@@ -145,6 +148,14 @@
 				808AFF8A23A8528C004CE9E5 /* JLRMarsRoverClient.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		808AFF8F23A88F03004CE9E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				808AFF8D23A88EFF004CE9E5 /* ImageCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				808AFF8223A832CF004CE9E5 /* JLRMarsRover.m in Sources */,
 				808AFF6623A82375004CE9E5 /* main.m in Sources */,
 				808AFF5823A82371004CE9E5 /* SceneDelegate.m in Sources */,
+				808AFF8E23A88EFF004CE9E5 /* ImageCollectionViewCell.swift in Sources */,
 				808AFF8B23A8528C004CE9E5 /* JLRMarsRoverClient.m in Sources */,
 				808AFF7923A82675004CE9E5 /* PhotoDetailViewController.swift in Sources */,
 				808AFF7F23A82AB5004CE9E5 /* JLRCache.m in Sources */,

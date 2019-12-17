@@ -15,7 +15,11 @@ import Foundation
     @objc let camera: Camera
     @objc let earthDate: Date
     @objc let imageURL: URL
-    @objc var dictionary: [String: String]?
+    @objc var dictionary: [String: Any]?
+    
+    enum CodingKeys: String, CodingKey {
+        case imageURL = "imgsrc"
+    }
     
     
     @objc init(id: Int, sol: Int, camera: Camera, earthDate: Date, imageURL: URL) {
@@ -26,9 +30,16 @@ import Foundation
         self.imageURL = imageURL
     }
     
-    @objc convenience init(dictionary: [String: String]) {
-        self.init(dictionary: dictionary)
+    @objc convenience init(dictionary: [String: Any]) {
+        let solNumber = dictionary["sol"] as? Int
+        self.init(id: 0, sol: solNumber!, camera: Camera(), earthDate: Date(), imageURL: URL(string: "http://apple.com")!)
     }
+    
+//    @objc convenience init(dictionary: [String: Any]) {
+//        guard let solNumber = dictionary["sol"] as? Int
+//            let URL = URL else { return }
+//        self.init(id: 0, sol: solNumber, camera: Camera(), earthDate: Date(), imageURL: URL(string: "http://apple.com")
+//    }
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -37,11 +48,4 @@ import Foundation
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-    
-    static var jsonDecoder: JSONDecoder {
-        let result = JSONDecoder()
-        result.keyDecodingStrategy = .convertFromSnakeCase
-        result.dateDecodingStrategy = .formatted(dateFormatter)
-        return result
-    }
 }

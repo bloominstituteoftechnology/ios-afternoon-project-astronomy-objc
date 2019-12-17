@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "JLRMarsRover.h"
-#import "Astronomy-Swift.h"
+
+@class MarsPhotoReference;
 
 NS_SWIFT_NAME(MarsRoverClient)
 @interface JLRMarsRoverClient : NSObject

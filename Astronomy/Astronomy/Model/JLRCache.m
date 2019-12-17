@@ -10,13 +10,16 @@
 
 @implementation JLRCache
 
-- (void)setObject:(id)obj forKey:(id)key{}
+- (void)setObject:(id)obj forKey:(id)key {
+    
+}
 
--(id)objectForKey:(id)key
-{
+- (id)objectForKey:(id)key {
     return [self objectForKey:key];
 }
 
-- (void)removeAllObjects{}
+- (void)removeAllObjects {
+    
+}
 
 @end
