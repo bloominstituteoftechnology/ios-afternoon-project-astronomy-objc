@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(MarsRover)
 @interface LSIMarsRover : NSObject
 
 @property (nonatomic, readonly, copy, nonnull) NSString *name;

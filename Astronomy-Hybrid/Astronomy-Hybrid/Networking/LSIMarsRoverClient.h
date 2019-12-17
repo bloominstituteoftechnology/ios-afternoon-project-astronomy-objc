@@ -1,5 +1,5 @@
 //
-//  MarsRoverClient.h
+//  LSIMarsRoverClient.h
 //  Astronomy-Hybrid
 //
 //  Created by Isaac Lyons on 12/16/19.
@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "LSIMarsRover.h"
 
-@interface MarsRoverClient : NSObject
+NS_SWIFT_NAME(MarsRoverClient)
+@interface LSIMarsRoverClient : NSObject
 
 @property (nonnull, readonly) NSURL *baseURL;
 @property (nonnull, readonly) NSString *apiKey;
