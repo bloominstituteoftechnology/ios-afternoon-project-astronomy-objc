@@ -51,7 +51,7 @@
     [task resume];
 }
 
-- (void)fetchMarsRoverNamed:(NSString *)name completion:(void (^)(MarsRover * _Nullable, NSError * _Nullable))completion {
+- (void)fetchMarsRoverNamed:(NSString *)name completion:(void (^)(LSIMarsRover * _Nullable, NSError * _Nullable))completion {
     NSURL *url = [self urlForRoverNamed:name];
     NSLog(@"%@", [url description]);
     [self fetchFromURL:url completion:^(NSDictionary * _Nullable dictionary, NSError * _Nullable error) {
@@ -62,7 +62,7 @@
         
         NSDictionary *manifest = dictionary[@"photo_manifest"];
         
-        completion([[MarsRover alloc] initWithDictionary:manifest], nil);
+        completion([[LSIMarsRover alloc] initWithDictionary:manifest], nil);
     }];
 }
 

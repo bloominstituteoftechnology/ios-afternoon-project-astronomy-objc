@@ -15,8 +15,9 @@
 		590C1E4E23A825BE008CDDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E4D23A825BE008CDDE9 /* main.m */; };
 		590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */; };
 		590C1E5B23A8312F008CDDE9 /* MarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */; };
-		590C1E5E23A832C1008CDDE9 /* MarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5D23A832C1008CDDE9 /* MarsRover.m */; };
+		590C1E5E23A832C1008CDDE9 /* LSIMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E5D23A832C1008CDDE9 /* LSIMarsRover.m */; };
 		590C1E6123A83AFD008CDDE9 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E6023A83AFD008CDDE9 /* PhotosCollectionViewController.swift */; };
+		590C1E6423A85140008CDDE9 /* LSISol.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E6323A85140008CDDE9 /* LSISol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +35,11 @@
 		590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoReference.swift; sourceTree = "<group>"; };
 		590C1E5923A8312F008CDDE9 /* MarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverClient.h; sourceTree = "<group>"; };
 		590C1E5A23A8312F008CDDE9 /* MarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverClient.m; sourceTree = "<group>"; };
-		590C1E5C23A832C1008CDDE9 /* MarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRover.h; sourceTree = "<group>"; };
-		590C1E5D23A832C1008CDDE9 /* MarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRover.m; sourceTree = "<group>"; };
+		590C1E5C23A832C1008CDDE9 /* LSIMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIMarsRover.h; sourceTree = "<group>"; };
+		590C1E5D23A832C1008CDDE9 /* LSIMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsRover.m; sourceTree = "<group>"; };
 		590C1E6023A83AFD008CDDE9 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		590C1E6223A85140008CDDE9 /* LSISol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSISol.h; sourceTree = "<group>"; };
+		590C1E6323A85140008CDDE9 /* LSISol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSISol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				590C1E5623A82AE1008CDDE9 /* MarsPhotoReference.swift */,
-				590C1E5C23A832C1008CDDE9 /* MarsRover.h */,
-				590C1E5D23A832C1008CDDE9 /* MarsRover.m */,
+				590C1E5C23A832C1008CDDE9 /* LSIMarsRover.h */,
+				590C1E5D23A832C1008CDDE9 /* LSIMarsRover.m */,
+				590C1E6223A85140008CDDE9 /* LSISol.h */,
+				590C1E6323A85140008CDDE9 /* LSISol.m */,
 				590C1E5523A82AE0008CDDE9 /* Astronomy-Hybrid-Bridging-Header.h */,
 			);
 			path = Model;
@@ -139,6 +144,7 @@
 		590C1E3023A825BB008CDDE9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LSI;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Isaac Lyons";
 				TargetAttributes = {
@@ -185,11 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				590C1E3D23A825BB008CDDE9 /* AppDelegate.m in Sources */,
-				590C1E5E23A832C1008CDDE9 /* MarsRover.m in Sources */,
+				590C1E5E23A832C1008CDDE9 /* LSIMarsRover.m in Sources */,
 				590C1E4E23A825BE008CDDE9 /* main.m in Sources */,
 				590C1E6123A83AFD008CDDE9 /* PhotosCollectionViewController.swift in Sources */,
 				590C1E4023A825BB008CDDE9 /* SceneDelegate.m in Sources */,
 				590C1E5B23A8312F008CDDE9 /* MarsRoverClient.m in Sources */,
+				590C1E6423A85140008CDDE9 /* LSISol.m in Sources */,
 				590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

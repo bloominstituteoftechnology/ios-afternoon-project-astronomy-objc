@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MarsRover.h"
+#import "LSIMarsRover.h"
 
 @interface MarsRoverClient : NSObject
 
@@ -18,7 +18,7 @@
           completion:(void (^_Nonnull)(NSDictionary * _Nullable dictionary, NSError * _Nullable error))completion;
 
 - (void)fetchMarsRoverNamed:(nonnull NSString *)name
-                 completion:(void (^_Nonnull)(MarsRover * _Nullable, NSError * _Nullable error))completion;
+                 completion:(void (^_Nonnull)(LSIMarsRover * _Nullable, NSError * _Nullable error))completion;
 
 - (NSURL *_Nonnull)urlForRoverNamed:(NSString *_Nonnull)name;
 

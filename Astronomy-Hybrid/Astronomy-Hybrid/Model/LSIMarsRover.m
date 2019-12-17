@@ -1,14 +1,14 @@
 //
-//  MarsRover.m
+//  LSIMarsRover.m
 //  Astronomy-Hybrid
 //
 //  Created by Isaac Lyons on 12/16/19.
 //  Copyright © 2019 Isaac Lyons. All rights reserved.
 //
 
-#import "MarsRover.h"
+#import "LSIMarsRover.h"
 
-@implementation MarsRover
+@implementation LSIMarsRover
 
 - (instancetype)initWithName:(NSString *)name {
     self = [super init];

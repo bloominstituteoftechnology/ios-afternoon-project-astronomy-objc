@@ -1,5 +1,5 @@
 //
-//  MarsRover.h
+//  LSIMarsRover.h
 //  Astronomy-Hybrid
 //
 //  Created by Isaac Lyons on 12/16/19.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MarsRover : NSObject
+@interface LSIMarsRover : NSObject
 
 @property (nonatomic, readonly, copy, nonnull) NSString *name;
 
