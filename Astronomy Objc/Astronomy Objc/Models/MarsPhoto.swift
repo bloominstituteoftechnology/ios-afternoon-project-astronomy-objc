@@ -21,14 +21,14 @@ import Foundation
         case imageURL = "img_src"
     }
     
-    @objc init(id: Int, sol: Int, earthDate: String, imageURL: URL) {
+    init(id: Int, sol: Int, earthDate: String, imageURL: URL) {
         self.id = id
         self.sol = sol
         self.earthDate = earthDate
         self.imageURL = imageURL
     }
     
-    convenience init?(dictionary: [String : Any]) {
+    @objc convenience init?(dictionary: [String : Any]) {
         guard let id = dictionary["id"] as? Int,
             let sol = dictionary["sols"] as? Int,
             let earthDate = dictionary["earth_date"] as? String,

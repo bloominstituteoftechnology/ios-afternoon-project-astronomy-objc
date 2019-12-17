@@ -28,10 +28,10 @@
     int maxsol = [maxSolNumber intValue];
     
     NSArray *sols = dictionary[@"photos"];
-    NSArray<GIPSol *> *solArray = @[];
+    NSMutableArray<GIPSol *> *solArray = [[NSMutableArray alloc] init];
     
     for (NSDictionary *dict in sols) {
-        solArray = [solArray arrayByAddingObject:[[GIPSol alloc] initWithDictionary:dict]];
+        [solArray addObject:[[GIPSol alloc] initWithDictionary:dict]];
     }
     
     if (!name || !maxsol || !solArray) {
