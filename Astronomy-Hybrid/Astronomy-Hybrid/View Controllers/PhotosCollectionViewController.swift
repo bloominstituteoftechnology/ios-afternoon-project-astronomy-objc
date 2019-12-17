@@ -13,7 +13,37 @@ private let reuseIdentifier = "ImageCell"
 class PhotosCollectionViewController: UICollectionViewController {
     
     let client = MarsRoverClient()
-    var rover: MarsRover?
+    var rover: MarsRover? {
+        didSet {
+            guard let rover = rover else { return }
+            
+            self.title = "\(rover.name) Rover"
+            
+            //guard let firstSol = rover.sols.first else { return }
+            
+            self.client.fetchPhotos(from: rover, onSol: 1) { photos, error in
+                if let error = error {
+                    NSLog("\(error)")
+                    return
+                }
+                
+                guard let photos = photos else {
+                    NSLog("No photos returned")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    //print(photos)
+                    self.photos = photos
+                }
+            }
+        }
+    }
+    var photos: [MarsPhotoReference] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,25 +66,11 @@ class PhotosCollectionViewController: UICollectionViewController {
                 return
             }
             
-            print("Rover: \(rover.name)")
-            print("Sols: \(rover.sols)")
-            self.rover = rover
-            
             DispatchQueue.main.async {
-                self.title = "\(rover.name) Rover"
-            }
-            
-            guard let firstSol = rover.sols.first else { return }
-            
-            self.client.fetchPhotos(from: rover, onSol: firstSol.sol) { photos, error in
-                if let error = error {
-                    NSLog("\(error)")
-                    return
-                }
+                print("Rover: \(rover.name)")
+                //print("Sols: \(rover.sols)")
                 
-                if let photos = photos {
-                    print(photos)
-                }
+                self.rover = rover
             }
         }
     }
@@ -71,15 +87,9 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        print(photos.count)
+        return photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
