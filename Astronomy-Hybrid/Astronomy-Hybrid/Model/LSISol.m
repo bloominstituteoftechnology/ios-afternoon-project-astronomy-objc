@@ -30,4 +30,9 @@
     return [self initWithSol:[sol intValue] totalPhotos:[totalPhotos intValue]];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Sol: %d - Total photos: %d", self.sol, self.totalPhotos];
+}
+
 @end

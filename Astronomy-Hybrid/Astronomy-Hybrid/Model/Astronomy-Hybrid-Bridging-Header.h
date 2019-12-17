@@ -3,3 +3,5 @@
 //
 
 #import "LSIMarsRoverClient.h"
+#import "LSIMarsRover.h"
+#import "LSISol.h"

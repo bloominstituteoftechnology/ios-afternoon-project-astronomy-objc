@@ -37,6 +37,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             }
             
             print("Rover: \(rover.name)")
+            print("Sols: \(rover.sols)")
             self.rover = rover
             
             DispatchQueue.main.async {
