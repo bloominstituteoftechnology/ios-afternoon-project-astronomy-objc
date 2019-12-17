@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+@class GIPSol;
 
 NS_SWIFT_NAME(MarsRover)
 @interface GIPMarsRover : NSObject
 
-@property NSString *name;
-@property int maxSol;
+@property (nonatomic, readonly, copy, nonnull) NSString *name;
+@property (nonatomic, readonly) int maxSol;
+@property (nonatomic, readonly, copy, nonnull) NSArray<GIPSol *> *sols;
 
-@property NSArray *sols;
+- (nonnull instancetype)initWithName:(nonnull NSString *)name maxSol:(int)maxSol sols:(nonnull NSArray<GIPSol *>*)sols;
+
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionatry;
 
 @end
 
