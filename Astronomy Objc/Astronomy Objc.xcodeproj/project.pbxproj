@@ -18,6 +18,7 @@
 		A6CC366423A83C92008EA141 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366323A83C92008EA141 /* DetailViewController.swift */; };
 		A6CC366623A83D3F008EA141 /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366523A83D3F008EA141 /* MarsPhoto.swift */; };
 		A6CC366923A840D7008EA141 /* GIPSol.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366823A840D7008EA141 /* GIPSol.m */; };
+		A6CC366C23A8C45F008EA141 /* GIPMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366B23A8C45F008EA141 /* GIPMarsRoverClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		A6CC366523A83D3F008EA141 /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
 		A6CC366723A840D7008EA141 /* GIPSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPSol.h; sourceTree = "<group>"; };
 		A6CC366823A840D7008EA141 /* GIPSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPSol.m; sourceTree = "<group>"; };
+		A6CC366A23A8C45F008EA141 /* GIPMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPMarsRoverClient.h; sourceTree = "<group>"; };
+		A6CC366B23A8C45F008EA141 /* GIPMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPMarsRoverClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 				A6CC364A23A82785008EA141 /* Info.plist */,
 				A6CC364B23A82785008EA141 /* main.m */,
 				A6CC365F23A83AF5008EA141 /* Models */,
+				A6CC366D23A8C464008EA141 /* Networking */,
 			);
 			path = "Astronomy Objc";
 			sourceTree = "<group>";
@@ -114,6 +118,15 @@
 				A6CC366823A840D7008EA141 /* GIPSol.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A6CC366D23A8C464008EA141 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A6CC366A23A8C45F008EA141 /* GIPMarsRoverClient.h */,
+				A6CC366B23A8C45F008EA141 /* GIPMarsRoverClient.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +203,7 @@
 			files = (
 				A6CC363B23A82784008EA141 /* AppDelegate.m in Sources */,
 				A6CC366923A840D7008EA141 /* GIPSol.m in Sources */,
+				A6CC366C23A8C45F008EA141 /* GIPMarsRoverClient.m in Sources */,
 				A6CC365E23A83AEE008EA141 /* GIPMarsRover.m in Sources */,
 				A6CC366623A83D3F008EA141 /* MarsPhoto.swift in Sources */,
 				A6CC364C23A82785008EA141 /* main.m in Sources */,
