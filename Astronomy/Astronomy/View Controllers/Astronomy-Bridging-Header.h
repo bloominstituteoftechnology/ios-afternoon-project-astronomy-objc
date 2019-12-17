@@ -6,3 +6,4 @@
 #import "JLRSolDescription.h"
 #import "JLRMarsRover.h"
 #import "JLRCache.h"
+#import "JLRMarsRoverClient.h"

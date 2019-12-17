@@ -15,6 +15,8 @@ import Foundation
     @objc let camera: Camera
     @objc let earthDate: Date
     @objc let imageURL: URL
+    @objc var dictionary: [String: String]?
+    
     
     @objc init(id: Int, sol: Int, camera: Camera, earthDate: Date, imageURL: URL) {
         self.id = id
@@ -22,6 +24,10 @@ import Foundation
         self.camera = camera
         self.earthDate = earthDate
         self.imageURL = imageURL
+    }
+    
+    @objc convenience init(dictionary: [String: String]) {
+        self.init(dictionary: dictionary)
     }
     
     static let dateFormatter: DateFormatter = {
