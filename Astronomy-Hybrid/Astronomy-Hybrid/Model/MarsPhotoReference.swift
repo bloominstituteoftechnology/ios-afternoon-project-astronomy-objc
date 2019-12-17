@@ -32,4 +32,9 @@ import Foundation
         self.imageURL = imageURL
         super.init()
     }
+    
+    
+    override var description: String {
+        return "Photo id: \(id) - sol: \(sol) - URL: \(imageURL.absoluteString)"
+    }
 }

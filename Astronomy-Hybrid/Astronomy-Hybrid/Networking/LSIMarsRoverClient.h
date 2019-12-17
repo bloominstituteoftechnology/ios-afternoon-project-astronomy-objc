@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LSIMarsRover.h"
+
+@class LSIMarsRover;
+@class MarsPhotoReference;
 
 NS_SWIFT_NAME(MarsRoverClient)
 @interface LSIMarsRoverClient : NSObject
@@ -21,6 +23,7 @@ NS_SWIFT_NAME(MarsRoverClient)
 - (void)fetchMarsRoverNamed:(nonnull NSString *)name
                  completion:(void (^_Nonnull)(LSIMarsRover * _Nullable, NSError * _Nullable error))completion;
 
-- (NSURL *_Nonnull)urlForRoverNamed:(NSString *_Nonnull)name;
+- (void)fetchPhotosFromRover:(nonnull LSIMarsRover *)rover
+                       onSol:(int)sol completion:(void (^_Nonnull)(NSArray<MarsPhotoReference *> * _Nullable photos, NSError * _Nullable error))completion;
 
 @end

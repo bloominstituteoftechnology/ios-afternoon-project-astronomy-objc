@@ -7,6 +7,8 @@
 //
 
 #import "LSIMarsRoverClient.h"
+#import "LSIMarsRover.h"
+#import "Astronomy_Hybrid-Swift.h"
 
 @implementation LSIMarsRoverClient
 
@@ -52,8 +54,10 @@
 }
 
 - (void)fetchMarsRoverNamed:(NSString *)name completion:(void (^)(LSIMarsRover * _Nullable, NSError * _Nullable))completion {
+    
     NSURL *url = [self urlForRoverNamed:name];
     NSLog(@"%@", [url description]);
+    
     [self fetchFromURL:url completion:^(NSDictionary * _Nullable dictionary, NSError * _Nullable error) {
         //NSLog(@"Fetched!");
         if (error) {
@@ -66,6 +70,30 @@
     }];
 }
 
+- (void)fetchPhotosFromRover:(LSIMarsRover *)rover onSol:(int)sol completion:(void (^)(NSArray<MarsPhotoReference *> * _Nullable, NSError * _Nullable))completion {
+    
+    NSURL * url = [self urlForPhotosFromRoverNamed:[rover name] onSol:sol];
+    NSLog(@"%@", [url description]);
+    
+    [self fetchFromURL:url completion:^(NSDictionary * _Nullable dictionary, NSError * _Nullable error) {
+        if (error) {
+            return completion(nil, error);
+        }
+        
+        NSArray *photosJSON = dictionary[@"photos"];
+        
+        NSMutableArray<MarsPhotoReference *> *photos = [[NSMutableArray alloc] init];
+        for (NSDictionary *dictionary in photosJSON) {
+            MarsPhotoReference *photo = [[MarsPhotoReference alloc] initWith:dictionary];
+            if (photo) {
+                [photos addObject:photo];
+            }
+        }
+        
+        completion(photos, nil);
+    }];
+}
+
 - (NSURL *)urlForRoverNamed:(NSString *)name {
     NSURL *url = [[self.baseURL
                    URLByAppendingPathComponent:@"manifests"]
@@ -74,6 +102,21 @@
     NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
     NSURLQueryItem *apiKeyItem = [NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey];
     [components setQueryItems:@[apiKeyItem]];
+    
+    return [components URL];
+}
+
+- (NSURL *)urlForPhotosFromRoverNamed:(NSString *)name
+                                onSol:(int)sol {
+    NSURL *url = [[[self.baseURL
+                    URLByAppendingPathComponent:@"rovers"]
+                   URLByAppendingPathComponent:name]
+                  URLByAppendingPathComponent:@"photos"];
+    
+    NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
+    NSURLQueryItem *apiKeyItem = [NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey];
+    NSURLQueryItem *solItem = [NSURLQueryItem queryItemWithName:@"sol" value:[NSString stringWithFormat:@"%d", sol]];
+    [components setQueryItems:@[apiKeyItem, solItem]];
     
     return [components URL];
 }

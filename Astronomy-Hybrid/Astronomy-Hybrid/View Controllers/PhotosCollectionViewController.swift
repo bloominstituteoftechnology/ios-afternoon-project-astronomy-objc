@@ -43,6 +43,19 @@ class PhotosCollectionViewController: UICollectionViewController {
             DispatchQueue.main.async {
                 self.title = "\(rover.name) Rover"
             }
+            
+            guard let firstSol = rover.sols.first else { return }
+            
+            self.client.fetchPhotos(from: rover, onSol: firstSol.sol) { photos, error in
+                if let error = error {
+                    NSLog("\(error)")
+                    return
+                }
+                
+                if let photos = photos {
+                    print(photos)
+                }
+            }
         }
     }
 
