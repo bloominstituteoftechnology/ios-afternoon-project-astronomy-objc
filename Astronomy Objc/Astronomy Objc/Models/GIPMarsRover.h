@@ -18,7 +18,7 @@ NS_SWIFT_NAME(MarsRover)
 
 - (nonnull instancetype)initWithName:(nonnull NSString *)name maxSol:(int)maxSol sols:(nonnull NSArray<GIPSol *>*)sols;
 
-- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionatry;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "GIPMarsRover.h"
+#import "GIPSol.h"
 
 @implementation GIPMarsRover
 
@@ -20,19 +21,24 @@
     return self;
 }
 
-- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionatry {
-    NSString *name = dictionatry[@"name"];
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary {
+    NSString *name = dictionary[@"name"];
     
-    NSNumber *maxSolNumber = dictionatry[@"max_sol"];
+    NSNumber *maxSolNumber = dictionary[@"max_sol"];
     int maxsol = [maxSolNumber intValue];
     
-    NSArray *sols = dictionatry[@"photos"];
+    NSArray *sols = dictionary[@"photos"];
+    NSArray<GIPSol *> *solArray = @[];
     
-    if (!name || !maxsol || !sols) {
+    for (NSDictionary *dict in sols) {
+        solArray = [solArray arrayByAddingObject:[[GIPSol alloc] initWithDictionary:dict]];
+    }
+    
+    if (!name || !maxsol || !solArray) {
         return nil;
     }
     
-    return [self initWithName:name maxSol:maxsol sols:sols];
+    return [self initWithName:name maxSol:maxsol sols:solArray];
     
 }
 

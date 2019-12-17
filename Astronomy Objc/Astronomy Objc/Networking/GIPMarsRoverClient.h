@@ -12,6 +12,9 @@
 
 @interface GIPMarsRoverClient : NSObject
 
+@property GIPMarsRover *rover;
+@property NSArray<MarsPhoto *> *photos;
+
 - (void)fetchRover:(NSString *)rover completion:(void (^)(GIPMarsRover *rover, NSError *error))completion;
 - (void)fetchPhoto:(NSString *)rover sol:(int)sol completion:(void (^)(NSArray<MarsPhoto *> *photos, NSError *error))completion;
 

@@ -7,6 +7,7 @@
 //
 
 #import "GIPMarsRoverClient.h"
+#import "GIPMarsRover.h"
 #import "Astronomy_Objc-Swift.h"
 
 @implementation GIPMarsRoverClient
@@ -28,6 +29,31 @@ static NSString *const APIKey = @"3TuvoId3HudPSG0ih3fTuTgubVE0fCP7NmgC4Wg5";
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        if (data == nil) {
+            completion(nil, [[NSError alloc] initWithDomain:@"com.gipyokim.Astronomy-Objc" code:0 userInfo:@{@"Error reason": @"Data returned nil."}]);
+            return;
+        }
+        
+        NSError *jsonError = nil;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if (jsonError) {
+            completion(nil, jsonError);
+            return;
+        }
+        
+        if (![json isKindOfClass:[NSDictionary class]]) {
+            completion(nil, [[NSError alloc] initWithDomain:@"com.gipyokim.Astronomy-Objc" code:0 userInfo:@{@"Error reason": @"NJSON was not a top level dictionary as expected."}]);
+            return;
+        }
+        
+        NSDictionary *resultDict = json[@"photo_manifest"];
+        self.rover = [[GIPMarsRover alloc] initWithDictionary:resultDict];
         
     }];
     [task resume];
