@@ -20,6 +20,7 @@
 		A6CC366C23A8C45F008EA141 /* GIPMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366B23A8C45F008EA141 /* GIPMarsRoverClient.m */; };
 		A6CC367423A996DD008EA141 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367323A996DD008EA141 /* PhotosCollectionViewController.swift */; };
 		A6CC367723A999A5008EA141 /* GIPImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */; };
+		A6CC367B23A9ACBC008EA141 /* GIPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367A23A9ACBC008EA141 /* GIPCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		A6CC367323A996DD008EA141 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		A6CC367523A999A5008EA141 /* GIPImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPImageCollectionViewCell.h; sourceTree = "<group>"; };
 		A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPImageCollectionViewCell.m; sourceTree = "<group>"; };
+		A6CC367923A9ACBC008EA141 /* GIPCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPCache.h; sourceTree = "<group>"; };
+		A6CC367A23A9ACBC008EA141 /* GIPCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				A6CC366523A83D3F008EA141 /* MarsPhoto.swift */,
 				A6CC366723A840D7008EA141 /* GIPSol.h */,
 				A6CC366823A840D7008EA141 /* GIPSol.m */,
+				A6CC367923A9ACBC008EA141 /* GIPCache.h */,
+				A6CC367A23A9ACBC008EA141 /* GIPCache.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				A6CC364C23A82785008EA141 /* main.m in Sources */,
 				A6CC366423A83C92008EA141 /* DetailViewController.swift in Sources */,
 				A6CC363E23A82784008EA141 /* SceneDelegate.m in Sources */,
+				A6CC367B23A9ACBC008EA141 /* GIPCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Astronomy-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/Astronomy Objc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Astronomy Objc/Astronomy Objc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,7 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Astronomy-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/Astronomy Objc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Astronomy Objc/Astronomy Objc-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -5,4 +5,4 @@
 #import "GIPMarsRover.h"
 #import "GIPSol.h"
 #import "GIPMarsRoverClient.h"
-#import "GIPImageCollectionViewCell"
+#import "GIPImageCollectionViewCell.h"

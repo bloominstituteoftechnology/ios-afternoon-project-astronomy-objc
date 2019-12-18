@@ -13,8 +13,8 @@
 NS_SWIFT_NAME(MarsRoverClient)
 @interface GIPMarsRoverClient : NSObject
 
-@property (nonatomic, readonly) GIPMarsRover *rover;
-@property (nonatomic, copy) NSArray<MarsPhoto *> *photos;
+//@property (nonatomic, readonly) GIPMarsRover *rover;
+//@property (nonatomic, copy) NSArray<MarsPhoto *> *photos;
 
 - (void)fetchRover:(NSString *)rover completion:(void (^)(GIPMarsRover *rover, NSError *error))completion;
 - (void)fetchPhoto:(NSString *)rover sol:(int)sol completion:(void (^)(NSArray<MarsPhoto *> *photos, NSError *error))completion;

@@ -12,7 +12,6 @@
 
 @interface GIPMarsRoverClient()
 
-@property (readwrite) GIPMarsRover *rover;
 @property NSMutableArray<MarsPhoto *> *internalPhotos;
 
 @end
@@ -31,9 +30,9 @@ static NSString *const APIKey = @"3TuvoId3HudPSG0ih3fTuTgubVE0fCP7NmgC4Wg5";
     return self;
 }
 
-- (void)setPhotos:(NSArray<MarsPhoto *> *)photos {
-    _photos = self.internalPhotos;
-}
+//- (void)setPhotos:(NSArray<MarsPhoto *> *)photos {
+//    _photos = self.internalPhotos;
+//}
 
 - (void)fetchRover:(NSString *)rover completion:(void (^)(GIPMarsRover *rover, NSError *error))completion {
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
@@ -73,7 +72,8 @@ static NSString *const APIKey = @"3TuvoId3HudPSG0ih3fTuTgubVE0fCP7NmgC4Wg5";
         }
         
         NSDictionary *resultDict = json[@"photo_manifest"];
-        self.rover = [[GIPMarsRover alloc] initWithDictionary:resultDict];
+        GIPMarsRover *rover = [[GIPMarsRover alloc] initWithDictionary:resultDict];
+        completion(rover,nil);
         
     }];
     [task resume];
@@ -125,6 +125,8 @@ static NSString *const APIKey = @"3TuvoId3HudPSG0ih3fTuTgubVE0fCP7NmgC4Wg5";
         for (NSDictionary *dict in resultArray) {
             [self.internalPhotos addObject:[[MarsPhoto alloc] initWithDictionary:dict]];
         }
+
+        completion(self.internalPhotos, nil);
         
     }];
     [task resume];
