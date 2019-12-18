@@ -34,18 +34,4 @@ import Foundation
         let solNumber = dictionary["sol"] as? Int
         self.init(id: 0, sol: solNumber!, camera: Camera(), earthDate: Date(), imageURL: URL(string: "http://apple.com")!)
     }
-    
-//    @objc convenience init(dictionary: [String: Any]) {
-//        guard let solNumber = dictionary["sol"] as? Int
-//            let URL = URL else { return }
-//        self.init(id: 0, sol: solNumber, camera: Camera(), earthDate: Date(), imageURL: URL(string: "http://apple.com")
-//    }
-    
-    static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = TimeZone(abbreviation: "GMT")
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
 }

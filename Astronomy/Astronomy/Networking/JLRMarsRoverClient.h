@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JLRMarsRover.h"
 
+@class MarsRover;
 @class MarsPhotoReference;
 
 NS_SWIFT_NAME(MarsRoverClient)
 @interface JLRMarsRoverClient : NSObject
 
-@property (nonatomic, readonly) JLRMarsRover *rover;
+@property (nonatomic, readonly) MarsRover *rover;
 
 @property (nonatomic) NSArray<MarsPhotoReference *> *photos;
 
