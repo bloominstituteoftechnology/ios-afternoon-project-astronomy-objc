@@ -6,3 +6,4 @@
 #import "GIPSol.h"
 #import "GIPMarsRoverClient.h"
 #import "GIPImageCollectionViewCell.h"
+#import "GIPCache.h"

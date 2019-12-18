@@ -10,10 +10,10 @@
 
 NS_SWIFT_NAME(Cache)
 
-@interface GIPCache : NSObject
+@interface GIPCache<Key, Value> : NSObject
 
-- (void)cacheValue:(nonnull NSObject *)value key:(nonnull NSObject *)key;
-- (nullable NSObject *)valueFor:(nonnull NSObject *)key;
+- (void)cacheValue:(nonnull Value)value key:(nonnull Key)key;
+- (nullable Value)valueFor:(nonnull Key)key;
 - (void)clear;
 
 @end

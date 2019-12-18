@@ -16,6 +16,7 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     let solLabel = UILabel()
     
     private let marsRoverClient = MarsRoverClient()
+    private let cache = Cache<NSNumber, UIImage>()
     
     private var rover: MarsRover? {
         didSet {

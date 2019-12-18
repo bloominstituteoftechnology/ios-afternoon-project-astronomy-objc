@@ -24,13 +24,13 @@
     return self;
 }
 
-- (void)cacheValue:(nonnull NSObject *)value key:(nonnull NSObject *)key {
+- (void)cacheValue:(id)value key:(id)key {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.cache[key] addObject:value];
     });
 }
 
-- (nullable NSObject *)valueFor:(nonnull NSObject *)key {
+- (nullable id)valueFor:(id)key {
     return self.cache[key];
 }
 
