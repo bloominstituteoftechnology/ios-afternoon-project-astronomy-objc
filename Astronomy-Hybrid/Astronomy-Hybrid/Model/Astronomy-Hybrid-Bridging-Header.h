@@ -6,3 +6,4 @@
 #import "LSIMarsRover.h"
 #import "LSISol.h"
 #import "LSIFetchPhotoOperation.h"
+#import "LSIImageCollectionViewCell.h"

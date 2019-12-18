@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "ImageCell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
@@ -56,7 +56,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
         client.fetchMarsRoverNamed("curiosity") { rover, error in
@@ -97,7 +97,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ImageCollectionViewCell else {
+            return UICollectionViewCell()
+        }
     
         loadImage(forCell: cell, forItemAt: indexPath)
     
@@ -137,7 +139,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     //MARK: Private
     
-    private func loadImage(forCell cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    private func loadImage(forCell cell: ImageCollectionViewCell, forItemAt indexPath: IndexPath) {
         
         let photoReference = photos[indexPath.item]
         
@@ -146,7 +148,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         let setCellImage = BlockOperation {
             guard let image = UIImage(data: fetchOperation.imageData ?? Data()) else { return }
             if self.collectionView.indexPath(for: cell) == indexPath {
-                // set the image for the cell
+                cell.imageView.image = image
                 print("Cell image set for cell \(indexPath.item)")
             }
         }
@@ -158,4 +160,12 @@ class PhotosCollectionViewController: UICollectionViewController {
         
     }
 
+}
+
+//MARK: Collection view delegate flow layout
+
+extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 150)
+    }
 }

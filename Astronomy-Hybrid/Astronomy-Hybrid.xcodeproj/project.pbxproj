@@ -20,6 +20,7 @@
 		590C1E6423A85140008CDDE9 /* LSISol.m in Sources */ = {isa = PBXBuildFile; fileRef = 590C1E6323A85140008CDDE9 /* LSISol.m */; };
 		5934406023A9924A007DE8A9 /* LSIFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5934405F23A9924A007DE8A9 /* LSIFetchPhotoOperation.m */; };
 		5934406423A99D22007DE8A9 /* NSURL+LSISecure.m in Sources */ = {isa = PBXBuildFile; fileRef = 5934406323A99D22007DE8A9 /* NSURL+LSISecure.m */; };
+		5934406823A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5934406723A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		5934405F23A9924A007DE8A9 /* LSIFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIFetchPhotoOperation.m; sourceTree = "<group>"; };
 		5934406223A99D22007DE8A9 /* NSURL+LSISecure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+LSISecure.h"; sourceTree = "<group>"; };
 		5934406323A99D22007DE8A9 /* NSURL+LSISecure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+LSISecure.m"; sourceTree = "<group>"; };
+		5934406623A9A0C6007DE8A9 /* LSIImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIImageCollectionViewCell.h; sourceTree = "<group>"; };
+		5934406723A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIImageCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 				590C1E3C23A825BB008CDDE9 /* AppDelegate.m */,
 				590C1E3E23A825BB008CDDE9 /* SceneDelegate.h */,
 				590C1E3F23A825BB008CDDE9 /* SceneDelegate.m */,
+				5934406523A9A0B2007DE8A9 /* Views */,
 				5934406123A99CFD007DE8A9 /* Utilities */,
 				5934405D23A99233007DE8A9 /* Operations */,
 				590C1E5F23A83ADB008CDDE9 /* View Controllers */,
@@ -142,6 +146,15 @@
 				5934406323A99D22007DE8A9 /* NSURL+LSISecure.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5934406523A9A0B2007DE8A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5934406623A9A0C6007DE8A9 /* LSIImageCollectionViewCell.h */,
+				5934406723A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +239,7 @@
 				590C1E5B23A8312F008CDDE9 /* LSIMarsRoverClient.m in Sources */,
 				590C1E6423A85140008CDDE9 /* LSISol.m in Sources */,
 				590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */,
+				5934406823A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
