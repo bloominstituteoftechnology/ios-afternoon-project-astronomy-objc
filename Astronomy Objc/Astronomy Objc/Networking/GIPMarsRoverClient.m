@@ -30,10 +30,6 @@ static NSString *const APIKey = @"3TuvoId3HudPSG0ih3fTuTgubVE0fCP7NmgC4Wg5";
     return self;
 }
 
-//- (void)setPhotos:(NSArray<MarsPhoto *> *)photos {
-//    _photos = self.internalPhotos;
-//}
-
 - (void)fetchRover:(NSString *)rover completion:(void (^)(GIPMarsRover *rover, NSError *error))completion {
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     baseURL = [baseURL URLByAppendingPathComponent:@"manifests"];

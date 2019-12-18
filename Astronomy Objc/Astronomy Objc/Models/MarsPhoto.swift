@@ -9,10 +9,10 @@
 import Foundation
 
 @objc class MarsPhoto: NSObject, Decodable {
-    let id: Int
-    let sol: Int
-    let earthDate: String
-    let imageURL: URL
+    @objc let id: Int
+    @objc let sol: Int
+    @objc let earthDate: String
+    @objc let imageURL: URL
     
     enum CodingKeys: String, CodingKey {
         case id
