@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,6 +44,7 @@
                                 <size key="customSize" width="150" height="150"/>
                                 <connections>
                                     <outlet property="imageView" destination="MbX-da-LNu" id="tYM-2G-qRp"/>
+                                    <segue destination="m89-gU-qTb" kind="show" id="azG-14-Non"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -67,6 +69,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxe-Fy-pXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2031.8840579710147" y="132.58928571428572"/>
+        </scene>
+        <!--iPhoto Detail View Controller-->
+        <scene sceneID="keF-Ok-35T">
+            <objects>
+                <viewController id="m89-gU-qTb" customClass="LSIPhotoDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jCO-h4-2dI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XGs-q5-6U9">
+                                <rect key="frame" x="20" y="490" width="110.5" height="68"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad0-Q0-8kc">
+                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjX-sF-GUi">
+                                        <rect key="frame" x="0.0" y="41.5" width="104" height="26.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nh1-rV-cYq">
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Nh1-rV-cYq" secondAttribute="height" multiplier="1:1" id="6cs-ex-YZN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XGs-q5-6U9" firstAttribute="top" secondItem="Nh1-rV-cYq" secondAttribute="bottom" constant="8" id="5oC-92-YjW"/>
+                            <constraint firstItem="WAP-Pn-zAA" firstAttribute="trailing" secondItem="Nh1-rV-cYq" secondAttribute="trailing" constant="20" id="7N7-lq-DQd"/>
+                            <constraint firstItem="Nh1-rV-cYq" firstAttribute="leading" secondItem="WAP-Pn-zAA" secondAttribute="leading" constant="20" id="BET-PF-du4"/>
+                            <constraint firstItem="Nh1-rV-cYq" firstAttribute="top" secondItem="WAP-Pn-zAA" secondAttribute="top" constant="20" id="Nhy-rC-cYz"/>
+                            <constraint firstItem="XGs-q5-6U9" firstAttribute="leading" secondItem="WAP-Pn-zAA" secondAttribute="leading" constant="20" id="rXa-dp-yU2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WAP-Pn-zAA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="G42-Zk-Zqk"/>
+                    <connections>
+                        <outlet property="earthDateTextLabel" destination="fjX-sF-GUi" id="3qL-HQ-pHE"/>
+                        <outlet property="imageView" destination="Nh1-rV-cYq" id="JtH-sp-4Fx"/>
+                        <outlet property="photoIdTextLabel" destination="ad0-Q0-8kc" id="2Cc-gc-b54"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1CE-gf-y2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2930" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QWD-xJ-O5x">

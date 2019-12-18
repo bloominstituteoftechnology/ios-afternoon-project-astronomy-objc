@@ -12,24 +12,28 @@ import Foundation
     @objc let id: Int
     @objc let sol: Int
     @objc let imageURL: URL
+    @objc let dateString: String
     
-    @objc init(id: Int, sol: Int, imageURL: URL) {
+    @objc init(id: Int, sol: Int, imageURL: URL, dateString: String) {
         self.id = id
         self.sol = sol
         self.imageURL = imageURL
+        self.dateString = dateString
     }
     
     @objc init?(with dictionary: [String: Any]) {
         guard let id = dictionary["id"] as? Int,
             let sol = dictionary["sol"] as? Int,
             let imageString = dictionary["img_src"] as? String,
-            let imageURL = URL(string: imageString) else {
+            let imageURL = URL(string: imageString),
+            let dateString = dictionary["earth_date"] as? String else {
             return nil
         }
         
         self.id = id
         self.sol = sol
         self.imageURL = imageURL
+        self.dateString = dateString
         super.init()
     }
     

@@ -22,6 +22,7 @@
 		5934406423A99D22007DE8A9 /* NSURL+LSISecure.m in Sources */ = {isa = PBXBuildFile; fileRef = 5934406323A99D22007DE8A9 /* NSURL+LSISecure.m */; };
 		5934406823A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5934406723A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m */; };
 		5937CB2523A9AD1600813D17 /* LSICache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5937CB2423A9AD1600813D17 /* LSICache.m */; };
+		5937CB2823A9B9A800813D17 /* LSIPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5937CB2723A9B9A800813D17 /* LSIPhotoDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		5934406723A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIImageCollectionViewCell.m; sourceTree = "<group>"; };
 		5937CB2323A9AD1600813D17 /* LSICache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSICache.h; sourceTree = "<group>"; };
 		5937CB2423A9AD1600813D17 /* LSICache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSICache.m; sourceTree = "<group>"; };
+		5937CB2623A9B9A800813D17 /* LSIPhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPhotoDetailViewController.h; sourceTree = "<group>"; };
+		5937CB2723A9B9A800813D17 /* LSIPhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPhotoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				590C1E6023A83AFD008CDDE9 /* PhotosCollectionViewController.swift */,
+				5937CB2623A9B9A800813D17 /* LSIPhotoDetailViewController.h */,
+				5937CB2723A9B9A800813D17 /* LSIPhotoDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				590C1E4023A825BB008CDDE9 /* SceneDelegate.m in Sources */,
 				590C1E5B23A8312F008CDDE9 /* LSIMarsRoverClient.m in Sources */,
 				590C1E6423A85140008CDDE9 /* LSISol.m in Sources */,
+				5937CB2823A9B9A800813D17 /* LSIPhotoDetailViewController.m in Sources */,
 				5937CB2523A9AD1600813D17 /* LSICache.m in Sources */,
 				590C1E5723A82AE1008CDDE9 /* MarsPhotoReference.swift in Sources */,
 				5934406823A9A0C6007DE8A9 /* LSIImageCollectionViewCell.m in Sources */,

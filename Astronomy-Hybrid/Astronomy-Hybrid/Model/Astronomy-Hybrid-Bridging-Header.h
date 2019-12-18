@@ -8,3 +8,4 @@
 #import "LSIFetchPhotoOperation.h"
 #import "LSIImageCollectionViewCell.h"
 #import "LSICache.h"
+#import "LSIPhotoDetailViewController.h"
