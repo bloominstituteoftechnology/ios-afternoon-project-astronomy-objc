@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Sol 1" prompt="Rover" id="LiY-mW-abo">
                         <barButtonItem key="leftBarButtonItem" title="Previous Sol" id="R4H-ZL-O47">
                             <connections>
-                                <action selector="previousSol:" destination="QZa-XC-27X" id="8rW-9d-Dmw"/>
+                                <action selector="previousSol:" destination="QZa-XC-27X" id="CI2-U2-6c8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next Sol" id="bgE-Zg-4qO">

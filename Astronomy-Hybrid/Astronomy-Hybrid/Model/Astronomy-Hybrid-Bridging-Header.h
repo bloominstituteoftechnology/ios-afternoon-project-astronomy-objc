@@ -7,3 +7,4 @@
 #import "LSISol.h"
 #import "LSIFetchPhotoOperation.h"
 #import "LSIImageCollectionViewCell.h"
+#import "LSICache.h"

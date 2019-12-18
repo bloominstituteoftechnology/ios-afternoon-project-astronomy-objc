@@ -27,6 +27,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     var sol: Sol? {
         didSet {
+            cache = Cache<NSNumber, UIImage>()
             updateViews()
             fetchPhotos()
         }
@@ -34,6 +35,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private let photoFetchQueue = OperationQueue()
     private var fetchOperations: [Int: FetchPhotoOperation] = [:]
+    
+    private var cache = Cache<NSNumber, UIImage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,21 +129,33 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let photoReference = photos[indexPath.item]
         
-        let fetchOperation = FetchPhotoOperation(photoReference: photoReference)
-        
-        let setCellImage = BlockOperation {
-            guard let image = UIImage(data: fetchOperation.imageData ?? Data()) else { return }
-            if self.collectionView.indexPath(for: cell) == indexPath {
+        if let image = cache.value(forKey: NSNumber(value: indexPath.item)) {
+            OperationQueue.main.addOperation {
                 cell.imageView.image = image
             }
+        } else {
+            let fetchOperation = FetchPhotoOperation(photoReference: photoReference)
+            
+            let saveToCache = BlockOperation {
+                guard let image = UIImage(data: fetchOperation.imageData ?? Data()) else { return }
+                self.cache.cacheValue(image, forKey: NSNumber(value: indexPath.item))
+            }
+            
+            let setCellImage = BlockOperation {
+                guard let image = UIImage(data: fetchOperation.imageData ?? Data()) else { return }
+                if self.collectionView.indexPath(for: cell) == indexPath {
+                    cell.imageView.image = image
+                }
+            }
+            
+            saveToCache.addDependency(fetchOperation)
+            setCellImage.addDependency(fetchOperation)
+            
+            photoFetchQueue.addOperations([fetchOperation, saveToCache], waitUntilFinished: false)
+            OperationQueue.main.addOperations([setCellImage], waitUntilFinished: false)
+            
+            fetchOperations[photoReference.id] = fetchOperation
         }
-        
-        setCellImage.addDependency(fetchOperation)
-        
-        photoFetchQueue.addOperations([fetchOperation], waitUntilFinished: false)
-        OperationQueue.main.addOperations([setCellImage], waitUntilFinished: false)
-        
-        fetchOperations[photoReference.id] = fetchOperation
     }
     
     private func updateViews() {
