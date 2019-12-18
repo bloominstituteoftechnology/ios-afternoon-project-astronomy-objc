@@ -18,9 +18,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     var rover: MarsRover? {
         didSet {
             sol = rover?.sols[1]
-            
-            updateViews()
-            fetchPhotos()
         }
     }
     var photos: [MarsPhotoReference] = [] {
@@ -28,9 +25,15 @@ class PhotosCollectionViewController: UICollectionViewController {
             collectionView.reloadData()
         }
     }
-    var sol: Sol?
+    var sol: Sol? {
+        didSet {
+            updateViews()
+            fetchPhotos()
+        }
+    }
     
     private let photoFetchQueue = OperationQueue()
+    private var fetchOperations: [Int: FetchPhotoOperation] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +85,10 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        fetchOperations[indexPath.item]?.cancel()
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -119,7 +126,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let photoReference = photos[indexPath.item]
         
-        let fetchOperation = LSIFetchPhotoOperation(photoReference: photoReference)
+        let fetchOperation = FetchPhotoOperation(photoReference: photoReference)
         
         let setCellImage = BlockOperation {
             guard let image = UIImage(data: fetchOperation.imageData ?? Data()) else { return }
@@ -133,6 +140,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         photoFetchQueue.addOperations([fetchOperation], waitUntilFinished: false)
         OperationQueue.main.addOperations([setCellImage], waitUntilFinished: false)
         
+        fetchOperations[photoReference.id] = fetchOperation
     }
     
     private func updateViews() {
@@ -178,9 +186,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         } else {
             self.sol = rover.sols.first
         }
-        
-        updateViews()
-        fetchPhotos()
     }
     
     @IBAction func previousSol(_ sender: UIBarButtonItem) {
@@ -194,9 +199,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         } else {
             self.sol = rover.sols.last
         }
-        
-        updateViews()
-        fetchPhotos()
     }
     
 }

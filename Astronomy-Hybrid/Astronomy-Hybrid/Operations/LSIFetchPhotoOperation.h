@@ -10,6 +10,7 @@
 
 @class MarsPhotoReference;
 
+NS_SWIFT_NAME(FetchPhotoOperation)
 @interface LSIFetchPhotoOperation : NSOperation
 
 @property (nonatomic, copy, readonly, nullable) NSData* imageData;
