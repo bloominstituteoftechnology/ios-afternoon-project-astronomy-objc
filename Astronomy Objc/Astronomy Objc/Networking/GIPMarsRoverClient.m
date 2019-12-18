@@ -121,7 +121,7 @@ static NSString *const APIKey = @"3TuvoId3HudPSG0ih3fTuTgubVE0fCP7NmgC4Wg5";
         for (NSDictionary *dict in resultArray) {
             [self.internalPhotos addObject:[[MarsPhoto alloc] initWithDictionary:dict]];
         }
-
+        
         completion(self.internalPhotos, nil);
         
     }];
