@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos Collection View Controller-->
+        <!--Sol 1-->
         <scene sceneID="npi-UA-ipz">
             <objects>
                 <collectionViewController id="QZa-XC-27X" customClass="PhotosCollectionViewController" customModule="Astronomy_Hybrid" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,18 @@
                             <outlet property="delegate" destination="QZa-XC-27X" id="Xrq-N0-iqK"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="LiY-mW-abo"/>
+                    <navigationItem key="navigationItem" title="Sol 1" prompt="Rover" id="LiY-mW-abo">
+                        <barButtonItem key="leftBarButtonItem" title="Previous Sol" id="R4H-ZL-O47">
+                            <connections>
+                                <action selector="previousSol:" destination="QZa-XC-27X" id="8rW-9d-Dmw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next Sol" id="bgE-Zg-4qO">
+                            <connections>
+                                <action selector="nextSol:" destination="QZa-XC-27X" id="iN8-q8-6RA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxe-Fy-pXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

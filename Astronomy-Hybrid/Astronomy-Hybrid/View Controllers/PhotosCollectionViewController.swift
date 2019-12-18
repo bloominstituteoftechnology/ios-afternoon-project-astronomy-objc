@@ -17,28 +17,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     let client = MarsRoverClient()
     var rover: MarsRover? {
         didSet {
-            guard let rover = rover else { return }
+            sol = rover?.sols[1]
             
-            self.title = "\(rover.name) Rover"
-            
-            //guard let firstSol = rover.sols.first else { return }
-            
-            self.client.fetchPhotos(from: rover, onSol: 1) { photos, error in
-                if let error = error {
-                    NSLog("\(error)")
-                    return
-                }
-                
-                guard let photos = photos else {
-                    NSLog("No photos returned")
-                    return
-                }
-                
-                DispatchQueue.main.async {
-                    //print(photos)
-                    self.photos = photos
-                }
-            }
+            updateViews()
+            fetchPhotos()
         }
     }
     var photos: [MarsPhotoReference] = [] {
@@ -46,17 +28,12 @@ class PhotosCollectionViewController: UICollectionViewController {
             collectionView.reloadData()
         }
     }
+    var sol: Sol?
     
     private let photoFetchQueue = OperationQueue()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
         client.fetchMarsRoverNamed("curiosity") { rover, error in
@@ -72,7 +49,6 @@ class PhotosCollectionViewController: UICollectionViewController {
             
             DispatchQueue.main.async {
                 print("Rover: \(rover.name)")
-                //print("Sols: \(rover.sols)")
                 
                 self.rover = rover
             }
@@ -105,7 +81,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -149,7 +125,6 @@ class PhotosCollectionViewController: UICollectionViewController {
             guard let image = UIImage(data: fetchOperation.imageData ?? Data()) else { return }
             if self.collectionView.indexPath(for: cell) == indexPath {
                 cell.imageView.image = image
-                print("Cell image set for cell \(indexPath.item)")
             }
         }
         
@@ -159,13 +134,90 @@ class PhotosCollectionViewController: UICollectionViewController {
         OperationQueue.main.addOperations([setCellImage], waitUntilFinished: false)
         
     }
-
+    
+    private func updateViews() {
+        if let rover = rover {
+            navigationItem.prompt = "\(rover.name) Rover"
+        }
+        
+        if let sol = sol {
+            title = "Sol \(sol.sol)"
+        }
+    }
+    
+    private func fetchPhotos() {
+        guard let rover = rover,
+            let sol = sol else { return }
+        self.client.fetchPhotos(from: rover, onSol: sol.sol) { photos, error in
+            if let error = error {
+                NSLog("\(error)")
+                return
+            }
+            
+            guard let photos = photos else {
+                NSLog("No photos returned")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.photos = photos
+            }
+        }
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func nextSol(_ sender: UIBarButtonItem) {
+        guard let rover = rover,
+            let sol = sol,
+            let solIndex = rover.sols.firstIndex(of: sol) else { return }
+        
+        
+        if solIndex + 1 < rover.sols.count {
+            self.sol = rover.sols[solIndex + 1]
+        } else {
+            self.sol = rover.sols.first
+        }
+        
+        updateViews()
+        fetchPhotos()
+    }
+    
+    @IBAction func previousSol(_ sender: UIBarButtonItem) {
+        guard let rover = rover,
+            let sol = sol,
+            let solIndex = rover.sols.firstIndex(of: sol) else { return }
+        
+        
+        if solIndex - 1 >= 0 {
+            self.sol = rover.sols[solIndex - 1]
+        } else {
+            self.sol = rover.sols.last
+        }
+        
+        updateViews()
+        fetchPhotos()
+    }
+    
 }
 
 //MARK: Collection view delegate flow layout
 
 extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 150)
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        var totalUsableWidth = collectionView.frame.width
+        let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
+        totalUsableWidth -= inset.left + inset.right
+        
+        let minWidth: CGFloat = 150.0
+        let numberOfItemsInOneRow = Int(totalUsableWidth / minWidth)
+        totalUsableWidth -= CGFloat(numberOfItemsInOneRow - 1) * flowLayout.minimumInteritemSpacing
+        let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
+        return CGSize(width: width, height: width)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
     }
 }

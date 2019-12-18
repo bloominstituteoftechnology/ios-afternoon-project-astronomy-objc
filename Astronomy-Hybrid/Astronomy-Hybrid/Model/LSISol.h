@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(Sol)
 @interface LSISol : NSObject
 
 @property (nonatomic, readonly) int sol;
