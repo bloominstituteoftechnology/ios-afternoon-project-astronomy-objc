@@ -44,8 +44,7 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     
     private var photoReferences = [MarsPhoto]() {
         didSet{
-            // TODO: implement caching
-            //cache.clear()
+            cache.clear()
             DispatchQueue.main.async { self.collectionView?.reloadData()
             }
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A63A567923A9ED7B00CFA49A /* GIPFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A63A567823A9ED7A00CFA49A /* GIPFetchPhotoOperation.m */; };
 		A6CC363B23A82784008EA141 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC363A23A82784008EA141 /* AppDelegate.m */; };
 		A6CC363E23A82784008EA141 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC363D23A82784008EA141 /* SceneDelegate.m */; };
 		A6CC364623A82785008EA141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CC364523A82785008EA141 /* Assets.xcassets */; };
@@ -21,9 +22,12 @@
 		A6CC367423A996DD008EA141 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367323A996DD008EA141 /* PhotosCollectionViewController.swift */; };
 		A6CC367723A999A5008EA141 /* GIPImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */; };
 		A6CC367B23A9ACBC008EA141 /* GIPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367A23A9ACBC008EA141 /* GIPCache.m */; };
+		A6CC368523A9EA2C008EA141 /* NSURL+GIPSecure.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC368423A9EA2C008EA141 /* NSURL+GIPSecure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A63A567723A9ED7A00CFA49A /* GIPFetchPhotoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIPFetchPhotoOperation.h; sourceTree = "<group>"; };
+		A63A567823A9ED7A00CFA49A /* GIPFetchPhotoOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIPFetchPhotoOperation.m; sourceTree = "<group>"; };
 		A6CC363623A82784008EA141 /* Astronomy Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CC363923A82784008EA141 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A6CC363A23A82784008EA141 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPImageCollectionViewCell.m; sourceTree = "<group>"; };
 		A6CC367923A9ACBC008EA141 /* GIPCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPCache.h; sourceTree = "<group>"; };
 		A6CC367A23A9ACBC008EA141 /* GIPCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPCache.m; sourceTree = "<group>"; };
+		A6CC368323A9EA2C008EA141 /* NSURL+GIPSecure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+GIPSecure.h"; sourceTree = "<group>"; };
+		A6CC368423A9EA2C008EA141 /* NSURL+GIPSecure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+GIPSecure.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,8 @@
 				A6CC365B23A83088008EA141 /* Storyboards */,
 				A6CC365F23A83AF5008EA141 /* Models */,
 				A6CC366D23A8C464008EA141 /* Networking */,
+				A6CC367F23A9CDD4008EA141 /* Operations */,
+				A6CC368623A9EB23008EA141 /* Utilities */,
 				A6CC363923A82784008EA141 /* AppDelegate.h */,
 				A6CC363A23A82784008EA141 /* AppDelegate.m */,
 				A6CC363C23A82784008EA141 /* SceneDelegate.h */,
@@ -145,6 +153,24 @@
 				A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A6CC367F23A9CDD4008EA141 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A63A567723A9ED7A00CFA49A /* GIPFetchPhotoOperation.h */,
+				A63A567823A9ED7A00CFA49A /* GIPFetchPhotoOperation.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		A6CC368623A9EB23008EA141 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A6CC368323A9EA2C008EA141 /* NSURL+GIPSecure.h */,
+				A6CC368423A9EA2C008EA141 /* NSURL+GIPSecure.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,11 +248,13 @@
 				A6CC363B23A82784008EA141 /* AppDelegate.m in Sources */,
 				A6CC366923A840D7008EA141 /* GIPSol.m in Sources */,
 				A6CC367423A996DD008EA141 /* PhotosCollectionViewController.swift in Sources */,
+				A6CC368523A9EA2C008EA141 /* NSURL+GIPSecure.m in Sources */,
 				A6CC367723A999A5008EA141 /* GIPImageCollectionViewCell.m in Sources */,
 				A6CC366C23A8C45F008EA141 /* GIPMarsRoverClient.m in Sources */,
 				A6CC365E23A83AEE008EA141 /* GIPMarsRover.m in Sources */,
 				A6CC366623A83D3F008EA141 /* MarsPhoto.swift in Sources */,
 				A6CC364C23A82785008EA141 /* main.m in Sources */,
+				A63A567923A9ED7B00CFA49A /* GIPFetchPhotoOperation.m in Sources */,
 				A6CC366423A83C92008EA141 /* DetailViewController.swift in Sources */,
 				A6CC363E23A82784008EA141 /* SceneDelegate.m in Sources */,
 				A6CC367B23A9ACBC008EA141 /* GIPCache.m in Sources */,
