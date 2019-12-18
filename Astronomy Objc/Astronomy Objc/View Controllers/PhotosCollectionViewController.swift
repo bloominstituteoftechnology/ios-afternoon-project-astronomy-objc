@@ -17,6 +17,8 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     
     private let marsRoverClient = MarsRoverClient()
     private let cache = Cache<NSNumber, UIImage>()
+    private let photoFetchQueue = OperationQueue()
+    private var operations = [Int : Operation]()
     
     private var rover: MarsRover? {
         didSet {
@@ -90,10 +92,47 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ImageCollectionViewCell ?? ImageCollectionViewCell()
         
-        // TODO: actually load the image
-        print("Image: \(photoReferences[indexPath.row].id)")
+        loadImage(forCell: cell, forItemAt: indexPath)
         
         return cell
+    }
+    
+    private func loadImage(forCell cell: ImageCollectionViewCell, forItemAt indexPath: IndexPath) {
+        let photoReference = photoReferences[indexPath.item]
+        // Check for image in cache
+        if let cachedImage = cache.value(for: photoReference.id as NSNumber) {
+            cell.imageView.image = cachedImage
+            return
+        }
+        
+        // Start an operation to fetch image data
+        let fetchOp = FetchPhotoOperation(photoRef: photoReference)
+        let cacheOp = BlockOperation {
+            if let image = fetchOp.image {
+                self.cache.cacheValue(image, key: photoReference.id as NSNumber)
+            }
+        }
+        let completionOp = BlockOperation {
+            defer { self.operations.removeValue(forKey: photoReference.id) }
+            
+            if let currentIndexPath = self.collectionView?.indexPath(for: cell),
+                currentIndexPath != indexPath {
+                return // Cell has been reused
+            }
+            
+            if let image = fetchOp.image {
+                cell.imageView.image = image
+            }
+        }
+        
+        cacheOp.addDependency(fetchOp)
+        completionOp.addDependency(fetchOp)
+        
+        photoFetchQueue.addOperation(fetchOp)
+        photoFetchQueue.addOperation(cacheOp)
+        OperationQueue.main.addOperation(completionOp)
+        
+        operations[photoReference.id] = fetchOp
     }
     
     private func configureTitleView() {

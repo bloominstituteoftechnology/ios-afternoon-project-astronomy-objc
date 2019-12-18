@@ -7,3 +7,4 @@
 #import "GIPMarsRoverClient.h"
 #import "GIPImageCollectionViewCell.h"
 #import "GIPCache.h"
+#import "GIPFetchPhotoOperation.h"

@@ -11,5 +11,7 @@
 NS_SWIFT_NAME(ImageCollectionViewCell)
 @interface GIPImageCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 

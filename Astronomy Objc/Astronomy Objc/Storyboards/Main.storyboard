@@ -50,7 +50,7 @@
                                             <constraint firstAttribute="bottom" secondItem="xlN-QE-XWB" secondAttribute="bottom" id="x4l-Q0-qQ8"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="xlN-QE-XWB" id="uLH-xt-6qJ"/>
+                                            <outlet property="imageView" destination="xlN-QE-XWB" id="Wpx-VA-s4D"/>
                                             <segue destination="kgd-gk-9pr" kind="show" identifier="ShowDetail" id="LAJ-Rh-Myv"/>
                                         </connections>
                                     </collectionViewCell>

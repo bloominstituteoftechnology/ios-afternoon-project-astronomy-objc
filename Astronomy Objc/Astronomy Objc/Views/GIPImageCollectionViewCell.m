@@ -8,11 +8,6 @@
 
 #import "GIPImageCollectionViewCell.h"
 
-@interface GIPImageCollectionViewCell()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
-@end
-
 @implementation GIPImageCollectionViewCell
 
 - (void)prepareForReuse {

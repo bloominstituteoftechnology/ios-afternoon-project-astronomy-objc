@@ -16,8 +16,9 @@ typedef enum {isReady, isExecuting, isFinished} State;
 
 @property State state;
 @property MarsPhoto *photoRef;
-@property NSData *imageData;
 @property (nullable) NSURLSessionDataTask *dataTask;
+@property (readwrite, nullable) UIImage *image;
+
 
 @end
 
@@ -63,7 +64,7 @@ typedef enum {isReady, isExecuting, isFinished} State;
             return;
         }
         if (data) {
-            self.imageData = data;
+            self.image = [UIImage imageWithData:data];
         }
         self.state = isFinished;
     }];
