@@ -23,6 +23,9 @@
 
 - (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary {
     NSNumber *solNumber = dictionary[@"sol"];
+    if (!solNumber) {
+        return nil;
+    }
     int sol = [solNumber intValue];
     
     NSString *date = dictionary[@"earth_date"];
@@ -30,7 +33,7 @@
     NSNumber *photoNumber = dictionary[@"total_photos"];
     int photos = [photoNumber intValue];
     
-    if (!sol || !date || !photos) {
+    if (!date || !photos) {
         return nil;
     }
     

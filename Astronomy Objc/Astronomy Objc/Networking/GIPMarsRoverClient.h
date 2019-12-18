@@ -10,6 +10,7 @@
 @class GIPMarsRover;
 @class MarsPhoto;
 
+NS_SWIFT_NAME(MarsRoverClient)
 @interface GIPMarsRoverClient : NSObject
 
 @property (nonatomic, readonly) GIPMarsRover *rover;

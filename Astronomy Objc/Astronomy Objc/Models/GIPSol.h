@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+NS_SWIFT_NAME(Sol)
 @interface GIPSol : NSObject
 
 @property (nonatomic, readonly) int sol;

@@ -14,11 +14,12 @@
 		A6CC364C23A82785008EA141 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC364B23A82785008EA141 /* main.m */; };
 		A6CC365723A82EB0008EA141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CC365623A82EB0008EA141 /* Main.storyboard */; };
 		A6CC365E23A83AEE008EA141 /* GIPMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC365D23A83AEE008EA141 /* GIPMarsRover.m */; };
-		A6CC366223A83C71008EA141 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366123A83C71008EA141 /* PhotosCollectionViewController.swift */; };
 		A6CC366423A83C92008EA141 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366323A83C92008EA141 /* DetailViewController.swift */; };
 		A6CC366623A83D3F008EA141 /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366523A83D3F008EA141 /* MarsPhoto.swift */; };
 		A6CC366923A840D7008EA141 /* GIPSol.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366823A840D7008EA141 /* GIPSol.m */; };
 		A6CC366C23A8C45F008EA141 /* GIPMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC366B23A8C45F008EA141 /* GIPMarsRoverClient.m */; };
+		A6CC367423A996DD008EA141 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367323A996DD008EA141 /* PhotosCollectionViewController.swift */; };
+		A6CC367723A999A5008EA141 /* GIPImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +36,15 @@
 		A6CC365C23A83AEE008EA141 /* GIPMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPMarsRover.h; sourceTree = "<group>"; };
 		A6CC365D23A83AEE008EA141 /* GIPMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPMarsRover.m; sourceTree = "<group>"; };
 		A6CC366023A83C71008EA141 /* Astronomy Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy Objc-Bridging-Header.h"; sourceTree = "<group>"; };
-		A6CC366123A83C71008EA141 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		A6CC366323A83C92008EA141 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A6CC366523A83D3F008EA141 /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
 		A6CC366723A840D7008EA141 /* GIPSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPSol.h; sourceTree = "<group>"; };
 		A6CC366823A840D7008EA141 /* GIPSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPSol.m; sourceTree = "<group>"; };
 		A6CC366A23A8C45F008EA141 /* GIPMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPMarsRoverClient.h; sourceTree = "<group>"; };
 		A6CC366B23A8C45F008EA141 /* GIPMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPMarsRoverClient.m; sourceTree = "<group>"; };
+		A6CC367323A996DD008EA141 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		A6CC367523A999A5008EA141 /* GIPImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPImageCollectionViewCell.h; sourceTree = "<group>"; };
+		A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPImageCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				A6CC365523A82E88008EA141 /* View Controllers */,
+				A6CC367823A999A9008EA141 /* Views */,
 				A6CC365B23A83088008EA141 /* Storyboards */,
+				A6CC365F23A83AF5008EA141 /* Models */,
+				A6CC366D23A8C464008EA141 /* Networking */,
 				A6CC363923A82784008EA141 /* AppDelegate.h */,
 				A6CC363A23A82784008EA141 /* AppDelegate.m */,
 				A6CC363C23A82784008EA141 /* SceneDelegate.h */,
@@ -83,8 +89,7 @@
 				A6CC364523A82785008EA141 /* Assets.xcassets */,
 				A6CC364A23A82785008EA141 /* Info.plist */,
 				A6CC364B23A82785008EA141 /* main.m */,
-				A6CC365F23A83AF5008EA141 /* Models */,
-				A6CC366D23A8C464008EA141 /* Networking */,
+				A6CC366023A83C71008EA141 /* Astronomy Objc-Bridging-Header.h */,
 			);
 			path = "Astronomy Objc";
 			sourceTree = "<group>";
@@ -92,9 +97,8 @@
 		A6CC365523A82E88008EA141 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A6CC366123A83C71008EA141 /* PhotosCollectionViewController.swift */,
+				A6CC367323A996DD008EA141 /* PhotosCollectionViewController.swift */,
 				A6CC366323A83C92008EA141 /* DetailViewController.swift */,
-				A6CC366023A83C71008EA141 /* Astronomy Objc-Bridging-Header.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -127,6 +131,15 @@
 				A6CC366B23A8C45F008EA141 /* GIPMarsRoverClient.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		A6CC367823A999A9008EA141 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6CC367523A999A5008EA141 /* GIPImageCollectionViewCell.h */,
+				A6CC367623A999A5008EA141 /* GIPImageCollectionViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,12 +216,13 @@
 			files = (
 				A6CC363B23A82784008EA141 /* AppDelegate.m in Sources */,
 				A6CC366923A840D7008EA141 /* GIPSol.m in Sources */,
+				A6CC367423A996DD008EA141 /* PhotosCollectionViewController.swift in Sources */,
+				A6CC367723A999A5008EA141 /* GIPImageCollectionViewCell.m in Sources */,
 				A6CC366C23A8C45F008EA141 /* GIPMarsRoverClient.m in Sources */,
 				A6CC365E23A83AEE008EA141 /* GIPMarsRover.m in Sources */,
 				A6CC366623A83D3F008EA141 /* MarsPhoto.swift in Sources */,
 				A6CC364C23A82785008EA141 /* main.m in Sources */,
 				A6CC366423A83C92008EA141 /* DetailViewController.swift in Sources */,
-				A6CC366223A83C71008EA141 /* PhotosCollectionViewController.swift in Sources */,
 				A6CC363E23A82784008EA141 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +365,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Astronomy-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/View Controllers/Astronomy Objc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/Astronomy Objc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,7 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Astronomy-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/View Controllers/Astronomy Objc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy Objc/Astronomy Objc-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
