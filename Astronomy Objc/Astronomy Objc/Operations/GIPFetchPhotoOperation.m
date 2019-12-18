@@ -14,7 +14,7 @@
 
 typedef enum {isReady, isExecuting, isFinished} State;
 
-@property State *state;
+@property State state;
 @property MarsPhoto *photoRef;
 @property NSData *imageData;
 @property (nullable) NSURLSessionDataTask *dataTask;
