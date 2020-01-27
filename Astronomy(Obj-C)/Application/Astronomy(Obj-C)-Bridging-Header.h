@@ -5,3 +5,4 @@
 #import "JBPhotoController.h"
 #import "JBSol.h"
 #import "JBPhotoReference.h"
+#import "JBPhotoCollectionViewCell.h"

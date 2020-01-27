@@ -14,6 +14,8 @@ class MainCollectionViewController: UICollectionViewController {
 
     private let solLabel = UILabel()
 
+    private let photoController = PhotoController()
+
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
@@ -23,7 +25,7 @@ class MainCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -63,21 +65,18 @@ class MainCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        guard let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                 for: indexPath) as? PhotoCollectionViewCell
+            else {
+                return UICollectionViewCell()
+        }
     
         return cell
     }

@@ -28,6 +28,8 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 
 @implementation JBPhotoController
 
+#pragma mark - Setup
+
 - (instancetype)init
 {
     self = [super init];
@@ -45,28 +47,7 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
     return [self.mutableSols copy];
 }
 
-- (void)fetchMissionManifest {
-    NSURL *url = [[NSURL URLWithString:baseURLString]
-                  URLByAppendingPathComponent:@"manifests/curiosity"];
-    [url setValue:kAPIKey forKey:@"api_key"];
-
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [[self.networkManager fetchDictionaryWithRequest:request
-                                          completion:^(NSDictionary * _Nullable dictionary,
-                                                       NSError * _Nullable error)
-    {
-        if (error) {
-            NSLog(@"Error fetching manifest: %@", error);
-            return;
-        }
-        if (dictionary == nil) {
-            NSLog(@"Error: manifest dictionary is nil");
-            return;
-        }
-
-        self.mutableSols = [self decodeSolsFromDictionary:dictionary];
-    }] resume];
-}
+# pragma mark - Public API
 
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
                         completion:(void (^)(NSMutableArray<JBPhotoReference *> *,
@@ -100,6 +81,55 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
             [photoRefs addObject:photoRef];
         }
         completion(photoRefs, nil);
+    }] resume];
+}
+
+- (void)fetchPhotoForReference:(JBPhotoReference *)photoRef
+                    completion:(void (^)(UIImage *,
+                                         NSError *))completion
+{
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:photoRef.imageURL];
+    [[self.networkManager fetchDataWithRequest:request
+                                    completion:^(NSData * _Nullable data,
+                                                 NSError * _Nullable error)
+    {
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        if (data == nil) {
+            NSLog(@"Error: sol photo data is nil");
+            completion(nil, [[NSError alloc] init]);
+            return;
+        }
+
+        UIImage *image = [UIImage imageWithData:data];
+        completion(image, nil);
+    }] resume];
+}
+
+#pragma mark - Helpers
+
+- (void)fetchMissionManifest {
+    NSURL *url = [[NSURL URLWithString:baseURLString]
+                  URLByAppendingPathComponent:@"manifests/curiosity"];
+    [url setValue:kAPIKey forKey:@"api_key"];
+
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    [[self.networkManager fetchDictionaryWithRequest:request
+                                          completion:^(NSDictionary * _Nullable dictionary,
+                                                       NSError * _Nullable error)
+    {
+        if (error) {
+            NSLog(@"Error fetching manifest: %@", error);
+            return;
+        }
+        if (dictionary == nil) {
+            NSLog(@"Error: manifest dictionary is nil");
+            return;
+        }
+
+        self.mutableSols = [self decodeSolsFromDictionary:dictionary];
     }] resume];
 }
 

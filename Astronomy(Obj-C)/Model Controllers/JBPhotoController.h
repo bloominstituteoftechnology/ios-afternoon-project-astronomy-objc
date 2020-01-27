@@ -6,7 +6,7 @@
 //  Copyright © 2020 Jon Bash. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class JBPhotoReference;
 @class JBSol;
@@ -22,8 +22,11 @@ NS_SWIFT_NAME(PhotoController)
 - (instancetype)init;
 
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
-                        completion:(void (^)(NSMutableArray<JBPhotoReference *> *,
-                                             NSError *))completion;
+                        completion:(void (^)(NSMutableArray<JBPhotoReference *> * _Nullable,
+                                             NSError * _Nullable))completion;
+- (void)fetchPhotoForReference:(JBPhotoReference *)photoRef
+                    completion:(void (^)(UIImage * _Nullable,
+                                         NSError * _Nullable))completion;
 
 @end
 

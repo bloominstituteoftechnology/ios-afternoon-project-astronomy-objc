@@ -13,7 +13,7 @@
 
 @interface JBSol()
 
-@property (nonatomic) NSMutableArray *internalPhotoRefs;
+@property (nonatomic, nullable) NSMutableArray *internalPhotoRefs;
 @property (weak, nonatomic) JBPhotoController *photoController;
 
 @end
@@ -31,22 +31,6 @@
         _earthDate = earthDate;
         _photoController = photoController;
         _internalPhotoRefs = [@[] mutableCopy];
-
-        [self.photoController
-         fetchPhotoReferencesForSol:self
-         completion:^(NSMutableArray<JBPhotoReference *> *photoRefs,
-                      NSError *error)
-        {
-            if (error) {
-                NSLog(@"Error fetching photo references: %@", error);
-                return;
-            }
-            if (photoRefs) {
-                self.internalPhotoRefs = photoRefs;
-            } else {
-                NSLog(@"No photo refs retrieved");
-            }
-        }];
     }
     return self;
 }
