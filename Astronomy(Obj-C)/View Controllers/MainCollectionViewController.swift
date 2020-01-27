@@ -15,19 +15,25 @@ class MainCollectionViewController: UICollectionViewController {
     private let solLabel = UILabel()
 
     private let photoController = PhotoController()
+    private var currentSolIndex: Int = 0
+    private var currentSol: Sol?
 
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        photoController.fetchMissionManifest { error in
+            if let error = error {
+                NSLog("Error fetching mission manifest: \(error)")
+                return
+            }
 
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+            if let sol10Index = self.photoController.sols.firstIndex(where: { $0.marsSol == 10 }) {
+                self.currentSolIndex = sol10Index
+            }
+            DispatchQueue.main.async { self.updateViews() }
+        }
     }
 
     private func configureTitleView() {
@@ -55,6 +61,14 @@ class MainCollectionViewController: UICollectionViewController {
         navigationItem.titleView = stackView
     }
 
+    private func updateViews() {
+        if let sol = currentSol {
+            self.solLabel.text = "Sol \(sol.marsSol)"
+        }
+
+        self.collectionView.reloadData()
+    }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -66,8 +80,7 @@ class MainCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return self.photoController.sols.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,6 +90,10 @@ class MainCollectionViewController: UICollectionViewController {
             else {
                 return UICollectionViewCell()
         }
+
+        cell.photoController = self.photoController
+        cell.photoRef = currentSol?.photoReferences[indexPath.row]
+        cell.fetchPhoto()
     
         return cell
     }
@@ -85,12 +102,19 @@ class MainCollectionViewController: UICollectionViewController {
 
     @objc
     private func goToPreviousSol(_ sender: Any) {
-
+        currentSolIndex -= (currentSolIndex == 0) ? 0 : 1
+        setCurrentSol()
     }
 
     @objc
     private func goToNextSol(_ sender: Any) {
-
+        self.currentSolIndex += (currentSolIndex == photoController.sols.count - 1) ? 0 : 1
+        setCurrentSol()
     }
 
+    private func setCurrentSol() {
+        if currentSolIndex < photoController.sols.count && currentSolIndex >= 0 {
+            currentSol = photoController.sols[currentSolIndex]
+        }
+    }
 }

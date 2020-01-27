@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class JBPhotoReference;
+@class JBPhotoController;
+
 
 NS_SWIFT_NAME(PhotoCollectionViewCell)
 @interface JBPhotoCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) JBPhotoReference *photoRef;
+@property (weak, nonatomic) JBPhotoController *photoController;
+
+- (void)fetchPhoto;
 
 @end
 
-NS_ASSUME_NONNULL_END
