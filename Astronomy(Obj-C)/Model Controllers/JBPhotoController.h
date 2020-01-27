@@ -11,8 +11,10 @@
 @class JBPhotoReference;
 @class JBSol;
 
+
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(PhotoController)
 @interface JBPhotoController : NSObject
 
 @property (nonatomic, readonly) NSArray<JBSol *> *sols;

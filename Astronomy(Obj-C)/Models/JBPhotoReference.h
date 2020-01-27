@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(PhotoReference)
 @interface JBPhotoReference : NSObject
 
 @property (nonatomic, readonly) NSURL *imageURL;
