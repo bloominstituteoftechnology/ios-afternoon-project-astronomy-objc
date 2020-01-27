@@ -13,6 +13,7 @@
 		992A4D1B23DF79AE00DEA71F /* JBNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D1A23DF79AE00DEA71F /* JBNetworkManager.m */; };
 		992A4D2123DF80C300DEA71F /* JBSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2023DF80C300DEA71F /* JBSol.m */; };
 		992A4D2423DF824500DEA71F /* JBPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2323DF824500DEA71F /* JBPhotoReference.m */; };
+		992A4D2723DF9A0700DEA71F /* JBPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2623DF9A0700DEA71F /* JBPhotoCollectionViewCell.m */; };
 		9945CFB223DF31A5006B6513 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB123DF31A5006B6513 /* AppDelegate.m */; };
 		9945CFB523DF31A5006B6513 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB423DF31A5006B6513 /* SceneDelegate.m */; };
 		9945CFBB23DF31A5006B6513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9945CFB923DF31A5006B6513 /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 		992A4D2023DF80C300DEA71F /* JBSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBSol.m; sourceTree = "<group>"; };
 		992A4D2223DF824500DEA71F /* JBPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPhotoReference.h; sourceTree = "<group>"; };
 		992A4D2323DF824500DEA71F /* JBPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBPhotoReference.m; sourceTree = "<group>"; };
+		992A4D2523DF9A0700DEA71F /* JBPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		992A4D2623DF9A0700DEA71F /* JBPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		9945CFAD23DF31A5006B6513 /* Astronomy(Obj-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy(Obj-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9945CFB023DF31A5006B6513 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9945CFB123DF31A5006B6513 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 		992A4D0523DF3F9000DEA71F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				992A4D2523DF9A0700DEA71F /* JBPhotoCollectionViewCell.h */,
+				992A4D2623DF9A0700DEA71F /* JBPhotoCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				992A4D1B23DF79AE00DEA71F /* JBNetworkManager.m in Sources */,
 				992A4D2123DF80C300DEA71F /* JBSol.m in Sources */,
 				992A4D0923DF47EE00DEA71F /* MainCollectionViewController.swift in Sources */,
+				992A4D2723DF9A0700DEA71F /* JBPhotoCollectionViewCell.m in Sources */,
 				992A4D1723DF665D00DEA71F /* JBPhotoController.m in Sources */,
 				9945CFC323DF31A8006B6513 /* main.m in Sources */,
 				992A4D0B23DF482300DEA71F /* PhotoDetailViewController.swift in Sources */,
