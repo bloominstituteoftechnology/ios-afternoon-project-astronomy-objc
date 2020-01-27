@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9945CFB223DF31A5006B6513 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB123DF31A5006B6513 /* AppDelegate.m */; };
 		9945CFB523DF31A5006B6513 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB423DF31A5006B6513 /* SceneDelegate.m */; };
-		9945CFB823DF31A5006B6513 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB723DF31A5006B6513 /* ViewController.m */; };
 		9945CFBB23DF31A5006B6513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9945CFB923DF31A5006B6513 /* Main.storyboard */; };
 		9945CFBD23DF31A7006B6513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9945CFBC23DF31A7006B6513 /* Assets.xcassets */; };
 		9945CFC023DF31A7006B6513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9945CFBE23DF31A7006B6513 /* LaunchScreen.storyboard */; };
@@ -22,8 +21,6 @@
 		9945CFB123DF31A5006B6513 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9945CFB323DF31A5006B6513 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		9945CFB423DF31A5006B6513 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		9945CFB623DF31A5006B6513 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9945CFB723DF31A5006B6513 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9945CFBA23DF31A5006B6513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9945CFBC23DF31A7006B6513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9945CFBF23DF31A7006B6513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +39,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		992A4D0023DF3F7700DEA71F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9945CFB023DF31A5006B6513 /* AppDelegate.h */,
+				9945CFB123DF31A5006B6513 /* AppDelegate.m */,
+				9945CFB323DF31A5006B6513 /* SceneDelegate.h */,
+				9945CFB423DF31A5006B6513 /* SceneDelegate.m */,
+				9945CFBC23DF31A7006B6513 /* Assets.xcassets */,
+				9945CFC123DF31A8006B6513 /* Info.plist */,
+				9945CFC223DF31A8006B6513 /* main.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		992A4D0123DF3F7C00DEA71F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		992A4D0223DF3F8100DEA71F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		992A4D0323DF3F8500DEA71F /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		992A4D0423DF3F8B00DEA71F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		992A4D0523DF3F9000DEA71F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		992A4D0623DF3FA300DEA71F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9945CFB923DF31A5006B6513 /* Main.storyboard */,
+				9945CFBE23DF31A7006B6513 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		9945CFA423DF31A5006B6513 = {
 			isa = PBXGroup;
 			children = (
@@ -61,17 +116,13 @@
 		9945CFAF23DF31A5006B6513 /* Astronomy(Obj-C) */ = {
 			isa = PBXGroup;
 			children = (
-				9945CFB023DF31A5006B6513 /* AppDelegate.h */,
-				9945CFB123DF31A5006B6513 /* AppDelegate.m */,
-				9945CFB323DF31A5006B6513 /* SceneDelegate.h */,
-				9945CFB423DF31A5006B6513 /* SceneDelegate.m */,
-				9945CFB623DF31A5006B6513 /* ViewController.h */,
-				9945CFB723DF31A5006B6513 /* ViewController.m */,
-				9945CFB923DF31A5006B6513 /* Main.storyboard */,
-				9945CFBC23DF31A7006B6513 /* Assets.xcassets */,
-				9945CFBE23DF31A7006B6513 /* LaunchScreen.storyboard */,
-				9945CFC123DF31A8006B6513 /* Info.plist */,
-				9945CFC223DF31A8006B6513 /* main.m */,
+				992A4D0623DF3FA300DEA71F /* Storyboards */,
+				992A4D0523DF3F9000DEA71F /* Views */,
+				992A4D0423DF3F8B00DEA71F /* View Controllers */,
+				992A4D0323DF3F8500DEA71F /* Model Controllers */,
+				992A4D0123DF3F7C00DEA71F /* Models */,
+				992A4D0223DF3F8100DEA71F /* Helpers */,
+				992A4D0023DF3F7700DEA71F /* Application */,
 			);
 			path = "Astronomy(Obj-C)";
 			sourceTree = "<group>";
@@ -102,6 +153,7 @@
 		9945CFA523DF31A5006B6513 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JB;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Jon Bash";
 				TargetAttributes = {
@@ -146,7 +198,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9945CFB823DF31A5006B6513 /* ViewController.m in Sources */,
 				9945CFB223DF31A5006B6513 /* AppDelegate.m in Sources */,
 				9945CFC323DF31A8006B6513 /* main.m in Sources */,
 				9945CFB523DF31A5006B6513 /* SceneDelegate.m in Sources */,
@@ -291,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22X3GA956P;
-				INFOPLIST_FILE = "Astronomy(Obj-C)/Info.plist";
+				INFOPLIST_FILE = "Astronomy(Obj-C)/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22X3GA956P;
-				INFOPLIST_FILE = "Astronomy(Obj-C)/Info.plist";
+				INFOPLIST_FILE = "Astronomy(Obj-C)/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
