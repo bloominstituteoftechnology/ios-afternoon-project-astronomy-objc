@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(Sol)
 @interface JBSol : NSObject
 
-@property (nonatomic, readonly) NSUInteger solIndex;
+@property (nonatomic, readonly) NSUInteger marsSol;
 @property (nonatomic, readonly) NSDate *earthDate;
 @property (nonatomic, readonly) NSArray<JBPhotoReference *> *photoReferences;
 

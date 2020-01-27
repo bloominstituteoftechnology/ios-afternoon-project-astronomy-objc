@@ -27,7 +27,7 @@
 {
     self = [super init];
     if (self) {
-        _solIndex = solIndex;
+        _marsSol = solIndex;
         _earthDate = earthDate;
         _photoController = photoController;
         _internalPhotoRefs = [@[] mutableCopy];
