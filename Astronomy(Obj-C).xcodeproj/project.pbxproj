@@ -18,9 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		992A4D0723DF47EE00DEA71F /* Astronomy(Obj-C)-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy(Obj-C)-Bridging-Header.h"; sourceTree = "<group>"; };
 		992A4D0823DF47EE00DEA71F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		992A4D0A23DF482300DEA71F /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		992A4D0C23DF4C8800DEA71F /* Astronomy(Obj-C)-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Astronomy(Obj-C)-Bridging-Header.h"; sourceTree = "<group>"; };
 		9945CFAD23DF31A5006B6513 /* Astronomy(Obj-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy(Obj-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9945CFB023DF31A5006B6513 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9945CFB123DF31A5006B6513 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		992A4D0023DF3F7700DEA71F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				992A4D0723DF47EE00DEA71F /* Astronomy(Obj-C)-Bridging-Header.h */,
+				992A4D0C23DF4C8800DEA71F /* Astronomy(Obj-C)-Bridging-Header.h */,
 				9945CFB023DF31A5006B6513 /* AppDelegate.h */,
 				9945CFB123DF31A5006B6513 /* AppDelegate.m */,
 				9945CFB323DF31A5006B6513 /* SceneDelegate.h */,
@@ -361,7 +361,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonbash.Astronomy-Obj-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy(Obj-C)/View Controllers/Astronomy(Obj-C)-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy(Obj-C)/Application/Astronomy(Obj-C)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,7 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonbash.Astronomy-Obj-C-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy(Obj-C)/View Controllers/Astronomy(Obj-C)-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy(Obj-C)/Application/Astronomy(Obj-C)-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
