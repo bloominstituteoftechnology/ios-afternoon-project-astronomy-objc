@@ -10,6 +10,10 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var photoInfoLabel: UILabel!
+    @IBOutlet weak var cameraInfoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
