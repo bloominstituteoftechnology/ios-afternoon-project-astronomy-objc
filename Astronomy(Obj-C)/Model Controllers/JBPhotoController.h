@@ -11,11 +11,18 @@
 @class JBPhotoReference;
 @class JBSol;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface JBPhotoController : NSObject
 
+@property (nonatomic, readonly) NSArray<JBSol *> *sols;
+
 - (instancetype)init;
+
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
                         completion:(void (^)(NSMutableArray<JBPhotoReference *> *,
                                              NSError *))completion;
 
 @end
+
+NS_ASSUME_NONNULL_END
