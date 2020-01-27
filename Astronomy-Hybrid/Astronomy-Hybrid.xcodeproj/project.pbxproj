@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BB3BAA0523DF66390061486F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA0423DF66390061486F /* AppDelegate.m */; };
 		BB3BAA0823DF66390061486F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA0723DF66390061486F /* SceneDelegate.m */; };
-		BB3BAA0B23DF66390061486F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA0A23DF66390061486F /* ViewController.m */; };
 		BB3BAA0E23DF66390061486F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3BAA0C23DF66390061486F /* Main.storyboard */; };
 		BB3BAA1023DF663C0061486F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3BAA0F23DF663C0061486F /* Assets.xcassets */; };
 		BB3BAA1323DF663C0061486F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3BAA1123DF663C0061486F /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		BB3BAA1E23DF8A950061486F /* SolPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA1D23DF8A950061486F /* SolPhotosCollectionViewController.swift */; };
 		BB3BAA2023DF8AC70061486F /* SolPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA1F23DF8AC70061486F /* SolPhotoDetailViewController.swift */; };
 		BB3BAA2223DF8B6D0061486F /* SolPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2123DF8B6D0061486F /* SolPhotoCollectionViewCell.swift */; };
+		BB3BAA2A23DF8F990061486F /* SKSRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2923DF8F990061486F /* SKSRoverController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,6 @@
 		BB3BAA0423DF66390061486F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BB3BAA0623DF66390061486F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BB3BAA0723DF66390061486F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BB3BAA0923DF66390061486F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BB3BAA0A23DF66390061486F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BB3BAA0D23DF66390061486F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB3BAA0F23DF663C0061486F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB3BAA1223DF663C0061486F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +34,8 @@
 		BB3BAA1D23DF8A950061486F /* SolPhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		BB3BAA1F23DF8AC70061486F /* SolPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPhotoDetailViewController.swift; sourceTree = "<group>"; };
 		BB3BAA2123DF8B6D0061486F /* SolPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB3BAA2823DF8F990061486F /* SKSRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSRoverController.h; sourceTree = "<group>"; };
+		BB3BAA2923DF8F990061486F /* SKSRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSRoverController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +70,11 @@
 			children = (
 				BB3BAA2323DF8B960061486F /* View Controllers */,
 				BB3BAA2423DF8B9F0061486F /* Views */,
+				BB3BAA2723DF8F5E0061486F /* Model Controllers */,
 				BB3BAA0323DF66390061486F /* AppDelegate.h */,
 				BB3BAA0423DF66390061486F /* AppDelegate.m */,
 				BB3BAA0623DF66390061486F /* SceneDelegate.h */,
 				BB3BAA0723DF66390061486F /* SceneDelegate.m */,
-				BB3BAA0923DF66390061486F /* ViewController.h */,
-				BB3BAA0A23DF66390061486F /* ViewController.m */,
 				BB3BAA0C23DF66390061486F /* Main.storyboard */,
 				BB3BAA0F23DF663C0061486F /* Assets.xcassets */,
 				BB3BAA1123DF663C0061486F /* LaunchScreen.storyboard */,
@@ -101,6 +100,15 @@
 				BB3BAA2123DF8B6D0061486F /* SolPhotoCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BB3BAA2723DF8F5E0061486F /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB3BAA2823DF8F990061486F /* SKSRoverController.h */,
+				BB3BAA2923DF8F990061486F /* SKSRoverController.m */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,8 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3BAA0B23DF66390061486F /* ViewController.m in Sources */,
 				BB3BAA0523DF66390061486F /* AppDelegate.m in Sources */,
+				BB3BAA2A23DF8F990061486F /* SKSRoverController.m in Sources */,
 				BB3BAA1623DF663C0061486F /* main.m in Sources */,
 				BB3BAA2023DF8AC70061486F /* SolPhotoDetailViewController.swift in Sources */,
 				BB3BAA2223DF8B6D0061486F /* SolPhotoCollectionViewCell.swift in Sources */,
