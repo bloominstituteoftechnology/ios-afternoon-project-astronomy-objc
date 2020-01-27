@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(RoverController)
+
 @interface SKSRoverController : NSObject
 
-- (void)photoManifestForRover:(void (^)(NSError *error))completion;
-- (void)photosForRoverOnSol:(NSString *)sol completion:(void (^)(NSError *error))completion;
+- (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion;
+- (void)photosForRoverOnSol:(nonnull NSString *)sol completion:(nonnull void (^)(NSError *_Nullable))completion;
 
 @end
 

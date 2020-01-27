@@ -12,10 +12,10 @@
 
 static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
 
-- (void)photoManifestForRover:(void (^)(NSError *error))completion {
+- (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion {
 
-    NSURL *baseURL = [NSURL URLWithString:baseURLString];
-    [baseURL URLByAppendingPathComponent:@"manifests/curiosity?api_key=DEMO_KEY"];
+    NSString *urlString = [baseURLString stringByAppendingString:@"manifests/curiosity?api_key=DEMO_KEY"];
+    NSURL *baseURL = [NSURL URLWithString:urlString];
 
     [[[NSURLSession sharedSession] dataTaskWithURL:baseURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
@@ -50,16 +50,20 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
     }] resume];
 }
 
-- (void)photosForRoverOnSol:(NSString *)sol completion:(void (^)(NSError *error))completion {
+- (void)photosForRoverOnSol:(nonnull NSString *)sol completion:(nonnull void (^)(NSError *_Nullable))completion {
 
-    NSURL *baseURL = [NSURL URLWithString:baseURLString];
+    NSString *urlString = [baseURLString stringByAppendingString:@"rovers/curiosity/photos"];
+    NSURL *baseURL = [NSURL URLWithString:urlString];
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:TRUE];
 
+    //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=DEMO_KEY
     NSURLQueryItem *solItem = [NSURLQueryItem queryItemWithName:@"sol" value:sol];
     NSURLQueryItem *apiKey = [NSURLQueryItem queryItemWithName:@"api_key" value:@"DEMO_KEY"];
     [components setQueryItems:@[solItem, apiKey]];
 
-    [[[NSURLSession sharedSession] dataTaskWithURL:baseURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURL *url = components.URL;
+
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         if (error) {
             completion(error);

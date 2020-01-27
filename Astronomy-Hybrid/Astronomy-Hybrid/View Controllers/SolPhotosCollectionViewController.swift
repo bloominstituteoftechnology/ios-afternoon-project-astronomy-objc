@@ -8,13 +8,26 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoCell"
 
 class SolPhotosCollectionViewController: UICollectionViewController {
 
+    private let roverController = RoverController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        roverController.photoManifest { (error) in
+            if let error = error {
+                print("Error getting photomanifest \(error)")
+            }
+        }
+
+        roverController.photosForRover(onSol: "10") { (error) in
+            if let error = error {
+                print("Error getting photos \(error)")
+            }
+        }
     }
 
     /*
