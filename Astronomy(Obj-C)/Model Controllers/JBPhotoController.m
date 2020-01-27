@@ -20,7 +20,6 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 
 @property (nonatomic, nonnull) JBNetworkManager *networkManager;
 @property (nonatomic, nonnull) NSMutableArray<JBSol *> *mutableSols;
-- (void)fetchMissionManifest;
 - (NSMutableArray<JBSol *> *)decodeSolsFromDictionary:(NSDictionary *)dictionary;
 
 @end
@@ -37,7 +36,6 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
         _mutableSols = [@[] mutableCopy];
         _networkManager = [[JBNetworkManager alloc] init];
         _networkManager.acceptNilData = NO;
-        [self fetchMissionManifest];
     }
     return self;
 }
@@ -49,16 +47,51 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 
 # pragma mark - Public API
 
+- (void)fetchMissionManifestWithCompletion:(void (^)(NSError * _Nullable))completion {
+    NSURL *originalURL = [[NSURL URLWithString:baseURLString]
+                          URLByAppendingPathComponent:@"manifests/curiosity"];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:originalURL
+                                             resolvingAgainstBaseURL:NO];
+    components.queryItems = @[
+        [NSURLQueryItem queryItemWithName:@"api_key" value:kAPIKey]
+    ];
+
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:components.URL];
+    [[self.networkManager fetchDictionaryWithRequest:request
+                                          completion:^(NSDictionary * _Nullable dictionary,
+                                                       NSError * _Nullable error)
+    {
+        if (error) {
+            completion(error);
+            return;
+        }
+        if (dictionary == nil) {
+            NSLog(@"Error: manifest dictionary is nil");
+            completion([[NSError alloc] init]);
+            return;
+        }
+
+        self.mutableSols = [self decodeSolsFromDictionary:dictionary];
+        completion(nil);
+    }] resume];
+}
+
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
                         completion:(void (^)(NSMutableArray<JBPhotoReference *> *,
                                              NSError *))completion
 {
-    NSURL *url = [[NSURL URLWithString:baseURLString]
+    NSURL *originalURL = [[NSURL URLWithString:baseURLString]
                   URLByAppendingPathComponent:@"rovers/curiosity/photos"];
-    [url setValue:kAPIKey forKey:@"api_key"];
-    [url setValue:[NSNumber numberWithUnsignedInteger:sol.solIndex] forKey:@"sol"];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:originalURL
+                                             resolvingAgainstBaseURL:NO];
+    components.queryItems = @[
+        [NSURLQueryItem queryItemWithName:@"api_key" value:kAPIKey],
+        [NSURLQueryItem queryItemWithName:@"sol"
+                                    value:[NSString stringWithFormat:@"%lu",
+                                           sol.marsSol]]
+    ];
 
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:components.URL];
     [[self.networkManager fetchDictionaryWithRequest:request
                                           completion:^(NSDictionary * _Nullable dictionary,
                                                        NSError * _Nullable error)
@@ -109,29 +142,6 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 }
 
 #pragma mark - Helpers
-
-- (void)fetchMissionManifest {
-    NSURL *url = [[NSURL URLWithString:baseURLString]
-                  URLByAppendingPathComponent:@"manifests/curiosity"];
-    [url setValue:kAPIKey forKey:@"api_key"];
-
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [[self.networkManager fetchDictionaryWithRequest:request
-                                          completion:^(NSDictionary * _Nullable dictionary,
-                                                       NSError * _Nullable error)
-    {
-        if (error) {
-            NSLog(@"Error fetching manifest: %@", error);
-            return;
-        }
-        if (dictionary == nil) {
-            NSLog(@"Error: manifest dictionary is nil");
-            return;
-        }
-
-        self.mutableSols = [self decodeSolsFromDictionary:dictionary];
-    }] resume];
-}
 
 - (NSMutableArray<JBSol *> *)decodeSolsFromDictionary:(NSDictionary *)dictionary
 {

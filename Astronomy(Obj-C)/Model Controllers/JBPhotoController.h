@@ -21,6 +21,7 @@ NS_SWIFT_NAME(PhotoController)
 
 - (instancetype)init;
 
+- (void)fetchMissionManifestWithCompletion:(void (^)(NSError * _Nullable))completion;
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
                         completion:(void (^)(NSMutableArray<JBPhotoReference *> * _Nullable,
                                              NSError * _Nullable))completion;
