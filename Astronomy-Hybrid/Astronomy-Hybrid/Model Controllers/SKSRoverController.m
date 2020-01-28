@@ -29,6 +29,10 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
     return self;
 }
 
+- (NSArray *)getPhotoReferences {
+    return [self.photoReferences copy];
+}
+
 // MARK: - Network calls
 - (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion {
 

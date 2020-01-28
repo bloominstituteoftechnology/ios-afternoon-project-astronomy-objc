@@ -26,6 +26,10 @@ class SolPhotosCollectionViewController: UICollectionViewController {
         roverController.photosForRover(onSol: "10") { (error) in
             if let error = error {
                 print("Error getting photos \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
@@ -43,21 +47,20 @@ class SolPhotosCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return roverController.getPhotoReferences().count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SolPhotoCollectionViewCell else { return UICollectionViewCell() }
     
         // Configure the cell
-    
+
+        //cell.imageView
         return cell
     }
 

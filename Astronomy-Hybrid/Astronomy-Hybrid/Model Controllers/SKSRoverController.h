@@ -16,6 +16,8 @@ NS_SWIFT_NAME(RoverController)
 
 @property (nonatomic, nonnull) SKSMarsRover *marsRover;
 
+
+- (nonnull NSArray * )getPhotoReferences;
 - (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion;
 - (void)photosForRoverOnSol:(nonnull NSString *)sol completion:(nonnull void (^)(NSError *_Nullable))completion;
 
