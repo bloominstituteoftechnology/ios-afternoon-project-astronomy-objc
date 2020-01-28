@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="vBd-2E-aY3">
+            <objects>
+                <viewController id="4Tm-gT-xuc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qvV-kR-6aE"/>
+                        <viewControllerLayoutGuide type="bottom" id="dLU-9n-Lm5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rVa-YO-noA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wpa-Zc-gzP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OLX-hI-7jE">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="YYg-WP-k3c" customClass="ImageCollectionViewCell" customModule="Astronomy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="cfa-ZP-BxN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="cfa-ZP-BxN" firstAttribute="leading" secondItem="YYg-WP-k3c" secondAttribute="leading" id="KnN-O2-QP6"/>
+                                            <constraint firstAttribute="bottom" secondItem="cfa-ZP-BxN" secondAttribute="bottom" id="LzQ-Rr-oAm"/>
+                                            <constraint firstItem="cfa-ZP-BxN" firstAttribute="top" secondItem="YYg-WP-k3c" secondAttribute="top" id="R0s-59-qfC"/>
+                                            <constraint firstAttribute="trailing" secondItem="cfa-ZP-BxN" secondAttribute="trailing" id="WML-JJ-HIO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="cfa-ZP-BxN" id="Vyj-bB-fE9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Tm-gT-xuc" id="aCx-FE-Dym"/>
+                                    <outlet property="delegate" destination="4Tm-gT-xuc" id="bmQ-LE-EUE"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wpa-Zc-gzP" secondAttribute="trailing" id="7SQ-yp-Xtl"/>
+                            <constraint firstItem="Wpa-Zc-gzP" firstAttribute="top" secondItem="rVa-YO-noA" secondAttribute="top" id="NV0-AE-vPQ"/>
+                            <constraint firstItem="Wpa-Zc-gzP" firstAttribute="leading" secondItem="rVa-YO-noA" secondAttribute="leading" id="clz-0c-MUh"/>
+                            <constraint firstItem="dLU-9n-Lm5" firstAttribute="top" secondItem="Wpa-Zc-gzP" secondAttribute="bottom" id="zJo-y3-Jlo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ukQ-YJ-KIh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RsH-9y-z4I"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Wpa-Zc-gzP" id="JDE-Tc-oog"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FrC-mi-Cuz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103.2" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MarsPlaceholder" width="16" height="16"/>
+    </resources>
+</document>
