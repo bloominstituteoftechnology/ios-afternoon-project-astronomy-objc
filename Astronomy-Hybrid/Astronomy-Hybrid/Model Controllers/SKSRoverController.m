@@ -7,11 +7,33 @@
 //
 
 #import "SKSRoverController.h"
+#import "Astronomy_Hybrid-Swift.h"
+
+
+@interface SKSRoverController()
+
+@property (nonatomic) NSMutableArray<SolDescription *> *solDescriptions;
+
+@end
 
 @implementation SKSRoverController
 
 static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _solDescriptions = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (nonnull NSArray<SolDescription *> *)getSolDescriptions {
+    return [self.solDescriptions copy];
+}
+
+// MARK: - Network calls
 - (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion {
 
     NSString *urlString = [baseURLString stringByAppendingString:@"manifests/curiosity?api_key=DEMO_KEY"];
@@ -37,13 +59,19 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
             NSLog(@"It is not of dictionary type %@", [dictionaryError localizedDescription]);
             completion(dictionaryError);
         }
-
+        
         NSDictionary *photoManifest = dictionary[@"photo_manifest"];
         NSString *name = photoManifest[@"name"];
         NSLog(@"Name: %@", name);
 
         NSArray *photoDictionaries = photoManifest[@"photos"];
-        NSLog(@"Number of photos: %lu", photoDictionaries.count);
+        for (NSDictionary *photoDictionary in photoDictionaries) {
+            SolDescription *sol = [[SolDescription alloc] initWithDictionary:photoDictionary];
+            [self.solDescriptions addObject:sol];
+        }
+
+        NSLog(@"Number of photos: %lu", self.solDescriptions.count);
+        NSLog(@"Sol 10: %ld", self.solDescriptions[4].sol);
         completion(nil);
 
 
