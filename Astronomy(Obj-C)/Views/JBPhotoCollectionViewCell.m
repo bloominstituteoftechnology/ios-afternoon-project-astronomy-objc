@@ -13,4 +13,9 @@
 
 @implementation JBPhotoCollectionViewCell
 
+- (void)prepareForReuse
+{
+    self.imageView.image = [UIImage imageNamed:@"GraySquare"];
+}
+
 @end
