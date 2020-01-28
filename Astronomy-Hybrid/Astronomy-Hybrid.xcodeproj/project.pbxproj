@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		1C3EAFD623DF663B00E78F7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EAFD523DF663B00E78F7F /* AppDelegate.m */; };
 		1C3EAFD923DF663B00E78F7F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EAFD823DF663B00E78F7F /* SceneDelegate.m */; };
-		1C3EAFDC23DF663B00E78F7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EAFDB23DF663B00E78F7F /* ViewController.m */; };
 		1C3EAFDF23DF663B00E78F7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3EAFDD23DF663B00E78F7F /* Main.storyboard */; };
 		1C3EAFE123DF663D00E78F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3EAFE023DF663D00E78F7F /* Assets.xcassets */; };
 		1C3EAFE423DF663D00E78F7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3EAFE223DF663D00E78F7F /* LaunchScreen.storyboard */; };
 		1C3EAFE723DF663D00E78F7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EAFE623DF663D00E78F7F /* main.m */; };
+		1C3EAFEF23DF963900E78F7F /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EAFEE23DF963900E78F7F /* MarsRover.swift */; };
+		1C3EAFF123DF9A8500E78F7F /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EAFF023DF9A8500E78F7F /* PhotoCollectionViewController.swift */; };
+		1C3EAFF323DF9AE200E78F7F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EAFF223DF9AE200E78F7F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +24,15 @@
 		1C3EAFD523DF663B00E78F7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1C3EAFD723DF663B00E78F7F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		1C3EAFD823DF663B00E78F7F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		1C3EAFDA23DF663B00E78F7F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1C3EAFDB23DF663B00E78F7F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1C3EAFDE23DF663B00E78F7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C3EAFE023DF663D00E78F7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C3EAFE323DF663D00E78F7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C3EAFE523DF663D00E78F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C3EAFE623DF663D00E78F7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1C3EAFED23DF963800E78F7F /* Astronomy-Hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
+		1C3EAFEE23DF963900E78F7F /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
+		1C3EAFF023DF9A8500E78F7F /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		1C3EAFF223DF9AE200E78F7F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +69,33 @@
 				1C3EAFD523DF663B00E78F7F /* AppDelegate.m */,
 				1C3EAFD723DF663B00E78F7F /* SceneDelegate.h */,
 				1C3EAFD823DF663B00E78F7F /* SceneDelegate.m */,
-				1C3EAFDA23DF663B00E78F7F /* ViewController.h */,
-				1C3EAFDB23DF663B00E78F7F /* ViewController.m */,
+				1C3EAFF423DFA42F00E78F7F /* ViewControllers */,
+				1C3EAFF523DFA44200E78F7F /* Model */,
 				1C3EAFDD23DF663B00E78F7F /* Main.storyboard */,
 				1C3EAFE023DF663D00E78F7F /* Assets.xcassets */,
 				1C3EAFE223DF663D00E78F7F /* LaunchScreen.storyboard */,
 				1C3EAFE523DF663D00E78F7F /* Info.plist */,
 				1C3EAFE623DF663D00E78F7F /* main.m */,
+				1C3EAFED23DF963800E78F7F /* Astronomy-Hybrid-Bridging-Header.h */,
 			);
 			path = "Astronomy-Hybrid";
+			sourceTree = "<group>";
+		};
+		1C3EAFF423DFA42F00E78F7F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C3EAFF023DF9A8500E78F7F /* PhotoCollectionViewController.swift */,
+				1C3EAFF223DF9AE200E78F7F /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1C3EAFF523DFA44200E78F7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C3EAFEE23DF963900E78F7F /* MarsRover.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +129,7 @@
 				TargetAttributes = {
 					1C3EAFD023DF663B00E78F7F = {
 						CreatedOnToolsVersion = 11.2;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -146,10 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3EAFDC23DF663B00E78F7F /* ViewController.m in Sources */,
+				1C3EAFF123DF9A8500E78F7F /* PhotoCollectionViewController.swift in Sources */,
+				1C3EAFEF23DF963900E78F7F /* MarsRover.swift in Sources */,
 				1C3EAFD623DF663B00E78F7F /* AppDelegate.m in Sources */,
 				1C3EAFE723DF663D00E78F7F /* main.m in Sources */,
 				1C3EAFD923DF663B00E78F7F /* SceneDelegate.m in Sources */,
+				1C3EAFF323DF9AE200E78F7F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X77B7DPNM6;
 				INFOPLIST_FILE = "Astronomy-Hybrid/Info.plist";
@@ -298,6 +324,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jerryhaaser.Astronomy-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Hybrid/Astronomy-Hybrid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X77B7DPNM6;
 				INFOPLIST_FILE = "Astronomy-Hybrid/Info.plist";
@@ -315,6 +345,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jerryhaaser.Astronomy-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Hybrid/Astronomy-Hybrid-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
