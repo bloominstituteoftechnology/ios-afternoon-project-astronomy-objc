@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JBCache : NSObject
 
-- (BOOL)didCacheValue:(id)value forKey:(NSUInteger)key;
-- (id _Nullable)valueforKey:(NSUInteger)key;
-- (id _Nullable)removeValueForKey:(NSUInteger)key;
+- (BOOL)didCacheItem:(id)value forKey:(NSNumber *)key;
+- (id _Nullable)itemforKey:(NSNumber *)key;
+- (id _Nullable)removeItemForKey:(NSNumber *)key;
 - (BOOL)didClear;
 
 @end

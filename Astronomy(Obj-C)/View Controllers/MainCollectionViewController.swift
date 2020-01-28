@@ -67,7 +67,6 @@ class MainCollectionViewController: UICollectionViewController {
                 self.currentSolIndex = sol10Index
                 self.setCurrentSol()
             }
-            DispatchQueue.main.async { self.updateViews() }
         }
     }
 

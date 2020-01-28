@@ -11,16 +11,21 @@
 #import "JBSol.h"
 #import "JBPhotoReference.h"
 #import "NSURL+JBUsingHTTPS.h"
+#import "JBCache.h"
+#import "JBFetchOperation.h"
 
 
-static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
-static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
+static NSString * baseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
+static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 
 
 @interface JBPhotoController()
 
 @property (nonatomic, nonnull) JBNetworkManager *networkManager;
 @property (nonatomic, nonnull) NSMutableArray<JBSol *> *mutableSols;
+@property (atomic, nonnull) JBCache *imageCache;
+@property (nonatomic, nonnull) NSOperationQueue *fetchQueue;
+@property (nonatomic, nonnull) NSMutableDictionary *fetchOperations;
 
 - (NSMutableArray<JBSol *> *)decodeSolsFromDictionary:(NSDictionary *)dictionary;
 
@@ -38,6 +43,9 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
         _mutableSols = [@[] mutableCopy];
         _networkManager = [[JBNetworkManager alloc] init];
         _networkManager.acceptNilData = NO;
+        _imageCache = [[JBCache alloc] init];
+        _fetchQueue = [[NSOperationQueue alloc] init];
+        _fetchOperations = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -124,25 +132,45 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
                     completion:(void (^)(UIImage *,
                                          NSError *))completion
 {
+    NSNumber *photoIDNumber = [NSNumber numberWithUnsignedInteger:photoRef.photoID];
+    UIImage *image = [self.imageCache itemforKey:photoIDNumber];
+    if (image) {
+        completion(image, nil);
+        return;
+    }
+
     NSURLRequest *request = [[NSURLRequest alloc]
                              initWithURL:photoRef.imageURL.urlUsingHTTPS];
-    [[self.networkManager fetchDataWithRequest:request
-                                    completion:^(NSData * _Nullable data,
-                                                 NSError * _Nullable error)
-    {
-        if (error) {
-            completion(nil, error);
+    JBFetchOperation *fetchOp = [[JBFetchOperation alloc] initWithRequest:request];
+    NSBlockOperation *cacheOp = [NSBlockOperation blockOperationWithBlock:^{
+        BOOL didCacheItem = [self.imageCache didCacheItem:image forKey:photoIDNumber];
+        if (!didCacheItem) {
+            NSLog(@"Error; could not cache item due to locked cache");
+        }
+    }];
+    NSBlockOperation *completionOp = [NSBlockOperation blockOperationWithBlock:^{
+        NSError *customError = [[NSError alloc] init];
+        if (fetchOp.error) {
+            completion(nil, fetchOp.error);
             return;
         }
-        if (data == nil) {
-            NSLog(@"Error: sol photo data is nil");
-            completion(nil, [[NSError alloc] init]);
+        if (fetchOp.image == nil) {
+            NSLog(@"Unknown fetching photo for referenceID %@", photoIDNumber);
+            completion(nil, customError);
             return;
         }
+        completion(fetchOp.image, nil);
+        [self.fetchOperations removeObjectForKey:photoIDNumber];
+    }];
 
-        UIImage *image = [UIImage imageWithData:data];
-        completion(image, nil);
-    }] resume];
+    [cacheOp addDependency:fetchOp];
+    [completionOp addDependency:fetchOp];
+
+    [self.fetchQueue addOperation:fetchOp];
+    [self.fetchQueue addOperation:cacheOp];
+    [NSOperationQueue.mainQueue addOperation:completionOp];
+
+    [self.fetchOperations setObject:fetchOp forKey:photoIDNumber];
 }
 
 #pragma mark - Helpers

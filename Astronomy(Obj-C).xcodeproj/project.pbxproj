@@ -16,7 +16,6 @@
 		992A4D2723DF9A0700DEA71F /* JBPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2623DF9A0700DEA71F /* JBPhotoCollectionViewCell.m */; };
 		992A4D2A23DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2923DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m */; };
 		992A4D2D23E0890E00DEA71F /* JBFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2C23E0890E00DEA71F /* JBFetchOperation.m */; };
-		992A4D3023E0893700DEA71F /* JBFetchOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2F23E0893700DEA71F /* JBFetchOperationManager.m */; };
 		992A4D3323E08B5400DEA71F /* JBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D3223E08B5400DEA71F /* JBCache.m */; };
 		9945CFB223DF31A5006B6513 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB123DF31A5006B6513 /* AppDelegate.m */; };
 		9945CFB523DF31A5006B6513 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB423DF31A5006B6513 /* SceneDelegate.m */; };
@@ -44,8 +43,6 @@
 		992A4D2923DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JBUsingHTTPS.m"; sourceTree = "<group>"; };
 		992A4D2B23E0890E00DEA71F /* JBFetchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBFetchOperation.h; sourceTree = "<group>"; };
 		992A4D2C23E0890E00DEA71F /* JBFetchOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBFetchOperation.m; sourceTree = "<group>"; };
-		992A4D2E23E0893700DEA71F /* JBFetchOperationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBFetchOperationManager.h; sourceTree = "<group>"; };
-		992A4D2F23E0893700DEA71F /* JBFetchOperationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBFetchOperationManager.m; sourceTree = "<group>"; };
 		992A4D3123E08B5400DEA71F /* JBCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBCache.h; sourceTree = "<group>"; };
 		992A4D3223E08B5400DEA71F /* JBCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBCache.m; sourceTree = "<group>"; };
 		9945CFAD23DF31A5006B6513 /* Astronomy(Obj-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy(Obj-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +114,6 @@
 				992A4D1623DF665D00DEA71F /* JBPhotoController.m */,
 				992A4D1923DF79AE00DEA71F /* JBNetworkManager.h */,
 				992A4D1A23DF79AE00DEA71F /* JBNetworkManager.m */,
-				992A4D2E23E0893700DEA71F /* JBFetchOperationManager.h */,
-				992A4D2F23E0893700DEA71F /* JBFetchOperationManager.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -259,7 +254,6 @@
 				992A4D1B23DF79AE00DEA71F /* JBNetworkManager.m in Sources */,
 				992A4D2123DF80C300DEA71F /* JBSol.m in Sources */,
 				992A4D0923DF47EE00DEA71F /* MainCollectionViewController.swift in Sources */,
-				992A4D3023E0893700DEA71F /* JBFetchOperationManager.m in Sources */,
 				992A4D2723DF9A0700DEA71F /* JBPhotoCollectionViewCell.m in Sources */,
 				992A4D1723DF665D00DEA71F /* JBPhotoController.m in Sources */,
 				992A4D2D23E0890E00DEA71F /* JBFetchOperation.m in Sources */,

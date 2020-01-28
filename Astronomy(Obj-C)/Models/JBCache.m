@@ -31,26 +31,26 @@ static NSTimeInterval waitTime = 10;
     return self;
 }
 
-- (BOOL)didCacheValue:(id)value forKey:(NSUInteger)key
+- (BOOL)didCacheItem:(id)value forKey:(NSNumber *)key
 {
     if ([self.lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:waitTime]]) {
-        [self.cache setValue:value forKey:[NSString stringWithFormat:@"%lu", key]];
+        [self.cache setObject:value forKey:[NSString stringWithFormat:@"%@", key]];
         return YES;
     } else { return NO; }
 }
 
-- (id)valueforKey:(NSUInteger)key
+- (id)itemforKey:(NSNumber *)key
 {
     if ([self.lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:waitTime]]) {
-        return [self.cache valueForKey:[NSString stringWithFormat:@"%lu", key]];
+        return [self.cache objectForKey:[NSString stringWithFormat:@"%@", key]];
     } else { return nil; }
 }
 
-- (id)removeValueForKey:(NSUInteger)key
+- (id)removeItemForKey:(NSNumber *)key
 {
     if ([self.lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:waitTime]]) {
-        id value = [self.cache valueForKey:[NSString stringWithFormat:@"%lu", key]];
-        [self.cache removeObjectForKey:[NSString stringWithFormat:@"%lu", key]];
+        id value = [self.cache objectForKey:[NSString stringWithFormat:@"%@", key]];
+        [self.cache removeObjectForKey:[NSString stringWithFormat:@"%@", key]];
         return value;
     } else { return nil; }
 }
