@@ -28,7 +28,7 @@ NS_SWIFT_NAME(PhotoController)
 - (void)fetchPhotoForReference:(JBPhotoReference *)photoRef
                     completion:(void (^)(UIImage * _Nullable,
                                          NSError * _Nullable))completion;
-- (void)cancelPhotoFetchForReference:(JBPhotoReference *)photoRef;
+- (void)cancelPhotoFetchForReference:(JBPhotoReference * _Nullable)photoRef;
 
 @end
 

@@ -94,20 +94,6 @@ class MainCollectionViewController: UICollectionViewController {
                                  for: indexPath) as? PhotoCollectionViewCell
             else { return UICollectionViewCell() }
 
-        let photoRef = photoReferences[indexPath.row]
-        cell.photoRef = photoRef
-        
-        photoController.fetchPhoto(for: photoRef) { image, error in
-            if let error = error {
-                NSLog("Error fetching photo: \(error)")
-                return
-            }
-            
-            guard cell.photoRef == photoRef else { return }
-            DispatchQueue.main.async {
-                cell.imageView.image = image
-            }
-        }
         return cell
     }
 
@@ -117,9 +103,38 @@ class MainCollectionViewController: UICollectionViewController {
         forItemAt indexPath: IndexPath
     ) {
         guard let cell = cell as? PhotoCollectionViewCell else { return }
+        // FIXME: below -- unexpectedly found nil while imlpcitly unwrapping optional
         self.photoController.cancelPhotoFetch(for: cell.photoRef)
-        cell.photoRef = nil;
-        cell.imageView.image = nil;
+//        print("Ending display for photoID \(String(describing: cell.photoRef?.photoID))")
+//        print("did end displaying cell at indexPath \(indexPath)")
+        cell.photoRef = nil
+        cell.imageView?.image = nil
+    }
+
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        guard let photoCell = cell as? PhotoCollectionViewCell else { return }
+//        print("will display cell at indexPath \(indexPath)")
+
+        let photoRef = photoReferences[indexPath.row]
+        photoCell.photoRef = photoRef
+
+        photoController.fetchPhoto(for: photoRef) { image, error in
+            if let error = error {
+                NSLog("Error fetching photo: \(error)")
+                return
+            }
+
+//            print("Showing display of photoID \(photoRef.photoID)")
+            guard photoCell.photoRef == photoRef else { return }
+            DispatchQueue.main.async {
+                photoCell.imageView?.image = image
+            }
+        }
+//        print("Here's cell at indexPath \(indexPath)")
     }
 
     // MARK: - Navigation
@@ -133,8 +148,9 @@ class MainCollectionViewController: UICollectionViewController {
 
             let photoRef = photoReferences[indexPath.row]
             detailVC.photoRef = photoRef
-            detailVC.image = cell.imageView.image
+            detailVC.image = cell.imageView?.image
             detailVC.sol = currentSol
+            print("Segueing to detailVC for photoRefID \(photoRef.photoID)")
         }
     }
 

@@ -9,9 +9,6 @@
 #import "JBCache.h"
 
 
-static NSTimeInterval waitTime = 10;
-
-
 @interface JBCache()
 
 @property (nonnull, atomic) NSMutableDictionary *cache;
@@ -33,34 +30,38 @@ static NSTimeInterval waitTime = 10;
 
 - (BOOL)didCacheItem:(id)value forKey:(NSNumber *)key
 {
-    if ([self.lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:waitTime]]) {
-        [self.cache setObject:value forKey:[NSString stringWithFormat:@"%@", key]];
-        return YES;
-    } else { return NO; }
+    [self.lock lock];
+    [self.cache setObject:value forKey:key];
+    [self.lock unlock];
+
+    return YES;
 }
 
 - (id)itemforKey:(NSNumber *)key
 {
-    if ([self.lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:waitTime]]) {
-        return [self.cache objectForKey:[NSString stringWithFormat:@"%@", key]];
-    } else { return nil; }
+    [self.lock lock];
+    id value = [self.cache objectForKey:key];
+    [self.lock unlock];
+
+    return value;
 }
 
 - (id)removeItemForKey:(NSNumber *)key
 {
-    if ([self.lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:waitTime]]) {
-        id value = [self.cache objectForKey:[NSString stringWithFormat:@"%@", key]];
-        [self.cache removeObjectForKey:[NSString stringWithFormat:@"%@", key]];
-        return value;
-    } else { return nil; }
+    [self.lock lock];
+    id value = [self.cache objectForKey:key];
+    [self.cache removeObjectForKey:key];
+    [self.lock unlock];
+
+    return value;
 }
 
 - (BOOL)didClear
 {
-    if ([self.lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:waitTime]]) {
-        [self.cache removeAllObjects];
-        return YES;
-    } else { return NO; }
+    [self.lock lock];
+    [self.cache removeAllObjects];
+    [self.lock unlock];
+    return YES;
 }
 
 @end

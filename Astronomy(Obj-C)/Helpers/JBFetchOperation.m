@@ -8,16 +8,33 @@
 
 #import "JBFetchOperation.h"
 
+
 typedef NS_ENUM(NSUInteger, JBFetchOperationState) {
     JBFetchOperationIsReady,
     JBFetchOperationIsExecuting,
     JBFetchOperationIsFinished
 };
 
+NSString *rawValueForState(JBFetchOperationState state)
+{
+    switch (state)
+    {
+        case JBFetchOperationIsReady:
+            return @"isReady";
+        case JBFetchOperationIsExecuting:
+            return @"isExecuting";
+        case JBFetchOperationIsFinished:
+            return @"isFinished";
+    }
+}
 
-@interface JBFetchOperation()
 
-@property (nonatomic) JBFetchOperationState state;
+@interface JBFetchOperation() {
+    JBFetchOperationState _state;
+}
+
+@property (atomic) JBFetchOperationState state;
+@property (atomic, nonnull) NSLock *stateLock;
 @property (nonatomic, nonnull) NSURLRequest *request;
 @property (nonatomic, nullable) NSURLSessionDataTask *dataTask;
 @property (nonatomic, nullable) NSError *internalError;
@@ -38,6 +55,26 @@ typedef NS_ENUM(NSUInteger, JBFetchOperationState) {
     return self;
 }
 
+- (JBFetchOperationState)state
+{
+    [self.stateLock lock];
+    JBFetchOperationState result = _state;
+    [self.stateLock unlock];
+    return result;
+}
+
+- (void)setState:(JBFetchOperationState)state
+{
+    [self.stateLock lock];
+    JBFetchOperationState oldState = _state;
+    [self willChangeValueForKey:rawValueForState(oldState)];
+    [self willChangeValueForKey:rawValueForState(state)];
+    _state = state;
+    [self didChangeValueForKey:rawValueForState(oldState)];
+    [self didChangeValueForKey:rawValueForState(state)];
+    [self.stateLock unlock];
+}
+
 - (BOOL)isAsynchronous
 {
     return YES;
@@ -45,7 +82,7 @@ typedef NS_ENUM(NSUInteger, JBFetchOperationState) {
 
 - (BOOL)isReady
 {
-    return ([super isReady] && self.state == JBFetchOperationIsReady);
+    return (self.state == JBFetchOperationIsReady);
 }
 
 - (BOOL)isExecuting

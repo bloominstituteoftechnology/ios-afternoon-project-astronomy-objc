@@ -29,6 +29,7 @@
                                 NSURLResponse * _Nullable response,
                                 NSError * _Nullable error)
     {
+        NSError *customError = [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:nil];
         if (error != nil)
         {
             completion(nil, error);
@@ -42,7 +43,7 @@
             NSLog(@"Bad response: status code %li: %@",
                   (long)httpResponse.statusCode,
                   httpResponse);
-            completion(nil, [[NSError alloc] init]);
+            completion(nil, customError);
             return;
         }
 
@@ -51,7 +52,7 @@
                 completion(nil, nil);
             } else {
                 NSLog(@"Error; no data");
-                completion(nil, [[NSError alloc] init]);
+                completion(nil, customError);
                 return;
             }
         }
@@ -68,13 +69,14 @@
                            completion:^(NSData * _Nullable data,
                                         NSError * _Nullable error)
     {
+        NSError *customError = [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:nil];
         if (error) {
             completion(nil, error);
             return;
         }
         if (data == nil) {
             NSLog(@"Error; expected data");
-            completion(nil, [[NSError alloc] init]);
+            completion(nil, customError);
             return;
         }
 
@@ -91,7 +93,7 @@
 
         if (![dictionary isKindOfClass:[NSDictionary class]]) {
             NSLog(@"JSON was not a dictionary as expected");
-            completion(nil, [[NSError alloc] init]);
+            completion(nil, [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:nil]);
             return;
         }
 

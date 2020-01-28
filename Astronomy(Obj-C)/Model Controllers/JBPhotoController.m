@@ -77,7 +77,7 @@ static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
         }
         if (dictionary == nil) {
             NSLog(@"Error: manifest dictionary is nil");
-            completion([[NSError alloc] init]);
+            completion([NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:nil]);
             return;
         }
 
@@ -112,7 +112,7 @@ static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
         }
         if (dictionary == nil) {
             NSLog(@"Error: sol photo reference dictionary is nil");
-            completion(nil, [[NSError alloc] init]);
+            completion(nil, [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:nil]);
             return;
         }
 
@@ -143,13 +143,14 @@ static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
                              initWithURL:photoRef.imageURL.urlUsingHTTPS];
     JBFetchOperation *fetchOp = [[JBFetchOperation alloc] initWithRequest:request];
     NSBlockOperation *cacheOp = [NSBlockOperation blockOperationWithBlock:^{
-        BOOL didCacheItem = [self.imageCache didCacheItem:image forKey:photoIDNumber];
-        if (!didCacheItem) {
-            NSLog(@"Error; could not cache item due to locked cache");
+        if (fetchOp.image) {
+            [self.imageCache didCacheItem:fetchOp.image forKey:photoIDNumber];
+        } else if (!fetchOp.isCancelled) {
+            NSLog(@"Photo fetch failed?");
         }
     }];
     NSBlockOperation *completionOp = [NSBlockOperation blockOperationWithBlock:^{
-        NSError *customError = [[NSError alloc] init];
+        NSError *customError = [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:nil];
         if (fetchOp.error) {
             completion(nil, fetchOp.error);
             return;
@@ -175,8 +176,12 @@ static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 
 - (void)cancelPhotoFetchForReference:(JBPhotoReference *)photoRef
 {
-    NSNumber *photoIDNumber = [NSNumber numberWithUnsignedInteger:photoRef.photoID];
-    [self.fetchOperations[photoIDNumber] cancel];
+    if (photoRef) {
+        NSNumber *photoIDNumber = [NSNumber numberWithUnsignedInteger:photoRef.photoID];
+        if (self.fetchOperations[photoIDNumber]) {
+            [self.fetchOperations[photoIDNumber] cancel];
+        }
+    }
 }
 
 #pragma mark - Helpers
