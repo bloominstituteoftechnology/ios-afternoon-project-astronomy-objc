@@ -10,11 +10,14 @@
 #import "JBPhotoController.h"
 #import "JBPhotoReference.h"
 
+static NSDateFormatter *_dateDecodingFormatter;
 
 @interface JBSol()
 
 @property (weak, nonatomic) JBPhotoController *photoController;
 @property (nonatomic, nullable) NSArray<JBPhotoReference *> *mutablePhotoRefs;
+
++(NSDateFormatter *)dateDecodingFormatter;
 
 @end
 
@@ -39,7 +42,8 @@
               usingPhotoController:(JBPhotoController *)photoController
 {
     NSNumber *solIndexObject = dictionary[@"sol"];
-    NSDate *earthDate = dictionary[@"earth_date"];
+    NSString *earthDateString = dictionary[@"earth_date"];
+    NSDate *earthDate = [[JBSol dateDecodingFormatter] dateFromString:earthDateString];
 
     self = [[JBSol alloc] initWithIndex:solIndexObject.unsignedIntegerValue
                               earthDate:earthDate
@@ -72,6 +76,16 @@
             completion(@[]);
         }
     }];
+}
+
++ (NSDateFormatter *)dateDecodingFormatter {
+    if (_dateDecodingFormatter) {
+        return _dateDecodingFormatter;
+    } else {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-DD"];
+        return formatter;
+    }
 }
 
 @end
