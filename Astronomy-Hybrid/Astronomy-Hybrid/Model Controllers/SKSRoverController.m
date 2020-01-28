@@ -7,12 +7,9 @@
 //
 
 #import "SKSRoverController.h"
-#import "Astronomy_Hybrid-Swift.h"
-
+#import "SKSMarsRover.h"
 
 @interface SKSRoverController()
-
-@property (nonatomic) NSMutableArray<SolDescription *> *solDescriptions;
 
 @end
 
@@ -24,13 +21,9 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
 {
     self = [super init];
     if (self) {
-        _solDescriptions = [[NSMutableArray alloc] init];
+        //_marsRover = [[SKSMarsRover alloc] init];
     }
     return self;
-}
-
-- (nonnull NSArray<SolDescription *> *)getSolDescriptions {
-    return [self.solDescriptions copy];
 }
 
 // MARK: - Network calls
@@ -61,19 +54,9 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
         }
         
         NSDictionary *photoManifest = dictionary[@"photo_manifest"];
-        NSString *name = photoManifest[@"name"];
-        NSLog(@"Name: %@", name);
+        self.marsRover = [[SKSMarsRover alloc] initWithDictionary:photoManifest];
 
-        NSArray *photoDictionaries = photoManifest[@"photos"];
-        for (NSDictionary *photoDictionary in photoDictionaries) {
-            SolDescription *sol = [[SolDescription alloc] initWithDictionary:photoDictionary];
-            [self.solDescriptions addObject:sol];
-        }
-
-        NSLog(@"Number of photos: %lu", self.solDescriptions.count);
-        NSLog(@"Sol 10: %ld", self.solDescriptions[4].sol);
         completion(nil);
-
 
     }] resume];
 }

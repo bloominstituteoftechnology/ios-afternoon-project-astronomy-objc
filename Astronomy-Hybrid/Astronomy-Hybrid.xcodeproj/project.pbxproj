@@ -18,6 +18,7 @@
 		BB3BAA2223DF8B6D0061486F /* SolPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2123DF8B6D0061486F /* SolPhotoCollectionViewCell.swift */; };
 		BB3BAA2A23DF8F990061486F /* SKSRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2923DF8F990061486F /* SKSRoverController.m */; };
 		BB3BAA2C23DFA3290061486F /* SolDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2B23DFA3290061486F /* SolDescription.swift */; };
+		BB3BAA3023DFD2840061486F /* SKSMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		BB3BAA2823DF8F990061486F /* SKSRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSRoverController.h; sourceTree = "<group>"; };
 		BB3BAA2923DF8F990061486F /* SKSRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSRoverController.m; sourceTree = "<group>"; };
 		BB3BAA2B23DFA3290061486F /* SolDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolDescription.swift; sourceTree = "<group>"; };
+		BB3BAA2E23DFD2840061486F /* SKSMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSMarsRover.h; sourceTree = "<group>"; };
+		BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSMarsRover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				BB3BAA2B23DFA3290061486F /* SolDescription.swift */,
+				BB3BAA2E23DFD2840061486F /* SKSMarsRover.h */,
+				BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB3BAA0523DF66390061486F /* AppDelegate.m in Sources */,
+				BB3BAA3023DFD2840061486F /* SKSMarsRover.m in Sources */,
 				BB3BAA2C23DFA3290061486F /* SolDescription.swift in Sources */,
 				BB3BAA2A23DF8F990061486F /* SKSRoverController.m in Sources */,
 				BB3BAA1623DF663C0061486F /* main.m in Sources */,

@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class SolDescription;
+@class SKSMarsRover;
 
 NS_SWIFT_NAME(RoverController)
 
 @interface SKSRoverController : NSObject
 
-- (nonnull NSArray<SolDescription *> *)getSolDescriptions;
+@property (nonatomic, nonnull) SKSMarsRover *marsRover;
+
 - (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion;
 - (void)photosForRoverOnSol:(nonnull NSString *)sol completion:(nonnull void (^)(NSError *_Nullable))completion;
 
