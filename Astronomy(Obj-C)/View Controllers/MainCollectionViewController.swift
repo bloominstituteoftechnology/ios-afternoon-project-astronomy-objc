@@ -19,6 +19,9 @@ class MainCollectionViewController: UICollectionViewController {
     private var currentSol: Sol?
     private var photoReferences: [PhotoReference] = []
 
+    private var photos: [PhotoReference: UIImage] = [:]
+
+
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
@@ -76,14 +79,6 @@ class MainCollectionViewController: UICollectionViewController {
         self.collectionView.reloadData()
     }
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-
     // MARK: UICollectionViewDataSource
 
     override func collectionView(
@@ -102,12 +97,44 @@ class MainCollectionViewController: UICollectionViewController {
                                  for: indexPath) as? PhotoCollectionViewCell
             else { return UICollectionViewCell() }
 
+        let photoRef = photoReferences[indexPath.row]
         cell.photoController = self.photoController
-        cell.photoRef = photoReferences[indexPath.row]
+        cell.photoRef = photoRef
 
-        cell.fetchPhoto()
+        if let image = self.photos[photoRef] {
+            cell.imageView.image = image
+        } else {
+            photoController.fetchPhoto(for: photoRef) { image, error in
+                if let error = error {
+                    NSLog("Error fetching photo: \(error)")
+                    return
+                }
+                self.photos[photoRef] = image
+
+                guard cell.photoRef == photoRef else { return }
+                DispatchQueue.main.async {
+                    cell.imageView.image = image
+                }
+            }
+        }
+
     
         return cell
+    }
+
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PhotoDetailSegue",
+            let detailVC = segue.destination as? PhotoDetailViewController,
+            let index = collectionView.indexPathsForSelectedItems?.first?.row {
+            let photoRef = photoReferences[index]
+            
+            detailVC.photoRef = photoRef
+            detailVC.image = photos[photoRef]
+            detailVC.sol = currentSol
+        }
     }
 
     // MARK: - Private Helpers
