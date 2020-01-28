@@ -23,9 +23,9 @@ NS_SWIFT_NAME(PhotoController)
 
 - (void)fetchMissionManifestWithCompletion:(void (^)(NSError * _Nullable))completion;
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
-                        completion:(void (^)(NSMutableArray<JBPhotoReference *> * _Nullable,
+                        completion:(void (^)(NSArray<JBPhotoReference *> * _Nullable,
                                              NSError * _Nullable))completion;
-- (void)fetchPhotoForReference:(JBPhotoReference *)photoRef
+- (void)fetchPhotoForReference:(nonnull JBPhotoReference *)photoRef
                     completion:(void (^)(UIImage * _Nullable,
                                          NSError * _Nullable))completion;
 

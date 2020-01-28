@@ -17,23 +17,15 @@ class MainCollectionViewController: UICollectionViewController {
     private let photoController = PhotoController()
     private var currentSolIndex: Int = 0
     private var currentSol: Sol?
+    private var photoReferences: [PhotoReference] = []
 
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        photoController.fetchMissionManifest { error in
-            if let error = error {
-                NSLog("Error fetching mission manifest: \(error)")
-                return
-            }
-
-            if let sol10Index = self.photoController.sols.firstIndex(where: { $0.marsSol == 10 }) {
-                self.currentSolIndex = sol10Index
-            }
-            DispatchQueue.main.async { self.updateViews() }
-        }
+        configureTitleView()
+        fetchManfest()
     }
 
     private func configureTitleView() {
@@ -61,6 +53,21 @@ class MainCollectionViewController: UICollectionViewController {
         navigationItem.titleView = stackView
     }
 
+    private func fetchManfest() {
+        photoController.fetchMissionManifest { error in
+            if let error = error {
+                NSLog("Error fetching mission manifest: \(error)")
+                return
+            }
+
+            if let sol10Index = self.photoController.sols.firstIndex(where: { $0.marsSol == 10 }) {
+                self.currentSolIndex = sol10Index
+                self.setCurrentSol()
+            }
+            DispatchQueue.main.async { self.updateViews() }
+        }
+    }
+
     private func updateViews() {
         if let sol = currentSol {
             self.solLabel.text = "Sol \(sol.marsSol)"
@@ -79,20 +86,25 @@ class MainCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photoController.sols.count
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
+        return photoReferences.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                  for: indexPath) as? PhotoCollectionViewCell
-            else {
-                return UICollectionViewCell()
-        }
+            else { return UICollectionViewCell() }
 
         cell.photoController = self.photoController
-        cell.photoRef = currentSol?.photoReferences[indexPath.row]
+        cell.photoRef = photoReferences[indexPath.row]
+
         cell.fetchPhoto()
     
         return cell
@@ -114,7 +126,16 @@ class MainCollectionViewController: UICollectionViewController {
 
     private func setCurrentSol() {
         if currentSolIndex < photoController.sols.count && currentSolIndex >= 0 {
-            currentSol = photoController.sols[currentSolIndex]
+            let sol = photoController.sols[currentSolIndex]
+            currentSol = sol
+            self.photoController.fetchPhotoReferences(for: sol) { photoRefs, error in
+                if let error = error {
+                    NSLog("Error fetching photoRefs: \(error)")
+                    return
+                }
+                self.photoReferences = photoRefs ?? []
+                DispatchQueue.main.async { self.updateViews() }
+            }
         }
     }
 }

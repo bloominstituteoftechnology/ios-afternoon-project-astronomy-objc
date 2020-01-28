@@ -10,6 +10,7 @@
 #import "JBNetworkManager.h"
 #import "JBSol.h"
 #import "JBPhotoReference.h"
+#import "NSURL+JBUsingHTTPS.h"
 
 
 static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
@@ -20,6 +21,7 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 
 @property (nonatomic, nonnull) JBNetworkManager *networkManager;
 @property (nonatomic, nonnull) NSMutableArray<JBSol *> *mutableSols;
+
 - (NSMutableArray<JBSol *> *)decodeSolsFromDictionary:(NSDictionary *)dictionary;
 
 @end
@@ -77,7 +79,7 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
 }
 
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
-                        completion:(void (^)(NSMutableArray<JBPhotoReference *> *,
+                        completion:(void (^)(NSArray<JBPhotoReference *> *,
                                              NSError *))completion
 {
     NSURL *originalURL = [[NSURL URLWithString:baseURLString]
@@ -107,13 +109,14 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
         }
 
         NSArray *photoRefDicts = dictionary[@"photos"];
-        NSMutableArray *photoRefs = [@[] mutableCopy];
+        NSMutableArray *mutablePhotoRefs = [@[] mutableCopy];
         for (NSDictionary *photoRefDict in photoRefDicts) {
             JBPhotoReference *photoRef = [[JBPhotoReference alloc]
                                           initFromDictionary:photoRefDict];
-            [photoRefs addObject:photoRef];
+            [mutablePhotoRefs addObject:photoRef];
         }
-        completion(photoRefs, nil);
+
+        completion([mutablePhotoRefs copy], nil);
     }] resume];
 }
 
@@ -121,7 +124,8 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
                     completion:(void (^)(UIImage *,
                                          NSError *))completion
 {
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:photoRef.imageURL];
+    NSURLRequest *request = [[NSURLRequest alloc]
+                             initWithURL:photoRef.imageURL.urlUsingHTTPS];
     [[self.networkManager fetchDataWithRequest:request
                                     completion:^(NSData * _Nullable data,
                                                  NSError * _Nullable error)
@@ -156,8 +160,6 @@ static NSString *kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
     }
     return sols;
 }
-
-
 
 @end
 

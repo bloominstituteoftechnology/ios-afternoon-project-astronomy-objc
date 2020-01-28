@@ -13,8 +13,8 @@
 
 @interface JBSol()
 
-@property (nonatomic, nullable) NSMutableArray *internalPhotoRefs;
 @property (weak, nonatomic) JBPhotoController *photoController;
+@property (nonatomic, nullable) NSArray<JBPhotoReference *> *mutablePhotoRefs;
 
 @end
 
@@ -30,7 +30,7 @@
         _marsSol = solIndex;
         _earthDate = earthDate;
         _photoController = photoController;
-        _internalPhotoRefs = [@[] mutableCopy];
+        _mutablePhotoRefs = nil;
     }
     return self;
 }
@@ -47,8 +47,31 @@
     return self;
 }
 
-- (NSArray<JBPhotoReference *> *)photoReferences {
-    return [self.internalPhotoRefs copy];
+- (void)getPhotoRefsWithCompletion:(void(^)(NSArray<JBPhotoReference *> *))completion {
+    if (self.mutablePhotoRefs) {
+        completion([self.mutablePhotoRefs copy]);
+        return;
+    }
+    [self.photoController
+      fetchPhotoReferencesForSol:self
+      completion:^(NSArray<JBPhotoReference *> * _Nullable photoRefs,
+                   NSError * _Nullable error)
+    {
+        if (error) {
+            NSLog(@"Error fetching photo refs: %@", error);
+            completion(@[]);
+            return;
+        }
+
+        if (photoRefs) {
+            self.mutablePhotoRefs = [photoRefs mutableCopy];
+            completion(photoRefs);
+        } else {
+            NSLog(@"no photo refs");
+            self.mutablePhotoRefs = [@[] mutableCopy];
+            completion(@[]);
+        }
+    }];
 }
 
 @end

@@ -19,13 +19,14 @@ NS_SWIFT_NAME(Sol)
 
 @property (nonatomic, readonly) NSUInteger marsSol;
 @property (nonatomic, readonly) NSDate *earthDate;
-@property (nonatomic, readonly) NSArray<JBPhotoReference *> *photoReferences;
 
-- (instancetype) initWithIndex:(NSUInteger)solIndex
+- (instancetype)initWithIndex:(NSUInteger)solIndex
                      earthDate:(NSDate *)earthDate
           usingPhotoController:(JBPhotoController *)photoController;
-- (instancetype) initWithDictionary:(NSDictionary *)dictionary
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
                usingPhotoController:(JBPhotoController *)photoController;
+
+- (void)getPhotoRefsWithCompletion:(void(^)(NSArray<JBPhotoReference *> *))completion;
 
 @end
 

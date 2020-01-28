@@ -13,14 +13,6 @@
 
 @implementation JBPhotoCollectionViewCell
 
-- (void)setPhotoRef:(JBPhotoReference *)photoRef
-{
-    _photoRef = photoRef;
-    if (photoRef && self.photoController) {
-        [self fetchPhoto];
-    }
-}
-
 - (void)fetchPhoto
 {
     [self.photoController fetchPhotoForReference:self.photoRef
