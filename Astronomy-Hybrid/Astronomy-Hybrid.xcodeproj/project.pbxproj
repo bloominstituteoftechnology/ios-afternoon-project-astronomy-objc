@@ -21,6 +21,7 @@
 		BB3BAA3023DFD2840061486F /* SKSMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */; };
 		BB3BAA3323E000D80061486F /* SKSPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA3223E000D80061486F /* SKSPhotoReference.m */; };
 		BBDD970123E0D0010021D30A /* SKSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD970023E0D0010021D30A /* SKSCache.m */; };
+		BBDD970B23E0FA810021D30A /* SKSFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD970A23E0FA810021D30A /* SKSFetchPhotoOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		BB3BAA3223E000D80061486F /* SKSPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoReference.m; sourceTree = "<group>"; };
 		BBDD96FF23E0D0010021D30A /* SKSCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSCache.h; sourceTree = "<group>"; };
 		BBDD970023E0D0010021D30A /* SKSCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSCache.m; sourceTree = "<group>"; };
+		BBDD970923E0FA810021D30A /* SKSFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSFetchPhotoOperation.h; sourceTree = "<group>"; };
+		BBDD970A23E0FA810021D30A /* SKSFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSFetchPhotoOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 				BB3BAA2423DF8B9F0061486F /* Views */,
 				BB3BAA2723DF8F5E0061486F /* Model Controllers */,
 				BB3BAA2D23DFA3310061486F /* Models */,
+				BBDD970523E0E6BF0021D30A /* Operations */,
 				BB3BAA0323DF66390061486F /* AppDelegate.h */,
 				BB3BAA0423DF66390061486F /* AppDelegate.m */,
 				BB3BAA0623DF66390061486F /* SceneDelegate.h */,
@@ -135,6 +139,15 @@
 				BBDD970023E0D0010021D30A /* SKSCache.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BBDD970523E0E6BF0021D30A /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				BBDD970923E0FA810021D30A /* SKSFetchPhotoOperation.h */,
+				BBDD970A23E0FA810021D30A /* SKSFetchPhotoOperation.m */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +231,7 @@
 				BBDD970123E0D0010021D30A /* SKSCache.m in Sources */,
 				BB3BAA2223DF8B6D0061486F /* SolPhotoCollectionViewCell.swift in Sources */,
 				BB3BAA1E23DF8A950061486F /* SolPhotosCollectionViewController.swift in Sources */,
+				BBDD970B23E0FA810021D30A /* SKSFetchPhotoOperation.m in Sources */,
 				BB3BAA3323E000D80061486F /* SKSPhotoReference.m in Sources */,
 				BB3BAA0823DF66390061486F /* SceneDelegate.m in Sources */,
 			);
