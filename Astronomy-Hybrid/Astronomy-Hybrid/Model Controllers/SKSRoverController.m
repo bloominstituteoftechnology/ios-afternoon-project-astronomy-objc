@@ -8,8 +8,11 @@
 
 #import "SKSRoverController.h"
 #import "SKSMarsRover.h"
+#import "SKSPhotoReference.h"
 
 @interface SKSRoverController()
+
+@property (nonatomic, nonnull) NSMutableArray<SKSPhotoReference *> *photoReferences;
 
 @end
 
@@ -21,7 +24,7 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
 {
     self = [super init];
     if (self) {
-        //_marsRover = [[SKSMarsRover alloc] init];
+        _photoReferences = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -96,7 +99,12 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
         }
 
         NSArray *photos = dictionary[@"photos"];
-        NSLog(@"Sol 10 Number of photos: %lu", photos.count);
+        for (NSDictionary *photoDictionary in photos) {
+            SKSPhotoReference *photo = [[SKSPhotoReference alloc] initWithDictionary:photoDictionary];
+            [self.photoReferences addObject:photo];
+        }
+
+        NSLog(@"Sol 10 Number of photos: %lu", self.photoReferences.count);
         completion(nil);
 
 

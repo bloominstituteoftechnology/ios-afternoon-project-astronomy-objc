@@ -19,6 +19,7 @@
 		BB3BAA2A23DF8F990061486F /* SKSRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2923DF8F990061486F /* SKSRoverController.m */; };
 		BB3BAA2C23DFA3290061486F /* SolDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2B23DFA3290061486F /* SolDescription.swift */; };
 		BB3BAA3023DFD2840061486F /* SKSMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */; };
+		BB3BAA3323E000D80061486F /* SKSPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA3223E000D80061486F /* SKSPhotoReference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		BB3BAA2B23DFA3290061486F /* SolDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolDescription.swift; sourceTree = "<group>"; };
 		BB3BAA2E23DFD2840061486F /* SKSMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSMarsRover.h; sourceTree = "<group>"; };
 		BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSMarsRover.m; sourceTree = "<group>"; };
+		BB3BAA3123E000D80061486F /* SKSPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSPhotoReference.h; sourceTree = "<group>"; };
+		BB3BAA3223E000D80061486F /* SKSPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoReference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				BB3BAA2B23DFA3290061486F /* SolDescription.swift */,
 				BB3BAA2E23DFD2840061486F /* SKSMarsRover.h */,
 				BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */,
+				BB3BAA3123E000D80061486F /* SKSPhotoReference.h */,
+				BB3BAA3223E000D80061486F /* SKSPhotoReference.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				BB3BAA2023DF8AC70061486F /* SolPhotoDetailViewController.swift in Sources */,
 				BB3BAA2223DF8B6D0061486F /* SolPhotoCollectionViewCell.swift in Sources */,
 				BB3BAA1E23DF8A950061486F /* SolPhotosCollectionViewController.swift in Sources */,
+				BB3BAA3323E000D80061486F /* SKSPhotoReference.m in Sources */,
 				BB3BAA0823DF66390061486F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
