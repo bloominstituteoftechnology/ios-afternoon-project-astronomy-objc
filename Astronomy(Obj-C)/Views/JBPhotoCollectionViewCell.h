@@ -17,9 +17,6 @@ NS_SWIFT_NAME(PhotoCollectionViewCell)
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) JBPhotoReference *photoRef;
-@property (weak, nonatomic) JBPhotoController *photoController;
-
-- (void)fetchPhoto;
 
 @end
 

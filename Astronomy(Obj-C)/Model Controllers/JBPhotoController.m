@@ -173,6 +173,12 @@ static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
     [self.fetchOperations setObject:fetchOp forKey:photoIDNumber];
 }
 
+- (void)cancelPhotoFetchForReference:(JBPhotoReference *)photoRef
+{
+    NSNumber *photoIDNumber = [NSNumber numberWithUnsignedInteger:photoRef.photoID];
+    [self.fetchOperations[photoIDNumber] cancel];
+}
+
 #pragma mark - Helpers
 
 - (NSMutableArray<JBSol *> *)decodeSolsFromDictionary:(NSDictionary *)dictionary

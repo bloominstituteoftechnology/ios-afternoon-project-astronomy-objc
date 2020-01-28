@@ -19,10 +19,8 @@ class MainCollectionViewController: UICollectionViewController {
     private var currentSol: Sol?
     private var photoReferences: [PhotoReference] = []
 
-    private var photos: [PhotoReference: UIImage] = [:]
 
-
-    // MARK: - View Lifecycle
+    // MARK: - View Setup / Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,28 +95,31 @@ class MainCollectionViewController: UICollectionViewController {
             else { return UICollectionViewCell() }
 
         let photoRef = photoReferences[indexPath.row]
-        cell.photoController = self.photoController
         cell.photoRef = photoRef
-
-        if let image = self.photos[photoRef] {
-            cell.imageView.image = image
-        } else {
-            photoController.fetchPhoto(for: photoRef) { image, error in
-                if let error = error {
-                    NSLog("Error fetching photo: \(error)")
-                    return
-                }
-                self.photos[photoRef] = image
-
-                guard cell.photoRef == photoRef else { return }
-                DispatchQueue.main.async {
-                    cell.imageView.image = image
-                }
+        
+        photoController.fetchPhoto(for: photoRef) { image, error in
+            if let error = error {
+                NSLog("Error fetching photo: \(error)")
+                return
+            }
+            
+            guard cell.photoRef == photoRef else { return }
+            DispatchQueue.main.async {
+                cell.imageView.image = image
             }
         }
-
-    
         return cell
+    }
+
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        didEndDisplaying cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        guard let cell = cell as? PhotoCollectionViewCell else { return }
+        self.photoController.cancelPhotoFetch(for: cell.photoRef)
+        cell.photoRef = nil;
+        cell.imageView.image = nil;
     }
 
     // MARK: - Navigation
@@ -127,11 +128,12 @@ class MainCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PhotoDetailSegue",
             let detailVC = segue.destination as? PhotoDetailViewController,
-            let index = collectionView.indexPathsForSelectedItems?.first?.row {
-            let photoRef = photoReferences[index]
-            
+            let indexPath = collectionView.indexPathsForSelectedItems?.first,
+            let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell {
+
+            let photoRef = photoReferences[indexPath.row]
             detailVC.photoRef = photoRef
-            detailVC.image = photos[photoRef]
+            detailVC.image = cell.imageView.image
             detailVC.sol = currentSol
         }
     }

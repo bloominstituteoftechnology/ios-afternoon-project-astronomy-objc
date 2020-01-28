@@ -25,9 +25,10 @@ NS_SWIFT_NAME(PhotoController)
 - (void)fetchPhotoReferencesForSol:(JBSol *)sol
                         completion:(void (^)(NSArray<JBPhotoReference *> * _Nullable,
                                              NSError * _Nullable))completion;
-- (void)fetchPhotoForReference:(nonnull JBPhotoReference *)photoRef
+- (void)fetchPhotoForReference:(JBPhotoReference *)photoRef
                     completion:(void (^)(UIImage * _Nullable,
                                          NSError * _Nullable))completion;
+- (void)cancelPhotoFetchForReference:(JBPhotoReference *)photoRef;
 
 @end
 
