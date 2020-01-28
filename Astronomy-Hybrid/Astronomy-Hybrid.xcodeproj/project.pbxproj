@@ -20,6 +20,7 @@
 		BB3BAA2C23DFA3290061486F /* SolDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2B23DFA3290061486F /* SolDescription.swift */; };
 		BB3BAA3023DFD2840061486F /* SKSMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */; };
 		BB3BAA3323E000D80061486F /* SKSPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA3223E000D80061486F /* SKSPhotoReference.m */; };
+		BBDD970123E0D0010021D30A /* SKSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD970023E0D0010021D30A /* SKSCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSMarsRover.m; sourceTree = "<group>"; };
 		BB3BAA3123E000D80061486F /* SKSPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSPhotoReference.h; sourceTree = "<group>"; };
 		BB3BAA3223E000D80061486F /* SKSPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoReference.m; sourceTree = "<group>"; };
+		BBDD96FF23E0D0010021D30A /* SKSCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSCache.h; sourceTree = "<group>"; };
+		BBDD970023E0D0010021D30A /* SKSCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				BB3BAA2F23DFD2840061486F /* SKSMarsRover.m */,
 				BB3BAA3123E000D80061486F /* SKSPhotoReference.h */,
 				BB3BAA3223E000D80061486F /* SKSPhotoReference.m */,
+				BBDD96FF23E0D0010021D30A /* SKSCache.h */,
+				BBDD970023E0D0010021D30A /* SKSCache.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				BB3BAA2A23DF8F990061486F /* SKSRoverController.m in Sources */,
 				BB3BAA1623DF663C0061486F /* main.m in Sources */,
 				BB3BAA2023DF8AC70061486F /* SolPhotoDetailViewController.swift in Sources */,
+				BBDD970123E0D0010021D30A /* SKSCache.m in Sources */,
 				BB3BAA2223DF8B6D0061486F /* SolPhotoCollectionViewCell.swift in Sources */,
 				BB3BAA1E23DF8A950061486F /* SolPhotosCollectionViewController.swift in Sources */,
 				BB3BAA3323E000D80061486F /* SKSPhotoReference.m in Sources */,
