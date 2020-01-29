@@ -102,17 +102,6 @@ class MainCollectionViewController: UICollectionViewController {
 
     override func collectionView(
         _ collectionView: UICollectionView,
-        didEndDisplaying cell: UICollectionViewCell,
-        forItemAt indexPath: IndexPath
-    ) {
-        guard let cell = cell as? PhotoCollectionViewCell else { return }
-        self.photoController.cancelPhotoFetch(for: cell.photoRef)
-        cell.photoRef = nil
-        cell.imageView?.image = nil
-    }
-
-    override func collectionView(
-        _ collectionView: UICollectionView,
         willDisplay cell: UICollectionViewCell,
         forItemAt indexPath: IndexPath
     ) {
@@ -131,6 +120,17 @@ class MainCollectionViewController: UICollectionViewController {
                 photoCell.imageView?.image = image
             }
         }
+    }
+
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        didEndDisplaying cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        guard let cell = cell as? PhotoCollectionViewCell else { return }
+        self.photoController.cancelPhotoFetch(for: cell.photoRef)
+        cell.photoRef = nil
+        cell.imageView?.image = nil
     }
 
     // MARK: - Navigation
