@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="suF-ka-EvN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sold on Sols-->
+        <scene sceneID="YqW-39-B9q">
+            <objects>
+                <collectionViewController id="gHZ-Oj-YNM" customClass="MarsCollectionViewController" customModule="Astronomy_Combo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="j2x-dD-cuy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1xZ-lJ-ZXq">
+                            <size key="itemSize" width="135" height="130"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MarsCell" id="oKW-Ub-cbo" customClass="MarsCollectionViewCell" customModule="Astronomy_Combo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eCS-3d-RIh">
+                                    <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veQ-kA-O6v">
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rGf-Kf-Ffb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="130"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="rGf-Kf-Ffb" firstAttribute="leading" secondItem="veQ-kA-O6v" secondAttribute="leading" id="8Jm-xo-wSh"/>
+                                                <constraint firstAttribute="bottom" secondItem="rGf-Kf-Ffb" secondAttribute="bottom" id="TEm-99-cqH"/>
+                                                <constraint firstAttribute="trailing" secondItem="rGf-Kf-Ffb" secondAttribute="trailing" id="cZO-wu-UKB"/>
+                                                <constraint firstItem="rGf-Kf-Ffb" firstAttribute="top" secondItem="veQ-kA-O6v" secondAttribute="top" id="l0U-Tg-tr0"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="veQ-kA-O6v" firstAttribute="leading" secondItem="eCS-3d-RIh" secondAttribute="leading" id="Hl0-UE-KM5"/>
+                                        <constraint firstAttribute="bottom" secondItem="veQ-kA-O6v" secondAttribute="bottom" id="OH5-xH-8pq"/>
+                                        <constraint firstAttribute="trailing" secondItem="veQ-kA-O6v" secondAttribute="trailing" id="R2F-e1-CtR"/>
+                                        <constraint firstItem="veQ-kA-O6v" firstAttribute="top" secondItem="eCS-3d-RIh" secondAttribute="top" id="d9v-Le-G6O"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="135" height="130"/>
+                                <connections>
+                                    <outlet property="imageView" destination="rGf-Kf-Ffb" id="KLx-cd-QRy"/>
+                                    <segue destination="QRN-2K-8ia" kind="show" id="98Y-KF-wZg"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gHZ-Oj-YNM" id="Xed-LK-OEA"/>
+                            <outlet property="delegate" destination="gHZ-Oj-YNM" id="jG3-lD-mMt"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Sold on Sols" id="62U-E4-8rk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="Kw5-GS-PXe">
+                            <connections>
+                                <action selector="previousButtonPushed:" destination="gHZ-Oj-YNM" id="HaV-ap-Y9f"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="fastForward" id="nwP-nO-y0p">
+                                <connections>
+                                    <action selector="nextButtonPushed:" destination="gHZ-Oj-YNM" id="aUk-Kh-Yg7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="b9a-76-wqg">
+                                <connections>
+                                    <action selector="searchButtonPushed:" destination="gHZ-Oj-YNM" id="1eN-UV-7Ri"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98z-m4-Rnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.11594202898561" y="136.60714285714286"/>
+        </scene>
+        <!--Mars Detail View Controller-->
+        <scene sceneID="v9l-ND-FB2">
+            <objects>
+                <viewController id="QRN-2K-8ia" customClass="MarsDetailViewController" customModule="Astronomy_Combo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UVx-aR-tKB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ty9-WA-Zx7">
+                                <rect key="frame" x="0.0" y="155" width="414" height="741"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLW-v1-xNu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Uxu-iq-0f1"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="9k7-Gc-Uqq"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QRN-2K-8ia" id="AGN-16-aII"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ty9-WA-Zx7" secondAttribute="bottom" id="49A-yo-7VF"/>
+                            <constraint firstItem="ty9-WA-Zx7" firstAttribute="top" secondItem="zA5-HR-yue" secondAttribute="top" id="HxK-KO-9zr"/>
+                            <constraint firstItem="ty9-WA-Zx7" firstAttribute="leading" secondItem="UVx-aR-tKB" secondAttribute="leading" id="YYf-Fe-4MU"/>
+                            <constraint firstAttribute="trailing" secondItem="ty9-WA-Zx7" secondAttribute="trailing" id="pEm-BD-dOc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zA5-HR-yue"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ToG-fj-ePe"/>
+                    <connections>
+                        <outlet property="imageView" destination="uLW-v1-xNu" id="hhc-1o-zDs"/>
+                        <outlet property="scrollView" destination="ty9-WA-Zx7" id="rKF-xR-JYb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLv-6s-hhw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.7101449275365" y="136.60714285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sIz-bt-hbS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="suF-ka-EvN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bPE-eO-YPQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gHZ-Oj-YNM" kind="relationship" relationship="rootViewController" id="RkY-mX-WRJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSZ-pf-TPw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="136.60714285714286"/>
+        </scene>
+    </scenes>
+</document>
