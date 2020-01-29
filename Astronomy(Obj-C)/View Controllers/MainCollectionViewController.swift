@@ -60,7 +60,6 @@ class MainCollectionViewController: UICollectionViewController {
                 NSLog("Error fetching mission manifest: \(error)")
                 return
             }
-
             if let sol10Index = self.photoController.sols.firstIndex(where: { $0.marsSol == 10 }) {
                 self.currentSolIndex = sol10Index
                 self.setCurrentSol()
@@ -70,10 +69,15 @@ class MainCollectionViewController: UICollectionViewController {
 
     private func updateViews() {
         if let sol = currentSol {
-            self.solLabel.text = "Sol \(sol.marsSol)"
+            solLabel.text = "Sol \(sol.marsSol)"
         }
-
-        self.collectionView.reloadData()
+        if collectionView.numberOfItems(inSection: 0) > 0 {
+            collectionView.scrollToItem(
+                at: IndexPath(item: 0, section: 0),
+                at: .top,
+                animated: true)
+        }
+        collectionView.reloadData()
     }
 
     // MARK: UICollectionViewDataSource
@@ -93,7 +97,6 @@ class MainCollectionViewController: UICollectionViewController {
             .dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                  for: indexPath) as? PhotoCollectionViewCell
             else { return UICollectionViewCell() }
-
         return cell
     }
 
@@ -103,10 +106,7 @@ class MainCollectionViewController: UICollectionViewController {
         forItemAt indexPath: IndexPath
     ) {
         guard let cell = cell as? PhotoCollectionViewCell else { return }
-        // FIXME: below -- unexpectedly found nil while imlpcitly unwrapping optional
         self.photoController.cancelPhotoFetch(for: cell.photoRef)
-//        print("Ending display for photoID \(String(describing: cell.photoRef?.photoID))")
-//        print("did end displaying cell at indexPath \(indexPath)")
         cell.photoRef = nil
         cell.imageView?.image = nil
     }
@@ -117,7 +117,6 @@ class MainCollectionViewController: UICollectionViewController {
         forItemAt indexPath: IndexPath
     ) {
         guard let photoCell = cell as? PhotoCollectionViewCell else { return }
-//        print("will display cell at indexPath \(indexPath)")
 
         let photoRef = photoReferences[indexPath.row]
         photoCell.photoRef = photoRef
@@ -127,14 +126,11 @@ class MainCollectionViewController: UICollectionViewController {
                 NSLog("Error fetching photo: \(error)")
                 return
             }
-
-//            print("Showing display of photoID \(photoRef.photoID)")
             guard photoCell.photoRef == photoRef else { return }
             DispatchQueue.main.async {
                 photoCell.imageView?.image = image
             }
         }
-//        print("Here's cell at indexPath \(indexPath)")
     }
 
     // MARK: - Navigation
@@ -158,13 +154,15 @@ class MainCollectionViewController: UICollectionViewController {
 
     @objc
     private func goToPreviousSol(_ sender: Any) {
-        currentSolIndex -= (currentSolIndex == 0) ? 0 : 1
+        currentSolIndex = (currentSolIndex <= 0) ? 0 : currentSolIndex - 1
         setCurrentSol()
     }
 
     @objc
     private func goToNextSol(_ sender: Any) {
-        self.currentSolIndex += (currentSolIndex == photoController.sols.count - 1) ? 0 : 1
+        currentSolIndex = (currentSolIndex >= photoController.sols.count - 1)
+            ? photoController.sols.count
+            : currentSolIndex + 1
         setCurrentSol()
     }
 
@@ -172,6 +170,8 @@ class MainCollectionViewController: UICollectionViewController {
         if currentSolIndex < photoController.sols.count && currentSolIndex >= 0 {
             let sol = photoController.sols[currentSolIndex]
             currentSol = sol
+            photoReferences = []
+            DispatchQueue.main.async { self.updateViews() }
             self.photoController.fetchPhotoReferences(for: sol) { photoRefs, error in
                 if let error = error {
                     NSLog("Error fetching photoRefs: \(error)")

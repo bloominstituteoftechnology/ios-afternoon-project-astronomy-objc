@@ -14,7 +14,6 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var photoInfoLabel: UILabel!
     @IBOutlet weak var cameraInfoLabel: UILabel!
 
-//    var photoController: PhotoController?
     var photoRef: PhotoReference?
     var sol: Sol?
     var image: UIImage?
@@ -34,16 +33,4 @@ class PhotoDetailViewController: UIViewController {
         photoInfoLabel.text = "Taken by Curiosity on \(sol.earthDate) (Sol \(sol.marsSol))"
         cameraInfoLabel.text = "Camera: \(photoRef.cameraName)"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

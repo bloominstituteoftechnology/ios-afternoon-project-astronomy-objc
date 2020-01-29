@@ -144,7 +144,7 @@ static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
     JBFetchOperation *fetchOp = [[JBFetchOperation alloc] initWithRequest:request];
     NSBlockOperation *cacheOp = [NSBlockOperation blockOperationWithBlock:^{
         if (fetchOp.image) {
-            [self.imageCache didCacheItem:fetchOp.image forKey:photoIDNumber];
+            [self.imageCache cacheItem:fetchOp.image forKey:photoIDNumber];
         } else if (!fetchOp.isCancelled) {
             NSLog(@"Photo fetch failed?");
         }
@@ -155,8 +155,8 @@ static NSString * kAPIKey = @"IK5EXzl5H70cLbyq5Jyp4bM8eN9icJNHzpBygHiF";
             completion(nil, fetchOp.error);
             return;
         }
-        if (fetchOp.image == nil) {
-            NSLog(@"Unknown fetching photo for referenceID %@", photoIDNumber);
+        if (fetchOp.image == nil && !fetchOp.isCancelled) {
+            NSLog(@"Unknown error fetching photo for referenceID %@", photoIDNumber);
             completion(nil, customError);
             return;
         }

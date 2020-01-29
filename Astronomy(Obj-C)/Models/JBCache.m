@@ -11,8 +11,8 @@
 
 @interface JBCache()
 
-@property (nonnull, atomic) NSMutableDictionary *cache;
-@property (nonnull) NSLock *lock;
+@property (nonnull, nonatomic) NSMutableDictionary *cache;
+@property (nonnull, atomic) dispatch_queue_t dispatchQueue;
 
 @end
 
@@ -23,45 +23,45 @@
     self = [super init];
     if (self) {
         _cache = [[NSMutableDictionary alloc] init];
-        _lock = [[NSLock alloc] init];
+        _dispatchQueue = dispatch_queue_create("AstronomyObjC.PhotoCacheQueue",
+                                            DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
 
-- (BOOL)didCacheItem:(id)value forKey:(NSNumber *)key
+- (void)cacheItem:(id)value forKey:(NSNumber *)key
 {
-    [self.lock lock];
-    [self.cache setObject:value forKey:key];
-    [self.lock unlock];
-
-    return YES;
+    dispatch_sync(self.dispatchQueue, ^{
+        [self.cache setObject:value forKey:key];
+    });
 }
 
 - (id)itemforKey:(NSNumber *)key
 {
-    [self.lock lock];
-    id value = [self.cache objectForKey:key];
-    [self.lock unlock];
+    __block id value;
+    dispatch_sync(self.dispatchQueue, ^{
+        value = [self.cache objectForKey:key];
+    });
 
     return value;
 }
 
 - (id)removeItemForKey:(NSNumber *)key
 {
-    [self.lock lock];
-    id value = [self.cache objectForKey:key];
-    [self.cache removeObjectForKey:key];
-    [self.lock unlock];
+    __block id value;
+    dispatch_sync(self.dispatchQueue, ^{
+        value = [self.cache objectForKey:key];
+        [self.cache removeObjectForKey:key];
+    });
 
     return value;
 }
 
-- (BOOL)didClear
+- (void)clear
 {
-    [self.lock lock];
-    [self.cache removeAllObjects];
-    [self.lock unlock];
-    return YES;
+    dispatch_sync(self.dispatchQueue, ^{
+        [self.cache removeAllObjects];
+    });
 }
 
 @end
