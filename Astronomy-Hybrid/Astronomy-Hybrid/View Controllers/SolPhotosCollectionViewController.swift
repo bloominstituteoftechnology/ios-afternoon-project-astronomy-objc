@@ -20,7 +20,7 @@ class SolPhotosCollectionViewController: UICollectionViewController {
 
     private var marsRover: MarsRover? {
         didSet {
-            solDescription = marsRover?.solDescriptions[10]
+            solDescription = marsRover?.solDescriptions[4]
         }
     }
     private var solDescription: SolDescription? {

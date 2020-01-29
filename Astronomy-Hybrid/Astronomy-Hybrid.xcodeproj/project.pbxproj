@@ -66,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB0548CD23E1306F00EF62AF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BBDD970C23E114BF0021D30A /* NSURL+SKSSecure.h */,
+				BBDD970D23E114BF0021D30A /* NSURL+SKSSecure.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		BB3BA9F723DF66390061486F = {
 			isa = PBXGroup;
 			children = (
@@ -90,10 +99,9 @@
 				BB3BAA2723DF8F5E0061486F /* Model Controllers */,
 				BB3BAA2D23DFA3310061486F /* Models */,
 				BBDD970523E0E6BF0021D30A /* Operations */,
+				BB0548CD23E1306F00EF62AF /* Categories */,
 				BB3BAA0323DF66390061486F /* AppDelegate.h */,
 				BB3BAA0423DF66390061486F /* AppDelegate.m */,
-				BBDD970C23E114BF0021D30A /* NSURL+SKSSecure.h */,
-				BBDD970D23E114BF0021D30A /* NSURL+SKSSecure.m */,
 				BB3BAA0623DF66390061486F /* SceneDelegate.h */,
 				BB3BAA0723DF66390061486F /* SceneDelegate.m */,
 				BB3BAA0C23DF66390061486F /* Main.storyboard */,

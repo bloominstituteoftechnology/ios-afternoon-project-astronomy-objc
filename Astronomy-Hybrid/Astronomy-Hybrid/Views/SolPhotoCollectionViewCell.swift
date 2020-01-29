@@ -14,6 +14,6 @@ class SolPhotoCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = UIImage(named: "MarsPlaceholder")
+        //imageView.image = UIImage(named: "MarsPlaceholder")
     }
 }
