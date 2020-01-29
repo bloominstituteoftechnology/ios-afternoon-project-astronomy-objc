@@ -18,8 +18,40 @@ class SolPhotosCollectionViewController: UICollectionViewController {
     private let photoFetchQueue = OperationQueue();
     private var operations = [Int: Operation]();
 
+    private var marsRover: MarsRover? {
+        didSet {
+            solDescription = marsRover?.solDescriptions[10]
+        }
+    }
+    private var solDescription: SolDescription? {
+        didSet {
+            if let sol = solDescription?.sol {
+                print("Description for Sol: \(sol)")
+                photoReferences = []
+                roverController.photosForRover(onSol: sol) { (photoRefs, error) in
+                    if let error = error {
+                        print("Error fetching photos \(error)")
+                        return
+                    }
+                    self.photoReferences = photoRefs ?? []
+                    DispatchQueue.main.async { self.updateViews() }
+                }
+            }
+        }
+    }
+    private var photoReferences = [PhotoReference]() {
+        didSet {
+            cache.clear()
+            DispatchQueue.main.async { self.collectionView?.reloadData() }
+        }
+    }
+
+    private func updateViews() {
+
+    }
+
     private func loadImage(forCell cell: SolPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
-        let photoReference = roverController.getPhotoReferences()[indexPath.item]
+        let photoReference = photoReferences[indexPath.item]
 
         if let data = cache.value(photoReference.solId) as? Data {
             cell.imageView.image = UIImage(data: data)
@@ -57,21 +89,24 @@ class SolPhotosCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        roverController.photoManifest { (error) in
+        roverController.photoManifest { (rover, error) in
             if let error = error {
-                print("Error getting photomanifest \(error)")
+                print("Error getting photo manifest \(error)")
+                return
             }
+
+            self.marsRover = rover
         }
 
-        roverController.photosForRover(onSol: "10") { (error) in
-            if let error = error {
-                print("Error getting photos \(error)")
-            } else {
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
+//        roverController.photosForRover(onSol: "10") { (error) in
+//            if let error = error {
+//                print("Error getting photos \(error)")
+//            } else {
+//                DispatchQueue.main.async {
+//                    self.collectionView.reloadData()
+//                }
+//            }
+//        }
     }
 
     /*
@@ -90,9 +125,8 @@ class SolPhotosCollectionViewController: UICollectionViewController {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return roverController.getPhotoReferences().count
+        return photoReferences.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -103,6 +137,12 @@ class SolPhotosCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
+
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        let photoReference = photoReferences[indexPath.item]
+        operations[Int(photoReference.solId)]?.cancel()
+    }
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

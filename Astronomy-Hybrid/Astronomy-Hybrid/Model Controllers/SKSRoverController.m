@@ -12,29 +12,14 @@
 
 @interface SKSRoverController()
 
-@property (nonatomic, nonnull) NSMutableArray<SKSPhotoReference *> *photoReferences;
-
 @end
 
 @implementation SKSRoverController
 
 static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _photoReferences = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
-
-- (NSArray<SKSPhotoReference *> *)getPhotoReferences {
-    return [self.photoReferences copy];
-}
-
 // MARK: - Network calls
-- (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion {
+- (void)photoManifestForRover:(nonnull void (^)(SKSMarsRover *_Nullable, NSError * _Nullable))completion {
 
     NSString *urlString = [baseURLString stringByAppendingString:@"manifests/curiosity?api_key=DEMO_KEY"];
     NSURL *baseURL = [NSURL URLWithString:urlString];
@@ -42,14 +27,14 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
     [[[NSURLSession sharedSession] dataTaskWithURL:baseURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         if (error) {
-            completion(error);
+            completion(nil, error);
         }
 
         NSError *jsonError = nil;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
         if (jsonError) {
-            completion(jsonError);
+            completion(nil, jsonError);
         }
 
 
@@ -57,25 +42,26 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
         if (![dictionary isKindOfClass:[NSDictionary class]]) {
             NSError *dictionaryError = (NSError *)dictionary;
             NSLog(@"It is not of dictionary type %@", [dictionaryError localizedDescription]);
-            completion(dictionaryError);
+            completion(nil, dictionaryError);
         }
         
         NSDictionary *photoManifest = dictionary[@"photo_manifest"];
-        self.marsRover = [[SKSMarsRover alloc] initWithDictionary:photoManifest];
+        SKSMarsRover *rover = [[SKSMarsRover alloc] initWithDictionary:photoManifest];
 
-        completion(nil);
+        completion(rover, nil);
 
     }] resume];
 }
 
-- (void)photosForRoverOnSol:(nonnull NSString *)sol completion:(nonnull void (^)(NSError *_Nullable))completion {
+- (void)photosForRoverOnSol:(NSInteger)sol completion:(nonnull void (^)(NSArray<SKSPhotoReference *> *_Nullable, NSError *_Nullable))completion {
 
     NSString *urlString = [baseURLString stringByAppendingString:@"rovers/curiosity/photos"];
     NSURL *baseURL = [NSURL URLWithString:urlString];
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:TRUE];
 
     //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=DEMO_KEY
-    NSURLQueryItem *solItem = [NSURLQueryItem queryItemWithName:@"sol" value:sol];
+    NSString *solValue = [[NSNumber numberWithInteger:sol] stringValue];
+    NSURLQueryItem *solItem = [NSURLQueryItem queryItemWithName:@"sol" value:solValue];
     NSURLQueryItem *apiKey = [NSURLQueryItem queryItemWithName:@"api_key" value:@"DEMO_KEY"];
     [components setQueryItems:@[solItem, apiKey]];
 
@@ -84,34 +70,30 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         if (error) {
-            completion(error);
+            completion(nil, error);
         }
 
         NSError *jsonError = nil;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
         if (jsonError) {
-            completion(jsonError);
+            completion(nil, jsonError);
         }
-
-
 
         if (![dictionary isKindOfClass:[NSDictionary class]]) {
             NSError *dictionaryError = (NSError *)dictionary;
             NSLog(@"It is not of dictionary type %@", [dictionaryError localizedDescription]);
-            completion(dictionaryError);
+            completion(nil, dictionaryError);
         }
 
         NSArray *photos = dictionary[@"photos"];
+        NSMutableArray<SKSPhotoReference *> *tempPhotoReferences = [[NSMutableArray alloc] init];
         for (NSDictionary *photoDictionary in photos) {
             SKSPhotoReference *photo = [[SKSPhotoReference alloc] initWithDictionary:photoDictionary];
-            [self.photoReferences addObject:photo];
+            [tempPhotoReferences addObject:photo];
         }
 
-        NSLog(@"Sol 10 Number of photos: %lu", self.photoReferences.count);
-        completion(nil);
-
-
+        completion([tempPhotoReferences copy], nil);
     }] resume];
 }
 

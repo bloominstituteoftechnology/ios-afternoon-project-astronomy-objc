@@ -3,6 +3,7 @@
 //
 
 #import "SKSRoverController.h"
+#import "SKSMarsRover.h"
 #import "SKSCache.h"
 #import "SKSPhotoReference.h"
 #import "SKSFetchPhotoOperation.h"

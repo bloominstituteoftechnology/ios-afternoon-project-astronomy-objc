@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(PhotoReference)
+
 @interface SKSPhotoReference : NSObject
 
 @property (nonatomic) int solId;

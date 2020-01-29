@@ -10,6 +10,8 @@
 
 @class SolDescription;
 
+NS_SWIFT_NAME(MarsRover)
+
 @interface SKSMarsRover : NSObject
 
 @property (nonatomic, nonnull) NSString *name;

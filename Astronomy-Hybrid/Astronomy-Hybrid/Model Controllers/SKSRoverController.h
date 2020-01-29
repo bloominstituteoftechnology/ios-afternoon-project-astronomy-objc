@@ -14,12 +14,8 @@ NS_SWIFT_NAME(RoverController)
 
 @interface SKSRoverController : NSObject
 
-@property (nonatomic, nonnull) SKSMarsRover *marsRover;
-
-
-- (nonnull NSArray<SKSPhotoReference *> *)getPhotoReferences;
-- (void)photoManifestForRover:(nonnull void (^)(NSError * _Nullable))completion;
-- (void)photosForRoverOnSol:(nonnull NSString *)sol completion:(nonnull void (^)(NSError *_Nullable))completion;
+- (void)photoManifestForRover:(nonnull void (^)(SKSMarsRover *_Nullable, NSError * _Nullable))completion;
+- (void)photosForRoverOnSol:(NSInteger)sol completion:(nonnull void (^)(NSArray<SKSPhotoReference *> *_Nullable, NSError *_Nullable))completion;
 
 @end
 
