@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5C9A36E23550699009AFA06 /* JSPhotosController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A36D23550699009AFA06 /* JSPhotosController.m */; };
+		B5C9A373235507D1009AFA06 /* JSNasaApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A372235507D1009AFA06 /* JSNasaApi.m */; };
+		B5C9A37623553D1C009AFA06 /* JSRover.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A37523553D1C009AFA06 /* JSRover.m */; };
+		B5C9A37923553EF6009AFA06 /* JSSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A37823553EF6009AFA06 /* JSSolDescription.m */; };
+		B5C9A37C23553FCF009AFA06 /* JSCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A37B23553FCF009AFA06 /* JSCamera.m */; };
+		B5C9A37F235540B3009AFA06 /* JSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9A37E235540B3009AFA06 /* JSCache.m */; };
+		B5F347DD2354FFB500FCD842 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F347DC2354FFB500FCD842 /* AppDelegate.m */; };
+		B5F347E02354FFB500FCD842 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F347DF2354FFB500FCD842 /* SceneDelegate.m */; };
+		B5F347E62354FFB600FCD842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F347E42354FFB600FCD842 /* Main.storyboard */; };
+		B5F347E82354FFB800FCD842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F347E72354FFB800FCD842 /* Assets.xcassets */; };
+		B5F347EB2354FFB800FCD842 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F347E92354FFB800FCD842 /* LaunchScreen.storyboard */; };
+		B5F347EE2354FFB800FCD842 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F347ED2354FFB800FCD842 /* main.m */; };
+		B5F347FE235501B300FCD842 /* PhotosCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F347FD235501B300FCD842 /* PhotosCollectionVC.swift */; };
+		B5F34800235501F400FCD842 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F347FF235501F400FCD842 /* Photo.swift */; };
+		B5F348022355030F00FCD842 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F348012355030F00FCD842 /* PhotoCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B5C9A36C23550699009AFA06 /* JSPhotosController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPhotosController.h; sourceTree = "<group>"; };
+		B5C9A36D23550699009AFA06 /* JSPhotosController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPhotosController.m; sourceTree = "<group>"; };
+		B5C9A371235507D1009AFA06 /* JSNasaApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSNasaApi.h; sourceTree = "<group>"; };
+		B5C9A372235507D1009AFA06 /* JSNasaApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSNasaApi.m; sourceTree = "<group>"; };
+		B5C9A37423553D1C009AFA06 /* JSRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSRover.h; sourceTree = "<group>"; };
+		B5C9A37523553D1C009AFA06 /* JSRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSRover.m; sourceTree = "<group>"; };
+		B5C9A37723553EF6009AFA06 /* JSSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSSolDescription.h; sourceTree = "<group>"; };
+		B5C9A37823553EF6009AFA06 /* JSSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSSolDescription.m; sourceTree = "<group>"; };
+		B5C9A37A23553FCF009AFA06 /* JSCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCamera.h; sourceTree = "<group>"; };
+		B5C9A37B23553FCF009AFA06 /* JSCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCamera.m; sourceTree = "<group>"; };
+		B5C9A37D235540B3009AFA06 /* JSCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCache.h; sourceTree = "<group>"; };
+		B5C9A37E235540B3009AFA06 /* JSCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCache.m; sourceTree = "<group>"; };
+		B5F347D82354FFB500FCD842 /* Astrnomy-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astrnomy-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5F347DB2354FFB500FCD842 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B5F347DC2354FFB500FCD842 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B5F347DE2354FFB500FCD842 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		B5F347DF2354FFB500FCD842 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		B5F347E52354FFB600FCD842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5F347E72354FFB800FCD842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5F347EA2354FFB800FCD842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5F347EC2354FFB800FCD842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5F347ED2354FFB800FCD842 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5F347FC235501B200FCD842 /* Astrnomy-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astrnomy-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		B5F347FD235501B300FCD842 /* PhotosCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionVC.swift; sourceTree = "<group>"; };
+		B5F347FF235501F400FCD842 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B5F348012355030F00FCD842 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5F347D52354FFB500FCD842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5F347CF2354FFB500FCD842 = {
+			isa = PBXGroup;
+			children = (
+				B5F347DA2354FFB500FCD842 /* Astrnomy-C */,
+				B5F347D92354FFB500FCD842 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5F347D92354FFB500FCD842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5F347D82354FFB500FCD842 /* Astrnomy-C.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5F347DA2354FFB500FCD842 /* Astrnomy-C */ = {
+			isa = PBXGroup;
+			children = (
+				B5F347FB2355004A00FCD842 /* Helpers */,
+				B5F347F52355004900FCD842 /* Model Controllers */,
+				B5F347F72355004900FCD842 /* Models */,
+				B5F347F92355004900FCD842 /* Networking */,
+				B5F347F62355004900FCD842 /* Resources */,
+				B5F347F42355004900FCD842 /* Storyboards */,
+				B5F347FA2355004A00FCD842 /* View Controllers */,
+				B5F347F82355004900FCD842 /* Views */,
+				B5F347DE2354FFB500FCD842 /* SceneDelegate.h */,
+				B5F347DF2354FFB500FCD842 /* SceneDelegate.m */,
+				B5F347ED2354FFB800FCD842 /* main.m */,
+			);
+			path = "Astrnomy-C";
+			sourceTree = "<group>";
+		};
+		B5F347F42355004900FCD842 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B5F347E42354FFB600FCD842 /* Main.storyboard */,
+				B5F347E92354FFB800FCD842 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B5F347F52355004900FCD842 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5C9A36C23550699009AFA06 /* JSPhotosController.h */,
+				B5C9A36D23550699009AFA06 /* JSPhotosController.m */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		B5F347F62355004900FCD842 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5F347DB2354FFB500FCD842 /* AppDelegate.h */,
+				B5F347DC2354FFB500FCD842 /* AppDelegate.m */,
+				B5F347E72354FFB800FCD842 /* Assets.xcassets */,
+				B5F347EC2354FFB800FCD842 /* Info.plist */,
+				B5F347FC235501B200FCD842 /* Astrnomy-C-Bridging-Header.h */,
+				B5C9A371235507D1009AFA06 /* JSNasaApi.h */,
+				B5C9A372235507D1009AFA06 /* JSNasaApi.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5F347F72355004900FCD842 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5F347FF235501F400FCD842 /* Photo.swift */,
+				B5C9A37423553D1C009AFA06 /* JSRover.h */,
+				B5C9A37523553D1C009AFA06 /* JSRover.m */,
+				B5C9A37723553EF6009AFA06 /* JSSolDescription.h */,
+				B5C9A37823553EF6009AFA06 /* JSSolDescription.m */,
+				B5C9A37A23553FCF009AFA06 /* JSCamera.h */,
+				B5C9A37B23553FCF009AFA06 /* JSCamera.m */,
+				B5C9A37D235540B3009AFA06 /* JSCache.h */,
+				B5C9A37E235540B3009AFA06 /* JSCache.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5F347F82355004900FCD842 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5F348012355030F00FCD842 /* PhotoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5F347F92355004900FCD842 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B5F347FA2355004A00FCD842 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5F347FD235501B300FCD842 /* PhotosCollectionVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B5F347FB2355004A00FCD842 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5F347D72354FFB500FCD842 /* Astrnomy-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5F347F12354FFB800FCD842 /* Build configuration list for PBXNativeTarget "Astrnomy-C" */;
+			buildPhases = (
+				B5F347D42354FFB500FCD842 /* Sources */,
+				B5F347D52354FFB500FCD842 /* Frameworks */,
+				B5F347D62354FFB500FCD842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Astrnomy-C";
+			productName = "Astrnomy-C";
+			productReference = B5F347D82354FFB500FCD842 /* Astrnomy-C.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5F347D02354FFB500FCD842 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Lambda;
+				TargetAttributes = {
+					B5F347D72354FFB500FCD842 = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
+					};
+				};
+			};
+			buildConfigurationList = B5F347D32354FFB500FCD842 /* Build configuration list for PBXProject "Astrnomy-C" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5F347CF2354FFB500FCD842;
+			productRefGroup = B5F347D92354FFB500FCD842 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5F347D72354FFB500FCD842 /* Astrnomy-C */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5F347D62354FFB500FCD842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5F347EB2354FFB800FCD842 /* LaunchScreen.storyboard in Resources */,
+				B5F347E82354FFB800FCD842 /* Assets.xcassets in Resources */,
+				B5F347E62354FFB600FCD842 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5F347D42354FFB500FCD842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C9A37623553D1C009AFA06 /* JSRover.m in Sources */,
+				B5C9A373235507D1009AFA06 /* JSNasaApi.m in Sources */,
+				B5F347DD2354FFB500FCD842 /* AppDelegate.m in Sources */,
+				B5F347FE235501B300FCD842 /* PhotosCollectionVC.swift in Sources */,
+				B5C9A36E23550699009AFA06 /* JSPhotosController.m in Sources */,
+				B5F347EE2354FFB800FCD842 /* main.m in Sources */,
+				B5C9A37F235540B3009AFA06 /* JSCache.m in Sources */,
+				B5C9A37C23553FCF009AFA06 /* JSCamera.m in Sources */,
+				B5F347E02354FFB500FCD842 /* SceneDelegate.m in Sources */,
+				B5C9A37923553EF6009AFA06 /* JSSolDescription.m in Sources */,
+				B5F348022355030F00FCD842 /* PhotoCell.swift in Sources */,
+				B5F34800235501F400FCD842 /* Photo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5F347E42354FFB600FCD842 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5F347E52354FFB600FCD842 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5F347E92354FFB800FCD842 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5F347EA2354FFB800FCD842 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5F347EF2354FFB800FCD842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B5F347F02354FFB800FCD842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5F347F22354FFB800FCD842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
+				INFOPLIST_FILE = "$(SRCROOT)/Astrnomy-C/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lambda.Astrnomy-C";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrnomy-C/Resources/Astrnomy-C-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5F347F32354FFB800FCD842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
+				INFOPLIST_FILE = "$(SRCROOT)/Astrnomy-C/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lambda.Astrnomy-C";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrnomy-C/Resources/Astrnomy-C-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5F347D32354FFB500FCD842 /* Build configuration list for PBXProject "Astrnomy-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5F347EF2354FFB800FCD842 /* Debug */,
+				B5F347F02354FFB800FCD842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5F347F12354FFB800FCD842 /* Build configuration list for PBXNativeTarget "Astrnomy-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5F347F22354FFB800FCD842 /* Debug */,
+				B5F347F32354FFB800FCD842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5F347D02354FFB500FCD842 /* Project object */;
+}
