@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, nullable, readonly) UIImage *image;
 @property (nonatomic, nullable, readonly) NSError *error;
+@property (nonatomic, nullable, readonly) NSData *data;
 - (instancetype) initWithRequest:(NSURLRequest *)request;
 
 @end

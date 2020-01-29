@@ -9,6 +9,8 @@
 #import "JBFetchOperation.h"
 
 
+#pragma mark - State Enum
+
 typedef NS_ENUM(NSUInteger, JBFetchOperationState) {
     JBFetchOperationIsReady,
     JBFetchOperationIsExecuting,
@@ -29,6 +31,8 @@ NSString *rawValueForState(JBFetchOperationState state)
 }
 
 
+#pragma mark - Setup / Init
+
 @interface JBFetchOperation() {
     JBFetchOperationState _state;
 }
@@ -38,7 +42,7 @@ NSString *rawValueForState(JBFetchOperationState state)
 @property (nonatomic, nonnull) NSURLRequest *request;
 @property (nonatomic, nullable) NSURLSessionDataTask *dataTask;
 @property (nonatomic, nullable) NSError *internalError;
-@property (nonatomic, nullable) NSData *data;
+@property (nonatomic, nullable) NSData *internalData;
 
 @end
 
@@ -54,6 +58,30 @@ NSString *rawValueForState(JBFetchOperationState state)
     }
     return self;
 }
+
+#pragma mark - Computed Properties
+
+- (NSError *)error
+{
+    return self.internalError;
+}
+
+- (NSData *)data
+{
+    return self.internalData;
+}
+
+- (UIImage *)image
+{
+    if (self.data) {
+        UIImage *image = [UIImage imageWithData:self.data];
+        return image;
+    } else {
+        return nil;
+    }
+}
+
+#pragma mark - Operation Properties
 
 - (JBFetchOperationState)state
 {
@@ -95,6 +123,8 @@ NSString *rawValueForState(JBFetchOperationState state)
     return (self.state == JBFetchOperationIsFinished);
 }
 
+#pragma mark - Operation Methods
+
 - (void)start
 {
     self.state = JBFetchOperationIsExecuting;
@@ -119,7 +149,7 @@ NSString *rawValueForState(JBFetchOperationState state)
             self.state = JBFetchOperationIsFinished;
             return;
         }
-        self.data = data;
+        self.internalData = data;
         self.state = JBFetchOperationIsFinished;
     }];
     [self.dataTask resume];
@@ -129,21 +159,6 @@ NSString *rawValueForState(JBFetchOperationState state)
 {
     [self.dataTask cancel];
     [super cancel];
-}
-
-- (NSError *)error
-{
-    return self.internalError;
-}
-
-- (UIImage *)image
-{
-    if (self.data) {
-        UIImage *image = [UIImage imageWithData:self.data];
-        return image;
-    } else {
-        return nil;
-    }
 }
 
 @end

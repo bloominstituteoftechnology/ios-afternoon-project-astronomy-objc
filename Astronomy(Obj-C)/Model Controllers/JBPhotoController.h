@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(PhotoController)
-@interface JBPhotoController : NSObject
+@interface JBPhotoController: NSObject <NSCacheDelegate>
 
 @property (nonatomic, readonly) NSArray<JBSol *> *sols;
 

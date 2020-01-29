@@ -171,15 +171,18 @@ class MainCollectionViewController: UICollectionViewController {
             let sol = photoController.sols[currentSolIndex]
             currentSol = sol
             photoReferences = []
-            DispatchQueue.main.async { self.updateViews() }
             self.photoController.fetchPhotoReferences(for: sol) { photoRefs, error in
+                guard sol == self.currentSol else {
+                    return // if the sol has already changed, this instance of the closure is now moot
+                }
                 if let error = error {
                     NSLog("Error fetching photoRefs: \(error)")
                     return
                 }
                 self.photoReferences = photoRefs ?? []
-                DispatchQueue.main.async { self.updateViews() }
+                DispatchQueue.main.async { self.collectionView.reloadData() }
             }
+            DispatchQueue.main.async { self.updateViews() }
         }
     }
 }
