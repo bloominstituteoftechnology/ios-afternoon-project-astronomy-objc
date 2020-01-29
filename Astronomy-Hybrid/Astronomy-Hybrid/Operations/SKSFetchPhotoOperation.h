@@ -10,11 +10,17 @@
 
 @class SKSPhotoReference;
 
+NS_ASSUME_NONNULL_BEGIN
+
+NS_SWIFT_NAME(FetchPhotoOperation)
+
 @interface SKSFetchPhotoOperation : NSOperation
 
 @property (nonatomic, nullable) NSData *imageData;
 
--(instancetype _Nullable )initWithPhotoReference:(nonnull SKSPhotoReference *)photoReference;
+- (instancetype)initWithPhotoReference:(SKSPhotoReference *)photoReference;
 
 @end
+
+NS_ASSUME_NONNULL_END
 

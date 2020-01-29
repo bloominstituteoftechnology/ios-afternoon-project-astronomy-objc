@@ -22,6 +22,7 @@
 		BB3BAA3323E000D80061486F /* SKSPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3BAA3223E000D80061486F /* SKSPhotoReference.m */; };
 		BBDD970123E0D0010021D30A /* SKSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD970023E0D0010021D30A /* SKSCache.m */; };
 		BBDD970B23E0FA810021D30A /* SKSFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD970A23E0FA810021D30A /* SKSFetchPhotoOperation.m */; };
+		BBDD970E23E114BF0021D30A /* NSURL+SKSSecure.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD970D23E114BF0021D30A /* NSURL+SKSSecure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		BBDD970023E0D0010021D30A /* SKSCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSCache.m; sourceTree = "<group>"; };
 		BBDD970923E0FA810021D30A /* SKSFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSFetchPhotoOperation.h; sourceTree = "<group>"; };
 		BBDD970A23E0FA810021D30A /* SKSFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSFetchPhotoOperation.m; sourceTree = "<group>"; };
+		BBDD970C23E114BF0021D30A /* NSURL+SKSSecure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+SKSSecure.h"; sourceTree = "<group>"; };
+		BBDD970D23E114BF0021D30A /* NSURL+SKSSecure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SKSSecure.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				BBDD970523E0E6BF0021D30A /* Operations */,
 				BB3BAA0323DF66390061486F /* AppDelegate.h */,
 				BB3BAA0423DF66390061486F /* AppDelegate.m */,
+				BBDD970C23E114BF0021D30A /* NSURL+SKSSecure.h */,
+				BBDD970D23E114BF0021D30A /* NSURL+SKSSecure.m */,
 				BB3BAA0623DF66390061486F /* SceneDelegate.h */,
 				BB3BAA0723DF66390061486F /* SceneDelegate.m */,
 				BB3BAA0C23DF66390061486F /* Main.storyboard */,
@@ -227,6 +232,7 @@
 				BB3BAA2C23DFA3290061486F /* SolDescription.swift in Sources */,
 				BB3BAA2A23DF8F990061486F /* SKSRoverController.m in Sources */,
 				BB3BAA1623DF663C0061486F /* main.m in Sources */,
+				BBDD970E23E114BF0021D30A /* NSURL+SKSSecure.m in Sources */,
 				BB3BAA2023DF8AC70061486F /* SolPhotoDetailViewController.swift in Sources */,
 				BBDD970123E0D0010021D30A /* SKSCache.m in Sources */,
 				BB3BAA2223DF8B6D0061486F /* SolPhotoCollectionViewCell.swift in Sources */,

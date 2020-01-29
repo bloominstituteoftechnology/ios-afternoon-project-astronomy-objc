@@ -12,8 +12,48 @@ private let reuseIdentifier = "PhotoCell"
 
 class SolPhotosCollectionViewController: UICollectionViewController {
 
-    private let roverController = RoverController()
     
+    private let roverController = RoverController()
+    private let cache = Cache<NSNumber, NSData>()
+    private let photoFetchQueue = OperationQueue();
+    private var operations = [Int: Operation]();
+
+    private func loadImage(forCell cell: SolPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
+        let photoReference = roverController.getPhotoReferences()[indexPath.item]
+
+        if let data = cache.value(photoReference.solId) as? Data {
+            cell.imageView.image = UIImage(data: data)
+            return
+        }
+
+        let fetchOp = FetchPhotoOperation(photoReference: photoReference)
+        let cacheOp = BlockOperation {
+            if let data = fetchOp.imageData {
+                self.cache.cacheValue(data, key: photoReference.solId)
+            }
+        }
+
+        let completionOp = BlockOperation {
+            defer { self.operations.removeValue(forKey: Int(photoReference.solId)) }
+
+            if let currentIndexPath = self.collectionView.indexPath(for: cell),
+                currentIndexPath != indexPath {
+                print("Cell has been reused")
+                return
+            }
+            if let data = fetchOp.imageData {
+                cell.imageView.image = UIImage(data: data)
+            }
+        }
+
+        cacheOp.addDependency(fetchOp)
+        completionOp.addDependency(fetchOp)
+
+        photoFetchQueue.addOperations([fetchOp, cacheOp], waitUntilFinished: true)
+        OperationQueue.main.addOperation(completionOp)
+        operations[Int(photoReference.solId)] = fetchOp
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,9 +98,7 @@ class SolPhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SolPhotoCollectionViewCell else { return UICollectionViewCell() }
     
-        // Configure the cell
-
-        //cell.imageView
+        loadImage(forCell: cell, forItemAt: indexPath)
         return cell
     }
 

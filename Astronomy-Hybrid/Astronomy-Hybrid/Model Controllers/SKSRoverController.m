@@ -29,7 +29,7 @@ static NSString * const baseURLString = @"https://api.nasa.gov/mars-photos/api/v
     return self;
 }
 
-- (NSArray *)getPhotoReferences {
+- (NSArray<SKSPhotoReference *> *)getPhotoReferences {
     return [self.photoReferences copy];
 }
 

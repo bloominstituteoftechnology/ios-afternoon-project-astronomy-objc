@@ -11,6 +11,8 @@ import UIKit
 class SolPhotoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
-    
-    
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }

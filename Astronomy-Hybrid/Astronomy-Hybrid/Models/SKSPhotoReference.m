@@ -30,7 +30,7 @@
     NSNumber *solId = dictionary[@"id"];
     NSNumber *sol = dictionary[@"sol"];
     NSDate *earthDate = dictionary[@"earth_date"];
-    NSURL *imageURL = dictionary[@"img_src"];
+    NSURL *imageURL = [NSURL URLWithString:dictionary[@"img_src"]];
     NSLog(@"URL for image: %@", imageURL);
 
     return [self initWithID:[solId intValue] sol:[sol intValue] earthDate:earthDate imageURL:imageURL];

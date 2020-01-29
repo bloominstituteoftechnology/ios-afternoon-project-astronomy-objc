@@ -1,5 +1,5 @@
 //
-//  SKSCache.h
+//  NSURL+SKSSecure.h
 //  Astronomy-Hybrid
 //
 //  Created by Lambda_School_Loaner_204 on 1/28/20.
@@ -8,12 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NS_SWIFT_NAME(Cache)
+@interface NSURL (SKSSecure)
 
-@interface SKSCache<Key, Value> : NSObject
-
-- (void)cacheValue:(id)value key:(id)key;
-- (id)value:(id)key;
-- (void)clear;
+- (NSURL *)usingHTTPS;
 
 @end
+

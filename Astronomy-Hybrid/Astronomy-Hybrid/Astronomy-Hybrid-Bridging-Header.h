@@ -3,3 +3,6 @@
 //
 
 #import "SKSRoverController.h"
+#import "SKSCache.h"
+#import "SKSPhotoReference.h"
+#import "SKSFetchPhotoOperation.h"

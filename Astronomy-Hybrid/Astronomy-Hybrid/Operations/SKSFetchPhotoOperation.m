@@ -8,6 +8,7 @@
 
 #import "SKSFetchPhotoOperation.h"
 #import "SKSPhotoReference.h"
+#import "NSURL+SKSSecure.h"
 
 @interface SKSFetchPhotoOperation()
 
@@ -25,7 +26,7 @@
     BOOL _isFinished;
 }
 
--(instancetype)initWithPhotoReference:(SKSPhotoReference *)photoReference {
+- (instancetype)initWithPhotoReference:(SKSPhotoReference *)photoReference {
     self = [super init];
     if (self) {
         _photoReference = photoReference;
@@ -40,7 +41,9 @@
     self.opIsExecuting = YES;
 
     // TODO: MAKE SURE TO CHANGE TO HTTPS!
-    NSURL *imageURL = self.photoReference.imageURL;
+    NSLog(@"URL: %@", self.photoReference.imageURL.usingHTTPS);
+
+    NSURL *imageURL = self.photoReference.imageURL.usingHTTPS;
 
     _dataTask = [[NSURLSession sharedSession] dataTaskWithURL:imageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
@@ -68,8 +71,7 @@
 
 // MARK: NSOperation
 
-+ (NSSet *)keyPathsForValuesAffectingIsFinished
-{
++ (NSSet *)keyPathsForValuesAffectingisFinished {
     return [NSSet setWithObjects:@"opIsFinished", nil];
 }
 
@@ -77,8 +79,7 @@
     return self.opIsFinished;
 }
 
-+ (NSSet *)keyPathsForValuesAffectingIsExecuting
-{
++ (NSSet *)keyPathsForValuesAffectingIsExecuting {
     return [NSSet setWithObjects:@"opIsExecuting", nil];
 }
 
