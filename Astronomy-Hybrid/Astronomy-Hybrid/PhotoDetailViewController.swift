@@ -13,7 +13,13 @@ class PhotoDetailViewController: UIViewController {
     
     //MARK: - Properties
 
-    //MISSING PHOTO VAR
+    /*
+     var photo: MarsPhotoReference? {
+     didSet {
+     updateViews()
+     }
+     }
+     */
     
     lazy var dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -38,7 +44,18 @@ class PhotoDetailViewController: UIViewController {
     //MARK: - Methods
     
     private func updateViews() {
-        //FINISH THIS WHEN PHOTO GETS INPUT
+        /*
+         guard let photo = photo, isViewLoaded else { return }
+         do {
+             let data = try Data(contentsOf: photo.imageURL.usingHTTPS!)
+             imageView.image = UIImage(data: data)
+             let dateString = dateFormatter.string(from: photo.earthDate)
+             detailLabel.text = "Taken by \(photo.camera.roverId) on \(dateString) (Sol \(photo.sol))"
+             cameraLabel.text = photo.camera.fullName
+         } catch {
+             NSLog("Error setting up views on detail view controller: \(error)")
+         }
+         */
     }
     
     func presentSuccessfulSaveAlert() {

@@ -14,7 +14,40 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     
     let solLabel = UILabel()
     
-    //ADD THE OTHER PROPERTIES
+    /*
+    ADD THE OTHER PROPERTIES
+     
+    private let client = MarsRoverClient()
+    private let cache = Cache<Int, UIImage>()
+    private let photoFetchQueue = OperationQueue()
+    private var operations = [Int : Operation]()
+    
+    private var roverInfo: MarsRover? {
+        didSet {
+            solDescription = roverInfo?.solDescriptions[1]
+        }
+    }
+    
+    private var solDescription: SolDescription? {
+        didSet {
+            if let rover = roverInfo,
+                let sol = solDescription?.sol {
+                client.fetchPhotos(from: rover, onSol: sol, using: URLSession.shared) { (photoRefs, error) in
+                    if let e = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(e)"); return }
+                    self.photoReferences = photoRefs ?? []
+                    DispatchQueue.main.async { self.updateViews() }
+                }
+            }
+        }
+    }
+    
+    private var photoReferences = [MarsPhotoReference]() {
+        didSet {
+            cache.clear()
+            DispatchQueue.main.async { self.collectionView?.reloadData() }
+        }
+    }
+    */
     
     //MARK: - Outlets
     
@@ -25,7 +58,19 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+         
+        IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+         
+        client.fetchMarsRover(named: "curiosity", using: URLSession.shared) { (rover, error) in
+            if let error = error {
+                NSLog("Error fetching info for curiosity: \(error)")
+                return
+            }
+            
+            self.roverInfo = rover
+        }
+        */
         
         configureTitleView()
         updateViews()
@@ -38,23 +83,50 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+        NSLog("num photos: \(photoReferences.count)")
+        return photoReferences.count
+        */
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCollectionViewCell ?? ImageCollectionViewCell()
+        
+        loadImage(forCell: cell, forItemAt: indexPath)
+        
+        return cell
+        */
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+         if photoReferences.count > 0 {
+         let photoRef = photoReferences[indexPath.item]
+         operations[photoRef.id]?.cancel()
+         } else {
+         for (_, operation) in operations {
+         operation.cancel()
+         }
+         }
+         */
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+         var totalUsableWidth = collectionView.frame.width
+         let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
+         totalUsableWidth -= inset.left + inset.right
+         
+         let minWidth: CGFloat = 150.0
+         let numberOfItemsInOneRow = Int(totalUsableWidth / minWidth)
+         totalUsableWidth -= CGFloat(numberOfItemsInOneRow - 1) * flowLayout.minimumInteritemSpacing
+         let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
+         return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
     }
     
 
@@ -90,21 +162,71 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     
     private func updateViews() {
         guard isViewLoaded else { return }
-        solLabel.text = "Sol \(0)" //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+         solLabel.text = "Sol \(solDescription?.sol ?? 0)"
+        */
     }
     
     //CHANGE THIS TO THE SPECIFIC COLLECTIONVIEWCELL. vvvvvvv
     private func loadImage(forCell cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+         let photoReference = photoReferences[indexPath.item]
+         // Check for image in cache
+         if let cachedImage = cache.value(for: photoReference.id) {
+             cell.imageView.image = cachedImage
+             return
+         }
+         
+         // Start an operation to fetch image data
+         let fetchOp = FetchPhotoOperation(photoReference: photoReference)
+         let cacheOp = BlockOperation {
+             if let image = fetchOp.image {
+                 self.cache.cache(value: image, for: photoReference.id)
+             }
+         }
+         let completionOp = BlockOperation {
+             defer { self.operations.removeValue(forKey: photoReference.id) }
+             
+             if let currentIndexPath = self.collectionView?.indexPath(for: cell),
+                 currentIndexPath != indexPath {
+                 return // Cell has been reused
+             }
+             
+             if let image = fetchOp.image {
+                 cell.imageView.image = image
+             }
+         }
+         
+         cacheOp.addDependency(fetchOp)
+         completionOp.addDependency(fetchOp)
+         
+         photoFetchQueue.addOperation(fetchOp)
+         photoFetchQueue.addOperation(cacheOp)
+         OperationQueue.main.addOperation(completionOp)
+         
+         operations[photoReference.id] = fetchOp
+         */
     }
     
     //MARK: - Actions
     
     @IBAction func goToPreviousSol(_ sender: Any?) {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+         guard let solDescription = solDescription else { return }
+         guard let solDescriptions = roverInfo?.solDescriptions else { return }
+         guard let index = solDescriptions.firstIndex(of: solDescription) else { return }
+         guard index > 0 else { return }
+         self.solDescription = solDescriptions[index-1]
+         */
     }
     @IBAction func goToNextSol(_ sender: Any?) {
-        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        /*
+         guard let solDescription = solDescription else { return }
+         guard let solDescriptions = roverInfo?.solDescriptions else { return }
+         guard let index = solDescriptions.firstIndex(of: solDescription) else { return }
+         guard index < solDescriptions.count - 1 else { return }
+         self.solDescription = solDescriptions[index+1]
+         */
     }
     
     
@@ -114,7 +236,9 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
         if segue.identifier == "ShowDetail" {
             guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
             let detailVC = segue.destination as! PhotoDetailViewController
-            //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+            /*
+             detailVC.photo = photoReferences[indexPath.item]
+             */
         }
     }
 
