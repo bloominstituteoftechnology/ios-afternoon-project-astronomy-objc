@@ -6,3 +6,4 @@
 #import "ImageCollectionViewCell.h"
 #import "Camera.h"
 #import "SolDescription.h"
+#import "Cache.h"
