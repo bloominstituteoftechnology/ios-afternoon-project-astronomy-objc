@@ -15,7 +15,7 @@ class MarsPhotoReference: NSObject {
     
     let id: Int
     let sol: Int
-    /* let camera: Camera */
+    let camera: Camera
     let earthDate: Date
     let imageURL: URL
     
@@ -43,10 +43,10 @@ class MarsPhotoReference: NSObject {
     }
     //MARK: - Initializers
     
-    internal init(id: Int, sol: Int, /*camera: Camera,*/ earthDate: Date, imageURL: URL) {
+    internal init(id: Int, sol: Int, camera: Camera, earthDate: Date, imageURL: URL) {
         self.id = id
         self.sol = sol
-        /* self.camera = camera */
+        self.camera = camera
         self.earthDate = earthDate
         self.imageURL = imageURL
     }
