@@ -14,6 +14,8 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     
     let solLabel = UILabel()
     
+    //ADD THE OTHER PROPERTIES
+    
     //MARK: - Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,6 +24,8 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
         
         configureTitleView()
         updateViews()
@@ -34,23 +38,23 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        <#code#>
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        <#code#>
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        <#code#>
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
 
@@ -86,27 +90,32 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     
     private func updateViews() {
         guard isViewLoaded else { return }
-        solLabel.text = "Sol \(0 )"
+        solLabel.text = "Sol \(0)" //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
+    //CHANGE THIS TO THE SPECIFIC COLLECTIONVIEWCELL. vvvvvvv
     private func loadImage(forCell cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
     //MARK: - Actions
     
     @IBAction func goToPreviousSol(_ sender: Any?) {
-        
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     @IBAction func goToNextSol(_ sender: Any?) {
-        
+        //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
     }
     
     
     //MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if segue.identifier == "ShowDetail" {
+            guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+            let detailVC = segue.destination as! PhotoDetailViewController
+            //IMPLEMENT THE REST HERE ONCE PROPERTIES FINISH
+        }
     }
 
 }

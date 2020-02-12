@@ -68,7 +68,7 @@
         <!--Title-->
         <scene sceneID="JIH-gr-sXn">
             <objects>
-                <viewController id="Ca3-j6-1rZ" sceneMemberID="viewController">
+                <viewController id="Ca3-j6-1rZ" customClass="PhotoDetailViewController" customModule="Astronomy_Hybrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ciT-cT-Wee">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +105,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xew-3e-iZC">
                                         <rect key="frame" x="0.0" y="57" width="374" height="30"/>
                                         <state key="normal" title="Save to Photo Library"/>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="Ca3-j6-1rZ" eventType="touchUpInside" id="ihI-eN-F5w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -124,6 +127,11 @@
                         <viewLayoutGuide key="safeArea" id="FQK-rZ-OSq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="tgy-2t-S6x"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="VQY-7B-3hZ" id="non-7A-bwa"/>
+                        <outlet property="detailLabel" destination="WLQ-Y7-0CG" id="wrD-HJ-Brb"/>
+                        <outlet property="imageView" destination="bhL-Bm-w8h" id="ant-r2-0nr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMP-aE-R3p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
