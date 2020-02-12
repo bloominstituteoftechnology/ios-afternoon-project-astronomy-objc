@@ -14,6 +14,14 @@
 		E3B3E09623F39746008539C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B3E09523F39746008539C8 /* Assets.xcassets */; };
 		E3B3E09923F39746008539C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B3E09723F39746008539C8 /* LaunchScreen.storyboard */; };
 		E3B3E09C23F39746008539C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E09B23F39746008539C8 /* main.m */; };
+		E3B3E0B423F4AB4C008539C8 /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0B323F4AB4C008539C8 /* MarsPhoto.swift */; };
+		E3B3E0B723F4AFCC008539C8 /* VVSMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0B623F4AFCC008539C8 /* VVSMarsRover.m */; };
+		E3B3E0BC23F4B041008539C8 /* VVSCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0BB23F4B041008539C8 /* VVSCamera.m */; };
+		E3B3E0C023F4B0C4008539C8 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0BF23F4B0C4008539C8 /* PhotosCollectionViewController.swift */; };
+		E3B3E0C223F4B0EB008539C8 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0C123F4B0EB008539C8 /* PhotoDetailViewController.swift */; };
+		E3B3E0CC23F4B162008539C8 /* VVSMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0CB23F4B162008539C8 /* VVSMarsRoverClient.m */; };
+		E3B3E0CE23F4B191008539C8 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0CD23F4B191008539C8 /* ImageCollectionViewCell.swift */; };
+		E3B3E0D523F4B1DE008539C8 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0D423F4B1DE008539C8 /* URL+Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +37,18 @@
 		E3B3E09823F39746008539C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B3E09A23F39746008539C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B3E09B23F39746008539C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3B3E0B023F4AA2C008539C8 /* Astronomy-Hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
+		E3B3E0B323F4AB4C008539C8 /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
+		E3B3E0B523F4AFCC008539C8 /* VVSMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSMarsRover.h; sourceTree = "<group>"; };
+		E3B3E0B623F4AFCC008539C8 /* VVSMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSMarsRover.m; sourceTree = "<group>"; };
+		E3B3E0BA23F4B041008539C8 /* VVSCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSCamera.h; sourceTree = "<group>"; };
+		E3B3E0BB23F4B041008539C8 /* VVSCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSCamera.m; sourceTree = "<group>"; };
+		E3B3E0BF23F4B0C4008539C8 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		E3B3E0C123F4B0EB008539C8 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		E3B3E0CA23F4B162008539C8 /* VVSMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSMarsRoverClient.h; sourceTree = "<group>"; };
+		E3B3E0CB23F4B162008539C8 /* VVSMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSMarsRoverClient.m; sourceTree = "<group>"; };
+		E3B3E0CD23F4B191008539C8 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3B3E0D423F4B1DE008539C8 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +81,11 @@
 		E3B3E08823F39744008539C8 /* Astronomy-Hybrid */ = {
 			isa = PBXGroup;
 			children = (
+				E3B3E0D323F4B1BF008539C8 /* Utilities */,
+				E3B3E0C923F4B125008539C8 /* Networking */,
+				E3B3E0C523F4B10D008539C8 /* Views */,
+				E3B3E0B923F4B010008539C8 /* View Controllers */,
+				E3B3E0AF23F4A88F008539C8 /* Models */,
 				E3B3E08923F39744008539C8 /* AppDelegate.h */,
 				E3B3E08A23F39744008539C8 /* AppDelegate.m */,
 				E3B3E08C23F39744008539C8 /* SceneDelegate.h */,
@@ -72,8 +97,55 @@
 				E3B3E09723F39746008539C8 /* LaunchScreen.storyboard */,
 				E3B3E09A23F39746008539C8 /* Info.plist */,
 				E3B3E09B23F39746008539C8 /* main.m */,
+				E3B3E0B023F4AA2C008539C8 /* Astronomy-Hybrid-Bridging-Header.h */,
 			);
 			path = "Astronomy-Hybrid";
+			sourceTree = "<group>";
+		};
+		E3B3E0AF23F4A88F008539C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3E0B323F4AB4C008539C8 /* MarsPhoto.swift */,
+				E3B3E0B523F4AFCC008539C8 /* VVSMarsRover.h */,
+				E3B3E0B623F4AFCC008539C8 /* VVSMarsRover.m */,
+				E3B3E0BA23F4B041008539C8 /* VVSCamera.h */,
+				E3B3E0BB23F4B041008539C8 /* VVSCamera.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E3B3E0B923F4B010008539C8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3E0BF23F4B0C4008539C8 /* PhotosCollectionViewController.swift */,
+				E3B3E0C123F4B0EB008539C8 /* PhotoDetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E3B3E0C523F4B10D008539C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3E0CD23F4B191008539C8 /* ImageCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E3B3E0C923F4B125008539C8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3E0CA23F4B162008539C8 /* VVSMarsRoverClient.h */,
+				E3B3E0CB23F4B162008539C8 /* VVSMarsRoverClient.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		E3B3E0D323F4B1BF008539C8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3E0D423F4B1DE008539C8 /* URL+Secure.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,11 +174,13 @@
 		E3B3E07E23F39744008539C8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = VVS;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Vici Shaweddy";
 				TargetAttributes = {
 					E3B3E08523F39744008539C8 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -146,10 +220,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B3E0D523F4B1DE008539C8 /* URL+Secure.swift in Sources */,
+				E3B3E0BC23F4B041008539C8 /* VVSCamera.m in Sources */,
+				E3B3E0CE23F4B191008539C8 /* ImageCollectionViewCell.swift in Sources */,
 				E3B3E09123F39744008539C8 /* ViewController.m in Sources */,
 				E3B3E08B23F39744008539C8 /* AppDelegate.m in Sources */,
 				E3B3E09C23F39746008539C8 /* main.m in Sources */,
+				E3B3E0B723F4AFCC008539C8 /* VVSMarsRover.m in Sources */,
 				E3B3E08E23F39744008539C8 /* SceneDelegate.m in Sources */,
+				E3B3E0C223F4B0EB008539C8 /* PhotoDetailViewController.swift in Sources */,
+				E3B3E0B423F4AB4C008539C8 /* MarsPhoto.swift in Sources */,
+				E3B3E0CC23F4B162008539C8 /* VVSMarsRoverClient.m in Sources */,
+				E3B3E0C023F4B0C4008539C8 /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZYPH2NW7MY;
 				INFOPLIST_FILE = "Astronomy-Hybrid/Info.plist";
@@ -298,6 +381,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vicishaweddy.Astronomy-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Hybrid/Astronomy-Hybrid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZYPH2NW7MY;
 				INFOPLIST_FILE = "Astronomy-Hybrid/Info.plist";
@@ -315,6 +402,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vicishaweddy.Astronomy-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Hybrid/Astronomy-Hybrid-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
