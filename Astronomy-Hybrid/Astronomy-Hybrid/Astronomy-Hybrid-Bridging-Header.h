@@ -4,3 +4,4 @@
 
 
 #import "ImageCollectionViewCell.h"
+#import "Camera.h"
