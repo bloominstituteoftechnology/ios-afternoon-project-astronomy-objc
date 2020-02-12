@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 
+@objc(LSIPhotoDetailViewController)
 class PhotoDetailViewController: UIViewController {
     
     //MARK: - Properties
