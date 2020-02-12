@@ -186,7 +186,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
-            
+            if segue.identifier == "ShowDetail" {
+                guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+                let detailVC = segue.destination as! PhotoDetailViewController
+                detailVC.photo = photoReferences[indexPath.item]
+            }
         }
     }
 

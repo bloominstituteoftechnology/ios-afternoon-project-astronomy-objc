@@ -17,6 +17,7 @@
 		370059AA23F47AA200ECCAA3 /* MarsPhotoReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370059A923F47AA200ECCAA3 /* MarsPhotoReference.swift */; };
 		375DEBF523F47D7000198BDC /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375DEBF423F47D7000198BDC /* PhotosCollectionViewController.swift */; };
 		375DEBF823F481A800198BDC /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375DEBF723F481A800198BDC /* URL+Secure.swift */; };
+		375DEBFB23F482B300198BDC /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 375DEBFA23F482B300198BDC /* ImageCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		370059A923F47AA200ECCAA3 /* MarsPhotoReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoReference.swift; sourceTree = "<group>"; };
 		375DEBF423F47D7000198BDC /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		375DEBF723F481A800198BDC /* URL+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		375DEBF923F482B300198BDC /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		375DEBFA23F482B300198BDC /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 		370059A323F4661B00ECCAA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				375DEBF923F482B300198BDC /* ImageCollectionViewCell.h */,
+				375DEBFA23F482B300198BDC /* ImageCollectionViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				375DEBF523F47D7000198BDC /* PhotosCollectionViewController.swift in Sources */,
 				375DEBF823F481A800198BDC /* URL+Secure.swift in Sources */,
 				3700598923F45D7300ECCAA3 /* SceneDelegate.m in Sources */,
+				375DEBFB23F482B300198BDC /* ImageCollectionViewCell.m in Sources */,
 				370059A823F4702F00ECCAA3 /* PhotoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
