@@ -58,17 +58,73 @@
 		3700598323F45D7300ECCAA3 /* Astronomy-Hybrid */ = {
 			isa = PBXGroup;
 			children = (
+				370059A123F465DE00ECCAA3 /* App Lifecycle */,
+				3700599F23F465C900ECCAA3 /* Models */,
+				370059A023F465CF00ECCAA3 /* Model Controllers */,
+				370059A323F4661B00ECCAA3 /* Views */,
+				3700599D23F465B900ECCAA3 /* View Controllers */,
+				3700599E23F465C200ECCAA3 /* Storyboards */,
+				370059A223F465FE00ECCAA3 /* Resources */,
+			);
+			path = "Astronomy-Hybrid";
+			sourceTree = "<group>";
+		};
+		3700599D23F465B900ECCAA3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3700599E23F465C200ECCAA3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3700598D23F45D7300ECCAA3 /* Main.storyboard */,
+				3700599223F45D7600ECCAA3 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		3700599F23F465C900ECCAA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		370059A023F465CF00ECCAA3 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		370059A123F465DE00ECCAA3 /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
 				3700598423F45D7300ECCAA3 /* AppDelegate.h */,
 				3700598523F45D7300ECCAA3 /* AppDelegate.m */,
 				3700598723F45D7300ECCAA3 /* SceneDelegate.h */,
 				3700598823F45D7300ECCAA3 /* SceneDelegate.m */,
-				3700598D23F45D7300ECCAA3 /* Main.storyboard */,
-				3700599023F45D7600ECCAA3 /* Assets.xcassets */,
-				3700599223F45D7600ECCAA3 /* LaunchScreen.storyboard */,
-				3700599523F45D7600ECCAA3 /* Info.plist */,
 				3700599623F45D7600ECCAA3 /* main.m */,
 			);
-			path = "Astronomy-Hybrid";
+			name = "App Lifecycle";
+			sourceTree = "<group>";
+		};
+		370059A223F465FE00ECCAA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3700599023F45D7600ECCAA3 /* Assets.xcassets */,
+				3700599523F45D7600ECCAA3 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		370059A323F4661B00ECCAA3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
