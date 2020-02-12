@@ -7,3 +7,4 @@
 #import "Camera.h"
 #import "SolDescription.h"
 #import "Cache.h"
+#import "MarsRover.h"

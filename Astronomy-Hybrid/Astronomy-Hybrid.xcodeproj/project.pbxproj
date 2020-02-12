@@ -21,6 +21,7 @@
 		375DEBFE23F48AE900198BDC /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 375DEBFD23F48AE900198BDC /* Camera.m */; };
 		375DEC0123F48BA700198BDC /* SolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 375DEC0023F48BA700198BDC /* SolDescription.m */; };
 		375DEC0423F48D4C00198BDC /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 375DEC0323F48D4C00198BDC /* Cache.m */; };
+		375DEC0723F48EC500198BDC /* MarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 375DEC0623F48EC500198BDC /* MarsRover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		375DEC0023F48BA700198BDC /* SolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolDescription.m; sourceTree = "<group>"; };
 		375DEC0223F48D4C00198BDC /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 		375DEC0323F48D4C00198BDC /* Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
+		375DEC0523F48EC500198BDC /* MarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRover.h; sourceTree = "<group>"; };
+		375DEC0623F48EC500198BDC /* MarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				375DEC0023F48BA700198BDC /* SolDescription.m */,
 				375DEC0223F48D4C00198BDC /* Cache.h */,
 				375DEC0323F48D4C00198BDC /* Cache.m */,
+				375DEC0523F48EC500198BDC /* MarsRover.h */,
+				375DEC0623F48EC500198BDC /* MarsRover.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				375DEBFE23F48AE900198BDC /* Camera.m in Sources */,
 				375DEBF823F481A800198BDC /* URL+Secure.swift in Sources */,
 				3700598923F45D7300ECCAA3 /* SceneDelegate.m in Sources */,
+				375DEC0723F48EC500198BDC /* MarsRover.m in Sources */,
 				375DEC0123F48BA700198BDC /* SolDescription.m in Sources */,
 				375DEC0423F48D4C00198BDC /* Cache.m in Sources */,
 				375DEBFB23F482B300198BDC /* ImageCollectionViewCell.m in Sources */,
