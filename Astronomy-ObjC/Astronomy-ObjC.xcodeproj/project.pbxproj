@@ -16,6 +16,8 @@
 		29624B0C23F4EBC40096CD69 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624B0B23F4EBC40096CD69 /* PhotosCollectionViewController.swift */; };
 		29624B0E23F4ECF00096CD69 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624B0D23F4ECF00096CD69 /* ImageCollectionViewCell.swift */; };
 		29624B1023F4EE400096CD69 /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624B0F23F4EE400096CD69 /* MarsRover.swift */; };
+		29624B1623F4EFED0096CD69 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624B1523F4EFED0096CD69 /* Camera.m */; };
+		29624B1923F4F0E30096CD69 /* JDKSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624B1823F4F0E30096CD69 /* JDKSolDescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		29624B0B23F4EBC40096CD69 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		29624B0D23F4ECF00096CD69 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		29624B0F23F4EE400096CD69 /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
+		29624B1423F4EFED0096CD69 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		29624B1523F4EFED0096CD69 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		29624B1723F4F0E30096CD69 /* JDKSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDKSolDescription.h; sourceTree = "<group>"; };
+		29624B1823F4F0E30096CD69 /* JDKSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDKSolDescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				29624B0F23F4EE400096CD69 /* MarsRover.swift */,
+				29624B1423F4EFED0096CD69 /* Camera.h */,
+				29624B1523F4EFED0096CD69 /* Camera.m */,
+				29624B1723F4F0E30096CD69 /* JDKSolDescription.h */,
+				29624B1823F4F0E30096CD69 /* JDKSolDescription.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 		29624AE223F4E97E0096CD69 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JDK;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "John Kouris";
 				TargetAttributes = {
@@ -186,9 +197,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				29624AEF23F4E97E0096CD69 /* AppDelegate.m in Sources */,
+				29624B1923F4F0E30096CD69 /* JDKSolDescription.m in Sources */,
 				29624B1023F4EE400096CD69 /* MarsRover.swift in Sources */,
 				29624B0E23F4ECF00096CD69 /* ImageCollectionViewCell.swift in Sources */,
 				29624B0023F4E97F0096CD69 /* main.m in Sources */,
+				29624B1623F4EFED0096CD69 /* Camera.m in Sources */,
 				29624AF223F4E97E0096CD69 /* SceneDelegate.m in Sources */,
 				29624B0C23F4EBC40096CD69 /* PhotosCollectionViewController.swift in Sources */,
 			);
