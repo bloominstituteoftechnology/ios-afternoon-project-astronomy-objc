@@ -7,10 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VVSMarsRover.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MarsPhotoReference;
+
+NS_SWIFT_NAME(MarsRoverClient)
 @interface VVSMarsRoverClient : NSObject
+
+- (void)fetchMarsRoverWithName:(NSString *)name
+                       session:(NSURLSession * _Nullable)session
+                    completion:(void (^)(VVSMarsRover * _Nullable marsRover, NSError * _Nullable error))completion;
+
+- (void)fetchPhotosFrom:(VVSMarsRover *)rover
+                  onSol:(NSInteger)sol
+                session:(NSURLSession * _Nullable)session
+             completion:(void (^)(NSArray<MarsPhotoReference *> * _Nullable marsPhotoReference, NSError * _Nullable error))completion;
 
 @end
 

@@ -10,7 +10,39 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(MarsRover)
 @interface VVSMarsRover : NSObject
+
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSDate *launchDate;
+@property (nonatomic, readonly) NSDate *landingDate;
+
+typedef NS_ENUM(NSInteger, Status) {
+    Active,
+    Complete
+};
+
+@property (nonatomic, readonly) Status *status;
+
+@property (nonatomic, readonly) NSInteger maxSol;
+@property (nonatomic, readonly) NSDate *maxDate;
+
+@property (nonatomic, readonly) NSInteger numberOfPhotos;
+
+@property (nonatomic, readonly) NSArray *solDescription;
+
+//typedef NS_ENUM(NSInteger, CodingKeys) {
+//    Name,
+//    LaunchDate,
+//    LandingDate,
+//    Status,
+//    MaxSol,
+//    MaxDate,
+//    NumberOfPhotos,
+//    solDescriptions
+//    
+//};
+
 
 @end
 

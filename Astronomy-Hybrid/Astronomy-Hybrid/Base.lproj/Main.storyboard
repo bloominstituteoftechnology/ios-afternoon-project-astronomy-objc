@@ -22,7 +22,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="zcX-JD-rY7">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="zcX-JD-rY7" customClass="ImageCollectionViewCell" customModule="Astronomy_Hybrid" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -43,6 +43,7 @@
                                     <constraint firstItem="Hcb-xD-Xfx" firstAttribute="centerX" secondItem="zcX-JD-rY7" secondAttribute="centerX" id="I2u-r0-8xA"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="imageView" destination="Hcb-xD-Xfx" id="j8X-SV-r5W"/>
                                     <segue destination="RfJ-4A-x1y" kind="show" id="AVH-Dj-rFy"/>
                                 </connections>
                             </collectionViewCell>

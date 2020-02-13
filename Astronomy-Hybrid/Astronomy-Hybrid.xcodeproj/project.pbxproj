@@ -22,6 +22,7 @@
 		E3B3E0CC23F4B162008539C8 /* VVSMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0CB23F4B162008539C8 /* VVSMarsRoverClient.m */; };
 		E3B3E0CE23F4B191008539C8 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0CD23F4B191008539C8 /* ImageCollectionViewCell.swift */; };
 		E3B3E0D523F4B1DE008539C8 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0D423F4B1DE008539C8 /* URL+Secure.swift */; };
+		E3B3E0DA23F5EB7E008539C8 /* VVSSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0D923F5EB7E008539C8 /* VVSSolDescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		E3B3E0CB23F4B162008539C8 /* VVSMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSMarsRoverClient.m; sourceTree = "<group>"; };
 		E3B3E0CD23F4B191008539C8 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3B3E0D423F4B1DE008539C8 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		E3B3E0D823F5EB7E008539C8 /* VVSSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSSolDescription.h; sourceTree = "<group>"; };
+		E3B3E0D923F5EB7E008539C8 /* VVSSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSSolDescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				E3B3E0B623F4AFCC008539C8 /* VVSMarsRover.m */,
 				E3B3E0BA23F4B041008539C8 /* VVSCamera.h */,
 				E3B3E0BB23F4B041008539C8 /* VVSCamera.m */,
+				E3B3E0D823F5EB7E008539C8 /* VVSSolDescription.h */,
+				E3B3E0D923F5EB7E008539C8 /* VVSSolDescription.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				E3B3E09123F39744008539C8 /* ViewController.m in Sources */,
 				E3B3E08B23F39744008539C8 /* AppDelegate.m in Sources */,
 				E3B3E09C23F39746008539C8 /* main.m in Sources */,
+				E3B3E0DA23F5EB7E008539C8 /* VVSSolDescription.m in Sources */,
 				E3B3E0B723F4AFCC008539C8 /* VVSMarsRover.m in Sources */,
 				E3B3E08E23F39744008539C8 /* SceneDelegate.m in Sources */,
 				E3B3E0C223F4B0EB008539C8 /* PhotoDetailViewController.swift in Sources */,

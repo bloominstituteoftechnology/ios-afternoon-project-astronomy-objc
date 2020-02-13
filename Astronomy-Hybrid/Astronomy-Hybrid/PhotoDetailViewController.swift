@@ -9,11 +9,17 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
+    
+    var photo: MarsPhotoReference? {
+        didSet {
+//            updateViews()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
 

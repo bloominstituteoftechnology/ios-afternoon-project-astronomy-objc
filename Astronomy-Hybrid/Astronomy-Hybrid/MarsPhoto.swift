@@ -10,20 +10,21 @@ import Foundation
 
 @objc
 class MarsPhotoReference: NSObject {
-    @objc var id: Int
-    @objc var sol: Int
-//    @objc var camera: Camera
-    @objc var earthDate: Date
-    @objc var imageURL: URL
+    @objc let id: Int
+    @objc let sol: Int
+    @objc let camera: Camera
+    @objc let earthDate: Date
+    @objc let imageURL: URL
     
-    @objc init(id: Int, sol: Int, earthDate: Date, imageURL: URL) {
+    @objc init(id: Int, sol: Int, camera: Camera, earthDate: Date, imageURL: URL) {
         self.id = id
         self.sol = sol
+        self.camera = camera
         self.earthDate = earthDate
         self.imageURL = imageURL
     }
     
-    @objc static var dateFormatter: DateFormatter = {
+    @objc static let dateFormatter: DateFormatter = {
         var formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
             formatter.timeZone = TimeZone(abbreviation: "GMT")
