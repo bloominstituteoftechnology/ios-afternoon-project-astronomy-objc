@@ -15,11 +15,11 @@
 		29624B0023F4E97F0096CD69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624AFF23F4E97F0096CD69 /* main.m */; };
 		29624B0C23F4EBC40096CD69 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624B0B23F4EBC40096CD69 /* PhotosCollectionViewController.swift */; };
 		29624B0E23F4ECF00096CD69 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624B0D23F4ECF00096CD69 /* ImageCollectionViewCell.swift */; };
-		29624B1023F4EE400096CD69 /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624B0F23F4EE400096CD69 /* MarsRover.swift */; };
 		29624B1623F4EFED0096CD69 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624B1523F4EFED0096CD69 /* Camera.m */; };
 		29624B1923F4F0E30096CD69 /* JDKSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624B1823F4F0E30096CD69 /* JDKSolDescription.m */; };
 		29624B1F23F4F2D40096CD69 /* JDKMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624B1E23F4F2D40096CD69 /* JDKMarsRoverClient.m */; };
 		29624B2123F4F5150096CD69 /* MarsPhotoReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624B2023F4F5150096CD69 /* MarsPhotoReference.swift */; };
+		29624B2423F4F79A0096CD69 /* JDKMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624B2323F4F79A0096CD69 /* JDKMarsRover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,6 @@
 		29624B0A23F4EBC40096CD69 /* Astronomy-ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		29624B0B23F4EBC40096CD69 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		29624B0D23F4ECF00096CD69 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		29624B0F23F4EE400096CD69 /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
 		29624B1423F4EFED0096CD69 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		29624B1523F4EFED0096CD69 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
 		29624B1723F4F0E30096CD69 /* JDKSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDKSolDescription.h; sourceTree = "<group>"; };
@@ -44,6 +43,8 @@
 		29624B1D23F4F2D40096CD69 /* JDKMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDKMarsRoverClient.h; sourceTree = "<group>"; };
 		29624B1E23F4F2D40096CD69 /* JDKMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDKMarsRoverClient.m; sourceTree = "<group>"; };
 		29624B2023F4F5150096CD69 /* MarsPhotoReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoReference.swift; sourceTree = "<group>"; };
+		29624B2223F4F79A0096CD69 /* JDKMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDKMarsRover.h; sourceTree = "<group>"; };
+		29624B2323F4F79A0096CD69 /* JDKMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDKMarsRover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 				29624AFB23F4E97F0096CD69 /* LaunchScreen.storyboard */,
 				29624AFE23F4E97F0096CD69 /* Info.plist */,
 				29624AFF23F4E97F0096CD69 /* main.m */,
+				29624B0A23F4EBC40096CD69 /* Astronomy-ObjC-Bridging-Header.h */,
 			);
 			path = "Astronomy-ObjC";
 			sourceTree = "<group>";
@@ -97,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				29624B0B23F4EBC40096CD69 /* PhotosCollectionViewController.swift */,
-				29624B0A23F4EBC40096CD69 /* Astronomy-ObjC-Bridging-Header.h */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -122,12 +123,13 @@
 		29624B0923F4EADB0096CD69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				29624B0F23F4EE400096CD69 /* MarsRover.swift */,
 				29624B2023F4F5150096CD69 /* MarsPhotoReference.swift */,
 				29624B1423F4EFED0096CD69 /* Camera.h */,
 				29624B1523F4EFED0096CD69 /* Camera.m */,
 				29624B1723F4F0E30096CD69 /* JDKSolDescription.h */,
 				29624B1823F4F0E30096CD69 /* JDKSolDescription.m */,
+				29624B2223F4F79A0096CD69 /* JDKMarsRover.h */,
+				29624B2323F4F79A0096CD69 /* JDKMarsRover.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -206,10 +208,10 @@
 			files = (
 				29624AEF23F4E97E0096CD69 /* AppDelegate.m in Sources */,
 				29624B1923F4F0E30096CD69 /* JDKSolDescription.m in Sources */,
-				29624B1023F4EE400096CD69 /* MarsRover.swift in Sources */,
 				29624B0E23F4ECF00096CD69 /* ImageCollectionViewCell.swift in Sources */,
 				29624B0023F4E97F0096CD69 /* main.m in Sources */,
 				29624B1623F4EFED0096CD69 /* Camera.m in Sources */,
+				29624B2423F4F79A0096CD69 /* JDKMarsRover.m in Sources */,
 				29624AF223F4E97E0096CD69 /* SceneDelegate.m in Sources */,
 				29624B2123F4F5150096CD69 /* MarsPhotoReference.swift in Sources */,
 				29624B1F23F4F2D40096CD69 /* JDKMarsRoverClient.m in Sources */,

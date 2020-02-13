@@ -10,11 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(SolDescription)
 @interface JDKSolDescription : NSObject
 
 @property (nonatomic, readonly) int sol;
 @property (nonatomic, readonly) int totalPhotos;
-@property (nonatomic, copy, readonly, nonnull) NSArray<NSString *> *cameras;
+
+- (nonnull instancetype)initWithSol:(int)sol totalPhotos:(int)totalPhotos;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
 @end
 
