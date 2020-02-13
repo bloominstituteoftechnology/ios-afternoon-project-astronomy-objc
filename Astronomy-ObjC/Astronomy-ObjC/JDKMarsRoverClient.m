@@ -7,6 +7,8 @@
 //
 
 #import "JDKMarsRoverClient.h"
+#import "JDKMarsRover.h"
+#import "Astronomy_ObjC-Swift.h"
 
 @implementation JDKMarsRoverClient
 
