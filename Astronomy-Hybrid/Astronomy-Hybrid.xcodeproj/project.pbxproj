@@ -25,6 +25,7 @@
 		E3B3E0DA23F5EB7E008539C8 /* VVSSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0D923F5EB7E008539C8 /* VVSSolDescription.m */; };
 		E3B3E0E323FA2232008539C8 /* UIImage+VVSImageExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0E223FA2232008539C8 /* UIImage+VVSImageExtensions.m */; };
 		E3B3E0E623FA2529008539C8 /* VVSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0E523FA2529008539C8 /* VVSCache.m */; };
+		E3B3E0EE23FA4EB1008539C8 /* VVSPhotoFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B3E0ED23FA4EB0008539C8 /* VVSPhotoFetchOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		E3B3E0E223FA2232008539C8 /* UIImage+VVSImageExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+VVSImageExtensions.m"; sourceTree = "<group>"; };
 		E3B3E0E423FA2529008539C8 /* VVSCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSCache.h; sourceTree = "<group>"; };
 		E3B3E0E523FA2529008539C8 /* VVSCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSCache.m; sourceTree = "<group>"; };
+		E3B3E0EC23FA4EB0008539C8 /* VVSPhotoFetchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPhotoFetchOperation.h; sourceTree = "<group>"; };
+		E3B3E0ED23FA4EB0008539C8 /* VVSPhotoFetchOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPhotoFetchOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,7 @@
 		E3B3E08823F39744008539C8 /* Astronomy-Hybrid */ = {
 			isa = PBXGroup;
 			children = (
+				E3B3E0EB23FA4E78008539C8 /* Operations */,
 				E3B3E0D323F4B1BF008539C8 /* Utilities */,
 				E3B3E0C923F4B125008539C8 /* Networking */,
 				E3B3E0C523F4B10D008539C8 /* Views */,
@@ -161,6 +165,15 @@
 				E3B3E0E223FA2232008539C8 /* UIImage+VVSImageExtensions.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E3B3E0EB23FA4E78008539C8 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E3B3E0EC23FA4EB0008539C8 /* VVSPhotoFetchOperation.h */,
+				E3B3E0ED23FA4EB0008539C8 /* VVSPhotoFetchOperation.m */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +255,7 @@
 				E3B3E09123F39744008539C8 /* ViewController.m in Sources */,
 				E3B3E08B23F39744008539C8 /* AppDelegate.m in Sources */,
 				E3B3E09C23F39746008539C8 /* main.m in Sources */,
+				E3B3E0EE23FA4EB1008539C8 /* VVSPhotoFetchOperation.m in Sources */,
 				E3B3E0DA23F5EB7E008539C8 /* VVSSolDescription.m in Sources */,
 				E3B3E0B723F4AFCC008539C8 /* VVSMarsRover.m in Sources */,
 				E3B3E0E623FA2529008539C8 /* VVSCache.m in Sources */,

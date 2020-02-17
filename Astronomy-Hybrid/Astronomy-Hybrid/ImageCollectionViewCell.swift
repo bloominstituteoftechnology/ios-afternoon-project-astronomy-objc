@@ -12,8 +12,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
         self.imageView.image = #imageLiteral(resourceName: "MarsPlaceholder")
+        self.imageView.contentMode = .scaleAspectFill
+        self.imageView.clipsToBounds = true
     }
 }

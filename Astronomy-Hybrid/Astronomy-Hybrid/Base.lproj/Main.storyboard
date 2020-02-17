@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="754-id-5UG">
                             <size key="itemSize" width="150" height="150"/>
-                            <size key="estimatedItemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -27,7 +25,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="zcX-JD-rY7" customClass="ImageCollectionViewCell" customModule="Astronomy_Hybrid" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wdH-tz-QWb">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -35,13 +33,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Hcb-xD-Xfx" firstAttribute="width" secondItem="wdH-tz-QWb" secondAttribute="width" id="X7S-tX-ZQI"/>
-                                        <constraint firstItem="Hcb-xD-Xfx" firstAttribute="leading" secondItem="wdH-tz-QWb" secondAttribute="leading" id="duE-gS-Ygi"/>
-                                        <constraint firstItem="Hcb-xD-Xfx" firstAttribute="height" secondItem="wdH-tz-QWb" secondAttribute="height" id="nMq-6m-3t2"/>
-                                        <constraint firstItem="Hcb-xD-Xfx" firstAttribute="top" secondItem="wdH-tz-QWb" secondAttribute="top" id="xBl-CH-Ae1"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Hcb-xD-Xfx" firstAttribute="width" secondItem="zcX-JD-rY7" secondAttribute="width" id="X7S-tX-ZQI"/>
+                                    <constraint firstItem="Hcb-xD-Xfx" firstAttribute="leading" secondItem="zcX-JD-rY7" secondAttribute="leading" id="duE-gS-Ygi"/>
+                                    <constraint firstItem="Hcb-xD-Xfx" firstAttribute="height" secondItem="zcX-JD-rY7" secondAttribute="height" id="nMq-6m-3t2"/>
+                                    <constraint firstItem="Hcb-xD-Xfx" firstAttribute="top" secondItem="zcX-JD-rY7" secondAttribute="top" id="xBl-CH-Ae1"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="Hcb-xD-Xfx" id="j8X-SV-r5W"/>
                                     <segue destination="RfJ-4A-x1y" kind="show" id="AVH-Dj-rFy"/>

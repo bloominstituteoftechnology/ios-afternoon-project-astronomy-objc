@@ -7,3 +7,4 @@
 #import "VVSMarsRoverClient.h"
 #import "VVSSolDescription.h"
 #import "VVSCache.h"
+#import "VVSPhotoFetchOperation.h"
