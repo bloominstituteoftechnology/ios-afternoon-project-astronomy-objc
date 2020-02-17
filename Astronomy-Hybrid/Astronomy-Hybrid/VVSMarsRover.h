@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VVSSolDescription.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,27 +23,16 @@ typedef NS_ENUM(NSInteger, Status) {
     Complete
 };
 
-@property (nonatomic, readonly) Status *status;
+@property (nonatomic, readonly) Status status;
 
 @property (nonatomic, readonly) NSInteger maxSol;
 @property (nonatomic, readonly) NSDate *maxDate;
 
 @property (nonatomic, readonly) NSInteger numberOfPhotos;
 
-@property (nonatomic, readonly) NSArray *solDescription;
+@property (nonatomic, readonly) NSArray<VVSSolDescription *> *solDescription;
 
-//typedef NS_ENUM(NSInteger, CodingKeys) {
-//    Name,
-//    LaunchDate,
-//    LandingDate,
-//    Status,
-//    MaxSol,
-//    MaxDate,
-//    NumberOfPhotos,
-//    solDescriptions
-//    
-//};
-
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

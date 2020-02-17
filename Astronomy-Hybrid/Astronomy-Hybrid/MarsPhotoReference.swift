@@ -16,6 +16,17 @@ class MarsPhotoReference: NSObject {
     @objc let earthDate: Date
     @objc let imageURL: URL
     
+    @objc init(withDictionary dictionary: NSDictionary) {
+        self.id = dictionary.object(forKey: "id") as! Int
+        self.sol = dictionary.object(forKey: "sol") as! Int
+        let cameraDict = dictionary.object(forKey: "camera") as! [AnyHashable : Any]
+        self.camera = Camera(dictionary: cameraDict)
+        let dateString = dictionary.object(forKey: "earth_date") as! String
+        self.earthDate = MarsPhotoReference.dateFormatter.date(from: dateString) ?? Date()
+        let urlString = dictionary.object(forKey: "img_src") as! String
+        self.imageURL = URL(string: urlString)!
+    }
+    
     @objc init(id: Int, sol: Int, camera: Camera, earthDate: Date, imageURL: URL) {
         self.id = id
         self.sol = sol

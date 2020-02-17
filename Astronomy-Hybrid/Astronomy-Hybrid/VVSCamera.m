@@ -11,5 +11,15 @@
 
 @implementation VVSCamera
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init]) {
+        _id = [dictionary[@"id"] integerValue];
+        _name = dictionary[@"name"];
+        _roverId = [dictionary[@"rover_id"] integerValue];
+        _fullName = dictionary[@"full_name"];
+    }
+    return self;
+}
 
 @end

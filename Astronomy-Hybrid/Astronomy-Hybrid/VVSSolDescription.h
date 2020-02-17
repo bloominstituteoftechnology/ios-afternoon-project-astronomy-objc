@@ -10,11 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(SolDescription)
 @interface VVSSolDescription : NSObject
 
 @property (nonatomic, readonly) NSInteger sol;
 @property (nonatomic, readonly) NSInteger totalPhotos;
 @property (nonatomic, readonly) NSArray *cameras;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

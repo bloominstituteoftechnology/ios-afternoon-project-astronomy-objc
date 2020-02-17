@@ -13,6 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(Camera)
 @interface VVSCamera : NSObject
 
+@property (nonatomic, readonly) NSInteger id;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSInteger roverId;
+@property (nonatomic, readonly) NSString *fullName;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

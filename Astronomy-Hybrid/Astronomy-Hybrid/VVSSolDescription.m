@@ -10,4 +10,14 @@
 
 @implementation VVSSolDescription
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init]) {
+        _sol = [dictionary[@"sol"] integerValue];
+        _totalPhotos = [dictionary[@"totalPhotos"] integerValue];
+        _cameras = dictionary[@"cameras"];
+    }
+    return self;
+}
+
 @end

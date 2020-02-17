@@ -5,3 +5,5 @@
 #import "VVSCamera.h"
 #import "VVSMarsRover.h"
 #import "VVSMarsRoverClient.h"
+#import "VVSSolDescription.h"
+#import "VVSCache.h"

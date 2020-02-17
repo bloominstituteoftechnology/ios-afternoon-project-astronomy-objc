@@ -24,34 +24,51 @@
     self = [super init];
     if (self) {
         _baseURL = [[NSURL alloc] initWithString:@"https://api.nasa.gov/mars-photos/api/v1"];
-        _apiKey = @"xKpfIwh6zZhhKSHnoOum4B14iQG3W7XXRlOY4k8U";
+        _apiKey = @"qzGsj0zsKk6CA9JZP1UjAbpQHabBfaPg2M5dGMB7";
     }
     return self;
 }
 
-- (NSURL *)urlForInfoForReover:(NSString *)roverName
+- (void)fetchMarsRoverWithName:(NSString *)name
+                       session:(NSURLSession * _Nullable)session
+                    completion:(void (^)(VVSMarsRover * _Nullable marsRover, NSError * _Nullable error))completion
 {
-    NSURL *url = self.baseURL;
-    url = [url URLByAppendingPathComponent:@"manifests"];
-    url = [url URLByAppendingPathComponent:roverName];
-    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
-    NSURLQueryItem *api = [NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey];
-    [urlComponents setQueryItems:@[api]];
-    return urlComponents.URL;
+    if (session == nil) {
+        session = [NSURLSession sharedSession];
+    }
+    
+    NSURL *url = [self urlForInfoForReover:name];
+    [self fetchFromURL:url session:session completion:^(id  _Nullable object, NSError * _Nullable error) {
+        NSDictionary *dictionary = object;
+        NSDictionary *roverDictionary = dictionary[@"photo_manifest"];
+        VVSMarsRover *rover = [[VVSMarsRover alloc] initWithDictionary:roverDictionary];
+        
+        if (rover != nil) {
+            completion(rover, nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
 }
 
-- (NSURL *)urlforPhotosFromRover:(NSString *)roverName sol:(NSInteger)sol
+- (void)fetchPhotosFrom:(VVSMarsRover *)rover
+                  onSol:(NSInteger)sol
+                session:(NSURLSession * _Nullable)session
+             completion:(void (^)(NSArray<MarsPhotoReference *> * _Nullable marsPhotoReference, NSError * _Nullable error))completion
 {
-    NSURL *url = self.baseURL;
-    [url URLByAppendingPathComponent:@"rovers"];
-    [url URLByAppendingPathComponent:roverName];
-    [url URLByAppendingPathComponent:@"photos"];
-    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
-    NSString *solString = [[NSString alloc] initWithFormat:@"%ld", (long)sol];
-    NSURLQueryItem *solQueryItem = [NSURLQueryItem queryItemWithName:@"sol" value:solString];
-    NSURLQueryItem *api = [NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey];
-    [urlComponents setQueryItems: @[solQueryItem, api]];
-    return urlComponents.URL;
+    NSURL *url = [self urlforPhotosFromRover:rover.name sol:sol];
+    [self fetchFromURL:url session:session completion:^(id  _Nullable object, NSError * _Nullable error) {
+        NSMutableArray<MarsPhotoReference *> *photosArray = [[NSMutableArray alloc] init];
+        
+        NSDictionary *dictionary = object;
+        NSArray *marsPhotos = dictionary[@"photos"];
+        for (NSDictionary *photoDict in marsPhotos) {
+            MarsPhotoReference *photo = [[MarsPhotoReference alloc] initWithDictionary:photoDict];
+            [photosArray addObject:photo];
+        }
+        
+        completion(photosArray, nil);
+    }];
 }
 
 -(void)fetchFromURL:(NSURL *)url
@@ -85,34 +102,29 @@
     }] resume];
 }
 
-- (void)fetchMarsRoverWithName:(NSString *)name
-                       session:(NSURLSession * _Nullable)session
-                    completion:(void (^)(VVSMarsRover * _Nullable marsRover, NSError * _Nullable error))completion
+- (NSURL *)urlForInfoForReover:(NSString *)roverName
 {
-    if (session == nil) {
-        session = [NSURLSession sharedSession];
-    }
-    
-    NSURL *url = [self urlForInfoForReover:name];
-    [self fetchFromURL:url session:session completion:^(id  _Nullable object, NSError * _Nullable error) {
-        NSDictionary *dictionary = object;
-        VVSMarsRover *rover = dictionary[@"photo_manifest"];
-        
-        if (rover != nil) {
-            completion(rover, nil);
-        } else {
-            completion(nil, error);
-        }
-    }];
-    
+    NSURL *url = self.baseURL;
+    url = [url URLByAppendingPathComponent:@"manifests"];
+    url = [url URLByAppendingPathComponent:roverName];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
+    NSURLQueryItem *api = [NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey];
+    [urlComponents setQueryItems:@[api]];
+    return urlComponents.URL;
 }
 
-- (void)fetchPhotosFrom:(VVSMarsRover *)rover
-                  onSol:(NSInteger)sol
-                session:(NSURLSession * _Nullable)session
-             completion:(void (^)(NSArray<MarsPhotoReference *> * _Nullable marsPhotoReference, NSError * _Nullable error))completion
+- (NSURL *)urlforPhotosFromRover:(NSString *)roverName sol:(NSInteger)sol
 {
-    
+    NSURL *url = self.baseURL;
+    url = [url URLByAppendingPathComponent:@"rovers"];
+    url = [url URLByAppendingPathComponent:roverName];
+    url = [url URLByAppendingPathComponent:@"photos"];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
+    NSString *solString = [[NSString alloc] initWithFormat:@"%ld", (long)sol];
+    NSURLQueryItem *solQueryItem = [NSURLQueryItem queryItemWithName:@"sol" value:solString];
+    NSURLQueryItem *api = [NSURLQueryItem queryItemWithName:@"api_key" value:self.apiKey];
+    [urlComponents setQueryItems: @[solQueryItem, api]];
+    return urlComponents.URL;
 }
 
 @end
