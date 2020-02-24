@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		992A4D0923DF47EE00DEA71F /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D0823DF47EE00DEA71F /* MainCollectionViewController.swift */; };
+		992A4D0B23DF482300DEA71F /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D0A23DF482300DEA71F /* PhotoDetailViewController.swift */; };
+		992A4D1723DF665D00DEA71F /* JBPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D1623DF665D00DEA71F /* JBPhotoController.m */; };
+		992A4D1B23DF79AE00DEA71F /* JBNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D1A23DF79AE00DEA71F /* JBNetworkManager.m */; };
+		992A4D2123DF80C300DEA71F /* JBSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2023DF80C300DEA71F /* JBSol.m */; };
+		992A4D2423DF824500DEA71F /* JBPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2323DF824500DEA71F /* JBPhotoReference.m */; };
+		992A4D2723DF9A0700DEA71F /* JBPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2623DF9A0700DEA71F /* JBPhotoCollectionViewCell.m */; };
+		992A4D2A23DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2923DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m */; };
+		992A4D2D23E0890E00DEA71F /* JBFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D2C23E0890E00DEA71F /* JBFetchOperation.m */; };
+		992A4D3323E08B5400DEA71F /* JBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 992A4D3223E08B5400DEA71F /* JBCache.m */; };
+		9945CFB223DF31A5006B6513 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB123DF31A5006B6513 /* AppDelegate.m */; };
+		9945CFB523DF31A5006B6513 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFB423DF31A5006B6513 /* SceneDelegate.m */; };
+		9945CFBB23DF31A5006B6513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9945CFB923DF31A5006B6513 /* Main.storyboard */; };
+		9945CFBD23DF31A7006B6513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9945CFBC23DF31A7006B6513 /* Assets.xcassets */; };
+		9945CFC023DF31A7006B6513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9945CFBE23DF31A7006B6513 /* LaunchScreen.storyboard */; };
+		9945CFC323DF31A8006B6513 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9945CFC223DF31A8006B6513 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		992A4D0823DF47EE00DEA71F /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		992A4D0A23DF482300DEA71F /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		992A4D0C23DF4C8800DEA71F /* Astronomy(Obj-C)-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Astronomy(Obj-C)-Bridging-Header.h"; sourceTree = "<group>"; };
+		992A4D1523DF665D00DEA71F /* JBPhotoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPhotoController.h; sourceTree = "<group>"; };
+		992A4D1623DF665D00DEA71F /* JBPhotoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBPhotoController.m; sourceTree = "<group>"; };
+		992A4D1923DF79AE00DEA71F /* JBNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBNetworkManager.h; sourceTree = "<group>"; };
+		992A4D1A23DF79AE00DEA71F /* JBNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBNetworkManager.m; sourceTree = "<group>"; };
+		992A4D1F23DF80C300DEA71F /* JBSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBSol.h; sourceTree = "<group>"; };
+		992A4D2023DF80C300DEA71F /* JBSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBSol.m; sourceTree = "<group>"; };
+		992A4D2223DF824500DEA71F /* JBPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPhotoReference.h; sourceTree = "<group>"; };
+		992A4D2323DF824500DEA71F /* JBPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBPhotoReference.m; sourceTree = "<group>"; };
+		992A4D2523DF9A0700DEA71F /* JBPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		992A4D2623DF9A0700DEA71F /* JBPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		992A4D2823DFA9A700DEA71F /* NSURL+JBUsingHTTPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+JBUsingHTTPS.h"; sourceTree = "<group>"; };
+		992A4D2923DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JBUsingHTTPS.m"; sourceTree = "<group>"; };
+		992A4D2B23E0890E00DEA71F /* JBFetchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBFetchOperation.h; sourceTree = "<group>"; };
+		992A4D2C23E0890E00DEA71F /* JBFetchOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBFetchOperation.m; sourceTree = "<group>"; };
+		992A4D3123E08B5400DEA71F /* JBCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBCache.h; sourceTree = "<group>"; };
+		992A4D3223E08B5400DEA71F /* JBCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBCache.m; sourceTree = "<group>"; };
+		9945CFAD23DF31A5006B6513 /* Astronomy(Obj-C).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy(Obj-C).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9945CFB023DF31A5006B6513 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9945CFB123DF31A5006B6513 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9945CFB323DF31A5006B6513 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		9945CFB423DF31A5006B6513 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		9945CFBA23DF31A5006B6513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9945CFBC23DF31A7006B6513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9945CFBF23DF31A7006B6513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9945CFC123DF31A8006B6513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9945CFC223DF31A8006B6513 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9945CFAA23DF31A5006B6513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		992A4D0023DF3F7700DEA71F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				992A4D0C23DF4C8800DEA71F /* Astronomy(Obj-C)-Bridging-Header.h */,
+				9945CFB023DF31A5006B6513 /* AppDelegate.h */,
+				9945CFB123DF31A5006B6513 /* AppDelegate.m */,
+				9945CFB323DF31A5006B6513 /* SceneDelegate.h */,
+				9945CFB423DF31A5006B6513 /* SceneDelegate.m */,
+				9945CFBC23DF31A7006B6513 /* Assets.xcassets */,
+				9945CFC123DF31A8006B6513 /* Info.plist */,
+				9945CFC223DF31A8006B6513 /* main.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		992A4D0123DF3F7C00DEA71F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				992A4D1F23DF80C300DEA71F /* JBSol.h */,
+				992A4D2023DF80C300DEA71F /* JBSol.m */,
+				992A4D2223DF824500DEA71F /* JBPhotoReference.h */,
+				992A4D2323DF824500DEA71F /* JBPhotoReference.m */,
+				992A4D3123E08B5400DEA71F /* JBCache.h */,
+				992A4D3223E08B5400DEA71F /* JBCache.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		992A4D0223DF3F8100DEA71F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				992A4D2B23E0890E00DEA71F /* JBFetchOperation.h */,
+				992A4D2C23E0890E00DEA71F /* JBFetchOperation.m */,
+				992A4D2823DFA9A700DEA71F /* NSURL+JBUsingHTTPS.h */,
+				992A4D2923DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		992A4D0323DF3F8500DEA71F /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				992A4D1523DF665D00DEA71F /* JBPhotoController.h */,
+				992A4D1623DF665D00DEA71F /* JBPhotoController.m */,
+				992A4D1923DF79AE00DEA71F /* JBNetworkManager.h */,
+				992A4D1A23DF79AE00DEA71F /* JBNetworkManager.m */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		992A4D0423DF3F8B00DEA71F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				992A4D0823DF47EE00DEA71F /* MainCollectionViewController.swift */,
+				992A4D0A23DF482300DEA71F /* PhotoDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		992A4D0523DF3F9000DEA71F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				992A4D2523DF9A0700DEA71F /* JBPhotoCollectionViewCell.h */,
+				992A4D2623DF9A0700DEA71F /* JBPhotoCollectionViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		992A4D0623DF3FA300DEA71F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9945CFB923DF31A5006B6513 /* Main.storyboard */,
+				9945CFBE23DF31A7006B6513 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9945CFA423DF31A5006B6513 = {
+			isa = PBXGroup;
+			children = (
+				9945CFAF23DF31A5006B6513 /* Astronomy(Obj-C) */,
+				9945CFAE23DF31A5006B6513 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9945CFAE23DF31A5006B6513 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9945CFAD23DF31A5006B6513 /* Astronomy(Obj-C).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9945CFAF23DF31A5006B6513 /* Astronomy(Obj-C) */ = {
+			isa = PBXGroup;
+			children = (
+				992A4D0623DF3FA300DEA71F /* Storyboards */,
+				992A4D0523DF3F9000DEA71F /* Views */,
+				992A4D0423DF3F8B00DEA71F /* View Controllers */,
+				992A4D0323DF3F8500DEA71F /* Model Controllers */,
+				992A4D0123DF3F7C00DEA71F /* Models */,
+				992A4D0223DF3F8100DEA71F /* Helpers */,
+				992A4D0023DF3F7700DEA71F /* Application */,
+			);
+			path = "Astronomy(Obj-C)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9945CFAC23DF31A5006B6513 /* Astronomy(Obj-C) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9945CFC623DF31A8006B6513 /* Build configuration list for PBXNativeTarget "Astronomy(Obj-C)" */;
+			buildPhases = (
+				9945CFA923DF31A5006B6513 /* Sources */,
+				9945CFAA23DF31A5006B6513 /* Frameworks */,
+				9945CFAB23DF31A5006B6513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Astronomy(Obj-C)";
+			productName = "Astronomy(Obj-C)";
+			productReference = 9945CFAD23DF31A5006B6513 /* Astronomy(Obj-C).app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9945CFA523DF31A5006B6513 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JB;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Jon Bash";
+				TargetAttributes = {
+					9945CFAC23DF31A5006B6513 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
+				};
+			};
+			buildConfigurationList = 9945CFA823DF31A5006B6513 /* Build configuration list for PBXProject "Astronomy(Obj-C)" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9945CFA423DF31A5006B6513;
+			productRefGroup = 9945CFAE23DF31A5006B6513 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9945CFAC23DF31A5006B6513 /* Astronomy(Obj-C) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9945CFAB23DF31A5006B6513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9945CFC023DF31A7006B6513 /* LaunchScreen.storyboard in Resources */,
+				9945CFBD23DF31A7006B6513 /* Assets.xcassets in Resources */,
+				9945CFBB23DF31A5006B6513 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9945CFA923DF31A5006B6513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				992A4D3323E08B5400DEA71F /* JBCache.m in Sources */,
+				992A4D2423DF824500DEA71F /* JBPhotoReference.m in Sources */,
+				9945CFB223DF31A5006B6513 /* AppDelegate.m in Sources */,
+				992A4D2A23DFA9A700DEA71F /* NSURL+JBUsingHTTPS.m in Sources */,
+				992A4D1B23DF79AE00DEA71F /* JBNetworkManager.m in Sources */,
+				992A4D2123DF80C300DEA71F /* JBSol.m in Sources */,
+				992A4D0923DF47EE00DEA71F /* MainCollectionViewController.swift in Sources */,
+				992A4D2723DF9A0700DEA71F /* JBPhotoCollectionViewCell.m in Sources */,
+				992A4D1723DF665D00DEA71F /* JBPhotoController.m in Sources */,
+				992A4D2D23E0890E00DEA71F /* JBFetchOperation.m in Sources */,
+				9945CFC323DF31A8006B6513 /* main.m in Sources */,
+				992A4D0B23DF482300DEA71F /* PhotoDetailViewController.swift in Sources */,
+				9945CFB523DF31A5006B6513 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9945CFB923DF31A5006B6513 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9945CFBA23DF31A5006B6513 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9945CFBE23DF31A7006B6513 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9945CFBF23DF31A7006B6513 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9945CFC423DF31A8006B6513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9945CFC523DF31A8006B6513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9945CFC723DF31A8006B6513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22X3GA956P;
+				INFOPLIST_FILE = "Astronomy(Obj-C)/Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonbash.Astronomy-Obj-C-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy(Obj-C)/Application/Astronomy(Obj-C)-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9945CFC823DF31A8006B6513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22X3GA956P;
+				INFOPLIST_FILE = "Astronomy(Obj-C)/Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonbash.Astronomy-Obj-C-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy(Obj-C)/Application/Astronomy(Obj-C)-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9945CFA823DF31A5006B6513 /* Build configuration list for PBXProject "Astronomy(Obj-C)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9945CFC423DF31A8006B6513 /* Debug */,
+				9945CFC523DF31A8006B6513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9945CFC623DF31A8006B6513 /* Build configuration list for PBXNativeTarget "Astronomy(Obj-C)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9945CFC723DF31A8006B6513 /* Debug */,
+				9945CFC823DF31A8006B6513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9945CFA523DF31A5006B6513 /* Project object */;
+}
