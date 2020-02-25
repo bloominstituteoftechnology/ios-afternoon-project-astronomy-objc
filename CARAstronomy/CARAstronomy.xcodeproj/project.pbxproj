@@ -18,6 +18,9 @@
 		636DAB8C240479F900EBE714 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB86240479F900EBE714 /* LSIErrors.m */; };
 		636DAB8D240479F900EBE714 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB8A240479F900EBE714 /* LSIFileHelper.m */; };
 		636DAB8E240479F900EBE714 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB8B240479F900EBE714 /* LSILog.m */; };
+		636DAB9124048AD800EBE714 /* CARMarsSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB9024048AD800EBE714 /* CARMarsSol.m */; };
+		636DAB9424048DE900EBE714 /* CARMarsCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB9324048DE900EBE714 /* CARMarsCamera.m */; };
+		636DAB97240493CC00EBE714 /* CARSolFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB96240493CC00EBE714 /* CARSolFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,12 @@
 		636DAB89240479F900EBE714 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		636DAB8A240479F900EBE714 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
 		636DAB8B240479F900EBE714 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		636DAB8F24048AD800EBE714 /* CARMarsSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARMarsSol.h; sourceTree = "<group>"; };
+		636DAB9024048AD800EBE714 /* CARMarsSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARMarsSol.m; sourceTree = "<group>"; };
+		636DAB9224048DE900EBE714 /* CARMarsCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARMarsCamera.h; sourceTree = "<group>"; };
+		636DAB9324048DE900EBE714 /* CARMarsCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARMarsCamera.m; sourceTree = "<group>"; };
+		636DAB95240493CC00EBE714 /* CARSolFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARSolFetcher.h; sourceTree = "<group>"; };
+		636DAB96240493CC00EBE714 /* CARSolFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARSolFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +124,10 @@
 				636DAB7A24046E7000EBE714 /* CARMarsMissionManifest.h */,
 				636DAB7B24046E7000EBE714 /* CARMarsMissionManifest.m */,
 				636DAB7924046E6F00EBE714 /* CARAstronomy-Bridging-Header.h */,
+				636DAB8F24048AD800EBE714 /* CARMarsSol.h */,
+				636DAB9024048AD800EBE714 /* CARMarsSol.m */,
+				636DAB9224048DE900EBE714 /* CARMarsCamera.h */,
+				636DAB9324048DE900EBE714 /* CARMarsCamera.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +146,8 @@
 			children = (
 				636DAB7F240475C600EBE714 /* CARManifestFetcher.h */,
 				636DAB80240475C600EBE714 /* CARManifestFetcher.m */,
+				636DAB95240493CC00EBE714 /* CARSolFetcher.h */,
+				636DAB96240493CC00EBE714 /* CARSolFetcher.m */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -232,7 +247,10 @@
 			files = (
 				636DAB842404793600EBE714 /* ViewController.swift in Sources */,
 				636DAB6224046DB000EBE714 /* AppDelegate.swift in Sources */,
+				636DAB9124048AD800EBE714 /* CARMarsSol.m in Sources */,
+				636DAB97240493CC00EBE714 /* CARSolFetcher.m in Sources */,
 				636DAB81240475C600EBE714 /* CARManifestFetcher.m in Sources */,
+				636DAB9424048DE900EBE714 /* CARMarsCamera.m in Sources */,
 				636DAB7C24046E7000EBE714 /* CARMarsMissionManifest.m in Sources */,
 				636DAB8D240479F900EBE714 /* LSIFileHelper.m in Sources */,
 				636DAB8E240479F900EBE714 /* LSILog.m in Sources */,

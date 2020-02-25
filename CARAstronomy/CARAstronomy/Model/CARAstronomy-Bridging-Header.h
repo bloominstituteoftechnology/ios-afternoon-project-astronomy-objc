@@ -3,3 +3,4 @@
 //
 
 #import "CARManifestFetcher.h"
+#import "CARSolFetcher.h"

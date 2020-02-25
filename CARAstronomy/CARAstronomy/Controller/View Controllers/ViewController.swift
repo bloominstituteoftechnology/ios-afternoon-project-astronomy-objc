@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     let manifestFetcher = CARManifestFetcher()
+    var manifest: CARMarsMissionManifest?
+    let solFetcher = CARSolFetcher()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,13 @@ class ViewController: UIViewController {
             guard error == nil else { return }
             
             guard let manifest = manifest else { return }
-            print(manifest.sols)
+            self.manifest = manifest
+        }
+        
+        solFetcher.fetchPhotos(forRover: "curiosity", withSol: 1000) { sols, error in
+            guard error == nil else { return }
+            guard let sols = sols else { return }
+            print(sols)
         }
     }
 }

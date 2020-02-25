@@ -13,7 +13,6 @@
 
 @implementation CARManifestFetcher
 
-
 // https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=E1mvXHcz2wixp2XkoacEfdqeZUomUQZXNdm4j13Z
 static NSString *const baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/manifests";
 static NSString *const apiKey = @"E1mvXHcz2wixp2XkoacEfdqeZUomUQZXNdm4j13Z";
