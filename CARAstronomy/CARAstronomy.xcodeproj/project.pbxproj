@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634BA202240550AB00B5B46C /* CARMarsSolCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634BA201240550AB00B5B46C /* CARMarsSolCollectionViewCell.m */; };
+		634BA205240555B600B5B46C /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BA204240555B600B5B46C /* URL+Secure.swift */; };
+		634BA20724055E4F00B5B46C /* MarsSolDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BA20624055E4F00B5B46C /* MarsSolDetailViewController.swift */; };
+		634BA20A240564E700B5B46C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BA209240564E700B5B46C /* Constants.swift */; };
+		634BA20C240565AA00B5B46C /* FetchPhotoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BA20B240565AA00B5B46C /* FetchPhotoOperation.swift */; };
 		636DAB6224046DB000EBE714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB6124046DB000EBE714 /* AppDelegate.swift */; };
 		636DAB6424046DB000EBE714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB6324046DB000EBE714 /* SceneDelegate.swift */; };
 		636DAB6924046DB000EBE714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636DAB6724046DB000EBE714 /* Main.storyboard */; };
@@ -14,16 +19,24 @@
 		636DAB6E24046DB100EBE714 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636DAB6C24046DB100EBE714 /* LaunchScreen.storyboard */; };
 		636DAB7C24046E7000EBE714 /* CARMarsMissionManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB7B24046E7000EBE714 /* CARMarsMissionManifest.m */; };
 		636DAB81240475C600EBE714 /* CARManifestFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB80240475C600EBE714 /* CARManifestFetcher.m */; };
-		636DAB842404793600EBE714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB832404793600EBE714 /* ViewController.swift */; };
 		636DAB8C240479F900EBE714 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB86240479F900EBE714 /* LSIErrors.m */; };
 		636DAB8D240479F900EBE714 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB8A240479F900EBE714 /* LSIFileHelper.m */; };
 		636DAB8E240479F900EBE714 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB8B240479F900EBE714 /* LSILog.m */; };
 		636DAB9124048AD800EBE714 /* CARMarsSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB9024048AD800EBE714 /* CARMarsSol.m */; };
 		636DAB9424048DE900EBE714 /* CARMarsCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB9324048DE900EBE714 /* CARMarsCamera.m */; };
 		636DAB97240493CC00EBE714 /* CARSolFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB96240493CC00EBE714 /* CARSolFetcher.m */; };
+		636DAB9A24049ED600EBE714 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB9924049ED600EBE714 /* ConcurrentOperation.swift */; };
+		636DAB9C24049F6A00EBE714 /* FetchManifestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB9B24049F6A00EBE714 /* FetchManifestOperation.swift */; };
+		636DAB9E2404A7D600EBE714 /* MarsSolCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB9D2404A7D600EBE714 /* MarsSolCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		634BA200240550AB00B5B46C /* CARMarsSolCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARMarsSolCollectionViewCell.h; sourceTree = "<group>"; };
+		634BA201240550AB00B5B46C /* CARMarsSolCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARMarsSolCollectionViewCell.m; sourceTree = "<group>"; };
+		634BA204240555B600B5B46C /* URL+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		634BA20624055E4F00B5B46C /* MarsSolDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsSolDetailViewController.swift; sourceTree = "<group>"; };
+		634BA209240564E700B5B46C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		634BA20B240565AA00B5B46C /* FetchPhotoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoOperation.swift; sourceTree = "<group>"; };
 		636DAB5E24046DB000EBE714 /* CARAstronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CARAstronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636DAB6124046DB000EBE714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		636DAB6324046DB000EBE714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +49,6 @@
 		636DAB7B24046E7000EBE714 /* CARMarsMissionManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARMarsMissionManifest.m; sourceTree = "<group>"; };
 		636DAB7F240475C600EBE714 /* CARManifestFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARManifestFetcher.h; sourceTree = "<group>"; };
 		636DAB80240475C600EBE714 /* CARManifestFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARManifestFetcher.m; sourceTree = "<group>"; };
-		636DAB832404793600EBE714 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		636DAB86240479F900EBE714 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
 		636DAB87240479F900EBE714 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		636DAB88240479F900EBE714 /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
@@ -49,6 +61,9 @@
 		636DAB9324048DE900EBE714 /* CARMarsCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARMarsCamera.m; sourceTree = "<group>"; };
 		636DAB95240493CC00EBE714 /* CARSolFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARSolFetcher.h; sourceTree = "<group>"; };
 		636DAB96240493CC00EBE714 /* CARSolFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARSolFetcher.m; sourceTree = "<group>"; };
+		636DAB9924049ED600EBE714 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		636DAB9B24049F6A00EBE714 /* FetchManifestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchManifestOperation.swift; sourceTree = "<group>"; };
+		636DAB9D2404A7D600EBE714 /* MarsSolCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsSolCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +77,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		634BA1FF2405508B00B5B46C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				634BA200240550AB00B5B46C /* CARMarsSolCollectionViewCell.h */,
+				634BA201240550AB00B5B46C /* CARMarsSolCollectionViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		634BA203240555A700B5B46C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				634BA204240555B600B5B46C /* URL+Secure.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		634BA208240564DB00B5B46C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				634BA209240564E700B5B46C /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		636DAB5524046DB000EBE714 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +132,9 @@
 		636DAB7524046DBB00EBE714 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				634BA208240564DB00B5B46C /* Constants */,
+				634BA203240555A700B5B46C /* Extensions */,
+				636DAB9824049EC300EBE714 /* Operations */,
 				636DAB85240479F900EBE714 /* LambdaSDK */,
 				636DAB6124046DB000EBE714 /* AppDelegate.swift */,
 				636DAB6324046DB000EBE714 /* SceneDelegate.swift */,
@@ -113,6 +156,7 @@
 		636DAB7724046E0300EBE714 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				634BA1FF2405508B00B5B46C /* Cells */,
 				636DAB7624046DF500EBE714 /* Storyboards */,
 			);
 			path = View;
@@ -155,7 +199,8 @@
 		636DAB822404791400EBE714 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				636DAB832404793600EBE714 /* ViewController.swift */,
+				636DAB9D2404A7D600EBE714 /* MarsSolCollectionViewController.swift */,
+				634BA20624055E4F00B5B46C /* MarsSolDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -171,6 +216,16 @@
 				636DAB8B240479F900EBE714 /* LSILog.m */,
 			);
 			path = LambdaSDK;
+			sourceTree = "<group>";
+		};
+		636DAB9824049EC300EBE714 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				636DAB9924049ED600EBE714 /* ConcurrentOperation.swift */,
+				636DAB9B24049F6A00EBE714 /* FetchManifestOperation.swift */,
+				634BA20B240565AA00B5B46C /* FetchPhotoOperation.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,17 +300,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				636DAB842404793600EBE714 /* ViewController.swift in Sources */,
+				634BA205240555B600B5B46C /* URL+Secure.swift in Sources */,
+				634BA20A240564E700B5B46C /* Constants.swift in Sources */,
 				636DAB6224046DB000EBE714 /* AppDelegate.swift in Sources */,
+				634BA202240550AB00B5B46C /* CARMarsSolCollectionViewCell.m in Sources */,
 				636DAB9124048AD800EBE714 /* CARMarsSol.m in Sources */,
 				636DAB97240493CC00EBE714 /* CARSolFetcher.m in Sources */,
+				636DAB9A24049ED600EBE714 /* ConcurrentOperation.swift in Sources */,
+				636DAB9E2404A7D600EBE714 /* MarsSolCollectionViewController.swift in Sources */,
 				636DAB81240475C600EBE714 /* CARManifestFetcher.m in Sources */,
 				636DAB9424048DE900EBE714 /* CARMarsCamera.m in Sources */,
 				636DAB7C24046E7000EBE714 /* CARMarsMissionManifest.m in Sources */,
+				634BA20C240565AA00B5B46C /* FetchPhotoOperation.swift in Sources */,
 				636DAB8D240479F900EBE714 /* LSIFileHelper.m in Sources */,
 				636DAB8E240479F900EBE714 /* LSILog.m in Sources */,
 				636DAB6424046DB000EBE714 /* SceneDelegate.swift in Sources */,
+				634BA20724055E4F00B5B46C /* MarsSolDetailViewController.swift in Sources */,
 				636DAB8C240479F900EBE714 /* LSIErrors.m in Sources */,
+				636DAB9C24049F6A00EBE714 /* FetchManifestOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

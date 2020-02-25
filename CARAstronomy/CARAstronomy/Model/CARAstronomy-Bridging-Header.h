@@ -4,3 +4,5 @@
 
 #import "CARManifestFetcher.h"
 #import "CARSolFetcher.h"
+#import "CARMarsSol.h"
+#import "CARMarsSolCollectionViewCell.h"
