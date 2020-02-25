@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(MarsMissionManifest)
 @interface CARMarsMissionManifest : NSObject
 
 @property (nonatomic, readonly, nonnull) NSArray *sols;

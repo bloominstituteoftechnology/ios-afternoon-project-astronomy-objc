@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(MarsSol)
 @interface CARMarsSol : NSObject
 
 @property (nonatomic, readonly) NSNumber *idNumber;

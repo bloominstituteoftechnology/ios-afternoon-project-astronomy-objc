@@ -10,12 +10,12 @@ import UIKit
 
 class MarsSolCollectionViewController: UICollectionViewController {
     
-    let manifestFetcher = CARManifestFetcher()
-    var manifest: CARMarsMissionManifest?
-    let solFetcher = CARSolFetcher()
+    let manifestFetcher = ManifestFetcher()
+    var manifest: MarsMissionManifest?
+    let solFetcher = SolFetcher()
     let photoQueue = OperationQueue()
-    var sols = [CARMarsSol]()
-    var solToSend: CARMarsSol?
+    var sols = [MarsSol]()
+    var solToSend: MarsSol?
     private let solLabel = UILabel()
     private var solIndex = 0
 
@@ -56,7 +56,7 @@ class MarsSolCollectionViewController: UICollectionViewController {
             guard let manifest = manifestFetchOperation.manifest, let sol = manifest.sols[self.solIndex] as? NSNumber else { return }
             self.solFetcher.fetchPhotos(forRover: "curiosity", withSol: sol) { sols, error in
                 guard error == nil else { return }
-                guard let sols = sols as? [CARMarsSol] else { return }
+                guard let sols = sols as? [MarsSol] else { return }
                 self.sols = sols
                 self.solLabel.text = "Sol \(sol)"
                 self.collectionView.reloadData()
@@ -85,7 +85,7 @@ class MarsSolCollectionViewController: UICollectionViewController {
                 guard let manifest = manifestFetchOperation.manifest, let sol = manifest.sols[self.solIndex] as? NSNumber else { return }
                 self.solFetcher.fetchPhotos(forRover: "curiosity", withSol: sol) { sols, error in
                     guard error == nil else { return }
-                    guard let sols = sols as? [CARMarsSol] else { return }
+                    guard let sols = sols as? [MarsSol] else { return }
                     self.sols = sols
                     self.solLabel.text = "Sol \(sol)"
                     self.collectionView.reloadData()

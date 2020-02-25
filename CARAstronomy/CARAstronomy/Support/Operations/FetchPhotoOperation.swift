@@ -10,10 +10,10 @@ import Foundation
 
 class FetchPhotoOperation: ConcurrentOperation {
     
-    var sol: CARMarsSol
+    var sol: MarsSol
     var image: UIImage?
     
-    init(sol: CARMarsSol) {
+    init(sol: MarsSol) {
         self.sol = sol
     }
     

@@ -11,6 +11,7 @@
 
 typedef void(^CARMainfestFetcherCompletion)(CARMarsMissionManifest *_Nullable manifest, NSError *_Nullable error);
 
+NS_SWIFT_NAME(ManifestFetcher)
 @interface CARManifestFetcher : NSObject
 
 - (void)fetchManifestForRover:(NSString *_Nullable)rover

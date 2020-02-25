@@ -12,6 +12,7 @@ typedef void(^CARSolFetcherCompletion) (NSArray * _Nullable sols, NSError *_Null
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(SolFetcher)
 @interface CARSolFetcher : NSObject
 
 - (void)fetchPhotosForRover:(NSString *)rover

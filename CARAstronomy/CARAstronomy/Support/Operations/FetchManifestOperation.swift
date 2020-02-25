@@ -10,10 +10,10 @@ import Foundation
 
 class FetchManifestOperation: ConcurrentOperation {
     
-    let manifestFetcher: CARManifestFetcher
-    var manifest: CARMarsMissionManifest?
+    let manifestFetcher: ManifestFetcher
+    var manifest: MarsMissionManifest?
     
-    init(manifestFetcher: CARManifestFetcher) {
+    init(manifestFetcher: ManifestFetcher) {
         self.manifestFetcher = manifestFetcher
     }
     
