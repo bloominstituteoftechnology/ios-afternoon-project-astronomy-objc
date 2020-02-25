@@ -6,3 +6,5 @@
 #import "CARSolFetcher.h"
 #import "CARMarsSol.h"
 #import "CARMarsSolCollectionViewCell.h"
+#import "CARFetchManifestOperation.h"
+#import "CARFetchPhotoOperation.h"

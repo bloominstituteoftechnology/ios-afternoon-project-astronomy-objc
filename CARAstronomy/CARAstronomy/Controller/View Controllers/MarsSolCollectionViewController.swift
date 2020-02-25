@@ -26,6 +26,7 @@ class MarsSolCollectionViewController: UICollectionViewController {
     }
     
     private func configureTitleView() {
+        solLabel.text = "Sol --"
         let font = UIFont.systemFont(ofSize: 30)
         let attributes = [NSAttributedString.Key.font: font]
         
