@@ -13,8 +13,8 @@
 - (instancetype) initWithName:(NSString *)name fullName:(NSString *)fullName {
     self = [super init];
     if (self) {
-        _name = name;
-        _fullName = fullName;
+        _name = [name copy];
+        _fullName = [fullName copy];
     }
     return self;
 }
