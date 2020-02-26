@@ -117,7 +117,7 @@ class MarsSolCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SolCell", for: indexPath) as? CARMarsSolCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SolCell", for: indexPath) as? MarsSolCollectionViewCell else { return UICollectionViewCell() }
         let sol = sols[indexPath.item]
         cell.configureCell(with: sol)
         return cell
@@ -127,6 +127,11 @@ class MarsSolCollectionViewController: UICollectionViewController {
         let sol = sols[indexPath.item]
         self.solToSend = sol
         performSegue(withIdentifier: Segues.showSolDetailSegue, sender: self)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? MarsSolCollectionViewCell else { return }
+        cell.photoFetchOperation?.cancel()
     }
 }
 

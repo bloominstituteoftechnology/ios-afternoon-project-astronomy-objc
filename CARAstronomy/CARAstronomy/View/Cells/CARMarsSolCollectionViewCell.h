@@ -8,17 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "CARMarsSol.h"
+#import "CARFetchPhotoOperation.h"
 
 
 typedef void(^CARMarsSolColletionViewCellCompletion) (void);
 
 NS_ASSUME_NONNULL_BEGIN
-
+NS_SWIFT_NAME(MarsSolCollectionViewCell)
 @interface CARMarsSolCollectionViewCell : UICollectionViewCell
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *solImageView;
 @property (nonatomic, readonly) CARMarsSol *sol;
+@property (nonatomic, nullable) CARFetchPhotoOperation *photoFetchOperation;
 
 - (void)configureCellWithSol:(CARMarsSol *)sol;
 
