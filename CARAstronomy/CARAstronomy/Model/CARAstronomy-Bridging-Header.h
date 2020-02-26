@@ -8,3 +8,4 @@
 #import "CARMarsSolCollectionViewCell.h"
 #import "CARFetchManifestOperation.h"
 #import "CARFetchPhotoOperation.h"
+#import "CARCache.h"

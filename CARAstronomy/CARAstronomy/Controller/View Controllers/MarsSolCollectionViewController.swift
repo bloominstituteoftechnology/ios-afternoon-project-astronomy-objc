@@ -119,8 +119,7 @@ class MarsSolCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SolCell", for: indexPath) as? CARMarsSolCollectionViewCell else { return UICollectionViewCell() }
         let sol = sols[indexPath.item]
-        guard let url = URL(string: sol.imageURL)?.usingHTTPS else { return UICollectionViewCell() }
-        cell.configureCell(withImageURL: url)
+        cell.configureCell(with: sol)
         return cell
     }
     
