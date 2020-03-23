@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		1B567A1B24294BAE0021454B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A1A24294BAE0021454B /* AppDelegate.swift */; };
 		1B567A1D24294BAE0021454B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A1C24294BAE0021454B /* SceneDelegate.swift */; };
-		1B567A1F24294BAE0021454B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A1E24294BAE0021454B /* ViewController.swift */; };
 		1B567A2224294BAE0021454B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B567A2024294BAE0021454B /* Main.storyboard */; };
 		1B567A2424294BB10021454B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B567A2324294BB10021454B /* Assets.xcassets */; };
 		1B567A2724294BB10021454B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B567A2524294BB10021454B /* LaunchScreen.storyboard */; };
+		1B567A3C24294E890021454B /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A3624294E890021454B /* LSIFileHelper.m */; };
+		1B567A3D24294E890021454B /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A3824294E890021454B /* URL+Secure.swift */; };
+		1B567A3E24294E890021454B /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A3924294E890021454B /* LSILog.m */; };
+		1B567A3F24294E890021454B /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A3A24294E890021454B /* LSIErrors.m */; };
+		1B567A4124294FC20021454B /* AstronomyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A4024294FC20021454B /* AstronomyCollectionViewController.swift */; };
+		1B567A432429508B0021454B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A422429508B0021454B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B567A1724294BAE0021454B /* AstronomyMix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyMix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B567A1A24294BAE0021454B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B567A1C24294BAE0021454B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1B567A1E24294BAE0021454B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B567A2124294BAE0021454B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B567A2324294BB10021454B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B567A2624294BB10021454B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B567A2824294BB10021454B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B567A3424294E880021454B /* AstronomyMix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AstronomyMix-Bridging-Header.h"; path = "../LambdaSDK/AstronomyMix-Bridging-Header.h"; sourceTree = "<group>"; };
+		1B567A3524294E890021454B /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIFileHelper.h; path = ../../../LambdaSDK/LSIFileHelper.h; sourceTree = "<group>"; };
+		1B567A3624294E890021454B /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIFileHelper.m; path = ../../../LambdaSDK/LSIFileHelper.m; sourceTree = "<group>"; };
+		1B567A3724294E890021454B /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIErrors.h; path = ../../../LambdaSDK/LSIErrors.h; sourceTree = "<group>"; };
+		1B567A3824294E890021454B /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Secure.swift"; path = "../../../LambdaSDK/URL+Secure.swift"; sourceTree = "<group>"; };
+		1B567A3924294E890021454B /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSILog.m; path = ../../../LambdaSDK/LSILog.m; sourceTree = "<group>"; };
+		1B567A3A24294E890021454B /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIErrors.m; path = ../../../LambdaSDK/LSIErrors.m; sourceTree = "<group>"; };
+		1B567A3B24294E890021454B /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSILog.h; path = ../../../LambdaSDK/LSILog.h; sourceTree = "<group>"; };
+		1B567A4024294FC20021454B /* AstronomyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyCollectionViewController.swift; sourceTree = "<group>"; };
+		1B567A422429508B0021454B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 		1B567A1924294BAE0021454B /* AstronomyMix */ = {
 			isa = PBXGroup;
 			children = (
+				1B567A3324294E6E0021454B /* LambdaSDK */,
 				1B567A2F24294BCD0021454B /* Model */,
 				1B567A3124294BF20021454B /* Model Controller */,
 				1B567A3224294C1E0021454B /* View Controller */,
@@ -68,6 +83,7 @@
 		1B567A2E24294BC10021454B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B567A3424294E880021454B /* AstronomyMix-Bridging-Header.h */,
 				1B567A1A24294BAE0021454B /* AppDelegate.swift */,
 				1B567A1C24294BAE0021454B /* SceneDelegate.swift */,
 				1B567A2324294BB10021454B /* Assets.xcassets */,
@@ -102,9 +118,24 @@
 		1B567A3224294C1E0021454B /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1B567A1E24294BAE0021454B /* ViewController.swift */,
+				1B567A4024294FC20021454B /* AstronomyCollectionViewController.swift */,
+				1B567A422429508B0021454B /* DetailViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1B567A3324294E6E0021454B /* LambdaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1B567A3724294E890021454B /* LSIErrors.h */,
+				1B567A3A24294E890021454B /* LSIErrors.m */,
+				1B567A3524294E890021454B /* LSIFileHelper.h */,
+				1B567A3624294E890021454B /* LSIFileHelper.m */,
+				1B567A3B24294E890021454B /* LSILog.h */,
+				1B567A3924294E890021454B /* LSILog.m */,
+				1B567A3824294E890021454B /* URL+Secure.swift */,
+			);
+			path = LambdaSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +170,7 @@
 				TargetAttributes = {
 					1B567A1624294BAE0021454B = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -178,9 +210,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B567A1F24294BAE0021454B /* ViewController.swift in Sources */,
+				1B567A3D24294E890021454B /* URL+Secure.swift in Sources */,
+				1B567A3E24294E890021454B /* LSILog.m in Sources */,
+				1B567A3F24294E890021454B /* LSIErrors.m in Sources */,
 				1B567A1B24294BAE0021454B /* AppDelegate.swift in Sources */,
+				1B567A3C24294E890021454B /* LSIFileHelper.m in Sources */,
 				1B567A1D24294BAE0021454B /* SceneDelegate.swift in Sources */,
+				1B567A4124294FC20021454B /* AstronomyCollectionViewController.swift in Sources */,
+				1B567A432429508B0021454B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XFZ73X2DJQ;
 				INFOPLIST_FILE = AstronomyMix/Resources/Info.plist;
@@ -333,6 +371,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jorgealvarez.AstronomyMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyMix/LambdaSDK/AstronomyMix-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -342,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XFZ73X2DJQ;
 				INFOPLIST_FILE = AstronomyMix/Resources/Info.plist;
@@ -351,6 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jorgealvarez.AstronomyMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyMix/LambdaSDK/AstronomyMix-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

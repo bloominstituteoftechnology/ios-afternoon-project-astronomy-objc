@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  AstronomyMix
 //
 //  Created by Jorge Alvarez on 3/23/20.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailViewController: UIViewController {
 
+    // MARK: - Properties
+    
+    @IBOutlet var imageView: UIImageView!
+
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
 }
-
