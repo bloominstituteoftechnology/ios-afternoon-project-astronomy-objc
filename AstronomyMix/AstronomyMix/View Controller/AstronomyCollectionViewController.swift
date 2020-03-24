@@ -11,13 +11,33 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class AstronomyCollectionViewController: UICollectionViewController {
+    
+    // MARK: - Properties
+    
+    let apiController = APIController()
 
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(apiController.solPhotos.count)
     }
 
+    // MARK: UICollectionViewDataSource
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return apiController.solPhotos.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+    
+        //let rover = apiController.solPhotos[indexPath.row]
+        
+        
+        return cell
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -26,19 +46,4 @@ class AstronomyCollectionViewController: UICollectionViewController {
             print("DetailSegue")
         }
     }
-
-    // MARK: UICollectionViewDataSource
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
 }
