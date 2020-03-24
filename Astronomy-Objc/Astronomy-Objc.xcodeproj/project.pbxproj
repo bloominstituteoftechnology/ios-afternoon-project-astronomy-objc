@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C2F7840242AAF040006B534 /* SolPhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F783F242AAF040006B534 /* SolPhotosCollectionViewCell.m */; };
+		4C2F7842242AB2030006B534 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F7841242AB2030006B534 /* PhotoDetailViewController.swift */; };
+		4C95C67A242955E500EA381E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C679242955E500EA381E /* AppDelegate.swift */; };
+		4C95C67C242955E500EA381E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C67B242955E500EA381E /* SceneDelegate.swift */; };
+		4C95C681242955E500EA381E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C95C67F242955E500EA381E /* Main.storyboard */; };
+		4C95C683242955E600EA381E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C95C682242955E600EA381E /* Assets.xcassets */; };
+		4C95C686242955E600EA381E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C95C684242955E600EA381E /* LaunchScreen.storyboard */; };
+		4C95C691242955E600EA381E /* Astronomy_ObjcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C690242955E600EA381E /* Astronomy_ObjcTests.swift */; };
+		4C95C69C242955E600EA381E /* Astronomy_ObjcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C69B242955E600EA381E /* Astronomy_ObjcUITests.swift */; };
+		4C95C6B924295BC000EA381E /* MBMSolInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6B824295BC000EA381E /* MBMSolInfo.m */; };
+		4C95C6BC24295C6900EA381E /* MBMRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6BB24295C6900EA381E /* MBMRoverController.m */; };
+		4C95C6BF24295E5400EA381E /* MBMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6BE24295E5400EA381E /* MBMPhoto.m */; };
+		4C95C6C22429659E00EA381E /* MBMCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6C12429659E00EA381E /* MBMCamera.m */; };
+		4C95C6C52429863000EA381E /* SolPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6C42429863000EA381E /* SolPhotosCollectionViewController.swift */; };
+		4C95C6CB24299BB000EA381E /* MissionManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6CA24299BB000EA381E /* MissionManifest.swift */; };
+		4C95C6CE2429C42D00EA381E /* MBMPhotoResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6CD2429C42D00EA381E /* MBMPhotoResults.m */; };
+		4C95C6D22429CD8600EA381E /* RoverPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6D02429CA1200EA381E /* RoverPhotosCollectionViewCell.swift */; };
+		4C95C6DE2429D7A700EA381E /* NSURL+HTTPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6DD2429D7A700EA381E /* NSURL+HTTPS.swift */; };
+		4C95C6E12429E4B800EA381E /* MBMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C6E02429E4B800EA381E /* MBMCache.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C95C68D242955E600EA381E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C95C66E242955E400EA381E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C95C675242955E400EA381E;
+			remoteInfo = "Astronomy-Objc";
+		};
+		4C95C698242955E600EA381E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C95C66E242955E400EA381E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C95C675242955E400EA381E;
+			remoteInfo = "Astronomy-Objc";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C2F783E242AAF040006B534 /* SolPhotosCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolPhotosCollectionViewCell.h; sourceTree = "<group>"; };
+		4C2F783F242AAF040006B534 /* SolPhotosCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolPhotosCollectionViewCell.m; sourceTree = "<group>"; };
+		4C2F7841242AB2030006B534 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		4C95C676242955E500EA381E /* Astronomy-Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C95C679242955E500EA381E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C95C67B242955E500EA381E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4C95C680242955E500EA381E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C95C682242955E600EA381E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C95C685242955E600EA381E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C95C687242955E600EA381E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C95C68C242955E600EA381E /* Astronomy-ObjcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Astronomy-ObjcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C95C690242955E600EA381E /* Astronomy_ObjcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronomy_ObjcTests.swift; sourceTree = "<group>"; };
+		4C95C692242955E600EA381E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C95C697242955E600EA381E /* Astronomy-ObjcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Astronomy-ObjcUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C95C69B242955E600EA381E /* Astronomy_ObjcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronomy_ObjcUITests.swift; sourceTree = "<group>"; };
+		4C95C69D242955E600EA381E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C95C6AE242958FB00EA381E /* Astronomy-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C95C6B724295BC000EA381E /* MBMSolInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMSolInfo.h; sourceTree = "<group>"; };
+		4C95C6B824295BC000EA381E /* MBMSolInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMSolInfo.m; sourceTree = "<group>"; };
+		4C95C6BA24295C6900EA381E /* MBMRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMRoverController.h; sourceTree = "<group>"; };
+		4C95C6BB24295C6900EA381E /* MBMRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMRoverController.m; sourceTree = "<group>"; };
+		4C95C6BD24295E5400EA381E /* MBMPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMPhoto.h; sourceTree = "<group>"; };
+		4C95C6BE24295E5400EA381E /* MBMPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMPhoto.m; sourceTree = "<group>"; };
+		4C95C6C02429659E00EA381E /* MBMCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMCamera.h; sourceTree = "<group>"; };
+		4C95C6C12429659E00EA381E /* MBMCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMCamera.m; sourceTree = "<group>"; };
+		4C95C6C42429863000EA381E /* SolPhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		4C95C6CA24299BB000EA381E /* MissionManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionManifest.swift; sourceTree = "<group>"; };
+		4C95C6CC2429C42D00EA381E /* MBMPhotoResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMPhotoResults.h; sourceTree = "<group>"; };
+		4C95C6CD2429C42D00EA381E /* MBMPhotoResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMPhotoResults.m; sourceTree = "<group>"; };
+		4C95C6D02429CA1200EA381E /* RoverPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C95C6DD2429D7A700EA381E /* NSURL+HTTPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSURL+HTTPS.swift"; sourceTree = "<group>"; };
+		4C95C6DF2429E4B800EA381E /* MBMCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMCache.h; sourceTree = "<group>"; };
+		4C95C6E02429E4B800EA381E /* MBMCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMCache.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C95C673242955E400EA381E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C95C689242955E600EA381E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C95C694242955E600EA381E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C95C66D242955E400EA381E = {
+			isa = PBXGroup;
+			children = (
+				4C95C678242955E500EA381E /* Astronomy-Objc */,
+				4C95C68F242955E600EA381E /* Astronomy-ObjcTests */,
+				4C95C69A242955E600EA381E /* Astronomy-ObjcUITests */,
+				4C95C677242955E500EA381E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C95C677242955E500EA381E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C676242955E500EA381E /* Astronomy-Objc.app */,
+				4C95C68C242955E600EA381E /* Astronomy-ObjcTests.xctest */,
+				4C95C697242955E600EA381E /* Astronomy-ObjcUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C95C678242955E500EA381E /* Astronomy-Objc */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C6D62429D62800EA381E /* Helpers */,
+				4C95C6CF2429C9E900EA381E /* Views */,
+				4C95C6C32429860000EA381E /* View Controllers */,
+				4C95C6AB2429588D00EA381E /* ModelController */,
+				4C95C6AA2429587900EA381E /* Model */,
+				4C95C679242955E500EA381E /* AppDelegate.swift */,
+				4C95C67B242955E500EA381E /* SceneDelegate.swift */,
+				4C95C67F242955E500EA381E /* Main.storyboard */,
+				4C95C6A9242957B000EA381E /* Resources */,
+			);
+			path = "Astronomy-Objc";
+			sourceTree = "<group>";
+		};
+		4C95C68F242955E600EA381E /* Astronomy-ObjcTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C690242955E600EA381E /* Astronomy_ObjcTests.swift */,
+				4C95C692242955E600EA381E /* Info.plist */,
+			);
+			path = "Astronomy-ObjcTests";
+			sourceTree = "<group>";
+		};
+		4C95C69A242955E600EA381E /* Astronomy-ObjcUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C69B242955E600EA381E /* Astronomy_ObjcUITests.swift */,
+				4C95C69D242955E600EA381E /* Info.plist */,
+			);
+			path = "Astronomy-ObjcUITests";
+			sourceTree = "<group>";
+		};
+		4C95C6A9242957B000EA381E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C682242955E600EA381E /* Assets.xcassets */,
+				4C95C684242955E600EA381E /* LaunchScreen.storyboard */,
+				4C95C687242955E600EA381E /* Info.plist */,
+				4C95C6AE242958FB00EA381E /* Astronomy-Objc-Bridging-Header.h */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C95C6AA2429587900EA381E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C6CA24299BB000EA381E /* MissionManifest.swift */,
+				4C95C6B724295BC000EA381E /* MBMSolInfo.h */,
+				4C95C6B824295BC000EA381E /* MBMSolInfo.m */,
+				4C95C6BD24295E5400EA381E /* MBMPhoto.h */,
+				4C95C6BE24295E5400EA381E /* MBMPhoto.m */,
+				4C95C6C02429659E00EA381E /* MBMCamera.h */,
+				4C95C6C12429659E00EA381E /* MBMCamera.m */,
+				4C95C6CC2429C42D00EA381E /* MBMPhotoResults.h */,
+				4C95C6CD2429C42D00EA381E /* MBMPhotoResults.m */,
+				4C95C6DF2429E4B800EA381E /* MBMCache.h */,
+				4C95C6E02429E4B800EA381E /* MBMCache.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C95C6AB2429588D00EA381E /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C6BA24295C6900EA381E /* MBMRoverController.h */,
+				4C95C6BB24295C6900EA381E /* MBMRoverController.m */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		4C95C6C32429860000EA381E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C6C42429863000EA381E /* SolPhotosCollectionViewController.swift */,
+				4C2F7841242AB2030006B534 /* PhotoDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4C95C6CF2429C9E900EA381E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C6D02429CA1200EA381E /* RoverPhotosCollectionViewCell.swift */,
+				4C2F783E242AAF040006B534 /* SolPhotosCollectionViewCell.h */,
+				4C2F783F242AAF040006B534 /* SolPhotosCollectionViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C95C6D62429D62800EA381E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4C95C6DD2429D7A700EA381E /* NSURL+HTTPS.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C95C675242955E400EA381E /* Astronomy-Objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C95C6A0242955E600EA381E /* Build configuration list for PBXNativeTarget "Astronomy-Objc" */;
+			buildPhases = (
+				4C95C672242955E400EA381E /* Sources */,
+				4C95C673242955E400EA381E /* Frameworks */,
+				4C95C674242955E400EA381E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Astronomy-Objc";
+			productName = "Astronomy-Objc";
+			productReference = 4C95C676242955E500EA381E /* Astronomy-Objc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C95C68B242955E600EA381E /* Astronomy-ObjcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C95C6A3242955E600EA381E /* Build configuration list for PBXNativeTarget "Astronomy-ObjcTests" */;
+			buildPhases = (
+				4C95C688242955E600EA381E /* Sources */,
+				4C95C689242955E600EA381E /* Frameworks */,
+				4C95C68A242955E600EA381E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C95C68E242955E600EA381E /* PBXTargetDependency */,
+			);
+			name = "Astronomy-ObjcTests";
+			productName = "Astronomy-ObjcTests";
+			productReference = 4C95C68C242955E600EA381E /* Astronomy-ObjcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4C95C696242955E600EA381E /* Astronomy-ObjcUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C95C6A6242955E600EA381E /* Build configuration list for PBXNativeTarget "Astronomy-ObjcUITests" */;
+			buildPhases = (
+				4C95C693242955E600EA381E /* Sources */,
+				4C95C694242955E600EA381E /* Frameworks */,
+				4C95C695242955E600EA381E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C95C699242955E600EA381E /* PBXTargetDependency */,
+			);
+			name = "Astronomy-ObjcUITests";
+			productName = "Astronomy-ObjcUITests";
+			productReference = 4C95C697242955E600EA381E /* Astronomy-ObjcUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C95C66E242955E400EA381E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Michael;
+				TargetAttributes = {
+					4C95C675242955E400EA381E = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
+					4C95C68B242955E600EA381E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 4C95C675242955E400EA381E;
+					};
+					4C95C696242955E600EA381E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 4C95C675242955E400EA381E;
+					};
+				};
+			};
+			buildConfigurationList = 4C95C671242955E400EA381E /* Build configuration list for PBXProject "Astronomy-Objc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C95C66D242955E400EA381E;
+			productRefGroup = 4C95C677242955E500EA381E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C95C675242955E400EA381E /* Astronomy-Objc */,
+				4C95C68B242955E600EA381E /* Astronomy-ObjcTests */,
+				4C95C696242955E600EA381E /* Astronomy-ObjcUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C95C674242955E400EA381E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C95C686242955E600EA381E /* LaunchScreen.storyboard in Resources */,
+				4C95C683242955E600EA381E /* Assets.xcassets in Resources */,
+				4C95C681242955E500EA381E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C95C68A242955E600EA381E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C95C695242955E600EA381E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C95C672242955E400EA381E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C95C6D22429CD8600EA381E /* RoverPhotosCollectionViewCell.swift in Sources */,
+				4C95C6CE2429C42D00EA381E /* MBMPhotoResults.m in Sources */,
+				4C95C6C52429863000EA381E /* SolPhotosCollectionViewController.swift in Sources */,
+				4C95C6C22429659E00EA381E /* MBMCamera.m in Sources */,
+				4C95C6B924295BC000EA381E /* MBMSolInfo.m in Sources */,
+				4C95C6BC24295C6900EA381E /* MBMRoverController.m in Sources */,
+				4C95C6CB24299BB000EA381E /* MissionManifest.swift in Sources */,
+				4C2F7840242AAF040006B534 /* SolPhotosCollectionViewCell.m in Sources */,
+				4C95C67A242955E500EA381E /* AppDelegate.swift in Sources */,
+				4C95C67C242955E500EA381E /* SceneDelegate.swift in Sources */,
+				4C2F7842242AB2030006B534 /* PhotoDetailViewController.swift in Sources */,
+				4C95C6E12429E4B800EA381E /* MBMCache.m in Sources */,
+				4C95C6DE2429D7A700EA381E /* NSURL+HTTPS.swift in Sources */,
+				4C95C6BF24295E5400EA381E /* MBMPhoto.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C95C688242955E600EA381E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C95C691242955E600EA381E /* Astronomy_ObjcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C95C693242955E600EA381E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C95C69C242955E600EA381E /* Astronomy_ObjcUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C95C68E242955E600EA381E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C95C675242955E400EA381E /* Astronomy-Objc */;
+			targetProxy = 4C95C68D242955E600EA381E /* PBXContainerItemProxy */;
+		};
+		4C95C699242955E600EA381E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C95C675242955E400EA381E /* Astronomy-Objc */;
+			targetProxy = 4C95C698242955E600EA381E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C95C67F242955E500EA381E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C95C680242955E500EA381E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C95C684242955E600EA381E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C95C685242955E600EA381E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C95C69E242955E600EA381E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4C95C69F242955E600EA381E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C95C6A1242955E600EA381E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5X7HQSSM6;
+				INFOPLIST_FILE = "Astronomy-Objc/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MichaelMcGrath.Astronomy-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Objc/Resources/Astronomy-Objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C95C6A2242955E600EA381E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5X7HQSSM6;
+				INFOPLIST_FILE = "Astronomy-Objc/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MichaelMcGrath.Astronomy-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-Objc/Resources/Astronomy-Objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4C95C6A4242955E600EA381E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5X7HQSSM6;
+				INFOPLIST_FILE = "Astronomy-ObjcTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MichaelMcGrath.Astronomy-ObjcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astronomy-Objc.app/Astronomy-Objc";
+			};
+			name = Debug;
+		};
+		4C95C6A5242955E600EA381E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5X7HQSSM6;
+				INFOPLIST_FILE = "Astronomy-ObjcTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MichaelMcGrath.Astronomy-ObjcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astronomy-Objc.app/Astronomy-Objc";
+			};
+			name = Release;
+		};
+		4C95C6A7242955E600EA381E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5X7HQSSM6;
+				INFOPLIST_FILE = "Astronomy-ObjcUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MichaelMcGrath.Astronomy-ObjcUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Astronomy-Objc";
+			};
+			name = Debug;
+		};
+		4C95C6A8242955E600EA381E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5X7HQSSM6;
+				INFOPLIST_FILE = "Astronomy-ObjcUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MichaelMcGrath.Astronomy-ObjcUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Astronomy-Objc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C95C671242955E400EA381E /* Build configuration list for PBXProject "Astronomy-Objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C95C69E242955E600EA381E /* Debug */,
+				4C95C69F242955E600EA381E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C95C6A0242955E600EA381E /* Build configuration list for PBXNativeTarget "Astronomy-Objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C95C6A1242955E600EA381E /* Debug */,
+				4C95C6A2242955E600EA381E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C95C6A3242955E600EA381E /* Build configuration list for PBXNativeTarget "Astronomy-ObjcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C95C6A4242955E600EA381E /* Debug */,
+				4C95C6A5242955E600EA381E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C95C6A6242955E600EA381E /* Build configuration list for PBXNativeTarget "Astronomy-ObjcUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C95C6A7242955E600EA381E /* Debug */,
+				4C95C6A8242955E600EA381E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C95C66E242955E400EA381E /* Project object */;
+}
