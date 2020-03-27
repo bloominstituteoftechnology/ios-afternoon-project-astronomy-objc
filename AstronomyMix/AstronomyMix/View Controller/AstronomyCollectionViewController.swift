@@ -30,10 +30,10 @@ class AstronomyCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! JLAAstronomyCollectionViewCell
     
-        //let rover = apiController.solPhotos[indexPath.row]
-        
+        let rover = apiController.solPhotos[indexPath.row]
+        cell.imageView.image = UIImage(named: "park")
         
         return cell
     }

@@ -3,4 +3,4 @@
 //
 
 #import "APIController.h"
-#import "JLAAstronomyTableViewCell.h"
+#import "JLAAstronomyCollectionViewCell.h"

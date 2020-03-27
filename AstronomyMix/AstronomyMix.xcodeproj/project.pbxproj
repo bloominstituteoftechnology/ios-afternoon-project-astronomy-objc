@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B52A007242E137E0077F983 /* JLAAstronomyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52A006242E137E0077F983 /* JLAAstronomyCollectionViewCell.m */; };
 		1B567A1B24294BAE0021454B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A1A24294BAE0021454B /* AppDelegate.swift */; };
 		1B567A1D24294BAE0021454B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A1C24294BAE0021454B /* SceneDelegate.swift */; };
 		1B567A2224294BAE0021454B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B567A2024294BAE0021454B /* Main.storyboard */; };
@@ -17,10 +18,11 @@
 		1B567A432429508B0021454B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A422429508B0021454B /* DetailViewController.swift */; };
 		1B567A45242952EA0021454B /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A44242952EA0021454B /* Rover.swift */; };
 		1B567A482429583A0021454B /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A472429583A0021454B /* APIController.m */; };
-		1B567A4B242960B40021454B /* JLAAstronomyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B567A4A242960B40021454B /* JLAAstronomyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B52A005242E137E0077F983 /* JLAAstronomyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLAAstronomyCollectionViewCell.h; sourceTree = "<group>"; };
+		1B52A006242E137E0077F983 /* JLAAstronomyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAAstronomyCollectionViewCell.m; sourceTree = "<group>"; };
 		1B567A1724294BAE0021454B /* AstronomyMix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyMix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B567A1A24294BAE0021454B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B567A1C24294BAE0021454B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,8 +37,6 @@
 		1B567A44242952EA0021454B /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 		1B567A462429583A0021454B /* APIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		1B567A472429583A0021454B /* APIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
-		1B567A49242960B40021454B /* JLAAstronomyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLAAstronomyTableViewCell.h; sourceTree = "<group>"; };
-		1B567A4A242960B40021454B /* JLAAstronomyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAAstronomyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 			children = (
 				1B567A2024294BAE0021454B /* Main.storyboard */,
 				1B567A2524294BB10021454B /* LaunchScreen.storyboard */,
-				1B567A49242960B40021454B /* JLAAstronomyTableViewCell.h */,
-				1B567A4A242960B40021454B /* JLAAstronomyTableViewCell.m */,
+				1B52A005242E137E0077F983 /* JLAAstronomyCollectionViewCell.h */,
+				1B52A006242E137E0077F983 /* JLAAstronomyCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,8 +201,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B567A3D24294E890021454B /* URL+Secure.swift in Sources */,
-				1B567A4B242960B40021454B /* JLAAstronomyTableViewCell.m in Sources */,
 				1B567A1B24294BAE0021454B /* AppDelegate.swift in Sources */,
+				1B52A007242E137E0077F983 /* JLAAstronomyCollectionViewCell.m in Sources */,
 				1B567A45242952EA0021454B /* Rover.swift in Sources */,
 				1B567A482429583A0021454B /* APIController.m in Sources */,
 				1B567A1D24294BAE0021454B /* SceneDelegate.swift in Sources */,
