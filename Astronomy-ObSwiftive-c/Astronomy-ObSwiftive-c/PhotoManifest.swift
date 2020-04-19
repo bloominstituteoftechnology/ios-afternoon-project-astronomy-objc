@@ -8,28 +8,20 @@
 
 import Foundation
 
-class PhotoManifest {
+@objc class PhotoManifest: NSObject {
     
-    let name: String
-    let maxSol: Int
-    let maxDate: Date
-    let totalPhotos: Int
-    let solPhotos: [SolPhoto]
+    @objc let name: String
+    @objc let max_sol: Int
+    @objc let max_date: Date
+    @objc let total_photos: Int
+    @objc let photos: String// [SolPhoto]
     
-    enum CodingKeys: String, CodingKey {
-        case name
-        case maxSol
-        case maxDate
-        case totalPhotos
-        case solPhotos = "photos"
-    }
-    
-    init(name: String, maxSol: Int, maxDate: Date, totalPhotos: Int, solPhotos: [SolPhoto]) {
+    @objc init(name: String, max_sol: Int, max_date: Date, total_photos: Int, photos: String) {
         self.name = name
-        self.maxSol = maxSol
-        self.maxDate = maxDate
-        self.totalPhotos = totalPhotos
-        self.solPhotos = solPhotos
+        self.max_sol = max_sol
+        self.max_date = max_date
+        self.total_photos = total_photos
+        self.photos = photos
     }
     
     static let dateFormatter: DateFormatter = {
@@ -42,7 +34,6 @@ class PhotoManifest {
     
     static var jsonDecoderSnakeCase: JSONDecoder {
         let result = JSONDecoder()
-        result.keyDecodingStrategy = .convertFromSnakeCase
         result.dateDecodingStrategy = .formatted(dateFormatter)
         return result
     }
