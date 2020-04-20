@@ -13,6 +13,7 @@
 		72DF2E6A244E52E500E4D53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DF2E69244E52E500E4D53B /* Assets.xcassets */; };
 		72DF2E6D244E52E500E4D53B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DF2E6B244E52E500E4D53B /* LaunchScreen.storyboard */; };
 		72DF2E70244E52E500E4D53B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E6F244E52E500E4D53B /* main.m */; };
+		72DF2E82244E574400E4D53B /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E81244E574400E4D53B /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		72DF2E6C244E52E500E4D53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72DF2E6E244E52E500E4D53B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72DF2E6F244E52E500E4D53B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		72DF2E80244E574400E4D53B /* AstronomyObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AstronomyObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		72DF2E81244E574400E4D53B /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 		72DF2E77244E535D00E4D53B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				72DF2E80244E574400E4D53B /* AstronomyObjC-Bridging-Header.h */,
 				72DF2E5D244E52E400E4D53B /* AppDelegate.h */,
 				72DF2E5E244E52E400E4D53B /* AppDelegate.m */,
 				72DF2E60244E52E400E4D53B /* SceneDelegate.h */,
@@ -86,6 +90,7 @@
 		72DF2E78244E538800E4D53B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				72DF2E81244E574400E4D53B /* PhotoDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				TargetAttributes = {
 					72DF2E59244E52E400E4D53B = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -191,6 +197,7 @@
 			files = (
 				72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */,
 				72DF2E70244E52E500E4D53B /* main.m in Sources */,
+				72DF2E82244E574400E4D53B /* PhotoDetailViewController.swift in Sources */,
 				72DF2E62244E52E400E4D53B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36JMR38FZL;
 				INFOPLIST_FILE = AstronomyObjC/Resources/Info.plist;
@@ -340,6 +348,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisGonzales.AstronomyObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyObjC/ViewControllers/AstronomyObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -348,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36JMR38FZL;
 				INFOPLIST_FILE = AstronomyObjC/Resources/Info.plist;
@@ -357,6 +369,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisGonzales.AstronomyObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyObjC/ViewControllers/AstronomyObjC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
