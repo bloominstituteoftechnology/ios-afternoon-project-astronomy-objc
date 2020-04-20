@@ -20,6 +20,7 @@
 		E1431310244E32C1000019C9 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E143130F244E32C1000019C9 /* PhotosCollectionViewController.swift */; };
 		E1431314244E3969000019C9 /* UFOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E1431313244E3969000019C9 /* UFOCache.m */; };
 		E143131B244E39D3000019C9 /* UFOMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E143131A244E39D3000019C9 /* UFOMarsPhoto.m */; };
+		E143131E244E3CFF000019C9 /* UFOCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E143131D244E3CFF000019C9 /* UFOCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		E1431313244E3969000019C9 /* UFOCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UFOCache.m; sourceTree = "<group>"; };
 		E1431319244E39D3000019C9 /* UFOMarsPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFOMarsPhoto.h; sourceTree = "<group>"; };
 		E143131A244E39D3000019C9 /* UFOMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UFOMarsPhoto.m; sourceTree = "<group>"; };
+		E143131C244E3CFF000019C9 /* UFOCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFOCamera.h; sourceTree = "<group>"; };
+		E143131D244E3CFF000019C9 /* UFOCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UFOCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				E1431313244E3969000019C9 /* UFOCache.m */,
 				E1431319244E39D3000019C9 /* UFOMarsPhoto.h */,
 				E143131A244E39D3000019C9 /* UFOMarsPhoto.m */,
+				E143131C244E3CFF000019C9 /* UFOCamera.h */,
+				E143131D244E3CFF000019C9 /* UFOCamera.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E143131E244E3CFF000019C9 /* UFOCamera.m in Sources */,
 				E143131B244E39D3000019C9 /* UFOMarsPhoto.m in Sources */,
 				E143130A244E2D7B000019C9 /* LSILog.m in Sources */,
 				E1431309244E2D7B000019C9 /* LSIFileHelper.m in Sources */,
