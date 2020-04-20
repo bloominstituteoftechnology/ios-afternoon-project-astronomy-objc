@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
     
     // MARK: - Properties
     
+    var apiController = APIController()
+    
     var photo: UIImage?/*MarsPhotoReference?*/ {
         didSet {
             updateViews()
@@ -33,7 +35,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
