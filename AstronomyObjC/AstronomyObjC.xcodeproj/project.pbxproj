@@ -16,6 +16,7 @@
 		B5D2A26D244E4E0A00F046C6 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A26C244E4E0A00F046C6 /* PhotoCollectionViewController.swift */; };
 		B5D2A26F244E4E3C00F046C6 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A26E244E4E3C00F046C6 /* PhotoDetailViewController.swift */; };
 		B5D2A272244E531100F046C6 /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = B5D2A271244E531100F046C6 /* LambdaSDK */; };
+		B5D2A279244E590B00F046C6 /* EPWMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A278244E590B00F046C6 /* EPWMarsRoverClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		B5D2A26C244E4E0A00F046C6 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		B5D2A26E244E4E3C00F046C6 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		B5D2A271244E531100F046C6 /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LambdaSDK; path = ../../LambdaSDK; sourceTree = "<group>"; };
+		B5D2A277244E590B00F046C6 /* EPWMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWMarsRoverClient.h; sourceTree = "<group>"; };
+		B5D2A278244E590B00F046C6 /* EPWMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWMarsRoverClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,17 +68,13 @@
 		B5D2A24D244E3BBE00F046C6 /* AstronomyObjC */ = {
 			isa = PBXGroup;
 			children = (
-				B5D2A257244E3BBE00F046C6 /* Main.storyboard */,
-				B5D2A25C244E3BC000F046C6 /* LaunchScreen.storyboard */,
+				B5D2A274244E556A00F046C6 /* Storyboards */,
+				B5D2A276244E563400F046C6 /* Networking */,
 				B5D2A270244E51BA00F046C6 /* Model */,
+				B5D2A273244E54FB00F046C6 /* Views */,
 				B5D2A267244E4D8100F046C6 /* View Controllers */,
-				B5D2A24E244E3BBE00F046C6 /* AppDelegate.h */,
-				B5D2A24F244E3BBE00F046C6 /* AppDelegate.m */,
-				B5D2A251244E3BBE00F046C6 /* SceneDelegate.h */,
-				B5D2A252244E3BBE00F046C6 /* SceneDelegate.m */,
-				B5D2A25A244E3BC000F046C6 /* Assets.xcassets */,
+				B5D2A275244E558700F046C6 /* Resources */,
 				B5D2A25F244E3BC000F046C6 /* Info.plist */,
-				B5D2A260244E3BC000F046C6 /* main.m */,
 				B5D2A271244E531100F046C6 /* LambdaSDK */,
 			);
 			path = AstronomyObjC;
@@ -96,6 +95,44 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B5D2A273244E54FB00F046C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5D2A274244E556A00F046C6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2A257244E3BBE00F046C6 /* Main.storyboard */,
+				B5D2A25C244E3BC000F046C6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B5D2A275244E558700F046C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2A24E244E3BBE00F046C6 /* AppDelegate.h */,
+				B5D2A24F244E3BBE00F046C6 /* AppDelegate.m */,
+				B5D2A251244E3BBE00F046C6 /* SceneDelegate.h */,
+				B5D2A252244E3BBE00F046C6 /* SceneDelegate.m */,
+				B5D2A25A244E3BC000F046C6 /* Assets.xcassets */,
+				B5D2A260244E3BC000F046C6 /* main.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5D2A276244E563400F046C6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2A277244E590B00F046C6 /* EPWMarsRoverClient.h */,
+				B5D2A278244E590B00F046C6 /* EPWMarsRoverClient.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D2A250244E3BBE00F046C6 /* AppDelegate.m in Sources */,
+				B5D2A279244E590B00F046C6 /* EPWMarsRoverClient.m in Sources */,
 				B5D2A261244E3BC000F046C6 /* main.m in Sources */,
 				B5D2A253244E3BBE00F046C6 /* SceneDelegate.m in Sources */,
 				B5D2A26F244E4E3C00F046C6 /* PhotoDetailViewController.swift in Sources */,
