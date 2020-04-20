@@ -10,4 +10,9 @@
 
 @implementation EGCAstronomyCollectionViewCell
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.imageView.image = [UIImage imageNamed:@"Moon"];
+}
+
 @end
