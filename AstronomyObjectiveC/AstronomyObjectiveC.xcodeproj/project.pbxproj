@@ -17,6 +17,7 @@
 		5CF63267244E57F000622810 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63266244E57F000622810 /* DetailViewController.swift */; };
 		5CF63269244E5A3E00622810 /* AstronomyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63268244E5A3E00622810 /* AstronomyCollectionViewController.swift */; };
 		5CF6326C244E5BB100622810 /* EGCAstronomyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6326B244E5BB100622810 /* EGCAstronomyCollectionViewCell.m */; };
+		5CF6326E244E617500622810 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6326D244E617500622810 /* URL+Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		5CF63268244E5A3E00622810 /* AstronomyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyCollectionViewController.swift; sourceTree = "<group>"; };
 		5CF6326A244E5BB100622810 /* EGCAstronomyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCAstronomyCollectionViewCell.h; sourceTree = "<group>"; };
 		5CF6326B244E5BB100622810 /* EGCAstronomyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCAstronomyCollectionViewCell.m; sourceTree = "<group>"; };
+		5CF6326D244E617500622810 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Secure.swift"; path = "../../LambdaSDK/URL+Secure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				5CF6324C244E3BF100622810 /* Main.storyboard */,
 				5CF63262244E532F00622810 /* Resources */,
 				5CF6324F244E3BF100622810 /* Assets.xcassets */,
+				5CF6326D244E617500622810 /* URL+Secure.swift */,
 				5CF63251244E3BF100622810 /* LaunchScreen.storyboard */,
 				5CF63254244E3BF100622810 /* Info.plist */,
 			);
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF6326E244E617500622810 /* URL+Secure.swift in Sources */,
 				5CF63265244E537900622810 /* Rover.swift in Sources */,
 				5CF6326C244E5BB100622810 /* EGCAstronomyCollectionViewCell.m in Sources */,
 				5CF63261244E530F00622810 /* APIController.m in Sources */,
