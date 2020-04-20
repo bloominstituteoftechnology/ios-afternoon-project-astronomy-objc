@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Photo Collection View Controller-->
         <scene sceneID="bJM-rh-y5Q">
             <objects>
-                <collectionViewController id="Czx-NE-zNK" sceneMemberID="viewController">
+                <collectionViewController id="Czx-NE-zNK" customClass="PhotoCollectionViewController" customModule="AstronomyObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uk8-if-HV4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1Dm-em-eqP">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SolPhoto" id="1Dm-em-eqP">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GZc-0P-HAk">
@@ -74,7 +74,7 @@
         <!--Title-->
         <scene sceneID="wYp-yE-gus">
             <objects>
-                <viewController id="Wr9-gt-a8R" sceneMemberID="viewController">
+                <viewController id="Wr9-gt-a8R" customClass="PhotoDetailViewController" customModule="AstronomyObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5mY-0j-hh4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,41 +85,55 @@
                                     <constraint firstAttribute="width" secondItem="bj3-Sk-a3l" secondAttribute="height" multiplier="1:1" id="G6Y-J0-av9"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Taken by 5 on 9/4/12, 8:00 PM (Sol 30)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-XS-2RI">
-                                <rect key="frame" x="35" y="530" width="338" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvP-WR-ME7">
-                                <rect key="frame" x="35" y="559" width="65" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU9-bo-pdq">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I4r-Pv-Mqo">
+                                <rect key="frame" x="35" y="559" width="179" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvP-WR-ME7">
+                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mast Camera " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4On-ia-edP">
+                                        <rect key="frame" x="72.5" y="0.0" width="106.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU9-bo-pdq">
                                 <rect key="frame" x="131" y="604" width="147" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save to Photo Library"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mast Camera " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4On-ia-edP">
-                                <rect key="frame" x="108" y="559" width="107" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by 5 on 9/4/12, 8:00 PM (Sol 30)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-XS-2RI">
+                                <rect key="frame" x="35" y="530" width="338" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bj3-Sk-a3l" firstAttribute="centerX" secondItem="5mY-0j-hh4" secondAttribute="centerX" id="0lq-Su-b0K"/>
+                            <constraint firstItem="yU9-bo-pdq" firstAttribute="leading" secondItem="o5C-xy-m2f" secondAttribute="leading" constant="131" id="1jf-JQ-1PK"/>
+                            <constraint firstItem="yU9-bo-pdq" firstAttribute="top" secondItem="I4r-Pv-Mqo" secondAttribute="bottom" constant="24.5" id="7ga-Qz-bHD"/>
+                            <constraint firstItem="ekA-XS-2RI" firstAttribute="leading" secondItem="o5C-xy-m2f" secondAttribute="leading" constant="35" id="Bow-FS-dff"/>
+                            <constraint firstItem="o5C-xy-m2f" firstAttribute="bottom" secondItem="yU9-bo-pdq" secondAttribute="bottom" constant="228" id="Ldf-sV-2BD"/>
+                            <constraint firstItem="I4r-Pv-Mqo" firstAttribute="leading" secondItem="ekA-XS-2RI" secondAttribute="leading" id="NOL-BU-o8j"/>
+                            <constraint firstItem="ekA-XS-2RI" firstAttribute="top" secondItem="bj3-Sk-a3l" secondAttribute="bottom" constant="8" id="XLi-2b-R4U"/>
                             <constraint firstItem="bj3-Sk-a3l" firstAttribute="width" secondItem="5mY-0j-hh4" secondAttribute="width" id="fUq-PC-HBH"/>
+                            <constraint firstItem="o5C-xy-m2f" firstAttribute="trailing" secondItem="yU9-bo-pdq" secondAttribute="trailing" constant="136" id="lf8-8K-Nwx"/>
                             <constraint firstItem="bj3-Sk-a3l" firstAttribute="top" secondItem="o5C-xy-m2f" secondAttribute="top" constant="20" id="qd8-gF-NkP"/>
+                            <constraint firstItem="o5C-xy-m2f" firstAttribute="trailing" secondItem="ekA-XS-2RI" secondAttribute="trailing" constant="41" id="ryd-Ct-svn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o5C-xy-m2f"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="2Be-Jh-SiJ"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="4On-ia-edP" id="kQJ-GE-2CP"/>
+                        <outlet property="detailLabel" destination="ekA-XS-2RI" id="BJ4-5G-DZl"/>
+                        <outlet property="imageView" destination="bj3-Sk-a3l" id="6qO-5w-kKF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuI-2Q-DAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
