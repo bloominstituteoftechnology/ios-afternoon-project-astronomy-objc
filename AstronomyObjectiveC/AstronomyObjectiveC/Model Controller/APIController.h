@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class Rover;
 
 @interface APIController : NSObject
 
-@end
+@property (nonatomic, readonly, copy, nonnull) NSArray<Rover *> *solPhotos;
 
-NS_ASSUME_NONNULL_END
+@end

@@ -14,6 +14,9 @@
 		5CF63253244E3BF100622810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF63251244E3BF100622810 /* LaunchScreen.storyboard */; };
 		5CF63261244E530F00622810 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63260244E530F00622810 /* APIController.m */; };
 		5CF63265244E537900622810 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63264244E537900622810 /* Rover.swift */; };
+		5CF63267244E57F000622810 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63266244E57F000622810 /* DetailViewController.swift */; };
+		5CF63269244E5A3E00622810 /* AstronomyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63268244E5A3E00622810 /* AstronomyCollectionViewController.swift */; };
+		5CF6326C244E5BB100622810 /* EGCAstronomyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6326B244E5BB100622810 /* EGCAstronomyCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,10 @@
 		5CF6325F244E530F00622810 /* APIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		5CF63260244E530F00622810 /* APIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
 		5CF63264244E537900622810 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
+		5CF63266244E57F000622810 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5CF63268244E5A3E00622810 /* AstronomyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyCollectionViewController.swift; sourceTree = "<group>"; };
+		5CF6326A244E5BB100622810 /* EGCAstronomyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCAstronomyCollectionViewCell.h; sourceTree = "<group>"; };
+		5CF6326B244E5BB100622810 /* EGCAstronomyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCAstronomyCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,8 @@
 		5CF6325C244E4ECF00622810 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5CF63266244E57F000622810 /* DetailViewController.swift */,
+				5CF63268244E5A3E00622810 /* AstronomyCollectionViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -94,6 +103,8 @@
 		5CF6325D244E4ED100622810 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CF6326A244E5BB100622810 /* EGCAstronomyCollectionViewCell.h */,
+				5CF6326B244E5BB100622810 /* EGCAstronomyCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,9 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CF63265244E537900622810 /* Rover.swift in Sources */,
+				5CF6326C244E5BB100622810 /* EGCAstronomyCollectionViewCell.m in Sources */,
 				5CF63261244E530F00622810 /* APIController.m in Sources */,
+				5CF63267244E57F000622810 /* DetailViewController.swift in Sources */,
 				5CF63247244E3BF100622810 /* AppDelegate.swift in Sources */,
 				5CF63249244E3BF100622810 /* SceneDelegate.swift in Sources */,
+				5CF63269244E5A3E00622810 /* AstronomyCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,13 @@
 //
-//  APIController.m
+//  EGCAstronomyCollectionViewCell.m
 //  AstronomyObjectiveC
 //
 //  Created by Enrique Gongora on 4/20/20.
 //  Copyright © 2020 Enrique Gongora. All rights reserved.
 //
 
-#import "APIController.h"
+#import "EGCAstronomyCollectionViewCell.h"
 
-@implementation APIController
-
+@implementation EGCAstronomyCollectionViewCell
 
 @end

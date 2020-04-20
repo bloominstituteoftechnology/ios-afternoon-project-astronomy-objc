@@ -11,7 +11,7 @@
         <!--Astronomy-->
         <scene sceneID="w9E-gw-EKk">
             <objects>
-                <collectionViewController id="Ca9-DF-zBR" sceneMemberID="viewController">
+                <collectionViewController id="Ca9-DF-zBR" customClass="AstronomyCollectionViewController" customModule="AstronomyObjectiveC" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gWq-Wv-bbr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XiH-w4-uba">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XiH-w4-uba" customClass="EGCAstronomyCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fpv-au-gM0">
@@ -65,7 +65,7 @@
         <!--Title-->
         <scene sceneID="j2A-PB-cw9">
             <objects>
-                <viewController id="OJT-Kw-EC9" sceneMemberID="viewController">
+                <viewController id="OJT-Kw-EC9" customClass="DetailViewController" customModule="AstronomyObjectiveC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4hQ-34-O7E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,6 +87,9 @@
                         <viewLayoutGuide key="safeArea" id="uQr-PB-a7t"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="fwR-Y3-wr0"/>
+                    <connections>
+                        <outlet property="imageView" destination="vxa-iX-mMh" id="wrf-wz-YSW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pl-Up-py1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
