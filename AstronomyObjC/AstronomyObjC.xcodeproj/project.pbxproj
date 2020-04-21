@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		726B0B7B244F831700E7DB19 /* Sol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B7A244F831700E7DB19 /* Sol.swift */; };
+		726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B7D244F856600E7DB19 /* CDGCamera.m */; };
 		72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E5E244E52E400E4D53B /* AppDelegate.m */; };
 		72DF2E62244E52E400E4D53B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E61244E52E400E4D53B /* SceneDelegate.m */; };
 		72DF2E68244E52E400E4D53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DF2E66244E52E400E4D53B /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		726B0B7A244F831700E7DB19 /* Sol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sol.swift; sourceTree = "<group>"; };
+		726B0B7C244F856600E7DB19 /* CDGCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGCamera.h; sourceTree = "<group>"; };
+		726B0B7D244F856600E7DB19 /* CDGCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGCamera.m; sourceTree = "<group>"; };
 		72DF2E5A244E52E400E4D53B /* AstronomyObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DF2E5D244E52E400E4D53B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72DF2E5E244E52E400E4D53B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 		72DF2E8B244E588B00E4D53B /* Camera - Objc */ = {
 			isa = PBXGroup;
 			children = (
+				726B0B7C244F856600E7DB19 /* CDGCamera.h */,
+				726B0B7D244F856600E7DB19 /* CDGCamera.m */,
 			);
 			path = "Camera - Objc";
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726B0B7B244F831700E7DB19 /* Sol.swift in Sources */,
+				726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */,
 				72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */,
 				72DF2E70244E52E500E4D53B /* main.m in Sources */,
 				72DF2E82244E574400E4D53B /* PhotoDetailViewController.swift in Sources */,
