@@ -18,6 +18,9 @@
 		D2D32D0D244E5BA5000B18C0 /* SAHApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D0C244E5BA5000B18C0 /* SAHApiClient.m */; };
 		D2D32D0F244E64D0000B18C0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D0E244E64D0000B18C0 /* PhotoDetailViewController.swift */; };
 		D2D32D12244E697D000B18C0 /* SAHSolPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D11244E697D000B18C0 /* SAHSolPhoto.m */; };
+		D2D32D19244F92E3000B18C0 /* SolPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D18244F92E3000B18C0 /* SolPhotoCollectionViewCell.swift */; };
+		D2D32D1B244F9376000B18C0 /* SolCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D1A244F9376000B18C0 /* SolCollectionViewController.swift */; };
+		D2D32D21244FA8AA000B18C0 /* SAHFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D20244FA8AA000B18C0 /* SAHFetchPhotoOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,10 @@
 		D2D32D0E244E64D0000B18C0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		D2D32D10244E697D000B18C0 /* SAHSolPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAHSolPhoto.h; sourceTree = "<group>"; };
 		D2D32D11244E697D000B18C0 /* SAHSolPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAHSolPhoto.m; sourceTree = "<group>"; };
+		D2D32D18244F92E3000B18C0 /* SolPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2D32D1A244F9376000B18C0 /* SolCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolCollectionViewController.swift; sourceTree = "<group>"; };
+		D2D32D1F244FA8AA000B18C0 /* SAHFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAHFetchPhotoOperation.h; sourceTree = "<group>"; };
+		D2D32D20244FA8AA000B18C0 /* SAHFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAHFetchPhotoOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,21 +78,16 @@
 		D2D32CEB244E344E000B18C0 /* Astronomy-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				D2D32D17244F9297000B18C0 /* Views */,
+				D2D32D16244F8DEF000B18C0 /* Resources */,
+				D2D32D15244F8DBE000B18C0 /* View Controllers */,
+				D2D32D14244F8DA1000B18C0 /* API */,
+				D2D32D13244F8D8D000B18C0 /* Models */,
 				D2D32D02244E358B000B18C0 /* Application */,
 				D2D32D03244E359F000B18C0 /* StoryBoards */,
-				D2D32CF5244E3450000B18C0 /* Assets.xcassets */,
-				D2D32CFA244E3450000B18C0 /* Info.plist */,
 				D2D32D00244E3474000B18C0 /* LambdaSDK */,
-				D2D32D05244E3887000B18C0 /* SAHNasaManifest.h */,
-				D2D32D06244E3887000B18C0 /* SAHNasaManifest.m */,
-				D2D32D04244E3886000B18C0 /* Astronomy-ObjC-Bridging-Header.h */,
-				D2D32D08244E5895000B18C0 /* SAHSol.h */,
-				D2D32D09244E5895000B18C0 /* SAHSol.m */,
-				D2D32D0B244E5BA5000B18C0 /* SAHApiClient.h */,
-				D2D32D0C244E5BA5000B18C0 /* SAHApiClient.m */,
-				D2D32D0E244E64D0000B18C0 /* PhotoDetailViewController.swift */,
-				D2D32D10244E697D000B18C0 /* SAHSolPhoto.h */,
-				D2D32D11244E697D000B18C0 /* SAHSolPhoto.m */,
+				D2D32D1F244FA8AA000B18C0 /* SAHFetchPhotoOperation.h */,
+				D2D32D20244FA8AA000B18C0 /* SAHFetchPhotoOperation.m */,
 			);
 			path = "Astronomy-ObjC";
 			sourceTree = "<group>";
@@ -106,6 +108,55 @@
 				D2D32CF7244E3450000B18C0 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		D2D32D13244F8D8D000B18C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2D32D05244E3887000B18C0 /* SAHNasaManifest.h */,
+				D2D32D06244E3887000B18C0 /* SAHNasaManifest.m */,
+				D2D32D08244E5895000B18C0 /* SAHSol.h */,
+				D2D32D09244E5895000B18C0 /* SAHSol.m */,
+				D2D32D10244E697D000B18C0 /* SAHSolPhoto.h */,
+				D2D32D11244E697D000B18C0 /* SAHSolPhoto.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2D32D14244F8DA1000B18C0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D2D32D0B244E5BA5000B18C0 /* SAHApiClient.h */,
+				D2D32D0C244E5BA5000B18C0 /* SAHApiClient.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D2D32D15244F8DBE000B18C0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2D32D0E244E64D0000B18C0 /* PhotoDetailViewController.swift */,
+				D2D32D1A244F9376000B18C0 /* SolCollectionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D2D32D16244F8DEF000B18C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D2D32D04244E3886000B18C0 /* Astronomy-ObjC-Bridging-Header.h */,
+				D2D32CF5244E3450000B18C0 /* Assets.xcassets */,
+				D2D32CFA244E3450000B18C0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2D32D17244F9297000B18C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2D32D18244F92E3000B18C0 /* SolPhotoCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D32D21244FA8AA000B18C0 /* SAHFetchPhotoOperation.m in Sources */,
 				D2D32D0F244E64D0000B18C0 /* PhotoDetailViewController.swift in Sources */,
 				D2D32D07244E3887000B18C0 /* SAHNasaManifest.m in Sources */,
 				D2D32D0A244E5895000B18C0 /* SAHSol.m in Sources */,
 				D2D32D0D244E5BA5000B18C0 /* SAHApiClient.m in Sources */,
+				D2D32D19244F92E3000B18C0 /* SolPhotoCollectionViewCell.swift in Sources */,
+				D2D32D1B244F9376000B18C0 /* SolCollectionViewController.swift in Sources */,
 				D2D32CED244E344E000B18C0 /* AppDelegate.swift in Sources */,
 				D2D32CEF244E344E000B18C0 /* SceneDelegate.swift in Sources */,
 				D2D32D12244E697D000B18C0 /* SAHSolPhoto.m in Sources */,
@@ -334,14 +388,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7SF2KFH336;
-				INFOPLIST_FILE = "Astronomy-ObjC/Info.plist";
+				INFOPLIST_FILE = "Astronomy-ObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scottharris.Astronomy-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjC/Astronomy-ObjC-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjC/Resources/Astronomy-ObjC-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,14 +409,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7SF2KFH336;
-				INFOPLIST_FILE = "Astronomy-ObjC/Info.plist";
+				INFOPLIST_FILE = "Astronomy-ObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scottharris.Astronomy-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjC/Astronomy-ObjC-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjC/Resources/Astronomy-ObjC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
