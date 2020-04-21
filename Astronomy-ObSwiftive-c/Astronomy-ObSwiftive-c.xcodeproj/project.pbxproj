@@ -53,6 +53,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44358AF6244F747B009B1BE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44358AA1244CFEBA009B1BE5 /* PhotoManifest.swift */,
+				44358AE9244E7BFE009B1BE5 /* SolPhoto.h */,
+				44358AEA244E7BFE009B1BE5 /* SolPhoto.m */,
+				44358AEC244E8B0B009B1BE5 /* RoverPhoto.h */,
+				44358AED244E8B0B009B1BE5 /* RoverPhoto.m */,
+				44358AF1244EAF69009B1BE5 /* PhotoController.h */,
+				44358AF2244EAF69009B1BE5 /* PhotoController.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		44C6608C2449494F007D7E04 = {
 			isa = PBXGroup;
 			children = (
@@ -74,14 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				44C6609C2449494F007D7E04 /* ViewController.swift */,
-				44358AA1244CFEBA009B1BE5 /* PhotoManifest.swift */,
+				44358AF6244F747B009B1BE5 /* Model */,
 				44358AEF244EA31C009B1BE5 /* RoverPhotoDetailViewController.swift */,
-				44358AE9244E7BFE009B1BE5 /* SolPhoto.h */,
-				44358AEA244E7BFE009B1BE5 /* SolPhoto.m */,
-				44358AEC244E8B0B009B1BE5 /* RoverPhoto.h */,
-				44358AED244E8B0B009B1BE5 /* RoverPhoto.m */,
-				44358AF1244EAF69009B1BE5 /* PhotoController.h */,
-				44358AF2244EAF69009B1BE5 /* PhotoController.m */,
 				44C6609E2449494F007D7E04 /* Main.storyboard */,
 				44C660AC24494968007D7E04 /* LambdaSDK */,
 				44358AE5244E7BBE009B1BE5 /* Astronomy-ObSwiftive-c-Bridging-Header.h */,
