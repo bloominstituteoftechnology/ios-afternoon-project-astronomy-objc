@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var photoController = PhotoController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        photoController.fetchPhotoManifest("curiosity") { (data, error) in
+            return
+        }
     }
 
 

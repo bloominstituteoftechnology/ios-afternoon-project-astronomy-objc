@@ -4,3 +4,4 @@
 
 #import "SolPhoto.h";
 #import "RoverPhoto.h";
+#import "PhotoController.h"
