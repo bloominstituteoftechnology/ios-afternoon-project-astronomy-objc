@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class EPWMarsRover;
+@class EPWMarsPhoto;
+
 @interface EPWMarsRoverClient : NSObject
+
+- (void)fetchAllMarsRoversWithCompletion:(void(^)(NSArray<NSString *> *roverNames, NSError *error))completion;
+- (void)fetchMissionManifestForRoverNamed:(NSString *)name completion:(void(^)(EPWMarsRover *rover, NSError *error))completion;
+- (void)fetchPhotosFromRover:(EPWMarsRover *)rover onSol:(NSInteger)sol completion:(void(^)(NSArray<EPWMarsPhoto *> *photos, NSError *error))completion;
+- (void)fetchImageDataForPhoto:(EPWMarsPhoto *)photo completion:(void(^)(NSData *imageData, NSError *error))completion;
 
 @end
 

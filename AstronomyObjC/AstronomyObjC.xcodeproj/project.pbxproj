@@ -17,6 +17,8 @@
 		B5D2A26F244E4E3C00F046C6 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A26E244E4E3C00F046C6 /* PhotoDetailViewController.swift */; };
 		B5D2A272244E531100F046C6 /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = B5D2A271244E531100F046C6 /* LambdaSDK */; };
 		B5D2A279244E590B00F046C6 /* EPWMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A278244E590B00F046C6 /* EPWMarsRoverClient.m */; };
+		B5D2A27C244FA8A800F046C6 /* EPWMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A27B244FA8A800F046C6 /* EPWMarsRover.m */; };
+		B5D2A27F244FA8BA00F046C6 /* EPWMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A27E244FA8BA00F046C6 /* EPWMarsPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		B5D2A271244E531100F046C6 /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LambdaSDK; path = ../../LambdaSDK; sourceTree = "<group>"; };
 		B5D2A277244E590B00F046C6 /* EPWMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWMarsRoverClient.h; sourceTree = "<group>"; };
 		B5D2A278244E590B00F046C6 /* EPWMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWMarsRoverClient.m; sourceTree = "<group>"; };
+		B5D2A27A244FA8A800F046C6 /* EPWMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWMarsRover.h; sourceTree = "<group>"; };
+		B5D2A27B244FA8A800F046C6 /* EPWMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWMarsRover.m; sourceTree = "<group>"; };
+		B5D2A27D244FA8BA00F046C6 /* EPWMarsPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWMarsPhoto.h; sourceTree = "<group>"; };
+		B5D2A27E244FA8BA00F046C6 /* EPWMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWMarsPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,10 @@
 		B5D2A270244E51BA00F046C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B5D2A27A244FA8A800F046C6 /* EPWMarsRover.h */,
+				B5D2A27B244FA8A800F046C6 /* EPWMarsRover.m */,
+				B5D2A27D244FA8BA00F046C6 /* EPWMarsPhoto.h */,
+				B5D2A27E244FA8BA00F046C6 /* EPWMarsPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,7 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D2A27C244FA8A800F046C6 /* EPWMarsRover.m in Sources */,
 				B5D2A250244E3BBE00F046C6 /* AppDelegate.m in Sources */,
+				B5D2A27F244FA8BA00F046C6 /* EPWMarsPhoto.m in Sources */,
 				B5D2A279244E590B00F046C6 /* EPWMarsRoverClient.m in Sources */,
 				B5D2A261244E3BC000F046C6 /* main.m in Sources */,
 				B5D2A253244E3BBE00F046C6 /* SceneDelegate.m in Sources */,
