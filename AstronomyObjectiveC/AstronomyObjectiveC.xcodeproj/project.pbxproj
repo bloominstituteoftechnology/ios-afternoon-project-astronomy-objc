@@ -10,6 +10,7 @@
 		5C7806F6244FB4E3006BF09A /* EGCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7806F5244FB4E3006BF09A /* EGCCache.m */; };
 		5C7806F9244FB5B3006BF09A /* EGCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7806F8244FB5B3006BF09A /* EGCCamera.m */; };
 		5C7806FC244FB5F7006BF09A /* EGCMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7806FB244FB5F7006BF09A /* EGCMarsPhoto.m */; };
+		5C780700244FB6BE006BF09A /* EGCFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7806FF244FB6BE006BF09A /* EGCFetchOperation.m */; };
 		5CF63247244E3BF100622810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63246244E3BF100622810 /* AppDelegate.swift */; };
 		5CF63249244E3BF100622810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF63248244E3BF100622810 /* SceneDelegate.swift */; };
 		5CF6324E244E3BF100622810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF6324C244E3BF100622810 /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 		5C7806F8244FB5B3006BF09A /* EGCCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCCamera.m; sourceTree = "<group>"; };
 		5C7806FA244FB5F7006BF09A /* EGCMarsPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCMarsPhoto.h; sourceTree = "<group>"; };
 		5C7806FB244FB5F7006BF09A /* EGCMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCMarsPhoto.m; sourceTree = "<group>"; };
+		5C7806FE244FB6BE006BF09A /* EGCFetchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCFetchOperation.h; sourceTree = "<group>"; };
+		5C7806FF244FB6BE006BF09A /* EGCFetchOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCFetchOperation.m; sourceTree = "<group>"; };
 		5CF63243244E3BF100622810 /* AstronomyObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF63246244E3BF100622810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CF63248244E3BF100622810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C7806FD244FB69A006BF09A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5C7806FE244FB6BE006BF09A /* EGCFetchOperation.h */,
+				5C7806FF244FB6BE006BF09A /* EGCFetchOperation.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		5CF6323A244E3BF100622810 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +90,7 @@
 		5CF63245244E3BF100622810 /* AstronomyObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				5C7806FD244FB69A006BF09A /* Networking */,
 				5CF63263244E536D00622810 /* Model */,
 				5CF6325D244E4ED100622810 /* View */,
 				5CF6325C244E4ECF00622810 /* View Controller */,
@@ -223,6 +236,7 @@
 				5CF6326C244E5BB100622810 /* EGCAstronomyCollectionViewCell.m in Sources */,
 				5CF63261244E530F00622810 /* APIController.m in Sources */,
 				5CF63267244E57F000622810 /* DetailViewController.swift in Sources */,
+				5C780700244FB6BE006BF09A /* EGCFetchOperation.m in Sources */,
 				5CF63247244E3BF100622810 /* AppDelegate.swift in Sources */,
 				5CF63249244E3BF100622810 /* SceneDelegate.swift in Sources */,
 				5CF63269244E5A3E00622810 /* AstronomyCollectionViewController.swift in Sources */,

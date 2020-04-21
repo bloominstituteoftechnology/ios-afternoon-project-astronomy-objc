@@ -3,3 +3,6 @@
 //
 #import "APIController.h"
 #import "EGCAstronomyCollectionViewCell.h"
+#import "EGCCamera.h"
+#import "EGCCache.h"
+#import "EGCFetchOperation.h"
