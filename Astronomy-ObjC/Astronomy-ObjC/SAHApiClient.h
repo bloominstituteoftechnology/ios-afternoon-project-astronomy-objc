@@ -15,10 +15,14 @@ typedef void (^SAHManifestFetcherCompletionBlock)(SAHNasaManifest * manifest, NS
 
 typedef void (^SAHSolPhotoFetcherCompletionBlock)(NSArray<SAHSolPhoto *> *solPhotos, NSError *error);
 
+typedef void (^SAHPhotoFetcherCompletionBlock)(NSData *photoData, NSError *error);
+
 @interface SAHApiClient : NSObject
 
 -(void)fetchManifestWithCompletionBlock:(SAHManifestFetcherCompletionBlock)completionBlock;
 
 -(void)fetchSolPhotosForRover:(NSString *)roverName solId:(NSNumber *)solId completionBlock:(SAHSolPhotoFetcherCompletionBlock)completionBlock;
+
+-(void)fetchPhotoAtURL:(NSString *)urlString completionBlock:(SAHPhotoFetcherCompletionBlock)completionBlock;
 
 @end

@@ -115,4 +115,36 @@ static NSString *apiKey = @"rShurQFkW6eGo61RksJec09o5v9PvFRWfb3C00WG";
     [task resume];
 }
 
+- (void)fetchPhotoAtURL:(NSString *)urlString completionBlock:(SAHPhotoFetcherCompletionBlock)completionBlock {
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
+    
+    urlComponents.scheme = @"https";
+    
+    NSURL *finalURL = urlComponents.URL;
+    
+    
+    NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSLog(@"URL: %@", finalURL);
+        
+        if (error) {
+            completionBlock(nil, error);
+            return;
+        }
+        
+        if (!data) {
+            NSError *dataError = [[NSError alloc] initWithDomain:@"com.sah.Astronomy" code:100 userInfo:nil];
+            completionBlock(nil, dataError);
+            return;
+        }
+        
+        completionBlock(data, nil);
+        
+    }];
+    
+    [task resume];
+}
+
 @end

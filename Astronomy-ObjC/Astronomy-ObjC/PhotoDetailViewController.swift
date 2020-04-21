@@ -9,6 +9,9 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var solPhotoDetailsLabel: UILabel!
+    @IBOutlet weak var cameraLabel: UILabel!
     
     let apiClient = SAHApiClient();
     
@@ -35,6 +38,21 @@ class PhotoDetailViewController: UIViewController {
                         print("Sols: \(sols)")
                         let sol = sols[0];
                         print("Sol is: \(sol)")
+                        
+                        self.apiClient.fetchPhoto(atURL: sol.imageUrl) { (data, error) in
+                            if let error = error {
+                                print("Error: \(error)")
+                                return
+                            }
+                            
+                            guard let data = data else {
+                                return
+                            }
+                            
+                            DispatchQueue.main.async {
+                                self.imageView.image = UIImage(data: data)
+                            }
+                        }
                     }
                 }
                 

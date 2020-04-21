@@ -49,6 +49,11 @@
                         <viewLayoutGuide key="safeArea" id="nDf-jb-Fba"/>
                     </view>
                     <navigationItem key="navigationItem" id="VCt-d6-57K"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="WIC-lB-PDZ" id="UjG-gB-a32"/>
+                        <outlet property="imageView" destination="6ay-aV-34S" id="n9a-FZ-cpf"/>
+                        <outlet property="solPhotoDetailsLabel" destination="DCv-tg-hB9" id="G12-fb-dc7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5i-Aa-tcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
