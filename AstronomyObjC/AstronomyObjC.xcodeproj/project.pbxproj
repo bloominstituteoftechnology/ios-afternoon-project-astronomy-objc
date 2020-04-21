@@ -10,6 +10,7 @@
 		726B0B7B244F831700E7DB19 /* Sol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B7A244F831700E7DB19 /* Sol.swift */; };
 		726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B7D244F856600E7DB19 /* CDGCamera.m */; };
 		726B0B81244F884900E7DB19 /* CDGPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B80244F884900E7DB19 /* CDGPhoto.m */; };
+		726B0B84244F8C1E00E7DB19 /* CDGRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B83244F8C1E00E7DB19 /* CDGRover.m */; };
 		72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E5E244E52E400E4D53B /* AppDelegate.m */; };
 		72DF2E62244E52E400E4D53B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E61244E52E400E4D53B /* SceneDelegate.m */; };
 		72DF2E68244E52E400E4D53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DF2E66244E52E400E4D53B /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 		726B0B7D244F856600E7DB19 /* CDGCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGCamera.m; sourceTree = "<group>"; };
 		726B0B7F244F884900E7DB19 /* CDGPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGPhoto.h; sourceTree = "<group>"; };
 		726B0B80244F884900E7DB19 /* CDGPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGPhoto.m; sourceTree = "<group>"; };
+		726B0B82244F8C1E00E7DB19 /* CDGRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGRover.h; sourceTree = "<group>"; };
+		726B0B83244F8C1E00E7DB19 /* CDGRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGRover.m; sourceTree = "<group>"; };
 		72DF2E5A244E52E400E4D53B /* AstronomyObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DF2E5D244E52E400E4D53B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72DF2E5E244E52E400E4D53B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +56,8 @@
 		726B0B79244F830400E7DB19 /* Rover - Objc */ = {
 			isa = PBXGroup;
 			children = (
+				726B0B82244F8C1E00E7DB19 /* CDGRover.h */,
+				726B0B83244F8C1E00E7DB19 /* CDGRover.m */,
 			);
 			path = "Rover - Objc";
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726B0B7B244F831700E7DB19 /* Sol.swift in Sources */,
+				726B0B84244F8C1E00E7DB19 /* CDGRover.m in Sources */,
 				726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */,
 				72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */,
 				72DF2E70244E52E500E4D53B /* main.m in Sources */,
