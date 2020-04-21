@@ -11,6 +11,7 @@
 		726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B7D244F856600E7DB19 /* CDGCamera.m */; };
 		726B0B81244F884900E7DB19 /* CDGPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B80244F884900E7DB19 /* CDGPhoto.m */; };
 		726B0B84244F8C1E00E7DB19 /* CDGRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B83244F8C1E00E7DB19 /* CDGRover.m */; };
+		726B0B87244F8DF300E7DB19 /* CDGRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B86244F8DF300E7DB19 /* CDGRoverClient.m */; };
 		72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E5E244E52E400E4D53B /* AppDelegate.m */; };
 		72DF2E62244E52E400E4D53B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E61244E52E400E4D53B /* SceneDelegate.m */; };
 		72DF2E68244E52E400E4D53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DF2E66244E52E400E4D53B /* Main.storyboard */; };
@@ -28,6 +29,8 @@
 		726B0B80244F884900E7DB19 /* CDGPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGPhoto.m; sourceTree = "<group>"; };
 		726B0B82244F8C1E00E7DB19 /* CDGRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGRover.h; sourceTree = "<group>"; };
 		726B0B83244F8C1E00E7DB19 /* CDGRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGRover.m; sourceTree = "<group>"; };
+		726B0B85244F8DF300E7DB19 /* CDGRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGRoverClient.h; sourceTree = "<group>"; };
+		726B0B86244F8DF300E7DB19 /* CDGRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGRoverClient.m; sourceTree = "<group>"; };
 		72DF2E5A244E52E400E4D53B /* AstronomyObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DF2E5D244E52E400E4D53B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72DF2E5E244E52E400E4D53B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				72DF2E7C244E541100E4D53B /* Helpers */,
-				72DF2E7A244E539B00E4D53B /* ModelControllers */,
+				72DF2E7A244E539B00E4D53B /* Networking */,
 				72DF2E79244E539400E4D53B /* Models */,
 				72DF2E78244E538800E4D53B /* ViewControllers */,
 				72DF2E66244E52E400E4D53B /* Main.storyboard */,
@@ -126,19 +129,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		72DF2E7A244E539B00E4D53B /* ModelControllers */ = {
+		72DF2E7A244E539B00E4D53B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				72DF2E7B244E53A300E4D53B /* New Group */,
+				72DF2E7B244E53A300E4D53B /* CDGRoverClient */,
 			);
-			path = ModelControllers;
+			path = Networking;
 			sourceTree = "<group>";
 		};
-		72DF2E7B244E53A300E4D53B /* New Group */ = {
+		72DF2E7B244E53A300E4D53B /* CDGRoverClient */ = {
 			isa = PBXGroup;
 			children = (
+				726B0B85244F8DF300E7DB19 /* CDGRoverClient.h */,
+				726B0B86244F8DF300E7DB19 /* CDGRoverClient.m */,
 			);
-			path = "New Group";
+			path = CDGRoverClient;
 			sourceTree = "<group>";
 		};
 		72DF2E7C244E541100E4D53B /* Helpers */ = {
@@ -239,6 +244,7 @@
 			files = (
 				726B0B7B244F831700E7DB19 /* Sol.swift in Sources */,
 				726B0B84244F8C1E00E7DB19 /* CDGRover.m in Sources */,
+				726B0B87244F8DF300E7DB19 /* CDGRoverClient.m in Sources */,
 				726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */,
 				72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */,
 				72DF2E70244E52E500E4D53B /* main.m in Sources */,
@@ -394,7 +400,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisGonzales.AstronomyObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyObjC/ViewControllers/AstronomyObjC-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyObjC/Resources/AstronomyObjC-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,7 +421,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisGonzales.AstronomyObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyObjC/ViewControllers/AstronomyObjC-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyObjC/Resources/AstronomyObjC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

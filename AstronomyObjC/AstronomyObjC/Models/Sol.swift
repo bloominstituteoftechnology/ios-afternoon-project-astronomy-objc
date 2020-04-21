@@ -28,7 +28,7 @@ class Sol: NSObject {
     @objc convenience init?(dictionary: [String: Any]) {
         guard let sol = dictionary["sol"] as? Int,
             let totalPhotos = dictionary["total_photos"] as? Int,
-            let cameras = dictionary["cameras"] as? String .ExtendedGraphemeClusterLiteralType else {
+            let cameras = dictionary["cameras"] as? [String] else {
                 return nil
         }
         self.init(sol: sol,
