@@ -14,9 +14,9 @@ import Foundation
     @objc let max_sol: Int
     @objc let max_date: Date
     @objc let total_photos: Int
-    @objc let photos: String// [SolPhoto]
+    @objc let photos: [SolPhoto]
     
-    @objc init(name: String, max_sol: Int, max_date: Date, total_photos: Int, photos: String) {
+    @objc init(name: String, max_sol: Int, max_date: Date, total_photos: Int, photos: [SolPhoto]) {
         self.name = name
         self.max_sol = max_sol
         self.max_date = max_date
@@ -24,7 +24,7 @@ import Foundation
         self.photos = photos
     }
     
-    static let dateFormatter: DateFormatter = {
+    @objc static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone(abbreviation: "GMT")
@@ -32,7 +32,7 @@ import Foundation
         return formatter
     }()
     
-    static var jsonDecoderSnakeCase: JSONDecoder {
+    static var jsonDecoderDateFormatter: JSONDecoder {
         let result = JSONDecoder()
         result.dateDecodingStrategy = .formatted(dateFormatter)
         return result
