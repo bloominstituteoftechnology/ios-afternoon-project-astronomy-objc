@@ -24,6 +24,17 @@
        return self;
 }
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    NSNumber *identifier = dictionary[@"id"];
+    NSString *name = dictionary[@"name"];
+    NSNumber *roverID = dictionary[@"rover_id"];
+    NSString *fullName = dictionary[@"full_name"];
+    if (!identifier || !name || !roverID || !fullName) { return nil; }
 
+    return [self initWithIdentifier:identifier.integerValue
+                               name:name
+                            roverID:roverID.integerValue
+                           fullName:fullName];
+}
 
 @end
