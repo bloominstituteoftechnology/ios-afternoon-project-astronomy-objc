@@ -12,13 +12,14 @@
 		44358AEE244E8B0B009B1BE5 /* RoverPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 44358AED244E8B0B009B1BE5 /* RoverPhoto.m */; };
 		44358AF0244EA31C009B1BE5 /* RoverPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44358AEF244EA31C009B1BE5 /* RoverPhotoDetailViewController.swift */; };
 		44358AF3244EAF69009B1BE5 /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44358AF2244EAF69009B1BE5 /* PhotoController.m */; };
+		44358B03244FAD9B009B1BE5 /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = 44358B02244FAD9B009B1BE5 /* LambdaSDK */; };
+		44358B06244FAE09009B1BE5 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 44358B04244FAE09009B1BE5 /* LSIErrors.m */; };
 		44C660992449494F007D7E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C660982449494F007D7E04 /* AppDelegate.swift */; };
 		44C6609B2449494F007D7E04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6609A2449494F007D7E04 /* SceneDelegate.swift */; };
 		44C6609D2449494F007D7E04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6609C2449494F007D7E04 /* ViewController.swift */; };
 		44C660A02449494F007D7E04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C6609E2449494F007D7E04 /* Main.storyboard */; };
 		44C660A224494950007D7E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C660A124494950007D7E04 /* Assets.xcassets */; };
 		44C660A524494950007D7E04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C660A324494950007D7E04 /* LaunchScreen.storyboard */; };
-		44C660AD24494968007D7E04 /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = 44C660AC24494968007D7E04 /* LambdaSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,9 @@
 		44358AEF244EA31C009B1BE5 /* RoverPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoDetailViewController.swift; sourceTree = "<group>"; };
 		44358AF1244EAF69009B1BE5 /* PhotoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
 		44358AF2244EAF69009B1BE5 /* PhotoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
+		44358B02244FAD9B009B1BE5 /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LambdaSDK; sourceTree = "<group>"; };
+		44358B04244FAE09009B1BE5 /* LSIErrors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
+		44358B05244FAE09009B1BE5 /* LSIErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		44C660952449494F007D7E04 /* Astronomy-ObSwiftive-c.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-ObSwiftive-c.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C660982449494F007D7E04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C6609A2449494F007D7E04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +43,6 @@
 		44C660A124494950007D7E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44C660A424494950007D7E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44C660A624494950007D7E04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44C660AC24494968007D7E04 /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LambdaSDK; path = ../../LambdaSDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +94,9 @@
 				44358AF2244EAF69009B1BE5 /* PhotoController.m */,
 				44358AEF244EA31C009B1BE5 /* RoverPhotoDetailViewController.swift */,
 				44C6609E2449494F007D7E04 /* Main.storyboard */,
-				44C660AC24494968007D7E04 /* LambdaSDK */,
+				44358B05244FAE09009B1BE5 /* LSIErrors.h */,
+				44358B04244FAE09009B1BE5 /* LSIErrors.m */,
+				44358B02244FAD9B009B1BE5 /* LambdaSDK */,
 				44358AE5244E7BBE009B1BE5 /* Astronomy-ObSwiftive-c-Bridging-Header.h */,
 			);
 			path = "Astronomy-ObSwiftive-c";
@@ -168,7 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C660AD24494968007D7E04 /* LambdaSDK in Resources */,
+				44358B03244FAD9B009B1BE5 /* LambdaSDK in Resources */,
 				44C660A524494950007D7E04 /* LaunchScreen.storyboard in Resources */,
 				44C660A224494950007D7E04 /* Assets.xcassets in Resources */,
 				44C660A02449494F007D7E04 /* Main.storyboard in Resources */,
@@ -184,6 +189,7 @@
 			files = (
 				44C6609D2449494F007D7E04 /* ViewController.swift in Sources */,
 				44358AEE244E8B0B009B1BE5 /* RoverPhoto.m in Sources */,
+				44358B06244FAE09009B1BE5 /* LSIErrors.m in Sources */,
 				44358AF3244EAF69009B1BE5 /* PhotoController.m in Sources */,
 				44C660992449494F007D7E04 /* AppDelegate.swift in Sources */,
 				44358AF0244EA31C009B1BE5 /* RoverPhotoDetailViewController.swift in Sources */,

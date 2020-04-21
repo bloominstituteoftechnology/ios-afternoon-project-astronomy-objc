@@ -7,6 +7,8 @@
 //
 
 #import "PhotoController.h"
+#import "Astronomy_ObSwiftive_c-Swift.h"
+#import "LSIErrors.h"
 
 static NSString *const AstronomyRoverPhotosBaseURL = @"https://api.nasa.gov/mars-photos/api/v1/";
 static NSString *const APIKeyString = @"SfjvKWsq2nadyrPm5tfc2czHgHH8nyrttAXDqn3y";
@@ -40,7 +42,34 @@ static NSString *const APIKeyString = @"SfjvKWsq2nadyrPm5tfc2czHgHH8nyrttAXDqn3y
     NSURL *url = urlComponents.URL;
     NSLog(@"Current url: %@", url);
     
-    
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error in fetching manifest data: %@", error);
+            completionHandler(nil, error);
+            
+            return;
+        }
+        
+        if (!data) {
+            NSError *dataError = errorWithMessage(@"Data is nil from API response", LSIDataNilError);
+            completionHandler(nil, dataError);
+            return;
+        }
+        
+        NSError *jsonError = nil;
+        NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        
+        if (jsonError) {
+            completionHandler(nil, jsonError);
+            return;
+        }
+        
+        PhotoManifest *roverManifest = [[PhotoManifest alloc] initWithDictionary:jsonData];
+        NSLog(@"rover manifest name: %@, photos: %ld", roverManifest.name, (long)roverManifest.total_photos);
+        
+        completionHandler(roverManifest, nil);
+        
+    }] resume];
 }
 
 @end
