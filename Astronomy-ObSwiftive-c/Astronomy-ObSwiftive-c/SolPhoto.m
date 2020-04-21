@@ -25,8 +25,8 @@
     return self;
 }
 
--(instancetype)initWithArray:(NSArray *)array {
-    NSArray *solPhotos = array;
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    NSArray *solPhotos = dictionary[@"photos"];
     NSMutableArray *solPhotosArray = [[NSMutableArray alloc] init];
     
     for (NSDictionary *dictionary in solPhotos) {

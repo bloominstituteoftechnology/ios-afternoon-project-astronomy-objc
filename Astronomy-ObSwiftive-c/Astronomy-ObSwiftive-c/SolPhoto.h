@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
                 totalPhotos:(int)total_photos;
 
 - (instancetype)initWithSols:(NSArray<SolPhoto *> *)solPhotos;
-- (instancetype)initWithArray:(NSArray *)array;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
