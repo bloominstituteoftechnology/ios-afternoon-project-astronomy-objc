@@ -21,9 +21,9 @@
 		B66F7645244ECA8100E0727E /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F763F244ECA8100E0727E /* LSIFileHelper.m */; };
 		B66F7647244ECBA600E0727E /* Sol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F7646244ECBA600E0727E /* Sol.swift */; };
 		B66F764A244ECE5400E0727E /* NPTSol.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F7649244ECE5400E0727E /* NPTSol.m */; };
-		B66F7650244ECEF300E0727E /* NPTSolController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F764F244ECEF300E0727E /* NPTSolController.m */; };
 		B66F7653244ED82000E0727E /* NPTMarsCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F7652244ED82000E0727E /* NPTMarsCamera.m */; };
 		B66F7664244EDDCD00E0727E /* NPTMarsMissionManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F7663244EDDCD00E0727E /* NPTMarsMissionManifest.m */; };
+		B66F7667244EE21E00E0727E /* NPTCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F7666244EE21E00E0727E /* NPTCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,14 +49,14 @@
 		B66F7640244ECA8100E0727E /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIFileHelper.h; path = ../../../LambdaSDK/LSIFileHelper.h; sourceTree = "<group>"; };
 		B66F7641244ECA8100E0727E /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSILog.h; path = ../../../LambdaSDK/LSILog.h; sourceTree = "<group>"; };
 		B66F7646244ECBA600E0727E /* Sol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sol.swift; sourceTree = "<group>"; };
-		B66F7648244ECE5400E0727E /* NPTSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NPTSol.h; path = Storyboard/NPTSol.h; sourceTree = "<group>"; };
-		B66F7649244ECE5400E0727E /* NPTSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NPTSol.m; path = Storyboard/NPTSol.m; sourceTree = "<group>"; };
-		B66F764E244ECEF300E0727E /* NPTSolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPTSolController.h; sourceTree = "<group>"; };
-		B66F764F244ECEF300E0727E /* NPTSolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NPTSolController.m; sourceTree = "<group>"; };
+		B66F7648244ECE5400E0727E /* NPTSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPTSol.h; sourceTree = "<group>"; };
+		B66F7649244ECE5400E0727E /* NPTSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NPTSol.m; sourceTree = "<group>"; };
 		B66F7651244ED82000E0727E /* NPTMarsCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPTMarsCamera.h; sourceTree = "<group>"; };
 		B66F7652244ED82000E0727E /* NPTMarsCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NPTMarsCamera.m; sourceTree = "<group>"; };
 		B66F7662244EDDCD00E0727E /* NPTMarsMissionManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPTMarsMissionManifest.h; sourceTree = "<group>"; };
 		B66F7663244EDDCD00E0727E /* NPTMarsMissionManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NPTMarsMissionManifest.m; sourceTree = "<group>"; };
+		B66F7665244EE21E00E0727E /* NPTCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPTCache.h; sourceTree = "<group>"; };
+		B66F7666244EE21E00E0727E /* NPTCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NPTCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,6 @@
 		B66F7619244EC62F00E0727E /* AstronomyObjC */ = {
 			isa = PBXGroup;
 			children = (
-				B66F7648244ECE5400E0727E /* NPTSol.h */,
-				B66F7649244ECE5400E0727E /* NPTSol.m */,
 				B66F7654244EDD6300E0727E /* Model */,
 				B66F763A244ECA7000E0727E /* Helper */,
 				B66F7637244ECA2C00E0727E /* Supporting Files */,
@@ -102,11 +100,7 @@
 				B66F7634244EC79900E0727E /* DetailViewController.swift */,
 				B66F7646244ECBA600E0727E /* Sol.swift */,
 				B66F7633244EC79900E0727E /* AstronomyObjC-Bridging-Header.h */,
-				B66F764E244ECEF300E0727E /* NPTSolController.h */,
-				B66F764F244ECEF300E0727E /* NPTSolController.m */,
 				B66F7618244EC62F00E0727E /* Products */,
-				B66F7651244ED82000E0727E /* NPTMarsCamera.h */,
-				B66F7652244ED82000E0727E /* NPTMarsCamera.m */,
 			);
 			path = AstronomyObjC;
 			sourceTree = "<group>";
@@ -151,6 +145,12 @@
 			children = (
 				B66F7662244EDDCD00E0727E /* NPTMarsMissionManifest.h */,
 				B66F7663244EDDCD00E0727E /* NPTMarsMissionManifest.m */,
+				B66F7648244ECE5400E0727E /* NPTSol.h */,
+				B66F7649244ECE5400E0727E /* NPTSol.m */,
+				B66F7651244ED82000E0727E /* NPTMarsCamera.h */,
+				B66F7652244ED82000E0727E /* NPTMarsCamera.m */,
+				B66F7665244EE21E00E0727E /* NPTCache.h */,
+				B66F7666244EE21E00E0727E /* NPTCache.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,11 +229,11 @@
 				B66F7647244ECBA600E0727E /* Sol.swift in Sources */,
 				B66F7645244ECA8100E0727E /* LSIFileHelper.m in Sources */,
 				B66F7653244ED82000E0727E /* NPTMarsCamera.m in Sources */,
+				B66F7667244EE21E00E0727E /* NPTCache.m in Sources */,
 				B66F7664244EDDCD00E0727E /* NPTMarsMissionManifest.m in Sources */,
 				B66F7644244ECA8100E0727E /* URL+Secure.swift in Sources */,
 				B66F7643244ECA8100E0727E /* LSILog.m in Sources */,
 				B66F7622244EC62F00E0727E /* ViewController.m in Sources */,
-				B66F7650244ECEF300E0727E /* NPTSolController.m in Sources */,
 				B66F761C244EC62F00E0727E /* AppDelegate.m in Sources */,
 				B66F764A244ECE5400E0727E /* NPTSol.m in Sources */,
 				B66F7635244EC79900E0727E /* DetailViewController.swift in Sources */,
