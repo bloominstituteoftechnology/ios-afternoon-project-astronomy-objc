@@ -12,7 +12,12 @@ class DetailViewController: UIViewController {
 
     //MARK:- Outlets
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.layer.cornerRadius = imageView.bounds.size.height / 2
+            imageView.layer.masksToBounds = true
+        }
+    }
     @IBOutlet weak var dateTakenLabel: UILabel!
     @IBOutlet weak var cameraLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
@@ -35,18 +40,20 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         fetcher.fetchOneSingleSol { (sols, _) in
-            sols?.forEach({ (sol) in
+            guard let solTen = sols?.first else { return }
                 DispatchQueue.main.async {
-                    
-                    self.cameraLabel.text = "Camera: \(sol.camera.name)"
-                    self.dateTakenLabel.text = "Taken by \(sol.idNumber) on  \(self.dateFormatter.string(from: sol.earthDate)) Sol \(sol.sol)"
-                    self.imageView.load(url: (URL(string: sol.imageURL)?.usingHTTPS!)!)
+                    self.updateViews(for: solTen)
                 }
              
-            })
+            
         }
       
     }
 
+    private func updateViews(for sol: MarsSol) {
+        self.cameraLabel.text = sol.camera.name
+        self.dateTakenLabel.text = "Taken by \(sol.idNumber) on  \(self.dateFormatter.string(from: (sol.earthDate))) (Sol \(sol.sol))"
+        self.imageView.load(url: (URL(string: (sol.imageURL))?.usingHTTPS!)!)
+    }
 
 }
