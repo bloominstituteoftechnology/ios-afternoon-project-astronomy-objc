@@ -1,5 +1,5 @@
 //
-//  NPTSol.h
+//  Sol.h
 //  AstronomyObjC
 //
 //  Created by Nick Nguyen on 4/21/20.
@@ -7,31 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NPTMarsCamera.h"
-
+#import "SolCamera.h"
 NS_ASSUME_NONNULL_BEGIN
 
-NS_SWIFT_NAME(Sol)
-
-@interface NPTSol : NSObject
+NS_SWIFT_NAME(MarsSol)
+@interface Sol : NSObject
 
 @property (nonatomic, readonly) NSNumber *idNumber;
 @property (nonatomic, readonly) NSNumber *sol;
 @property (nonatomic, readonly, copy) NSString *imageURL;
-@property (nonatomic, readonly) NPTMarsCamera *camera;
+@property (nonatomic, readonly) SolCamera *camera;
 @property (nonatomic, readonly) NSDate *earthDate;
-
 
 
 - (instancetype)initWithIdNumber:(NSNumber *)idNumber
                              sol:(NSNumber *)sol
                         imageURL:(NSString *)imageURL
-                          camera:(NPTMarsCamera *)camera
+                          camera:(SolCamera *)camera
                        earthDate:(NSDate *)earthDate;
 
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
 
 @end
 

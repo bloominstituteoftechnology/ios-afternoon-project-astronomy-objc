@@ -1,5 +1,5 @@
 //
-//  NPTMarsCamera.h
+//  SolArrayResult.h
 //  AstronomyObjC
 //
 //  Created by Nick Nguyen on 4/21/20.
@@ -7,21 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class Sol;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NPTMarsCamera : NSObject
+@interface SolArrayResult : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *fullName;
+@property (nonatomic, readonly, copy)NSArray<Sol *> *solArray;
 
-- (instancetype)initWithName: (NSString *)name
-                    fullName:(NSString *)fullName;
-
+- (instancetype)initWithSols:(NSArray<Sol *> *)sols;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
-
-
 
 @end
 
