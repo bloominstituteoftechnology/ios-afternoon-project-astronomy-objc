@@ -15,6 +15,11 @@
 		B66F762A244EC62F00E0727E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66F7628244EC62F00E0727E /* LaunchScreen.storyboard */; };
 		B66F762D244EC62F00E0727E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F762C244EC62F00E0727E /* main.m */; };
 		B66F7635244EC79900E0727E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F7634244EC79900E0727E /* DetailViewController.swift */; };
+		B66F7642244ECA8100E0727E /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F763B244ECA8100E0727E /* LSIErrors.m */; };
+		B66F7643244ECA8100E0727E /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F763D244ECA8100E0727E /* LSILog.m */; };
+		B66F7644244ECA8100E0727E /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F763E244ECA8100E0727E /* URL+Secure.swift */; };
+		B66F7645244ECA8100E0727E /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F763F244ECA8100E0727E /* LSIFileHelper.m */; };
+		B66F7647244ECBA600E0727E /* Sol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F7646244ECBA600E0727E /* Sol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,14 @@
 		B66F762C244EC62F00E0727E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B66F7633244EC79900E0727E /* AstronomyObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AstronomyObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		B66F7634244EC79900E0727E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B66F763B244ECA8100E0727E /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIErrors.m; path = ../../../LambdaSDK/LSIErrors.m; sourceTree = "<group>"; };
+		B66F763C244ECA8100E0727E /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIErrors.h; path = ../../../LambdaSDK/LSIErrors.h; sourceTree = "<group>"; };
+		B66F763D244ECA8100E0727E /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSILog.m; path = ../../../LambdaSDK/LSILog.m; sourceTree = "<group>"; };
+		B66F763E244ECA8100E0727E /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Secure.swift"; path = "../../../LambdaSDK/URL+Secure.swift"; sourceTree = "<group>"; };
+		B66F763F244ECA8100E0727E /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIFileHelper.m; path = ../../../LambdaSDK/LSIFileHelper.m; sourceTree = "<group>"; };
+		B66F7640244ECA8100E0727E /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIFileHelper.h; path = ../../../LambdaSDK/LSIFileHelper.h; sourceTree = "<group>"; };
+		B66F7641244ECA8100E0727E /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSILog.h; path = ../../../LambdaSDK/LSILog.h; sourceTree = "<group>"; };
+		B66F7646244ECBA600E0727E /* Sol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,21 +77,53 @@
 		B66F7619244EC62F00E0727E /* AstronomyObjC */ = {
 			isa = PBXGroup;
 			children = (
+				B66F763A244ECA7000E0727E /* Helper */,
+				B66F7637244ECA2C00E0727E /* Supporting Files */,
+				B66F7620244EC62F00E0727E /* ViewController.h */,
+				B66F7621244EC62F00E0727E /* ViewController.m */,
+				B66F7636244ECA2300E0727E /* Storyboard */,
+				B66F762B244EC62F00E0727E /* Info.plist */,
+				B66F762C244EC62F00E0727E /* main.m */,
+				B66F7634244EC79900E0727E /* DetailViewController.swift */,
+				B66F7646244ECBA600E0727E /* Sol.swift */,
+				B66F7633244EC79900E0727E /* AstronomyObjC-Bridging-Header.h */,
+			);
+			path = AstronomyObjC;
+			sourceTree = "<group>";
+		};
+		B66F7636244ECA2300E0727E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B66F7623244EC62F00E0727E /* Main.storyboard */,
+				B66F7628244EC62F00E0727E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B66F7637244ECA2C00E0727E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				B66F761A244EC62F00E0727E /* AppDelegate.h */,
 				B66F761B244EC62F00E0727E /* AppDelegate.m */,
 				B66F761D244EC62F00E0727E /* SceneDelegate.h */,
 				B66F761E244EC62F00E0727E /* SceneDelegate.m */,
-				B66F7620244EC62F00E0727E /* ViewController.h */,
-				B66F7621244EC62F00E0727E /* ViewController.m */,
-				B66F7623244EC62F00E0727E /* Main.storyboard */,
 				B66F7626244EC62F00E0727E /* Assets.xcassets */,
-				B66F7628244EC62F00E0727E /* LaunchScreen.storyboard */,
-				B66F762B244EC62F00E0727E /* Info.plist */,
-				B66F762C244EC62F00E0727E /* main.m */,
-				B66F7634244EC79900E0727E /* DetailViewController.swift */,
-				B66F7633244EC79900E0727E /* AstronomyObjC-Bridging-Header.h */,
 			);
-			path = AstronomyObjC;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B66F763A244ECA7000E0727E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B66F763C244ECA8100E0727E /* LSIErrors.h */,
+				B66F763B244ECA8100E0727E /* LSIErrors.m */,
+				B66F7640244ECA8100E0727E /* LSIFileHelper.h */,
+				B66F763F244ECA8100E0727E /* LSIFileHelper.m */,
+				B66F7641244ECA8100E0727E /* LSILog.h */,
+				B66F763D244ECA8100E0727E /* LSILog.m */,
+				B66F763E244ECA8100E0727E /* URL+Secure.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,11 +197,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66F7647244ECBA600E0727E /* Sol.swift in Sources */,
+				B66F7645244ECA8100E0727E /* LSIFileHelper.m in Sources */,
+				B66F7644244ECA8100E0727E /* URL+Secure.swift in Sources */,
+				B66F7643244ECA8100E0727E /* LSILog.m in Sources */,
 				B66F7622244EC62F00E0727E /* ViewController.m in Sources */,
 				B66F761C244EC62F00E0727E /* AppDelegate.m in Sources */,
 				B66F7635244EC79900E0727E /* DetailViewController.swift in Sources */,
 				B66F762D244EC62F00E0727E /* main.m in Sources */,
 				B66F761F244EC62F00E0727E /* SceneDelegate.m in Sources */,
+				B66F7642244ECA8100E0727E /* LSIErrors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
