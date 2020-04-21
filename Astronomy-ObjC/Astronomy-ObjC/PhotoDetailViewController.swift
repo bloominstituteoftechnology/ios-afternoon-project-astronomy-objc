@@ -22,6 +22,22 @@ class PhotoDetailViewController: UIViewController {
             
             if let manifest = manifest {
                 print("mainifest: \(manifest)")
+                
+                let roverName = manifest.name;
+                let solId: NSNumber = NSNumber(value: manifest.sols[4].identifier)
+                self.apiClient.fetchSolPhotos(forRover: roverName, solId: solId) { (sols, error) in
+                    if let error = error {
+                        print("Error: \(error)")
+                        return
+                    }
+                    
+                    if let sols = sols {
+                        print("Sols: \(sols)")
+                        let sol = sols[0];
+                        print("Sol is: \(sol)")
+                    }
+                }
+                
                 return
             }
         }

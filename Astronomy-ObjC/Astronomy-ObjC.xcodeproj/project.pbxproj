@@ -17,6 +17,7 @@
 		D2D32D0A244E5895000B18C0 /* SAHSol.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D09244E5895000B18C0 /* SAHSol.m */; };
 		D2D32D0D244E5BA5000B18C0 /* SAHApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D0C244E5BA5000B18C0 /* SAHApiClient.m */; };
 		D2D32D0F244E64D0000B18C0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D0E244E64D0000B18C0 /* PhotoDetailViewController.swift */; };
+		D2D32D12244E697D000B18C0 /* SAHSolPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D32D11244E697D000B18C0 /* SAHSolPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		D2D32D0B244E5BA5000B18C0 /* SAHApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAHApiClient.h; sourceTree = "<group>"; };
 		D2D32D0C244E5BA5000B18C0 /* SAHApiClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAHApiClient.m; sourceTree = "<group>"; };
 		D2D32D0E244E64D0000B18C0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		D2D32D10244E697D000B18C0 /* SAHSolPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAHSolPhoto.h; sourceTree = "<group>"; };
+		D2D32D11244E697D000B18C0 /* SAHSolPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAHSolPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				D2D32D0B244E5BA5000B18C0 /* SAHApiClient.h */,
 				D2D32D0C244E5BA5000B18C0 /* SAHApiClient.m */,
 				D2D32D0E244E64D0000B18C0 /* PhotoDetailViewController.swift */,
+				D2D32D10244E697D000B18C0 /* SAHSolPhoto.h */,
+				D2D32D11244E697D000B18C0 /* SAHSolPhoto.m */,
 			);
 			path = "Astronomy-ObjC";
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				D2D32D0D244E5BA5000B18C0 /* SAHApiClient.m in Sources */,
 				D2D32CED244E344E000B18C0 /* AppDelegate.swift in Sources */,
 				D2D32CEF244E344E000B18C0 /* SceneDelegate.swift in Sources */,
+				D2D32D12244E697D000B18C0 /* SAHSolPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

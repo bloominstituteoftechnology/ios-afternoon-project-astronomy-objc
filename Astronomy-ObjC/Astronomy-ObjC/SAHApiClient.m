@@ -8,6 +8,7 @@
 
 #import "SAHApiClient.h"
 #import "SAHNasaManifest.h"
+#import "SAHSolPhoto.h"
 
 static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
 static NSString *apiKey = @"rShurQFkW6eGo61RksJec09o5v9PvFRWfb3C00WG";
@@ -59,6 +60,59 @@ static NSString *apiKey = @"rShurQFkW6eGo61RksJec09o5v9PvFRWfb3C00WG";
     
     [task resume];
     
+}
+
+
+- (void)fetchSolPhotosForRover:(NSString *)roverName solId:(NSNumber *)solId completionBlock:(SAHSolPhotoFetcherCompletionBlock)completionBlock {
+    NSURL *url = [[NSURL alloc] initWithString:baseURLString];
+    NSURL *fullURL = [url URLByAppendingPathComponent:@"rovers/curiosity/photos"];
+    
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:fullURL resolvingAgainstBaseURL:NO];
+    
+    urlComponents.queryItems = @[
+        [NSURLQueryItem queryItemWithName:@"sol" value:solId.stringValue],
+        [NSURLQueryItem queryItemWithName:@"API_KEY" value:apiKey]
+    ];
+    
+    NSURL *finalURL = urlComponents.URL;
+    
+    NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSLog(@"URL: %@", finalURL);
+        
+        if (error) {
+            completionBlock(nil, error);
+            return;
+        }
+        
+        if (!data) {
+            NSError *dataError = [[NSError alloc] initWithDomain:@"com.sah.Astronomy" code:100 userInfo:nil];
+            completionBlock(nil, dataError);
+            return;
+        }
+        
+        NSError *jsonError = nil;
+        NSDictionary *jsonPhotosDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        
+        if (jsonError) {
+            completionBlock(nil, jsonError);
+        }
+        
+        NSArray<NSDictionary *> *jsonArray = jsonPhotosDictionary[@"photos"];
+        
+        NSMutableArray<SAHSolPhoto *> *solPhotos = [[NSMutableArray alloc] init];
+        for (NSDictionary *solPhotoDictionary in jsonArray) {
+            SAHSolPhoto *photo = [[SAHSolPhoto alloc] initWithDictionary:solPhotoDictionary];
+            [solPhotos addObject:photo];
+        }
+        
+        completionBlock(solPhotos, nil);
+        
+        
+    }];
+    
+    [task resume];
 }
 
 @end

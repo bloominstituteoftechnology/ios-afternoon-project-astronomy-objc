@@ -5,3 +5,4 @@
 #import "SAHApiClient.h"
 #import "SAHNasaManifest.h"
 #import "SAHSol.h"
+#import "SAHSolPhoto.h"

@@ -9,11 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @class SAHNasaManifest;
+@class SAHSolPhoto;
 
 typedef void (^SAHManifestFetcherCompletionBlock)(SAHNasaManifest * manifest, NSError *error);
+
+typedef void (^SAHSolPhotoFetcherCompletionBlock)(NSArray<SAHSolPhoto *> *solPhotos, NSError *error);
 
 @interface SAHApiClient : NSObject
 
 -(void)fetchManifestWithCompletionBlock:(SAHManifestFetcherCompletionBlock)completionBlock;
+
+-(void)fetchSolPhotosForRover:(NSString *)roverName solId:(NSNumber *)solId completionBlock:(SAHSolPhotoFetcherCompletionBlock)completionBlock;
 
 @end
