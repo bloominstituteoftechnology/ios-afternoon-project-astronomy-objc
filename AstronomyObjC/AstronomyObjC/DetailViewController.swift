@@ -7,7 +7,29 @@
 //
 
 import UIKit
+extension UIImageView {
+    func enableZoom() {
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
+        isUserInteractionEnabled = true
+        addGestureRecognizer(pinchGesture)
+    }
+    
+//    func enableRotate() {
+//        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(rotate(_:)))
+//        addGestureRecognizer(rotateGesture)
+//    }
+    
+  
+     @objc private func startZooming(_ sender: UIPinchGestureRecognizer) {
+        let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
+        guard let scale = scaleResult, scale.a > 1, scale.d > 1 else { return }
+        sender.view?.transform = scale
+        sender.scale = 1
+    
+    }
+  
 
+}
 class DetailViewController: UIViewController {
 
     //MARK:- Outlets
@@ -16,7 +38,14 @@ class DetailViewController: UIViewController {
         didSet {
             imageView.layer.cornerRadius = imageView.bounds.size.height / 2
             imageView.layer.masksToBounds = true
+            imageView.layer.borderWidth = 2
+            
+            imageView.layer.borderColor = UIColor.gray.cgColor
+          
         }
+    }
+    @objc func handlePinch() {
+        print("Hell")
     }
     @IBOutlet weak var dateTakenLabel: UILabel!
     @IBOutlet weak var cameraLabel: UILabel!
@@ -38,7 +67,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imageView.enableZoom()
+        imageView.isUserInteractionEnabled = true
+      
         fetcher.fetchOneSingleSol { (sols, _) in
             guard let solTen = sols?.first else { return }
                 DispatchQueue.main.async {

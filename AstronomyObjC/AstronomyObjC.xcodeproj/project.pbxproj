@@ -21,6 +21,7 @@
 		B66F775F244F04B000E0727E /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F775C244F04B000E0727E /* LSIFileHelper.m */; };
 		B66F7762244F055000E0727E /* SolArrayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F7761244F055000E0727E /* SolArrayResult.m */; };
 		B66F7769244F0C0F00E0727E /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F7768244F0C0F00E0727E /* Ext.swift */; };
+		B66F777224502A4B00E0727E /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F777124502A4B00E0727E /* MainCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		B66F7760244F055000E0727E /* SolArrayResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolArrayResult.h; sourceTree = "<group>"; };
 		B66F7761244F055000E0727E /* SolArrayResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolArrayResult.m; sourceTree = "<group>"; };
 		B66F7768244F0C0F00E0727E /* Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
+		B66F777124502A4B00E0727E /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				B66F7767244F0BFA00E0727E /* Convenience + Ext */,
 				B66F7756244F049900E0727E /* Helper */,
 				B66F7765244F0BB600E0727E /* SupportingFiles */,
+				B66F777124502A4B00E0727E /* MainCollectionViewController.swift */,
 				B66F7739244EFD4400E0727E /* DetailViewController.swift */,
 				B66F7766244F0BBE00E0727E /* Storyboards */,
 				B66F7743244EFD4400E0727E /* Info.plist */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66F775F244F04B000E0727E /* LSIFileHelper.m in Sources */,
+				B66F777224502A4B00E0727E /* MainCollectionViewController.swift in Sources */,
 				B66F773A244EFD4400E0727E /* DetailViewController.swift in Sources */,
 				B66F7752244EFF9C00E0727E /* SolCamera.m in Sources */,
 				B66F7736244EFD4400E0727E /* AppDelegate.swift in Sources */,
