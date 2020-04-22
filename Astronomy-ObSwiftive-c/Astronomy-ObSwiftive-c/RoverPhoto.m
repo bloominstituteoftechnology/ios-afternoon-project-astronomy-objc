@@ -33,7 +33,9 @@
     for (NSDictionary *dictionary in roverPhotos) {
         NSNumber *photoID = dictionary[@"id"];
         NSNumber *sol = dictionary[@"sol"];
-        NSURL *photoURL = dictionary[@"img_src"];
+        NSString *photoURLString = dictionary[@"img_src"];
+        
+        NSURL *photoURL = [NSURL URLWithString:photoURLString];
         
         if ([photoID isKindOfClass:[NSNull class]]) {
             photoID = nil;

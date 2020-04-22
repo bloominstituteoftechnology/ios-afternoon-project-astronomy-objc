@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         photoController.fetchRoverPhotos("curiosity", 12) { (data, error) in
             guard let data = data else { return }
+            print(data.roverPhotos[0].photoID)
+            print(data.roverPhotos[0].sol)
             print("Data from sol 0: \(data.roverPhotos[0].photoURL)")
             return
         }
