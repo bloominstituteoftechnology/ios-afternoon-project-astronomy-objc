@@ -10,11 +10,15 @@
 
 @implementation RoverPhoto
 
--(instancetype)initWithPhotoID:(uint)photoID sol:(int)sol photoURL:(NSURL *)photoURL {
+-(instancetype)initWithPhotoID:(uint)photoID
+                           sol:(int)sol
+                      photoURL:(NSURL *)photoURL
+                    cameraName:(NSString *)cameraName {
     if (self = [self init]) {
         _photoID = photoID;
         _sol = sol;
         _photoURL = photoURL;
+        _cameraName = cameraName;
     }
     return self;
 }
@@ -34,6 +38,8 @@
         NSNumber *photoID = dictionary[@"id"];
         NSNumber *sol = dictionary[@"sol"];
         NSString *photoURLString = dictionary[@"img_src"];
+        NSDictionary *cameraDictionary = dictionary[@"camera"];
+        NSString *cameraName = cameraDictionary[@"full_name"];
         
         NSURL *photoURL = [NSURL URLWithString:photoURLString];
         
@@ -46,8 +52,11 @@
         if ([photoURL isKindOfClass:[NSNull class]]) {
             photoURL = nil;
         }
+        if ([cameraName isKindOfClass:[NSNull class]]) {
+            cameraName = nil;
+        }
         
-        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID.unsignedIntValue sol:sol.intValue photoURL:photoURL];
+        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID.unsignedIntValue sol:sol.intValue photoURL:photoURL cameraName:cameraName];
         
         [roverPhotosArray addObject:newRoverPhoto];
     }
