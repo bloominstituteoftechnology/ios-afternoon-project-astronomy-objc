@@ -8,4 +8,4 @@
 #import "SolArrayResult.h"
 #import "ManifestFetcher.h"
 #import "ImageCache.h"
-
+#import "SolCollectionViewCell.h"

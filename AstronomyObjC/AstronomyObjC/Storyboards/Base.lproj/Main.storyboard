@@ -11,20 +11,20 @@
         <!--Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DetailViewController" customModule="AstronomyObjC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="BYZ-38-t0r" customClass="DetailViewController" customModule="AstronomyObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ScN-02-aVX">
-                                <rect key="frame" x="57" y="104" width="300" height="300"/>
+                                <rect key="frame" x="57" y="60" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="BwK-Wg-3E1"/>
                                     <constraint firstAttribute="height" constant="300" id="YbP-VU-5iL"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vu4-iv-0X4">
-                                <rect key="frame" x="16" y="420" width="382" height="115"/>
+                                <rect key="frame" x="16" y="376" width="382" height="115"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keS-Vr-DNd">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -85,21 +85,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y5Z-93-hbh">
-                            <size key="itemSize" width="150" height="150"/>
+                            <size key="itemSize" width="200" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CQ5-hm-RrD" customClass="SolCollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SolCell" id="CQ5-hm-RrD" customClass="SolCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JnU-9o-ziN">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vmc-wP-oYZ">
-                                            <rect key="frame" x="8" y="8" width="134" height="134"/>
+                                            <rect key="frame" x="8" y="8" width="184" height="184"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -109,9 +109,9 @@
                                         <constraint firstAttribute="trailing" secondItem="vmc-wP-oYZ" secondAttribute="trailing" constant="8" id="wfC-VQ-ESu"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="soiImageView" destination="vmc-wP-oYZ" id="fyB-fa-GcC"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="auY-dj-HJa"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -121,8 +121,16 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sol 30" id="Ep0-Rr-f2k">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="lessthan" catalog="system" id="086-9t-Hib"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="greaterthan" catalog="system" id="6m9-I1-NMZ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="lessthan" catalog="system" id="086-9t-Hib">
+                            <connections>
+                                <action selector="goBack:" destination="kpG-Fj-cra" id="hIw-rG-eHk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="greaterthan" catalog="system" id="6m9-I1-NMZ">
+                            <connections>
+                                <action selector="goForward:" destination="kpG-Fj-cra" id="akC-Jr-I9u"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqD-F6-Pl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

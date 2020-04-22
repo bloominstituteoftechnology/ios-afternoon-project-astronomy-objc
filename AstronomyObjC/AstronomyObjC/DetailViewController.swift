@@ -7,29 +7,8 @@
 //
 
 import UIKit
-extension UIImageView {
-    func enableZoom() {
-        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
-        isUserInteractionEnabled = true
-        addGestureRecognizer(pinchGesture)
-    }
-    
-//    func enableRotate() {
-//        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(rotate(_:)))
-//        addGestureRecognizer(rotateGesture)
-//    }
-    
-  
-     @objc private func startZooming(_ sender: UIPinchGestureRecognizer) {
-        let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
-        guard let scale = scaleResult, scale.a > 1, scale.d > 1 else { return }
-        sender.view?.transform = scale
-        sender.scale = 1
-    
-    }
-  
 
-}
+
 class DetailViewController: UIViewController {
 
     //MARK:- Outlets
@@ -39,13 +18,13 @@ class DetailViewController: UIViewController {
             imageView.layer.cornerRadius = imageView.bounds.size.height / 2
             imageView.layer.masksToBounds = true
             imageView.layer.borderWidth = 2
-            
+            imageView.contentMode = .scaleToFill
             imageView.layer.borderColor = UIColor.gray.cgColor
           
         }
     }
     @objc func handlePinch() {
-        print("Hell")
+       
     }
     @IBOutlet weak var dateTakenLabel: UILabel!
     @IBOutlet weak var cameraLabel: UILabel!
@@ -56,7 +35,7 @@ class DetailViewController: UIViewController {
     //MARK:- Properties
     
     private var fetcher = SolFetcher()
-    
+    var sol: MarsSol?
     private lazy var dateFormatter: DateFormatter = {
        let dm = DateFormatter()
         dm.calendar = .current
@@ -65,24 +44,23 @@ class DetailViewController: UIViewController {
     }()
     //MARK:- Life cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let sol = sol {
+            updateViews(for: sol)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.enableZoom()
         imageView.isUserInteractionEnabled = true
-      
-        fetcher.fetchExampleSol { (sols, _) in
-            guard let solTen = sols?.first else { return }
-                DispatchQueue.main.async {
-                    self.updateViews(for: solTen)
-                }
-             
-            
-        }
-      
+   
     }
-
+//MARK:- Private
+    
     private func updateViews(for sol: MarsSol) {
-        self.cameraLabel.text = sol.camera.name
+        self.cameraLabel.text = "Camera : \(sol.camera.name)"
         self.dateTakenLabel.text = "Taken by \(sol.idNumber) on  \(self.dateFormatter.string(from: (sol.earthDate))) (Sol \(sol.sol))"
         self.imageView.load(url: (URL(string: (sol.imageURL))?.usingHTTPS!)!)
     }
