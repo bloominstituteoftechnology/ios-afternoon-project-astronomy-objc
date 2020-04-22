@@ -15,9 +15,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        photoController.fetchPhotoManifest("curiosity") { (data, error) in
+        photoController.fetchRoverPhotos("curiosity", 12) { (data, error) in
+            guard let data = data else { return }
+            print("Data from sol 0: \(data.roverPhotos[0].photoURL)")
             return
         }
+//        photoController.fetchPhotoManifest("curiosity") { (data, error) in
+//            return
+//        }
     }
 
 

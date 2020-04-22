@@ -29,9 +29,9 @@
     NSArray *solPhotos = dictionary[@"photos"];
     NSMutableArray *solPhotosArray = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *dictionary in solPhotos) {
-        NSNumber *sol = dictionary[@"sol"];
-        NSNumber *total_photos = dictionary[@"total_photos"];
+    for (NSDictionary *solDictionary in solPhotos) {
+        NSNumber *sol = solDictionary[@"sol"];
+        NSNumber *total_photos = solDictionary[@"total_photos"];
         
         if ([sol isKindOfClass:[NSNull class]]) {
             sol = nil;
