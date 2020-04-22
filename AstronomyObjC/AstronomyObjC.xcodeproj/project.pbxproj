@@ -22,6 +22,8 @@
 		B66F7762244F055000E0727E /* SolArrayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F7761244F055000E0727E /* SolArrayResult.m */; };
 		B66F7769244F0C0F00E0727E /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F7768244F0C0F00E0727E /* Ext.swift */; };
 		B66F777224502A4B00E0727E /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F777124502A4B00E0727E /* MainCollectionViewController.swift */; };
+		B66F777824502EDA00E0727E /* ManifestFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F777724502EDA00E0727E /* ManifestFetcher.m */; };
+		B66F777B245031B400E0727E /* SolManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F777A245031B400E0727E /* SolManifest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		B66F7761244F055000E0727E /* SolArrayResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolArrayResult.m; sourceTree = "<group>"; };
 		B66F7768244F0C0F00E0727E /* Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
 		B66F777124502A4B00E0727E /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		B66F777624502EDA00E0727E /* ManifestFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManifestFetcher.h; sourceTree = "<group>"; };
+		B66F777724502EDA00E0727E /* ManifestFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManifestFetcher.m; sourceTree = "<group>"; };
+		B66F7779245031B400E0727E /* SolManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolManifest.h; sourceTree = "<group>"; };
+		B66F777A245031B400E0727E /* SolManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolManifest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 			children = (
 				B66F7753244F02B000E0727E /* SolFetcher.h */,
 				B66F7754244F02B000E0727E /* SolFetcher.m */,
+				B66F777624502EDA00E0727E /* ManifestFetcher.h */,
+				B66F777724502EDA00E0727E /* ManifestFetcher.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -127,6 +135,8 @@
 				B66F774E244EFF2E00E0727E /* Sol.m */,
 				B66F7750244EFF9C00E0727E /* SolCamera.h */,
 				B66F7751244EFF9C00E0727E /* SolCamera.m */,
+				B66F7779245031B400E0727E /* SolManifest.h */,
+				B66F777A245031B400E0727E /* SolManifest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66F777824502EDA00E0727E /* ManifestFetcher.m in Sources */,
 				B66F775F244F04B000E0727E /* LSIFileHelper.m in Sources */,
 				B66F777224502A4B00E0727E /* MainCollectionViewController.swift in Sources */,
+				B66F777B245031B400E0727E /* SolManifest.m in Sources */,
 				B66F773A244EFD4400E0727E /* DetailViewController.swift in Sources */,
 				B66F7752244EFF9C00E0727E /* SolCamera.m in Sources */,
 				B66F7736244EFD4400E0727E /* AppDelegate.swift in Sources */,

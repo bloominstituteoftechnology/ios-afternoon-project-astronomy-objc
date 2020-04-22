@@ -13,7 +13,13 @@ typedef void (^SolFetcherCompletionBlock)(NSArray<Sol *>* _Nullable sols, NSErro
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SolFetcher : NSObject
-- (void)fetchOneSingleSol:(SolFetcherCompletionBlock)completionBlock;
-@end
+- (void)fetchExampleSol:(SolFetcherCompletionBlock)completionBlock;
 
+
+- (void)fetchPhotosForRover:(NSString *)rover
+                    withSol:(NSNumber *)sol
+                 completion:(SolFetcherCompletionBlock)completionBlock;
+
+
+@end
 NS_ASSUME_NONNULL_END

@@ -70,7 +70,7 @@ class DetailViewController: UIViewController {
         imageView.enableZoom()
         imageView.isUserInteractionEnabled = true
       
-        fetcher.fetchOneSingleSol { (sols, _) in
+        fetcher.fetchExampleSol { (sols, _) in
             guard let solTen = sols?.first else { return }
                 DispatchQueue.main.async {
                     self.updateViews(for: solTen)
