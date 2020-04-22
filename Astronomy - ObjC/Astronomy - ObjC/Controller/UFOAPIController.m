@@ -13,7 +13,7 @@
 
 - (void)fetchPhotoWithRoverName:(NSString *)roverName
                             sol:(int)sol
-                     completion: (void(^)(UFOMarsPhoto *))completion {
+                     completion: (void(^)(NSArray<UFOMarsPhoto *> *photos))completion {
     
     static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
     static NSString *apiKey = @"hjWKVcrc8T02tVqAgdqg57xCpNKEitiQlWDEbtXb";
@@ -60,9 +60,27 @@
             return;
         }
         
-        UFOMarsPhoto *photos = [[UFOMarsPhoto alloc ] initWithDictionary:dictionary];
+//        UFOMarsPhoto *photos = [[UFOMarsPhoto alloc ] initWithDictionary:dictionary];
+//        completion(photos);
+//        NSLog(@"PHOTOS: %@", photos);
+        
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if (!jsonDict || ![jsonDict isKindOfClass:[NSDictionary class]]) {
+            if (error) {
+                NSLog(@"Error decoding jsonDict: %@", error);
+            }
+            return completion(nil);
+        }
+        
+        NSArray *photoDictionaries = jsonDict[@"photos"];
+        NSMutableArray *photos = [NSMutableArray array];
+        for (NSDictionary *dict in photoDictionaries) {
+            UFOMarsPhoto *photo = [[UFOMarsPhoto alloc] initWithDictionary:dict];
+            if (photo) {
+                [photos addObject:photo];
+            }
+        }
         completion(photos);
-        NSLog(@"PHOTOS: %@", photos);
         
     }] resume];
     

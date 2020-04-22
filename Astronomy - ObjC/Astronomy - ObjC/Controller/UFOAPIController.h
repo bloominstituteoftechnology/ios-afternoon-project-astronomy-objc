@@ -15,7 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(APIController)
 @interface UFOAPIController : NSObject
 
-- (void)fetchPhotoWithSol:(int)sol completion: (void(^)(UFOMarsPhoto *))completion;
+- (void)fetchPhotoWithRoverName:(NSString *)roverName
+                            sol:(int)sol
+                     completion: (void(^)(NSArray<UFOMarsPhoto *> *photos))completion;
+
+- (void)fetchSinglePhoto:(void(^)(UFOMarsPhoto *, NSError *error))completion;
 
 @end
 

@@ -37,7 +37,7 @@ static NSString const *dateKey =  @"earth_date";
     self = [super init];
     if (self) {
         _identfier = [dictionary[idKey] intValue];
-        _sol = dictionary[solKey];
+        _sol = [dictionary[solKey] intValue];
         _camera = dictionary[cameraKey];
         _earthDate = dictionary[dateKey];
         _imgSrc = dictionary[imageKey];
