@@ -36,9 +36,10 @@ import Foundation
         let maxSol = dictionaryValues!["max_sol"] as? Int,
         let jsonDate = dictionaryValues!["max_date"] as? String,
         let maxDate = dateFormatter.date(from: jsonDate),
+            let solPhotos = dictionaryValues!["photos"],
         let totalPhotos = dictionaryValues!["total_photos"] as? Int else { return nil }
         
-        self.init(name: roverName, max_sol: maxSol, max_date: maxDate, total_photos: totalPhotos)
+        self.init(name: roverName, max_sol: maxSol, max_date: maxDate, total_photos: totalPhotos, photos: solPhotos as? [SolPhoto] ?? [])
     }
     
     @objc static let dateFormatter: DateFormatter = {
