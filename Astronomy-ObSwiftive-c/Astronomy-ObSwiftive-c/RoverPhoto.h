@@ -17,12 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) int sol;
 @property (nonatomic, readonly) NSURL *photoURL;
 @property (nonatomic, readonly) NSString *cameraName;
+@property (nonatomic, readonly) NSDate *earthDate;
 @property (nonatomic, readonly) NSArray<RoverPhoto *> *roverPhotos;
 
 - (instancetype)initWithPhotoID:(uint)photoID
                             sol:(int)sol
                        photoURL:(NSURL *)photoURL
-                     cameraName:(NSString *)cameraName;
+                     cameraName:(NSString *)cameraName
+                      earthDate:(NSDate *)earthDate;
 
 - (instancetype)initWithRoverPhotos:(NSArray<RoverPhoto *> *)roverPhotos;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

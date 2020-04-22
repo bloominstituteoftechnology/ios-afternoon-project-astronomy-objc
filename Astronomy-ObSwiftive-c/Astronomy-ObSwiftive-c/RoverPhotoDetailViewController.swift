@@ -17,22 +17,17 @@ class RoverPhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        photoController.fetchRoverPhotos("curiosity", 12) { (data, error) in
-            guard let data = data else { return }
-            print("Data from sol 12, first Image: \(data.roverPhotos[0].photoURL)")
-            print("Total photos: \(data.roverPhotos.count)")
-            print(data.roverPhotos[0].photoID)
-            print(data.roverPhotos[0].sol)
-            print(data.roverPhotos[0].cameraName)
-            print("Data from sol 12, 32nd Image: \(data.roverPhotos[31].photoURL)")
-            print("Total photos: \(data.roverPhotos.count)")
-            print(data.roverPhotos[31].photoID)
-            print(data.roverPhotos[31].sol)
-            print(data.roverPhotos[31].cameraName)
+        let roverToFetch: String = "curiosity"
+        let solToFetch: Int = 12
+        
+        photoController.fetchRoverPhotos(roverToFetch, Int32(solToFetch)) { (data, error) in
+            guard let data = data else {
+                NSLog("Error returned fetching Rover photos\(error!)")
+                return }
             
             DispatchQueue.main.async {
                 do {
-                    let photoData = try Data(contentsOf: data.roverPhotos[31].photoURL)
+                    let photoData = try Data(contentsOf: data.roverPhotos[31].photoURL)  // FIXME: Hard-coded a photo by index number
                     self.roverPhotoImage.image = UIImage(data: photoData)
                 } catch {
                     NSLog("Error setting up views on detail view controller: \(error)")

@@ -14,12 +14,14 @@
 -(instancetype)initWithPhotoID:(uint)photoID
                            sol:(int)sol
                       photoURL:(NSURL *)photoURL
-                    cameraName:(NSString *)cameraName {
+                    cameraName:(NSString *)cameraName
+                     earthDate:(NSDate *)earthDate {
     if (self = [self init]) {
         _photoID = photoID;
         _sol = sol;
         _photoURL = photoURL;
         _cameraName = cameraName;
+        _earthDate = earthDate;
     }
     return self;
 }
@@ -32,6 +34,9 @@
 }
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd";
+    
     NSArray *roverPhotos = dictionary[@"photos"];
     NSMutableArray *roverPhotosArray = [[NSMutableArray alloc] init];
     
@@ -41,6 +46,8 @@
         NSString *photoURLString = dictionary[@"img_src"];
         NSDictionary *cameraDictionary = dictionary[@"camera"];
         NSString *cameraName = cameraDictionary[@"full_name"];
+        NSString *jsonDate = dictionary[@"earth_date"];
+        NSDate *earthDate = [dateFormatter dateFromString:jsonDate];
         
         NSURL *photoURL = [NSURL URLWithString:photoURLString];
         NSURL *secureURL = [NSURL convertHTTPtoHTTPS:photoURL];
@@ -58,7 +65,7 @@
             cameraName = nil;
         }
         
-        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID.unsignedIntValue sol:sol.intValue photoURL:secureURL cameraName:cameraName];
+        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID.unsignedIntValue sol:sol.intValue photoURL:secureURL cameraName:cameraName earthDate:earthDate];
         
         [roverPhotosArray addObject:newRoverPhoto];
     }
