@@ -14,9 +14,9 @@ import Foundation
     @objc let max_sol: Int
     @objc let max_date: Date
     @objc let total_photos: Int
-    @objc var photos: [SolPhoto]?
+    @objc var photos: [[String : Any]]
     
-    @objc init(name: String, max_sol: Int, max_date: Date, total_photos: Int, photos: [SolPhoto]? = []) {
+    @objc init(name: String, max_sol: Int, max_date: Date, total_photos: Int, photos: [[String : Any]]) {
         self.name = name
         self.max_sol = max_sol
         self.max_date = max_date
@@ -39,7 +39,7 @@ import Foundation
             let solPhotos = dictionaryValues!["photos"],
         let totalPhotos = dictionaryValues!["total_photos"] as? Int else { return nil }
         
-        self.init(name: roverName, max_sol: maxSol, max_date: maxDate, total_photos: totalPhotos, photos: solPhotos as? [SolPhoto] ?? [])
+        self.init(name: roverName, max_sol: maxSol, max_date: maxDate, total_photos: totalPhotos, photos: solPhotos as? [[String : Any]] ?? [])
     }
     
     @objc static let dateFormatter: DateFormatter = {

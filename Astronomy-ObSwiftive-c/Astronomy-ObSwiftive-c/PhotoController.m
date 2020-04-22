@@ -8,6 +8,7 @@
 
 #import "PhotoController.h"
 #import "Astronomy_ObSwiftive_c-Swift.h"
+#import "SolPhoto.h"
 #import "LSIErrors.h"
 
 static NSString *const AstronomyRoverPhotosBaseURL = @"https://api.nasa.gov/mars-photos/api/v1/";
