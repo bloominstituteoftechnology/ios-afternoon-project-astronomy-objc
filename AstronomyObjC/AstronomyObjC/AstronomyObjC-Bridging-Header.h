@@ -6,3 +6,6 @@
 #import "SolFetcher.h"
 #import "SolCamera.h"
 #import "SolArrayResult.h"
+#import "ManifestFetcher.h"
+#import "ImageCache.h"
+

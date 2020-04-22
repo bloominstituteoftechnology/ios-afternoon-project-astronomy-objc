@@ -24,6 +24,8 @@
 		B66F777224502A4B00E0727E /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F777124502A4B00E0727E /* MainCollectionViewController.swift */; };
 		B66F777824502EDA00E0727E /* ManifestFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F777724502EDA00E0727E /* ManifestFetcher.m */; };
 		B66F777B245031B400E0727E /* SolManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F777A245031B400E0727E /* SolManifest.m */; };
+		B66F777E24503CB600E0727E /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F777D24503CB600E0727E /* ImageCache.m */; };
+		B66F778124503EED00E0727E /* SolCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F778024503EED00E0727E /* SolCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		B66F777724502EDA00E0727E /* ManifestFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManifestFetcher.m; sourceTree = "<group>"; };
 		B66F7779245031B400E0727E /* SolManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolManifest.h; sourceTree = "<group>"; };
 		B66F777A245031B400E0727E /* SolManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolManifest.m; sourceTree = "<group>"; };
+		B66F777C24503CB600E0727E /* ImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		B66F777D24503CB600E0727E /* ImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		B66F777F24503EED00E0727E /* SolCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolCollectionViewCell.h; sourceTree = "<group>"; };
+		B66F778024503EED00E0727E /* SolCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 				B66F7749244EFF1400E0727E /* AstronomyObjC-Bridging-Header.h */,
 				B66F7764244F0BA700E0727E /* Model */,
 				B66F7763244F0BA000E0727E /* Networking */,
+				B66F778224503EF200E0727E /* View */,
 			);
 			path = AstronomyObjC;
 			sourceTree = "<group>";
@@ -111,6 +118,8 @@
 				B66F775C244F04B000E0727E /* LSIFileHelper.m */,
 				B66F775A244F04B000E0727E /* LSILog.h */,
 				B66F775B244F04B000E0727E /* LSILog.m */,
+				B66F777C24503CB600E0727E /* ImageCache.h */,
+				B66F777D24503CB600E0727E /* ImageCache.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -166,6 +175,15 @@
 				B66F7768244F0C0F00E0727E /* Ext.swift */,
 			);
 			path = "Convenience + Ext";
+			sourceTree = "<group>";
+		};
+		B66F778224503EF200E0727E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B66F777F24503EED00E0727E /* SolCollectionViewCell.h */,
+				B66F778024503EED00E0727E /* SolCollectionViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +265,8 @@
 				B66F773A244EFD4400E0727E /* DetailViewController.swift in Sources */,
 				B66F7752244EFF9C00E0727E /* SolCamera.m in Sources */,
 				B66F7736244EFD4400E0727E /* AppDelegate.swift in Sources */,
+				B66F778124503EED00E0727E /* SolCollectionViewCell.m in Sources */,
+				B66F777E24503CB600E0727E /* ImageCache.m in Sources */,
 				B66F775D244F04B000E0727E /* LSIErrors.m in Sources */,
 				B66F774F244EFF2E00E0727E /* Sol.m in Sources */,
 				B66F7769244F0C0F00E0727E /* Ext.swift in Sources */,

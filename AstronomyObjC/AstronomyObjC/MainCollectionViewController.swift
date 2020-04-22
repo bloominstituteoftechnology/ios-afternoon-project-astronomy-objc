@@ -10,9 +10,18 @@ import UIKit
 
 class MainCollectionViewController : UICollectionViewController {
     
+    let manifestFetcher = ManifestFetcher()
+    let photoFetcher = SolFetcher()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        manifestFetcher.fetchManifest(forRover: "curiosity") { (manifest, _) in
+            print(manifest)
+        }
+        
+        photoFetcher.fetchPhotos(forRover: "curiosity", withSol:2) { (sol, _) in
+            print(sol?.first?.imageURL)
+        }
         
     }
 

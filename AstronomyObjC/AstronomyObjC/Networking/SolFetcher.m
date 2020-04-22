@@ -79,7 +79,7 @@ static NSString *const apiKey = @"HawdkeoyrsCNZTu0DtPL4loF7dhLOOj259yzrktr";
             });
             return;
         }
-        NSLog(@"%@",url);
+        NSLog(@"URL is %@",url);
         if (!data) {
             NSError *dataError = errorWithMessage(@"No data", LSIDataNilError);
             dispatch_async(dispatch_get_main_queue(), ^{
