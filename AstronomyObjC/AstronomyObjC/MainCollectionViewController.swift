@@ -12,7 +12,7 @@ class MainCollectionViewController : UICollectionViewController {
     
     // MARK:- Properties
     
-    let nsCache = NSCache<NSNumber,UIImage>()
+    static let nsCache = NSCache<NSNumber,UIImage>()
     private let manifestFetcher = ManifestFetcher()
     private let photoFetcher = SolFetcher()
     var sols = [MarsSol]()
@@ -20,7 +20,10 @@ class MainCollectionViewController : UICollectionViewController {
  
     private var solNumber = 0 {
         didSet {
-            self.navigationItem.title = "Sol \(solNumber)"
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Sol \(self.solNumber)"
+            }
+           
         }
     }
     
@@ -41,7 +44,7 @@ class MainCollectionViewController : UICollectionViewController {
                         sols.forEach { (sol) in
                             DispatchQueue.global().async {
                                 let image = UIImage(data: try! Data(contentsOf: (URL(string: sol.imageURL)?.usingHTTPS!)!))
-                                self.nsCache.setObject(image!, forKey: sol.idNumber)
+                                MainCollectionViewController.self.nsCache.setObject(image!, forKey: sol.idNumber)
                             }
                         }
                     
@@ -71,7 +74,7 @@ class MainCollectionViewController : UICollectionViewController {
                         
                             DispatchQueue.global().async {
                                  let image = UIImage(data: try! Data(contentsOf: (URL(string: sol.imageURL)?.usingHTTPS!)!))
-                                 self.nsCache.setObject(image!, forKey: sol.idNumber)
+                                MainCollectionViewController.self.nsCache.setObject(image!, forKey: sol.idNumber)
                             }
                         }
                     DispatchQueue.main.async {  self.collectionView.reloadData()   }
@@ -82,6 +85,7 @@ class MainCollectionViewController : UICollectionViewController {
         }
         
     }
+  
     
 
     @IBAction func goForward(_ sender: UIBarButtonItem) {
@@ -99,7 +103,7 @@ class MainCollectionViewController : UICollectionViewController {
                          
                             DispatchQueue.global().async {
                                    let image = UIImage(data: try! Data(contentsOf: (URL(string: sol.imageURL)?.usingHTTPS!)!))
-                                 self.nsCache.setObject(image!, forKey: sol.idNumber)
+                                MainCollectionViewController.self.nsCache.setObject(image!, forKey: sol.idNumber)
                             }
                            
                         }
@@ -122,7 +126,7 @@ class MainCollectionViewController : UICollectionViewController {
   
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SolCell", for: indexPath) as! SolCollectionViewCell
         let sol = sols[indexPath.item]
-        if let image = nsCache.object(forKey: sol.idNumber) {
+        if let image = MainCollectionViewController.nsCache.object(forKey: sol.idNumber) {
             DispatchQueue.main.async {    cell.soiImageView?.image = image }
                
         } else {   cell.soiImageView?.load(url: (URL(string: sol.imageURL)?.usingHTTPS!)!)  }
