@@ -7,6 +7,7 @@
 //
 
 #import "RoverPhoto.h"
+#import "NSURL+SecureHTTP.h"
 
 @implementation RoverPhoto
 
@@ -42,6 +43,7 @@
         NSString *cameraName = cameraDictionary[@"full_name"];
         
         NSURL *photoURL = [NSURL URLWithString:photoURLString];
+        NSURL *secureURL = [NSURL convertHTTPtoHTTPS:photoURL];
         
         if ([photoID isKindOfClass:[NSNull class]]) {
             photoID = nil;
@@ -56,7 +58,7 @@
             cameraName = nil;
         }
         
-        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID.unsignedIntValue sol:sol.intValue photoURL:photoURL cameraName:cameraName];
+        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID.unsignedIntValue sol:sol.intValue photoURL:secureURL cameraName:cameraName];
         
         [roverPhotosArray addObject:newRoverPhoto];
     }
