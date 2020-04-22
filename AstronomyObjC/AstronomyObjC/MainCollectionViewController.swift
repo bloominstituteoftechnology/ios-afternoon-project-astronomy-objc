@@ -9,12 +9,15 @@
 import UIKit
 
 class MainCollectionViewController : UICollectionViewController {
-
+    
+    // MARK:- Properties
+    
+    let nsCache = NSCache<NSNumber,UIImage>()
     private let manifestFetcher = ManifestFetcher()
     private let photoFetcher = SolFetcher()
     var sols = [MarsSol]()
     private var count = 1
-    
+ 
     private var solNumber = 0 {
         didSet {
             self.navigationItem.title = "Sol \(solNumber)"
@@ -33,8 +36,17 @@ class MainCollectionViewController : UICollectionViewController {
         
             self.photoFetcher.fetchPhotos(forRover: "curiosity", withSol:NSNumber(value: self.solNumber)) { (sols, _) in
                 if let sols = sols {
-                    self.sols = sols
-                    self.collectionView.reloadData()
+                   
+                        self.sols = sols
+                        sols.forEach { (sol) in
+                            DispatchQueue.global().async {
+                                let image = UIImage(data: try! Data(contentsOf: (URL(string: sol.imageURL)?.usingHTTPS!)!))
+                                self.nsCache.setObject(image!, forKey: sol.idNumber)
+                            }
+                        }
+                    
+                    DispatchQueue.main.async {  self.collectionView.reloadData()   }
+               
                 }
           
             }
@@ -48,13 +60,24 @@ class MainCollectionViewController : UICollectionViewController {
         count -= 1
         manifestFetcher.fetchManifest(forRover: "curiosity") { (manifest, _) in
             guard let manifest = manifest else { return }
-            if let solNumber = manifest.sols[self.count] as? Int { self.solNumber = solNumber }
-            self.photoFetcher.fetchPhotos(forRover: "curiosity", withSol: NSNumber(value: self.solNumber)) { (sol, _) in
-               
-                    DispatchQueue.main.async {
-                        self.sols = sol!
-                        self.collectionView.reloadData()
-                    }
+            
+            if let solNumber =  manifest.sols[self.count] as? Int {  self.solNumber = solNumber  }
+            
+            self.photoFetcher.fetchPhotos(forRover: "curiosity", withSol:NSNumber(value: self.solNumber)) { (sols, _) in
+                if let sols = sols {
+    
+                        self.sols = sols
+                        sols.forEach { (sol) in
+                        
+                            DispatchQueue.global().async {
+                                 let image = UIImage(data: try! Data(contentsOf: (URL(string: sol.imageURL)?.usingHTTPS!)!))
+                                 self.nsCache.setObject(image!, forKey: sol.idNumber)
+                            }
+                        }
+                    DispatchQueue.main.async {  self.collectionView.reloadData()   }
+                
+                }
+                
             }
         }
         
@@ -65,13 +88,25 @@ class MainCollectionViewController : UICollectionViewController {
          count += 1
         manifestFetcher.fetchManifest(forRover: "curiosity") { (manifest, _) in
             guard let manifest = manifest else { return }
-              if let solNumber = manifest.sols[self.count] as? Int { self.solNumber = solNumber }
-            self.photoFetcher.fetchPhotos(forRover: "curiosity", withSol: NSNumber(value: self.solNumber)) { (sol, _) in
-              
-                    DispatchQueue.main.async {
-                          self.sols = sol!
-                          self.collectionView.reloadData()
-                    }
+            
+            if let solNumber =  manifest.sols[self.count] as? Int {  self.solNumber = solNumber  }
+            
+            self.photoFetcher.fetchPhotos(forRover: "curiosity", withSol:NSNumber(value: self.solNumber)) { (sols, _) in
+                if let sols = sols {
+                  
+                        self.sols = sols
+                        sols.forEach { (sol) in
+                         
+                            DispatchQueue.global().async {
+                                   let image = UIImage(data: try! Data(contentsOf: (URL(string: sol.imageURL)?.usingHTTPS!)!))
+                                 self.nsCache.setObject(image!, forKey: sol.idNumber)
+                            }
+                           
+                        }
+                    DispatchQueue.main.async {  self.collectionView.reloadData()  }
+                
+                }
+                
             }
         }
     }
@@ -82,16 +117,17 @@ class MainCollectionViewController : UICollectionViewController {
         return sols.count
     }
     
-    
-    
+  
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
   
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SolCell", for: indexPath) as! SolCollectionViewCell
         let sol = sols[indexPath.item]
-        
-        cell.soiImageView?.load(url: (URL(string: sol.imageURL)?.usingHTTPS!)!)
-      
-        return cell
+        if let image = nsCache.object(forKey: sol.idNumber) {
+            DispatchQueue.main.async {    cell.soiImageView?.image = image }
+               
+        } else {   cell.soiImageView?.load(url: (URL(string: sol.imageURL)?.usingHTTPS!)!)  }
+              return cell
+    
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

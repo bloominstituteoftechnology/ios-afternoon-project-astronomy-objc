@@ -60,6 +60,7 @@ class DetailViewController: UIViewController {
 //MARK:- Private
     
     private func updateViews(for sol: MarsSol) {
+        self.navigationItem.title = "Sol Id: \(sol.idNumber)"
         self.cameraLabel.text = "Camera : \(sol.camera.name)"
         self.dateTakenLabel.text = "Taken by \(sol.idNumber) on  \(self.dateFormatter.string(from: (sol.earthDate))) (Sol \(sol.sol))"
         self.imageView.load(url: (URL(string: (sol.imageURL))?.usingHTTPS!)!)
