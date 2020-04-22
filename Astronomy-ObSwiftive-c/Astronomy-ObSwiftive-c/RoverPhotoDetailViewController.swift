@@ -11,6 +11,12 @@ import UIKit
 class RoverPhotoDetailViewController: UIViewController {
 
     @IBOutlet var roverPhotoImage: UIImageView!
+    @IBOutlet var roverNameTextLabel: UILabel!
+    @IBOutlet var photoIDTextLabel: UILabel!
+    @IBOutlet var solTextLabel: UILabel!
+    @IBOutlet var earthDateTextLabel: UILabel!
+    @IBOutlet var cameraNameTextLabel: UILabel!
+    
     
     var photoController = PhotoController()
     
@@ -27,8 +33,13 @@ class RoverPhotoDetailViewController: UIViewController {
             
             DispatchQueue.main.async {
                 do {
-                    let photoData = try Data(contentsOf: data.roverPhotos[31].photoURL)  // FIXME: Hard-coded a photo by index number
+                    let photoData = try Data(contentsOf: data.roverPhotos[31].photoURL) // FIXME: Hard-coded a photo by index number
                     self.roverPhotoImage.image = UIImage(data: photoData)
+                    self.roverNameTextLabel.text = String("Rover - \(roverToFetch.capitalized)")
+                    self.solTextLabel.text = String("Mission Sol: \(solToFetch)")
+                    self.photoIDTextLabel.text = String("Photo ID: \(data.roverPhotos[31].photoID)")
+                    self.earthDateTextLabel.text = String("Earth Date: \(data.roverPhotos[31].earthDate)")
+                    self.cameraNameTextLabel.text = data.roverPhotos[31].cameraName
                 } catch {
                     NSLog("Error setting up views on detail view controller: \(error)")
                 }
