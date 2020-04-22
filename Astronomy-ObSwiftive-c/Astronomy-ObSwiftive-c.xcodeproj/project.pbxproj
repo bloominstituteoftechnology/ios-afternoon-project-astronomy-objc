@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		440124C62450A0B3000E0072 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440124C52450A0B3000E0072 /* URL+Secure.swift */; };
 		440124C92450A279000E0072 /* NSURL+SecureHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 440124C82450A279000E0072 /* NSURL+SecureHTTP.m */; };
 		44358AA2244CFEBA009B1BE5 /* PhotoManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44358AA1244CFEBA009B1BE5 /* PhotoManifest.swift */; };
 		44358AEB244E7BFE009B1BE5 /* SolPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 44358AEA244E7BFE009B1BE5 /* SolPhoto.m */; };
@@ -25,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		440124C52450A0B3000E0072 /* URL+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 		440124C72450A279000E0072 /* NSURL+SecureHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+SecureHTTP.h"; sourceTree = "<group>"; };
 		440124C82450A279000E0072 /* NSURL+SecureHTTP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SecureHTTP.m"; sourceTree = "<group>"; };
 		44358AA1244CFEBA009B1BE5 /* PhotoManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManifest.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				44C6609E2449494F007D7E04 /* Main.storyboard */,
 				44358B05244FAE09009B1BE5 /* LSIErrors.h */,
 				44358B04244FAE09009B1BE5 /* LSIErrors.m */,
-				440124C52450A0B3000E0072 /* URL+Secure.swift */,
 				440124C72450A279000E0072 /* NSURL+SecureHTTP.h */,
 				440124C82450A279000E0072 /* NSURL+SecureHTTP.m */,
 				44358B02244FAD9B009B1BE5 /* LambdaSDK */,
@@ -195,7 +192,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				440124C62450A0B3000E0072 /* URL+Secure.swift in Sources */,
 				440124C92450A279000E0072 /* NSURL+SecureHTTP.m in Sources */,
 				44C6609D2449494F007D7E04 /* ViewController.swift in Sources */,
 				44358AEE244E8B0B009B1BE5 /* RoverPhoto.m in Sources */,
