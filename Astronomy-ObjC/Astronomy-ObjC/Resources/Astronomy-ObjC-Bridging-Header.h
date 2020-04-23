@@ -6,3 +6,4 @@
 #import "SAHNasaManifest.h"
 #import "SAHSol.h"
 #import "SAHSolPhoto.h"
+#import "SAHFetchPhotoOperation.h"

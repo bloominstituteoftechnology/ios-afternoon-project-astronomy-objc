@@ -11,10 +11,14 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class SolCollectionViewController: UIViewController {
-    @IBOutlet weak var solIdLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var solIdLabel: UILabel!
+    @IBOutlet weak var titleView: UIStackView!
     
     let apiClient = SAHApiClient();
+    let photoFetchQueue = OperationQueue()
+    private var solIndex = 0;
+    
     
     var manifest: SAHNasaManifest?
     var currentSol: SAHSol? {
@@ -32,7 +36,9 @@ class SolCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.titleView = titleView
         collectionView.dataSource = self
+        collectionView.delegate = self;
         apiClient.fetchManifest { (manifest, error) in
             if let error = error {
                 print("Error fetching manifest: \(error)")
@@ -40,7 +46,7 @@ class SolCollectionViewController: UIViewController {
             }
             guard let manifest = manifest else { return }
             self.manifest = manifest
-            self.currentSol = manifest.sols[4]
+            self.currentSol = manifest.sols[self.solIndex]
             DispatchQueue.main.async {
                 self.updateViews()
             }
@@ -72,13 +78,50 @@ class SolCollectionViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func previousTapped(_ sender: Any) {
+    private func loadImage(for cell: SolPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let photo = photos?[indexPath.item] else { return }
+        
+        let loadOp = SAHFetchPhotoOperation(solPhoto: photo)
+        
+        let cellReuseOperation = BlockOperation {
+            cell.imageView.image = UIImage(data: loadOp.imageData)
+        }
+        
+        cellReuseOperation.addDependency(loadOp)
+        photoFetchQueue.addOperations([loadOp], waitUntilFinished: false)
+        OperationQueue.main.addOperation(cellReuseOperation)
         
     }
     
     
+    @IBAction func previousTapped(_ sender: Any) {
+        if solIndex < 1 {
+            solIndex = 0
+            currentSol = manifest?.sols[solIndex]
+        } else {
+            solIndex -= 1
+            currentSol = manifest?.sols[solIndex]
+        }
+        
+        updateViews()
+    }
+    
+    
     @IBAction func nextTapped(_ sender: Any) {
+        guard let count = manifest?.sols.count else {
+            solIndex = 0
+            currentSol = manifest?.sols[solIndex]
+            return
+        }
+        if (solIndex + 1) < count {
+            solIndex += 1
+            currentSol = manifest?.sols[solIndex]
+        } else {
+            solIndex = 0
+            currentSol = manifest?.sols[solIndex]
+        }
+        
+        updateViews()
         
     }
     
@@ -92,15 +135,7 @@ extension SolCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? SolPhotoCollectionViewCell else { return UICollectionViewCell() }
         
-        guard let photo = photos?[indexPath.item] else { return cell }
-        
-        apiClient.fetchPhoto(atURL: photo.imageUrl) { (data, error) in
-            guard let data = data else { return }
-            DispatchQueue.main.async {
-                cell.imageView.image = UIImage(data: data)
-            }
-            
-        }
+        loadImage(for: cell, forItemAt: indexPath)
         
         return cell
     }

@@ -12,11 +12,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SAHFetchPhotoOperation : NSBlockOperation
+@interface SAHFetchPhotoOperation : NSOperation
 
 @property (nonatomic, readonly) SAHSolPhoto *solPhoto;
-@property (nonatomic, readonly) NSURLSessionDataTask *dataTask;
-@property (nonatomic, readonly) NSData *imageData;
+@property (nonatomic) NSData *imageData;
 
 -(instancetype)initWithSolPhoto:(SAHSolPhoto *)photo;
 
