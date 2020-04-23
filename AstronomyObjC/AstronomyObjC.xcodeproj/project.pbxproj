@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7256561C244F999D00FFD5A3 /* CDGFetchPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7256561B244F999D00FFD5A3 /* CDGFetchPhoto.m */; };
 		726B0B7B244F831700E7DB19 /* Sol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B7A244F831700E7DB19 /* Sol.swift */; };
 		726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B7D244F856600E7DB19 /* CDGCamera.m */; };
 		726B0B81244F884900E7DB19 /* CDGPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B80244F884900E7DB19 /* CDGPhoto.m */; };
 		726B0B84244F8C1E00E7DB19 /* CDGRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B83244F8C1E00E7DB19 /* CDGRover.m */; };
 		726B0B87244F8DF300E7DB19 /* CDGRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 726B0B86244F8DF300E7DB19 /* CDGRoverClient.m */; };
+		727CE5F924523AA7000F7971 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CE5F824523AA7000F7971 /* PhotoCollectionViewController.swift */; };
+		727CE5FC24523B5E000F7971 /* CDGCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 727CE5FB24523B5E000F7971 /* CDGCache.m */; };
 		72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E5E244E52E400E4D53B /* AppDelegate.m */; };
 		72DF2E62244E52E400E4D53B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DF2E61244E52E400E4D53B /* SceneDelegate.m */; };
 		72DF2E68244E52E400E4D53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DF2E66244E52E400E4D53B /* Main.storyboard */; };
@@ -22,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7256561A244F999D00FFD5A3 /* CDGFetchPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGFetchPhoto.h; sourceTree = "<group>"; };
+		7256561B244F999D00FFD5A3 /* CDGFetchPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGFetchPhoto.m; sourceTree = "<group>"; };
 		726B0B7A244F831700E7DB19 /* Sol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sol.swift; sourceTree = "<group>"; };
 		726B0B7C244F856600E7DB19 /* CDGCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGCamera.h; sourceTree = "<group>"; };
 		726B0B7D244F856600E7DB19 /* CDGCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGCamera.m; sourceTree = "<group>"; };
@@ -31,6 +36,9 @@
 		726B0B83244F8C1E00E7DB19 /* CDGRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGRover.m; sourceTree = "<group>"; };
 		726B0B85244F8DF300E7DB19 /* CDGRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGRoverClient.h; sourceTree = "<group>"; };
 		726B0B86244F8DF300E7DB19 /* CDGRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGRoverClient.m; sourceTree = "<group>"; };
+		727CE5F824523AA7000F7971 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		727CE5FA24523B5E000F7971 /* CDGCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGCache.h; sourceTree = "<group>"; };
+		727CE5FB24523B5E000F7971 /* CDGCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGCache.m; sourceTree = "<group>"; };
 		72DF2E5A244E52E400E4D53B /* AstronomyObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DF2E5D244E52E400E4D53B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72DF2E5E244E52E400E4D53B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72565619244F998000FFD5A3 /* CDGFetchPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				7256561A244F999D00FFD5A3 /* CDGFetchPhoto.h */,
+				7256561B244F999D00FFD5A3 /* CDGFetchPhoto.m */,
+			);
+			path = CDGFetchPhoto;
+			sourceTree = "<group>";
+		};
 		726B0B79244F830400E7DB19 /* Rover - Objc */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +80,13 @@
 				726B0B83244F8C1E00E7DB19 /* CDGRover.m */,
 			);
 			path = "Rover - Objc";
+			sourceTree = "<group>";
+		};
+		727CE5FD24523ED1000F7971 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		72DF2E51244E52E400E4D53B = {
@@ -84,13 +108,14 @@
 		72DF2E5C244E52E400E4D53B /* AstronomyObjC */ = {
 			isa = PBXGroup;
 			children = (
-				72DF2E7C244E541100E4D53B /* Helpers */,
 				72DF2E7A244E539B00E4D53B /* Networking */,
 				72DF2E79244E539400E4D53B /* Models */,
 				72DF2E78244E538800E4D53B /* ViewControllers */,
 				72DF2E66244E52E400E4D53B /* Main.storyboard */,
 				72DF2E6F244E52E500E4D53B /* main.m */,
 				72DF2E77244E535D00E4D53B /* Resources */,
+				727CE5FA24523B5E000F7971 /* CDGCache.h */,
+				727CE5FB24523B5E000F7971 /* CDGCache.m */,
 			);
 			path = AstronomyObjC;
 			sourceTree = "<group>";
@@ -113,7 +138,9 @@
 		72DF2E78244E538800E4D53B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				727CE5FD24523ED1000F7971 /* Custom Cells */,
 				72DF2E81244E574400E4D53B /* PhotoDetailViewController.swift */,
+				727CE5F824523AA7000F7971 /* PhotoCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -132,6 +159,7 @@
 		72DF2E7A244E539B00E4D53B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				72565619244F998000FFD5A3 /* CDGFetchPhoto */,
 				72DF2E7B244E53A300E4D53B /* CDGRoverClient */,
 			);
 			path = Networking;
@@ -144,13 +172,6 @@
 				726B0B86244F8DF300E7DB19 /* CDGRoverClient.m */,
 			);
 			path = CDGRoverClient;
-			sourceTree = "<group>";
-		};
-		72DF2E7C244E541100E4D53B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		72DF2E8B244E588B00E4D53B /* Camera - Objc */ = {
@@ -246,11 +267,14 @@
 				726B0B84244F8C1E00E7DB19 /* CDGRover.m in Sources */,
 				726B0B87244F8DF300E7DB19 /* CDGRoverClient.m in Sources */,
 				726B0B7E244F856600E7DB19 /* CDGCamera.m in Sources */,
+				7256561C244F999D00FFD5A3 /* CDGFetchPhoto.m in Sources */,
 				72DF2E5F244E52E400E4D53B /* AppDelegate.m in Sources */,
 				72DF2E70244E52E500E4D53B /* main.m in Sources */,
 				72DF2E82244E574400E4D53B /* PhotoDetailViewController.swift in Sources */,
+				727CE5F924523AA7000F7971 /* PhotoCollectionViewController.swift in Sources */,
 				726B0B81244F884900E7DB19 /* CDGPhoto.m in Sources */,
 				72DF2E62244E52E400E4D53B /* SceneDelegate.m in Sources */,
+				727CE5FC24523B5E000F7971 /* CDGCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

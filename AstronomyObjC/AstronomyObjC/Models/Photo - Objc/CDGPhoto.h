@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CDGPhoto : NSObject
 
-@property (nonatomic, readonly) NSURL *imageURL;
+@property (nonatomic, strong, readonly) NSURL *imageURL;
 @property (nonatomic, readonly) NSInteger identifier;
 @property (nonatomic, readonly) NSInteger sol;
-@property (nonatomic, readonly) CDGCamera *camera;
-@property (nonatomic, readonly) NSDate *earthDate;
+@property (nonatomic, strong, readonly) CDGCamera *camera;
+@property (nonatomic, strong, readonly) NSDate *earthDate;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

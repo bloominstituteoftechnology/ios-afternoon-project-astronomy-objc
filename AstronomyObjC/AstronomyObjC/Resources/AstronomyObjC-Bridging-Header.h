@@ -7,3 +7,4 @@
 #import "CDGRover.h"
 
 #import "CDGRoverClient.h"
+#import "CDGFetchPhoto.h"
