@@ -46,8 +46,8 @@
         NSString *photoURLString = dictionary[@"img_src"];
         NSDictionary *cameraDictionary = dictionary[@"camera"];
         NSString *cameraName = cameraDictionary[@"full_name"];
-        NSString *jsonDate = dictionary[@"earth_date"];
-        NSDate *earthDate = [dateFormatter dateFromString:jsonDate];
+        NSString *jsonDateString = dictionary[@"earth_date"];
+        NSDate *earthDate = [dateFormatter dateFromString:jsonDateString];
         
         NSURL *photoURL = [NSURL URLWithString:photoURLString];
         NSURL *secureURL = [NSURL convertHTTPtoHTTPS:photoURL];
