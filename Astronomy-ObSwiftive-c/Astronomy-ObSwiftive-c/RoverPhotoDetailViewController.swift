@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class RoverPhotoDetailViewController: UIViewController {
 
@@ -65,6 +66,27 @@ class RoverPhotoDetailViewController: UIViewController {
     }
     
     @IBAction func savePhotoToLibrary(_ sender: UIButton) {
+        guard let image = roverPhotoImage.image else { return }
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAsset(from: image)
+        }) { (success, possibleError) in
+            if let error = possibleError {
+                NSLog("Error saving photo: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.presentSuccessfulSaveAlert()
+            }
+        }
+    }
+    
+    func presentSuccessfulSaveAlert() {
+        let alert = UIAlertController(title: "Photo Saved", message: "The Mars rover photo", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     /*
