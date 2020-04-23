@@ -55,7 +55,6 @@ class RoverPhotoDetailViewController: UIViewController {
                     self.solTextLabel.text = String("Mission Sol: \(solToFetch)")
                     self.photoIDTextLabel.text = String("Photo ID: \(data.roverPhotos[31].photoID)")
                     self.earthDateTextLabel.text = String("Earth Date: \(earthDateString)")
-//                    print(data.roverPhotos[31].earthDate)
                     self.cameraNameTextLabel.text = data.roverPhotos[31].cameraName
                 } catch {
                     NSLog("Error setting up views on detail view controller: \(error)")
@@ -88,15 +87,4 @@ class RoverPhotoDetailViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
