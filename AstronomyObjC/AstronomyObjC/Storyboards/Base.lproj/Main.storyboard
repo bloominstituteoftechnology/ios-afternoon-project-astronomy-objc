@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vu4-iv-0X4">
-                                <rect key="frame" x="16" y="376" width="382" height="115"/>
+                                <rect key="frame" x="16" y="476" width="382" height="115"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keS-Vr-DNd">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -58,7 +58,7 @@
                             <constraint firstItem="ScN-02-aVX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ULv-JZ-fAV"/>
                             <constraint firstItem="ScN-02-aVX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Uz7-x7-L5y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JIS-Mq-3Vr" secondAttribute="trailing" constant="16" id="XH8-8M-RfC"/>
-                            <constraint firstItem="vu4-iv-0X4" firstAttribute="top" secondItem="ScN-02-aVX" secondAttribute="bottom" constant="16" id="aKF-24-3WX"/>
+                            <constraint firstItem="vu4-iv-0X4" firstAttribute="top" secondItem="ScN-02-aVX" secondAttribute="bottom" constant="116" id="aKF-24-3WX"/>
                             <constraint firstItem="vu4-iv-0X4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eb2-Ij-CUh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JIS-Mq-3Vr" secondAttribute="bottom" constant="16" id="l8p-lU-Cs5"/>
                         </constraints>
@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="2445" y="157"/>
         </scene>
-        <!--Sol 30-->
+        <!--Main Collection View Controller-->
         <scene sceneID="93E-xe-ZAX">
             <objects>
                 <collectionViewController id="kpG-Fj-cra" customClass="MainCollectionViewController" customModule="AstronomyObjC" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +120,7 @@
                             <outlet property="delegate" destination="kpG-Fj-cra" id="vfu-Vg-yUo"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Sol 30" id="Ep0-Rr-f2k">
+                    <navigationItem key="navigationItem" id="Ep0-Rr-f2k">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="lessthan" catalog="system" id="086-9t-Hib">
                             <connections>
                                 <action selector="goBack:" destination="kpG-Fj-cra" id="hIw-rG-eHk"/>

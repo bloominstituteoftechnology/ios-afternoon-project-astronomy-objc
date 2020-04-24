@@ -66,6 +66,7 @@ class DetailViewController: UIViewController {
         if let image = MainCollectionViewController.nsCache.object(forKey: sol.idNumber) {
             imageView.image = image
         } else {
+           
               self.imageView.load(url: (URL(string: (sol.imageURL))?.usingHTTPS!)!)
         }
       

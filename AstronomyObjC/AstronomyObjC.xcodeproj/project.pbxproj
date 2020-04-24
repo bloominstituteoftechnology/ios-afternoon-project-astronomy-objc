@@ -26,6 +26,7 @@
 		B66F777B245031B400E0727E /* SolManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F777A245031B400E0727E /* SolManifest.m */; };
 		B66F777E24503CB600E0727E /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F777D24503CB600E0727E /* ImageCache.m */; };
 		B66F778124503EED00E0727E /* SolCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F778024503EED00E0727E /* SolCollectionViewCell.m */; };
+		B66F77B924526A5A00E0727E /* FetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F77B824526A5A00E0727E /* FetchPhotoOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		B66F777D24503CB600E0727E /* ImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
 		B66F777F24503EED00E0727E /* SolCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolCollectionViewCell.h; sourceTree = "<group>"; };
 		B66F778024503EED00E0727E /* SolCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolCollectionViewCell.m; sourceTree = "<group>"; };
+		B66F77B724526A5A00E0727E /* FetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchPhotoOperation.h; sourceTree = "<group>"; };
+		B66F77B824526A5A00E0727E /* FetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchPhotoOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 		B66F7734244EFD4400E0727E /* AstronomyObjC */ = {
 			isa = PBXGroup;
 			children = (
+				B66F77B624525DBC00E0727E /* OperationQueue */,
 				B66F7767244F0BFA00E0727E /* Convenience + Ext */,
 				B66F7756244F049900E0727E /* Helper */,
 				B66F7765244F0BB600E0727E /* SupportingFiles */,
@@ -186,6 +190,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B66F77B624525DBC00E0727E /* OperationQueue */ = {
+			isa = PBXGroup;
+			children = (
+				B66F77B724526A5A00E0727E /* FetchPhotoOperation.h */,
+				B66F77B824526A5A00E0727E /* FetchPhotoOperation.m */,
+			);
+			path = OperationQueue;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,6 +274,7 @@
 				B66F777824502EDA00E0727E /* ManifestFetcher.m in Sources */,
 				B66F775F244F04B000E0727E /* LSIFileHelper.m in Sources */,
 				B66F777224502A4B00E0727E /* MainCollectionViewController.swift in Sources */,
+				B66F77B924526A5A00E0727E /* FetchPhotoOperation.m in Sources */,
 				B66F777B245031B400E0727E /* SolManifest.m in Sources */,
 				B66F773A244EFD4400E0727E /* DetailViewController.swift in Sources */,
 				B66F7752244EFF9C00E0727E /* SolCamera.m in Sources */,
@@ -420,7 +434,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4939K9623X;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = AstronomyObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,7 +457,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4939K9623X;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = AstronomyObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

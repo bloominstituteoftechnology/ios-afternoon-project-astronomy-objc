@@ -61,6 +61,7 @@ class MainCollectionViewController : UICollectionViewController {
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         count -= 1
+        collectionView.reloadData()
         manifestFetcher.fetchManifest(forRover: "curiosity") { (manifest, _) in
             guard let manifest = manifest else { return }
             
@@ -126,10 +127,19 @@ class MainCollectionViewController : UICollectionViewController {
   
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SolCell", for: indexPath) as! SolCollectionViewCell
         let sol = sols[indexPath.item]
+    
         if let image = MainCollectionViewController.nsCache.object(forKey: sol.idNumber) {
-            DispatchQueue.main.async {    cell.soiImageView?.image = image }
+            DispatchQueue.main.async {
                
-        } else {   cell.soiImageView?.load(url: (URL(string: sol.imageURL)?.usingHTTPS!)!)  }
+                cell.soiImageView?.image = image
+                
+            }
+            collectionView.reloadInputViews()
+        } else {
+           
+            cell.soiImageView?.load(url: (URL(string: sol.imageURL)?.usingHTTPS!)!)
+            
+        }
               return cell
     
     }
