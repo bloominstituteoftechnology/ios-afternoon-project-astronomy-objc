@@ -9,3 +9,4 @@
 #import "ManifestFetcher.h"
 #import "ImageCache.h"
 #import "SolCollectionViewCell.h"
+#import "FetchPhotoOperation.h"

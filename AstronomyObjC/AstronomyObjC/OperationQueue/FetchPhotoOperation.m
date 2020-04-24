@@ -26,7 +26,7 @@
     BOOL _isFinished;
     BOOL _isExecuting;
 }
-//MARK:- Properties 
+//MARK:- Properties
 - (BOOL)isAsynchronous { return YES; }
 - (BOOL)isConcurrent { return YES; }
 + (NSSet *)keyPathsForValuesAffectingInternalIsExecuting { return [NSSet setWithObject:@"internalIsExecuting"] ;}
@@ -77,18 +77,6 @@
     [self.dataTask cancel];
     [super cancel];
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end
