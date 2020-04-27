@@ -8,6 +8,30 @@
 
 import Foundation
 
+class MarsRoverPhotoManifest: NSObject, Decodable {
+    var photos: [MarsRoverPhoto]
+
+    init(photos: [MarsRoverPhoto]) {
+        self.photos = photos
+    }
+    
+    enum PhotoCodingKeys: String, CodingKey {
+        case photos
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let topContainer = try decoder.container(keyedBy: PhotoCodingKeys.self)
+        var photoContainer = try topContainer.nestedUnkeyedContainer(forKey: .photos)
+        self.photos = []
+        
+        while !photoContainer.isAtEnd {
+            let photo = try photoContainer.decode(MarsRoverPhoto.self)
+            self.photos.append(photo)
+        }
+        super.init()
+    }
+}
+
 class MarsRoverPhoto: NSObject, Decodable {
     var identifier: Int
     var sol: Int
@@ -15,10 +39,6 @@ class MarsRoverPhoto: NSObject, Decodable {
     var imgSrc: String
     var earthDate: String
     var rover: Rover
-    
-    enum PhotoCodingKeys: String, CodingKey {
-        case photos
-    }
     
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
@@ -45,7 +65,7 @@ class MarsRoverPhoto: NSObject, Decodable {
         case maxSol = "max_sol"
         case maxDate = "max_date"
         case totalPhotos = "total_photos"
-        case cameras
+//        case cameras
     }
     
     init(identifier: Int, sol: Int, camera: Camera, imgSrc: String, earthDate: String, rover: Rover) {
@@ -58,9 +78,8 @@ class MarsRoverPhoto: NSObject, Decodable {
     }
     
     public required init(from decoder: Decoder) throws {
-        let topContainer = try decoder.container(keyedBy: PhotoCodingKeys.self)
-        var photoContainer = try topContainer.nestedUnkeyedContainer(forKey: .photos)
-        let container = try photoContainer.nestedContainer(keyedBy: CodingKeys.self)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
         identifier = try container.decode(Int.self, forKey: .identifier)
         sol = try container.decode(Int.self, forKey: .sol)
@@ -85,26 +104,13 @@ class MarsRoverPhoto: NSObject, Decodable {
         let maxSol = try roverContainer.decode(Int32.self, forKey: .maxSol)
         let maxDate = try roverContainer.decode(String.self, forKey: .maxDate)
         let totalPhotos = try roverContainer.decode(Int32.self, forKey: .totalPhotos)
-        // TODO: cameras
+        // TODO? (May not be necessary): cameras array property on rover model
         let rover = Rover(identifier: roverID, name: roverName, landingDate: landingDate, launchDate: launchDate, status: status, maxSol: maxSol, maxDate: maxDate, totalPhotos: totalPhotos)
         self.rover = rover
         
+        
         super.init()
     }
-    
-//    required init(coder decoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-
-    // Not sure if this will be necessary yet but saving just in case.
-    
-    // @objc public class func create(from url: URL) -> MarsRoverPhoto {
-    //        let decoder = JSONDecoder()
-    //        let marsRoverPhoto = try! decoder.decode(MarsRoverPhoto.self, from: try! Data(contentsOf: url))
-    //        return marsRoverPhoto
-    //    }
-    
 }
 
 

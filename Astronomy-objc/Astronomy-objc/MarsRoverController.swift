@@ -10,7 +10,7 @@ import Foundation
 
 class MarsRoverController {
     
-    let baseURL = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f")!
+    let baseURL = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=30&api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f")!
     
     func fetchPhotos(completion: @escaping (Error?) -> Void) {
         var request = URLRequest(url: baseURL)
@@ -33,11 +33,19 @@ class MarsRoverController {
             let decoder = JSONDecoder()
             
             do  {
-                let marsRoverPhotoData = try decoder.decode(MarsRoverPhoto.self, from: data)
-                print(marsRoverPhotoData.identifier)
-                print(marsRoverPhotoData.earthDate)
-                print(marsRoverPhotoData.sol)
-                print(marsRoverPhotoData.imgSrc)
+                let marsRoverPhotoManifest = try decoder.decode(MarsRoverPhotoManifest.self, from: data)
+                
+                for photo in marsRoverPhotoManifest.photos {
+                    print(photo.identifier)
+                    print(photo.earthDate)
+                    print(photo.sol)
+                    print(photo.imgSrc)
+                    print(photo.rover.identifier)
+                    print(photo.camera.fullName)
+                }
+                
+                print(marsRoverPhotoManifest.photos.count)
+                
             } catch {
                 print("Error parsing data: \(error)")
                 completion(error)
