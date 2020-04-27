@@ -70,7 +70,7 @@ class MarsRoverPhoto: NSObject, Decodable {
         let cameraName = try cameraContainer.decode(String.self, forKey: .name)
         let roverID = try cameraContainer.decode(Int32.self, forKey: .roverID)
         let fullName = try cameraContainer.decode(String.self, forKey: .fullName)
-        let camera = Camera(identifier: cameraID, name: cameraName, roverIdentifier: roverID, fullName: fullName)
+        let camera = Camera(identifier: cameraID, name: cameraName, roverID: roverID, fullName: fullName)
         self.camera = camera
         
         imgSrc = try container.decode(String.self, forKey: .imgSrc)
