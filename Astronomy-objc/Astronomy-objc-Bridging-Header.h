@@ -11,6 +11,7 @@
 
 #import "Camera.h"
 #import "Rover.h"
+#import "Photo.h"
 
 
 #endif /* Astronomy_objc_Bridging_Header_h */
