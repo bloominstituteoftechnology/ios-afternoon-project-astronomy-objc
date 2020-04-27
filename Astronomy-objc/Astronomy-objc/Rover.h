@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Camera.h"
+#import "Photo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) int maxSol;
 @property (nonatomic, readonly) NSString *maxDate; // NSDate from NSString
 @property (nonatomic, readonly) int totalPhotos;
+@property (nonatomic, readonly, nullable) Photo *photos;
 //@property (nonatomic, readonly, copy) NSArray<Camera *> *cameras;
 
 - (instancetype)initWithIdentifier:(int)identifier
@@ -30,7 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
                             status:(nonnull NSString *)status
                             maxSol:(int)maxSol
                            maxDate:(nonnull NSString *)maxDate
-                       totalPhotos:(int)totalPhotos;
+                       totalPhotos:(int)totalPhotos
+                            photos:(nullable Photo *)photos;
 //                           cameras:(nonnull NSArray<Camera *> *)cameras;
 
 @end

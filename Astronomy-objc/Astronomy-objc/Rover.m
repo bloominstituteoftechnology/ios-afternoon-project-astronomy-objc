@@ -18,6 +18,7 @@
                             maxSol:(int)maxSol
                            maxDate:(NSString *)maxDate
                        totalPhotos:(int)totalPhotos
+                            photos:(Photo *)photos
 {
     if (self = [super init]) {
         _identifier = identifier;
@@ -28,6 +29,7 @@
         _maxSol = maxSol;
         _maxDate = maxDate;
         _totalPhotos = totalPhotos;
+        _photos = photos;
     }
     
     return self;
