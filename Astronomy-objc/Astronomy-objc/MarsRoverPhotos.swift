@@ -8,7 +8,9 @@
 
 import Foundation
 
-class MarsRoverPhotoManifest: NSObject, Decodable {
+// This model is responsible for returning a full list mars rover photos upon initialization
+
+class MarsRoverPhotos: NSObject, Decodable {
     var photos: [MarsRoverPhoto]
 
     init(photos: [MarsRoverPhoto]) {
@@ -105,7 +107,7 @@ class MarsRoverPhoto: NSObject, Decodable {
         let maxDate = try roverContainer.decode(String.self, forKey: .maxDate)
         let totalPhotos = try roverContainer.decode(Int32.self, forKey: .totalPhotos)
         // TODO? (May not be necessary): cameras array property on rover model
-        let rover = Rover(identifier: roverID, name: roverName, landingDate: landingDate, launchDate: launchDate, status: status, maxSol: maxSol, maxDate: maxDate, totalPhotos: totalPhotos)
+        let rover = Rover(identifier: roverID, name: roverName, landingDate: landingDate, launchDate: launchDate, status: status, maxSol: maxSol, maxDate: maxDate, totalPhotos: totalPhotos, photos: nil)
         self.rover = rover
         
         
