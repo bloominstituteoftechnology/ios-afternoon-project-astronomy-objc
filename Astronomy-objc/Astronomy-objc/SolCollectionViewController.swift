@@ -11,10 +11,17 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class SolCollectionViewController: UICollectionViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let client = MarsRoverController()
+        client.fetchPhotos { (error) in
+            if let error = error {
+                print(error)
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
