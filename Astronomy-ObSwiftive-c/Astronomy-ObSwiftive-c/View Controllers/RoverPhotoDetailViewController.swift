@@ -19,7 +19,8 @@ class RoverPhotoDetailViewController: UIViewController {
     @IBOutlet var cameraNameTextLabel: UILabel!
     
     
-    var photoController = PhotoController()
+    var photoController: PhotoController?
+    var roverPhoto: RoverPhoto?
     
     override func viewDidLoad() {
         super.viewDidLoad()

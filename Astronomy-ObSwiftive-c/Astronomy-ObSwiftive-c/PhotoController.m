@@ -22,6 +22,13 @@ static NSString *const APIKeyString = @"SfjvKWsq2nadyrPm5tfc2czHgHH8nyrttAXDqn3y
 
 @implementation PhotoController
 
+- (instancetype)initWithRoverPhotos:(NSArray<RoverPhoto *> *)roverPhotos {
+    if (self = [super init]) {
+        _roverPhotos = roverPhotos;
+    }
+    return self;
+}
+
 - (instancetype)initWithMarsRover:(NSString *)marsRover {
     if (self = [super init]) {
         _marsRover = marsRover;
