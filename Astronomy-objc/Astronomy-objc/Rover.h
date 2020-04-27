@@ -23,6 +23,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) int totalPhotos;
 @property (nonatomic, readonly, copy) NSArray<Camera *> *cameras;
 
+- (instancetype)initWithIdentifier:(int)identifier
+                              name:(nonnull NSString *)name
+                       landingDate:(nonnull NSDate *)landingDate
+                        launchDate:(nonnull NSDate *)launchDate
+                            status:(nonnull NSString *)status
+                            maxSol:(int)maxSol
+                           maxDate:(nonnull NSDate *)maxDate
+                       totalPhotos:(int)totalPhotos
+                           cameras:(nonnull NSArray<Camera *> *)cameras;
+
 @end
 
 NS_ASSUME_NONNULL_END
