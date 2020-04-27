@@ -15,23 +15,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) int identifier; // just "id" from the api
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) NSDate *landingDate; // NSDate from NSString
-@property (nonatomic, readonly) NSDate *launchDate; // NSDate from NSString
+@property (nonatomic, readonly) NSString *landingDate; // NSDate from NSString
+@property (nonatomic, readonly) NSString *launchDate; // NSDate from NSString
 @property (nonatomic, readonly, copy) NSString *status;
 @property (nonatomic, readonly) int maxSol;
-@property (nonatomic, readonly) NSDate *maxDate; // NSDate from NSString
+@property (nonatomic, readonly) NSString *maxDate; // NSDate from NSString
 @property (nonatomic, readonly) int totalPhotos;
-@property (nonatomic, readonly, copy) NSArray<Camera *> *cameras;
+//@property (nonatomic, readonly, copy) NSArray<Camera *> *cameras;
 
 - (instancetype)initWithIdentifier:(int)identifier
                               name:(nonnull NSString *)name
-                       landingDate:(nonnull NSDate *)landingDate
-                        launchDate:(nonnull NSDate *)launchDate
+                       landingDate:(nonnull NSString *)landingDate
+                        launchDate:(nonnull NSString *)launchDate
                             status:(nonnull NSString *)status
                             maxSol:(int)maxSol
-                           maxDate:(nonnull NSDate *)maxDate
-                       totalPhotos:(int)totalPhotos
-                           cameras:(nonnull NSArray<Camera *> *)cameras;
+                           maxDate:(nonnull NSString *)maxDate
+                       totalPhotos:(int)totalPhotos;
+//                           cameras:(nonnull NSArray<Camera *> *)cameras;
 
 @end
 
