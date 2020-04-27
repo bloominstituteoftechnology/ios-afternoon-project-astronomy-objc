@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) int identifier; // named "id" in api
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) int roverId; // named "rover_id" in api
+@property (nonatomic, readonly) int roverID; // named "rover_id" in api
 @property (nonatomic, readonly, copy) NSString *fullName;
 
 - (instancetype)initWithIdentifier:(int)identifier
