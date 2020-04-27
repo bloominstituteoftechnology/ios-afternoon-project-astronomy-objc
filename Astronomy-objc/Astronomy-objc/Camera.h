@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Camera : NSObject
 
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *fullName;
+
 @end
 
 NS_ASSUME_NONNULL_END
