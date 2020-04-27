@@ -10,4 +10,18 @@
 
 @implementation Camera
 
+- (instancetype)initWithIdentifier:(int)identifier
+                              name:(NSString *)name
+                           roverID:(int)roverID
+                          fullName:(NSString *)fullName
+{
+    if (self = [super init]) {
+        _identifier = identifier;
+        _name = name;
+        _roverID = roverID;
+        _fullName = fullName;
+    }
+    return self;
+}
+
 @end

@@ -10,4 +10,27 @@
 
 @implementation Rover
 
+- (instancetype)initWithIdentifier:(int)identifier
+                              name:(NSString *)name
+                       landingDate:(NSString *)landingDate
+                        launchDate:(NSString *)launchDate
+                            status:(NSString *)status
+                            maxSol:(int)maxSol
+                           maxDate:(NSString *)maxDate
+                       totalPhotos:(int)totalPhotos
+{
+    if (self = [super init]) {
+        _identifier = identifier;
+        _name = name;
+        _landingDate = landingDate;
+        _launchDate = launchDate;
+        _status = status;
+        _maxSol = maxSol;
+        _maxDate = maxDate;
+        _totalPhotos = totalPhotos;
+    }
+    
+    return self;
+}
+
 @end
