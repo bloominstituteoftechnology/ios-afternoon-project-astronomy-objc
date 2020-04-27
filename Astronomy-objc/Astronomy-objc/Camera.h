@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithIdentifier:(int)identifier
                               name:(NSString *)name
-                   roverIdentifier:(int)roverIdentifier
+                           roverID:(int)roverID
                           fullName:(NSString *)fullName;
 
 @end
