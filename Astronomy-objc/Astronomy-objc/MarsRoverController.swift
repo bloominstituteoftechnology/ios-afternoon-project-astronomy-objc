@@ -10,32 +10,36 @@ import Foundation
 
 class MarsRoverController {
     
-    let baseURL = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f")!
+    let allPhotosURL = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f")!
     
     func fetchPhotos(completion: @escaping (Error?) -> Void) {
-        var request = URLRequest(url: baseURL)
+        var request = URLRequest(url: allPhotosURL)
         
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print("Error with data task: \(error)")
-                completion(error)
+                DispatchQueue.main.async {
+                    completion(error)
+                }
                 return
             }
             
             guard let data = data else {
                 print("Error getting data")
-                completion(NSError())
+                DispatchQueue.main.async {
+                    completion(NSError())
+                }
                 return
             }
             
             let decoder = JSONDecoder()
             
             do  {
-                let marsRoverPhotoManifest = try decoder.decode(MarsRoverPhotos.self, from: data)
+                let allRoverPhotos = try decoder.decode(MarsRoverPhotos.self, from: data)
                 
-                for photo in marsRoverPhotoManifest.photos {
+                for photo in allRoverPhotos.photos {
                     print(photo.identifier)
                     print(photo.earthDate)
                     print(photo.sol)
@@ -44,15 +48,19 @@ class MarsRoverController {
                     print(photo.camera.fullName)
                 }
                 
-                print(marsRoverPhotoManifest.photos.count)
+                print(allRoverPhotos.photos.count)
                 
             } catch {
                 print("Error parsing data: \(error)")
-                completion(error)
+                DispatchQueue.main.async {
+                    completion(error)
+                }
                 return
             }
             
-            completion(nil)
+            DispatchQueue.main.async {
+                completion(nil)
+            }
         }.resume()
         
     }
