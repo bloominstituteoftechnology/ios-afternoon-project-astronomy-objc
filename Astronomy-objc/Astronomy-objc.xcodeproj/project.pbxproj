@@ -17,6 +17,11 @@
 		92D8E1F024566C9C007834E5 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1E924566C9C007834E5 /* LSIErrors.m */; };
 		92D8E1F124566C9C007834E5 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1EA24566C9C007834E5 /* LSIFileHelper.m */; };
 		92D8E1F224566C9C007834E5 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1EE24566C9C007834E5 /* URL+Secure.swift */; };
+		92D8E1F424566E45007834E5 /* SolCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1F324566E45007834E5 /* SolCollectionViewController.swift */; };
+		92D8E1F624566E60007834E5 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1F524566E60007834E5 /* PhotoDetailViewController.swift */; };
+		92D8E1FC2456719F007834E5 /* MarsRoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1FB2456719F007834E5 /* MarsRoverPhoto.swift */; };
+		92D8E1FF24567233007834E5 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1FE24567233007834E5 /* Camera.m */; };
+		92D8E20224567244007834E5 /* Rover.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E20124567244007834E5 /* Rover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,13 @@
 		92D8E1EC24566C9C007834E5 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		92D8E1ED24566C9C007834E5 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		92D8E1EE24566C9C007834E5 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		92D8E1F324566E45007834E5 /* SolCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolCollectionViewController.swift; sourceTree = "<group>"; };
+		92D8E1F524566E60007834E5 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		92D8E1FB2456719F007834E5 /* MarsRoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhoto.swift; sourceTree = "<group>"; };
+		92D8E1FD24567233007834E5 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		92D8E1FE24567233007834E5 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		92D8E20024567244007834E5 /* Rover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rover.h; sourceTree = "<group>"; };
+		92D8E20124567244007834E5 /* Rover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,13 @@
 				92D8E1CF24566B80007834E5 /* AppDelegate.m */,
 				92D8E1D124566B80007834E5 /* SceneDelegate.h */,
 				92D8E1D224566B80007834E5 /* SceneDelegate.m */,
+				92D8E1F324566E45007834E5 /* SolCollectionViewController.swift */,
+				92D8E1F524566E60007834E5 /* PhotoDetailViewController.swift */,
+				92D8E1FB2456719F007834E5 /* MarsRoverPhoto.swift */,
+				92D8E20024567244007834E5 /* Rover.h */,
+				92D8E20124567244007834E5 /* Rover.m */,
+				92D8E1FD24567233007834E5 /* Camera.h */,
+				92D8E1FE24567233007834E5 /* Camera.m */,
 				92D8E1D724566B80007834E5 /* Main.storyboard */,
 				92D8E1DA24566B81007834E5 /* Assets.xcassets */,
 				92D8E1DC24566B81007834E5 /* LaunchScreen.storyboard */,
@@ -168,13 +187,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D8E20224567244007834E5 /* Rover.m in Sources */,
 				92D8E1F224566C9C007834E5 /* URL+Secure.swift in Sources */,
 				92D8E1EF24566C9C007834E5 /* LSILog.m in Sources */,
 				92D8E1D024566B80007834E5 /* AppDelegate.m in Sources */,
 				92D8E1E124566B81007834E5 /* main.m in Sources */,
 				92D8E1F124566C9C007834E5 /* LSIFileHelper.m in Sources */,
 				92D8E1D324566B80007834E5 /* SceneDelegate.m in Sources */,
+				92D8E1FF24567233007834E5 /* Camera.m in Sources */,
+				92D8E1FC2456719F007834E5 /* MarsRoverPhoto.swift in Sources */,
+				92D8E1F624566E60007834E5 /* PhotoDetailViewController.swift in Sources */,
 				92D8E1F024566C9C007834E5 /* LSIErrors.m in Sources */,
+				92D8E1F424566E45007834E5 /* SolCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
