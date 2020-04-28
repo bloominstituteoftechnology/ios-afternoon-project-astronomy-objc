@@ -10,7 +10,7 @@ import Foundation
 
 // This model is responsible for returning a full list mars rover photos upon initialization
 
-class MarsRoverPhotos: NSObject, Decodable {
+@objc class MarsRoverPhotos: NSObject, Decodable {
     var photos: [MarsRoverPhoto]
 
     init(photos: [MarsRoverPhoto]) {
@@ -19,6 +19,13 @@ class MarsRoverPhotos: NSObject, Decodable {
     
     enum PhotoCodingKeys: String, CodingKey {
         case photos
+    }
+    
+    @objc public class func createMarsRoverPhotos(from nsData: NSData) -> MarsRoverPhotos {
+        let decoder = JSONDecoder()
+        let data = Data(referencing: nsData)
+        let allPhotos = try! decoder.decode(MarsRoverPhotos.self, from: data)
+        return allPhotos
     }
     
     public required init(from decoder: Decoder) throws {

@@ -24,15 +24,26 @@ class SolCollectionViewController: UICollectionViewController {
 //        }
 //
         let marsRoverManifesController = MarsRoverManifestController()
-        marsRoverManifesController.fetchMissionManifest { (rover, error) in
+//        marsRoverManifesController.fetchMissionManifest { (rover, error) in
+//            if let error = error {
+//                print(error)
+//            }
+//
+//            if let rover = rover {
+//                print(rover)
+//            }
+//        }
+        
+        marsRoverManifesController.fetchAllPhotos(forSol: 30) { (photos, error) in
             if let error = error {
                 print(error)
             }
             
-            if let rover = rover {
-                print(rover)
+            if let photos = photos {
+                print(photos.photos.count)
             }
         }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
