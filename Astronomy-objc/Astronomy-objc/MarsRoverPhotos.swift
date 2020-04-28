@@ -107,7 +107,7 @@ class MarsRoverPhoto: NSObject, Decodable {
         let maxDate = try roverContainer.decode(String.self, forKey: .maxDate)
         let totalPhotos = try roverContainer.decode(Int32.self, forKey: .totalPhotos)
         // TODO? (May not be necessary): cameras array property on rover model
-        let rover = Rover(identifier: roverID, name: roverName, landingDate: landingDate, launchDate: launchDate, status: status, maxSol: maxSol, maxDate: maxDate, totalPhotos: totalPhotos, photos: nil)
+        let rover = Rover(identifier: roverID, name: roverName, landingDate: landingDate, launchDate: launchDate, status: status, maxSol: maxSol, maxDate: maxDate, totalPhotos: totalPhotos, sols: nil)
         self.rover = rover
         
         
