@@ -99,7 +99,7 @@
                     <navigationItem key="navigationItem" title="Title" id="g3k-bJ-Vtx"/>
                     <connections>
                         <outlet property="cameraDetailsLabel" destination="6G6-CC-NYm" id="U9b-qR-xvl"/>
-                        <outlet property="marsRoverPhoto" destination="8HG-NU-0gs" id="4m7-ZM-Yty"/>
+                        <outlet property="marsRoverImage" destination="8HG-NU-0gs" id="4m7-ZM-Yty"/>
                         <outlet property="photoDetailsLabel" destination="U6D-Pp-TJd" id="G1d-EA-sYQ"/>
                         <outlet property="savePhotoButton" destination="5nU-TA-Xcf" id="Ey6-H5-gyK"/>
                     </connections>
