@@ -8,9 +8,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "RoverPhotoCell"
 
 class SolCollectionViewController: UICollectionViewController {
+    
+    
     
     
 
