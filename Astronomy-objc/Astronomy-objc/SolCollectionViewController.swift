@@ -23,7 +23,7 @@ class SolCollectionViewController: UICollectionViewController {
 //            }
 //        }
 //
-        let marsRoverManifesController = MarsRoverManifestController()
+        let marsRoverManifestController = MarsRoverManifestController()
 //        marsRoverManifesController.fetchMissionManifest { (rover, error) in
 //            if let error = error {
 //                print(error)
@@ -34,13 +34,15 @@ class SolCollectionViewController: UICollectionViewController {
 //            }
 //        }
         
-        marsRoverManifesController.fetchAllPhotos(forSol: 30) { (photos, error) in
+        marsRoverManifestController.fetchAllPhotos(forSol: 30) { (allRoverPhotos, error) in
             if let error = error {
                 print(error)
             }
             
-            if let photos = photos {
-                print(photos.photos.count)
+            if let allRoverPhotos = allRoverPhotos {
+                for photo in allRoverPhotos.photos {
+                    print(photo.imgSrc)
+                }
             }
         }
         
