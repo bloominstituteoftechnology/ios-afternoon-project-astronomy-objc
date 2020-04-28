@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Camera.h"
-#import "Photo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

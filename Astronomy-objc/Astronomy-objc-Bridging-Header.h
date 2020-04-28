@@ -11,7 +11,6 @@
 
 #import "Camera.h"
 #import "Rover.h"
-#import "Photo.h"
 #import "MarsRoverManifestController.h"
 
 
