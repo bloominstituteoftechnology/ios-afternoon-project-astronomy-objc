@@ -11,7 +11,7 @@
 		440124CB24513D1B000E0072 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440124CA24513D1B000E0072 /* PhotoCollectionViewController.swift */; };
 		440124CE24573999000E0072 /* RoverPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440124CD24573999000E0072 /* RoverPhotoCollectionViewCell.swift */; };
 		440124D124576E61000E0072 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 440124D024576E61000E0072 /* Cache.m */; };
-		440124D4245789C6000E0072 /* ConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 440124D3245789C6000E0072 /* ConcurrentOperation.m */; };
+		440124D4245789C6000E0072 /* FetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 440124D3245789C6000E0072 /* FetchPhotoOperation.m */; };
 		44358AA2244CFEBA009B1BE5 /* PhotoManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44358AA1244CFEBA009B1BE5 /* PhotoManifest.swift */; };
 		44358AEB244E7BFE009B1BE5 /* SolPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 44358AEA244E7BFE009B1BE5 /* SolPhoto.m */; };
 		44358AEE244E8B0B009B1BE5 /* RoverPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 44358AED244E8B0B009B1BE5 /* RoverPhoto.m */; };
@@ -34,8 +34,8 @@
 		440124CD24573999000E0072 /* RoverPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		440124CF24576E61000E0072 /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 		440124D024576E61000E0072 /* Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
-		440124D2245789C6000E0072 /* ConcurrentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConcurrentOperation.h; sourceTree = "<group>"; };
-		440124D3245789C6000E0072 /* ConcurrentOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConcurrentOperation.m; sourceTree = "<group>"; };
+		440124D2245789C6000E0072 /* FetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchPhotoOperation.h; sourceTree = "<group>"; };
+		440124D3245789C6000E0072 /* FetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchPhotoOperation.m; sourceTree = "<group>"; };
 		44358AA1244CFEBA009B1BE5 /* PhotoManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManifest.swift; sourceTree = "<group>"; };
 		44358AE5244E7BBE009B1BE5 /* Astronomy-ObSwiftive-c-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-ObSwiftive-c-Bridging-Header.h"; sourceTree = "<group>"; };
 		44358AE9244E7BFE009B1BE5 /* SolPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolPhoto.h; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 				44358B04244FAE09009B1BE5 /* LSIErrors.m */,
 				440124C72450A279000E0072 /* NSURL+SecureHTTP.h */,
 				440124C82450A279000E0072 /* NSURL+SecureHTTP.m */,
-				440124D2245789C6000E0072 /* ConcurrentOperation.h */,
-				440124D3245789C6000E0072 /* ConcurrentOperation.m */,
+				440124D2245789C6000E0072 /* FetchPhotoOperation.h */,
+				440124D3245789C6000E0072 /* FetchPhotoOperation.m */,
 				44358B02244FAD9B009B1BE5 /* LambdaSDK */,
 				44358AE5244E7BBE009B1BE5 /* Astronomy-ObSwiftive-c-Bridging-Header.h */,
 			);
@@ -228,7 +228,7 @@
 				44C6609B2449494F007D7E04 /* SceneDelegate.swift in Sources */,
 				440124CB24513D1B000E0072 /* PhotoCollectionViewController.swift in Sources */,
 				44358AA2244CFEBA009B1BE5 /* PhotoManifest.swift in Sources */,
-				440124D4245789C6000E0072 /* ConcurrentOperation.m in Sources */,
+				440124D4245789C6000E0072 /* FetchPhotoOperation.m in Sources */,
 				44358AEB244E7BFE009B1BE5 /* SolPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
