@@ -11,6 +11,13 @@ import UIKit
 class PhotoCollectionViewController: UIViewController {
     
     private var photoController = PhotoController()
+    var validSols: [Int]? {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     private let cache = Cache()
     private let  photoFetchQueue = OperationQueue()
     private var operations = [Int : Operation]()
@@ -28,6 +35,26 @@ class PhotoCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photoController.fetchPhotoManifest("curiosity") { (possibleManifest, possibleError) in
+            if let error = possibleError {
+                NSLog("Error fetching Photo Manifest: \(error)")
+                return
+            }
+            
+            if let photoManifest = possibleManifest {
+                guard let validSols = photoManifest.sols else { return }
+                self.validSols = validSols
+            }
+        }
+        
+        photoController.fetchRoverPhotos("curiosity", Int32(12)) { (possiblePhoto, possibleError) in
+            if let error = possibleError {
+                NSLog("Error fetching Rover Photo: \(error)")
+                return
+            }
+            self.roverPhotos = possiblePhoto?.roverPhotos
+        }
 
     }
     
@@ -85,7 +112,7 @@ class PhotoCollectionViewController: UIViewController {
 
 extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoController.roverPhotos.count
+        return roverPhotos?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

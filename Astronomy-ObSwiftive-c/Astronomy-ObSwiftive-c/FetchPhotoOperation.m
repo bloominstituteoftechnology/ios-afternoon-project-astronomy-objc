@@ -13,6 +13,8 @@
 @interface FetchPhotoOperation ()
 
 @property (nonatomic, strong) NSURLSessionDataTask *dataTask;
+@property BOOL internalIsExecuting;
+@property BOOL internalIsFinished;
 
 @end
 
@@ -26,11 +28,19 @@
     return YES;
 }
 
+- (BOOL)isExecuting {
+    return self.internalIsExecuting;
+}
+
+- (BOOL)isFinished {
+    return self.internalIsFinished;
+}
+
 + (NSSet *)keyPathsForValuesAffectingIsExecuting {
-    return [NSSet setWithObject:@"isExecuting"];
+    return [NSSet setWithObject:@"internalIsExecuting"];
 }
 + (NSSet *)keyPathsForValuesAffectingIsFinished {
-    return [NSSet setWithObject:@"isFinished"];
+    return [NSSet setWithObject:@"internalIsFinished"];
 }
 
 - (instancetype)initWithRoverPhotoReference:(RoverPhoto *)roverPhotoReference {
@@ -41,13 +51,14 @@
 }
 
 - (void)start {
-    self.isExecuting = YES;
-    NSURL *url = self.roverPhotoReference.photoURL;
+    self.internalIsExecuting = YES;
+    NSURL *url = [[NSURL alloc] init];
+    url = self.roverPhotoReference.photoURL;
     
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (self.isCancelled) {
-            self.isFinished = YES;
-            self.isExecuting = NO;
+            self.internalIsFinished = YES;
+            self.internalIsExecuting = NO;
             return;
         }
         
@@ -59,8 +70,8 @@
         if (data) {
             self.roverPhoto = [UIImage imageWithData:data];
         }
-        self.isExecuting = NO;
-        self.isFinished = YES;
+        self.internalIsExecuting = NO;
+        self.internalIsFinished = YES;
     }];
     
     [task resume];

@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL isFinished;
 @property (nonatomic) BOOL isExecuting;
 
-- (instancetype)initWithRoverPhotoReference:(RoverPhoto *) roverPhotoReference;
+- (instancetype)initWithRoverPhotoReference:(RoverPhoto *)roverPhotoReference;
 
 @end
 

@@ -49,7 +49,7 @@ static NSString *const APIKeyString = @"SfjvKWsq2nadyrPm5tfc2czHgHH8nyrttAXDqn3y
     ];
     
     NSURL *url = urlComponents.URL;
-    NSLog(@"Current url: %@", url);
+//    NSLog(@"Current url: %@", url);
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
@@ -118,7 +118,6 @@ static NSString *const APIKeyString = @"SfjvKWsq2nadyrPm5tfc2czHgHH8nyrttAXDqn3y
         }
         
         RoverPhoto *roverPhotoData = [[RoverPhoto alloc] initWithDictionary:jsonData];
-        
         completionHandler(roverPhotoData, nil);
         
     }] resume];
