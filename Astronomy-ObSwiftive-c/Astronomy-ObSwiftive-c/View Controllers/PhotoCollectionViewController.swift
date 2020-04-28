@@ -36,7 +36,10 @@ class PhotoCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        photoController.fetchPhotoManifest("curiosity") { (possibleManifest, possibleError) in
+        let roverName = "curiosity"
+        let initialSol: Int32 = 3
+        
+        photoController.fetchPhotoManifest(roverName) { (possibleManifest, possibleError) in
             if let error = possibleError {
                 NSLog("Error fetching Photo Manifest: \(error)")
                 return
@@ -48,7 +51,7 @@ class PhotoCollectionViewController: UIViewController {
             }
         }
         
-        photoController.fetchRoverPhotos("curiosity", Int32(12)) { (possiblePhoto, possibleError) in
+        photoController.fetchRoverPhotos(roverName, initialSol) { (possiblePhoto, possibleError) in
             if let error = possibleError {
                 NSLog("Error fetching Rover Photo: \(error)")
                 return
@@ -105,7 +108,7 @@ class PhotoCollectionViewController: UIViewController {
                 let indexPath = self.collectionView.indexPath(for: cell) else { return }
             
             photoDetailVC?.photoController = photoController
-            photoDetailVC?.roverPhoto = photoController.roverPhotos[indexPath.row]
+            photoDetailVC?.roverPhoto = roverPhotos![indexPath.row]
         }
     }
 }
@@ -123,6 +126,18 @@ extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectio
         return cell
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        guard let roverPhotos = roverPhotos else { return }
+//        if roverPhotos.count > 0 {
+//            let roverPhoto = roverPhotos[indexPath.item]
+//            operations[Int(roverPhoto.photoID)]?.cancel()
+//        } else {
+//            for (_, operation) in operations {
+//                operation.cancel()
+//            }
+//        }
+//    }
+    
     func collectionView(_collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize {
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         var totalUsableWidth = collectionView.frame.width
@@ -137,7 +152,7 @@ extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
+        return UIEdgeInsets(top: 0, left: 5.0, bottom: 0, right: 5.0)
     }
     
 }

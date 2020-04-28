@@ -20,49 +20,43 @@ class RoverPhotoDetailViewController: UIViewController {
     
     
     var photoController: PhotoController?
-    var roverPhoto: RoverPhoto?
+    var roverPhoto: RoverPhoto? {
+        didSet {
+            updateViews()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let roverToFetch: String = "curiosity"
-        let solToFetch: Int = 12
+        updateViews()
+    }
+    
+    private func updateViews() {
+        var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+            return formatter
+        }
+        var dateFormatterString: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter
+        }
         
-        guard let photoController = photoController else { return }
-        photoController.fetchRoverPhotos(roverToFetch, Int32(solToFetch)) { (data, error) in
-            guard let data = data else {
-                NSLog("Error returned fetching Rover photos\(error!)")
-                return }
-            
-            var dateFormatter: DateFormatter {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
-                return formatter
-            }
-            var dateFormatterString: DateFormatter {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd"
-                return formatter
-            }
-            
-            DispatchQueue.main.async {
-                do {
-                    let earthDateLong: Date = dateFormatter.date(from: String("\(data.roverPhotos[31].earthDate)"))!
-                    let earthDateString: String = dateFormatterString.string(from: earthDateLong)
-                    
-                    let photoData = try Data(contentsOf: data.roverPhotos[31].photoURL) // FIXME: Hard-coded a photo by index number
-                    self.roverPhotoImage.image = UIImage(data: photoData)
-                    
-                    self.roverNameTextLabel.text = String("Rover - \(roverToFetch.capitalized)")
-                    self.solTextLabel.text = String("Mission Sol: \(solToFetch)")
-                    self.photoIDTextLabel.text = String("Photo ID: \(data.roverPhotos[31].photoID)")
-                    self.earthDateTextLabel.text = String("Earth Date: \(earthDateString)")
-                    self.cameraNameTextLabel.text = data.roverPhotos[31].cameraName
-                } catch {
-                    NSLog("Error setting up views on detail view controller: \(error)")
-                }
-            }
-            return
+        guard let roverPhoto = roverPhoto, isViewLoaded else { return }
+        do {
+            let photoData = try Data(contentsOf: roverPhoto.photoURL)
+            roverPhotoImage.image = UIImage(data: photoData)
+            let earthDateLong: Date = dateFormatter.date(from: String("\(roverPhoto.earthDate)"))!
+            let earthDateString: String = dateFormatterString.string(from: earthDateLong)
+            self.roverNameTextLabel.text = String("Rover - Curiosity")
+            self.solTextLabel.text = String("Mission Sol: \(roverPhoto.sol)")
+            self.photoIDTextLabel.text = String("Photo ID: \(roverPhoto.photoID)")
+            self.earthDateTextLabel.text = String("Earth Date: \(earthDateString)")
+            self.cameraNameTextLabel.text = roverPhoto.cameraName
+        } catch {
+            NSLog("Error setting up view on detailVC: \(error)")
         }
     }
     
