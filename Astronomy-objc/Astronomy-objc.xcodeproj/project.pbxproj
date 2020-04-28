@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9223D5AB2457F50000F6FD74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9223D5AA2457F50000F6FD74 /* Foundation.framework */; };
+		9223D5AD2457F50800F6FD74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9223D5AC2457F50700F6FD74 /* UIKit.framework */; };
 		927C4BD22457A44A00F35D01 /* MarsRoverManifestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927C4BD12457A44A00F35D01 /* MarsRoverManifestController.m */; };
 		92BABC9E24568D960076C59F /* MarsRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BABC9D24568D960076C59F /* MarsRoverController.swift */; };
 		92D8E1D024566B80007834E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1CF24566B80007834E5 /* AppDelegate.m */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9223D5AA2457F50000F6FD74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9223D5AC2457F50700F6FD74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		927C4BD02457A44A00F35D01 /* MarsRoverManifestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverManifestController.h; sourceTree = "<group>"; };
 		927C4BD12457A44A00F35D01 /* MarsRoverManifestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverManifestController.m; sourceTree = "<group>"; };
 		92BABC9C24567C730076C59F /* Astronomy-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-objc-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -62,18 +66,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9223D5AD2457F50800F6FD74 /* UIKit.framework in Frameworks */,
+				9223D5AB2457F50000F6FD74 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9223D5A92457F50000F6FD74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9223D5AC2457F50700F6FD74 /* UIKit.framework */,
+				9223D5AA2457F50000F6FD74 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		92D8E1C224566B7F007834E5 = {
 			isa = PBXGroup;
 			children = (
 				92D8E1CD24566B80007834E5 /* Astronomy-objc */,
 				92BABC9C24567C730076C59F /* Astronomy-objc-Bridging-Header.h */,
 				92D8E1CC24566B80007834E5 /* Products */,
+				9223D5A92457F50000F6FD74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

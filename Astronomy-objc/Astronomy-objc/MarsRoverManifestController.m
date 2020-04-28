@@ -12,6 +12,7 @@
 
 static NSString *const missionManifestURLString = @"https://api.nasa.gov/mars-photos/api/v1/manifests/spirit?api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f";
 static NSString *const fetchPhotosURLString = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=30&api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f";
+static NSString *const singleImageURLString = @"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00030/opgs/edr/ncam/NRA_400165599EDR_F0040000NCAM00106M_.JPG";
 
 
 @implementation MarsRoverManifestController
@@ -70,7 +71,6 @@ static NSString *const fetchPhotosURLString = @"https://api.nasa.gov/mars-photos
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionHandler(nil, error);
             });
-            
             return;
         }
         
@@ -84,12 +84,43 @@ static NSString *const fetchPhotosURLString = @"https://api.nasa.gov/mars-photos
         
         MarsRoverPhotos *photos = [MarsRoverPhotos createMarsRoverPhotosFrom:data];
         
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             completionHandler(photos, nil);
         });
         
     }] resume];
+}
+
+- (void)fetchSingleImage:(NSString *)imageURLString WithCompletionHandler:(SingleImageCompletionHandler)completionHandler
+{
+    NSURL *url = [[NSURL alloc] initWithString:imageURLString];
+    
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error fetching image: %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        if (!data) {
+            NSLog(@"Error with image data: %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        UIImage *image = [UIImage imageWithData:data];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(image, nil);
+        });
+        
+    }] resume];
+    
 }
 
 @end
