@@ -11,7 +11,7 @@
 		9223D5AD2457F50800F6FD74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9223D5AC2457F50700F6FD74 /* UIKit.framework */; };
 		9223D5B02458B1B700F6FD74 /* RoverPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9223D5AF2458B1B700F6FD74 /* RoverPhotoCollectionViewCell.m */; };
 		927C4BD22457A44A00F35D01 /* MarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927C4BD12457A44A00F35D01 /* MarsRoverController.m */; };
-		92BABC9E24568D960076C59F /* MarsRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BABC9D24568D960076C59F /* MarsRoverController.swift */; };
+		92BABC9E24568D960076C59F /* RoverControllerPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BABC9D24568D960076C59F /* RoverControllerPlayground.swift */; };
 		92D8E1D024566B80007834E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1CF24566B80007834E5 /* AppDelegate.m */; };
 		92D8E1D324566B80007834E5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1D224566B80007834E5 /* SceneDelegate.m */; };
 		92D8E1D924566B80007834E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D8E1D724566B80007834E5 /* Main.storyboard */; };
@@ -37,7 +37,7 @@
 		927C4BD02457A44A00F35D01 /* MarsRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverController.h; sourceTree = "<group>"; };
 		927C4BD12457A44A00F35D01 /* MarsRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverController.m; sourceTree = "<group>"; };
 		92BABC9C24567C730076C59F /* Astronomy-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-objc-Bridging-Header.h"; sourceTree = "<group>"; };
-		92BABC9D24568D960076C59F /* MarsRoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverController.swift; sourceTree = "<group>"; };
+		92BABC9D24568D960076C59F /* RoverControllerPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverControllerPlayground.swift; sourceTree = "<group>"; };
 		92D8E1CB24566B80007834E5 /* Astronomy-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D8E1CE24566B80007834E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92D8E1CF24566B80007834E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				9223D5AF2458B1B700F6FD74 /* RoverPhotoCollectionViewCell.m */,
 				92D8E1F524566E60007834E5 /* PhotoDetailViewController.swift */,
 				92D8E1FB2456719F007834E5 /* MarsRoverPhotos.swift */,
-				92BABC9D24568D960076C59F /* MarsRoverController.swift */,
+				92BABC9D24568D960076C59F /* RoverControllerPlayground.swift */,
 				92D8E20024567244007834E5 /* Rover.h */,
 				92D8E20124567244007834E5 /* Rover.m */,
 				927C4BD02457A44A00F35D01 /* MarsRoverController.h */,
@@ -221,7 +221,7 @@
 				92D8E20224567244007834E5 /* Rover.m in Sources */,
 				92D8E1F224566C9C007834E5 /* URL+Secure.swift in Sources */,
 				92D8E1EF24566C9C007834E5 /* LSILog.m in Sources */,
-				92BABC9E24568D960076C59F /* MarsRoverController.swift in Sources */,
+				92BABC9E24568D960076C59F /* RoverControllerPlayground.swift in Sources */,
 				92D8E1D024566B80007834E5 /* AppDelegate.m in Sources */,
 				92D8E1E124566B81007834E5 /* main.m in Sources */,
 				92D8E1F124566C9C007834E5 /* LSIFileHelper.m in Sources */,
