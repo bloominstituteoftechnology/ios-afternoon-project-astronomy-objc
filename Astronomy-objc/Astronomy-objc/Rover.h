@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) int maxSol;
 @property (nonatomic, readonly) NSString *maxDate; // NSDate from NSString
 @property (nonatomic, readonly) int totalPhotos;
-@property (nonatomic, readonly, nullable) Photo *photos;
+@property (nonatomic, readonly, nullable) NSArray *sols;
 //@property (nonatomic, readonly, copy) NSArray<Camera *> *cameras;
 
 - (instancetype)initWithIdentifier:(int)identifier
@@ -33,8 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
                             maxSol:(int)maxSol
                            maxDate:(nonnull NSString *)maxDate
                        totalPhotos:(int)totalPhotos
-                            photos:(nullable Photo *)photos;
+                            sols:(nullable NSArray *)sols;
 //                           cameras:(nonnull NSArray<Camera *> *)cameras;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
