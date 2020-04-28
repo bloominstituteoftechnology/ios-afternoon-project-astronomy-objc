@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Rover.h"
 
-typedef void(^MissionManifestCompletionHandler)(NSDictionary *_Nullable photoManifest, NSError *_Nullable error);
+typedef void(^MissionManifestCompletionHandler)(Rover *_Nullable rover, NSError *_Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
