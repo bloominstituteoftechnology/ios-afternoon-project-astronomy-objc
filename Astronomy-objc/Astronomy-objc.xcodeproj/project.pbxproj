@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		927C4BCF2457997B00F35D01 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 927C4BCE2457997B00F35D01 /* Photo.m */; };
 		927C4BD22457A44A00F35D01 /* MarsRoverManifestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927C4BD12457A44A00F35D01 /* MarsRoverManifestController.m */; };
 		92BABC9E24568D960076C59F /* MarsRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BABC9D24568D960076C59F /* MarsRoverController.swift */; };
 		92D8E1D024566B80007834E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1CF24566B80007834E5 /* AppDelegate.m */; };
@@ -28,8 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		927C4BCD2457997B00F35D01 /* Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		927C4BCE2457997B00F35D01 /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		927C4BD02457A44A00F35D01 /* MarsRoverManifestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverManifestController.h; sourceTree = "<group>"; };
 		927C4BD12457A44A00F35D01 /* MarsRoverManifestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverManifestController.m; sourceTree = "<group>"; };
 		92BABC9C24567C730076C59F /* Astronomy-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-objc-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -103,8 +100,6 @@
 				92D8E20124567244007834E5 /* Rover.m */,
 				927C4BD02457A44A00F35D01 /* MarsRoverManifestController.h */,
 				927C4BD12457A44A00F35D01 /* MarsRoverManifestController.m */,
-				927C4BCD2457997B00F35D01 /* Photo.h */,
-				927C4BCE2457997B00F35D01 /* Photo.m */,
 				92D8E1FD24567233007834E5 /* Camera.h */,
 				92D8E1FE24567233007834E5 /* Camera.m */,
 				92D8E1D724566B80007834E5 /* Main.storyboard */,
@@ -202,7 +197,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				927C4BCF2457997B00F35D01 /* Photo.m in Sources */,
 				92D8E20224567244007834E5 /* Rover.m in Sources */,
 				92D8E1F224566C9C007834E5 /* URL+Secure.swift in Sources */,
 				92D8E1EF24566C9C007834E5 /* LSILog.m in Sources */,
