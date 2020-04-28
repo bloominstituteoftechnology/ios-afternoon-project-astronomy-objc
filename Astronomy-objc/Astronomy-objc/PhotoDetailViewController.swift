@@ -11,6 +11,11 @@ import UIKit
 class PhotoDetailViewController: UIViewController {
     
     @IBOutlet weak var marsRoverPhoto: UIImageView!
+    @IBOutlet weak var photoDetailsLabel: UILabel!
+    @IBOutlet weak var cameraDetailsLabel: UILabel!
+    @IBOutlet weak var savePhotoButton: UIButton!
+    
+    
     
     
     override func viewDidLoad() {
@@ -39,5 +44,10 @@ class PhotoDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Actions
+    
+    @IBAction func savePhotoButtonTapped(_ sender: Any) {
+    }
+    
 }

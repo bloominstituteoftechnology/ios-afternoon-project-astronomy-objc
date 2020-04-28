@@ -46,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="744.92753623188412" y="-19.419642857142858"/>
         </scene>
-        <!--Photo Detail View Controller-->
+        <!--Title-->
         <scene sceneID="yWL-nl-5mL">
             <objects>
                 <viewController id="IQ0-f2-pcE" customClass="PhotoDetailViewController" customModule="Astronomy_objc" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,23 +55,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8HG-NU-0gs">
-                                <rect key="frame" x="16" y="104" width="382" height="382"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8HG-NU-0gs" secondAttribute="height" multiplier="1:1" id="Rh2-NW-Io8"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-kL-3zv">
+                                <rect key="frame" x="32" y="598" width="350" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6D-Pp-TJd">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G6-CC-NYm">
+                                        <rect key="frame" x="0.0" y="28.5" width="350" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-TA-Xcf">
+                                        <rect key="frame" x="0.0" y="57" width="350" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="savePhotoButtonTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="UYJ-1G-sAj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8HG-NU-0gs" firstAttribute="leading" secondItem="iOU-Rs-Aq3" secondAttribute="leading" constant="16" id="FcL-TA-aMG"/>
-                            <constraint firstItem="iOU-Rs-Aq3" firstAttribute="trailing" secondItem="8HG-NU-0gs" secondAttribute="trailing" constant="16" id="GoI-2q-waA"/>
-                            <constraint firstItem="8HG-NU-0gs" firstAttribute="top" secondItem="iOU-Rs-Aq3" secondAttribute="top" constant="16" id="qSJ-ty-DHT"/>
+                            <constraint firstItem="iOU-Rs-Aq3" firstAttribute="trailing" secondItem="HUW-kL-3zv" secondAttribute="trailing" constant="32" id="DU8-48-uoY"/>
+                            <constraint firstItem="8HG-NU-0gs" firstAttribute="leading" secondItem="iOU-Rs-Aq3" secondAttribute="leading" id="FcL-TA-aMG"/>
+                            <constraint firstItem="iOU-Rs-Aq3" firstAttribute="trailing" secondItem="8HG-NU-0gs" secondAttribute="trailing" id="GoI-2q-waA"/>
+                            <constraint firstItem="HUW-kL-3zv" firstAttribute="leading" secondItem="iOU-Rs-Aq3" secondAttribute="leading" constant="32" id="M6h-ga-p7L"/>
+                            <constraint firstItem="HUW-kL-3zv" firstAttribute="top" secondItem="8HG-NU-0gs" secondAttribute="bottom" constant="48" id="TSy-Z6-bqN"/>
+                            <constraint firstItem="8HG-NU-0gs" firstAttribute="top" secondItem="iOU-Rs-Aq3" secondAttribute="top" constant="48" id="qSJ-ty-DHT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iOU-Rs-Aq3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="g3k-bJ-Vtx"/>
+                    <navigationItem key="navigationItem" title="Title" id="g3k-bJ-Vtx"/>
                     <connections>
+                        <outlet property="cameraDetailsLabel" destination="6G6-CC-NYm" id="U9b-qR-xvl"/>
                         <outlet property="marsRoverPhoto" destination="8HG-NU-0gs" id="4m7-ZM-Yty"/>
+                        <outlet property="photoDetailsLabel" destination="U6D-Pp-TJd" id="G1d-EA-sYQ"/>
+                        <outlet property="savePhotoButton" destination="5nU-TA-Xcf" id="Ey6-H5-gyK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBn-ac-9kL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
