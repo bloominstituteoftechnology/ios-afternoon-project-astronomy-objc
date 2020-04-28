@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ijj-nJ-g42">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IQ0-f2-pcE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -53,10 +53,26 @@
                     <view key="view" contentMode="scaleToFill" id="Tip-RO-QkX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8HG-NU-0gs">
+                                <rect key="frame" x="16" y="104" width="382" height="382"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8HG-NU-0gs" secondAttribute="height" multiplier="1:1" id="Rh2-NW-Io8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8HG-NU-0gs" firstAttribute="leading" secondItem="iOU-Rs-Aq3" secondAttribute="leading" constant="16" id="FcL-TA-aMG"/>
+                            <constraint firstItem="iOU-Rs-Aq3" firstAttribute="trailing" secondItem="8HG-NU-0gs" secondAttribute="trailing" constant="16" id="GoI-2q-waA"/>
+                            <constraint firstItem="8HG-NU-0gs" firstAttribute="top" secondItem="iOU-Rs-Aq3" secondAttribute="top" constant="16" id="qSJ-ty-DHT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iOU-Rs-Aq3"/>
                     </view>
                     <navigationItem key="navigationItem" id="g3k-bJ-Vtx"/>
+                    <connections>
+                        <outlet property="marsRoverPhoto" destination="8HG-NU-0gs" id="4m7-ZM-Yty"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBn-ac-9kL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

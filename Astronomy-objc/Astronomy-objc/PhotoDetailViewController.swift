@@ -9,10 +9,23 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var marsRoverPhoto: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let marsRoverManifestController = MarsRoverManifestController()
+        
+        marsRoverManifestController.fetchSingleImage("https://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00030/opgs/edr/ncam/NRA_400165599EDR_F0040000NCAM00106M_.JPG") { (image, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            if let image = image {
+                self.marsRoverPhoto.image = image
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
