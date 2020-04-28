@@ -28,6 +28,7 @@ class RoverPhotoDetailViewController: UIViewController {
         let roverToFetch: String = "curiosity"
         let solToFetch: Int = 12
         
+        guard let photoController = photoController else { return }
         photoController.fetchRoverPhotos(roverToFetch, Int32(solToFetch)) { (data, error) in
             guard let data = data else {
                 NSLog("Error returned fetching Rover photos\(error!)")

@@ -10,16 +10,12 @@ import UIKit
 
 class RoverPhotoCollectionViewCell: UICollectionViewCell {
     
-    var roverPhoto: RoverPhoto? {
-        didSet {
-            updateViews()
-        }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        roverPhotoImageView.image = #imageLiteral(resourceName: "MarsPlaceholder")
     }
     
     @IBOutlet var roverPhotoImageView: UIImageView!
-    
-    func updateViews() {
-        guard let roverPhoto = roverPhoto else { return }
-    }
     
 }

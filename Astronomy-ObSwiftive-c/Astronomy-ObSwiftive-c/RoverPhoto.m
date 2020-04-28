@@ -11,7 +11,7 @@
 
 @implementation RoverPhoto
 
--(instancetype)initWithPhotoID:(uint)photoID
+-(instancetype)initWithPhotoID:(NSNumber *)photoID
                            sol:(int)sol
                       photoURL:(NSURL *)photoURL
                     cameraName:(NSString *)cameraName
@@ -65,7 +65,7 @@
             cameraName = nil;
         }
         
-        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID.unsignedIntValue sol:sol.intValue photoURL:secureURL cameraName:cameraName earthDate:earthDate];
+        RoverPhoto *newRoverPhoto = [[RoverPhoto alloc] initWithPhotoID:photoID sol:sol.intValue photoURL:secureURL cameraName:cameraName earthDate:earthDate];
         
         [roverPhotosArray addObject:newRoverPhoto];
     }

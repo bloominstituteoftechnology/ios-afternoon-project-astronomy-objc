@@ -6,3 +6,4 @@
 #import "RoverPhoto.h"
 #import "PhotoController.h"
 #import "NSURL+SecureHTTP.h"
+#import "Cache.h"
