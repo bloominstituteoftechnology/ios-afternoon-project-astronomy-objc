@@ -7,3 +7,4 @@
 #import "PhotoController.h"
 #import "NSURL+SecureHTTP.h"
 #import "Cache.h"
+#import "FetchPhotoOperation.h"

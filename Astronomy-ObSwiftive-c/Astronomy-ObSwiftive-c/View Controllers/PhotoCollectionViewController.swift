@@ -12,6 +12,9 @@ class PhotoCollectionViewController: UIViewController {
     
     private var photoController = PhotoController()
     private let cache = Cache()
+    private let  photoFetchQueue = OperationQueue()
+    private var operations = [Int : Operation]()
+    
     var roverPhotos: [RoverPhoto]? {
         didSet {
             DispatchQueue.main.async {
@@ -33,12 +36,34 @@ class PhotoCollectionViewController: UIViewController {
         guard let roverPhotos = roverPhotos else { return }
         let roverPhoto = roverPhotos[indexPath.row]
         
-        if let cachedImage = cache.value(roverPhoto.photoID) {
+        if let cachedImage = cache.value(roverPhoto.photoID) as? UIImage {
             cell.roverPhotoImageView.image = cachedImage
             return
         }
         
+        let fetchOp = FetchPhotoOperation(roverPhotoReference: roverPhoto)
+        let cacheOp = BlockOperation {
+            let image = fetchOp.roverPhoto
+            self.cache.cache(roverPhoto.photoID, forValue: image)
+        }
         
+        let completionOp = BlockOperation {
+            defer { self.operations.removeValue(forKey: Int(roverPhoto.photoID)) }
+            
+            if let newIndexPath = self.collectionView.indexPath(for: cell),
+                newIndexPath != indexPath { return }
+            let image = fetchOp.roverPhoto
+            cell.roverPhotoImageView.image = image
+        }
+        
+        cacheOp.addDependency(fetchOp)
+        completionOp.addDependency(fetchOp)
+        
+        photoFetchQueue.addOperation(fetchOp)
+        photoFetchQueue.addOperation(cacheOp)
+        OperationQueue.main.addOperation(completionOp)
+        
+        operations[Int(roverPhoto.photoID)] = fetchOp
         
     }
     
