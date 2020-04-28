@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Rover.h"
 
+@class MarsRoverPhotos;
+
 typedef void(^MissionManifestCompletionHandler)(Rover *_Nullable rover, NSError *_Nullable error);
+typedef void(^FetchAllPhotosCompletionHandler)(MarsRoverPhotos *_Nullable rover, NSError *_Nullable error);
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)fetchMissionManifestWithCompletionHandler:(MissionManifestCompletionHandler)completionHandler;
 
+- (void)fetchAllPhotosForSol:(int)sol WithCompletionHandler:(FetchAllPhotosCompletionHandler)completionHandler;
 
 @end
 
