@@ -9,17 +9,24 @@
 #import "MarsRoverController.h"
 #import "Astronomy_objc-Swift.h"
 
-
-static NSString *const missionManifestURLString = @"https://api.nasa.gov/mars-photos/api/v1/manifests/spirit?api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f";
-static NSString *const fetchPhotosURLString = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=30&api_key=ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f";
-static NSString *const singleImageURLString = @"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00030/opgs/edr/ncam/NRA_400165599EDR_F0040000NCAM00106M_.JPG";
+static NSString *const marsRoverAPIURL = @"https://api.nasa.gov/mars-photos/api/v1";
+static NSString *const marsRoverAPIKey = @"ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f";
 
 
 @implementation MarsRoverController
 
 - (void)fetchMissionManifestWithCompletionHandler:(MissionManifestCompletionHandler)completionHandler
 {
-    NSURL *url = [[NSURL alloc] initWithString:missionManifestURLString];
+    NSURL *baseURL = [[NSURL alloc] initWithString:marsRoverAPIURL];
+    NSURL *manifestURL = [baseURL URLByAppendingPathComponent:@"manifests/curiosity"];
+    
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:manifestURL resolvingAgainstBaseURL:NO];
+    
+    urlComponents.queryItems = @[
+        [NSURLQueryItem queryItemWithName:@"api_key" value:marsRoverAPIKey],
+    ];
+    
+    NSURL *url = urlComponents.URL;
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
@@ -28,7 +35,6 @@ static NSString *const singleImageURLString = @"http://mars.jpl.nasa.gov/msl-raw
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionHandler(nil, error);
             });
-            
             return;
         }
         
@@ -46,28 +52,33 @@ static NSString *const singleImageURLString = @"http://mars.jpl.nasa.gov/msl-raw
         NSDictionary *roverDictionary = [manifestResults valueForKey:@"photo_manifest"];
         Rover *rover = [[Rover alloc] initWithDictionary:roverDictionary];
         
-        NSLog(@"%@", rover.name);
-        NSLog(@"%@", rover.landingDate);
-        NSLog(@"%@", rover.launchDate);
-        NSLog(@"%@", rover.sols);
-        NSLog(@"%d", rover.maxSol);
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             completionHandler(rover, nil);
         });
         
     }] resume];
-    
 }
 
 - (void)fetchAllPhotosForSol:(int)sol WithCompletionHandler:(FetchAllPhotosCompletionHandler)completionHandler
 {
-    NSURL *url = [[NSURL alloc] initWithString:fetchPhotosURLString];
+    NSURL *baseURL = [[NSURL alloc] initWithString:marsRoverAPIURL];
+    NSURL *roverPhotosURL = [baseURL URLByAppendingPathComponent:@"rovers/curiosity/photos"];
+    
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:roverPhotosURL resolvingAgainstBaseURL:NO];
+    
+    NSString *solStringValue = [NSString stringWithFormat:@"%d", sol];
+    
+    urlComponents.queryItems = @[
+        [NSURLQueryItem queryItemWithName:@"sol" value:solStringValue],
+        [NSURLQueryItem queryItemWithName:@"api_key" value:marsRoverAPIKey],
+    ];
+    
+    NSURL *url = urlComponents.URL;
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (error) {
-            NSLog(@"Error fetching photos: %@", error);
+            NSLog(@"Error fetching photos for url: %@ with error: %@", url, error);
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionHandler(nil, error);
             });
@@ -120,7 +131,6 @@ static NSString *const singleImageURLString = @"http://mars.jpl.nasa.gov/msl-raw
         });
         
     }] resume];
-    
 }
 
 @end
