@@ -126,11 +126,12 @@ extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectio
         return cell
     }
     
+    // FIXME: There is a bug here. My guess is that I'm not cancelling it quite correctly. In that case, it's more likely that the bug is in the code contained in FetchPhotoOperation.m
 //    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 //        guard let roverPhotos = roverPhotos else { return }
 //        if roverPhotos.count > 0 {
 //            let roverPhoto = roverPhotos[indexPath.item]
-//            operations[Int(roverPhoto.photoID)]?.cancel()
+//            operations[Int(truncating: roverPhoto.photoID)]?.cancel()
 //        } else {
 //            for (_, operation) in operations {
 //                operation.cancel()
@@ -138,7 +139,7 @@ extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectio
 //        }
 //    }
     
-    func collectionView(_collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize {
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         var totalUsableWidth = collectionView.frame.width
         let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
@@ -152,7 +153,7 @@ extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5.0, bottom: 0, right: 5.0)
+        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
     }
     
 }

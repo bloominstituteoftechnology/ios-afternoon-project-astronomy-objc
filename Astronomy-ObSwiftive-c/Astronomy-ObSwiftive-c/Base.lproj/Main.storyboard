@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-fP-6YL">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G9B-AC-0Ub">
                                     <size key="itemSize" width="150" height="150"/>
@@ -58,10 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="h5t-fP-6YL" firstAttribute="leading" secondItem="3x6-39-sWy" secondAttribute="leadingMargin" id="6ep-da-dkb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h5t-fP-6YL" secondAttribute="trailing" id="O0W-r8-9Yb"/>
-                            <constraint firstItem="h5t-fP-6YL" firstAttribute="top" secondItem="3x6-39-sWy" secondAttribute="topMargin" id="aNm-y1-vq4"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="h5t-fP-6YL" secondAttribute="bottom" id="dWb-Ck-CTf"/>
+                            <constraint firstAttribute="bottom" secondItem="h5t-fP-6YL" secondAttribute="bottom" id="7ss-dK-Brq"/>
+                            <constraint firstItem="h5t-fP-6YL" firstAttribute="top" secondItem="3x6-39-sWy" secondAttribute="top" id="Z8S-kn-ch2"/>
+                            <constraint firstItem="h5t-fP-6YL" firstAttribute="leading" secondItem="3x6-39-sWy" secondAttribute="leading" id="ddv-Z5-ZF5"/>
+                            <constraint firstAttribute="trailing" secondItem="h5t-fP-6YL" secondAttribute="trailing" id="nRB-xT-rld"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ji5-gq-QXH"/>
                     </view>

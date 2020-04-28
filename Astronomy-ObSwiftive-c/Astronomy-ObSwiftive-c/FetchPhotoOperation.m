@@ -24,9 +24,9 @@
     return YES;
 }
 
-- (BOOL)isConcurrent {
-    return YES;
-}
+//- (BOOL)isConcurrent {
+//    return YES;
+//}
 
 - (BOOL)isExecuting {
     return self.internalIsExecuting;
