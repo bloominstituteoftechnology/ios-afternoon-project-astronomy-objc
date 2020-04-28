@@ -16,10 +16,21 @@ class SolCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let client = MarsRoverController()
-        client.fetchPhotos { (error) in
+//        let client = MarsRoverController()
+//        client.fetchPhotos { (error) in
+//            if let error = error {
+//                print(error)
+//            }
+//        }
+//
+        let marsRoverManifesController = MarsRoverManifestController()
+        marsRoverManifesController.fetchMissionManifest { (rover, error) in
             if let error = error {
                 print(error)
+            }
+            
+            if let rover = rover {
+                print(rover)
             }
         }
         // Uncomment the following line to preserve selection between presentations

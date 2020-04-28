@@ -12,6 +12,7 @@
 #import "Camera.h"
 #import "Rover.h"
 #import "Photo.h"
+#import "MarsRoverManifestController.h"
 
 
 #endif /* Astronomy_objc_Bridging_Header_h */
