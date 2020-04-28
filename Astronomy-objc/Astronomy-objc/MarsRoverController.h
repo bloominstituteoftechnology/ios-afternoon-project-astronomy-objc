@@ -19,7 +19,7 @@ typedef void(^SingleImageCompletionHandler)(UIImage *_Nullable image, NSError *_
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MarsRoverManifestController : NSObject
+@interface MarsRoverController : NSObject
 
 - (void)fetchMissionManifestWithCompletionHandler:(MissionManifestCompletionHandler)completionHandler;
 

@@ -23,7 +23,7 @@ class SolCollectionViewController: UICollectionViewController {
 //            }
 //        }
 //
-        let marsRoverManifestController = MarsRoverManifestController()
+        let marsRoverManifestController = MarsRoverController()
 //        marsRoverManifesController.fetchMissionManifest { (rover, error) in
 //            if let error = error {
 //                print(error)

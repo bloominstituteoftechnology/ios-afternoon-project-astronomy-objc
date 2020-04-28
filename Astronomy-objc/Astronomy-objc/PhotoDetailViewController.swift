@@ -20,7 +20,7 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let marsRoverManifestController = MarsRoverManifestController()
+        let marsRoverManifestController = MarsRoverController()
         
         marsRoverManifestController.fetchSingleImage("https://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00030/opgs/edr/ncam/NRA_400165599EDR_F0040000NCAM00106M_.JPG") { (image, error) in
             if let error = error {

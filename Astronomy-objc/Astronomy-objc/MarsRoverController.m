@@ -6,7 +6,7 @@
 //  Copyright © 2020 Dillon's Lambda Team. All rights reserved.
 //
 
-#import "MarsRoverManifestController.h"
+#import "MarsRoverController.h"
 #import "Astronomy_objc-Swift.h"
 
 
@@ -15,7 +15,7 @@ static NSString *const fetchPhotosURLString = @"https://api.nasa.gov/mars-photos
 static NSString *const singleImageURLString = @"http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00030/opgs/edr/ncam/NRA_400165599EDR_F0040000NCAM00106M_.JPG";
 
 
-@implementation MarsRoverManifestController
+@implementation MarsRoverController
 
 - (void)fetchMissionManifestWithCompletionHandler:(MissionManifestCompletionHandler)completionHandler
 {
