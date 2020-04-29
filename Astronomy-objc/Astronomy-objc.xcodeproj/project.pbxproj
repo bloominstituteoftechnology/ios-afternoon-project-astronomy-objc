@@ -136,13 +136,13 @@
 		92D8E1E724566C9C007834E5 /* LambdaSDK */ = {
 			isa = PBXGroup;
 			children = (
+				92D8E1EE24566C9C007834E5 /* URL+Secure.swift */,
 				92D8E1E824566C9C007834E5 /* LSILog.m */,
 				92D8E1E924566C9C007834E5 /* LSIErrors.m */,
 				92D8E1EA24566C9C007834E5 /* LSIFileHelper.m */,
 				92D8E1EB24566C9C007834E5 /* LSIFileHelper.h */,
 				92D8E1EC24566C9C007834E5 /* LSIErrors.h */,
 				92D8E1ED24566C9C007834E5 /* LSILog.h */,
-				92D8E1EE24566C9C007834E5 /* URL+Secure.swift */,
 			);
 			name = LambdaSDK;
 			path = ../../LambdaSDK;

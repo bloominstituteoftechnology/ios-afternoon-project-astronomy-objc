@@ -12,49 +12,18 @@ private let reuseIdentifier = "RoverPhotoCell"
 
 class SolCollectionViewController: UICollectionViewController {
     
-    
-    
-    
+    let marsRoverController = MarsRoverController()
+    var rover: Rover?
+    var sols: [Int32]?
+    var photoUrls = [String]()
+    var imageCache = [String : UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let client = MarsRoverController()
-//        client.fetchPhotos { (error) in
-//            if let error = error {
-//                print(error)
-//            }
-//        }
-//
-        let marsRoverManifestController = MarsRoverController()
-//        marsRoverManifesController.fetchMissionManifest { (rover, error) in
-//            if let error = error {
-//                print(error)
-//            }
-//
-//            if let rover = rover {
-//                print(rover)
-//            }
-//        }
         
-        marsRoverManifestController.fetchAllPhotos(forSol: 30) { (allRoverPhotos, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            if let allRoverPhotos = allRoverPhotos {
-                for photo in allRoverPhotos.photos {
-                    print(photo.imgSrc)
-                }
-            }
-        }
+        fetchMissionManifest()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        self.clearsSelectionOnViewWillAppear = false
     }
 
     /*
@@ -66,25 +35,75 @@ class SolCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Initial App Load Networking Methods
+    
+    private func fetchMissionManifest() {
+        marsRoverController.fetchMissionManifest { (rover, error) in
+            if let error = error {
+                print("Error fetching mission manifest: \(error)")
+            }
 
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+            if let rover = rover {
+                self.rover = rover
+                
+                guard let sols = rover.sols as? [Int32] else {
+                    print("Sols could not be loaded")
+                    return
+                }
+                let sol = sols[1]
+            
+                self.loadPhotosForSol(sol: sol)
+                return
+            }
+        }
     }
-
+    
+    private func loadPhotosForSol(sol: Int32) {
+        marsRoverController.fetchAllPhotos(forSol: sol) { (allPhotos, error) in
+            if let error = error {
+                print("Error fetching photos for sol: \(error)")
+                return
+            }
+            
+            guard let allPhotos = allPhotos else {
+                print("Error loading all photo references")
+                return
+            }
+            
+            for photo in allPhotos.photos {
+                let imgSrc = photo.imgSrc
+                self.photoUrls.append(imgSrc)
+            }
+            
+            self.fetchImageForURLString(urlStrings: self.photoUrls) { (_, error) in
+                if let error = error {
+                    print("Error fetching image: \(error)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
+    
+    
+    // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoUrls.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? RoverPhotoCollectionViewCell else { return UICollectionViewCell() }
+        
+        let imgSrcURLString = photoUrls[indexPath.item]
+        if let image = imageCache[imgSrcURLString] {
+            cell.roverImage?.image = image
+        }
+        
         return cell
     }
 
@@ -118,5 +137,36 @@ class SolCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    // MARK: - Rover Image Fetching Methods and Operations
+    
+    func fetchImageForURLString(urlStrings: [String], completion: @escaping (UIImage?, Error?) -> Void) {
+        for urlString in urlStrings {
+            let httpUrl = URL(string: urlString)
+            
+            guard let httpsURLString = getSecureURL(url: httpUrl) else {
+                return
+            }
+            
+            marsRoverController.fetchSingleImage(httpsURLString) { (image, error) in
+                if let error = error {
+                    completion(nil, error)
+                    return
+                }
+                
+                if let image = image {
+                    self.imageCache[urlString] = image
+                    completion(image, nil)
+                    return
+                }
+            }
+        }
+    }
+    
+    private func getSecureURL(url: URL?) -> String? {
+        guard let url = url, var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return nil }
+        components.scheme = "https"
+        return components.url?.absoluteString
+    }
 
 }
