@@ -15,6 +15,7 @@ class SolCollectionViewController: UICollectionViewController {
     let marsRoverController = MarsRoverController()
     var rover: Rover?
     var sols: [Int32]?
+    var currentSol = 1 // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
     var photoUrls = [String]()
     var imageCache = [String : UIImage]()
 
@@ -22,6 +23,7 @@ class SolCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         fetchMissionManifest()
+        updateViews()
         
         self.clearsSelectionOnViewWillAppear = false
     }
@@ -35,6 +37,11 @@ class SolCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func updateViews() {
+        self.title = "Sol \(currentSol)"
+        self.collectionView.reloadData()
+    }
     
     // MARK: - Initial App Load Networking Methods
     
@@ -51,8 +58,7 @@ class SolCollectionViewController: UICollectionViewController {
                     print("Sols could not be loaded")
                     return
                 }
-                let sol = sols[1]
-            
+                let sol = sols[self.currentSol]
                 self.loadPhotosForSol(sol: sol)
                 return
             }
@@ -82,7 +88,7 @@ class SolCollectionViewController: UICollectionViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                    self.updateViews()
                 }
             }
         }
