@@ -10,6 +10,7 @@
 		9223D5AB2457F50000F6FD74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9223D5AA2457F50000F6FD74 /* Foundation.framework */; };
 		9223D5AD2457F50800F6FD74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9223D5AC2457F50700F6FD74 /* UIKit.framework */; };
 		9223D5B02458B1B700F6FD74 /* RoverPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9223D5AF2458B1B700F6FD74 /* RoverPhotoCollectionViewCell.m */; };
+		9254718E245A418B00B5A2A2 /* FetchRoverImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9254718D245A418B00B5A2A2 /* FetchRoverImageOperation.m */; };
 		927C4BD22457A44A00F35D01 /* MarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927C4BD12457A44A00F35D01 /* MarsRoverController.m */; };
 		92D8E1D024566B80007834E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1CF24566B80007834E5 /* AppDelegate.m */; };
 		92D8E1D324566B80007834E5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D8E1D224566B80007834E5 /* SceneDelegate.m */; };
@@ -33,6 +34,8 @@
 		9223D5AC2457F50700F6FD74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9223D5AE2458B1B700F6FD74 /* RoverPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoverPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		9223D5AF2458B1B700F6FD74 /* RoverPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoverPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		9254718C245A418B00B5A2A2 /* FetchRoverImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchRoverImageOperation.h; sourceTree = "<group>"; };
+		9254718D245A418B00B5A2A2 /* FetchRoverImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchRoverImageOperation.m; sourceTree = "<group>"; };
 		927C4BD02457A44A00F35D01 /* MarsRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverController.h; sourceTree = "<group>"; };
 		927C4BD12457A44A00F35D01 /* MarsRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverController.m; sourceTree = "<group>"; };
 		92BABC9C24567C730076C59F /* Astronomy-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-objc-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				92D8E20124567244007834E5 /* Rover.m */,
 				927C4BD02457A44A00F35D01 /* MarsRoverController.h */,
 				927C4BD12457A44A00F35D01 /* MarsRoverController.m */,
+				9254718C245A418B00B5A2A2 /* FetchRoverImageOperation.h */,
+				9254718D245A418B00B5A2A2 /* FetchRoverImageOperation.m */,
 				92D8E1FD24567233007834E5 /* Camera.h */,
 				92D8E1FE24567233007834E5 /* Camera.m */,
 				92D8E1D724566B80007834E5 /* Main.storyboard */,
@@ -223,6 +228,7 @@
 				92D8E1F124566C9C007834E5 /* LSIFileHelper.m in Sources */,
 				92D8E1D324566B80007834E5 /* SceneDelegate.m in Sources */,
 				92D8E1FF24567233007834E5 /* Camera.m in Sources */,
+				9254718E245A418B00B5A2A2 /* FetchRoverImageOperation.m in Sources */,
 				9223D5B02458B1B700F6FD74 /* RoverPhotoCollectionViewCell.m in Sources */,
 				92D8E1FC2456719F007834E5 /* MarsRoverPhotos.swift in Sources */,
 				92D8E1F624566E60007834E5 /* PhotoDetailViewController.swift in Sources */,
