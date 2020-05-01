@@ -8,6 +8,7 @@
 
 #import "MarsRoverController.h"
 #import "Astronomy_objc-Swift.h"
+#import "Rover.h"
 
 static NSString *const marsRoverAPIURL = @"https://api.nasa.gov/mars-photos/api/v1";
 static NSString *const marsRoverAPIKey = @"ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9Lv7f";
@@ -102,35 +103,35 @@ static NSString *const marsRoverAPIKey = @"ncS22avI8uLhNGuabNs82L79amxcTAO4mTn9L
     }] resume];
 }
 
-- (void)fetchSingleImage:(NSString *)imageURLString WithCompletionHandler:(SingleImageCompletionHandler)completionHandler
-{
-    NSURL *url = [[NSURL alloc] initWithString:imageURLString];
-    
-    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        if (error) {
-            NSLog(@"Error fetching image: %@", error);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completionHandler(nil, error);
-            });
-            return;
-        }
-        
-        if (!data) {
-            NSLog(@"Error with image data: %@", error);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completionHandler(nil, error);
-            });
-            return;
-        }
-        
-        UIImage *image = [UIImage imageWithData:data];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionHandler(image, nil);
-        });
-        
-    }] resume];
-}
+//- (void)fetchSingleImage:(NSString *)imageURLString WithCompletionHandler:(SingleImageCompletionHandler)completionHandler
+//{
+//    NSURL *url = [[NSURL alloc] initWithString:imageURLString];
+//
+//    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//
+//        if (error) {
+//            NSLog(@"Error fetching image: %@", error);
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                completionHandler(nil, error);
+//            });
+//            return;
+//        }
+//
+//        if (!data) {
+//            NSLog(@"Error with image data: %@", error);
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                completionHandler(nil, error);
+//            });
+//            return;
+//        }
+//
+//
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            completionHandler(data, nil);
+//        });
+//
+//    }] resume];
+//}
 
 @end
