@@ -124,6 +124,19 @@ class SolCollectionViewController: UICollectionViewController {
     }
     
     
+    //MARK: UICollectionViewDelegate Methods
+    
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if photoCount > 0 {
+            let imSrcString = photoUrls[indexPath.item]
+            operations[imSrcString]?.cancel()
+        } else {
+            for (_, operation) in operations {
+                operation.cancel()
+            }
+        }
+    }
+    
     // MARK: - Rover Image Fetching Methods and Operations
     
     func fetchImage(forCell cell: RoverPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
