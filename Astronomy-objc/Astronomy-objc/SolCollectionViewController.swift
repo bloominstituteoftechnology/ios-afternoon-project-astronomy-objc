@@ -16,15 +16,7 @@ class SolCollectionViewController: UICollectionViewController {
     var rover: Rover?
     var sols: [Int32]?
     var currentSol = 0 // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
-    var photoUrls = [String]() {
-        didSet {
-            imageCache.clear()
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
-    var photoCount = Int() {
+    var marsRoverPhotos = [MarsRoverPhoto]() {
         didSet {
             imageCache.clear()
             DispatchQueue.main.async {
@@ -98,12 +90,7 @@ class SolCollectionViewController: UICollectionViewController {
                 return
             }
             
-            self.photoCount = allPhotos.photos.count
-            
-            for photo in allPhotos.photos {
-                let imgSrc = photo.imgSrc
-                self.photoUrls.append(imgSrc)
-            }
+            self.marsRoverPhotos = allPhotos.photos
         }
     }
     
@@ -112,7 +99,7 @@ class SolCollectionViewController: UICollectionViewController {
     // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoCount
+        return marsRoverPhotos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -127,8 +114,9 @@ class SolCollectionViewController: UICollectionViewController {
     //MARK: UICollectionViewDelegate Methods
     
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if photoCount > 0 {
-            let imSrcString = photoUrls[indexPath.item]
+        if marsRoverPhotos.count > 0 {
+            let photo = marsRoverPhotos[indexPath.item]
+            let imSrcString = photo.imgSrc
             operations[imSrcString]?.cancel()
         } else {
             for (_, operation) in operations {
@@ -140,7 +128,8 @@ class SolCollectionViewController: UICollectionViewController {
     // MARK: - Rover Image Fetching Methods and Operations
     
     func fetchImage(forCell cell: RoverPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
-        let imageURLString = photoUrls[indexPath.item]
+        let photo = marsRoverPhotos[indexPath.item]
+        let imageURLString = photo.imgSrc
         let httpURL = URL(string: imageURLString)
         
         guard let httpsURLString = getSecureURL(url: httpURL) else {
