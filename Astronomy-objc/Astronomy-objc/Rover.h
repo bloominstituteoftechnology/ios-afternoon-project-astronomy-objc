@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Camera.h"
+
+@class Camera;
 
 NS_ASSUME_NONNULL_BEGIN
 

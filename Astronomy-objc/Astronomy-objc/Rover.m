@@ -7,6 +7,7 @@
 //
 
 #import "Rover.h"
+#import "Camera.h"
 
 @implementation Rover
 - (instancetype)initWithIdentifier:(int)identifier

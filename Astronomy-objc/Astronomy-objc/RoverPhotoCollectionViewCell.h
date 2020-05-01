@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RoverPhotoCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *roverImage;
+@property (nonatomic, nonnull) IBOutlet UIImageView *roverImage;
 
 @end
 

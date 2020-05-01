@@ -10,4 +10,11 @@
 
 @implementation RoverPhotoCollectionViewCell
 
+- (void)prepareForReuse
+{
+    self.roverImage.image = [UIImage imageNamed:@"roverImagePlaceholder"];
+    
+    [super prepareForReuse];
+}
+
 @end
