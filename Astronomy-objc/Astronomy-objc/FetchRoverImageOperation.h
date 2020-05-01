@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class MarsRoverController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FetchRoverImageOperation : NSOperation
 
-@property (nonatomic, copy) NSString *imgSrcString;
+@property (nonatomic, nullable) NSData *imgData;
+//@property (nonatomic) MarsRoverController *marsRoverController;
 
-
+- (instancetype)initWithImageURLString:(NSString *)imageURLString;
+//  marsRoverController:(MarsRoverController *)marsRoverController;
 
 @end
 
