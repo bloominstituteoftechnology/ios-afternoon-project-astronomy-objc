@@ -124,26 +124,6 @@ class SolCollectionViewController: UICollectionViewController {
     }
     
     
-//    // MARK: - UICollectionViewDelegate
-//    // Make collection view cells fill as much available width as possible
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-//        var totalUsableWidth = collectionView.frame.width
-//        let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
-//        totalUsableWidth -= inset.left + inset.right
-//        
-//        let minWidth: CGFloat = 150.0
-//        let numberOfItemsInOneRow = Int(totalUsableWidth / minWidth)
-//        totalUsableWidth -= CGFloat(numberOfItemsInOneRow - 1) * flowLayout.minimumInteritemSpacing
-//        let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
-//        return CGSize(width: width, height: width)
-//    }
-//    
-//    // Add margins to the left and right side
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
-//    }
-    
     // MARK: - Rover Image Fetching Methods and Operations
     
     func fetchImage(forCell cell: RoverPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
