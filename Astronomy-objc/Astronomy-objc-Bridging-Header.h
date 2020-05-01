@@ -13,6 +13,8 @@
 #import "Rover.h"
 #import "MarsRoverController.h"
 #import "RoverPhotoCollectionViewCell.h"
+#import "Cache.h"
+#import "FetchRoverImageOperation.h"
 
 
 #endif /* Astronomy_objc_Bridging_Header_h */

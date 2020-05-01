@@ -15,17 +15,33 @@ class SolCollectionViewController: UICollectionViewController {
     let marsRoverController = MarsRoverController()
     var rover: Rover?
     var sols: [Int32]?
-    var currentSol = 1 // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
-    var photoUrls = [String]()
-    var imageCache = [String : UIImage]()
+    var currentSol = 0 // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
+    var photoUrls = [String]() {
+        didSet {
+            imageCache.clear()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    var photoCount = Int() {
+        didSet {
+            imageCache.clear()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    var imageCache = Cache(key: String(), value: Data())
+    var operations = [String : Operation]()
+    
+    let imageFetchOperationQueue = OperationQueue()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchMissionManifest()
         updateViews()
-        
-        self.clearsSelectionOnViewWillAppear = false
+        fetchMissionManifest()
     }
 
     /*
@@ -59,14 +75,19 @@ class SolCollectionViewController: UICollectionViewController {
                     return
                 }
                 let sol = sols[self.currentSol]
-                self.loadPhotosForSol(sol: sol)
+                
+                self.loadPhotoRefsForSol(sol: sol)
+                
                 return
             }
         }
     }
     
-    private func loadPhotosForSol(sol: Int32) {
+    private func loadPhotoRefsForSol(sol: Int32) {
         marsRoverController.fetchAllPhotos(forSol: sol) { (allPhotos, error) in
+            
+            defer { self.updateViews() }
+            
             if let error = error {
                 print("Error fetching photos for sol: \(error)")
                 return
@@ -77,19 +98,11 @@ class SolCollectionViewController: UICollectionViewController {
                 return
             }
             
+            self.photoCount = allPhotos.photos.count
+            
             for photo in allPhotos.photos {
                 let imgSrc = photo.imgSrc
                 self.photoUrls.append(imgSrc)
-            }
-            
-            self.fetchImageForURLString(urlStrings: self.photoUrls) { (_, error) in
-                if let error = error {
-                    print("Error fetching image: \(error)")
-                }
-                
-                DispatchQueue.main.async {
-                    self.updateViews()
-                }
             }
         }
     }
@@ -99,80 +112,90 @@ class SolCollectionViewController: UICollectionViewController {
     // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoUrls.count
+        return photoCount
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? RoverPhotoCollectionViewCell else { return UICollectionViewCell() }
         
-        let imgSrcURLString = photoUrls[indexPath.item]
-        if let image = imageCache[imgSrcURLString] {
-            cell.roverImage?.image = image
-        }
+        fetchImage(forCell: cell, forItemAt: indexPath)
         
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
+    
+//    // MARK: - UICollectionViewDelegate
+//    // Make collection view cells fill as much available width as possible
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+//        var totalUsableWidth = collectionView.frame.width
+//        let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
+//        totalUsableWidth -= inset.left + inset.right
+//        
+//        let minWidth: CGFloat = 150.0
+//        let numberOfItemsInOneRow = Int(totalUsableWidth / minWidth)
+//        totalUsableWidth -= CGFloat(numberOfItemsInOneRow - 1) * flowLayout.minimumInteritemSpacing
+//        let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
+//        return CGSize(width: width, height: width)
+//    }
+//    
+//    // Add margins to the left and right side
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
+//    }
     
     // MARK: - Rover Image Fetching Methods and Operations
     
-    func fetchImageForURLString(urlStrings: [String], completion: @escaping (UIImage?, Error?) -> Void) {
-        for urlString in urlStrings {
-            let httpUrl = URL(string: urlString)
+    func fetchImage(forCell cell: RoverPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
+        let imageURLString = photoUrls[indexPath.item]
+        let httpURL = URL(string: imageURLString)
+        
+        guard let httpsURLString = getSecureURL(url: httpURL) else {
+            return
+        }
+        
+        if let cachedData = imageCache.value(forKey: httpsURLString) as? Data {
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: cachedData) else { return }
+                cell.roverImage.image = image
+            }
+        }
+        
+        let fetchOp = FetchRoverImageOperation(imageURLString: httpsURLString)
+        
+        let cacheOp = BlockOperation {
+            guard let data = fetchOp.imgData else { return }
+            self.imageCache.cacheValue(data, forKey: httpsURLString)
+        }
+        
+        let completionOp = BlockOperation {
+            defer { self.operations.removeValue(forKey: imageURLString) }
             
-            guard let httpsURLString = getSecureURL(url: httpUrl) else {
+            if let currentIndex = self.collectionView.indexPath(for: cell), currentIndex != indexPath {
                 return
             }
             
-            marsRoverController.fetchSingleImage(httpsURLString) { (image, error) in
-                if let error = error {
-                    completion(nil, error)
-                    return
-                }
-                
-                if let image = image {
-                    self.imageCache[urlString] = image
-                    completion(image, nil)
-                    return
-                }
+            if let imageData = fetchOp.imgData, let image = UIImage(data: imageData) {
+                cell.roverImage.image = image
             }
         }
+        
+        cacheOp.addDependency(fetchOp)
+        completionOp.addDependency(fetchOp)
+        
+        imageFetchOperationQueue.addOperation(fetchOp)
+        imageFetchOperationQueue.addOperation(cacheOp)
+        
+        OperationQueue.main.addOperation(completionOp)
+        
+        operations[imageURLString] = fetchOp
     }
+
     
     private func getSecureURL(url: URL?) -> String? {
         guard let url = url, var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return nil }
         components.scheme = "https"
         return components.url?.absoluteString
     }
-
+    
 }
