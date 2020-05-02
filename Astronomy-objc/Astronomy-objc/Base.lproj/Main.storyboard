@@ -60,10 +60,22 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Sol Number" id="nJK-Co-KgP">
-                        <barButtonItem key="leftBarButtonItem" title="Previous" image="arrow.left" catalog="system" style="plain" id="HKB-R9-twV"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.right" catalog="system" style="plain" id="vGd-jf-Lrd"/>
+                        <barButtonItem key="leftBarButtonItem" title="Previous" image="arrow.left" catalog="system" style="plain" id="HKB-R9-twV">
+                            <connections>
+                                <action selector="previousSolTapped:" destination="f1r-pf-7tZ" id="jn8-xq-3Ta"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.right" catalog="system" style="plain" id="vGd-jf-Lrd">
+                            <connections>
+                                <action selector="nextSolTapped:" destination="f1r-pf-7tZ" id="zoh-tN-NCM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nextSolButton" destination="vGd-jf-Lrd" id="99P-ZQ-1Ah"/>
+                        <outlet property="previousSolButton" destination="HKB-R9-twV" id="ONw-is-8bn"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzs-8j-o5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

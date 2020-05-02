@@ -12,16 +12,27 @@ private let reuseIdentifier = "RoverPhotoCell"
 
 class SolCollectionViewController: UICollectionViewController {
     
+    @IBOutlet weak var previousSolButton: UIBarButtonItem!
+    @IBOutlet weak var nextSolButton: UIBarButtonItem!
+    
+    
     let marsRoverController = MarsRoverController()
     var rover: Rover?
     var sols: [Int32]?
-    var currentSol = 1 // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
+    // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
+    var currentSol = Int32() {
+        didSet {
+            marsRoverPhotos.removeAll()
+            imageFetchOperationQueue.cancelAllOperations()
+            operations.removeAll()
+            updateViews()
+            loadPhotoRefsForSol(sol: currentSol)
+        }
+    }
+    
     var marsRoverPhotos = [MarsRoverPhoto]() {
         didSet {
-            imageCache.clear()
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            collectionView.reloadData()
         }
     }
     var imageCache = Cache(key: String(), value: Data())
@@ -32,13 +43,13 @@ class SolCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
+        
         fetchMissionManifest()
     }
-
+    
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowPhotoDetailSegue" {
             guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
@@ -52,13 +63,26 @@ class SolCollectionViewController: UICollectionViewController {
                 photoDetailVC.title = "Photo Details"
                 photoDetailVC.marsRoverPhoto = marsRoverPhotoRef
                 photoDetailVC.imageData = imageData
+                
             }
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if !marsRoverPhotos.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     private func updateViews() {
+        if currentSol == 0 {
+            previousSolButton.isEnabled = false
+        } else {
+            previousSolButton.isEnabled = true
+        }
         self.title = "Sol \(currentSol)"
-        self.collectionView.reloadData()
     }
     
     // MARK: - Initial App Load Networking Methods
@@ -72,14 +96,12 @@ class SolCollectionViewController: UICollectionViewController {
             if let rover = rover {
                 self.rover = rover
                 
-                guard let sols = rover.sols as? [Int32] else {
+                guard let sols = rover.sols as? [Int32], let firstSol = sols.first else {
                     print("Sols could not be loaded")
                     return
                 }
-                let sol = sols[self.currentSol]
-                
-                self.loadPhotoRefsForSol(sol: sol)
-                
+                self.sols = sols
+                self.currentSol = firstSol
                 return
             }
         }
@@ -88,7 +110,7 @@ class SolCollectionViewController: UICollectionViewController {
     private func loadPhotoRefsForSol(sol: Int32) {
         marsRoverController.fetchAllPhotos(forSol: sol) { (allPhotos, error) in
             
-            defer { self.updateViews() }
+//            defer { self.collectionView.reloadData() }
             
             if let error = error {
                 print("Error fetching photos for sol: \(error)")
@@ -109,30 +131,21 @@ class SolCollectionViewController: UICollectionViewController {
     // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return marsRoverPhotos.count
+        var count = Int()
+        if marsRoverPhotos.isEmpty {
+            count = 100
+        } else {
+            count = marsRoverPhotos.count
+        }
+        return count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? RoverPhotoCollectionViewCell else { return UICollectionViewCell() }
-        
-        fetchImage(forCell: cell, forItemAt: indexPath)
-        
-        return cell
-    }
-    
-    
-    //MARK: UICollectionViewDelegate Methods
-    
-    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if marsRoverPhotos.count > 0 {
-            let photo = marsRoverPhotos[indexPath.item]
-            let imSrcString = photo.imgSrc
-            operations[imSrcString]?.cancel()
-        } else {
-            for (_, operation) in operations {
-                operation.cancel()
-            }
+        if !marsRoverPhotos.isEmpty {
+            fetchImage(forCell: cell, forItemAt: indexPath)
         }
+        return cell
     }
     
     // MARK: - Rover Image Fetching Methods and Operations
@@ -189,5 +202,28 @@ class SolCollectionViewController: UICollectionViewController {
         components.scheme = "https"
         return components.url?.absoluteString
     }
+    
+    
+// MARK: - IBActions
+    
+    @IBAction func previousSolTapped(_ sender: Any) {
+        guard currentSol > 0 else { return }
+        guard let sols = sols, let currentIndex = sols.firstIndex(of: currentSol) else { return }
+        
+        let previousSol = sols[currentIndex - 1]
+        currentSol = previousSol
+    }
+    
+    
+    @IBAction func nextSolTapped(_ sender: Any) {
+        guard let sols = sols, let currentIndex = sols.firstIndex(of: currentSol) else { return }
+        if currentSol == sols.last {
+            return
+        }
+        
+        let nextSol = sols[currentIndex + 1]
+        currentSol = nextSol
+    }
+    
     
 }
