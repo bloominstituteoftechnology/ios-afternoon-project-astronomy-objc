@@ -15,7 +15,7 @@ class SolCollectionViewController: UICollectionViewController {
     let marsRoverController = MarsRoverController()
     var rover: Rover?
     var sols: [Int32]?
-    var currentSol = 0 // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
+    var currentSol = 1 // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
     var marsRoverPhotos = [MarsRoverPhoto]() {
         didSet {
             imageCache.clear()
@@ -36,15 +36,25 @@ class SolCollectionViewController: UICollectionViewController {
         fetchMissionManifest()
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowPhotoDetailSegue" {
+            guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+            if let photoDetailVC = segue.destination as? PhotoDetailViewController {
+                let marsRoverPhotoRef = marsRoverPhotos[indexPath.item]
+                
+                let imageURLString = marsRoverPhotoRef.imgSrc
+                let httpURL = URL(string: imageURLString)
+                guard let httpsURLString = getSecureURL(url: httpURL) else { return }
+                guard let imageData = imageCache.value(forKey: httpsURLString) as? Data else { return }
+                photoDetailVC.title = "Photo Details"
+                photoDetailVC.marsRoverPhoto = marsRoverPhotoRef
+                photoDetailVC.imageData = imageData
+            }
+        }
     }
-    */
     
     private func updateViews() {
         self.title = "Sol \(currentSol)"

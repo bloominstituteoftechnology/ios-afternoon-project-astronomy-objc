@@ -49,6 +49,7 @@
                                 <size key="customSize" width="170" height="170"/>
                                 <connections>
                                     <outlet property="roverImage" destination="qBO-af-lge" id="UyD-wg-5Eh"/>
+                                    <segue destination="IQ0-f2-pcE" kind="show" identifier="ShowPhotoDetailSegue" id="C1F-iG-hhZ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -68,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="744.92753623188412" y="-19.419642857142858"/>
         </scene>
-        <!--Title-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="yWL-nl-5mL">
             <objects>
                 <viewController id="IQ0-f2-pcE" customClass="PhotoDetailViewController" customModule="Astronomy_objc" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,13 +78,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8HG-NU-0gs">
-                                <rect key="frame" x="0.0" y="92" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8HG-NU-0gs" secondAttribute="height" multiplier="1:1" id="Rh2-NW-Io8"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-kL-3zv">
-                                <rect key="frame" x="32" y="554" width="350" height="87"/>
+                                <rect key="frame" x="32" y="598" width="350" height="87"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6D-Pp-TJd">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
@@ -118,7 +119,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iOU-Rs-Aq3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="g3k-bJ-Vtx"/>
+                    <navigationItem key="navigationItem" id="g3k-bJ-Vtx"/>
                     <connections>
                         <outlet property="cameraDetailsLabel" destination="6G6-CC-NYm" id="U9b-qR-xvl"/>
                         <outlet property="marsRoverImage" destination="8HG-NU-0gs" id="4m7-ZM-Yty"/>

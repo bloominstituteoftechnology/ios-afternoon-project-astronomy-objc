@@ -16,22 +16,29 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var savePhotoButton: UIButton!
     
     var marsRoverPhoto: MarsRoverPhoto?
+    var imageData: Data?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let marsRoverPhoto = marsRoverPhoto else { return }
+        guard let marsRoverPhoto = marsRoverPhoto, let imageData = imageData, let image = UIImage(data: imageData) else { return }
         
-        let roverId = marsRoverPhoto.rover.identifier
         let roverName = marsRoverPhoto.rover.name
-        let earthDate = marsRoverPhoto.earthDate
-        let sol = marsRoverPhoto.sol
         
+        let earthDateString = marsRoverPhoto.earthDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let earthDate = dateFormatter.date(from: earthDateString) else { return }
+        dateFormatter.dateFormat = "M/d/yy"
+        let formattedEarthDate = dateFormatter.string(from: earthDate)
+        
+        let sol = marsRoverPhoto.sol
         let cameraName = marsRoverPhoto.camera.fullName
         
-        photoDetailsLabel.text = "Taken by Rover #\(roverId) (\(roverName)) on \(earthDate) (\(sol))"
+        photoDetailsLabel.text = "Taken by \(roverName) on \(formattedEarthDate) (Sol \(sol))"
         cameraDetailsLabel.text = "Camera: \(cameraName)"
+        marsRoverImage.image = image
         
     }
     
