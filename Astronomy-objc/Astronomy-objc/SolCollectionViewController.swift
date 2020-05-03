@@ -15,35 +15,50 @@ class SolCollectionViewController: UICollectionViewController {
     @IBOutlet weak var previousSolButton: UIBarButtonItem!
     @IBOutlet weak var nextSolButton: UIBarButtonItem!
     
-    
     let marsRoverController = MarsRoverController()
     var rover: Rover?
     var sols: [Int32]?
-    // Sol 0 has too many photos, so for optimization/testing the starting default sol is 1
+    var isLoadingPhotos = false {
+        didSet {
+            if isLoadingPhotos == false {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
     var currentSol = Int32() {
         didSet {
-            marsRoverPhotos.removeAll()
-            imageFetchOperationQueue.cancelAllOperations()
-            operations.removeAll()
+            if !isLoadingPhotos {
+                isLoadingPhotos = true
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
             updateViews()
             loadPhotoRefsForSol(sol: currentSol)
         }
     }
     
-    var marsRoverPhotos = [MarsRoverPhoto]() {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    var marsRoverPhotos = [MarsRoverPhoto]()
+    
     var imageCache = Cache(key: String(), value: Data())
-    var operations = [String : Operation]()
+    let loadingPhotosOperationQueue = OperationQueue()
+    var photoRefsOperations = [Int32: Operation]()
     
     let imageFetchOperationQueue = OperationQueue()
+    var imageLoadOperations = [String: Operation]()
+    
+    private let itemsPerRow: CGFloat = 2
+    private let sectionInsets = UIEdgeInsets(top: 20.0,
+                                             left: 20.0,
+                                             bottom: 20.0,
+                                             right: 20.0)
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchMissionManifest()
     }
     
@@ -63,7 +78,6 @@ class SolCollectionViewController: UICollectionViewController {
                 photoDetailVC.title = "Photo Details"
                 photoDetailVC.marsRoverPhoto = marsRoverPhotoRef
                 photoDetailVC.imageData = imageData
-                
             }
         }
     }
@@ -102,28 +116,38 @@ class SolCollectionViewController: UICollectionViewController {
                 }
                 self.sols = sols
                 self.currentSol = firstSol
-                return
+                self.isLoadingPhotos = true
+            }
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
     }
     
     private func loadPhotoRefsForSol(sol: Int32) {
-        marsRoverController.fetchAllPhotos(forSol: sol) { (allPhotos, error) in
-            
-//            defer { self.collectionView.reloadData() }
-            
-            if let error = error {
-                print("Error fetching photos for sol: \(error)")
-                return
+        let loadingPhotoRefOperation = BlockOperation {
+            self.marsRoverController.fetchAllPhotos(forSol: sol) { (allPhotos, error) in
+                
+                if let error = error {
+                    print("Error fetching photos for sol: \(error)")
+                    return
+                }
+                
+                guard let allPhotos = allPhotos else {
+                    print("Error loading all photo references")
+                    return
+                }
+                
+                self.marsRoverPhotos = allPhotos.photos
+                if sol == self.currentSol {
+                    self.isLoadingPhotos = false
+                }
             }
-            
-            guard let allPhotos = allPhotos else {
-                print("Error loading all photo references")
-                return
-            }
-            
-            self.marsRoverPhotos = allPhotos.photos
         }
+        
+        loadingPhotosOperationQueue.addOperation(loadingPhotoRefOperation)
+        photoRefsOperations[sol] = loadingPhotoRefOperation
     }
     
     
@@ -132,7 +156,7 @@ class SolCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count = Int()
-        if marsRoverPhotos.isEmpty {
+        if isLoadingPhotos {
             count = 100
         } else {
             count = marsRoverPhotos.count
@@ -142,10 +166,23 @@ class SolCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? RoverPhotoCollectionViewCell else { return UICollectionViewCell() }
-        if !marsRoverPhotos.isEmpty {
+        if !isLoadingPhotos {
             fetchImage(forCell: cell, forItemAt: indexPath)
         }
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if marsRoverPhotos.isEmpty {
+            return
+        } else {
+            guard !imageLoadOperations.isEmpty else { return }
+            guard marsRoverPhotos.count >= indexPath.item else { return }
+            let photoSrc = marsRoverPhotos[indexPath.item].imgSrc
+            guard let operation = imageLoadOperations[photoSrc] else { return }
+            operation.cancel()
+            imageLoadOperations.removeValue(forKey: photoSrc)
+        }
     }
     
     // MARK: - Rover Image Fetching Methods and Operations
@@ -174,7 +211,7 @@ class SolCollectionViewController: UICollectionViewController {
         }
         
         let completionOp = BlockOperation {
-            defer { self.operations.removeValue(forKey: imageURLString) }
+            defer { self.imageLoadOperations.removeValue(forKey: imageURLString) }
             
             if let currentIndex = self.collectionView.indexPath(for: cell), currentIndex != indexPath {
                 return
@@ -193,7 +230,7 @@ class SolCollectionViewController: UICollectionViewController {
         
         OperationQueue.main.addOperation(completionOp)
         
-        operations[imageURLString] = fetchOp
+        imageLoadOperations[imageURLString] = fetchOp
     }
 
     
@@ -208,8 +245,8 @@ class SolCollectionViewController: UICollectionViewController {
     
     @IBAction func previousSolTapped(_ sender: Any) {
         guard currentSol > 0 else { return }
+        prepareForSolChange()
         guard let sols = sols, let currentIndex = sols.firstIndex(of: currentSol) else { return }
-        
         let previousSol = sols[currentIndex - 1]
         currentSol = previousSol
     }
@@ -220,10 +257,49 @@ class SolCollectionViewController: UICollectionViewController {
         if currentSol == sols.last {
             return
         }
-        
+        prepareForSolChange()
         let nextSol = sols[currentIndex + 1]
         currentSol = nextSol
     }
     
     
+    private func prepareForSolChange() {
+        if photoRefsOperations.count > 0 {
+            if let operation = photoRefsOperations[currentSol] {
+                operation.cancel()
+            }
+        }
+        photoRefsOperations.removeAll()
+        marsRoverPhotos.removeAll()
+        imageFetchOperationQueue.cancelAllOperations()
+        imageLoadOperations.removeAll()
+    }
+    
+    
+}
+
+
+// MARK: - Collection View Flow Layout Delegate
+extension SolCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
 }
