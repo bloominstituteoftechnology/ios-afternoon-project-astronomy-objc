@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ijj-nJ-g42">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sol Number-->
+        <scene sceneID="9HW-Nx-kGN">
+            <objects>
+                <collectionViewController id="f1r-pf-7tZ" customClass="SolCollectionViewController" customModule="Astronomy_objc" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="xhB-nR-3GG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" sectionInsetReference="safeArea" id="OVH-XI-O2F">
+                            <size key="itemSize" width="160" height="160"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="RoverPhotoCell" id="U0S-dv-3C8" customClass="RoverPhotoCollectionViewCell">
+                                <rect key="frame" x="10" y="10" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Nw-22-0vh">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roverImagePlaceholder" id="qBO-af-lge">
+                                            <rect key="frame" x="-0.5" y="0.0" width="170" height="170"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="roverImage" destination="qBO-af-lge" id="UyD-wg-5Eh"/>
+                                    <segue destination="IQ0-f2-pcE" kind="show" identifier="ShowPhotoDetailSegue" id="C1F-iG-hhZ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="f1r-pf-7tZ" id="Bqm-kG-864"/>
+                            <outlet property="delegate" destination="f1r-pf-7tZ" id="Yfr-3u-9IO"/>
+                        </connections>
+                    </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Sol Number" id="nJK-Co-KgP">
+                        <barButtonItem key="leftBarButtonItem" title="Previous" image="arrow.left" catalog="system" style="plain" id="HKB-R9-twV">
+                            <connections>
+                                <action selector="previousSolTapped:" destination="f1r-pf-7tZ" id="jn8-xq-3Ta"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.right" catalog="system" style="plain" id="vGd-jf-Lrd">
+                            <connections>
+                                <action selector="nextSolTapped:" destination="f1r-pf-7tZ" id="zoh-tN-NCM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nextSolButton" destination="vGd-jf-Lrd" id="99P-ZQ-1Ah"/>
+                        <outlet property="previousSolButton" destination="HKB-R9-twV" id="ONw-is-8bn"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pzs-8j-o5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744.92753623188412" y="-19.419642857142858"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="yWL-nl-5mL">
+            <objects>
+                <viewController id="IQ0-f2-pcE" customClass="PhotoDetailViewController" customModule="Astronomy_objc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tip-RO-QkX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8HG-NU-0gs">
+                                <rect key="frame" x="0.0" y="136" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8HG-NU-0gs" secondAttribute="height" multiplier="1:1" id="Rh2-NW-Io8"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-kL-3zv">
+                                <rect key="frame" x="32" y="598" width="350" height="125"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6D-Pp-TJd">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G6-CC-NYm">
+                                        <rect key="frame" x="0.0" y="28.5" width="350" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-TA-Xcf">
+                                        <rect key="frame" x="0.0" y="57" width="350" height="30"/>
+                                        <state key="normal" title="Save Photo"/>
+                                        <connections>
+                                            <action selector="savePhotoTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="26v-dL-1qw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcW-7W-E2r">
+                                        <rect key="frame" x="0.0" y="95" width="350" height="30"/>
+                                        <state key="normal" title="Open Photos"/>
+                                        <connections>
+                                            <action selector="openPhotosTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="dmc-zp-aDu"/>
+                                            <action selector="savePhotoTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="v1T-vY-IoU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iOU-Rs-Aq3" firstAttribute="trailing" secondItem="HUW-kL-3zv" secondAttribute="trailing" constant="32" id="DU8-48-uoY"/>
+                            <constraint firstItem="8HG-NU-0gs" firstAttribute="leading" secondItem="iOU-Rs-Aq3" secondAttribute="leading" id="FcL-TA-aMG"/>
+                            <constraint firstItem="iOU-Rs-Aq3" firstAttribute="trailing" secondItem="8HG-NU-0gs" secondAttribute="trailing" id="GoI-2q-waA"/>
+                            <constraint firstItem="HUW-kL-3zv" firstAttribute="leading" secondItem="iOU-Rs-Aq3" secondAttribute="leading" constant="32" id="M6h-ga-p7L"/>
+                            <constraint firstItem="HUW-kL-3zv" firstAttribute="top" secondItem="8HG-NU-0gs" secondAttribute="bottom" constant="48" id="TSy-Z6-bqN"/>
+                            <constraint firstItem="8HG-NU-0gs" firstAttribute="top" secondItem="iOU-Rs-Aq3" secondAttribute="top" constant="48" id="qSJ-ty-DHT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iOU-Rs-Aq3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g3k-bJ-Vtx"/>
+                    <connections>
+                        <outlet property="cameraDetailsLabel" destination="6G6-CC-NYm" id="U9b-qR-xvl"/>
+                        <outlet property="marsRoverImage" destination="8HG-NU-0gs" id="4m7-ZM-Yty"/>
+                        <outlet property="photoDetailsLabel" destination="U6D-Pp-TJd" id="G1d-EA-sYQ"/>
+                        <outlet property="savePhotoButton" destination="5nU-TA-Xcf" id="dxG-Lz-4Mw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBn-ac-9kL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639.1304347826087" y="-19.419642857142858"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gD3-zb-kan">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ijj-nJ-g42" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BDj-It-El2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f1r-pf-7tZ" kind="relationship" relationship="rootViewController" id="VCZ-qf-9kU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUm-f5-gpk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165.21739130434784" y="-19.419642857142858"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="roverImagePlaceholder" width="225" height="225"/>
+    </resources>
+</document>
