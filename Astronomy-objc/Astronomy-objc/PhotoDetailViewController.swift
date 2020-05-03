@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoDetailViewController: UIViewController {
     
@@ -15,8 +16,10 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var cameraDetailsLabel: UILabel!
     @IBOutlet weak var savePhotoButton: UIButton!
     
+    
     var marsRoverPhoto: MarsRoverPhoto?
     var imageData: Data?
+    var image: UIImage?
     
     
     override func viewDidLoad() {
@@ -39,24 +42,74 @@ class PhotoDetailViewController: UIViewController {
         photoDetailsLabel.text = "Taken by \(roverName) on \(formattedEarthDate) (Sol \(sol))"
         cameraDetailsLabel.text = "Camera: \(cameraName)"
         marsRoverImage.image = image
-        
+        self.image = image
     }
     
     
-    func savePhotoToLibrary(UIImage: UIImage) {
-        // TODO: Request permission to users Photos library
+    func savePhotoToLibrary(image: UIImage) {
+        PHPhotoLibrary.requestAuthorization { (status) in
+            guard status == .authorized else { return }// you didnt give permission, please open settings to give permission }
+            
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetCreationRequest.creationRequestForAsset(from: image)
+            }) { (success, error) in
+                if let error = error {
+                    print("Error saving photo: \(error)")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.presentSuccessfulSaveAlert()
+                }
+            }
+        }
+    }
+    
+    private func presentSuccessfulSaveAlert() {
+        let alert = UIAlertController(title: "Photo Saved!", message: "The photo has been saved to your Photo Library!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func presentImagePickerController() {
+        // make sure photo library type is avalaible => may not work with restrictions
         
-        // TODO: Save photo to library
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            print("The photo library is not available")
+            return
+        }
         
-        // TODO: Present alert for confirmation
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+        
     }
     
     // MARK: - Actions
     
-    @IBAction func savePhotoButtonTapped(_ sender: Any) {
-        if let image = marsRoverImage.image {
-            savePhotoToLibrary(UIImage: image)
-        }
+    @IBAction func savePhotoTapped(_ sender: Any) {
+        guard let image = image else { return }
+        savePhotoToLibrary(image: image)
     }
     
+    
+    @IBAction func openPhotosTapped(_ sender: Any) {
+        self.presentImagePickerController()
+    }
+    
+}
+
+
+
+extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

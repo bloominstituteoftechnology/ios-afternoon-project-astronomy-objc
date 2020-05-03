@@ -96,7 +96,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-kL-3zv">
-                                <rect key="frame" x="32" y="598" width="350" height="87"/>
+                                <rect key="frame" x="32" y="598" width="350" height="125"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6D-Pp-TJd">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
@@ -112,9 +112,17 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-TA-Xcf">
                                         <rect key="frame" x="0.0" y="57" width="350" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Save Photo"/>
                                         <connections>
-                                            <action selector="savePhotoButtonTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="UYJ-1G-sAj"/>
+                                            <action selector="savePhotoTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="26v-dL-1qw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcW-7W-E2r">
+                                        <rect key="frame" x="0.0" y="95" width="350" height="30"/>
+                                        <state key="normal" title="Open Photos"/>
+                                        <connections>
+                                            <action selector="openPhotosTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="dmc-zp-aDu"/>
+                                            <action selector="savePhotoTapped:" destination="IQ0-f2-pcE" eventType="touchUpInside" id="v1T-vY-IoU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -136,7 +144,7 @@
                         <outlet property="cameraDetailsLabel" destination="6G6-CC-NYm" id="U9b-qR-xvl"/>
                         <outlet property="marsRoverImage" destination="8HG-NU-0gs" id="4m7-ZM-Yty"/>
                         <outlet property="photoDetailsLabel" destination="U6D-Pp-TJd" id="G1d-EA-sYQ"/>
-                        <outlet property="savePhotoButton" destination="5nU-TA-Xcf" id="Ey6-H5-gyK"/>
+                        <outlet property="savePhotoButton" destination="5nU-TA-Xcf" id="dxG-Lz-4Mw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBn-ac-9kL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
