@@ -24,29 +24,18 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="RoverPhotoCell" id="U0S-dv-3C8" customClass="RoverPhotoCollectionViewCell">
-                                <rect key="frame" x="10" y="10" width="170" height="170"/>
+                                <rect key="frame" x="10" y="10" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QCM-O6-jbf">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Nw-22-0vh">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roverImagePlaceholder" id="qBO-af-lge">
                                             <rect key="frame" x="-0.5" y="0.0" width="170" height="170"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="qBO-af-lge" secondAttribute="height" multiplier="1:1" id="5pp-fa-cow"/>
-                                                <constraint firstAttribute="width" constant="160" id="JoH-5n-FSp"/>
-                                            </constraints>
                                         </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="qBO-af-lge" secondAttribute="bottom" constant="5" id="9mV-zF-jnj"/>
-                                        <constraint firstAttribute="trailing" secondItem="qBO-af-lge" secondAttribute="trailing" constant="5" id="FMq-8A-sVI"/>
-                                        <constraint firstItem="qBO-af-lge" firstAttribute="leading" secondItem="QCM-O6-jbf" secondAttribute="leading" constant="5" id="VEt-NT-424"/>
-                                        <constraint firstItem="qBO-af-lge" firstAttribute="top" secondItem="QCM-O6-jbf" secondAttribute="top" constant="5" id="cE9-Vr-X8A"/>
-                                    </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="170" height="170"/>
                                 <connections>
                                     <outlet property="roverImage" destination="qBO-af-lge" id="UyD-wg-5Eh"/>
                                     <segue destination="IQ0-f2-pcE" kind="show" identifier="ShowPhotoDetailSegue" id="C1F-iG-hhZ"/>
