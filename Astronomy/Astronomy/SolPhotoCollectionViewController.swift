@@ -14,12 +14,17 @@ class SolPhotoCollectionViewController: UICollectionViewController {
     // MARK: - Private Properties
     
     // Networking Client
+    let nasaMarsClient = NasaMarsClient()
+    
+    var sols: [MarsSol] = []
+    var photos: [MarsPhoto] = []
+    
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
     // MARK: Collection View Data Source
