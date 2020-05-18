@@ -7,12 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TMCMarsRoverCamera.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMCMarsPhotoReference : NSObject
-
-
+@property NSNumber *identification;
+@property NSNumber *sol;
+@property TMCMarsRoverCamera *camera;
+@property NSDate *earthDate;
+@property NSURL *imageURL;
+   
+-(instancetype) initWithIdentification:(NSNumber *)identification
+                                   sol:(NSNumber *) sol
+                                camera:(TMCMarsRoverCamera *) camera
+                             earthDate:(NSDate *) earthDate
+                              imageURL:(NSURL *) imageURL;
 @end
 
 NS_ASSUME_NONNULL_END

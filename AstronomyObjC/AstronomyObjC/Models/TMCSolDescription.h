@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSNumber *totalPhotos;
 @property NSMutableArray *cameras;
 
--(instancetype) initWithSol:(NSNumber *)sol totalPhotos:(NSNumber *) totalPhotos cameras:(NSMutableArray *) cameras;
+-(instancetype) initWithSol:(NSNumber *)sol
+                totalPhotos:(NSNumber *) totalPhotos
+                    cameras:(NSMutableArray *) cameras;
 
 @end
 

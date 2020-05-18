@@ -9,5 +9,20 @@
 #import "TMCMarsPhotoReference.h"
 
 @implementation TMCMarsPhotoReference
+-(instancetype) initWithIdentification:(NSNumber *)identification
+                                   sol:(NSNumber *)sol
+                                camera:(TMCMarsRoverCamera *)camera
+                             earthDate:(NSDate *)earthDate
+                              imageURL:(NSURL *)imageURL {
+    self = [super init];
+    if (self) {
+        _identification = identification;
+        _sol = sol;
+        _camera = camera;
+        _earthDate = earthDate;
+        _imageURL = imageURL;
+    }
+    return self;
+}
 
 @end

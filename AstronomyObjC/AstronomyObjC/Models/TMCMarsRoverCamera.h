@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSNumber *roverId;
 @property NSString *fullName;
 
--(instancetype)initWithIdentity:(NSNumber *) identity name:(NSString *) name roverID:(NSNumber *) roverID fullName:(NSString *) fullName;
+-(instancetype)initWithIdentity:(NSNumber *) identity
+                           name:(NSString *) name
+                        roverID:(NSNumber *) roverID
+                       fullName:(NSString *) fullName;
 @end
 
 NS_ASSUME_NONNULL_END
