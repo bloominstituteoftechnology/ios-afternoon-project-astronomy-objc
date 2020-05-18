@@ -11,6 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMCSolDescription : NSObject
+ 
+@property NSNumber *sol;
+@property NSNumber *totalPhotos;
+@property NSMutableArray *cameras;
+
+-(instancetype) initWithSol:(NSNumber *)sol totalPhotos:(NSNumber *) totalPhotos cameras:(NSMutableArray *) cameras;
 
 @end
 
