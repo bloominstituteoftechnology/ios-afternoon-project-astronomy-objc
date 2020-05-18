@@ -14,6 +14,12 @@
 		045DBA1A24730B3D002D736D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045DBA1924730B3D002D736D /* Assets.xcassets */; };
 		045DBA1D24730B3D002D736D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045DBA1B24730B3D002D736D /* LaunchScreen.storyboard */; };
 		045DBA2724731998002D736D /* SolPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */; };
+		045DBA2C24731BE9002D736D /* SSSNasaMarsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA2B24731BE9002D736D /* SSSNasaMarsClient.m */; };
+		045DBA2F24731C30002D736D /* SSSCodableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA2E24731C30002D736D /* SSSCodableObject.m */; };
+		045DBA3D24731CF4002D736D /* SSSPhotoManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA3C24731CF4002D736D /* SSSPhotoManifest.m */; };
+		045DBA4024731D07002D736D /* SSSMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA3F24731D07002D736D /* SSSMarsPhoto.m */; };
+		045DBA4324731E02002D736D /* SSSMarsSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA4224731E02002D736D /* SSSMarsSol.m */; };
+		045DBA462473201B002D736D /* SSSMarsCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA452473201B002D736D /* SSSMarsCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,19 @@
 		045DBA1C24730B3D002D736D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		045DBA1E24730B3D002D736D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		045DBA2924731BE8002D736D /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		045DBA2A24731BE9002D736D /* SSSNasaMarsClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSNasaMarsClient.h; sourceTree = "<group>"; };
+		045DBA2B24731BE9002D736D /* SSSNasaMarsClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSNasaMarsClient.m; sourceTree = "<group>"; };
+		045DBA2D24731C30002D736D /* SSSCodableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSCodableObject.h; sourceTree = "<group>"; };
+		045DBA2E24731C30002D736D /* SSSCodableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSCodableObject.m; sourceTree = "<group>"; };
+		045DBA3B24731CF4002D736D /* SSSPhotoManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSPhotoManifest.h; sourceTree = "<group>"; };
+		045DBA3C24731CF4002D736D /* SSSPhotoManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSPhotoManifest.m; sourceTree = "<group>"; };
+		045DBA3E24731D07002D736D /* SSSMarsPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSMarsPhoto.h; sourceTree = "<group>"; };
+		045DBA3F24731D07002D736D /* SSSMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSMarsPhoto.m; sourceTree = "<group>"; };
+		045DBA4124731E02002D736D /* SSSMarsSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSMarsSol.h; sourceTree = "<group>"; };
+		045DBA4224731E02002D736D /* SSSMarsSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSMarsSol.m; sourceTree = "<group>"; };
+		045DBA442473201B002D736D /* SSSMarsCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSMarsCamera.h; sourceTree = "<group>"; };
+		045DBA452473201B002D736D /* SSSMarsCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSMarsCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +80,10 @@
 				045DBA1424730B3B002D736D /* PhotoDetailViewController.swift */,
 				045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */,
 				045DBA1624730B3B002D736D /* Main.storyboard */,
+				045DBA3124731C41002D736D /* Networking */,
+				045DBA3024731C36002D736D /* Models */,
 				045DBA28247319E7002D736D /* Resources */,
+				045DBA2924731BE8002D736D /* Astronomy-Bridging-Header.h */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -76,6 +98,32 @@
 				045DBA1E24730B3D002D736D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		045DBA3024731C36002D736D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				045DBA2D24731C30002D736D /* SSSCodableObject.h */,
+				045DBA2E24731C30002D736D /* SSSCodableObject.m */,
+				045DBA3B24731CF4002D736D /* SSSPhotoManifest.h */,
+				045DBA3C24731CF4002D736D /* SSSPhotoManifest.m */,
+				045DBA4124731E02002D736D /* SSSMarsSol.h */,
+				045DBA4224731E02002D736D /* SSSMarsSol.m */,
+				045DBA3E24731D07002D736D /* SSSMarsPhoto.h */,
+				045DBA3F24731D07002D736D /* SSSMarsPhoto.m */,
+				045DBA442473201B002D736D /* SSSMarsCamera.h */,
+				045DBA452473201B002D736D /* SSSMarsCamera.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		045DBA3124731C41002D736D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				045DBA2A24731BE9002D736D /* SSSNasaMarsClient.h */,
+				045DBA2B24731BE9002D736D /* SSSNasaMarsClient.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +158,7 @@
 				TargetAttributes = {
 					045DBA0C24730B3B002D736D = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -151,8 +200,14 @@
 			files = (
 				045DBA2724731998002D736D /* SolPhotoCollectionViewController.swift in Sources */,
 				045DBA1524730B3B002D736D /* PhotoDetailViewController.swift in Sources */,
+				045DBA3D24731CF4002D736D /* SSSPhotoManifest.m in Sources */,
 				045DBA1124730B3B002D736D /* AppDelegate.swift in Sources */,
+				045DBA2F24731C30002D736D /* SSSCodableObject.m in Sources */,
+				045DBA2C24731BE9002D736D /* SSSNasaMarsClient.m in Sources */,
+				045DBA4324731E02002D736D /* SSSMarsSol.m in Sources */,
 				045DBA1324730B3B002D736D /* SceneDelegate.swift in Sources */,
+				045DBA4024731D07002D736D /* SSSMarsPhoto.m in Sources */,
+				045DBA462473201B002D736D /* SSSMarsCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
 				INFOPLIST_FILE = Astronomy/Resources/Info.plist;
@@ -305,6 +361,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftstudent.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
 				INFOPLIST_FILE = Astronomy/Resources/Info.plist;
@@ -323,6 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftstudent.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
