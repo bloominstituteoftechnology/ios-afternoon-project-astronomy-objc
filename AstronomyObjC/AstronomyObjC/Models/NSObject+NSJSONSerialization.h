@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class TMCMarsPhotoReference;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (NSJSONSerialization)
+
+- (instancetype)initArrayWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

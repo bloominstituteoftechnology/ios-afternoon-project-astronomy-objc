@@ -27,6 +27,7 @@
 		E29137BC24731E5E00BBFBEA /* TMCMarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137BB24731E5E00BBFBEA /* TMCMarsRoverController.m */; };
 		E29137BF24731E6F00BBFBEA /* TMCMarsRoverCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137BE24731E6F00BBFBEA /* TMCMarsRoverCameraController.m */; };
 		E29137C224731EDC00BBFBEA /* NSObject+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137C124731EDC00BBFBEA /* NSObject+NSJSONSerialization.m */; };
+		E29137C524733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137C424733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		E29137BE24731E6F00BBFBEA /* TMCMarsRoverCameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCMarsRoverCameraController.m; sourceTree = "<group>"; };
 		E29137C024731EDC00BBFBEA /* NSObject+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSJSONSerialization.h"; sourceTree = "<group>"; };
 		E29137C124731EDC00BBFBEA /* NSObject+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSJSONSerialization.m"; sourceTree = "<group>"; };
+		E29137C324733AA700BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TMCMarsPhotoReference+NSJSONSerialization.h"; sourceTree = "<group>"; };
+		E29137C424733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TMCMarsPhotoReference+NSJSONSerialization.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				E29137C124731EDC00BBFBEA /* NSObject+NSJSONSerialization.m */,
 				E29137A124731B8F00BBFBEA /* TMCMarsPhotoReference.h */,
 				E29137A224731B8F00BBFBEA /* TMCMarsPhotoReference.m */,
+				E29137C324733AA700BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.h */,
+				E29137C424733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m */,
 				E29137A424731BAA00BBFBEA /* TMCSolDescription.h */,
 				E29137A524731BAA00BBFBEA /* TMCSolDescription.m */,
 				E29137A724731BE000BBFBEA /* TMCMarsRoverCamera.h */,
@@ -257,6 +262,7 @@
 				E291377F2473193200BBFBEA /* SceneDelegate.m in Sources */,
 				E29137B324731DAC00BBFBEA /* TMCNetworkController.m in Sources */,
 				E29137AE24731CF700BBFBEA /* MarsPhotosCollectionViewController.swift in Sources */,
+				E29137C524733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m in Sources */,
 				E29137A924731BE000BBFBEA /* TMCMarsRoverCamera.m in Sources */,
 				E29137A024731B2E00BBFBEA /* MarsRover.swift in Sources */,
 				E29137B624731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m in Sources */,
