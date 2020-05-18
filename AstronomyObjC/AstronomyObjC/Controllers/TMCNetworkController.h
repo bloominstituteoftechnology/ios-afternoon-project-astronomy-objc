@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 @class TMCMarsPhotoReference;
 
-typedef void (^TMCMarsPhotoCompletion)(TMCMarsPhotoReference *_Nullable photo, NSError *_Nullable error);
+typedef void (^TMCMarsPhotoCompletion)(NSArray<TMCMarsPhotoReference *> *_Nullable photos, NSError *_Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(NetworkController)
 @interface TMCNetworkController : NSObject
 
 @property (nonatomic, nullable) NSArray<TMCMarsPhotoReference *> *photos;

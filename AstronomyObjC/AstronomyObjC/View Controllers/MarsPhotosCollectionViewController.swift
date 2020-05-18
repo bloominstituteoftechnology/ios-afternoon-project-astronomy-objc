@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class MarsPhotosCollectionViewController: UICollectionViewController {
 
+    let networkController = NetworkController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

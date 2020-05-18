@@ -7,54 +7,61 @@
 //
 
 #import "TMCNetworkController.h"
+#import "AstronomyObjC-Swift.h"
+#import "NSObject+NSJSONSerialization.h"
 
 @implementation TMCNetworkController
 
 static NSString *apiKey = @"IjCchzjn0EuNgmVSr824DPsW57IXpXMwg7bS9mnc";
 
+- (instancetype)initWithPhotos:(NSMutableArray *)photos
+{
+    self = [super init];
+    if (self) {
+        _photos = photos;
+    }
+    return self;
+}
+
+- (void)fetchMarsPhotosOnSol:(NSNumber *)sol
+             completionBlock:(TMCMarsPhotoCompletion)completionBlock {
+
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
+    NSURLQueryItem *solTerm = [NSURLQueryItem queryItemWithName:@"sol" value:[NSString stringWithFormat:@"%i", sol.intValue]];
+    NSURLQueryItem *apiKeyQuery = [NSURLQueryItem queryItemWithName:@"api_key" value:apiKey];
+    components.queryItems = @[solTerm, apiKeyQuery];
+    NSURL *url = components.URL;
+
+    NSLog(@"%@", url);
+
+    if (!url) {
+        return;
+    }
+
+    NSURLSessionTask *task = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            completionBlock(nil, error);
+            return;
+        }
+
+        if (!data) {
+            completionBlock(nil, [[NSError alloc] init]);
+            return;
+        }
+
+        NSError *jsonError = nil;
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if (jsonError) {
+            completionBlock(nil, error);
+            return;
+        }
+
+        NSArray *photosArray = [[NSArray alloc] initArrayWithDictionary:dictionary];
+        completionBlock(photosArray, nil);
+    }];
+
+    [task resume];
+}
+
 @end
-
-
-//- (void)fetchArtistWithName:(NSString *)name
-//completionBlock:(CBDArtistCompletion)completionBlock {
-//
-//    NSURL *baseURL = [NSURL URLWithString:baseURLString];
-//    NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
-//    NSURLQueryItem *searchTerm = [NSURLQueryItem queryItemWithName:@"s" value:name];
-//    components.queryItems = @[searchTerm];
-//    NSURL *url = components.URL;
-//
-//    if (!url) {
-//        return;
-//    }
-//
-//    NSURLSessionTask *task = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//
-//        if (error) {
-//            completionBlock(nil, error);
-//            return;
-//        }
-//
-//        if (!data) {
-//            NSLog(@"No data from network");
-//            completionBlock(nil, nil);
-//            return;
-//        }
-//
-//        NSError *jsonError = nil;
-//        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-//
-//        if (jsonError) {
-//            completionBlock(nil, jsonError);
-//            return;
-//        }
-//
-//        CBDArtist *artist = [[CBDArtist alloc] initWithDictionary:dictionary];
-//        if (artist) {
-//            completionBlock(artist, nil);
-//            return;
-//        }
-//        completionBlock(nil, nil);
-//    }];
-//    [task resume];
-//}
