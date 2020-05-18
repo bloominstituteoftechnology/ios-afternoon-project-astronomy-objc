@@ -14,6 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(NasaMarsClient)
 @interface SSSNasaMarsClient : NSObject
 
 - (SSSPhotoManifest *)fetchManifestForRoverNamed:(NSString *)roverName;

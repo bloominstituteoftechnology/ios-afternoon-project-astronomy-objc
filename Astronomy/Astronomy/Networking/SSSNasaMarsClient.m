@@ -10,4 +10,14 @@
 
 @implementation SSSNasaMarsClient
 
+- (SSSPhotoManifest *)fetchManifestForRoverNamed:(NSString *)roverName {
+
+    return nil;
+}
+
+- (NSArray<SSSMarsPhoto *> *)fetchPhotosForSol:(SSSMarsSol *)sol {
+    
+    return nil;
+}
+
 @end
