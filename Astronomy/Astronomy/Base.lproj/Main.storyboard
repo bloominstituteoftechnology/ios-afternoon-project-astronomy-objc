@@ -11,7 +11,7 @@
         <!--Sol 63-->
         <scene sceneID="bG6-Ha-G7j">
             <objects>
-                <collectionViewController id="WLe-6b-Bev" sceneMemberID="viewController">
+                <collectionViewController id="WLe-6b-Bev" customClass="SolPhotoCollectionViewController" customModule="Astronomy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dt5-RD-DhJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74x-EY-6D7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="130"/>
+            <point key="canvasLocation" x="1006" y="130"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
