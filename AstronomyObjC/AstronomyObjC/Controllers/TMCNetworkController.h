@@ -7,10 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+@class TMCMarsPhotoReference;
+
+typedef void (^TMCMarsPhotoCompletion)(TMCMarsPhotoReference *_Nullable photo, NSError *_Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMCNetworkController : NSObject
+
+@property (nonatomic, nullable) NSArray<TMCMarsPhotoReference *> *photos;
+
+- (instancetype)initWithPhotos:(NSMutableArray *)photos;
+
+- (void)fetchMarsPhotosOnSol:(NSNumber *)sol
+            completionBlock:(TMCMarsPhotoCompletion)completionBlock;
 
 @end
 
