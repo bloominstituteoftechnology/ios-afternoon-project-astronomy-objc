@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(MarsSol)
 @interface SSSMarsSol : SSSCodableObject
 
 @property (nonatomic, readonly) int solNumber;

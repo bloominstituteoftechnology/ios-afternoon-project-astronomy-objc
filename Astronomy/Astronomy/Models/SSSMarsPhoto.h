@@ -12,6 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(MarsPhoto)
 @interface SSSMarsPhoto : SSSCodableObject
 
 @property (nonatomic, readonly, copy) NSString *solNumber;

@@ -12,6 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(PhotoManifest)
 @interface SSSPhotoManifest : SSSCodableObject
 
 @property (nonatomic, readonly, copy) NSArray<SSSMarsSol *> *sols;
