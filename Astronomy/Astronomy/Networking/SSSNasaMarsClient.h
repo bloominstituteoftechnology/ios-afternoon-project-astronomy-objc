@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class SSSPhotoManifest;
+@class SSSMarsSol;
+@class SSSMarsPhoto;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SSSNasaMarsClient : NSObject
+
+- (SSSPhotoManifest *)fetchManifestForRoverNamed:(NSString *)roverName;
+- (NSArray<SSSMarsPhoto *> *)fetchPhotosForSol:(SSSMarsSol *)sol;
 
 @end
 
