@@ -11,12 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TMCMarsRoverCamera : NSObject
-@property NSNumber *id;
+@property NSNumber *identity;
 @property NSString *name;
 @property NSNumber *roverId;
 @property NSString *fullName;
 
--(instancetype)initWithid:(NSNumber *) id name:(NSString *) Name roverID:(NSNumber *) RoverID fullName:(NSString *) FullName;
+-(instancetype)initWithIdentity:(NSNumber *) identity name:(NSString *) name roverID:(NSNumber *) roverID fullName:(NSString *) fullName;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,11 +9,15 @@
 #import "TMCMarsRoverCamera.h"
 
 @implementation TMCMarsRoverCamera
--(instancetype) initWithid:(NSNumber *)id name:(NSString *) Name roverID:(NSNumber *) RoverID fullName:(NSString *) FullName {
-    _id = id;
-    _name = Name;
-    _roverId = RoverID;
-    _fullName = FullName;
+-(instancetype) initWithIdentity:(NSNumber *)identity name:(NSString *) name roverID:(NSNumber *) roverID fullName:(NSString *) fullName {
+    
+    self = [super init];
+    if (self) {
+    _identity = identity;
+    _name = name;
+    _roverId = roverID;
+    _fullName = fullName;
+    }
     return self;
 }
 @end
