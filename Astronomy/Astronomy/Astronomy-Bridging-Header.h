@@ -6,4 +6,4 @@
 #import "SSSPhotoManifest.h"
 #import "SSSMarsSol.h"
 #import "SSSMarsPhoto.h"
-#import "SSSMarsCamera.h"
+#import "SSSPhotoCollectionViewCell.h"
