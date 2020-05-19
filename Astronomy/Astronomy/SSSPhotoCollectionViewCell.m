@@ -8,10 +8,12 @@
 
 #import "SSSPhotoCollectionViewCell.h"
 #import "SSSMarsPhoto.h"
+#import "SSSLoadImageOperation.h"
 
 @interface SSSPhotoCollectionViewCell ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) SSSLoadImageOperation *loadImageOperation;
 
 @end
 
@@ -25,9 +27,12 @@
     NSURLComponents *components = [NSURLComponents componentsWithURL:photo.imageURL resolvingAgainstBaseURL:YES];
     components.scheme = @"https";
     
-    // TODO: Implement NSOperation for image fetching
-    NSData *imageData = [NSData dataWithContentsOfURL:components.URL];
-    self.imageView.image = [UIImage imageWithData:imageData];
+    self.loadImageOperation = [[SSSLoadImageOperation alloc] initWithURL:components.URL imageView:self.imageView];
+}
+
+- (void)prepareForReuse {
+    [self.loadImageOperation cancel];
+    self.imageView.image = nil;
 }
 
 @end
