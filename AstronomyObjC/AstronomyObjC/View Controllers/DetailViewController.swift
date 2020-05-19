@@ -14,7 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var cameraLabel: UILabel!
 
-    var photoReferernce: TMCMarsPhotoReference? 
+    var photoReferernce: TMCMarsPhotoReference?
+    var networkController: NetworkController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +27,17 @@ class DetailViewController: UIViewController {
     }
 
     func updateViews() {
-        guard let photoReference = photoReferernce else { return }
+        guard let photoReference = photoReferernce,
+            let date = photoReferernce?.earthDate,
+            let networkController = networkController else { return }
 
-        guard let imageURL = photoReference.imageURL.usingHTTPS,
-            let dataImage = try? Data(contentsOf: imageURL),
-            let date = photoReferernce?.earthDate else { return }
+        networkController.fetchImage(for: photoReference) { (data, error) in
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                self.roverImage.image = UIImage(data: data)
+            }
+        }
 
-        roverImage.image = UIImage(data: dataImage)
         dateLabel.text = "Taken by \(photoReference.identification) on \(date) (Sol \(photoReference.sol))"
         cameraLabel.text = "Camera: \(photoReference.camera.capitalized) Camera"
     }

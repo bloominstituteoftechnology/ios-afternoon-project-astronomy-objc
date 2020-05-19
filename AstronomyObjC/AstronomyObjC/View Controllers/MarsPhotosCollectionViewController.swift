@@ -70,6 +70,7 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
                 let indexPath = self.collectionView!.indexPath(for: cell)
                 let photoReference = photoArray[indexPath!.item]
                 photoDetailVC.photoReferernce = photoReference
+                photoDetailVC.networkController = networkController
             }
         }
     }
