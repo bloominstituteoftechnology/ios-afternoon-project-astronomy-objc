@@ -23,6 +23,8 @@
 		045DBA5124732CB6002D736D /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA4A24732CB6002D736D /* LSIFileHelper.m */; };
 		045DBA5224732CB6002D736D /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA4E24732CB6002D736D /* URL+Secure.swift */; };
 		045DBA58247415AC002D736D /* SSSPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA57247415AC002D736D /* SSSPhotoCollectionViewCell.m */; };
+		045DBA5B24746DF7002D736D /* SSSConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA5A24746DF7002D736D /* SSSConcurrentOperation.m */; };
+		045DBA5F24748006002D736D /* SSSFetchImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA5E24748006002D736D /* SSSFetchImageOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,10 @@
 		045DBA4E24732CB6002D736D /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 		045DBA56247415AC002D736D /* SSSPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		045DBA57247415AC002D736D /* SSSPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		045DBA5924746DF7002D736D /* SSSConcurrentOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSConcurrentOperation.h; sourceTree = "<group>"; };
+		045DBA5A24746DF7002D736D /* SSSConcurrentOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSConcurrentOperation.m; sourceTree = "<group>"; };
+		045DBA5D24748006002D736D /* SSSFetchImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSFetchImageOperation.h; sourceTree = "<group>"; };
+		045DBA5E24748006002D736D /* SSSFetchImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSFetchImageOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 				045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */,
 				045DBA56247415AC002D736D /* SSSPhotoCollectionViewCell.h */,
 				045DBA57247415AC002D736D /* SSSPhotoCollectionViewCell.m */,
+				045DBA5C24747FDF002D736D /* Operations */,
 				045DBA3124731C41002D736D /* Networking */,
 				045DBA3024731C36002D736D /* Models */,
 				045DBA4724732CB6002D736D /* LambdaSDK */,
@@ -146,6 +153,17 @@
 			);
 			name = LambdaSDK;
 			path = ../../LambdaSDK;
+			sourceTree = "<group>";
+		};
+		045DBA5C24747FDF002D736D /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				045DBA5924746DF7002D736D /* SSSConcurrentOperation.h */,
+				045DBA5A24746DF7002D736D /* SSSConcurrentOperation.m */,
+				045DBA5D24748006002D736D /* SSSFetchImageOperation.h */,
+				045DBA5E24748006002D736D /* SSSFetchImageOperation.m */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,12 +242,14 @@
 				045DBA4F24732CB6002D736D /* LSILog.m in Sources */,
 				045DBA1524730B3B002D736D /* PhotoDetailViewController.swift in Sources */,
 				045DBA3D24731CF4002D736D /* SSSPhotoManifest.m in Sources */,
+				045DBA5B24746DF7002D736D /* SSSConcurrentOperation.m in Sources */,
 				045DBA5224732CB6002D736D /* URL+Secure.swift in Sources */,
 				045DBA1124730B3B002D736D /* AppDelegate.swift in Sources */,
 				045DBA2C24731BE9002D736D /* SSSNasaMarsClient.m in Sources */,
 				045DBA4324731E02002D736D /* SSSMarsSol.m in Sources */,
 				045DBA1324730B3B002D736D /* SceneDelegate.swift in Sources */,
 				045DBA5124732CB6002D736D /* LSIFileHelper.m in Sources */,
+				045DBA5F24748006002D736D /* SSSFetchImageOperation.m in Sources */,
 				045DBA58247415AC002D736D /* SSSPhotoCollectionViewCell.m in Sources */,
 				045DBA4024731D07002D736D /* SSSMarsPhoto.m in Sources */,
 				045DBA5024732CB6002D736D /* LSIErrors.m in Sources */,
