@@ -18,9 +18,11 @@ class SolPhotoCollectionViewController: UICollectionViewController {
     let nasaMarsClient = NasaMarsClient()
     
     var sols: [MarsSol] = []
-    var sol: MarsSol? { didSet { updateUI() }}
+    var solIndex = 0 { didSet { updateUI() }}
     var photos: [MarsPhoto] = []
     
+    @IBOutlet var previousSolButton: UIBarButtonItem!
+    @IBOutlet var nextSolButton: UIBarButtonItem!
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -38,15 +40,17 @@ class SolPhotoCollectionViewController: UICollectionViewController {
             
             guard let manifest = manifest else { return }
             
-            self.sols = manifest.sols.filter { $0.numPhotos > 0 }
+            self.sols = manifest.sols.filter { 0 < $0.numPhotos && $0.numPhotos < 100 }
             DispatchQueue.main.async {
-                self.sol = self.sols[20]
+                self.solIndex = 0
             }
         }
     }
     
     private func updateUI() {
-        guard let sol = sol else { return }
+        let sol = sols[solIndex]
+        previousSolButton.isEnabled = solIndex != 0
+        nextSolButton.isEnabled = solIndex != sols.count - 1
         title = "Sol \(sol.solNumber)"
         fetchPhotos(for: sol)
     }
@@ -65,6 +69,17 @@ class SolPhotoCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
+    // MARK: - IBActions
+    
+    @IBAction func previousSol(_ sender: Any) {
+        solIndex -= 1
+    }
+    
+    @IBAction func nextSol(_ sender: Any) {
+        solIndex += 1
+    }
+    
 
     // MARK: Collection View Data Source
 
