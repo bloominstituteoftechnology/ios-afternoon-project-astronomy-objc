@@ -6,16 +6,18 @@
 //  Copyright © 2020 Swift Student. All rights reserved.
 //
 
-#import "SSSCodableObject.h"
+#import <Foundation/Foundation.h>
 
 @class SSSMarsSol;
 
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(PhotoManifest)
-@interface SSSPhotoManifest : SSSCodableObject
+@interface SSSPhotoManifest : NSObject
 
 @property (nonatomic, readonly, copy) NSArray<SSSMarsSol *> *sols;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

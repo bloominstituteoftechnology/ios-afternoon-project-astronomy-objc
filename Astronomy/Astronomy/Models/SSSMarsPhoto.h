@@ -6,19 +6,20 @@
 //  Copyright © 2020 Swift Student. All rights reserved.
 //
 
-#import "SSSCodableObject.h"
-
-@class SSSMarsCamera;
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(MarsPhoto)
-@interface SSSMarsPhoto : SSSCodableObject
+@interface SSSMarsPhoto : NSObject
 
-@property (nonatomic, readonly, copy) NSString *solNumber;
+@property (nonatomic, readonly) int solNumber;
 @property (nonatomic, readonly, copy) NSString *earthDate;
-@property (nonatomic, readonly, copy) NSString *imageURLString;
-@property (nonatomic, readonly) SSSMarsCamera *camera;
+@property (nonatomic, readonly) NSURL *imageURL;
+@property (nonatomic, readonly, copy) NSString *cameraName;
+@property (nonatomic, readonly) int roverID;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

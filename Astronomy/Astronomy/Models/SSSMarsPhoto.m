@@ -10,13 +10,25 @@
 
 @implementation SSSMarsPhoto
 
-- (NSDictionary *)codingKeys {
-    return @{
-        CODING_KEY(solNumber): @"sol",
-        CODING_KEY(earthDate): @"earth_date",
-        CODING_KEY(imageURLString): @"img_src",
-        CODING_KEY(camera): @"camera",
-    };
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (!self) { return nil; }
+    
+    NSNumber *solNumber = dictionary[@"sol"];
+    NSString *earthDate = dictionary[@"earth_date"];
+    NSString *imageURLString = dictionary[@"img_src"];
+    
+    NSDictionary *cameraContainer = dictionary[@"camera"];
+    NSString *cameraName = cameraContainer[@"full_name"];
+    NSNumber *roverID = cameraContainer[@"rover_id"];
+    
+    _solNumber = solNumber.intValue;
+    _earthDate = earthDate;
+    _imageURL = [NSURL URLWithString:imageURLString];
+    _cameraName = cameraName;
+    _roverID = roverID.intValue;
+    
+    return self;
 }
 
 @end

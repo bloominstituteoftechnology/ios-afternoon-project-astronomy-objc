@@ -7,13 +7,25 @@
 //
 
 #import "SSSPhotoManifest.h"
+#import "SSSMarsSol.h"
 
 @implementation SSSPhotoManifest
 
-- (NSDictionary *)codingKeys {
-    return @{
-        CODING_KEY(sols): @"photos",
-    };
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (!self) { return nil; }
+    
+    NSArray<NSDictionary *> *solDicts = dictionary[@"photos"];
+    NSMutableArray *sols = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *solDict in solDicts) {
+        SSSMarsSol *sol = [[SSSMarsSol alloc] initWithDictionary:solDict];
+        [sols addObject:sol];
+    }
+    
+    _sols = [sols copy];
+    
+    return self;
 }
 
 @end

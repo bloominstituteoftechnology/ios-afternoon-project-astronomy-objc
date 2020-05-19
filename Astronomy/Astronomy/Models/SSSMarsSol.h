@@ -6,15 +6,17 @@
 //  Copyright © 2020 Swift Student. All rights reserved.
 //
 
-#import "SSSCodableObject.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(MarsSol)
-@interface SSSMarsSol : SSSCodableObject
+@interface SSSMarsSol : NSObject
 
 @property (nonatomic, readonly) int solNumber;
 @property (nonatomic, readonly) int numPhotos;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

@@ -10,11 +10,16 @@
 
 @implementation SSSMarsSol
 
-- (NSDictionary *)codingKeys {
-    return @{
-        CODING_KEY(solNumber): @"sol",
-        CODING_KEY(numPhotos): @"total_photos",
-    };
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (!self) { return nil; }
+    
+    NSNumber *solNumber = dictionary[@"sol"];
+    NSNumber *numPhotos = dictionary[@"total_photos"];
+    _solNumber = solNumber.intValue;
+    _numPhotos = numPhotos.intValue;
+    
+    return self;
 }
 
 @end
