@@ -25,6 +25,7 @@
 		045DBA58247415AC002D736D /* SSSPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA57247415AC002D736D /* SSSPhotoCollectionViewCell.m */; };
 		045DBA5B24746DF7002D736D /* SSSConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA5A24746DF7002D736D /* SSSConcurrentOperation.m */; };
 		045DBA5F24748006002D736D /* SSSFetchImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA5E24748006002D736D /* SSSFetchImageOperation.m */; };
+		045DBA6224748692002D736D /* SSSLoadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 045DBA6124748692002D736D /* SSSLoadImageOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,8 @@
 		045DBA5A24746DF7002D736D /* SSSConcurrentOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSConcurrentOperation.m; sourceTree = "<group>"; };
 		045DBA5D24748006002D736D /* SSSFetchImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSFetchImageOperation.h; sourceTree = "<group>"; };
 		045DBA5E24748006002D736D /* SSSFetchImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSFetchImageOperation.m; sourceTree = "<group>"; };
+		045DBA6024748692002D736D /* SSSLoadImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSLoadImageOperation.h; sourceTree = "<group>"; };
+		045DBA6124748692002D736D /* SSSLoadImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSLoadImageOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 				045DBA5A24746DF7002D736D /* SSSConcurrentOperation.m */,
 				045DBA5D24748006002D736D /* SSSFetchImageOperation.h */,
 				045DBA5E24748006002D736D /* SSSFetchImageOperation.m */,
+				045DBA6024748692002D736D /* SSSLoadImageOperation.h */,
+				045DBA6124748692002D736D /* SSSLoadImageOperation.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				045DBA58247415AC002D736D /* SSSPhotoCollectionViewCell.m in Sources */,
 				045DBA4024731D07002D736D /* SSSMarsPhoto.m in Sources */,
 				045DBA5024732CB6002D736D /* LSIErrors.m in Sources */,
+				045DBA6224748692002D736D /* SSSLoadImageOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
