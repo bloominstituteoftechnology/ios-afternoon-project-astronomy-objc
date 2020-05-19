@@ -12,7 +12,7 @@ class PhotoDetailViewController: UIViewController {
     
     // MARK: - Public Properties
     
-    // Photo model object
+    var photo: MarsPhoto?
     
     // MARK: - IBOutlets
     
@@ -24,13 +24,25 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateUI()
+    }
+    
+    private func updateUI() {
+        guard let photo = photo else { return }
+        
+        if let imageURL = photo.imageURL.usingHTTPS,
+           let imageData = try? Data(contentsOf: imageURL) {
+            imageView.image = UIImage(data: imageData)
+        }
+        
+        descriptionLabel.text = "Taken by \(photo.roverID) on \(photo.earthDate) (Sol \(photo.solNumber))"
+        cameraLabel.text = "Camera: \(photo.cameraName)"
     }
 
     // MARK: - IBActions
     
     @IBAction func saveToPhotoLibrary(_ sender: Any) {
-        
+        // TODO: Implement saving to photo library
     }
     
 }
