@@ -15,6 +15,7 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
     //MARK: - Properties
     var photoArray: [TMCMarsPhotoReference] = []
     let networkController:NetworkController = NetworkController()
+    let fetchOperation: PhotoFetchOperation = PhotoFetchOperation()
     var sol = 0
 
     // MARK: - View Methods

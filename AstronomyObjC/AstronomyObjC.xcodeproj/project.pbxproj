@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE54257C247467DE006197E0 /* TMCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE54257B247467DE006197E0 /* TMCCache.m */; };
 		E2765A212474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E2765A202474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m */; };
+		E2765A272474748800FF9DC9 /* TMCFetchOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = E2765A262474748800FF9DC9 /* TMCFetchOperations.m */; };
 		E291377C2473193200BBFBEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E291377B2473193200BBFBEA /* AppDelegate.m */; };
 		E291377F2473193200BBFBEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E291377E2473193200BBFBEA /* SceneDelegate.m */; };
 		E29137852473193200BBFBEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29137832473193200BBFBEA /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 		AE54257B247467DE006197E0 /* TMCCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCCache.m; sourceTree = "<group>"; };
 		E2765A1F2474355000FF9DC9 /* NSURL+TMCUsingHTTPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+TMCUsingHTTPS.h"; sourceTree = "<group>"; };
 		E2765A202474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+TMCUsingHTTPS.m"; sourceTree = "<group>"; };
+		E2765A252474748800FF9DC9 /* TMCFetchOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCFetchOperations.h; sourceTree = "<group>"; };
+		E2765A262474748800FF9DC9 /* TMCFetchOperations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCFetchOperations.m; sourceTree = "<group>"; };
 		E29137772473193200BBFBEA /* AstronomyObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E291377A2473193200BBFBEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E291377B2473193200BBFBEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 			children = (
 				E29137B124731DAC00BBFBEA /* TMCNetworkController.h */,
 				E29137B224731DAC00BBFBEA /* TMCNetworkController.m */,
+				E2765A252474748800FF9DC9 /* TMCFetchOperations.h */,
+				E2765A262474748800FF9DC9 /* TMCFetchOperations.m */,
 				E29137B424731DDD00BBFBEA /* TMCMarsPhotoReferenceController.h */,
 				E29137B524731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m */,
 				E29137B724731E4900BBFBEA /* TMCSolDescriptionController.h */,
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE54257C247467DE006197E0 /* TMCCache.m in Sources */,
+				E2765A272474748800FF9DC9 /* TMCFetchOperations.m in Sources */,
 				E29137BC24731E5E00BBFBEA /* TMCMarsRoverController.m in Sources */,
 				E29137A624731BAA00BBFBEA /* TMCSolDescription.m in Sources */,
 				E291377C2473193200BBFBEA /* AppDelegate.m in Sources */,

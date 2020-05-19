@@ -14,3 +14,4 @@
 #import "TMCMarsPhotoCollectionViewCell.h"
 #import "TMCCache.h"
 #import "NSURL+TMCUsingHTTPS.h"
+#import "TMCFetchOperations.h"
