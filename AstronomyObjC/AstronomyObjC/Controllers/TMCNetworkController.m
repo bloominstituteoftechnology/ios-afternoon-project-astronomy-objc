@@ -31,8 +31,9 @@ static NSString *apiKey = @"IjCchzjn0EuNgmVSr824DPsW57IXpXMwg7bS9mnc";
     NSURL *baseURL = [NSURL URLWithString:@"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"];
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
     NSURLQueryItem *solTerm = [NSURLQueryItem queryItemWithName:@"sol" value:[NSString stringWithFormat:@"%i", sol.intValue]];
+    NSURLQueryItem *page = [NSURLQueryItem queryItemWithName:@"page" value:[NSString stringWithFormat:@"%i", 1]];
     NSURLQueryItem *apiKeyQuery = [NSURLQueryItem queryItemWithName:@"api_key" value:apiKey];
-    components.queryItems = @[solTerm, apiKeyQuery];
+    components.queryItems = @[solTerm, page, apiKeyQuery];
     NSURL *url = components.URL;
 
     NSLog(@"%@", url);

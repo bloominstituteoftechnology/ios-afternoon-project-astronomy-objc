@@ -13,3 +13,4 @@
 #import "TMCMarsPhotoReference+NSJSONSerialization.h"
 #import "TMCMarsPhotoCollectionViewCell.h"
 #import "TMCCache.h"
+#import "NSURL+TMCUsingHTTPS.h"
