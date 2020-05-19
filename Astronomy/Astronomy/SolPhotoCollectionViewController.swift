@@ -51,13 +51,18 @@ class SolPhotoCollectionViewController: UICollectionViewController {
     
     private func updateUI() {
         let sol = sols[solIndex]
+        
         previousSolButton.isEnabled = solIndex != 0
         nextSolButton.isEnabled = solIndex != sols.count - 1
         title = "Sol \(sol.solNumber)"
-        fetchPhotos(for: sol)
+        
+        fetchPhotos(for: sol) {
+            self.collectionView.setContentOffset(.zero, animated: false)
+            self.collectionView.reloadData()
+        }
     }
     
-    private func fetchPhotos(for sol: MarsSol) {
+    private func fetchPhotos(for sol: MarsSol, completion: @escaping (() -> Void)) {
         nasaMarsClient.fetchPhotos(forRoverNamed: roverName, on: sol) { (photos, error) in
             if let error = error {
                 print(error)
@@ -67,7 +72,7 @@ class SolPhotoCollectionViewController: UICollectionViewController {
             
             DispatchQueue.main.async {
                 self.photos = photos
-                self.collectionView.reloadData()
+                completion()
             }
         }
     }
