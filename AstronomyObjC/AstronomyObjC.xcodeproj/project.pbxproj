@@ -25,10 +25,6 @@
 		E29137AE24731CF700BBFBEA /* MarsPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29137AD24731CF700BBFBEA /* MarsPhotosCollectionViewController.swift */; };
 		E29137B024731D1300BBFBEA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29137AF24731D1300BBFBEA /* DetailViewController.swift */; };
 		E29137B324731DAC00BBFBEA /* TMCNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137B224731DAC00BBFBEA /* TMCNetworkController.m */; };
-		E29137B624731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137B524731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m */; };
-		E29137B924731E4900BBFBEA /* TMCSolDescriptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137B824731E4900BBFBEA /* TMCSolDescriptionController.m */; };
-		E29137BC24731E5E00BBFBEA /* TMCMarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137BB24731E5E00BBFBEA /* TMCMarsRoverController.m */; };
-		E29137BF24731E6F00BBFBEA /* TMCMarsRoverCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137BE24731E6F00BBFBEA /* TMCMarsRoverCameraController.m */; };
 		E29137C224731EDC00BBFBEA /* NSObject+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137C124731EDC00BBFBEA /* NSObject+NSJSONSerialization.m */; };
 		E29137C524733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E29137C424733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m */; };
 /* End PBXBuildFile section */
@@ -65,14 +61,6 @@
 		E29137AF24731D1300BBFBEA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E29137B124731DAC00BBFBEA /* TMCNetworkController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCNetworkController.h; sourceTree = "<group>"; };
 		E29137B224731DAC00BBFBEA /* TMCNetworkController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCNetworkController.m; sourceTree = "<group>"; };
-		E29137B424731DDD00BBFBEA /* TMCMarsPhotoReferenceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCMarsPhotoReferenceController.h; sourceTree = "<group>"; };
-		E29137B524731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCMarsPhotoReferenceController.m; sourceTree = "<group>"; };
-		E29137B724731E4900BBFBEA /* TMCSolDescriptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCSolDescriptionController.h; sourceTree = "<group>"; };
-		E29137B824731E4900BBFBEA /* TMCSolDescriptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCSolDescriptionController.m; sourceTree = "<group>"; };
-		E29137BA24731E5E00BBFBEA /* TMCMarsRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCMarsRoverController.h; sourceTree = "<group>"; };
-		E29137BB24731E5E00BBFBEA /* TMCMarsRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCMarsRoverController.m; sourceTree = "<group>"; };
-		E29137BD24731E6F00BBFBEA /* TMCMarsRoverCameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCMarsRoverCameraController.h; sourceTree = "<group>"; };
-		E29137BE24731E6F00BBFBEA /* TMCMarsRoverCameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCMarsRoverCameraController.m; sourceTree = "<group>"; };
 		E29137C024731EDC00BBFBEA /* NSObject+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSJSONSerialization.h"; sourceTree = "<group>"; };
 		E29137C124731EDC00BBFBEA /* NSObject+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSJSONSerialization.m"; sourceTree = "<group>"; };
 		E29137C324733AA700BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TMCMarsPhotoReference+NSJSONSerialization.h"; sourceTree = "<group>"; };
@@ -141,14 +129,6 @@
 				E29137B224731DAC00BBFBEA /* TMCNetworkController.m */,
 				E2765A252474748800FF9DC9 /* TMCFetchOperations.h */,
 				E2765A262474748800FF9DC9 /* TMCFetchOperations.m */,
-				E29137B424731DDD00BBFBEA /* TMCMarsPhotoReferenceController.h */,
-				E29137B524731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m */,
-				E29137B724731E4900BBFBEA /* TMCSolDescriptionController.h */,
-				E29137B824731E4900BBFBEA /* TMCSolDescriptionController.m */,
-				E29137BA24731E5E00BBFBEA /* TMCMarsRoverController.h */,
-				E29137BB24731E5E00BBFBEA /* TMCMarsRoverController.m */,
-				E29137BD24731E6F00BBFBEA /* TMCMarsRoverCameraController.h */,
-				E29137BE24731E6F00BBFBEA /* TMCMarsRoverCameraController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,11 +250,9 @@
 			files = (
 				AE54257C247467DE006197E0 /* TMCCache.m in Sources */,
 				E2765A272474748800FF9DC9 /* TMCFetchOperations.m in Sources */,
-				E29137BC24731E5E00BBFBEA /* TMCMarsRoverController.m in Sources */,
 				E29137A624731BAA00BBFBEA /* TMCSolDescription.m in Sources */,
 				E291377C2473193200BBFBEA /* AppDelegate.m in Sources */,
 				E291378D2473193600BBFBEA /* main.m in Sources */,
-				E29137BF24731E6F00BBFBEA /* TMCMarsRoverCameraController.m in Sources */,
 				E29137C224731EDC00BBFBEA /* NSObject+NSJSONSerialization.m in Sources */,
 				E291377F2473193200BBFBEA /* SceneDelegate.m in Sources */,
 				E29137B324731DAC00BBFBEA /* TMCNetworkController.m in Sources */,
@@ -283,8 +261,6 @@
 				E2765A212474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m in Sources */,
 				E29137A924731BE000BBFBEA /* TMCMarsRoverCamera.m in Sources */,
 				E29137A024731B2E00BBFBEA /* MarsRover.swift in Sources */,
-				E29137B624731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m in Sources */,
-				E29137B924731E4900BBFBEA /* TMCSolDescriptionController.m in Sources */,
 				E29137B024731D1300BBFBEA /* DetailViewController.swift in Sources */,
 				E29137AC24731CC700BBFBEA /* TMCMarsPhotoCollectionViewCell.m in Sources */,
 				E29137A324731B8F00BBFBEA /* TMCMarsPhotoReference.m in Sources */,

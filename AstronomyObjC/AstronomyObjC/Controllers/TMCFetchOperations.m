@@ -38,14 +38,20 @@ typedef NS_ENUM(int, State) {isReady, isExecuting, isFinished};
     self.state = isExecuting;
     NSURL *url = self.photo.imageURL.usingHTTPS;
     NSURLSessionTask *task = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+
         if (error) {
+            self.fetchError = error;
+            self.state = isFinished;
             return;
         }
 
         if (!data) {
+            self.state = isFinished;
             return;
         }
 
+        self.imageData = data;
+        self.state = isFinished;
         return;
     }];
     [task resume];

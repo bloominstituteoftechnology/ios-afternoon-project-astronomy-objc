@@ -15,9 +15,11 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
     //MARK: - Properties
     var photoArray: [TMCMarsPhotoReference] = []
     let networkController:NetworkController = NetworkController()
-    let fetchOperation: PhotoFetchOperation = PhotoFetchOperation()
+    var fetchOperation: PhotoFetchOperation = PhotoFetchOperation()
+    var operations = [Int: Operation]()
+    var photoFetchQueue = OperationQueue()
     var sol = 0
-    var cache: Cache = Cache<NSNumber, NSData>()
+    var cache: Cache = Cache<NSString, NSData>()
 
     // MARK: - View Methods
     override func viewDidLoad() {
@@ -28,8 +30,6 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
     func updateViews() {
         title = "Sol \(sol)"
     }
-
-
 
     //MARK: - Actiona Methods
     @IBAction func previousSolTapped(_ sender: Any) {
@@ -62,10 +62,42 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
         }
     }
 
-    func fetchPhoto(forCell: TMCMarsPhotoCollectionViewCell, for indexPath: IndexPath) {
+    func fetchPhoto(forCell cell: TMCMarsPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
         let photo = photoArray[indexPath.item]
-        guard let url = photo.imageURL.usingHTTPS else { return }
 
+        if let imageData = cache.object(byKey: NSString(string: "\(photo.identification)")) as Data? {
+            DispatchQueue.main.async {
+                if let image = UIImage(data: imageData) {
+                    cell.imageView.image = image
+                }
+            }
+        }
+
+        fetchOperation = PhotoFetchOperation(photoReference: photo)
+
+        let cacheOperation = BlockOperation {
+            if let data = self.fetchOperation.imageData {
+                self.cache.cache(NSData(data: data), forKey: NSString(string: "\(photo.identification)"))
+            }
+        }
+
+        let completionOperation = BlockOperation {
+            if let _ = self.collectionView.indexPath(for: cell) {
+                if let data = self.fetchOperation.imageData {
+                    cell.imageView.image = UIImage(data: data)
+                } else {
+                    return
+                }
+            }
+        }
+
+        cacheOperation.addDependency(fetchOperation)
+        completionOperation.addDependency(fetchOperation)
+
+        photoFetchQueue.addOperations([fetchOperation, cacheOperation], waitUntilFinished: false)
+
+        OperationQueue.main.addOperation(completionOperation)
+        operations[photo.identification.intValue] = fetchOperation
     }
 
     // MARK: - Navigation
@@ -88,20 +120,13 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarsCell", for: indexPath) as! TMCMarsPhotoCollectionViewCell
-        let photoReference = photoArray[indexPath.item]
-        networkController.fetchImage(for: photoReference) { (data, error) in
-            DispatchQueue.main.async {
-                guard let data = data else {return}
-                cell.imageView.image = UIImage(data: data)
-            }
-        }
+        fetchPhoto(forCell: cell, forItemAt: indexPath)
 
         return cell
     }
@@ -114,25 +139,3 @@ extension URL {
         return components.url
     }
 }
-
-
-//    private func loadImage(forCell cell: TMCMarsPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
-//        let photo = photoArray[indexPath.item]
-//        guard let url = photo.imageURL.usingHTTPS else { return }
-//
-//        URLSession.shared.dataTask(with: url) { (data,_,error) in
-//            if let error = error {
-//                NSLog("load image error: \(error)")
-//                return
-//            }
-//
-//            guard let data = data else {return}
-//
-//            DispatchQueue.main.async {
-//                let currentIndex = self.collectionView.indexPath(for: cell)
-//                guard currentIndex == indexPath else {return}
-//                cell.imageView.image = UIImage(data: data)
-//            }
-//
-//        }.resume()
-//    }

@@ -16,6 +16,7 @@ NS_SWIFT_NAME(PhotoFetchOperation)
 @interface TMCFetchOperations : NSOperation
 
 @property (nonatomic, copy, readonly, nullable) NSData* imageData;
+@property (nonatomic) NSError *fetchError;
 - (nonnull instancetype)initWithPhotoReference:(TMCMarsPhotoReference *_Nonnull)photo;
 
 @end
