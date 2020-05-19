@@ -11,7 +11,7 @@
 @implementation TMCMarsPhotoReference
 -(instancetype) initWithIdentification:(NSNumber *)identification
                                    sol:(NSNumber *)sol
-                                camera:(TMCMarsRoverCamera *)camera
+                                camera:(NSString *)camera
                              earthDate:(NSDate *)earthDate
                               imageURL:(NSURL *)imageURL {
     self = [super init];

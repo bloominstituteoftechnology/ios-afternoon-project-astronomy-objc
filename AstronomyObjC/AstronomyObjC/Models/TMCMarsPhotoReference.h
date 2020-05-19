@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TMCMarsPhotoReference : NSObject
 @property NSNumber *identification;
 @property NSNumber *sol;
-@property TMCMarsRoverCamera *camera;
+@property NSString *camera;
 @property NSDate *earthDate;
 @property NSURL *imageURL;
    
 -(instancetype) initWithIdentification:(NSNumber *)identification
                                    sol:(NSNumber *) sol
-                                camera:(TMCMarsRoverCamera *) camera
+                                camera:(NSString *) camera
                              earthDate:(NSDate *) earthDate
                               imageURL:(NSURL *) imageURL;
 @end

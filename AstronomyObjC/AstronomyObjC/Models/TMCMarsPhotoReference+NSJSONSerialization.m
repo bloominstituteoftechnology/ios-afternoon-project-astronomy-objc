@@ -19,7 +19,7 @@
         NSString *cameraName = camera[@"name"];
         TMCMarsPhotoReference *photo = [[TMCMarsPhotoReference alloc] initWithIdentification:(NSNumber *)roverID
                                                                                          sol:(NSNumber *) sol
-                                                                                      camera:(TMCMarsRoverCamera *) cameraName
+                                                                                      camera:(NSString *) cameraName
                                                                                    earthDate:(NSDate *) earthDate
                                                                                     imageURL:(NSURL *) imgSrc];
 

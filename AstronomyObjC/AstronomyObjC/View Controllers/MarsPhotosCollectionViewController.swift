@@ -11,17 +11,26 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class MarsPhotosCollectionViewController: UICollectionViewController {
-
-    let networkController = NetworkController()
+    var photoArray: [TMCMarsPhotoReference] = []
+    let networkController:NetworkController = NetworkController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        networkController.fetchMarsPhotos(onSol: 1000) { (photos, error) in
+            if error != nil {
+                NSLog(String(describing: error))
+                return
+            }
+            if photos != nil {
+                self.photoArray = photos!
+                return
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -40,7 +49,7 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
@@ -50,7 +59,7 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarsCell", for: indexPath)
     
         // Configure the cell
     
