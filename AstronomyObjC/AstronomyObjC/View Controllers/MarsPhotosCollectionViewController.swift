@@ -20,7 +20,32 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkController.fetchMarsPhotos(onSol: 0) { (photos, error) in
+        fetchManifest()
+    }
+
+    func updateViews() {
+        title = "Sol \(sol)"
+    }
+
+
+
+    //MARK: - Actiona Methods
+    @IBAction func previousSolTapped(_ sender: Any) {
+        if sol > 0 {
+            sol -= 1
+            fetchManifest()
+        } else {
+            return
+        }
+    }
+    @IBAction func nextSolTapped(_ sender: Any) {
+        sol += 1
+        fetchManifest()
+    }
+
+    // MARK: - Helper Methods
+    func fetchManifest() {
+        networkController.fetchMarsPhotos(onSol: NSNumber(integerLiteral: sol)) { (photos, error) in
             if error != nil {
                 NSLog(String(describing: error))
                 return
@@ -33,19 +58,6 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
                 }
             }
         }
-    }
-
-    func updateViews() {
-        title = "Sol \(sol)"
-    }
-
-
-
-    //MARK: - Actiona Methods
-    @IBAction func previousSolTapped(_ sender: Any) {
-
-    }
-    @IBAction func nextSolTapped(_ sender: Any) {
     }
 
 
@@ -82,7 +94,7 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
                 cell.imageView.image = UIImage(data: data)
             }
         }
-    
+
         return cell
     }
 }
