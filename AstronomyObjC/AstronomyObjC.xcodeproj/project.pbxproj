@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE54257C247467DE006197E0 /* TMCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE54257B247467DE006197E0 /* TMCCache.m */; };
 		E2765A212474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E2765A202474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m */; };
 		E291377C2473193200BBFBEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E291377B2473193200BBFBEA /* AppDelegate.m */; };
 		E291377F2473193200BBFBEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E291377E2473193200BBFBEA /* SceneDelegate.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE54257A247467DE006197E0 /* TMCCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCCache.h; sourceTree = "<group>"; };
+		AE54257B247467DE006197E0 /* TMCCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCCache.m; sourceTree = "<group>"; };
 		E2765A1F2474355000FF9DC9 /* NSURL+TMCUsingHTTPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+TMCUsingHTTPS.h"; sourceTree = "<group>"; };
 		E2765A202474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+TMCUsingHTTPS.m"; sourceTree = "<group>"; };
 		E29137772473193200BBFBEA /* AstronomyObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				E291379F24731B2E00BBFBEA /* MarsRover.swift */,
+				AE54257A247467DE006197E0 /* TMCCache.h */,
+				AE54257B247467DE006197E0 /* TMCCache.m */,
 				E29137C024731EDC00BBFBEA /* NSObject+NSJSONSerialization.h */,
 				E29137C124731EDC00BBFBEA /* NSObject+NSJSONSerialization.m */,
 				E29137A124731B8F00BBFBEA /* TMCMarsPhotoReference.h */,
@@ -258,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE54257C247467DE006197E0 /* TMCCache.m in Sources */,
 				E29137BC24731E5E00BBFBEA /* TMCMarsRoverController.m in Sources */,
 				E29137A624731BAA00BBFBEA /* TMCSolDescription.m in Sources */,
 				E291377C2473193200BBFBEA /* AppDelegate.m in Sources */,
@@ -417,7 +423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8825K9HH49;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AstronomyObjC/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,7 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8825K9HH49;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AstronomyObjC/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
