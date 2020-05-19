@@ -12,7 +12,7 @@
 -(instancetype) initWithIdentification:(NSNumber *)identification
                                    sol:(NSNumber *)sol
                                 camera:(NSString *)camera
-                             earthDate:(NSDate *)earthDate
+                             earthDate:(NSString *)earthDate
                               imageURL:(NSURL *)imageURL {
     self = [super init];
     if (self) {

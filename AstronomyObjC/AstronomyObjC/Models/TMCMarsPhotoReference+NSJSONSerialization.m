@@ -21,7 +21,7 @@
         TMCMarsPhotoReference *photo = [[TMCMarsPhotoReference alloc] initWithIdentification:(NSNumber *)roverID
                                                                                          sol:(NSNumber *) sol
                                                                                       camera:(NSString *) cameraName
-                                                                                   earthDate:(NSDate *) earthDate
+                                                                                   earthDate:(NSString *) earthDate
                                                                                     imageURL:(NSURL *) imageURL];
     return photo;
 }

@@ -116,7 +116,18 @@
                             <outlet property="delegate" destination="lRC-bg-syg" id="AGW-J7-X6k"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="W5l-Wh-gKr"/>
+                    <navigationItem key="navigationItem" id="W5l-Wh-gKr">
+                        <barButtonItem key="leftBarButtonItem" title="Previous" id="JEQ-4Z-qSO">
+                            <connections>
+                                <action selector="previousSolTapped:" destination="lRC-bg-syg" id="3fS-FQ-hhU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="TaF-7h-GQv">
+                            <connections>
+                                <action selector="nextSolTapped:" destination="lRC-bg-syg" id="eUw-GA-dOd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ED-hG-4Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

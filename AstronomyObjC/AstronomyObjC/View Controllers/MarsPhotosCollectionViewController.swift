@@ -11,12 +11,16 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class MarsPhotosCollectionViewController: UICollectionViewController {
+
+    //MARK: - Properties
     var photoArray: [TMCMarsPhotoReference] = []
     let networkController:NetworkController = NetworkController()
+    var sol = 0
 
+    // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkController.fetchMarsPhotos(onSol: 1000) { (photos, error) in
+        networkController.fetchMarsPhotos(onSol: 0) { (photos, error) in
             if error != nil {
                 NSLog(String(describing: error))
                 return
@@ -25,31 +29,25 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
                 self.photoArray = photos!
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
+                    self.updateViews()
                 }
             }
         }
     }
 
-    private func loadImage(forCell cell: TMCMarsPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
-        let photo = photoArray[indexPath.item]
-        guard let url = photo.imageURL.usingHTTPS else { return }
-
-        URLSession.shared.dataTask(with: url) { (data,_,error) in
-            if let error = error {
-                NSLog("load image error: \(error)")
-                return
-            }
-
-            guard let data = data else {return}
-
-            DispatchQueue.main.async {
-                let currentIndex = self.collectionView.indexPath(for: cell)
-                guard currentIndex == indexPath else {return}
-                cell.imageView.image = UIImage(data: data)
-            }
-
-        }.resume()
+    func updateViews() {
+        title = "Sol \(sol)"
     }
+
+
+
+    //MARK: - Actiona Methods
+    @IBAction func previousSolTapped(_ sender: Any) {
+
+    }
+    @IBAction func nextSolTapped(_ sender: Any) {
+    }
+
 
     // MARK: - Navigation
 
@@ -77,8 +75,13 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarsCell", for: indexPath) as! TMCMarsPhotoCollectionViewCell
-    
-        loadImage(forCell: cell, forItemAt: indexPath)
+        let photoReference = photoArray[indexPath.item]
+        networkController.fetchImage(for: photoReference) { (data, error) in
+            DispatchQueue.main.async {
+                guard let data = data else {return}
+                cell.imageView.image = UIImage(data: data)
+            }
+        }
     
         return cell
     }
@@ -91,3 +94,25 @@ extension URL {
         return components.url
     }
 }
+
+
+//    private func loadImage(forCell cell: TMCMarsPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
+//        let photo = photoArray[indexPath.item]
+//        guard let url = photo.imageURL.usingHTTPS else { return }
+//
+//        URLSession.shared.dataTask(with: url) { (data,_,error) in
+//            if let error = error {
+//                NSLog("load image error: \(error)")
+//                return
+//            }
+//
+//            guard let data = data else {return}
+//
+//            DispatchQueue.main.async {
+//                let currentIndex = self.collectionView.indexPath(for: cell)
+//                guard currentIndex == indexPath else {return}
+//                cell.imageView.image = UIImage(data: data)
+//            }
+//
+//        }.resume()
+//    }

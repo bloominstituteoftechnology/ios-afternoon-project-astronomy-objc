@@ -9,6 +9,8 @@
 #import "TMCNetworkController.h"
 #import "AstronomyObjC-Swift.h"
 #import "NSObject+NSJSONSerialization.h"
+#import "TMCMarsPhotoReference.h"
+#import "NSURL+TMCUsingHTTPS.h"
 
 @implementation TMCNetworkController
 
@@ -61,6 +63,26 @@ static NSString *apiKey = @"IjCchzjn0EuNgmVSr824DPsW57IXpXMwg7bS9mnc";
         completionBlock(photosArray, nil);
     }];
 
+    [task resume];
+}
+
+- (void)fetchImageForPhotoReference:(TMCMarsPhotoReference *)photoReference  completionBlock: (TMCMarsSinglePhotoCompletion)completionBlock {
+    NSURL *url = photoReference.imageURL.usingHTTPS;
+
+    NSURLSessionTask *task = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            completionBlock(nil, error);
+            return;
+        }
+
+        if (!data) {
+            completionBlock(nil, [[NSError alloc] init]);
+            return;
+        }
+
+        completionBlock(data, nil);
+        return;
+    }];
     [task resume];
 }
 

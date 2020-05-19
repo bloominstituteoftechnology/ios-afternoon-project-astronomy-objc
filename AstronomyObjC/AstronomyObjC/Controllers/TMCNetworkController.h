@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 @class TMCMarsPhotoReference;
 
 typedef void (^TMCMarsPhotoCompletion)(NSArray<TMCMarsPhotoReference *> *_Nullable photos, NSError *_Nullable error);
+typedef void (^TMCMarsSinglePhotoCompletion)(NSData *_Nullable photoData, NSError *_Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +24,9 @@ NS_SWIFT_NAME(NetworkController)
 
 - (void)fetchMarsPhotosOnSol:(NSNumber *)sol
             completionBlock:(TMCMarsPhotoCompletion)completionBlock;
+
+- (void)fetchImageForPhotoReference:(TMCMarsPhotoReference *)photoReference
+                completionBlock: (TMCMarsSinglePhotoCompletion)completionBlock;
 
 @end
 

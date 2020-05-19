@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2765A212474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E2765A202474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m */; };
 		E291377C2473193200BBFBEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E291377B2473193200BBFBEA /* AppDelegate.m */; };
 		E291377F2473193200BBFBEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E291377E2473193200BBFBEA /* SceneDelegate.m */; };
 		E29137852473193200BBFBEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29137832473193200BBFBEA /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2765A1F2474355000FF9DC9 /* NSURL+TMCUsingHTTPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+TMCUsingHTTPS.h"; sourceTree = "<group>"; };
+		E2765A202474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+TMCUsingHTTPS.m"; sourceTree = "<group>"; };
 		E29137772473193200BBFBEA /* AstronomyObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E291377A2473193200BBFBEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E291377B2473193200BBFBEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				E29137A524731BAA00BBFBEA /* TMCSolDescription.m */,
 				E29137A724731BE000BBFBEA /* TMCMarsRoverCamera.h */,
 				E29137A824731BE000BBFBEA /* TMCMarsRoverCamera.m */,
+				E2765A1F2474355000FF9DC9 /* NSURL+TMCUsingHTTPS.h */,
+				E2765A202474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				E29137B324731DAC00BBFBEA /* TMCNetworkController.m in Sources */,
 				E29137AE24731CF700BBFBEA /* MarsPhotosCollectionViewController.swift in Sources */,
 				E29137C524733AA800BBFBEA /* TMCMarsPhotoReference+NSJSONSerialization.m in Sources */,
+				E2765A212474355000FF9DC9 /* NSURL+TMCUsingHTTPS.m in Sources */,
 				E29137A924731BE000BBFBEA /* TMCMarsRoverCamera.m in Sources */,
 				E29137A024731B2E00BBFBEA /* MarsRover.swift in Sources */,
 				E29137B624731DDD00BBFBEA /* TMCMarsPhotoReferenceController.m in Sources */,
