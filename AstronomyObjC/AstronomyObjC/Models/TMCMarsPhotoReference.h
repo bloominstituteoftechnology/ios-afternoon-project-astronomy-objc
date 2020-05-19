@@ -15,13 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSNumber *identification;
 @property NSNumber *sol;
 @property NSString *camera;
-@property NSDate *earthDate;
+@property NSString *earthDate;
 @property NSURL *imageURL;
    
 -(instancetype) initWithIdentification:(NSNumber *)identification
                                    sol:(NSNumber *) sol
                                 camera:(NSString *) camera
-                             earthDate:(NSDate *) earthDate
+                             earthDate:(NSString *) earthDate
                               imageURL:(NSURL *) imageURL;
 @end
 

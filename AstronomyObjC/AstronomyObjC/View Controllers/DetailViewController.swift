@@ -10,21 +10,30 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet var roverImage: UIImageView!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var cameraLabel: UILabel!
+
+    var photoReferernce: TMCMarsPhotoReference? 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
     }
-    */
 
+    func updateViews() {
+        guard let photoReference = photoReferernce else { return }
+
+        guard let imageURL = photoReference.imageURL.usingHTTPS,
+            let dataImage = try? Data(contentsOf: imageURL),
+            let date = photoReferernce?.earthDate else { return }
+
+        roverImage.image = UIImage(data: dataImage)
+        dateLabel.text = "Taken by \(photoReference.identification) on \(date) (Sol \(photoReference.sol))"
+        cameraLabel.text = "Camera: \(photoReference.camera.capitalized) Camera"
+    }
 }

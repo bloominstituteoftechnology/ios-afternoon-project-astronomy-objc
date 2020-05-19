@@ -38,6 +38,9 @@
                                 <rect key="frame" x="118" y="663" width="178" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save to photo library"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Q0D-bw-ZUh" eventType="touchUpInside" id="0lt-Ob-enu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -58,6 +61,11 @@
                         <viewLayoutGuide key="safeArea" id="qa5-rf-huM"/>
                     </view>
                     <navigationItem key="navigationItem" id="jUC-gf-Em2"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="qko-oi-f7S" id="hLM-4E-Aqo"/>
+                        <outlet property="dateLabel" destination="LKr-Qk-vBS" id="s90-x4-xvP"/>
+                        <outlet property="roverImage" destination="4wD-Cj-V7P" id="Hmh-b2-DFJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ju-E2-awK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
