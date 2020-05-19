@@ -10,7 +10,7 @@
 
 @implementation LYDSol
 
-- (instancetype)initWithDictionary: (NSDictionary *)solDictionary{
+- (instancetype)initWithSolDictionary: (NSDictionary *)solDictionary{
     self = [super init];
     if (self) {
         _totalPhotos = [solDictionary[@"total_photos"] intValue];

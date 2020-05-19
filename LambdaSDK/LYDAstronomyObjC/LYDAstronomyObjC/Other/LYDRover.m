@@ -38,7 +38,7 @@
         _numberOfPhotos = [manifestDictionary[@"total_photos"] intValue];
 
         for (NSDictionary *photoDict in photoRaw) {
-            [photos addObject:[[LYDSol alloc] initWithDictionary:photoDict]];
+            [photos addObject:[[LYDSol alloc] initWithSolDictionary:photoDict]];
         }
         _solArray = photos;
     }

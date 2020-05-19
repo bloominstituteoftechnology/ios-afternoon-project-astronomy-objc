@@ -12,21 +12,38 @@ private let reuseIdentifier = "MarsCell"
 
 class CollectionViewController: UICollectionViewController {
     let photoController = PhotosController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        photoController.fetchManifest(fromRover: "curiosity") {data in
-            if data != nil {
-                DispatchQueue.main.async {
-                    
-                    self.collectionView.reloadData()
-                }
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        photoController.fetchPhotos(fromRover: "curiosity", sol: 30) {result in
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
     }
+    // Make collection view cells fill as much available width as possible
 
-
+    private func loadImage(forCell cell: CollectionViewCell, forItemAt indexPath: IndexPath) {
+            
+        let photo = photoController.photoArray[indexPath.item]
+        guard let url = photo.imageURL else {return}
+        URLSession.shared.dataTask(with: url) { (data,_,error) in
+                if let error = error {
+                    NSLog("load image error: \(error)")
+                    return
+                }
+                guard let data = data else {return}
+    
+                DispatchQueue.main.async {
+                    let currentIndex = self.collectionView.indexPath(for: cell)
+                    guard currentIndex == indexPath else {return}
+                    cell.imageView.image = UIImage(data: data)
+                }
+    
+        }.resume()
+    }
     
     // MARK: - Navigation
 
@@ -44,7 +61,7 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         
-    
+        loadImage(forCell: cell as! CollectionViewCell, forItemAt: indexPath)
         return cell
     }
 

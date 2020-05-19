@@ -77,7 +77,6 @@
             
             LYDRover *rover = [[LYDRover alloc] initWithDictionary:json];
 
-            self.photoArray = [rover.solArray copy];
             completion(@[rover]);
         }] resume];
 }
@@ -107,7 +106,7 @@
         
         if (![photos isKindOfClass:NSNull.self]) {
             for (NSDictionary *photoDictionary in photos) {
-                [photosArray addObject:[[LYDPhoto alloc] initWithDictionary:photoDictionary]];
+                [photosArray addObject:[[LYDPhoto alloc] initWithPhotoDictionary:photoDictionary]];
             }
             
             self.photoArray = [photosArray copy];

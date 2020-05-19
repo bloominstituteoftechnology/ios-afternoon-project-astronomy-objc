@@ -19,12 +19,12 @@ NS_SWIFT_NAME(PhotosController)
 
 NS_ASSUME_NONNULL_BEGIN
 
-@property NSArray *photoArray;
+@property NSArray<LYDPhoto *> *photoArray;
 
 - (NSURL *)manifestFromRoverURL:(NSString *)rover;
 - (NSURL *)photosFromRoverURL:(NSString *)rover sol:(NSNumber *)sol;
-- (void)fetchManifestFromRover:(NSString *)rover completion:(completion _Nullable)completion;
-- (void)fetchPhotosFromRover:(NSString *)rover sol:(NSNumber *)sol completion:(completion _Nullable)completion;
+- (void)fetchManifestFromRover:(NSString *)rover completion:(completion)completion;
+- (void)fetchPhotosFromRover:(NSString *)rover sol:(NSNumber *)sol completion:(completion)completion;
 
 NS_ASSUME_NONNULL_END
 

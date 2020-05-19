@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSArray<NSString *> *cameraArray;
 
 
-- (instancetype)initWithDictionary: (NSDictionary *)solDictionary;
+- (instancetype)initWithSolDictionary: (NSDictionary *)solDictionary;
 
 @end
 

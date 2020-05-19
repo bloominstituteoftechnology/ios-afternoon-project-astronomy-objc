@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LYDPhoto: NSObject {
+ class LYDPhoto: NSObject {
     var identifier: Int?
     var sol: Int?
     var camera: String?
@@ -21,19 +21,19 @@ class LYDPhoto: NSObject {
         return formatter
     }()
     
-    @objc init(dictionary: Dictionary<String, Any>) {
+    @objc init(photoDictionary: Dictionary<String, Any>) {
 
-        if let identifier = dictionary["id"] as? Int {
+        if let identifier = photoDictionary["id"] as? Int {
             self.identifier = identifier
         }
-        if let sol = dictionary["isold"] as? Int {
+        if let sol = photoDictionary["sol"] as? Int {
             self.sol = sol
         }
-        if let dateStr = dictionary["earthDate"] as? String,
+        if let dateStr = photoDictionary["earth_date"] as? String,
             let date = dateFormatter.date(from: dateStr) {
             self.earthDate = date
         }
-        if let urlStr = dictionary["imageSrc"] as? String,
+        if let urlStr = photoDictionary["img_src"] as? String,
             let url = URL(string: urlStr) {
             self.imageURL = url
         }
