@@ -26,6 +26,8 @@
 }
 
 - (void)main {
+    if (self.isCancelled) { return; }
+    
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:self.imageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         if (error) {

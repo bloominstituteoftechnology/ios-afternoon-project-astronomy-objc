@@ -56,6 +56,7 @@ static NSOperationQueue *_loadImageQueue;
 - (NSBlockOperation *)updateImageViewOperation {
     if (!_updateImageViewOperation) {
         _updateImageViewOperation = [NSBlockOperation blockOperationWithBlock:^{
+            if (self.isCancelled) { return; }
             NSData *imageData = self.fetchImageOperation.imageData;
             self.imageView.image = [UIImage imageWithData:imageData];
         }];
@@ -69,6 +70,10 @@ static NSOperationQueue *_loadImageQueue;
     [NSOperationQueue.currentQueue addOperations:@[self.fetchImageOperation] waitUntilFinished:NO];
     [NSOperationQueue.mainQueue addOperations:@[self.updateImageViewOperation] waitUntilFinished:YES];
     [self finish];
+}
+
+- (void)cancel {
+    [self.fetchImageOperation cancel];
 }
 
 @end
