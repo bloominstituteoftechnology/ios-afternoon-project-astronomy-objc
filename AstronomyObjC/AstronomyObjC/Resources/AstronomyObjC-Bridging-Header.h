@@ -11,4 +11,5 @@
 #import "TMCMarsPhotoReferenceController.h"
 #import "TMCMarsRoverCameraController.h"
 #import "TMCMarsPhotoReference+NSJSONSerialization.h"
+#import "TMCMarsPhotoCollectionViewCell.h"
 

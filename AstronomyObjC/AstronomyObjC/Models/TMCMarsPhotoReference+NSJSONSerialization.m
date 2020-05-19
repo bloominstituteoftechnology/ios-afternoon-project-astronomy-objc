@@ -13,6 +13,7 @@
 - (instancetype) initWithMarsPhotoDictionary:(NSDictionary *)dictionary {
         NSNumber *sol = dictionary[@"sol"];
         NSString *imgSrc = dictionary[@"img_src"];
+        NSURL *imageURL = [NSURL URLWithString:imgSrc];
         NSString *earthDate = dictionary[@"earth_date"];
         NSDictionary *camera = dictionary[@"camera"];
         NSNumber *roverID = camera[@"rover_id"];
@@ -21,9 +22,7 @@
                                                                                          sol:(NSNumber *) sol
                                                                                       camera:(NSString *) cameraName
                                                                                    earthDate:(NSDate *) earthDate
-                                                                                    imageURL:(NSURL *) imgSrc];
-
-
+                                                                                    imageURL:(NSURL *) imageURL];
     return photo;
 }
 

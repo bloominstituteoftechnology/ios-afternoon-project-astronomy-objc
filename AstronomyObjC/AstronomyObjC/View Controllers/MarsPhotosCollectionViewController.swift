@@ -23,16 +23,33 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
             }
             if photos != nil {
                 self.photoArray = photos!
-                return
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    }
 
-        // Register cell classes
+    private func loadImage(forCell cell: TMCMarsPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
 
-        // Do any additional setup after loading the view.
+        let photo = photoArray[indexPath.item]
+        guard let url = photo.imageURL.usingHTTPS else { return }
+
+        URLSession.shared.dataTask(with: url) { (data,_,error) in
+            if let error = error {
+                NSLog("load image error: \(error)")
+                return
+            }
+            guard let data = data else {return}
+
+            DispatchQueue.main.async {
+                let currentIndex = self.collectionView.indexPath(for: cell)
+                guard currentIndex == indexPath else {return}
+                cell.imageView.image = UIImage(data: data)
+            }
+
+        }.resume()
     }
 
     /*
@@ -55,13 +72,13 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarsCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarsCell", for: indexPath) as! TMCMarsPhotoCollectionViewCell
     
-        // Configure the cell
+        loadImage(forCell: cell, forItemAt: indexPath)
     
         return cell
     }
@@ -97,4 +114,12 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension URL {
+    var usingHTTPS: URL? {
+        guard var components = URLComponents(url: self, resolvingAgainstBaseURL: true) else { return nil }
+        components.scheme = "https"
+        return components.url
+    }
 }
