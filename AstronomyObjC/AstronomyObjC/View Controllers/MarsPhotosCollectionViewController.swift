@@ -17,6 +17,7 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
     let networkController:NetworkController = NetworkController()
     let fetchOperation: PhotoFetchOperation = PhotoFetchOperation()
     var sol = 0
+    var cache: Cache = Cache<NSNumber, NSData>()
 
     // MARK: - View Methods
     override func viewDidLoad() {
@@ -59,6 +60,12 @@ class MarsPhotosCollectionViewController: UICollectionViewController {
                 }
             }
         }
+    }
+
+    func fetchPhoto(forCell: TMCMarsPhotoCollectionViewCell, for indexPath: IndexPath) {
+        let photo = photoArray[indexPath.item]
+        guard let url = photo.imageURL.usingHTTPS else { return }
+
     }
 
     // MARK: - Navigation
