@@ -19,13 +19,6 @@ static NSString *apiKey = @"qzGsj0zsKk6CA9JZP1UjAbpQHabBfaPg2M5dGMB7";
 
 - (void)fetchManifestForRoverNamed:(NSString *)roverName
                                       completion:(SSSFetchManifestCompletion)completion {
-    NSNumber *nilNumber = nil;
-    int nilInt = nilNumber.intValue;
-    
-    if (!nilInt) {
-        NSLog(@"nilInt's value is %d", nilInt);
-    }
-    
     NSURL *url = [[NSURL URLWithString:baseUrlString] URLByAppendingPathComponent:@"manifests"];
     url = [url URLByAppendingPathComponent:roverName];
     

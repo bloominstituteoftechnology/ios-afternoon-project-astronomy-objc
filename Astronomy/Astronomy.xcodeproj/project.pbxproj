@@ -86,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				045DBA1424730B3B002D736D /* PhotoDetailViewController.swift */,
-				045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */,
 				045DBA1624730B3B002D736D /* Main.storyboard */,
+				045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */,
 				045DBA56247415AC002D736D /* SSSPhotoCollectionViewCell.h */,
 				045DBA57247415AC002D736D /* SSSPhotoCollectionViewCell.m */,
 				045DBA3124731C41002D736D /* Networking */,
