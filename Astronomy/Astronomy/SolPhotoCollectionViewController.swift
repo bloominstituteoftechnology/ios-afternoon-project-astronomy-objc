@@ -13,16 +13,18 @@ let roverName = "curiosity"
 class SolPhotoCollectionViewController: UICollectionViewController {
 
     // MARK: - Private Properties
-    
-    // Networking Client
+  
     let nasaMarsClient = NasaMarsClient()
     
     var sols: [MarsSol] = []
     var solIndex = 0 { didSet { updateUI() }}
     var photos: [MarsPhoto] = []
     
+    // MARK: - IBOutlets
+    
     @IBOutlet var previousSolButton: UIBarButtonItem!
     @IBOutlet var nextSolButton: UIBarButtonItem!
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {

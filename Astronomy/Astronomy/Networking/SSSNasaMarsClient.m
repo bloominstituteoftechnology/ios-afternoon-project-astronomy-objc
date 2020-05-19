@@ -44,7 +44,7 @@ static NSString *apiKey = @"qzGsj0zsKk6CA9JZP1UjAbpQHabBfaPg2M5dGMB7";
         NSError *jsonError = nil;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
-        if (jsonError) { // jsonError != nil
+        if (jsonError) {
             completion(nil, jsonError);
             return;
         }
@@ -87,7 +87,7 @@ static NSString *apiKey = @"qzGsj0zsKk6CA9JZP1UjAbpQHabBfaPg2M5dGMB7";
         NSError *jsonError = nil;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
-        if (jsonError) { // jsonError != nil
+        if (jsonError) {
             completion(nil, jsonError);
             return;
         }
