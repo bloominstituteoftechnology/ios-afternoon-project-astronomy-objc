@@ -8,14 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sol 63-->
+        <!--Sol Photo Collection View Controller-->
         <scene sceneID="bG6-Ha-G7j">
             <objects>
                 <collectionViewController id="WLe-6b-Bev" customClass="SolPhotoCollectionViewController" customModule="Astronomy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dt5-RD-DhJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="w2B-az-T1b">
                             <size key="itemSize" width="414" height="399"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -53,13 +53,13 @@
                             <outlet property="delegate" destination="WLe-6b-Bev" id="dkf-KU-Mt1"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Sol 63" id="1Fv-0l-5sQ">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="3FI-8n-C7F">
+                    <navigationItem key="navigationItem" id="1Fv-0l-5sQ">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Item" image="chevron.left" catalog="system" id="3FI-8n-C7F">
                             <connections>
                                 <action selector="previousSol:" destination="WLe-6b-Bev" id="JMX-8P-V0K"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.right" catalog="system" id="wFK-2j-TPO">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Item" image="chevron.right" catalog="system" id="wFK-2j-TPO">
                             <connections>
                                 <action selector="nextSol:" destination="WLe-6b-Bev" id="LqO-ot-anh"/>
                             </connections>

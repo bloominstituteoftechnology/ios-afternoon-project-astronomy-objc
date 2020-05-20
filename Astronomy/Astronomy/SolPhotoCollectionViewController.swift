@@ -20,6 +20,24 @@ class SolPhotoCollectionViewController: UICollectionViewController {
     var solIndex = 0 { didSet { updateUI() }}
     var photos: [MarsPhoto] = []
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        activityIndicator.isHidden = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .white
+        
+        collectionView.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor),
+        ])
+        
+        return activityIndicator
+    }()
+    
     // MARK: - IBOutlets
     
     @IBOutlet var previousSolButton: UIBarButtonItem!
@@ -55,11 +73,16 @@ class SolPhotoCollectionViewController: UICollectionViewController {
         previousSolButton.isEnabled = solIndex != 0
         nextSolButton.isEnabled = solIndex != sols.count - 1
         title = "Sol \(sol.solNumber)"
+        activityIndicator.startAnimating()
+        collectionView.layer.opacity = 0.3
         
         fetchPhotos(for: sol) {
             self.collectionView.setContentOffset(.zero, animated: false)
             self.collectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+            self.collectionView.layer.opacity = 1.0
         }
+        
     }
     
     private func fetchPhotos(for sol: MarsSol, completion: @escaping (() -> Void)) {
