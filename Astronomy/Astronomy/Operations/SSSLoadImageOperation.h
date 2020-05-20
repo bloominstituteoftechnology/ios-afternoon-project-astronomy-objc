@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(LoadImageOperation)
 @interface SSSLoadImageOperation : SSSConcurrentOperation
 
 @property (nonatomic) NSURL *url;

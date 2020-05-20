@@ -14,6 +14,10 @@ class PhotoDetailViewController: UIViewController {
     
     var photo: MarsPhoto?
     
+    // MARK: - Private Properties
+    
+    var loadImageOperation: LoadImageOperation?
+    
     // MARK: - IBOutlets
     
     @IBOutlet var imageView: UIImageView!
@@ -27,12 +31,16 @@ class PhotoDetailViewController: UIViewController {
         updateUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        loadImageOperation?.cancel()
+    }
+    
     private func updateUI() {
         guard let photo = photo else { return }
         
-        if let imageURL = photo.imageURL.usingHTTPS,
-           let imageData = try? Data(contentsOf: imageURL) {
-            imageView.image = UIImage(data: imageData)
+        if let imageURL = photo.imageURL.usingHTTPS {
+            loadImageOperation = LoadImageOperation(url: imageURL, imageView: self.imageView)
         }
         
         descriptionLabel.text = "Taken by \(photo.roverID) on \(photo.earthDate) (Sol \(photo.solNumber))"
