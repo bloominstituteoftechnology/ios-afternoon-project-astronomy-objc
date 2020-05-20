@@ -46,11 +46,33 @@ class PhotoDetailViewController: UIViewController {
         descriptionLabel.text = "Taken by \(photo.roverID) on \(photo.earthDate) (Sol \(photo.solNumber))"
         cameraLabel.text = "Camera: \(photo.cameraName)"
     }
+    
+    @objc func image(image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            let ac = UIAlertController(
+                title: "Error Saving Photo",
+                message: error.localizedDescription,
+                preferredStyle: .alert
+            )
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(
+                title: "Image Saved",
+                message: "The image was successfully saved to your photo library.",
+                preferredStyle: .alert
+            )
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(ac, animated: true)
+        }
+    }
 
     // MARK: - IBActions
     
     @IBAction func saveToPhotoLibrary(_ sender: Any) {
-        // TODO: Implement saving to photo library
+        guard let image = imageView.image else { return }
+        
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
     }
     
 }

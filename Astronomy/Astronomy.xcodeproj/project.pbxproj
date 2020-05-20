@@ -96,9 +96,7 @@
 			children = (
 				045DBA1624730B3B002D736D /* Main.storyboard */,
 				045DBA1424730B3B002D736D /* PhotoDetailViewController.swift */,
-				045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */,
-				045DBA56247415AC002D736D /* SSSPhotoCollectionViewCell.h */,
-				045DBA57247415AC002D736D /* SSSPhotoCollectionViewCell.m */,
+				045DBA632474FACD002D736D /* SolPhotoCollectionView */,
 				045DBA5C24747FDF002D736D /* Operations */,
 				045DBA3124731C41002D736D /* Networking */,
 				045DBA3024731C36002D736D /* Models */,
@@ -169,6 +167,16 @@
 				045DBA6124748692002D736D /* SSSLoadImageOperation.m */,
 			);
 			path = Operations;
+			sourceTree = "<group>";
+		};
+		045DBA632474FACD002D736D /* SolPhotoCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				045DBA2624731998002D736D /* SolPhotoCollectionViewController.swift */,
+				045DBA56247415AC002D736D /* SSSPhotoCollectionViewCell.h */,
+				045DBA57247415AC002D736D /* SSSPhotoCollectionViewCell.m */,
+			);
+			path = SolPhotoCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
