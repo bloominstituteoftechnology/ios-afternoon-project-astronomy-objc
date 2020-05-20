@@ -28,7 +28,7 @@ class SolPhotoCollectionViewController: UICollectionViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = .white
         
-        collectionView.addSubview(activityIndicator)
+        view.addSubview(activityIndicator)
         
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
@@ -74,15 +74,26 @@ class SolPhotoCollectionViewController: UICollectionViewController {
         nextSolButton.isEnabled = solIndex != sols.count - 1
         title = "Sol \(sol.solNumber)"
         activityIndicator.startAnimating()
-        collectionView.layer.opacity = 0.3
+        dimCollectionView()
         
         fetchPhotos(for: sol) {
             self.collectionView.setContentOffset(.zero, animated: false)
             self.collectionView.reloadData()
             self.activityIndicator.stopAnimating()
+            self.showCollectionView()
+        }
+    }
+    
+    private func dimCollectionView() {
+        UIView.animate(withDuration: 0.2) {
+            self.collectionView.layer.opacity = 0.1
+        }
+    }
+    
+    private func showCollectionView() {
+        UIView.animate(withDuration: 0.2) {
             self.collectionView.layer.opacity = 1.0
         }
-        
     }
     
     private func fetchPhotos(for sol: MarsSol, completion: @escaping (() -> Void)) {
