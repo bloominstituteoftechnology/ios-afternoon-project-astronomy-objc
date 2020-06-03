@@ -61,19 +61,67 @@
 		63F3C713248758AF00344B64 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				63F3C73224875A2D00344B64 /* Models */,
+				63F3C73024875A1300344B64 /* Model Controllers */,
+				63F3C73124875A1E00344B64 /* Views */,
+				63F3C72F24875A0100344B64 /* View Controllers */,
+				63F3C72E248759DE00344B64 /* Storyboards */,
+				63F3C72D2487594B00344B64 /* Resources */,
+			);
+			path = Astronomy;
+			sourceTree = "<group>";
+		};
+		63F3C72D2487594B00344B64 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				63F3C714248758AF00344B64 /* AppDelegate.h */,
 				63F3C715248758AF00344B64 /* AppDelegate.m */,
 				63F3C717248758AF00344B64 /* SceneDelegate.h */,
 				63F3C718248758AF00344B64 /* SceneDelegate.m */,
-				63F3C71A248758AF00344B64 /* ViewController.h */,
-				63F3C71B248758AF00344B64 /* ViewController.m */,
-				63F3C71D248758AF00344B64 /* Main.storyboard */,
 				63F3C720248758B000344B64 /* Assets.xcassets */,
-				63F3C722248758B000344B64 /* LaunchScreen.storyboard */,
 				63F3C725248758B000344B64 /* Info.plist */,
 				63F3C726248758B000344B64 /* main.m */,
 			);
-			path = Astronomy;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		63F3C72E248759DE00344B64 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				63F3C722248758B000344B64 /* LaunchScreen.storyboard */,
+				63F3C71D248758AF00344B64 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		63F3C72F24875A0100344B64 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63F3C71A248758AF00344B64 /* ViewController.h */,
+				63F3C71B248758AF00344B64 /* ViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		63F3C73024875A1300344B64 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		63F3C73124875A1E00344B64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63F3C73224875A2D00344B64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BQB6FYF6S;
-				INFOPLIST_FILE = Astronomy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Astronomy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BQB6FYF6S;
-				INFOPLIST_FILE = Astronomy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Astronomy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
