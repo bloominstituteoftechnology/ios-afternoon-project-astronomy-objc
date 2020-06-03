@@ -97,8 +97,8 @@
 		63F3C72E248759DE00344B64 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				63F3C722248758B000344B64 /* LaunchScreen.storyboard */,
 				63F3C71D248758AF00344B64 /* Main.storyboard */,
+				63F3C722248758B000344B64 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -371,6 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.davidwright.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -388,6 +389,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.davidwright.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
