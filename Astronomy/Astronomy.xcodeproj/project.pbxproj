@@ -73,6 +73,7 @@
 				63F3C73024875A1300344B64 /* Model Controllers */,
 				63F3C73124875A1E00344B64 /* Views */,
 				63F3C72F24875A0100344B64 /* View Controllers */,
+				63F3C7402487677700344B64 /* Networking */,
 				63F3C72E248759DE00344B64 /* Storyboards */,
 				63F3C73324875B9D00344B64 /* LambdaSDK */,
 				63F3C72D2487594B00344B64 /* Resources */,
@@ -146,6 +147,13 @@
 			path = ../../LambdaSDK;
 			sourceTree = "<group>";
 		};
+		63F3C7402487677700344B64 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +180,7 @@
 		63F3C709248758AF00344B64 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LSI;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "David Wright";
 				TargetAttributes = {
