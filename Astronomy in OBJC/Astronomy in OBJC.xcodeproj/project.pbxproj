@@ -52,6 +52,7 @@
 		E04D18052488EB840027E805 /* SolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolDescription.m; sourceTree = "<group>"; };
 		E04D18072488F3610027E805 /* RoverAPIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoverAPIController.h; sourceTree = "<group>"; };
 		E04D18082488F3610027E805 /* RoverAPIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoverAPIController.m; sourceTree = "<group>"; };
+		E04D180A2488F49A0027E805 /* Astronomy_in_OBJC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy_in_OBJC-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +85,7 @@
 		E04D17D12488E54C0027E805 /* Astronomy in OBJC */ = {
 			isa = PBXGroup;
 			children = (
+				E04D180B2488F7C30027E805 /* Views */,
 				E04D17F12488E7640027E805 /* Resources */,
 				E04D17F02488E7390027E805 /* Networking */,
 				E04D17EF2488E7320027E805 /* Model Controllers */,
@@ -149,8 +151,16 @@
 				E04D17D32488E54C0027E805 /* AppDelegate.m */,
 				E04D17D52488E54C0027E805 /* SceneDelegate.h */,
 				E04D17D62488E54C0027E805 /* SceneDelegate.m */,
+				E04D180A2488F49A0027E805 /* Astronomy_in_OBJC-Bridging-Header.h */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E04D180B2488F7C30027E805 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +396,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sal.b.amer.Astronomy-in-OBJC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy in OBJC/Resources/Astronomy_in_OBJC-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -403,6 +414,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sal.b.amer.Astronomy-in-OBJC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy in OBJC/Resources/Astronomy_in_OBJC-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
