@@ -26,6 +26,8 @@
 		E04D180E2488F8010027E805 /* RoverCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D180D2488F8010027E805 /* RoverCollectionViewCell.m */; };
 		E04D1811248904110027E805 /* MarsRoverCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D1810248904110027E805 /* MarsRoverCamera.m */; };
 		E04D1814248905E20027E805 /* MarsPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D1813248905E20027E805 /* MarsPhotos.m */; };
+		E04D182624890D400027E805 /* NSObject+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182524890D400027E805 /* NSObject+NSJSONSerialization.m */; };
+		E04D182924890E480027E805 /* MarsPhotos+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182824890E480027E805 /* MarsPhotos+NSJSONSerialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,10 @@
 		E04D1810248904110027E805 /* MarsRoverCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverCamera.m; sourceTree = "<group>"; };
 		E04D1812248905E20027E805 /* MarsPhotos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsPhotos.h; sourceTree = "<group>"; };
 		E04D1813248905E20027E805 /* MarsPhotos.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsPhotos.m; sourceTree = "<group>"; };
+		E04D182424890D400027E805 /* NSObject+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSJSONSerialization.h"; sourceTree = "<group>"; };
+		E04D182524890D400027E805 /* NSObject+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSJSONSerialization.m"; sourceTree = "<group>"; };
+		E04D182724890E480027E805 /* MarsPhotos+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarsPhotos+NSJSONSerialization.h"; sourceTree = "<group>"; };
+		E04D182824890E480027E805 /* MarsPhotos+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MarsPhotos+NSJSONSerialization.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,10 @@
 				E04D1810248904110027E805 /* MarsRoverCamera.m */,
 				E04D1812248905E20027E805 /* MarsPhotos.h */,
 				E04D1813248905E20027E805 /* MarsPhotos.m */,
+				E04D182424890D400027E805 /* NSObject+NSJSONSerialization.h */,
+				E04D182524890D400027E805 /* NSObject+NSJSONSerialization.m */,
+				E04D182724890E480027E805 /* MarsPhotos+NSJSONSerialization.h */,
+				E04D182824890E480027E805 /* MarsPhotos+NSJSONSerialization.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +264,7 @@
 				E04D17DA2488E54C0027E805 /* ViewController.m in Sources */,
 				E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */,
 				E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */,
+				E04D182624890D400027E805 /* NSObject+NSJSONSerialization.m in Sources */,
 				E04D17D42488E54C0027E805 /* AppDelegate.m in Sources */,
 				E04D1814248905E20027E805 /* MarsPhotos.m in Sources */,
 				E04D1811248904110027E805 /* MarsRoverCamera.m in Sources */,
@@ -263,6 +274,7 @@
 				E04D17E52488E54F0027E805 /* main.m in Sources */,
 				E04D18062488EB840027E805 /* SolDescription.m in Sources */,
 				E04D17FF2488E9AE0027E805 /* RoverCollectionViewController.swift in Sources */,
+				E04D182924890E480027E805 /* MarsPhotos+NSJSONSerialization.m in Sources */,
 				E04D17D72488E54C0027E805 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
