@@ -18,6 +18,10 @@
 		E04D17FB2488E7B70027E805 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D17F52488E7B70027E805 /* LSILog.m */; };
 		E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D17F72488E7B70027E805 /* LSIFileHelper.m */; };
 		E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D17F82488E7B70027E805 /* LSIErrors.m */; };
+		E04D17FF2488E9AE0027E805 /* RoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D17FE2488E9AE0027E805 /* RoverCollectionViewController.swift */; };
+		E04D18012488E9DA0027E805 /* RoverDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D18002488E9DA0027E805 /* RoverDetailViewController.swift */; };
+		E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D18022488EA6B0027E805 /* MarsRover.swift */; };
+		E04D18062488EB840027E805 /* SolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D18052488EB840027E805 /* SolDescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,11 @@
 		E04D17F72488E7B70027E805 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
 		E04D17F82488E7B70027E805 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
 		E04D17F92488E7B70027E805 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
+		E04D17FE2488E9AE0027E805 /* RoverCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverCollectionViewController.swift; sourceTree = "<group>"; };
+		E04D18002488E9DA0027E805 /* RoverDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailViewController.swift; sourceTree = "<group>"; };
+		E04D18022488EA6B0027E805 /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
+		E04D18042488EB840027E805 /* SolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolDescription.h; sourceTree = "<group>"; };
+		E04D18052488EB840027E805 /* SolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolDescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +98,9 @@
 		E04D17ED2488E71B0027E805 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E04D18022488EA6B0027E805 /* MarsRover.swift */,
+				E04D18042488EB840027E805 /* SolDescription.h */,
+				E04D18052488EB840027E805 /* SolDescription.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +108,8 @@
 		E04D17EE2488E7230027E805 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E04D17FE2488E9AE0027E805 /* RoverCollectionViewController.swift */,
+				E04D18002488E9DA0027E805 /* RoverDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -206,11 +220,15 @@
 			files = (
 				E04D17FA2488E7B70027E805 /* URL+Secure.swift in Sources */,
 				E04D17FB2488E7B70027E805 /* LSILog.m in Sources */,
+				E04D18012488E9DA0027E805 /* RoverDetailViewController.swift in Sources */,
 				E04D17DA2488E54C0027E805 /* ViewController.m in Sources */,
 				E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */,
+				E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */,
 				E04D17D42488E54C0027E805 /* AppDelegate.m in Sources */,
 				E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */,
 				E04D17E52488E54F0027E805 /* main.m in Sources */,
+				E04D18062488EB840027E805 /* SolDescription.m in Sources */,
+				E04D17FF2488E9AE0027E805 /* RoverCollectionViewController.swift in Sources */,
 				E04D17D72488E54C0027E805 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
