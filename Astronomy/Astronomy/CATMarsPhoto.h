@@ -7,11 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CATCamera.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(MarsPhoto)
 @interface CATMarsPhoto : NSObject
+
+@property (nonatomic, readonly) int identifier;
+@property (nonatomic, readonly) int sol;
+@property (nonatomic) CATCamera *camera;
+@property (nonatomic, readonly) NSDate *earthDate;
+@property (nonatomic, readonly) NSURL *imageURL;
+
+- (instancetype)initWithID:(int)anIdentifier
+                       sol:(int)aSol
+                    camera:(CATCamera *)aCamera
+                 earthDate:(NSDate *)earthDate
+                  imageURL:(NSURL *)imageURL;
+
+- (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
