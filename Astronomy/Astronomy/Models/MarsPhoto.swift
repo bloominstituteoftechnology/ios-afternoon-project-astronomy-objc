@@ -8,7 +8,8 @@
 
 import Foundation
 
-class MarsPhotoReference {
+@objc(LSIMarsPhotoReference)
+class MarsPhotoReference: NSObject {
     let id: Int
     let sol: Int
     let camera: Camera
@@ -23,7 +24,7 @@ class MarsPhotoReference {
         return formatter
     }()
     
-    init(id: Int, sol: Int, camera: Camera, earthDate: Date, imageURL: URL) {
+    @objc init(id: Int, sol: Int, camera: Camera, earthDate: Date, imageURL: URL) {
         self.id = id
         self.sol = sol
         self.camera = camera
