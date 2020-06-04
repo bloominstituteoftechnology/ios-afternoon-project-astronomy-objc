@@ -8,7 +8,22 @@
 
 #import "NSObject+NSJSONSerialization.h"
 #import "MarsPhotos.h"
+#import "MarsPhotos+NSJSONSerialization.h"
 
 @implementation NSObject (NSJSONSerialization)
+
+- (instancetype) initArrayWithDictionary:(NSDictionary *)dictionary
+{
+  self = [self init];
+  NSMutableArray *photoArray = [[NSMutableArray alloc] init];
+  NSArray *photos = dictionary[@"photos"];
+  //loop through the photos
+  for (int i = 0; i < photos.count; i++) {
+    MarsPhotos *photo = [[MarsPhotos alloc]
+                         initwithMarsPhotosDictionary:photos[i]];
+    [photoArray addObject:photo];
+  }
+  return photoArray;
+}
 
 @end
