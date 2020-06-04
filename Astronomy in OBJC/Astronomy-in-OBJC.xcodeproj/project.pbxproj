@@ -23,10 +23,11 @@
 		E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D18022488EA6B0027E805 /* MarsRover.swift */; };
 		E04D18062488EB840027E805 /* SolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D18052488EB840027E805 /* SolDescription.m */; };
 		E04D18092488F3610027E805 /* RoverAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D18082488F3610027E805 /* RoverAPIController.m */; };
+		E04D180E2488F8010027E805 /* RoverCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D180D2488F8010027E805 /* RoverCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E04D17CF2488E54C0027E805 /* Astronomy in OBJC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy in OBJC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E04D17CF2488E54C0027E805 /* Astronomy-in-OBJC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-in-OBJC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04D17D22488E54C0027E805 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E04D17D32488E54C0027E805 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E04D17D52488E54C0027E805 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +54,8 @@
 		E04D18072488F3610027E805 /* RoverAPIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoverAPIController.h; sourceTree = "<group>"; };
 		E04D18082488F3610027E805 /* RoverAPIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoverAPIController.m; sourceTree = "<group>"; };
 		E04D180A2488F49A0027E805 /* Astronomy_in_OBJC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy_in_OBJC-Bridging-Header.h"; sourceTree = "<group>"; };
+		E04D180C2488F8010027E805 /* RoverCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoverCollectionViewCell.h; sourceTree = "<group>"; };
+		E04D180D2488F8010027E805 /* RoverCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoverCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +80,7 @@
 		E04D17D02488E54C0027E805 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E04D17CF2488E54C0027E805 /* Astronomy in OBJC.app */,
+				E04D17CF2488E54C0027E805 /* Astronomy-in-OBJC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +162,8 @@
 		E04D180B2488F7C30027E805 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E04D180C2488F8010027E805 /* RoverCollectionViewCell.h */,
+				E04D180D2488F8010027E805 /* RoverCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E04D17CE2488E54C0027E805 /* Astronomy in OBJC */ = {
+		E04D17CE2488E54C0027E805 /* Astronomy-in-OBJC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E04D17E82488E54F0027E805 /* Build configuration list for PBXNativeTarget "Astronomy in OBJC" */;
+			buildConfigurationList = E04D17E82488E54F0027E805 /* Build configuration list for PBXNativeTarget "Astronomy-in-OBJC" */;
 			buildPhases = (
 				E04D17CB2488E54C0027E805 /* Sources */,
 				E04D17CC2488E54C0027E805 /* Frameworks */,
@@ -178,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = "Astronomy in OBJC";
+			name = "Astronomy-in-OBJC";
 			productName = "Astronomy in OBJC";
-			productReference = E04D17CF2488E54C0027E805 /* Astronomy in OBJC.app */;
+			productReference = E04D17CF2488E54C0027E805 /* Astronomy-in-OBJC.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -197,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E04D17CA2488E54C0027E805 /* Build configuration list for PBXProject "Astronomy in OBJC" */;
+			buildConfigurationList = E04D17CA2488E54C0027E805 /* Build configuration list for PBXProject "Astronomy-in-OBJC" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -210,7 +215,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E04D17CE2488E54C0027E805 /* Astronomy in OBJC */,
+				E04D17CE2488E54C0027E805 /* Astronomy-in-OBJC */,
 			);
 		};
 /* End PBXProject section */
@@ -240,6 +245,7 @@
 				E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */,
 				E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */,
 				E04D17D42488E54C0027E805 /* AppDelegate.m in Sources */,
+				E04D180E2488F8010027E805 /* RoverCollectionViewCell.m in Sources */,
 				E04D18092488F3610027E805 /* RoverAPIController.m in Sources */,
 				E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */,
 				E04D17E52488E54F0027E805 /* main.m in Sources */,
@@ -422,7 +428,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E04D17CA2488E54C0027E805 /* Build configuration list for PBXProject "Astronomy in OBJC" */ = {
+		E04D17CA2488E54C0027E805 /* Build configuration list for PBXProject "Astronomy-in-OBJC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E04D17E62488E54F0027E805 /* Debug */,
@@ -431,7 +437,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E04D17E82488E54F0027E805 /* Build configuration list for PBXNativeTarget "Astronomy in OBJC" */ = {
+		E04D17E82488E54F0027E805 /* Build configuration list for PBXNativeTarget "Astronomy-in-OBJC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E04D17E92488E54F0027E805 /* Debug */,
