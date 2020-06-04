@@ -13,6 +13,41 @@ private let reuseIdentifier = "ImageCell"
 @objc(CATPhotosCollectionViewController)
 class PhotosCollectionViewController: UICollectionViewController {
 
+    // Properties
+//    private let client = MarsRoverClient()
+    private let cache = Cache<Int, UIImage>()
+    private let photoFetchQueue = OperationQueue()
+    private var operations = [Int : Operation]()
+
+    private var roverInfo: MarsRover? {
+        didSet {
+            solDescription = roverInfo?.solDescriptions[0]
+        }
+    }
+
+    let solLabel = UILabel()
+
+    private var solDescription: SolDescription? {
+        didSet {
+            if let rover = roverInfo,
+                let sol = solDescription?.sol {
+                photoReferences = []
+                client.fetchPhotos(from: rover, onSol: sol) { (photoRefs, error) in
+                    if let e = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(e)"); return }
+                    self.photoReferences = photoRefs ?? []
+                    DispatchQueue.main.async { self.updateViews() }
+                }
+            }
+        }
+    }
+
+    private var photoReferences = [MarsPhoto]() {
+        didSet {
+            cache.clear()
+            DispatchQueue.main.async { self.collectionView?.reloadData() }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +57,24 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
+        configureTitleView()
+        updateViews()
+    }
+
+    @IBAction func goToPreviousSol(_ sender: Any?) {
+        guard let solDescription = solDescription else { return }
+        guard let solDescriptions = roverInfo?.solDescriptions else { return }
+        guard let index = solDescriptions.firstIndex(of: solDescription) else { return }
+        guard index > 0 else { return }
+        self.solDescription = solDescriptions[index-1]
+    }
+
+    @IBAction func goToNextSol(_ sender: Any?) {
+        guard let solDescription = solDescription else { return }
+        guard let solDescriptions = roverInfo?.solDescriptions else { return }
+        guard let index = solDescriptions.firstIndex(of: solDescription) else { return }
+        guard index < solDescriptions.count - 1 else { return }
+        self.solDescription = solDescriptions[index+1]
     }
 
     /*
@@ -39,7 +91,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
@@ -86,5 +138,38 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
+    // MARK: - Private
+
+    private func configureTitleView() {
+
+        let font = UIFont.systemFont(ofSize: 30)
+        let attrs = [NSAttributedStringKey.font: font]
+
+        let prevTitle = NSAttributedString(string: "<", attributes: attrs)
+        let prevButton = UIButton(type: .system)
+        prevButton.accessibilityIdentifier = "PhotosCollectionViewController.PreviousSolButton"
+        prevButton.setAttributedTitle(prevTitle, for: .normal)
+        prevButton.addTarget(self, action: #selector(goToPreviousSol(_:)), for: .touchUpInside)
+
+        let nextTitle = NSAttributedString(string: ">", attributes: attrs)
+        let nextButton = UIButton(type: .system)
+        nextButton.setAttributedTitle(nextTitle, for: .normal)
+        nextButton.addTarget(self, action: #selector(goToNextSol(_:)), for: .touchUpInside)
+        nextButton.accessibilityIdentifier = "PhotosCollectionViewController.NextSolButton"
+
+        let stackView = UIStackView(arrangedSubviews: [prevButton, solLabel, nextButton])
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = UIStackView.spacingUseSystem
+
+        navigationItem.titleView = stackView
+    }
+
+    private func updateViews() {
+        guard isViewLoaded else { return }
+        solLabel.text = "Sol \(solDescription?.sol ?? 0)"
+    }
+
 
 }

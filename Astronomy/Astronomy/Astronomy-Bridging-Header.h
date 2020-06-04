@@ -3,3 +3,6 @@
 //
 
 #import "CATSolDescription.h"
+#import "CATMarsPhoto.h"
+#import "CATCache.h"
+#import "CATCamera.h"
