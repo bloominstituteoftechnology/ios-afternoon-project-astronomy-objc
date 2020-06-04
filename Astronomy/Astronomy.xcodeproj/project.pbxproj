@@ -19,6 +19,11 @@
 		9512E9332488919E005B6A36 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E92C2488919E005B6A36 /* LSIErrors.m */; };
 		9512E9342488919E005B6A36 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E92D2488919E005B6A36 /* LSIFileHelper.m */; };
 		9512E9352488919E005B6A36 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9512E9312488919E005B6A36 /* URL+Secure.swift */; };
+		9512E9382488965E005B6A36 /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9512E9372488965E005B6A36 /* MarsRover.swift */; };
+		9512E93B248896A9005B6A36 /* CATMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E93A248896A9005B6A36 /* CATMarsPhoto.m */; };
+		9512E93E248896C2005B6A36 /* CATSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E93D248896C2005B6A36 /* CATSolDescription.m */; };
+		9512E941248896DD005B6A36 /* CATCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E940248896DD005B6A36 /* CATCamera.m */; };
+		9512E944248896F6005B6A36 /* CATCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E943248896F6005B6A36 /* CATCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,15 @@
 		9512E92F2488919E005B6A36 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		9512E9302488919E005B6A36 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		9512E9312488919E005B6A36 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		9512E9372488965E005B6A36 /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
+		9512E939248896A9005B6A36 /* CATMarsPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATMarsPhoto.h; sourceTree = "<group>"; };
+		9512E93A248896A9005B6A36 /* CATMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATMarsPhoto.m; sourceTree = "<group>"; };
+		9512E93C248896C2005B6A36 /* CATSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATSolDescription.h; sourceTree = "<group>"; };
+		9512E93D248896C2005B6A36 /* CATSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATSolDescription.m; sourceTree = "<group>"; };
+		9512E93F248896DD005B6A36 /* CATCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATCamera.h; sourceTree = "<group>"; };
+		9512E940248896DD005B6A36 /* CATCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATCamera.m; sourceTree = "<group>"; };
+		9512E942248896F6005B6A36 /* CATCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATCache.h; sourceTree = "<group>"; };
+		9512E943248896F6005B6A36 /* CATCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +88,7 @@
 		9512E90A24888BF8005B6A36 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				9512E93624889641005B6A36 /* Models */,
 				9512E91424888BF8005B6A36 /* Main.storyboard */,
 				9512E924248890C8005B6A36 /* View Controllers */,
 				9512E90B24888BF8005B6A36 /* AppDelegate.h */,
@@ -112,6 +127,22 @@
 			);
 			name = LambdaSDK;
 			path = ../../LambdaSDK;
+			sourceTree = "<group>";
+		};
+		9512E93624889641005B6A36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9512E9372488965E005B6A36 /* MarsRover.swift */,
+				9512E939248896A9005B6A36 /* CATMarsPhoto.h */,
+				9512E93A248896A9005B6A36 /* CATMarsPhoto.m */,
+				9512E93C248896C2005B6A36 /* CATSolDescription.h */,
+				9512E93D248896C2005B6A36 /* CATSolDescription.m */,
+				9512E93F248896DD005B6A36 /* CATCamera.h */,
+				9512E940248896DD005B6A36 /* CATCamera.m */,
+				9512E942248896F6005B6A36 /* CATCache.h */,
+				9512E943248896F6005B6A36 /* CATCache.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,12 +217,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9512E90D24888BF8005B6A36 /* AppDelegate.m in Sources */,
+				9512E9382488965E005B6A36 /* MarsRover.swift in Sources */,
+				9512E93B248896A9005B6A36 /* CATMarsPhoto.m in Sources */,
 				9512E9322488919E005B6A36 /* LSILog.m in Sources */,
+				9512E93E248896C2005B6A36 /* CATSolDescription.m in Sources */,
 				9512E9342488919E005B6A36 /* LSIFileHelper.m in Sources */,
 				9512E9352488919E005B6A36 /* URL+Secure.swift in Sources */,
+				9512E944248896F6005B6A36 /* CATCache.m in Sources */,
 				9512E91E24888BF8005B6A36 /* main.m in Sources */,
 				9512E9332488919E005B6A36 /* LSIErrors.m in Sources */,
 				9512E91024888BF8005B6A36 /* SceneDelegate.m in Sources */,
+				9512E941248896DD005B6A36 /* CATCamera.m in Sources */,
 				9512E9292488911B005B6A36 /* PhotoDetailViewController.swift in Sources */,
 				9512E927248890FB005B6A36 /* PhotosCollectionViewController.swift in Sources */,
 			);
