@@ -10,4 +10,16 @@
 
 @implementation CATSolDescription
 
+- (instancetype)initWithSol:(int)aSol
+                totalPhotos:(int)totalPhotosCount
+                    cameras:(NSArray<NSString *> *)allCameras
+{
+    if (self = [super init]) {
+        _sol = aSol;
+        _totalPhotos = totalPhotosCount;
+        _cameras = allCameras;
+    }
+    return self;
+}
+
 @end
