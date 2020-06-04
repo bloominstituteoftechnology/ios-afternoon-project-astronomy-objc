@@ -28,6 +28,7 @@
 		E04D1814248905E20027E805 /* MarsPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D1813248905E20027E805 /* MarsPhotos.m */; };
 		E04D182624890D400027E805 /* NSObject+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182524890D400027E805 /* NSObject+NSJSONSerialization.m */; };
 		E04D182924890E480027E805 /* MarsPhotos+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182824890E480027E805 /* MarsPhotos+NSJSONSerialization.m */; };
+		E04D182C2489162F0027E805 /* NSURL+UsingHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182B2489162F0027E805 /* NSURL+UsingHTTPS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		E04D182524890D400027E805 /* NSObject+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSJSONSerialization.m"; sourceTree = "<group>"; };
 		E04D182724890E480027E805 /* MarsPhotos+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarsPhotos+NSJSONSerialization.h"; sourceTree = "<group>"; };
 		E04D182824890E480027E805 /* MarsPhotos+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MarsPhotos+NSJSONSerialization.m"; sourceTree = "<group>"; };
+		E04D182A2489162F0027E805 /* NSURL+UsingHTTPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+UsingHTTPS.h"; sourceTree = "<group>"; };
+		E04D182B2489162F0027E805 /* NSURL+UsingHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UsingHTTPS.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 				E04D17F92488E7B70027E805 /* LSILog.h */,
 				E04D17F52488E7B70027E805 /* LSILog.m */,
 				E04D17F32488E7B70027E805 /* URL+Secure.swift */,
+				E04D182A2489162F0027E805 /* NSURL+UsingHTTPS.h */,
+				E04D182B2489162F0027E805 /* NSURL+UsingHTTPS.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				E04D18092488F3610027E805 /* RoverAPIController.m in Sources */,
 				E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */,
 				E04D17E52488E54F0027E805 /* main.m in Sources */,
+				E04D182C2489162F0027E805 /* NSURL+UsingHTTPS.m in Sources */,
 				E04D18062488EB840027E805 /* SolDescription.m in Sources */,
 				E04D17FF2488E9AE0027E805 /* RoverCollectionViewController.swift in Sources */,
 				E04D182924890E480027E805 /* MarsPhotos+NSJSONSerialization.m in Sources */,

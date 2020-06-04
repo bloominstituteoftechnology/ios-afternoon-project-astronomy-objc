@@ -15,6 +15,9 @@
 #import "MarsPhotos.h"
 #import "SolDescription.h"
 #import "MarsRoverCamera.h"
+#import "NSURL+UsingHTTPS.h"
+#import "MarsPhotos+NSJSONSerialization.h"
+#import "NSObject+NSJSONSerialization.h"
 
 
 #endif /* Astronomy_in_OBJC_Bridging_Header_h */
