@@ -17,8 +17,8 @@ class MarsRover: NSObject {
     enum Status: String, Codable {
         case active, complete
     }
-    let status: Status
 
+    let status: Status
     let maxSol: Int
     let maxDate: Date
 
@@ -52,9 +52,22 @@ class MarsRover: NSObject {
         return result
     }
 
-    init(with name: String, launchDate: Date, landingDate: Date) {
+    init(with name: String,
+         launchDate: Date,
+         landingDate: Date,
+         status: Status,
+         maxSol: Int,
+         maxDate: Date,
+         numberOfPhotos: Int,
+         solDescriptions: [SolDescription]) {
+
         self.name = name
         self.launchDate = launchDate
         self.landingDate = landingDate
+        self.status = status
+        self.maxSol = maxSol
+        self.maxDate = maxDate
+        self.numberOfPhotos = numberOfPhotos
+        self.solDescriptions = solDescriptions
     }
 }
