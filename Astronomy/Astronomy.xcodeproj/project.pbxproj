@@ -18,6 +18,8 @@
 		63F3C73D24875B9D00344B64 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C73624875B9D00344B64 /* LSIFileHelper.m */; };
 		63F3C73E24875B9D00344B64 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C73A24875B9D00344B64 /* URL+Secure.swift */; };
 		63F3C746248769C200344B64 /* LSIMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C745248769C200344B64 /* LSIMarsRoverClient.m */; };
+		63F3C74A24889CBD00344B64 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C74924889CBD00344B64 /* PhotosCollectionViewController.swift */; };
+		63F3C74C24889CEB00344B64 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C74B24889CEB00344B64 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		63F3C73A24875B9D00344B64 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 		63F3C744248769C200344B64 /* LSIMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIMarsRoverClient.h; sourceTree = "<group>"; };
 		63F3C745248769C200344B64 /* LSIMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsRoverClient.m; sourceTree = "<group>"; };
+		63F3C74924889CBD00344B64 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		63F3C74B24889CEB00344B64 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 		63F3C72F24875A0100344B64 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63F3C74924889CBD00344B64 /* PhotosCollectionViewController.swift */,
+				63F3C74B24889CEB00344B64 /* PhotoDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -138,12 +144,12 @@
 		63F3C73324875B9D00344B64 /* LambdaSDK */ = {
 			isa = PBXGroup;
 			children = (
-				63F3C73424875B9D00344B64 /* LSILog.m */,
-				63F3C73524875B9D00344B64 /* LSIErrors.m */,
-				63F3C73624875B9D00344B64 /* LSIFileHelper.m */,
-				63F3C73724875B9D00344B64 /* LSIFileHelper.h */,
-				63F3C73824875B9D00344B64 /* LSIErrors.h */,
 				63F3C73924875B9D00344B64 /* LSILog.h */,
+				63F3C73424875B9D00344B64 /* LSILog.m */,
+				63F3C73824875B9D00344B64 /* LSIErrors.h */,
+				63F3C73524875B9D00344B64 /* LSIErrors.m */,
+				63F3C73724875B9D00344B64 /* LSIFileHelper.h */,
+				63F3C73624875B9D00344B64 /* LSIFileHelper.m */,
 				63F3C73A24875B9D00344B64 /* URL+Secure.swift */,
 			);
 			name = LambdaSDK;
@@ -236,7 +242,9 @@
 				63F3C727248758B000344B64 /* main.m in Sources */,
 				63F3C73E24875B9D00344B64 /* URL+Secure.swift in Sources */,
 				63F3C73C24875B9D00344B64 /* LSIErrors.m in Sources */,
+				63F3C74A24889CBD00344B64 /* PhotosCollectionViewController.swift in Sources */,
 				63F3C719248758AF00344B64 /* SceneDelegate.m in Sources */,
+				63F3C74C24889CEB00344B64 /* PhotoDetailViewController.swift in Sources */,
 				63F3C746248769C200344B64 /* LSIMarsRoverClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
