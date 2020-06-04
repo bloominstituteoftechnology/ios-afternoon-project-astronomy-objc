@@ -14,6 +14,10 @@
 		E04D17DF2488E54F0027E805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04D17DE2488E54F0027E805 /* Assets.xcassets */; };
 		E04D17E22488E54F0027E805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D17E02488E54F0027E805 /* LaunchScreen.storyboard */; };
 		E04D17E52488E54F0027E805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D17E42488E54F0027E805 /* main.m */; };
+		E04D17FA2488E7B70027E805 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D17F32488E7B70027E805 /* URL+Secure.swift */; };
+		E04D17FB2488E7B70027E805 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D17F52488E7B70027E805 /* LSILog.m */; };
+		E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D17F72488E7B70027E805 /* LSIFileHelper.m */; };
+		E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D17F82488E7B70027E805 /* LSIErrors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,13 @@
 		E04D17E12488E54F0027E805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E04D17E32488E54F0027E805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E04D17E42488E54F0027E805 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E04D17F32488E7B70027E805 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		E04D17F42488E7B70027E805 /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
+		E04D17F52488E7B70027E805 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		E04D17F62488E7B70027E805 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
+		E04D17F72488E7B70027E805 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
+		E04D17F82488E7B70027E805 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
+		E04D17F92488E7B70027E805 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +72,66 @@
 		E04D17D12488E54C0027E805 /* Astronomy in OBJC */ = {
 			isa = PBXGroup;
 			children = (
-				E04D17D22488E54C0027E805 /* AppDelegate.h */,
-				E04D17D32488E54C0027E805 /* AppDelegate.m */,
-				E04D17D52488E54C0027E805 /* SceneDelegate.h */,
-				E04D17D62488E54C0027E805 /* SceneDelegate.m */,
+				E04D17F12488E7640027E805 /* Resources */,
+				E04D17F02488E7390027E805 /* Networking */,
+				E04D17EF2488E7320027E805 /* Model Controllers */,
+				E04D17EE2488E7230027E805 /* View Controllers */,
+				E04D17ED2488E71B0027E805 /* Models */,
 				E04D17D82488E54C0027E805 /* ViewController.h */,
 				E04D17D92488E54C0027E805 /* ViewController.m */,
 				E04D17DB2488E54C0027E805 /* Main.storyboard */,
 				E04D17DE2488E54F0027E805 /* Assets.xcassets */,
 				E04D17E02488E54F0027E805 /* LaunchScreen.storyboard */,
-				E04D17E32488E54F0027E805 /* Info.plist */,
-				E04D17E42488E54F0027E805 /* main.m */,
 			);
 			path = "Astronomy in OBJC";
+			sourceTree = "<group>";
+		};
+		E04D17ED2488E71B0027E805 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E04D17EE2488E7230027E805 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E04D17EF2488E7320027E805 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		E04D17F02488E7390027E805 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E04D17F62488E7B70027E805 /* LSIErrors.h */,
+				E04D17F82488E7B70027E805 /* LSIErrors.m */,
+				E04D17F42488E7B70027E805 /* LSIFileHelper.h */,
+				E04D17F72488E7B70027E805 /* LSIFileHelper.m */,
+				E04D17F92488E7B70027E805 /* LSILog.h */,
+				E04D17F52488E7B70027E805 /* LSILog.m */,
+				E04D17F32488E7B70027E805 /* URL+Secure.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E04D17F12488E7640027E805 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E04D17E32488E54F0027E805 /* Info.plist */,
+				E04D17E42488E54F0027E805 /* main.m */,
+				E04D17D22488E54C0027E805 /* AppDelegate.h */,
+				E04D17D32488E54C0027E805 /* AppDelegate.m */,
+				E04D17D52488E54C0027E805 /* SceneDelegate.h */,
+				E04D17D62488E54C0027E805 /* SceneDelegate.m */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +204,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04D17FA2488E7B70027E805 /* URL+Secure.swift in Sources */,
+				E04D17FB2488E7B70027E805 /* LSILog.m in Sources */,
 				E04D17DA2488E54C0027E805 /* ViewController.m in Sources */,
+				E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */,
 				E04D17D42488E54C0027E805 /* AppDelegate.m in Sources */,
+				E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */,
 				E04D17E52488E54F0027E805 /* main.m in Sources */,
 				E04D17D72488E54C0027E805 /* SceneDelegate.m in Sources */,
 			);
@@ -225,11 +287,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -277,10 +340,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -291,14 +355,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9MYA9HNSTZ;
-				INFOPLIST_FILE = "Astronomy in OBJC/Info.plist";
+				INFOPLIST_FILE = "Astronomy in OBJC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sal.b.amer.Astronomy-in-OBJC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,14 +372,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9MYA9HNSTZ;
-				INFOPLIST_FILE = "Astronomy in OBJC/Info.plist";
+				INFOPLIST_FILE = "Astronomy in OBJC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sal.b.amer.Astronomy-in-OBJC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
