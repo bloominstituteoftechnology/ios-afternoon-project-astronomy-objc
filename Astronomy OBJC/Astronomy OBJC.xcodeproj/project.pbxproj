@@ -58,6 +58,9 @@
 		E04D17AC2488E07B0027E805 /* Astronomy OBJC */ = {
 			isa = PBXGroup;
 			children = (
+				E04D17C52488E4030027E805 /* Model Controllers */,
+				E04D17C42488E3FB0027E805 /* View Controllers */,
+				E04D17C32488E3F30027E805 /* Models */,
 				E04D17AD2488E07B0027E805 /* AppDelegate.swift */,
 				E04D17AF2488E07B0027E805 /* SceneDelegate.swift */,
 				E04D17B12488E07B0027E805 /* ViewController.swift */,
@@ -68,6 +71,27 @@
 				E04D17BB2488E07E0027E805 /* Info.plist */,
 			);
 			path = "Astronomy OBJC";
+			sourceTree = "<group>";
+		};
+		E04D17C32488E3F30027E805 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E04D17C42488E3FB0027E805 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E04D17C52488E4030027E805 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
