@@ -24,6 +24,7 @@
 		E04D18062488EB840027E805 /* SolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D18052488EB840027E805 /* SolDescription.m */; };
 		E04D18092488F3610027E805 /* RoverAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D18082488F3610027E805 /* RoverAPIController.m */; };
 		E04D180E2488F8010027E805 /* RoverCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D180D2488F8010027E805 /* RoverCollectionViewCell.m */; };
+		E04D1811248904110027E805 /* MarsRoverCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D1810248904110027E805 /* MarsRoverCamera.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		E04D180A2488F49A0027E805 /* Astronomy_in_OBJC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy_in_OBJC-Bridging-Header.h"; sourceTree = "<group>"; };
 		E04D180C2488F8010027E805 /* RoverCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoverCollectionViewCell.h; sourceTree = "<group>"; };
 		E04D180D2488F8010027E805 /* RoverCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoverCollectionViewCell.m; sourceTree = "<group>"; };
+		E04D180F248904110027E805 /* MarsRoverCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverCamera.h; sourceTree = "<group>"; };
+		E04D1810248904110027E805 /* MarsRoverCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverCamera.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				E04D18022488EA6B0027E805 /* MarsRover.swift */,
 				E04D18042488EB840027E805 /* SolDescription.h */,
 				E04D18052488EB840027E805 /* SolDescription.m */,
+				E04D180F248904110027E805 /* MarsRoverCamera.h */,
+				E04D1810248904110027E805 /* MarsRoverCamera.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */,
 				E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */,
 				E04D17D42488E54C0027E805 /* AppDelegate.m in Sources */,
+				E04D1811248904110027E805 /* MarsRoverCamera.m in Sources */,
 				E04D180E2488F8010027E805 /* RoverCollectionViewCell.m in Sources */,
 				E04D18092488F3610027E805 /* RoverAPIController.m in Sources */,
 				E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */,

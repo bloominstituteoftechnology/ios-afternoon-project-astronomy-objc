@@ -10,4 +10,17 @@
 
 @implementation SolDescription
 
+-(instancetype)initWithSol:(NSNumber *)sol
+               totalPhotos:(NSNumber *)totalPhotos
+                   cameras:(NSMutableArray *)cameras
+{
+  self = [super init];
+  if (self) {
+    _sol = sol;
+    _totalPhotos = totalPhotos;
+    _cameras = cameras;
+  }
+  return self;
+}
+
 @end
