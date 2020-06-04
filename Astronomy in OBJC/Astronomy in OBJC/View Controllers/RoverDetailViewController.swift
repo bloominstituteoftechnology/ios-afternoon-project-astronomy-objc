@@ -10,21 +10,41 @@ import UIKit
 
 class RoverDetailViewController: UIViewController {
 
+  //MARK: IBOutletss
+  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var photoDetailsLabel: UILabel!
+  @IBOutlet weak var whichCameraUsedLabel: UILabel!
+  
+  var marsPhotoRef : MarsPhotos?
+  var roverAPIController: RoverAPIController?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       updateViews()
+    }
+  
+  func updateViews() {
+    guard let marsPhotoRef = marsPhotoRef,
+      let roverAPIController = roverAPIController else { return }
+    
+    let date = marsPhotoRef.earthDate
+    
+    roverAPIController.fetchImages(forPhotoRef: marsPhotoRef) { (data, error) in
+      DispatchQueue.main.async {
+        guard let data = data else { return }
+        self.imageView.image = UIImage(data: data)
+      }
+      self.photoDetailsLabel.text = "Taken by: \(marsPhotoRef.identification) on \(date) (Sol \(marsPhotoRef.sol))"
+      self.whichCameraUsedLabel.text = "Camera: \(marsPhotoRef.camera) Camera"
     }
     
+    
+  }
+    
+  //MARK: IBACTIONS
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  @IBAction func savePhotoBtnPressed(_ sender: Any) {
+  }
+  
 }

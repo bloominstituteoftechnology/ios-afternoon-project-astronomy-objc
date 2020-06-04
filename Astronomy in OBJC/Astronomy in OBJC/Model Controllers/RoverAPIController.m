@@ -35,9 +35,10 @@ static NSString *apiKey = @"kmtGVW0TesibWG6PgP541goCdHq9UyqhEfhEdbo6";
   //using curiosity rover
   NSURL *baseURLString = [NSURL URLWithString:@"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"];
   NSURLComponents *components = [NSURLComponents componentsWithURL:baseURLString resolvingAgainstBaseURL:YES];
-  NSURLQueryItem *solTerm [NSURLQueryItem queryItemWithName:@"sol" value:[NSString stringWithFormat:@"%i", sol.intValue]];
+  NSURLQueryItem *solTerm = [NSURLQueryItem queryItemWithName:@"sol" value:[NSString stringWithFormat:@"%i", sol.intValue]];
   NSURLQueryItem *pageNumber = [NSURLQueryItem queryItemWithName:@"page" value:[NSString stringWithFormat:@"%i", 1]];
   NSURLQueryItem *withAPIKey = [NSURLQueryItem queryItemWithName:@"api_key" value:apiKey];
+  components.queryItems = @[solTerm, pageNumber, withAPIKey];
   NSURL *url = components.URL;
   
   //PRINT URL

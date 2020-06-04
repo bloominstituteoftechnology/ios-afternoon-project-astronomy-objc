@@ -11,7 +11,7 @@
         <!--Sol-->
         <scene sceneID="hvl-tf-uLa">
             <objects>
-                <collectionViewController id="m25-WB-ME8" sceneMemberID="viewController">
+                <collectionViewController id="m25-WB-ME8" customClass="RoverCollectionViewController" customModule="Astronomy_in_OBJC" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="khD-E9-EPT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="imageView" destination="F4W-2V-5J1" id="vvM-Xa-SXi"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="rql-Px-riE"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="voX-p0-pt7"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -53,8 +53,16 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sol" id="8Tt-ye-bgQ">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="2cL-tS-rXa"/>
-                        <barButtonItem key="rightBarButtonItem" title="&gt;" id="wIs-UT-WUf"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="2cL-tS-rXa">
+                            <connections>
+                                <action selector="previousSolBtnPressed:" destination="m25-WB-ME8" id="fp7-Fw-6jt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="&gt;" id="wIs-UT-WUf">
+                            <connections>
+                                <action selector="nextSolBtnWasPressed:" destination="m25-WB-ME8" id="Dpl-OX-4gG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwY-O8-sIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,7 +72,7 @@
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RoverDetailViewController" customModule="Astronomy_in_OBJC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +104,9 @@
                                 <rect key="frame" x="110" y="548" width="194" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Save to Photo Library"/>
+                                <connections>
+                                    <action selector="savePhotoBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nki-YB-4vO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -112,10 +123,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="bwS-oq-CqX"/>
+                    <connections>
+                        <outlet property="imageView" destination="Z3M-yQ-oh5" id="7wz-fd-rJQ"/>
+                        <outlet property="photoDetailsLabel" destination="Lui-A9-iqy" id="cSl-3l-5Gh"/>
+                        <outlet property="whichCameraUsedLabel" destination="oXP-48-7OQ" id="SHU-rb-12t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1517" y="185"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EGl-Qk-eme">
