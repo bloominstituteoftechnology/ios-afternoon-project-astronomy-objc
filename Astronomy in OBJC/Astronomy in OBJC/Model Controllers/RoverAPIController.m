@@ -7,7 +7,11 @@
 //
 
 #import "RoverAPIController.h"
+#import "../Resources/Astronomy_in_OBJC-Bridging-Header.h"
 
+//kmtGVW0TesibWG6PgP541goCdHq9UyqhEfhEdbo6
+//https://api.nasa.gov/planetary/apod?api_key=kmtGVW0TesibWG6PgP541goCdHq9UyqhEfhEdbo6
+//https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=kmtGVW0TesibWG6PgP541goCdHq9UyqhEfhEdbo6
 
 @implementation RoverAPIController
 

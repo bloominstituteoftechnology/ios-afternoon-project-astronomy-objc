@@ -10,4 +10,9 @@
 
 @implementation RoverCollectionViewCell
 
+- (void)prepareForReuse {
+  [super prepareForReuse];
+  self.imageView.image = [UIImage imageNamed:@"Mars"];
+}
+
 @end

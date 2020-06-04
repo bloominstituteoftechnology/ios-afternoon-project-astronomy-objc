@@ -11,5 +11,6 @@
 #ifndef Astronomy_in_OBJC_Bridging_Header_h
 #define Astronomy_in_OBJC_Bridging_Header_h
 #import "/Users/lambdacatalina/Desktop/LAMBDA-SCHOOL/Unit 4 - Objc Swift Combo - Astronomy HW/ios-afternoon-project-astronomy-objc/Astronomy in OBJC/Astronomy in OBJC/Model Controllers/RoverAPIController.h"
+#import "../Views/RoverCollectionViewCell.h"
 
 #endif /* Astronomy_in_OBJC_Bridging_Header_h */
