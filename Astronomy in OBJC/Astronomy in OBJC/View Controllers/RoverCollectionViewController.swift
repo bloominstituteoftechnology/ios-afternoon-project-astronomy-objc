@@ -14,6 +14,7 @@ class RoverCollectionViewController: UICollectionViewController {
   
   //MARK Properties
   
+  var cache: Cache = Cache<NSString, NSData>()
   var sol = 0
   var photoArray: [MarsPhotos] = []
   let roverAPiController: RoverAPIController = RoverAPIController()
@@ -29,38 +30,43 @@ class RoverCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchManifest()
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//
+//        // Register cell classes
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
-    /*
+ 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+      if segue.identifier == "DetailViewSegue" {
+        if let detailVC = segue.destination as? RoverDetailViewController {
+            let cell = sender as! RoverCollectionViewCell
+            let indexPath = self.collectionView!.indexPath(for: cell)
+            let photoReference = photoArray[indexPath!.item]
+            detailVC.marsPhotoRef = photoReference
+            detailVC.roverAPIController = roverAPiController
+            
+        }
+      }
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+      return photoArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RoverCollectionViewCell
+        fetchPhotos(forCell: cell, forItemAt: indexPath)
     
         return cell
     }
@@ -98,10 +104,38 @@ class RoverCollectionViewController: UICollectionViewController {
       }
   }
   
-//  func fetchPhotos(forCell cell: RoverPicsCell, forItemAt indexPath: IndexPath) {
-//    let photo = photoArray[indexPath.item]
-////    if let imageData = 
-//  }
+  func fetchPhotos(forCell cell: RoverCollectionViewCell, forItemAt indexPath: IndexPath) {
+    let photo = photoArray[indexPath.item]
+    if let imageData = cache.object(byKey: NSString(string: "\(photo.identification)")) as Data? {
+      DispatchQueue.main.async {
+        if let image = UIImage(data: imageData){
+          cell.imageView?.image = image
+        }
+      }
+    }
+    fetchOperations = FetchOperations(photoReference: photo)
+    
+    let cacheOperation = BlockOperation {
+      if let data = self.fetchOperations.imageData {
+        self.cache.cache(NSData(data: data), forKey: NSString(string: "\(photo.identification)"))
+      }
+    }
+    let completionOperation = BlockOperation {
+      if let _ = self.collectionView.indexPath(for: cell) {
+        if let data = self.fetchOperations.imageData {
+          cell.imageView?.image = UIImage(data: data)
+        } else {
+          return
+        }
+      }
+    }
+    cacheOperation.addDependency(fetchOperations)
+    completionOperation.addDependency(fetchOperations)
+    
+    photosGettingFetched.addOperations([fetchOperations, cacheOperation], waitUntilFinished: false)
+    OperationQueue.main.addOperation(completionOperation)
+    operations[photo.identification.intValue] = fetchOperations
+  }
 
 
     // MARK: UICollectionViewDelegate
