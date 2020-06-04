@@ -148,12 +148,12 @@
 			isa = PBXGroup;
 			children = (
 				63F3C75024889F6100344B64 /* MarsPhoto.swift */,
+				63F3C75A2488A09000344B64 /* LSICamera.h */,
+				63F3C75B2488A09000344B64 /* LSICamera.m */,
 				63F3C7542488A05700344B64 /* LSIMarsRover.h */,
 				63F3C7552488A05700344B64 /* LSIMarsRover.m */,
 				63F3C7572488A08100344B64 /* LSISolDescription.h */,
 				63F3C7582488A08100344B64 /* LSISolDescription.m */,
-				63F3C75A2488A09000344B64 /* LSICamera.h */,
-				63F3C75B2488A09000344B64 /* LSICamera.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
