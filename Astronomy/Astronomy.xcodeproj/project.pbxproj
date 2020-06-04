@@ -20,6 +20,8 @@
 		63F3C746248769C200344B64 /* LSIMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C745248769C200344B64 /* LSIMarsRoverClient.m */; };
 		63F3C74A24889CBD00344B64 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C74924889CBD00344B64 /* PhotosCollectionViewController.swift */; };
 		63F3C74C24889CEB00344B64 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C74B24889CEB00344B64 /* PhotoDetailViewController.swift */; };
+		63F3C74F24889ED600344B64 /* LSIImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C74E24889ED600344B64 /* LSIImageCollectionViewCell.m */; };
+		63F3C75124889F6100344B64 /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C75024889F6100344B64 /* MarsPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		63F3C745248769C200344B64 /* LSIMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsRoverClient.m; sourceTree = "<group>"; };
 		63F3C74924889CBD00344B64 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		63F3C74B24889CEB00344B64 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		63F3C74D24889ED600344B64 /* LSIImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIImageCollectionViewCell.h; sourceTree = "<group>"; };
+		63F3C74E24889ED600344B64 /* LSIImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIImageCollectionViewCell.m; sourceTree = "<group>"; };
+		63F3C75024889F6100344B64 /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,7 @@
 		63F3C73224875A2D00344B64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63F3C75024889F6100344B64 /* MarsPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +252,8 @@
 				63F3C719248758AF00344B64 /* SceneDelegate.m in Sources */,
 				63F3C74C24889CEB00344B64 /* PhotoDetailViewController.swift in Sources */,
 				63F3C746248769C200344B64 /* LSIMarsRoverClient.m in Sources */,
+				63F3C74F24889ED600344B64 /* LSIImageCollectionViewCell.m in Sources */,
+				63F3C75124889F6100344B64 /* MarsPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
