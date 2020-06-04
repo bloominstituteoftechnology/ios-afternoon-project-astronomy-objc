@@ -18,6 +18,9 @@
 #import "NSURL+UsingHTTPS.h"
 #import "MarsPhotos+NSJSONSerialization.h"
 #import "NSObject+NSJSONSerialization.h"
+#import "FetchOperations.h"
+#import "SBACache.h"
+
 
 
 #endif /* Astronomy_in_OBJC_Bridging_Header_h */

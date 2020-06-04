@@ -29,6 +29,8 @@
 		E04D182624890D400027E805 /* NSObject+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182524890D400027E805 /* NSObject+NSJSONSerialization.m */; };
 		E04D182924890E480027E805 /* MarsPhotos+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182824890E480027E805 /* MarsPhotos+NSJSONSerialization.m */; };
 		E04D182C2489162F0027E805 /* NSURL+UsingHTTPS.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D182B2489162F0027E805 /* NSURL+UsingHTTPS.m */; };
+		E04D1832248923800027E805 /* FetchOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D1831248923800027E805 /* FetchOperations.m */; };
+		E04D1835248928D10027E805 /* SBACache.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D1834248928D10027E805 /* SBACache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,10 @@
 		E04D182824890E480027E805 /* MarsPhotos+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MarsPhotos+NSJSONSerialization.m"; sourceTree = "<group>"; };
 		E04D182A2489162F0027E805 /* NSURL+UsingHTTPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+UsingHTTPS.h"; sourceTree = "<group>"; };
 		E04D182B2489162F0027E805 /* NSURL+UsingHTTPS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UsingHTTPS.m"; sourceTree = "<group>"; };
+		E04D1830248923800027E805 /* FetchOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchOperations.h; sourceTree = "<group>"; };
+		E04D1831248923800027E805 /* FetchOperations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchOperations.m; sourceTree = "<group>"; };
+		E04D1833248928D10027E805 /* SBACache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBACache.h; sourceTree = "<group>"; };
+		E04D1834248928D10027E805 /* SBACache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBACache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,8 @@
 			children = (
 				E04D18072488F3610027E805 /* RoverAPIController.h */,
 				E04D18082488F3610027E805 /* RoverAPIController.m */,
+				E04D1830248923800027E805 /* FetchOperations.h */,
+				E04D1831248923800027E805 /* FetchOperations.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -166,6 +174,8 @@
 				E04D17F32488E7B70027E805 /* URL+Secure.swift */,
 				E04D182A2489162F0027E805 /* NSURL+UsingHTTPS.h */,
 				E04D182B2489162F0027E805 /* NSURL+UsingHTTPS.m */,
+				E04D1833248928D10027E805 /* SBACache.h */,
+				E04D1834248928D10027E805 /* SBACache.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -269,10 +279,12 @@
 				E04D17DA2488E54C0027E805 /* ViewController.m in Sources */,
 				E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */,
 				E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */,
+				E04D1832248923800027E805 /* FetchOperations.m in Sources */,
 				E04D182624890D400027E805 /* NSObject+NSJSONSerialization.m in Sources */,
 				E04D17D42488E54C0027E805 /* AppDelegate.m in Sources */,
 				E04D1814248905E20027E805 /* MarsPhotos.m in Sources */,
 				E04D1811248904110027E805 /* MarsRoverCamera.m in Sources */,
+				E04D1835248928D10027E805 /* SBACache.m in Sources */,
 				E04D180E2488F8010027E805 /* RoverCollectionViewCell.m in Sources */,
 				E04D18092488F3610027E805 /* RoverAPIController.m in Sources */,
 				E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */,

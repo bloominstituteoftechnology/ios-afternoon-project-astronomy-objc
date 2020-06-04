@@ -8,20 +8,30 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "RoverPicsCell"
 
 class RoverCollectionViewController: UICollectionViewController {
+  
+  //MARK Properties
+  
+  var sol = 0
+  var photoArray: [MarsPhotos] = []
+  let roverAPiController: RoverAPIController = RoverAPIController()
+  var fetchOperations: FetchOperations = FetchOperations()
+  var operations = [Int: Operation]()
+  var photosGettingFetched = OperationQueue()
+  
+  func updateViews() {
+    title = "Sol \(sol)"
+  }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        fetchManifest()
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
 
     /*
@@ -54,6 +64,45 @@ class RoverCollectionViewController: UICollectionViewController {
     
         return cell
     }
+  
+  //ACTIONS
+  @IBAction func previousSolBtnPressed(_ sender: UIBarButtonItem) {
+    if sol > 0 {
+        sol -= 1
+        fetchManifest()
+    } else {
+        return
+    }
+  }
+  
+  @IBAction func nextSolBtnWasPressed(_ sender: UIBarButtonItem) {
+    sol += 1
+          fetchManifest()
+  }
+  
+  //HELPERS
+  
+  func fetchManifest() {
+    roverAPiController.fetchMarsPhotos(fromSol: NSNumber(integerLiteral: sol)) { (photos, error) in
+          if error != nil {
+              NSLog(String(describing: error))
+              return
+          }
+          if photos != nil {
+              self.photoArray = photos!
+              DispatchQueue.main.async {
+                  self.collectionView.reloadData()
+                  self.updateViews()
+              }
+          }
+      }
+  }
+  
+//  func fetchPhotos(forCell cell: RoverPicsCell, forItemAt indexPath: IndexPath) {
+//    let photo = photoArray[indexPath.item]
+////    if let imageData = 
+//  }
+
 
     // MARK: UICollectionViewDelegate
 
@@ -86,4 +135,12 @@ class RoverCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension URL {
+    var usingSHTTPS: URL? {
+        guard var components = URLComponents(url: self, resolvingAgainstBaseURL: true) else { return nil }
+        components.scheme = "https"
+        return components.url
+    }
 }
