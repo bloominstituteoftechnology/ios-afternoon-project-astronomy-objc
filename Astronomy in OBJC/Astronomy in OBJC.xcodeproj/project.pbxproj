@@ -22,6 +22,7 @@
 		E04D18012488E9DA0027E805 /* RoverDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D18002488E9DA0027E805 /* RoverDetailViewController.swift */; };
 		E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D18022488EA6B0027E805 /* MarsRover.swift */; };
 		E04D18062488EB840027E805 /* SolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D18052488EB840027E805 /* SolDescription.m */; };
+		E04D18092488F3610027E805 /* RoverAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04D18082488F3610027E805 /* RoverAPIController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		E04D18022488EA6B0027E805 /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
 		E04D18042488EB840027E805 /* SolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolDescription.h; sourceTree = "<group>"; };
 		E04D18052488EB840027E805 /* SolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolDescription.m; sourceTree = "<group>"; };
+		E04D18072488F3610027E805 /* RoverAPIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoverAPIController.h; sourceTree = "<group>"; };
+		E04D18082488F3610027E805 /* RoverAPIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoverAPIController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 		E04D17EF2488E7320027E805 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E04D18072488F3610027E805 /* RoverAPIController.h */,
+				E04D18082488F3610027E805 /* RoverAPIController.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				E04D17FD2488E7B70027E805 /* LSIErrors.m in Sources */,
 				E04D18032488EA6B0027E805 /* MarsRover.swift in Sources */,
 				E04D17D42488E54C0027E805 /* AppDelegate.m in Sources */,
+				E04D18092488F3610027E805 /* RoverAPIController.m in Sources */,
 				E04D17FC2488E7B70027E805 /* LSIFileHelper.m in Sources */,
 				E04D17E52488E54F0027E805 /* main.m in Sources */,
 				E04D18062488EB840027E805 /* SolDescription.m in Sources */,
