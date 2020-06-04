@@ -13,6 +13,7 @@
 		E04D17B52488E07B0027E805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D17B32488E07B0027E805 /* Main.storyboard */; };
 		E04D17B72488E07E0027E805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04D17B62488E07E0027E805 /* Assets.xcassets */; };
 		E04D17BA2488E07E0027E805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D17B82488E07E0027E805 /* LaunchScreen.storyboard */; };
+		E04D17C22488E3D70027E805 /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = E04D17C12488E3D70027E805 /* LambdaSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E04D17B62488E07E0027E805 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E04D17B92488E07E0027E805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E04D17BB2488E07E0027E805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E04D17C12488E3D70027E805 /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LambdaSDK; path = ../../LambdaSDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				E04D17AF2488E07B0027E805 /* SceneDelegate.swift */,
 				E04D17B12488E07B0027E805 /* ViewController.swift */,
 				E04D17B32488E07B0027E805 /* Main.storyboard */,
+				E04D17C12488E3D70027E805 /* LambdaSDK */,
 				E04D17B62488E07E0027E805 /* Assets.xcassets */,
 				E04D17B82488E07E0027E805 /* LaunchScreen.storyboard */,
 				E04D17BB2488E07E0027E805 /* Info.plist */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04D17C22488E3D70027E805 /* LambdaSDK in Resources */,
 				E04D17BA2488E07E0027E805 /* LaunchScreen.storyboard in Resources */,
 				E04D17B72488E07E0027E805 /* Assets.xcassets in Resources */,
 				E04D17B52488E07B0027E805 /* Main.storyboard in Resources */,
