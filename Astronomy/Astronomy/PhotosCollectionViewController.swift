@@ -8,8 +8,9 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "ImageCell"
 
+@objc(CATPhotosCollectionViewController)
 class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {

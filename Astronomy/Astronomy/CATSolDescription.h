@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(SolDescription)
 @interface CATSolDescription : NSObject
 
 @end
