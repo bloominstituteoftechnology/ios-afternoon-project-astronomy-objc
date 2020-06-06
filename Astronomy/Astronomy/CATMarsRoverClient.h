@@ -18,11 +18,11 @@ typedef void (^MarsPhotosCompletion)(NSArray <CATMarsPhoto *> *photos, NSError *
 NS_SWIFT_NAME(MarsRoverClient)
 @interface CATMarsRoverClient : NSObject
 
-- (void)fetchMarsRoverWithName:(NSString *)name usingSession:(NSURLSession *)session completion:(MarsRoverCompletion)completion;
+- (void)fetchMarsRoverWithName:(NSString *)name completion:(MarsRoverCompletion)completion;
 
 - (void)saveMarsRoverToLocal:(MarsRoverCompletion)completion;
 
-- (void)fetchPhotosFrom:(CATMarsRover *)rover onSol:(int)sol usingSession:(NSURLSession *)session completion:(MarsPhotosCompletion)photos;
+- (void)fetchPhotosFrom:(CATMarsRover *)rover onSol:(int)sol completion:(MarsPhotosCompletion)photos;
 
 - (void)fetchLocalPhotosFrom:(CATMarsRover *)rover onSol:(int)sol completion:(MarsPhotosCompletion)photos;
 
