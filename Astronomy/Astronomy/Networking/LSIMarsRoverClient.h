@@ -6,12 +6,29 @@
 //  Copyright © 2020 David Wright. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class LSIMarsRover;
+@class LSIMarsPhotoReference;
 
+typedef void(^MarsRoverFetcherCompletionHandler)(LSIMarsRover *_Nullable marsRover, NSError *_Nullable error);
+typedef void(^PhotosFetcherCompletionHandler)(NSArray<LSIMarsPhotoReference *> *_Nullable photos, NSError *_Nullable error);
+typedef void(^PhotoFetcherCompletionHandler)(UIImage *_Nullable photo, NSError *_Nullable error);
+
+NS_SWIFT_NAME(MarsRoverClient)
 @interface LSIMarsRoverClient : NSObject
 
-@end
+- (void)fetchMarsRoverWithName:(nonnull NSString *)name
+//                  usingSession:(nullable NSURLSession *)session
+             completionHandler:(nonnull MarsRoverFetcherCompletionHandler)completionHandler;
 
-NS_ASSUME_NONNULL_END
+- (void)fetchPhotosFromMarsRover:(nonnull LSIMarsRover *)marsRover
+                           onSol:(int)sol
+//                    usingSession:(nullable NSURLSession *)session
+               completionHandler:(nonnull PhotosFetcherCompletionHandler)completionHandler;
+
+- (void)fetchPhotoWithURLString:(nonnull NSString *)URLString
+                   usingSession:(nullable NSURLSession *)session
+              completionHandler:(nonnull PhotoFetcherCompletionHandler)completionHandler;
+
+@end
