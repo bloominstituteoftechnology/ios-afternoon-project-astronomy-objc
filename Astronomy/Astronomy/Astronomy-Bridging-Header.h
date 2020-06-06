@@ -6,3 +6,4 @@
 #import "CATMarsPhoto.h"
 #import "CATCache.h"
 #import "CATCamera.h"
+#import "CATMarsRoverClient.h"
