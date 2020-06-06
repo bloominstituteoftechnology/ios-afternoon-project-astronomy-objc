@@ -24,6 +24,7 @@
 		9512E93E248896C2005B6A36 /* CATSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E93D248896C2005B6A36 /* CATSolDescription.m */; };
 		9512E941248896DD005B6A36 /* CATCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E940248896DD005B6A36 /* CATCamera.m */; };
 		9512E944248896F6005B6A36 /* CATCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512E943248896F6005B6A36 /* CATCache.m */; };
+		95C2F663248B246800B3678A /* CATMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2F662248B246800B3678A /* CATMarsRoverClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		9512E940248896DD005B6A36 /* CATCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATCamera.m; sourceTree = "<group>"; };
 		9512E942248896F6005B6A36 /* CATCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATCache.h; sourceTree = "<group>"; };
 		9512E943248896F6005B6A36 /* CATCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATCache.m; sourceTree = "<group>"; };
+		95C2F661248B246800B3678A /* CATMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATMarsRoverClient.h; sourceTree = "<group>"; };
+		95C2F662248B246800B3678A /* CATMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATMarsRoverClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 		9512E90A24888BF8005B6A36 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				95C2F660248B244200B3678A /* Networking */,
 				9512E93624889641005B6A36 /* Models */,
 				9512E91424888BF8005B6A36 /* Main.storyboard */,
 				9512E924248890C8005B6A36 /* View Controllers */,
@@ -143,6 +147,15 @@
 				9512E943248896F6005B6A36 /* CATCache.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		95C2F660248B244200B3678A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				95C2F661248B246800B3678A /* CATMarsRoverClient.h */,
+				95C2F662248B246800B3678A /* CATMarsRoverClient.m */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +243,7 @@
 				9512E941248896DD005B6A36 /* CATCamera.m in Sources */,
 				9512E9292488911B005B6A36 /* PhotoDetailViewController.swift in Sources */,
 				9512E927248890FB005B6A36 /* PhotosCollectionViewController.swift in Sources */,
+				95C2F663248B246800B3678A /* CATMarsRoverClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
