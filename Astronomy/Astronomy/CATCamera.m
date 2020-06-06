@@ -9,5 +9,23 @@
 #import "CATCamera.h"
 
 @implementation CATCamera
+- (instancetype)initWithID:(int)anIdentifier
+                      name:(NSString *)aName
+                   roverID:(int)roverID
+                  fullName:(NSString *)aFullName
+{
+    if (self = [super init]) {
+        _identifier = anIdentifier;
+        _name = aName;
+        _roverID = roverID;
+        _fullName = aFullName;
+    }
+    return self;
+}
+
+//- (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary
+//{
+//
+//}
 
 @end
