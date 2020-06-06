@@ -8,10 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class LSISolDescription;
 
+NS_SWIFT_NAME(MarsRover)
 @interface LSIMarsRover : NSObject
 
-@end
+@property (nonatomic, copy, readonly, nonnull) NSString *name;
+@property (nonatomic, readonly) int numberOfPhotos;
+@property (nonatomic, readonly) int maxSol;
+@property (nonatomic, copy, readonly, nonnull) NSArray<LSISolDescription *> *solDescriptions;
 
-NS_ASSUME_NONNULL_END
+// Unused API values
+/*
+@property (nonatomic, readonly, nonnull) NSDate *landingDate;       // API key: "landing_date"
+@property (nonatomic, readonly, nonnull) NSDate *launchDate;        // API key: "launch_date"
+@property (nonatomic, copy, readonly, nonnull) NSString *status;    // API key: "status"
+*/
+
+- (nonnull instancetype)initWithName:(nonnull NSString *)name
+                      numberOfPhotos:(int)numberOfPhotos
+                              maxSol:(int)maxSol
+                     solDescriptions:(nonnull NSArray<LSISolDescription *> *)solDescriptions;
+
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
+
+@end
