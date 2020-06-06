@@ -4,4 +4,6 @@
 
 #import "TLPhotoController.h"
 #import "TLManifest.h"
+#import "PhotosCollectionViewCell.h"
+#import "FetchPhotoOperation.h"
 

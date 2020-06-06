@@ -19,9 +19,12 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-bl-Oxr">
                                 <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fM9-JE-rcN"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s0e-46-rDA">
                                 <rect key="frame" x="0.0" y="127" width="414" height="769"/>
@@ -33,7 +36,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zUk-2U-hEN">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="zUk-2U-hEN" customClass="PhotosCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JH3-Yl-aqy">
@@ -84,14 +87,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sol #" id="8R7-q1-Iif">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowtriangle.left.fill" catalog="system" id="es6-Vr-vjX"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrowtriangle.right.fill" catalog="system" id="KZr-bj-yKe"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowtriangle.left.fill" catalog="system" id="es6-Vr-vjX">
+                            <connections>
+                                <action selector="lastSolButtonTapped:" destination="BYZ-38-t0r" id="dUG-Sh-o3S"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrowtriangle.right.fill" catalog="system" id="KZr-bj-yKe">
+                            <connections>
+                                <action selector="solButtonTapped:" destination="BYZ-38-t0r" id="DQ1-FV-Ba8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cameraSegmentedControl" destination="kpl-bl-Oxr" id="YIZ-pZ-DmX"/>
-                        <outlet property="collectonView" destination="s0e-46-rDA" id="5WI-x1-hRE"/>
-                        <outlet property="nextSolButton" destination="KZr-bj-yKe" id="P1e-p7-ckF"/>
-                        <outlet property="previousSolButton" destination="es6-Vr-vjX" id="86s-A6-aCi"/>
+                        <outlet property="cameraSegmentedControl" destination="kpl-bl-Oxr" id="Ysb-ui-QSQ"/>
+                        <outlet property="collectonView" destination="s0e-46-rDA" id="R3B-AD-4PQ"/>
+                        <outlet property="nextSolButton" destination="KZr-bj-yKe" id="ymn-lm-AAl"/>
+                        <outlet property="previousSolButton" destination="es6-Vr-vjX" id="SRK-c8-VeU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
