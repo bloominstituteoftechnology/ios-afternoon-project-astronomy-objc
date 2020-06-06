@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(Manifest)
 @interface TLManifest : NSObject
 
 @property (nonatomic, readonly) int solID;

@@ -20,28 +20,83 @@ class PhotosViewController: UIViewController {
     let operationsDict: [Int : Operation] = [:]
     let photoFetchQueue = OperationQueue()
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var collectonView: UICollectionView!
     @IBOutlet weak var previousSolButton: UIBarButtonItem!
     @IBOutlet weak var nextSolButton: UIBarButtonItem!
     @IBOutlet weak var cameraSegmentedControl: UISegmentedControl!
     
-
+    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        cameraSegmentedControl.isEnabled = false
+        previousSolButton.isEnabled = false
+        setupSegmentedControl()
+        networkRequest()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: Private Methods
+    private func networkRequest() {
+        photoController.fetchManifest { error in
+            if let error = error {
+                print("Error fetching manifest \(error)")
+                return
+            }
+            
+            self.hasFinished = true
+            
+            DispatchQueue.main.async {
+                self.collectonView.reloadData()
+                self.setupSegmentedControl()
+                self.title = "Sol \(Int((self.photoController.manifests[self.sol] as! Manifest).solID))"
+            }
+            
+            self.photoController.fetchSol(by: self.photoController.manifests[self.sol] as! Manifest) { error in
+                if let error = error {
+                    print("Error fetching manifest \(error)")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectonView.reloadData()
+                    self.hasPhotoFinished = true
+                    self.cameraSegmentedControl.isEnabled = true
+                }
+            }
+        }
     }
-    */
+    
+    private func setupSegmentedControl() {
+        cameraSegmentedControl.removeAllSegments()
+        
+        var i = 1
+        cameraSegmentedControl.insertSegment(withTitle: "NONE", at: 0, animated: true)
+        for item in (photoController.manifests[sol] as! Manifest).cameras {
+            cameraSegmentedControl.insertSegment(withTitle: item, at: i, animated: true)
+            i += 1
+        }
+        cameraSegmentedControl.selectedSegmentIndex = 0
+    }
+    
+    private func setupCollectionViewCells() {
+        
+    }
 
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            guard let photoVC = segue.destination as? PhotoDetailViewController else { return }
+            guard let selected = collectonView.indexPathsForSelectedItems else { return }
+            
+            if arrayOfFilters.count != 0 {
+                photoVC.photo = arrayOfFilters[selected[0].row]
+            } else {
+                photoVC.photo = (photoController.photos[selected[0].row] as! Photo)
+            }
+            
+            photoVC.photoController = photoController
+        }
+    }
 }

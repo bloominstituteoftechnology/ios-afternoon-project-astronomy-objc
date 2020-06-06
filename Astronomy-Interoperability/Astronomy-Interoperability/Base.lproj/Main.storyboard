@@ -65,7 +65,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="185" height="185"/>
                                         <connections>
-                                            <segue destination="CP1-2p-lbS" kind="show" id="VLs-qK-YRB"/>
+                                            <segue destination="CP1-2p-lbS" kind="show" identifier="ShowDetail" id="VLs-qK-YRB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
