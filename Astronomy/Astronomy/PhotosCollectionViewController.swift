@@ -14,8 +14,8 @@ private let reuseIdentifier = "ImageCell"
 class PhotosCollectionViewController: UICollectionViewController {
 
     // Properties
-//    private let client = MarsRoverClient()
-    private let cache = Cache<Int, UIImage>()
+    private let client = MarsRoverClient()
+//    private let cache = Cache<Int, UIImage>()
     private let photoFetchQueue = OperationQueue()
     private var operations = [Int : Operation]()
 
@@ -33,8 +33,8 @@ class PhotosCollectionViewController: UICollectionViewController {
                 let sol = solDescription?.sol {
                 photoReferences = []
                 client.fetchPhotos(from: rover, onSol: sol) { (photoRefs, error) in
-                    if let e = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(e)"); return }
-                    self.photoReferences = photoRefs ?? []
+//                  if let e = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(e)"); return }
+                    self.photoReferences = photoRefs
                     DispatchQueue.main.async { self.updateViews() }
                 }
             }
@@ -43,7 +43,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     private var photoReferences = [MarsPhoto]() {
         didSet {
-            cache.clear()
+//            cache.clear()
             DispatchQueue.main.async { self.collectionView?.reloadData() }
         }
     }
@@ -143,7 +143,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     private func configureTitleView() {
 
         let font = UIFont.systemFont(ofSize: 30)
-        let attrs = [NSAttributedStringKey.font: font]
+        let attrs = [NSAttributedString.Key.font: font]
 
         let prevTitle = NSAttributedString(string: "<", attributes: attrs)
         let prevButton = UIButton(type: .system)
