@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 NS_SWIFT_NAME(Camera)
 @interface LSICamera : NSObject
 
-@end
+@property (nonatomic, readonly) int cameraId;
+@property (nonatomic, readonly) int roverId;
+@property (nonatomic, copy, readonly, nonnull) NSString *name;
+@property (nonatomic, copy, readonly, nonnull) NSString *fullName;
 
-NS_ASSUME_NONNULL_END
+- (nonnull instancetype)initWithCameraId:(int)cameraId
+                                 roverId:(int)roverId
+                                    name:(nonnull NSString *)name
+                                fullName:(nonnull NSString *)fullName;
+
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
+
+@end
