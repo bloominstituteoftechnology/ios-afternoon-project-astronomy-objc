@@ -7,7 +7,171 @@
 //
 
 #import "LSIMarsRoverClient.h"
+#import "Astronomy-Swift.h"
+#import "LSIMarsRover.h"
+#import "LSIErrors.h"
+
+@class LSIMarsPhotoReference;
+
+//https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd
+static NSString *const MarsRoverAPIBaseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
+static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
 
 @implementation LSIMarsRoverClient
+
+- (void)fetchMarsRoverWithName:(NSString *)name
+//                  usingSession:(NSURLSession *)session
+             completionHandler:(MarsRoverFetcherCompletionHandler)completionHandler
+{
+    NSURL *url = [self urlForInfoForRoverWithName:name];
+    NSLog(@"Fetching rover info: %@", url);
+    
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching rover info: %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        NSError *jsonError;
+        NSDictionary *JSONDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        NSDictionary *roverInfoDictionary = [JSONDictionary objectForKey:@"photo_manifest"];
+        if (!roverInfoDictionary) {
+            NSLog(@"Error decoding JSON: %@", jsonError);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, jsonError);
+            });
+            return;
+        }
+        
+        LSIMarsRover *roverInfo = [[LSIMarsRover alloc] initWithDictionary:roverInfoDictionary];
+        if (!roverInfo) {
+            NSError *error = [NSError errorWithDomain:@"RoverInfoFetcherDomain" code:-1 userInfo:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(roverInfo, nil);
+        });
+        
+    }] resume];
+}
+
+- (void)fetchPhotosFromMarsRover:(LSIMarsRover *)marsRover
+                           onSol:(int)sol
+//                    usingSession:(NSURLSession *)session
+               completionHandler:(PhotosFetcherCompletionHandler)completionHandler
+{
+    NSURL *url = [self urlForPhotosFromRoverWithName:marsRover.name onSol:sol];
+    NSLog(@"Fetching photos: %@", url);
+    
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching photos: %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        NSError *jsonError;
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if (!dictionary) {
+            NSLog(@"Error decoding JSON: %@", jsonError);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, jsonError);
+            });
+            return;
+        }
+        
+        NSArray *photos = [dictionary allValues];
+        if (!photos) {
+            NSError *error = [NSError errorWithDomain:@"PhotoFetcherDomain" code:-1 userInfo:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(photos, nil);
+        });
+        
+    }] resume];
+}
+
+- (void)fetchPhotoWithURLString:(NSString *)URLString
+                   usingSession:(NSURLSession *)session
+              completionHandler:(PhotoFetcherCompletionHandler)completionHandler
+{
+    if (!session) {
+        session = NSURLSession.sharedSession;
+    }
+    
+    NSURL *URL = [NSURL URLWithString:URLString];
+    
+    NSLog(@"Fetching photo from: %@", URLString);
+    
+    [[session dataTaskWithURL:URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching photo: %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        if (!data) {
+            NSError *error = errorWithMessage(@"Error receiving photo data: %@", LSIDataNilError);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        UIImage *photo = [UIImage imageWithData:data];
+        if (!photo) {
+            NSError *error = [NSError errorWithDomain:@"PhotoFetcherDomain" code:-1 userInfo:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(photo, nil);
+        });
+        
+    }] resume];
+}
+
+- (NSURL *)urlForInfoForRoverWithName:(NSString *)roverName
+{
+    NSURL *baseURL = [NSURL URLWithString:MarsRoverAPIBaseURLString];
+    NSURL *queryURL = [[baseURL
+                         URLByAppendingPathComponent:@"manifests"]
+                        URLByAppendingPathComponent:roverName];
+    NSURLComponents *queryURLComponents = [NSURLComponents componentsWithURL:queryURL resolvingAgainstBaseURL:YES];
+    [queryURLComponents setQueryItems:@[[NSURLQueryItem queryItemWithName:@"api_key" value:APIKey]]];
+    return [queryURLComponents URL];
+}
+
+- (NSURL *)urlForPhotosFromRoverWithName:(NSString *)roverName onSol:(int)sol
+{
+    NSURL *baseURL = [NSURL URLWithString:MarsRoverAPIBaseURLString];
+    NSURL *queryURL = [[[baseURL
+                         URLByAppendingPathComponent:@"rovers"]
+                        URLByAppendingPathComponent:roverName]
+                       URLByAppendingPathComponent:@"photos"];
+    NSURLComponents *queryURLComponents = [NSURLComponents componentsWithURL:queryURL resolvingAgainstBaseURL:YES];
+    [queryURLComponents setQueryItems:@[[NSURLQueryItem queryItemWithName:@"sol" value:[@(sol) stringValue]],
+                                        [NSURLQueryItem queryItemWithName:@"api_key" value:APIKey]]];
+    return [queryURLComponents URL];
+}
 
 @end
