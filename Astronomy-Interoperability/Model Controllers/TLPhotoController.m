@@ -9,7 +9,7 @@
 #import "TLPhotoController.h"
 #import <UIKit/UIKit.h>
 #import "LSIErrors.h"
-#import "Astronomy-Interoperability-Bridging-Header.h"
+#import "Astronomy_Interoperability-Swift.h"
 #import "TLManifest.h"
 
 NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";

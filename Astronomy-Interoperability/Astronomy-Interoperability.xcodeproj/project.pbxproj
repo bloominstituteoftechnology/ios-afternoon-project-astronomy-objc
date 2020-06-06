@@ -21,10 +21,9 @@
 		17B6A79F2488C12500732311 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B6A79D2488C12500732311 /* LSIErrors.m */; };
 		17B6A7A22488D29200732311 /* Photos.json in Resources */ = {isa = PBXBuildFile; fileRef = 17B6A7A12488D29200732311 /* Photos.json */; };
 		17B6A7A52488D2EA00732311 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6A7A42488D2EA00732311 /* PhotoDetailViewController.swift */; };
+		1F56529A248C0B750061BC4F /* FetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F565299248C0B750061BC4F /* FetchPhotoOperation.m */; };
 		1F794FE8248BF131008813D0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F794FE7248BF131008813D0 /* README.md */; };
-		1F795029248BF7F7008813D0 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F795028248BF7F6008813D0 /* LSIFileHelper.m */; };
-		1F79502C248BF800008813D0 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79502B248BF800008813D0 /* LSILog.m */; };
-		1F79502E248BF805008813D0 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F79502D248BF805008813D0 /* URL+Secure.swift */; };
+		1F795031248C0559008813D0 /* PhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F795030248C0559008813D0 /* PhotosCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,12 +50,11 @@
 		17B6A79E2488C12500732311 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIErrors.h; path = ../../LambdaSDK/LSIErrors.h; sourceTree = "<group>"; };
 		17B6A7A12488D29200732311 /* Photos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Photos.json; sourceTree = "<group>"; };
 		17B6A7A42488D2EA00732311 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		1F565298248C0B750061BC4F /* FetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchPhotoOperation.h; sourceTree = "<group>"; };
+		1F565299248C0B750061BC4F /* FetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchPhotoOperation.m; sourceTree = "<group>"; };
 		1F794FE7248BF131008813D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1F795027248BF7F0008813D0 /* LSIFileHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSIFileHelper.h; path = ../../LambdaSDK/LSIFileHelper.h; sourceTree = "<group>"; };
-		1F795028248BF7F6008813D0 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIFileHelper.m; path = ../../LambdaSDK/LSIFileHelper.m; sourceTree = "<group>"; };
-		1F79502A248BF7FB008813D0 /* LSILog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSILog.h; path = ../../LambdaSDK/LSILog.h; sourceTree = "<group>"; };
-		1F79502B248BF800008813D0 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSILog.m; path = ../../LambdaSDK/LSILog.m; sourceTree = "<group>"; };
-		1F79502D248BF805008813D0 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Secure.swift"; path = "../../LambdaSDK/URL+Secure.swift"; sourceTree = "<group>"; };
+		1F79502F248C0559008813D0 /* PhotosCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewCell.h; sourceTree = "<group>"; };
+		1F795030248C0559008813D0 /* PhotosCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,11 +143,8 @@
 			children = (
 				17B6A79E2488C12500732311 /* LSIErrors.h */,
 				17B6A79D2488C12500732311 /* LSIErrors.m */,
-				1F795027248BF7F0008813D0 /* LSIFileHelper.h */,
-				1F795028248BF7F6008813D0 /* LSIFileHelper.m */,
-				1F79502A248BF7FB008813D0 /* LSILog.h */,
-				1F79502B248BF800008813D0 /* LSILog.m */,
-				1F79502D248BF805008813D0 /* URL+Secure.swift */,
+				1F565298248C0B750061BC4F /* FetchPhotoOperation.h */,
+				1F565299248C0B750061BC4F /* FetchPhotoOperation.m */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -165,6 +160,8 @@
 		17B6A7A32488D2B100732311 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F79502F248C0559008813D0 /* PhotosCollectionViewCell.h */,
+				1F795030248C0559008813D0 /* PhotosCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,18 +240,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B6A79B2488C06C00732311 /* Photo.swift in Sources */,
-				1F79502C248BF800008813D0 /* LSILog.m in Sources */,
 				17B6A7932488B43D00732311 /* TLPhotoController.m in Sources */,
 				17B6A79F2488C12500732311 /* LSIErrors.m in Sources */,
 				17B6A77B24889C2700732311 /* ViewController.m in Sources */,
 				17B6A7972488B6AF00732311 /* TLManifest.m in Sources */,
 				17B6A77524889C2700732311 /* AppDelegate.m in Sources */,
-				1F795029248BF7F7008813D0 /* LSIFileHelper.m in Sources */,
+				1F795031248C0559008813D0 /* PhotosCollectionViewCell.m in Sources */,
 				17B6A78624889C2C00732311 /* main.m in Sources */,
 				17B6A77824889C2700732311 /* SceneDelegate.m in Sources */,
+				1F56529A248C0B750061BC4F /* FetchPhotoOperation.m in Sources */,
 				17B6A7A52488D2EA00732311 /* PhotoDetailViewController.swift in Sources */,
 				17B6A78F2488A08600732311 /* PhotosViewController.swift in Sources */,
-				1F79502E248BF805008813D0 /* URL+Secure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

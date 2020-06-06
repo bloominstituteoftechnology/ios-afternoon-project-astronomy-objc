@@ -69,10 +69,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="XWB-cV-e0j"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hUh-cW-QMC"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -93,7 +89,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cameraSegmentedControl" destination="kpl-bl-Oxr" id="YIZ-pZ-DmX"/>
-                        <outlet property="collectonView" destination="s0e-46-rDA" id="DXP-r1-QAw"/>
+                        <outlet property="collectonView" destination="s0e-46-rDA" id="5WI-x1-hRE"/>
                         <outlet property="nextSolButton" destination="KZr-bj-yKe" id="P1e-p7-ckF"/>
                         <outlet property="previousSolButton" destination="es6-Vr-vjX" id="86s-A6-aCi"/>
                     </connections>
