@@ -31,4 +31,33 @@ class MarsPhotoReference: NSObject {
         self.earthDate = earthDate
         self.imageURL = imageURL
     }
+    
+    @objc(initWithDictionary:)
+    init?(dictionary: [String:Any]) {
+        guard let id = dictionary["id"] as? Int else { return nil }
+        guard let sol = dictionary["sol"] as? Int else { return nil }
+        
+        let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.timeZone = TimeZone(abbreviation: "GMT")
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter
+        }()
+        
+        guard let earthDateString = dictionary["earth_date"] as? String else { return nil }
+        guard let earthDate = dateFormatter.date(from: earthDateString) else { return nil }
+        
+        guard let imageURLString = dictionary["img_src"] as? String else { return nil }
+        guard let imageURL = URL(string: imageURLString) else { return nil }
+        
+        guard let cameraDictionary = dictionary["camera"] as? [String:Any] else { return nil }
+        guard let camera = Camera(dictionary: cameraDictionary) else { return nil }
+        
+        self.id = id
+        self.sol = sol
+        self.earthDate = earthDate
+        self.imageURL = imageURL
+        self.camera = camera
+    }
 }
