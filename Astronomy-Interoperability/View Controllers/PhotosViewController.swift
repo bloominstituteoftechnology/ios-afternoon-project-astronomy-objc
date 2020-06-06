@@ -32,7 +32,7 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         cameraSegmentedControl.isEnabled = false
         previousSolButton.isEnabled = false
-        setupSegmentedControl()
+        setupCollectionViewCells()
         networkRequest()
     }
     
@@ -121,7 +121,28 @@ class PhotosViewController: UIViewController {
     }
     
     @IBAction func solButtonTapped(_ sender: Any) {
-        
+        if hasFinished, sol < Int((self.photoController.manifests.count - 1)) {
+            
+            self.sol += 1
+            hasPhotoFinished = false
+            cameraSegmentedControl.isEnabled = false
+            self.title = "Sol \(Int((self.photoController.manifests[self.sol] as! Manifest).solID))"
+            self.previousSolButton.isEnabled = true
+            self.setupSegmentedControl()
+            
+            photoController.fetchSol(by: self.photoController.manifests[self.sol] as! Manifest) { error in
+                if let error = error {
+                    print("Error fetching manifest \(error)")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.hasPhotoFinished = true
+                    self.collectonView.reloadData()
+                    self.cameraSegmentedControl.isEnabled = true
+                }
+            }
+        }
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {

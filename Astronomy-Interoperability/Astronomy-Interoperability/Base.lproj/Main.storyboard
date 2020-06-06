@@ -49,6 +49,14 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-ir-pYe">
                                                             <rect key="frame" x="0.0" y="0.0" width="169" height="169"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gla-FG-s6G">
+                                                            <rect key="frame" x="8" y="169" width="153" height="0.0"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
@@ -68,6 +76,9 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="185" height="185"/>
                                         <connections>
+                                            <outlet property="imageBackgroundView" destination="JH3-Yl-aqy" id="okn-Fn-Xl0"/>
+                                            <outlet property="imageView" destination="ZTI-ir-pYe" id="CDc-kV-Ltc"/>
+                                            <outlet property="textLabel" destination="Gla-FG-s6G" id="01H-fp-RZ4"/>
                                             <segue destination="CP1-2p-lbS" kind="show" identifier="ShowDetail" id="VLs-qK-YRB"/>
                                         </connections>
                                     </collectionViewCell>
@@ -107,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="139"/>
+            <point key="canvasLocation" x="953.62318840579712" y="138.61607142857142"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="v9g-wQ-AdG">
@@ -189,6 +200,9 @@
                                 <state key="normal" title="Save to Photo Library">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="CP1-2p-lbS" eventType="touchUpInside" id="za4-sP-6cc"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="q0L-bA-yZN">
                                 <rect key="frame" x="0.0" y="786" width="414" height="43"/>

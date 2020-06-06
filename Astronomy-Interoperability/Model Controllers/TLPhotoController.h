@@ -22,11 +22,10 @@ NS_SWIFT_NAME(PhotoController)
 
 //MARK: - Methods:
 - (void)fetchingSinglePhotoWithURL:(NSURL *_Nonnull)imgSrc
-                   completionBlock:(void(^_Nonnull)(NSError * _Nullable error, UIImage * _Nullable image))completionBlock;
+                   completionBlock:(void (^_Nonnull)(NSError * _Nullable error, UIImage * _Nullable image))completionBlock;
 
 - (void)fetchManifest:(void (^_Nonnull)(NSError * _Nullable error))completionBlock;
-- (void)fetchSolByManifest:(TLManifest *_Nonnull)manifest
-           completionBlock:(void (^_Nonnull)(NSError * _Nullable error))completionBlock;
+- (void)fetchSolByManifest:(TLManifest *_Nonnull)manifest completionBlock:(void (^_Nonnull)(NSError * _Nullable error))completionBlock;
 
 @end
 

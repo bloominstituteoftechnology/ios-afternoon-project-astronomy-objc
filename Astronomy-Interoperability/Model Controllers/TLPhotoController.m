@@ -37,7 +37,7 @@ NSString *apiKey = @"3MYY5NPWds1kZu7B3B7In88FKEHYXncJQkgBFNr6";
     return self;
 }
 
-- (void)fetchingSinglePhotoWithURL:(NSURL *)imgSrc completionBlock:(void (^)(NSError * _Nullable, UIImage * _Nullable))completionBlock {
+- (void)fetchingSinglePhotoWithURL:(NSURL *)imgSrc completionBlock:(void (^)(NSError * _Nullable error, UIImage * _Nullable image))completionBlock {
     
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:imgSrc completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"Inside of datatask completionHandler with url: %@", imgSrc);
