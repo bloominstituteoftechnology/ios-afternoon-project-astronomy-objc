@@ -12,6 +12,8 @@
 @class Photo;
 @class UIImage;
 @class TLManifest;
+
+NS_SWIFT_NAME(PhotoController)
 @interface TLPhotoController : NSObject
 
 //MARK: - Properties:

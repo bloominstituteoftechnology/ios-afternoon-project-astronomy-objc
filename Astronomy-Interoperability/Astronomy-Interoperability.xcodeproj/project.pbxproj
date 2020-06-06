@@ -22,6 +22,7 @@
 		17B6A7A22488D29200732311 /* Photos.json in Resources */ = {isa = PBXBuildFile; fileRef = 17B6A7A12488D29200732311 /* Photos.json */; };
 		17B6A7A52488D2EA00732311 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6A7A42488D2EA00732311 /* PhotoDetailViewController.swift */; };
 		1F56529A248C0B750061BC4F /* FetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F565299248C0B750061BC4F /* FetchPhotoOperation.m */; };
+		1F56529D248C113B0061BC4F /* TLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F56529C248C113B0061BC4F /* TLCache.m */; };
 		1F794FE8248BF131008813D0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F794FE7248BF131008813D0 /* README.md */; };
 		1F795031248C0559008813D0 /* PhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F795030248C0559008813D0 /* PhotosCollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,8 @@
 		17B6A7A42488D2EA00732311 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		1F565298248C0B750061BC4F /* FetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchPhotoOperation.h; sourceTree = "<group>"; };
 		1F565299248C0B750061BC4F /* FetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchPhotoOperation.m; sourceTree = "<group>"; };
+		1F56529B248C113B0061BC4F /* TLCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLCache.h; sourceTree = "<group>"; };
+		1F56529C248C113B0061BC4F /* TLCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCache.m; sourceTree = "<group>"; };
 		1F794FE7248BF131008813D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1F79502F248C0559008813D0 /* PhotosCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewCell.h; sourceTree = "<group>"; };
 		1F795030248C0559008813D0 /* PhotosCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewCell.m; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 			children = (
 				17B6A79E2488C12500732311 /* LSIErrors.h */,
 				17B6A79D2488C12500732311 /* LSIErrors.m */,
+				1F56529B248C113B0061BC4F /* TLCache.h */,
+				1F56529C248C113B0061BC4F /* TLCache.m */,
 				1F565298248C0B750061BC4F /* FetchPhotoOperation.h */,
 				1F565299248C0B750061BC4F /* FetchPhotoOperation.m */,
 			);
@@ -244,6 +249,7 @@
 				17B6A79F2488C12500732311 /* LSIErrors.m in Sources */,
 				17B6A77B24889C2700732311 /* ViewController.m in Sources */,
 				17B6A7972488B6AF00732311 /* TLManifest.m in Sources */,
+				1F56529D248C113B0061BC4F /* TLCache.m in Sources */,
 				17B6A77524889C2700732311 /* AppDelegate.m in Sources */,
 				1F795031248C0559008813D0 /* PhotosCollectionViewCell.m in Sources */,
 				17B6A78624889C2C00732311 /* main.m in Sources */,

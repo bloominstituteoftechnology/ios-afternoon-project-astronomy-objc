@@ -10,8 +10,15 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
-    //MARK: - Properties:
-    
+    // MARK: - Properties:
+    let photoController = PhotoController()
+    var hasFinished: Bool = false
+    var hasPhotoFinished: Bool = false
+    var arrayOfFilters: [Photo] = []
+    var sol: Int = 2
+    let cache = NSCache<NSNumber, UIImage>()
+    let operationsDict: [Int : Operation] = [:]
+    let photoFetchQueue = OperationQueue()
     
     
     @IBOutlet weak var collectonView: UICollectionView!
