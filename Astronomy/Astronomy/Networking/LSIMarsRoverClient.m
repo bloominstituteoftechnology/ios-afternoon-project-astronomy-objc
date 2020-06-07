@@ -128,9 +128,15 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
         session = NSURLSession.sharedSession;
     }
     
-    NSURL *URL = [NSURL URLWithString:URLString];
+    NSURL *URL = [NSURL URLWithString:URLString].usingHTTPS;
+    if (!URL) {
+        NSError *error = errorWithMessage(@"Error: URL does not conform to secure HTTPS protocol: %@", 1003);
+        completionHandler(nil, error);
+        return;
+    }
+    //guard let imageURL = marsPhotoReference.imageURL.usingHTTPS else { return nil }
     
-    NSLog(@"Fetching photo from: %@", URLString);
+    NSLog(@"Fetching photo from: %@", [URL absoluteString]);
     
     [[session dataTaskWithURL:URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
