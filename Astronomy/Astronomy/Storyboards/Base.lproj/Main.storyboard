@@ -43,6 +43,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="imageView" destination="xqW-rh-E2F" id="vlU-8g-KGr"/>
                                     <segue destination="BNa-1a-Gd2" kind="show" identifier="ShowDetail" id="yAp-Kd-X0y"/>
                                 </connections>
                             </collectionViewCell>
