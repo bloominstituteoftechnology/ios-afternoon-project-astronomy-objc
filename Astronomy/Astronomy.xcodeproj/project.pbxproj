@@ -25,6 +25,7 @@
 		63F3C7562488A05700344B64 /* LSIMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C7552488A05700344B64 /* LSIMarsRover.m */; };
 		63F3C7592488A08100344B64 /* LSISolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C7582488A08100344B64 /* LSISolDescription.m */; };
 		63F3C75C2488A09000344B64 /* LSICamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C75B2488A09000344B64 /* LSICamera.m */; };
+		63F3C763248D16FE00344B64 /* LSIFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C762248D16FE00344B64 /* LSIFetchPhotoOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,8 @@
 		63F3C75A2488A09000344B64 /* LSICamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSICamera.h; sourceTree = "<group>"; };
 		63F3C75B2488A09000344B64 /* LSICamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSICamera.m; sourceTree = "<group>"; };
 		63F3C75D2488AA3A00344B64 /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		63F3C761248D16FE00344B64 /* LSIFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIFetchPhotoOperation.h; sourceTree = "<group>"; };
+		63F3C762248D16FE00344B64 /* LSIFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIFetchPhotoOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 				63F3C73124875A1E00344B64 /* Views */,
 				63F3C72F24875A0100344B64 /* View Controllers */,
 				63F3C7402487677700344B64 /* Networking */,
+				63F3C760248D16D600344B64 /* Operations */,
 				63F3C72E248759DE00344B64 /* Storyboards */,
 				63F3C73324875B9D00344B64 /* LambdaSDK */,
 				63F3C72D2487594B00344B64 /* Resources */,
@@ -182,6 +186,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		63F3C760248D16D600344B64 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				63F3C761248D16FE00344B64 /* LSIFetchPhotoOperation.h */,
+				63F3C762248D16FE00344B64 /* LSIFetchPhotoOperation.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F3C763248D16FE00344B64 /* LSIFetchPhotoOperation.m in Sources */,
 				63F3C73D24875B9D00344B64 /* LSIFileHelper.m in Sources */,
 				63F3C716248758AF00344B64 /* AppDelegate.m in Sources */,
 				63F3C73B24875B9D00344B64 /* LSILog.m in Sources */,
