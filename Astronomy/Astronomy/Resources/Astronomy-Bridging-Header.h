@@ -17,3 +17,7 @@
 //
 
 #import "LSICamera.h"
+#import "LSIMarsRover.h"
+#import "LSISolDescription.h"
+#import "LSIMarsRoverClient.h"
+#import "LSIImageCollectionViewCell.h"
