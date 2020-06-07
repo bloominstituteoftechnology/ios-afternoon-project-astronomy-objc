@@ -7,6 +7,7 @@
 //
 
 #import "LSIMarsRover.h"
+#import "LSISolDescription.h"
 
 @implementation LSIMarsRover
 
@@ -35,8 +36,23 @@
     NSNumber *maxSol = [dictionary objectForKey:@"max_sol"];
     if (![maxSol isKindOfClass:[NSNumber class]]) return nil;
     
-    NSArray *solDescriptions = [dictionary objectForKey:@"photos"];
-    if (![solDescriptions isKindOfClass:[NSArray class]]) return nil;
+    NSArray *solDescriptionDictionaries = [dictionary objectForKey:@"photos"];
+    if (![solDescriptionDictionaries isKindOfClass:[NSArray class]]) return nil;
+    
+    //NSMutableArray<LSISolDescription *> *solDescriptions = [[NSMutableArray alloc] initWithCapacity:solDescriptionDictionaries.count];
+    NSMutableArray *solDescriptions = [[NSMutableArray alloc] initWithCapacity:solDescriptionDictionaries.count];
+    
+    for (NSDictionary *solDescriptionDictionary in solDescriptionDictionaries) {
+        if (![solDescriptionDictionary isKindOfClass:[NSDictionary class]]) continue;
+        
+        LSISolDescription *solDescription = [[LSISolDescription alloc] initWithDictionary:solDescriptionDictionary];
+        
+        if (solDescription) {
+            [solDescriptions addObject:solDescription];
+        } else {
+            NSLog(@"Unable to parse solDescription dictionary: %@", solDescriptionDictionary);
+        }
+    }
     
     return [self initWithName:name
                numberOfPhotos:numberOfPhotos.intValue
