@@ -89,8 +89,8 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
             return;
         }
         
-        NSArray *photos = [dictionary allValues];
-        if (!photos) {
+        NSArray *photoReferenceDictionaries = [[NSArray alloc] initWithArray:[dictionary valueForKey:@"photos"]];
+        if (!photoReferenceDictionaries) {
             NSError *error = [NSError errorWithDomain:@"PhotoFetcherDomain" code:-1 userInfo:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionHandler(nil, error);
@@ -98,8 +98,23 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
             return;
         }
         
+        NSMutableArray<LSIMarsPhotoReference *> *photoReferences = [[NSMutableArray alloc] initWithCapacity:photoReferenceDictionaries.count];
+        //NSMutableArray *solDescriptions = [[NSMutableArray alloc] initWithCapacity:solDescriptionDictionaries.count];
+        
+        for (NSDictionary *photoReferenceDictionary in photoReferenceDictionaries) {
+            if (![photoReferenceDictionary isKindOfClass:[NSDictionary class]]) continue;
+            
+            LSIMarsPhotoReference *photoReference = [[LSIMarsPhotoReference alloc] initWithDictionary:photoReferenceDictionary];
+            
+            if (photoReference) {
+                [photoReferences addObject:photoReference];
+            } else {
+                NSLog(@"Unable to parse photoReference dictionary: %@", photoReferenceDictionary);
+            }
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            completionHandler(photos, nil);
+            completionHandler(photoReferences, nil);
         });
         
     }] resume];
