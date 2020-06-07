@@ -8,12 +8,6 @@
 
 #import "LSIImageCollectionViewCell.h"
 
-@interface LSIImageCollectionViewCell ()
-
-@property (nonatomic, readwrite, nonnull) IBOutlet UIImageView *imageView;
-
-@end
-
 @implementation LSIImageCollectionViewCell
 
 // Custom getter/setter for image

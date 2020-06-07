@@ -138,7 +138,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         client.fetchPhoto(withURLString: urlString, using: nil) { photo, _ in
             guard let photo = photo else { return }
-            cell.image = photo;
+            cell.imageView.image = photo;
         }
     }
 }
