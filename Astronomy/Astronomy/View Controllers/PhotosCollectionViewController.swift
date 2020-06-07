@@ -63,7 +63,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             self.roverInfo = rover
         }
         
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         configureTitleView()
         updateViews()
     }
