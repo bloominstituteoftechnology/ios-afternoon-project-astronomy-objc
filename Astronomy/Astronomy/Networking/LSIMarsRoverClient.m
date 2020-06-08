@@ -22,7 +22,6 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
              completionHandler:(MarsRoverFetcherCompletionHandler)completionHandler
 {
     NSURL *url = [self urlForInfoForRoverWithName:name];
-    NSLog(@"Fetching rover info: %@", url);
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
@@ -66,7 +65,6 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
                completionHandler:(PhotosFetcherCompletionHandler)completionHandler
 {
     NSURL *url = [self urlForPhotosFromRoverWithName:marsRover.name onSol:sol];
-    NSLog(@"Fetching photos: %@", url);
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
@@ -131,9 +129,7 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
         completionHandler(nil, error);
         return;
     }
-    
-    NSLog(@"Fetching photo from: %@", [URL absoluteString]);
-    
+        
     [[session dataTaskWithURL:URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"Error fetching photo: %@", error);
