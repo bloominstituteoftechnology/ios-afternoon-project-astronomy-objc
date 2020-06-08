@@ -18,7 +18,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private var roverInfo: MarsRover? {
         didSet {
-            solDescription = roverInfo?.solDescriptions[0]
+            solDescription = roverInfo?.solDescriptions[4] // #warning change index to "0" when finished testing
         }
     }
     
