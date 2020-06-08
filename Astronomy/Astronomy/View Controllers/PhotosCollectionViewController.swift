@@ -39,6 +39,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     private var photoReferences = [MarsPhotoReference]() {
         didSet {
             // TODO: Clear the cache here
+            photoDictionary = [:]
             DispatchQueue.main.async { self.collectionView?.reloadData() }
         }
     }
@@ -46,6 +47,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     private let solLabel = UILabel()
     
     // TODO: Add additional properties: cache, photoFetchQueue, and operations
+    
+    private var photoDictionary = [Int: UIImage]()
     
     // MARK: - View Controller Lifecycle
     
@@ -133,11 +136,16 @@ class PhotosCollectionViewController: UICollectionViewController {
         let photoReference = photoReferences[indexPath.item]
         
         // TODO: Check the cache for the photo here
+        if let photo = photoDictionary[photoReference.id] {
+            cell.imageView.image = photo;
+            return;
+        }
         
         let urlString = photoReference.imageURL.absoluteString
         
         client.fetchPhoto(withURLString: urlString, using: nil) { photo, _ in
             guard let photo = photo else { return }
+            self.photoDictionary[photoReference.id] = photo;
             cell.imageView.image = photo;
         }
     }
@@ -149,8 +157,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 extension PhotosCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation
-        // TODO: Add proper accessors to the internal array of the model controller
         NSLog("num photos: \(photoReferences.count)") // #warning Remove this line when finished testing
         return photoReferences.count
     }
