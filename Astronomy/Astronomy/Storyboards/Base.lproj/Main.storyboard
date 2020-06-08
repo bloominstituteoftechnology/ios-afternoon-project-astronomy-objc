@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,37 +26,36 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="B76-av-lWo" customClass="LSIImageCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x0w-jW-Q3T">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xqW-rh-E2F">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xqW-rh-E2F">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="xqW-rh-E2F" firstAttribute="top" secondItem="x0w-jW-Q3T" secondAttribute="top" id="P3A-An-A5U"/>
-                                        <constraint firstAttribute="trailing" secondItem="xqW-rh-E2F" secondAttribute="trailing" id="Rt4-6D-fLJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="xqW-rh-E2F" secondAttribute="bottom" id="bCK-8o-dvR"/>
-                                        <constraint firstItem="xqW-rh-E2F" firstAttribute="leading" secondItem="x0w-jW-Q3T" secondAttribute="leading" id="tDE-Po-MBw"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="imageView" destination="xqW-rh-E2F" id="vlU-8g-KGr"/>
-                                    <segue destination="BNa-1a-Gd2" kind="show" identifier="ShowDetail" id="yAp-Kd-X0y"/>
-                                </connections>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="xqW-rh-E2F" firstAttribute="top" secondItem="B76-av-lWo" secondAttribute="top" id="P3A-An-A5U"/>
+                                    <constraint firstAttribute="trailing" secondItem="xqW-rh-E2F" secondAttribute="trailing" id="Rt4-6D-fLJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="xqW-rh-E2F" secondAttribute="bottom" id="bCK-8o-dvR"/>
+                                    <constraint firstItem="xqW-rh-E2F" firstAttribute="leading" secondItem="B76-av-lWo" secondAttribute="leading" id="tDE-Po-MBw"/>
+                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="2EY-7B-9Wk" id="diW-Mq-w56"/>
-                            <outlet property="delegate" destination="2EY-7B-9Wk" id="ogA-Ov-ANf"/>
+                            <outlet property="dataSource" destination="2EY-7B-9Wk" id="eKw-sl-Ze6"/>
+                            <outlet property="delegate" destination="2EY-7B-9Wk" id="6FY-cX-Oic"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="gXr-F8-gX3"/>
+                    <connections>
+                        <segue destination="BNa-1a-Gd2" kind="show" identifier="ShowDetail" id="1HB-He-Brc"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTp-41-5r5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637.68115942028987" y="61.607142857142854"/>
+            <point key="canvasLocation" x="637.60000000000002" y="61.330049261083744"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="KaS-Hs-y1E">
@@ -71,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="464"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uuw-3W-2jy">
-                                <rect key="frame" x="16" y="560" width="343" height="208"/>
+                                <rect key="frame" x="16" y="560" width="343" height="86.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by &lt;Rover&gt; on &lt;date&gt; (Sol &lt;sol&gt;)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo9-Gx-vqC">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.333333333333332"/>
@@ -97,8 +95,11 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRL-bB-Oxa">
-                                        <rect key="frame" x="0.0" y="56.666666666666643" width="343" height="151.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="56.666666666666629" width="343" height="30"/>
                                         <state key="normal" title="Save to Photo Library"/>
+                                        <connections>
+                                            <action selector="save:" destination="BNa-1a-Gd2" eventType="touchUpInside" id="lpN-TW-FDp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -108,7 +109,7 @@
                             <constraint firstItem="uuw-3W-2jy" firstAttribute="top" secondItem="wzq-2Y-L7P" secondAttribute="bottom" constant="8" id="FlR-ZE-OTD"/>
                             <constraint firstItem="8gn-ed-KWV" firstAttribute="bottom" secondItem="wzq-2Y-L7P" secondAttribute="bottom" constant="226" id="IcC-rd-JV4"/>
                             <constraint firstItem="8gn-ed-KWV" firstAttribute="trailing" secondItem="wzq-2Y-L7P" secondAttribute="trailing" id="Jk8-et-6Wh"/>
-                            <constraint firstItem="8gn-ed-KWV" firstAttribute="bottom" secondItem="uuw-3W-2jy" secondAttribute="bottom" constant="10" id="TJ6-ka-R6e"/>
+                            <constraint firstItem="8gn-ed-KWV" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uuw-3W-2jy" secondAttribute="bottom" constant="10" id="TJ6-ka-R6e"/>
                             <constraint firstItem="wzq-2Y-L7P" firstAttribute="leading" secondItem="8gn-ed-KWV" secondAttribute="leading" id="XZl-yM-Sbh"/>
                             <constraint firstItem="uuw-3W-2jy" firstAttribute="leading" secondItem="dT1-rN-2NH" secondAttribute="leadingMargin" id="YDq-xT-JAn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uuw-3W-2jy" secondAttribute="trailing" id="bfV-ty-p3V"/>
@@ -117,6 +118,11 @@
                         <viewLayoutGuide key="safeArea" id="8gn-ed-KWV"/>
                     </view>
                     <navigationItem key="navigationItem" id="7yS-42-jxV"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="m55-ub-p0z" id="ekd-ss-1SH"/>
+                        <outlet property="detailLabel" destination="Xo9-Gx-vqC" id="i2F-JL-4In"/>
+                        <outlet property="imageView" destination="wzq-2Y-L7P" id="yMn-WP-nz5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEO-wy-xBI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

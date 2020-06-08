@@ -13,11 +13,8 @@ class PhotoDetailViewController: UIViewController {
 
     // MARK: - Properties & Outlets
     
-    var photo: MarsPhotoReference? {
-        didSet {
-            updateViews()
-        }
-    }
+    var photoReference: MarsPhotoReference?
+    var image: UIImage?
     
     lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -30,7 +27,6 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var cameraLabel: UILabel!
     
-    
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
@@ -41,7 +37,8 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - IBActions & Methods
     
     @IBAction func save(_ sender: Any) {
-        guard let image = imageView.image else { return }
+        guard let image = imageView?.image else { return }
+        
         PHPhotoLibrary.shared().performChanges({
             PHAssetChangeRequest.creationRequestForAsset(from: image)
         }, completionHandler: { (success, error) in
@@ -56,15 +53,18 @@ class PhotoDetailViewController: UIViewController {
     }
     
     private func updateViews() {
-        guard let photo = photo, isViewLoaded else { return }
-        do {
-            let data = try Data(contentsOf: photo.imageURL.usingHTTPS!)
-            imageView.image = UIImage(data: data)
-            let dateString = dateFormatter.string(from: photo.earthDate)
-            detailLabel.text = "Taken by \(photo.camera.roverId) on \(dateString) (Sol \(photo.sol))"
-            cameraLabel.text = photo.camera.fullName
-        } catch {
-            NSLog("Error setting up views on detail view controller: \(error)")
+        guard isViewLoaded else { return }
+        
+        if let photoReference = photoReference {
+            let dateString = dateFormatter.string(from: photoReference.earthDate)
+            detailLabel?.text = "Taken by \(photoReference.camera.roverId) on \(dateString) (Sol \(photoReference.sol))"
+            cameraLabel?.text = photoReference.camera.fullName
+        }
+                
+        if let image = image {
+            imageView?.image = image
+        } else {
+            imageView?.image = UIImage(named: "MarsPlaceholder")
         }
     }
     
