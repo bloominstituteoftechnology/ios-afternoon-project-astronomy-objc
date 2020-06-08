@@ -14,7 +14,7 @@ class MarsPhotoReference: NSObject {
     let sol: Int
     let camera: Camera
     let earthDate: Date
-    let imageURL: URL
+    @objc let imageURL: URL
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
