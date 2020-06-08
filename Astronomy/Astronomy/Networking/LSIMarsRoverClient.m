@@ -11,8 +11,6 @@
 #import "LSIMarsRover.h"
 #import "LSIErrors.h"
 
-@class LSIMarsPhotoReference;
-
 //https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd
 static NSString *const MarsRoverAPIBaseURLString = @"https://api.nasa.gov/mars-photos/api/v1";
 static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
@@ -98,8 +96,7 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
             return;
         }
         
-        NSMutableArray<LSIMarsPhotoReference *> *photoReferences = [[NSMutableArray alloc] initWithCapacity:photoReferenceDictionaries.count];
-        //NSMutableArray *solDescriptions = [[NSMutableArray alloc] initWithCapacity:solDescriptionDictionaries.count];
+        NSMutableArray *photoReferences = [[NSMutableArray alloc] initWithCapacity:photoReferenceDictionaries.count];
         
         for (NSDictionary *photoReferenceDictionary in photoReferenceDictionaries) {
             if (![photoReferenceDictionary isKindOfClass:[NSDictionary class]]) continue;
@@ -134,7 +131,6 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
         completionHandler(nil, error);
         return;
     }
-    //guard let imageURL = marsPhotoReference.imageURL.usingHTTPS else { return nil }
     
     NSLog(@"Fetching photo from: %@", [URL absoluteString]);
     
