@@ -20,7 +20,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         didSet {
             // #warning change index to "0" when finished testing
             // index 654 has 1 photo; index 53 has 4 photos; index 81 has 9 photos; index 4 has 26 photos
-            solDescription = roverInfo?.solDescriptions[53]
+            solDescription = roverInfo?.solDescriptions[4]
         }
     }
     

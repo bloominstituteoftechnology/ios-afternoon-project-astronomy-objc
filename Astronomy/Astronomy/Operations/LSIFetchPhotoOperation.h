@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class LSIMarsPhotoReference;
 
-@interface LSIFetchPhotoOperation : NSObject
+NS_SWIFT_NAME(FetchPhotoOperation)
+@interface LSIFetchPhotoOperation : NSOperation
+
+@property (nonatomic, readonly, nonnull) LSIMarsPhotoReference *marsPhotoReference;
+@property (nonatomic, copy, nullable) NSData *imageData;
+
+- (nonnull instancetype)initWithMarsPhotoReference:(nonnull LSIMarsPhotoReference *)marsPhotoReference;
+
+- (void)start;
+- (void)cancel;
 
 @end
-
-NS_ASSUME_NONNULL_END
