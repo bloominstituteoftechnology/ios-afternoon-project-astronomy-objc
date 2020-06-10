@@ -17,16 +17,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     private let client = MarsRoverClient()
     private let photoFetchQueue = OperationQueue()
     private var operations = [Int: Operation]()
-    
-    // TODO: Replace dictionary with a custom Cache object
-    private var photoDictionary = [Int: UIImage]()
+    private let cache = Cache<UIImage>()
     
     private let solLabel = UILabel()
     private let minimumCellSpacing: CGFloat = 8.0
     
     private var roverInfo: MarsRover? {
         didSet {
-            // TODO: change index to "0" when finished testing
             // index 654 has 1 photo; index 53 has 4 photos; index 81 has 9 photos; index 4 has 26 photos
             solDescription = roverInfo?.solDescriptions[4]
         }
@@ -40,7 +37,7 @@ class PhotosCollectionViewController: UICollectionViewController {
                 client.fetchPhotos(from: rover, onSol: sol) { photoRefs, error in
                     if let error = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(error)"); return }
                     self.photoReferences = photoRefs ?? []
-                    DispatchQueue.main.async { self.updateTitleView() }
+                    self.updateTitleView()
                 }
             }
         }
@@ -48,10 +45,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     private var photoReferences = [MarsPhotoReference]() {
         didSet {
-            // TODO: Clear the cache here
-            photoDictionary = [:]
-            DispatchQueue.main.async { self.collectionView?.reloadData() }
-            print("Fetched \(photoReferences.count) photo references.") // Remove this line when finished testing
+            cache.clear()
+            self.collectionView?.reloadData()
         }
     }
     
@@ -84,9 +79,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     @objc func refresh() {
         collectionView.reloadData()
         collectionView.refreshControl?.endRefreshing()
-        print("The collection view has been refreshed!")
-        print("There are \(collectionView.numberOfItems(inSection: 0)) total cells.")
-        print("There are \(collectionView.visibleCells.count) visible cells.")
     }
     
     // MARK: - Navigation
@@ -158,18 +150,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     private func loadImage(forCell cell: ImageCollectionViewCell, forItemAt indexPath: IndexPath) {
         let photoReference = photoReferences[indexPath.item]
         
-        // TODO: Check the cache for the photo here
-        if let photo = photoDictionary[photoReference.id] {
+        if let photo = cache.value(forKey: photoReference.id) {
             cell.imageView.image = photo;
             return;
         }
                 
         let fetchOp = FetchPhotoOperation(marsPhotoReference: photoReference)
         
-        // TODO: Refactor cacheOp to use a custom Cache object
         let cacheOp = BlockOperation {
             if let image = fetchOp.image {
-                self.photoDictionary[photoReference.id] = image;
+                self.cache.cacheValue(image, forKey: photoReference.id)
             }
         }
         
