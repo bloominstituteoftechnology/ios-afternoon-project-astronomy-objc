@@ -20,4 +20,5 @@
 #import "LSIMarsRover.h"
 #import "LSISolDescription.h"
 #import "LSIMarsRoverClient.h"
+#import "LSIFetchPhotoOperation.h"
 #import "LSIImageCollectionViewCell.h"
