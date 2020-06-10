@@ -6,12 +6,13 @@
 //  Copyright © 2020 David Wright. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+NS_SWIFT_NAME(Cache)
+@interface LSICache<Value> : NSObject
 
-@interface LSICache : NSObject
+- (void)cacheValue:(nonnull Value)value ForKey:(nonnull NSNumber *)key;
+- (nullable Value)valueForKey:(nonnull NSNumber *)key;
+- (void)clear;
 
 @end
-
-NS_ASSUME_NONNULL_END
