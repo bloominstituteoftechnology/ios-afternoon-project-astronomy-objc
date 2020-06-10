@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, LSIErrorCode) {
     LSIAPIError = 1000,           // generic API error
     LSIJSONDecodeError = 1001,    // JSON decoding error
     LSIDataNilError = 1002,       // Data is nil error
+    LSIDataCorruptError = 1004    // Data is corrupt error
     
     // TODO: Add more error codes here that may need to be handled
 };
