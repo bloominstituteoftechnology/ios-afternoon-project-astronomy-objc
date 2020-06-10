@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63D368C52490AC5A0055A1E6 /* LSICache.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D368C42490AC5A0055A1E6 /* LSICache.m */; };
 		63F3C716248758AF00344B64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C715248758AF00344B64 /* AppDelegate.m */; };
 		63F3C719248758AF00344B64 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F3C718248758AF00344B64 /* SceneDelegate.m */; };
 		63F3C71F248758AF00344B64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F3C71D248758AF00344B64 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63D368C32490AC5A0055A1E6 /* LSICache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSICache.h; sourceTree = "<group>"; };
+		63D368C42490AC5A0055A1E6 /* LSICache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSICache.m; sourceTree = "<group>"; };
 		63F3C711248758AF00344B64 /* Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F3C714248758AF00344B64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63F3C715248758AF00344B64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				63F3C7552488A05700344B64 /* LSIMarsRover.m */,
 				63F3C7572488A08100344B64 /* LSISolDescription.h */,
 				63F3C7582488A08100344B64 /* LSISolDescription.m */,
+				63D368C32490AC5A0055A1E6 /* LSICache.h */,
+				63D368C42490AC5A0055A1E6 /* LSICache.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				63F3C716248758AF00344B64 /* AppDelegate.m in Sources */,
 				63F3C73B24875B9D00344B64 /* LSILog.m in Sources */,
 				63F3C727248758B000344B64 /* main.m in Sources */,
+				63D368C52490AC5A0055A1E6 /* LSICache.m in Sources */,
 				63F3C73E24875B9D00344B64 /* URL+Secure.swift in Sources */,
 				63F3C73C24875B9D00344B64 /* LSIErrors.m in Sources */,
 				63F3C74A24889CBD00344B64 /* PhotosCollectionViewController.swift in Sources */,
