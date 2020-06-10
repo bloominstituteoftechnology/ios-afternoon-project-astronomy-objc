@@ -15,10 +15,18 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     
     private let client = MarsRoverClient()
+    private let photoFetchQueue = OperationQueue()
+    private var operations = [Int: Operation]()
+    
+    // TODO: Replace dictionary with a custom Cache object
+    private var photoDictionary = [Int: UIImage]()
+    
+    private let solLabel = UILabel()
+    private let minimumCellSpacing: CGFloat = 8.0
     
     private var roverInfo: MarsRover? {
         didSet {
-            // #warning change index to "0" when finished testing
+            // TODO: change index to "0" when finished testing
             // index 654 has 1 photo; index 53 has 4 photos; index 81 has 9 photos; index 4 has 26 photos
             solDescription = roverInfo?.solDescriptions[4]
         }
@@ -32,7 +40,7 @@ class PhotosCollectionViewController: UICollectionViewController {
                 client.fetchPhotos(from: rover, onSol: sol) { photoRefs, error in
                     if let error = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(error)"); return }
                     self.photoReferences = photoRefs ?? []
-                    DispatchQueue.main.async { self.updateViews() }
+                    DispatchQueue.main.async { self.updateTitleView() }
                 }
             }
         }
@@ -43,15 +51,9 @@ class PhotosCollectionViewController: UICollectionViewController {
             // TODO: Clear the cache here
             photoDictionary = [:]
             DispatchQueue.main.async { self.collectionView?.reloadData() }
-            print("Fetched \(photoReferences.count) photo references.") // #warning Remove this line when finished testing
+            print("Fetched \(photoReferences.count) photo references.") // Remove this line when finished testing
         }
     }
-    
-    // TODO: Add additional properties: cache, photoFetchQueue, and operations
-    
-    private let solLabel = UILabel()
-    private let minimumSpacing: CGFloat = 8.0
-    private var photoDictionary = [Int: UIImage]()
     
     // MARK: - View Controller Lifecycle
     
@@ -76,7 +78,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         collectionView.refreshControl = refreshControl
         
         configureTitleView()
-        updateViews()
+        updateTitleView()
     }
     
     @objc func refresh() {
@@ -148,7 +150,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         navigationItem.titleView = stackView
     }
     
-    private func updateViews() {
+    private func updateTitleView() {
         guard isViewLoaded else { return }
         solLabel.text = "Sol \(solDescription?.sol ?? 0)"
     }
@@ -161,14 +163,39 @@ class PhotosCollectionViewController: UICollectionViewController {
             cell.imageView.image = photo;
             return;
         }
+                
+        let fetchOp = FetchPhotoOperation(marsPhotoReference: photoReference)
         
-        let urlString = photoReference.imageURL.absoluteString
-        
-        client.fetchPhoto(withURLString: urlString, using: nil) { photo, _ in
-            guard let photo = photo else { return }
-            self.photoDictionary[photoReference.id] = photo;
-            cell.imageView.image = photo;
+        // TODO: Refactor cacheOp to use a custom Cache object
+        let cacheOp = BlockOperation {
+            if let image = fetchOp.image {
+                self.photoDictionary[photoReference.id] = image;
+            }
         }
+        
+        let completionOp = BlockOperation {
+            defer { self.operations.removeValue(forKey: photoReference.id) }
+            
+            NSLog("FetchPhotoOperation completed.")
+            
+            if let currentIndexPath = self.collectionView.indexPath(for: cell),
+                currentIndexPath != indexPath {
+                return // Cell has been reused
+            }
+            
+            if let image = fetchOp.image {
+                cell.imageView.image = image
+            }
+        }
+        
+        cacheOp.addDependency(fetchOp)
+        completionOp.addDependency(fetchOp)
+        
+        photoFetchQueue.addOperation(fetchOp)
+        photoFetchQueue.addOperation(cacheOp)
+        OperationQueue.main.addOperation(completionOp)
+        
+        operations[photoReference.id] = fetchOp
     }
 }
 
@@ -193,25 +220,73 @@ extension PhotosCollectionViewController {
         print("selected item #: \(indexPath.item)")
         self.performSegue(withIdentifier: "ShowDetail", sender: self)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if photoReferences.count > 0 {
+            let photoRef = photoReferences[indexPath.item]
+            operations[photoRef.id]?.cancel()
+        } else {
+            for (_, operation) in operations {
+                operation.cancel()
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
     
+    // OPTION 1: Desired layout
+    /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var totalUsableWidth = collectionView.bounds.size.width - minimumSpacing
+        var totalUsableWidth = collectionView.bounds.size.width - minimumCellSpacing
         let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
         totalUsableWidth -= (inset.left + inset.right)
+
+        let minWidth: CGFloat = 150.0
+        let numberOfItemsInOneRow = Int(totalUsableWidth / (minWidth + minimumCellSpacing))
+        totalUsableWidth -= CGFloat(numberOfItemsInOneRow) * minimumCellSpacing
+        let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
+        return CGSize(width: width, height: width)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: minimumCellSpacing, bottom: 0, right: minimumCellSpacing)
+    }
+    */
+    
+    // OPTION 2: Working layout from previous Astronomy project
+    /*
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        var totalUsableWidth = collectionView.frame.width
+        let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
+        totalUsableWidth -= inset.left + inset.right
         
         let minWidth: CGFloat = 150.0
-        let numberOfItemsInOneRow = Int(totalUsableWidth / (minWidth + minimumSpacing))
-        totalUsableWidth -= CGFloat(numberOfItemsInOneRow) * minimumSpacing
+        let numberOfItemsInOneRow = Int(totalUsableWidth / minWidth)
+        totalUsableWidth -= CGFloat(numberOfItemsInOneRow - 1) * flowLayout.minimumInteritemSpacing
         let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
         return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: minimumSpacing, bottom: 0, right: minimumSpacing)
+        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
+    }
+    */
+
+    // OPTION 1: Simplified layout for testing/debugging
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width / 2
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
