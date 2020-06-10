@@ -11,8 +11,8 @@
 NS_SWIFT_NAME(Cache)
 @interface LSICache<Value> : NSObject
 
-- (void)cacheValue:(nonnull Value)value ForKey:(nonnull NSNumber *)key;
-- (nullable Value)valueForKey:(nonnull NSNumber *)key;
+- (void)cacheValue:(nonnull Value)value ForKey:(NSInteger)key;
+- (nullable Value)valueForKey:(NSInteger)key;
 - (void)clear;
 
 @end

@@ -26,18 +26,18 @@
     return self;
 }
 
-- (void)cacheValue:(id)value ForKey:(NSNumber *)key
+- (void)cacheValue:(id)value ForKey:(NSInteger)key
 {
     dispatch_async(self.queue, ^{
-        [self.cache setObject:value forKey:key];
+        [self.cache setObject:value forKey:[NSNumber numberWithInteger:key]];
     });
 }
 
-- (id)valueForKey:(NSNumber *)key
+- (id)valueForKey:(NSInteger)key
 {
     __block id value;
     dispatch_sync(self.queue, ^{
-        value = [self.cache objectForKey:key];
+        value = [self.cache objectForKey:[NSNumber numberWithInteger:key]];
     });
     return value;
 }
