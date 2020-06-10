@@ -12,17 +12,19 @@
 
 void *KVOContext = &KVOContext;
 
+// MARK: - Interface
+
 @interface LSIFetchPhotoOperation ()
 
-// 1. redeclare a readonly property as readwrite (and synthesize variable)
 @property (readwrite, getter=isExecuting) BOOL executing;
-@property (readwrite, getter=isCancelled) BOOL cancelled;
 @property (readwrite, getter=isFinished) BOOL finished;
+@property (readwrite, getter=isCancelled) BOOL cancelled;
 
 @property NSURLSessionDataTask *dataTask;
 
 @end
 
+// MARK: - Implementation
 
 @implementation LSIFetchPhotoOperation
 
@@ -30,24 +32,19 @@ void *KVOContext = &KVOContext;
 {
     if (self = [super init]) {
         _marsPhotoReference = marsPhotoReference;
-        _executing = NO;
-        _finished = NO;
+        self.executing = NO;
+        self.cancelled = NO;
+        self.finished = NO;
     }
     return self;
 }
 
-- (void)cancel
-{
-    [self.dataTask cancel];
-    self.finished = YES;
-    self.executing = NO;
-    [super cancel];
-}
+// MARK: - Methods
 
 - (void)start
 {
     if (self.isCancelled) {
-        _finished = YES;
+        self.finished = YES;
         return;
     }
     
@@ -55,7 +52,7 @@ void *KVOContext = &KVOContext;
     
     NSURL *URL = self.marsPhotoReference.imageURL.usingHTTPS;
     
-    self.dataTask = [NSURLSession.sharedSession dataTaskWithURL:URL
+    NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:URL
                                               completionHandler:^(NSData * _Nullable data,
                                                                   NSURLResponse * _Nullable response,
                                                                   NSError * _Nullable error) {
@@ -72,73 +69,35 @@ void *KVOContext = &KVOContext;
         
         self.imageData = data;
     }];
-    [_dataTask resume];
+    [task resume];
+    self.dataTask = task;
 }
 
-
-
-// 2. Synthesize it
-@synthesize executing = _executing;
-@synthesize cancelled = _cancelled;
-@synthesize finished = _finished;
-
-// 3. Make KVO method calls with custom setter
-- (void)setExecuting:(BOOL)executing
+- (void)cancel
 {
-    if (_executing != executing) {
-        
-        // willSet
-        // Cleanup KVO - Remove Observers
-//        [_executing removeObserver:self forKeyPath:@"executing" context:KVOContext];
-//        [_executing removeObserver:self forKeyPath:@"finished" context:KVOContext];
-        
-        [self willChangeValueForKey:NSStringFromSelector(@selector(isExecuting))];
-        _executing = YES;
-        [self didChangeValueForKey:NSStringFromSelector(@selector(isExecuting))];
-        
-        // didSet
-        // Setup KVO - Add Observers
-//        [_executing addObserver:self forKeyPath:@"executing" options:0 context:KVOContext];
-//        [_executing addObserver:self forKeyPath:@"finished" options:0 context:KVOContext];
+    [self.dataTask cancel];
+    self.executing = NO;
+    self.cancelled = YES;
+    self.finished = YES;
+    [super cancel];
+}
+
+// TODO: Delete this method if not needed
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"cancelled"]) {
+            [self cancel];
+        } else if ([keyPath isEqualToString:@"ready"]) {
+            [self start];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
-- (BOOL)isExecuting
-{
-    return _executing;
-}
-
-- (void)setFinished:(BOOL)finished
-{
-    if (_finished != finished) {
-        
-        // willSet
-        
-        [self willChangeValueForKey:NSStringFromSelector(@selector(isFinished))];
-        _finished = YES;
-        [self didChangeValueForKey:NSStringFromSelector(@selector(isFinished))];
-        
-        // didSet
-        
-    }
-}
-
-- (BOOL)isFinished
-{
-    return _finished;
-}
-
-- (BOOL)isAsynchronous
-{
-    return YES;
-}
-
-
-
-
-
-
-
+// TODO: Delete this method if not needed
+/*
 + (NSSet<NSString *> *)keyPathsForValuesAffectingValueForKey:(NSString *)key
 {
     NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
@@ -156,20 +115,68 @@ void *KVOContext = &KVOContext;
     
     return keyPaths;
 }
+*/
 
+// MARK: - Custom Getters/Setters
 
+// isAsynchronous
 
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+- (BOOL)isAsynchronous
 {
-    if (context == KVOContext) {
-        if ([keyPath isEqualToString:@"cancelled"]) {
-            [self cancel];
-        } else if ([keyPath isEqualToString:@"ready"]) {
-            [self start];
-        }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    return YES;
+}
+
+// executing
+
+@synthesize executing = _executing;
+
+- (BOOL)isExecuting
+{
+    return _executing;
+}
+
+- (void)setExecuting:(BOOL)executing
+{
+    if (_executing != executing) {
+        [self willChangeValueForKey:@"isExecuting"];
+        _executing = executing;
+        [self didChangeValueForKey:@"isExecuting"];
+    }
+}
+
+// finished
+
+@synthesize finished = _finished;
+
+- (BOOL)isFinished
+{
+    return _finished;
+}
+
+- (void)setFinished:(BOOL)finished
+{
+    if (_finished != finished) {
+        [self willChangeValueForKey:@"isFinished"];
+        _finished = finished;
+        [self didChangeValueForKey:@"isFinished"];
+    }
+}
+
+// cancelled
+
+@synthesize cancelled = _cancelled;
+
+- (BOOL)isCancelled
+{
+    return _cancelled;
+}
+
+- (void)setCancelled:(BOOL)cancelled
+{
+    if (_cancelled != cancelled) {
+        [self willChangeValueForKey:@"isCancelled"];
+        _cancelled = cancelled;
+        [self didChangeValueForKey:@"isCancelled"];
     }
 }
 
