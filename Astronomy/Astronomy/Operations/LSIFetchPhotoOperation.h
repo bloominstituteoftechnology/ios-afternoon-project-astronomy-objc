@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class LSIMarsPhotoReference;
 
 NS_SWIFT_NAME(FetchPhotoOperation)
 @interface LSIFetchPhotoOperation : NSOperation
 
-@property (nonatomic, readonly, nonnull) LSIMarsPhotoReference *marsPhotoReference;
-@property (nonatomic, copy, nullable) NSData *imageData;
+@property (nonatomic, nullable) NSURL *photoURL;
+@property (nonatomic, nullable) UIImage *image;
 
-- (nonnull instancetype)initWithMarsPhotoReference:(nonnull LSIMarsPhotoReference *)marsPhotoReference;
+- (nonnull instancetype)initWithPhotoURL:(nonnull NSURL *)photoURL;
++ (nonnull instancetype)fetchPhotoOperationWithMarsPhotoReference:(nonnull LSIMarsPhotoReference *)marsPhotoReference;
 
 - (void)start;
 - (void)cancel;

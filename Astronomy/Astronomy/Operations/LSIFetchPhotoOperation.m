@@ -27,17 +27,22 @@ void *KVOContext = &KVOContext;
 
 @implementation LSIFetchPhotoOperation
 
-// MARK: - Initializer
+// MARK: - Initializers
 
-- (instancetype)initWithMarsPhotoReference:(LSIMarsPhotoReference *)marsPhotoReference
+- (instancetype)initWithPhotoURL:(NSURL *)photoURL
 {
     if (self = [super init]) {
-        _marsPhotoReference = marsPhotoReference;
+        _photoURL = photoURL;
         self.executing = NO;
         self.cancelled = NO;
         self.finished = NO;
     }
     return self;
+}
+
++ (instancetype)fetchPhotoOperationWithMarsPhotoReference:(LSIMarsPhotoReference *)marsPhotoReference
+{
+    return [[self alloc] initWithPhotoURL:marsPhotoReference.imageURL];
 }
 
 // MARK: - Methods
@@ -51,7 +56,7 @@ void *KVOContext = &KVOContext;
     
     self.executing = YES;
     
-    NSURL *URL = self.marsPhotoReference.imageURL.usingHTTPS;
+    NSURL *URL = self.photoURL.usingHTTPS;
     
     NSURLSessionDataTask *task = [NSURLSession.sharedSession dataTaskWithURL:URL
                                               completionHandler:^(NSData * _Nullable data,
@@ -64,11 +69,19 @@ void *KVOContext = &KVOContext;
         
         if (!data) {
             NSError *error = errorWithMessage(@"Error receiving photo data: %@", LSIDataNilError);
-            NSLog(@"Error fetching image from url: %@", error);
+            NSLog(@"%@", error);
             return;
         }
         
-        self.imageData = data;
+        UIImage *image = [UIImage imageWithData:data];
+        
+        if (!image) {
+            NSError *error = errorWithMessage(@"Error converting fetched data into image: %@", LSIDataCorruptError);
+            NSLog(@"%@", error);
+            return;
+        }
+        
+        self.image = image;
     }];
     [task resume];
     self.dataTask = task;
@@ -82,41 +95,6 @@ void *KVOContext = &KVOContext;
     self.finished = YES;
     [super cancel];
 }
-
-// TODO: Delete this method if not needed
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
-{
-    if (context == KVOContext) {
-        if ([keyPath isEqualToString:@"cancelled"]) {
-            [self cancel];
-        } else if ([keyPath isEqualToString:@"ready"]) {
-            [self start];
-        }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-}
-
-// TODO: Delete this method if not needed
-/*
-+ (NSSet<NSString *> *)keyPathsForValuesAffectingValueForKey:(NSString *)key
-{
-    NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
-    
-    if ([key isEqualToString:@"executing"]) {
-        NSArray *affectingKeys = @[@"cancelled", @"firstName"];
-        keyPaths = [keyPaths setByAddingObjectsFromArray:affectingKeys];
-    } else if ([key isEqualToString:@"cancelled"]) {
-        NSArray *affectingKeys = @[@"lastName", @"firstName"];
-        keyPaths = [keyPaths setByAddingObjectsFromArray:affectingKeys];
-    } else if ([key isEqualToString:@"finished"]) {
-        NSArray *affectingKeys = @[@"cancelled", @"firstName"];
-        keyPaths = [keyPaths setByAddingObjectsFromArray:affectingKeys];
-    }
-    
-    return keyPaths;
-}
-*/
 
 // MARK: - Custom Getters/Setters
 
