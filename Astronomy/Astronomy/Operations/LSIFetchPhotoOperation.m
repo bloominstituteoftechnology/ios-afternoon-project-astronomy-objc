@@ -12,9 +12,9 @@
 
 void *KVOContext = &KVOContext;
 
-// MARK: - Interface
-
 @interface LSIFetchPhotoOperation ()
+
+// MARK: - Properties
 
 @property (readwrite, getter=isExecuting) BOOL executing;
 @property (readwrite, getter=isFinished) BOOL finished;
@@ -24,9 +24,10 @@ void *KVOContext = &KVOContext;
 
 @end
 
-// MARK: - Implementation
 
 @implementation LSIFetchPhotoOperation
+
+// MARK: - Initializer
 
 - (instancetype)initWithMarsPhotoReference:(LSIMarsPhotoReference *)marsPhotoReference
 {
