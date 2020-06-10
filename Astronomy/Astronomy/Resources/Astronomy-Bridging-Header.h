@@ -16,6 +16,7 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
+#import "LSICache.h"
 #import "LSICamera.h"
 #import "LSIMarsRover.h"
 #import "LSISolDescription.h"
