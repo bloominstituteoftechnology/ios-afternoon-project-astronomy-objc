@@ -10,19 +10,9 @@
 
 @implementation LSIImageCollectionViewCell
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (void)prepareForReuse
 {
-    if (self = [super initWithFrame:frame]) {
-        _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MarsPlaceholder"]];
-        _imageView.frame = self.frame;
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        [self addSubview:_imageView];
-    }
-    return self;
-}
-
-- (void)prepareForReuse {
-    self.imageView.image = [UIImage imageNamed:@"MarsPlaceholder"];
+    self.marsImageView.image = [UIImage imageNamed:@"MarsPlaceholder"];
 }
 
 @end

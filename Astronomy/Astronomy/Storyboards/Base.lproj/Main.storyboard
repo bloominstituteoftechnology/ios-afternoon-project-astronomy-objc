@@ -32,15 +32,20 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xqW-rh-E2F">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="xqW-rh-E2F" firstAttribute="top" secondItem="B76-av-lWo" secondAttribute="top" id="P3A-An-A5U"/>
                                     <constraint firstAttribute="trailing" secondItem="xqW-rh-E2F" secondAttribute="trailing" id="Rt4-6D-fLJ"/>
                                     <constraint firstAttribute="bottom" secondItem="xqW-rh-E2F" secondAttribute="bottom" id="bCK-8o-dvR"/>
                                     <constraint firstItem="xqW-rh-E2F" firstAttribute="leading" secondItem="B76-av-lWo" secondAttribute="leading" id="tDE-Po-MBw"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="marsImageView" destination="xqW-rh-E2F" id="dgM-U8-Hkt"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

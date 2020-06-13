@@ -20,7 +20,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     private let cache = Cache<UIImage>()
     
     private let solLabel = UILabel()
-    private let minimumCellSpacing: CGFloat = 8.0
+    private let minimumCellSpacing: CGFloat = 10.0
     
     private var roverInfo: MarsRover? {
         didSet {
@@ -65,9 +65,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             
             self.roverInfo = rover
         }
-        
-        self.collectionView!.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
+                
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refresh), for: .valueChanged)
         collectionView.refreshControl = refreshControl
@@ -91,7 +89,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             detailVC.photoReference = photoReferences[indexPath.item]
             
             guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell,
-                let image = cell.imageView.image else { return }
+                let image = cell.marsImageView.image else { return }
             
             detailVC.image = image
         }
@@ -151,8 +149,8 @@ class PhotosCollectionViewController: UICollectionViewController {
         let photoReference = photoReferences[indexPath.item]
         
         if let photo = cache.value(forKey: photoReference.id) {
-            cell.imageView.image = photo;
-            return;
+            cell.marsImageView.image = photo;
+            return
         }
                 
         let fetchOp = FetchPhotoOperation(marsPhotoReference: photoReference)
@@ -174,7 +172,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             }
             
             if let image = fetchOp.image {
-                cell.imageView.image = image
+                cell.marsImageView.image = image
             }
         }
         
@@ -199,7 +197,7 @@ extension PhotosCollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ImageCollectionViewCell ?? ImageCollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
         
         loadImage(forCell: cell, forItemAt: indexPath)
     
@@ -227,56 +225,27 @@ extension PhotosCollectionViewController {
 
 extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
     
-    // OPTION 1: Desired layout
-    /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var totalUsableWidth = collectionView.bounds.size.width - minimumCellSpacing
-        let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
-        totalUsableWidth -= (inset.left + inset.right)
-
-        let minWidth: CGFloat = 150.0
-        let numberOfItemsInOneRow = Int(totalUsableWidth / (minWidth + minimumCellSpacing))
-        totalUsableWidth -= CGFloat(numberOfItemsInOneRow) * minimumCellSpacing
-        let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
-        return CGSize(width: width, height: width)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: minimumCellSpacing, bottom: 0, right: minimumCellSpacing)
-    }
-    */
-    
-    // OPTION 2: Working layout from previous Astronomy project
-    /*
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         var totalUsableWidth = collectionView.frame.width
         let inset = self.collectionView(collectionView, layout: collectionViewLayout, insetForSectionAt: indexPath.section)
         totalUsableWidth -= inset.left + inset.right
         
         let minWidth: CGFloat = 150.0
         let numberOfItemsInOneRow = Int(totalUsableWidth / minWidth)
-        totalUsableWidth -= CGFloat(numberOfItemsInOneRow - 1) * flowLayout.minimumInteritemSpacing
+        totalUsableWidth -= CGFloat(numberOfItemsInOneRow - 1) * minimumCellSpacing
         let width = totalUsableWidth / CGFloat(numberOfItemsInOneRow)
         return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
-    }
-    */
-
-    // OPTION 1: Simplified layout for testing/debugging
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 2
-        return CGSize(width: width, height: width)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: minimumCellSpacing, bottom: 0, right: minimumCellSpacing)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        minimumCellSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        minimumCellSpacing
     }
 }

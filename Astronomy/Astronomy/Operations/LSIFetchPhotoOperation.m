@@ -82,6 +82,8 @@ void *KVOContext = &KVOContext;
         }
         
         self.image = image;
+        self.executing = NO;
+        self.finished = YES;
     }];
     [task resume];
     self.dataTask = task;

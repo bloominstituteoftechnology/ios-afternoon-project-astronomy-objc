@@ -11,6 +11,6 @@
 NS_SWIFT_NAME(ImageCollectionViewCell)
 @interface LSIImageCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, readwrite, nonnull) UIImageView *imageView;
+@property (nonatomic, readwrite, nonnull) IBOutlet UIImageView *marsImageView;
 
 @end
