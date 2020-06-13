@@ -25,7 +25,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     private var roverInfo: MarsRover? {
         didSet {
             // index 654 has 1 photo; index 53 has 4 photos; index 81 has 9 photos; index 4 has 26 photos
-            solDescription = roverInfo?.solDescriptions[4]
+            solDescription = roverInfo?.solDescriptions[0]
         }
     }
     
