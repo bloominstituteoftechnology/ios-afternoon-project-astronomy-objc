@@ -16,15 +16,13 @@ typedef void(^PhotosFetcherCompletionHandler)(NSArray<LSIMarsPhotoReference *> *
 typedef void(^PhotoFetcherCompletionHandler)(UIImage *_Nullable photo, NSError *_Nullable error);
 
 NS_SWIFT_NAME(MarsRoverClient)
-@interface LSIMarsRoverClient : NSObject
+@interface LSIMarsRoverClient: NSObject
 
 - (void)fetchMarsRoverWithName:(nonnull NSString *)name
-//                  usingSession:(nullable NSURLSession *)session
              completionHandler:(nonnull MarsRoverFetcherCompletionHandler)completionHandler;
 
 - (void)fetchPhotosFromMarsRover:(nonnull LSIMarsRover *)marsRover
                            onSol:(int)sol
-//                    usingSession:(nullable NSURLSession *)session
                completionHandler:(nonnull PhotosFetcherCompletionHandler)completionHandler;
 
 - (void)fetchPhotoWithURLString:(nonnull NSString *)URLString

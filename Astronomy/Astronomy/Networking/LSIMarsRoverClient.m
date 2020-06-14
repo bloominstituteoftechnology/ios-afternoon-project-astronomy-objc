@@ -18,7 +18,6 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
 @implementation LSIMarsRoverClient
 
 - (void)fetchMarsRoverWithName:(NSString *)name
-//                  usingSession:(NSURLSession *)session
              completionHandler:(MarsRoverFetcherCompletionHandler)completionHandler
 {
     NSURL *url = [self urlForInfoForRoverWithName:name];
@@ -61,7 +60,6 @@ static NSString *const APIKey = @"xzmUahFwDGPpByWDNsKViE2p0cMIPU47PTee9xJd";
 
 - (void)fetchPhotosFromMarsRover:(LSIMarsRover *)marsRover
                            onSol:(int)sol
-//                    usingSession:(NSURLSession *)session
                completionHandler:(PhotosFetcherCompletionHandler)completionHandler
 {
     NSURL *url = [self urlForPhotosFromRoverWithName:marsRover.name onSol:sol];

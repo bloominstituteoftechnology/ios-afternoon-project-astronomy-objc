@@ -163,9 +163,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let completionOp = BlockOperation {
             defer { self.operations.removeValue(forKey: photoReference.id) }
-            
-            NSLog("FetchPhotoOperation completed.")
-            
+                        
             if let currentIndexPath = self.collectionView.indexPath(for: cell),
                 currentIndexPath != indexPath {
                 return // Cell has been reused
