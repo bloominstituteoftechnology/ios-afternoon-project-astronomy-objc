@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSMutableArray<CMDManifest *> *manifests;
 
 // MARK: - Methods
-- (void)fetchingSinglePhotoWithURL:(NSURL *)imageURL
-                   completion:(void(^)(NSError *error, UIImage * image))completion;
 
-- (void)fetchManifest:(void (^)(NSError *error))completion;
+- (void)fetchingSinglePhotoWithURL:(NSURL *)imageURL completionBlock:(void (^)(NSError *, UIImage *))completionBlock;
+
+- (void)fetchManifest:(void (^)(NSError *error))completionBlock;
 
 - (void)fetchSolByManifest:(CMDManifest *)manifest
 completionBlock:(void (^)(NSError *error))completionBlock;
