@@ -13,6 +13,13 @@
 		2B13272824981C1700D78C4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B13272624981C1700D78C4A /* Main.storyboard */; };
 		2B13272A24981C1A00D78C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B13272924981C1A00D78C4A /* Assets.xcassets */; };
 		2B13272D24981C1A00D78C4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B13272B24981C1A00D78C4A /* LaunchScreen.storyboard */; };
+		2B13274124981D2600D78C4A /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13273A24981D2600D78C4A /* LSILog.m */; };
+		2B13274224981D2600D78C4A /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13273B24981D2600D78C4A /* LSIErrors.m */; };
+		2B13274324981D2600D78C4A /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13273C24981D2600D78C4A /* LSIFileHelper.m */; };
+		2B13274424981D2600D78C4A /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13274024981D2600D78C4A /* URL+Secure.swift */; };
+		2B13274624981F3400D78C4A /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13274524981F3400D78C4A /* Rover.swift */; };
+		2B132749249820F200D78C4A /* HAOPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B132748249820F200D78C4A /* HAOPhoto.m */; };
+		2B13274D24982BF900D78C4A /* HAOPhotoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13274C24982BF900D78C4A /* HAOPhotoResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,19 @@
 		2B13272924981C1A00D78C4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B13272C24981C1A00D78C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B13272E24981C1A00D78C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B13273A24981D2600D78C4A /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		2B13273B24981D2600D78C4A /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
+		2B13273C24981D2600D78C4A /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
+		2B13273D24981D2600D78C4A /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
+		2B13273E24981D2600D78C4A /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
+		2B13273F24981D2600D78C4A /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
+		2B13274024981D2600D78C4A /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		2B13274524981F3400D78C4A /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
+		2B132747249820F200D78C4A /* HAOPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPhoto.h; sourceTree = "<group>"; };
+		2B132748249820F200D78C4A /* HAOPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPhoto.m; sourceTree = "<group>"; };
+		2B13274A249821C100D78C4A /* Astronomy-ObjcSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-ObjcSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		2B13274B24982BF900D78C4A /* HAOPhotoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPhotoResult.h; sourceTree = "<group>"; };
+		2B13274C24982BF900D78C4A /* HAOPhotoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPhotoResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +80,7 @@
 				2B13273624981C4700D78C4A /* ViewControllers */,
 				2B13273724981C5200D78C4A /* Models */,
 				2B13273824981C6000D78C4A /* ModelControllers */,
+				2B13273924981D2600D78C4A /* LambdaSDK */,
 				2B13273524981C3300D78C4A /* AppSceneDelegate */,
 				2B13273424981C2100D78C4A /* Resourses */,
 			);
@@ -72,6 +93,7 @@
 				2B13272924981C1A00D78C4A /* Assets.xcassets */,
 				2B13272B24981C1A00D78C4A /* LaunchScreen.storyboard */,
 				2B13272E24981C1A00D78C4A /* Info.plist */,
+				2B13274A249821C100D78C4A /* Astronomy-ObjcSwift-Bridging-Header.h */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -96,6 +118,11 @@
 		2B13273724981C5200D78C4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2B132747249820F200D78C4A /* HAOPhoto.h */,
+				2B132748249820F200D78C4A /* HAOPhoto.m */,
+				2B13274524981F3400D78C4A /* Rover.swift */,
+				2B13274B24982BF900D78C4A /* HAOPhotoResult.h */,
+				2B13274C24982BF900D78C4A /* HAOPhotoResult.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +132,21 @@
 			children = (
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		2B13273924981D2600D78C4A /* LambdaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2B13273A24981D2600D78C4A /* LSILog.m */,
+				2B13273B24981D2600D78C4A /* LSIErrors.m */,
+				2B13273C24981D2600D78C4A /* LSIFileHelper.m */,
+				2B13273D24981D2600D78C4A /* LSIFileHelper.h */,
+				2B13273E24981D2600D78C4A /* LSIErrors.h */,
+				2B13273F24981D2600D78C4A /* LSILog.h */,
+				2B13274024981D2600D78C4A /* URL+Secure.swift */,
+			);
+			name = LambdaSDK;
+			path = ../../LambdaSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +175,7 @@
 		2B13271524981C1700D78C4A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HAO;
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = LambdaSchool;
@@ -178,8 +221,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B13274D24982BF900D78C4A /* HAOPhotoResult.m in Sources */,
+				2B13274624981F3400D78C4A /* Rover.swift in Sources */,
+				2B13274324981D2600D78C4A /* LSIFileHelper.m in Sources */,
 				2B13272524981C1700D78C4A /* ViewController.swift in Sources */,
+				2B132749249820F200D78C4A /* HAOPhoto.m in Sources */,
+				2B13274124981D2600D78C4A /* LSILog.m in Sources */,
 				2B13272124981C1700D78C4A /* AppDelegate.swift in Sources */,
+				2B13274424981D2600D78C4A /* URL+Secure.swift in Sources */,
+				2B13274224981D2600D78C4A /* LSIErrors.m in Sources */,
 				2B13272324981C1700D78C4A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +383,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hunteroppel.Astronomy-ObjcSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjcSwift/Resourses/Astronomy-ObjcSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -351,6 +402,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hunteroppel.Astronomy-ObjcSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjcSwift/Resourses/Astronomy-ObjcSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
