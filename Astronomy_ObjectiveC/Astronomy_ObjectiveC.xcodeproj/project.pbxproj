@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18F7CD1B24981EA100A6CE9D /* KMLManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7CD1A24981EA100A6CE9D /* KMLManifest.m */; };
-		18F7CD1E24981EC400A6CE9D /* KMLPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7CD1D24981EC400A6CE9D /* KMLPhoto.m */; };
 		B9DAE3E224980E80008A87C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE3E124980E80008A87C5 /* AppDelegate.m */; };
 		B9DAE3E524980E80008A87C5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE3E424980E80008A87C5 /* SceneDelegate.m */; };
 		B9DAE3E824980E80008A87C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE3E724980E80008A87C5 /* ViewController.m */; };
@@ -37,8 +36,6 @@
 /* Begin PBXFileReference section */
 		18F7CD1924981EA100A6CE9D /* KMLManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLManifest.h; sourceTree = "<group>"; };
 		18F7CD1A24981EA100A6CE9D /* KMLManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLManifest.m; sourceTree = "<group>"; };
-		18F7CD1C24981EC400A6CE9D /* KMLPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLPhoto.h; sourceTree = "<group>"; };
-		18F7CD1D24981EC400A6CE9D /* KMLPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLPhoto.m; sourceTree = "<group>"; };
 		B9DAE3DD24980E80008A87C5 /* Astronomy_ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy_ObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DAE3E024980E80008A87C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9DAE3E124980E80008A87C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,8 +85,6 @@
 			children = (
 				18F7CD1924981EA100A6CE9D /* KMLManifest.h */,
 				18F7CD1A24981EA100A6CE9D /* KMLManifest.m */,
-				18F7CD1C24981EC400A6CE9D /* KMLPhoto.h */,
-				18F7CD1D24981EC400A6CE9D /* KMLPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,7 +305,6 @@
 				B9DAE41224980E91008A87C5 /* URL+Secure.swift in Sources */,
 				B9DAE3E824980E80008A87C5 /* ViewController.m in Sources */,
 				B9DAE40F24980E91008A87C5 /* LSILog.m in Sources */,
-				18F7CD1E24981EC400A6CE9D /* KMLPhoto.m in Sources */,
 				B9DAE3E224980E80008A87C5 /* AppDelegate.m in Sources */,
 				B9DAE3F324980E82008A87C5 /* main.m in Sources */,
 				B9DAE41124980E91008A87C5 /* LSIFileHelper.m in Sources */,
