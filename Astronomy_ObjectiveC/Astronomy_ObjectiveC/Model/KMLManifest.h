@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int photoId;
 @property (nonatomic) NSArray *sols;
 
-- (instancetype)initWithRoverName: (NSString *)roverName photoId:(int)photoId sols:(NSArray *)sols;
+- (instancetype)initWithRoverName: (NSString *)roverName sols:(NSArray *)sols;
+- (instancetype)initWithDictionary: (NSDictionary *)dictionary;
 
 @end
 

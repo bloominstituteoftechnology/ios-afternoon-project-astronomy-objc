@@ -10,14 +10,29 @@
 
 @implementation KMLManifest
 
-- (instancetype)initWithRoverName: (NSString *)roverName photoId:(int)photoId sols:(NSArray *)sols {
+- (instancetype)initWithRoverName: (NSString *)roverName sols:(NSArray *)sols {
     if (self = [super init]) {
         _roverName = roverName;
-        _photoId = photoId;
         _sols = sols;
     }
     return self;
+}
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    if (dictionary) {
+        NSString *roverName = dictionary[@"name"];
+        NSArray *solArray = dictionary[@"photos"];
+
+        NSMutableArray *solOutputArray = [[NSMutableArray alloc] init];
+        for (int i=0; i < solArray.count; i++) {
+            NSNumber *sol = solArray[i][@"sol"];
+            [solOutputArray addObject: sol];
+        }
+        self = [self initWithRoverName:roverName sols:solOutputArray];
+
+    }
+    return nil;
 }
 
 @end
