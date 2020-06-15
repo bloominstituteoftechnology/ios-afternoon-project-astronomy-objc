@@ -21,15 +21,19 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     if (dictionary) {
-        NSString *roverName = dictionary[@"name"];
-        NSArray *solArray = dictionary[@"photos"];
+        if (dictionary[@"photo_manifest"] != [NSNull null]) {
+            NSDictionary *roverDictionary = dictionary[@"photo_manifest"];
+            NSString *roverName = roverDictionary[@"name"];
+            NSArray *solArray = roverDictionary[@"photos"];
 
-        NSMutableArray *solOutputArray = [[NSMutableArray alloc] init];
-        for (int i=0; i < solArray.count; i++) {
-            NSNumber *sol = solArray[i][@"sol"];
-            [solOutputArray addObject: sol];
+            NSMutableArray *solOutputArray = [[NSMutableArray alloc] init];
+            for (int i=0; i < solArray.count; i++) {
+                NSNumber *sol = solArray[i][@"sol"];
+                [solOutputArray addObject: sol];
+            }
+            self = [self initWithRoverName:roverName sols:solOutputArray];
         }
-        self = [self initWithRoverName:roverName sols:solOutputArray];
+
 
     }
     return nil;

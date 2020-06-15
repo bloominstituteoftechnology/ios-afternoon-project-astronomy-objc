@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "KMLRoverController.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    KMLRoverController *roverController = [[KMLRoverController alloc] init];
+    [roverController fetchSolsFromRoverWithName:@"Curiosity" completion:^(KMLManifest *manifest) {
+        NSLog(@"%@", manifest);
+    }];
 }
 
 

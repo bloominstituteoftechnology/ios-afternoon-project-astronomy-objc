@@ -26,11 +26,15 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
 - (void)fetchSolsFromRoverWithName:(NSString *)name completion:(void (^)(KMLManifest *))completion
 {
     NSURL *baseURL = [NSURL URLWithString: baseURLString];
-    NSURL *fetchRoverURL = [NSURL URLWithString:@"rovers/curiosity" relativeToURL: baseURL];
-    NSURLComponents *components = [NSURLComponents componentsWithURL:fetchRoverURL resolvingAgainstBaseURL:NO];
-    components.queryItems = @[apiKey];
+    
+    NSString *roverString = [@"manifests/" stringByAppendingString:name];
 
-    [[[NSURLSession sharedSession] dataTaskWithURL:fetchRoverURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable _, NSError * _Nullable error) {
+    NSURL *fetchRoverURL = [NSURL URLWithString:roverString relativeToURL: baseURL];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:fetchRoverURL resolvingAgainstBaseURL:true];
+    NSURLQueryItem *apiQuery = [NSURLQueryItem queryItemWithName:@"api_key" value:apiKey];
+    components.queryItems = @[apiQuery];
+
+    NSURLSessionTask *session = [NSURLSession.sharedSession dataTaskWithURL:components.URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error fetching sols: %@", error);
             completion(nil);
@@ -51,13 +55,11 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
             return;
         }
 
-//        if (decodeDictionary != [NSNull null]) {
-//
-//        }
+        KMLManifest *manifest = [[KMLManifest alloc] initWithDictionary:decodeDictionary];
+        completion(manifest);
 
-
-    }] resume];
-
+    }];
+    [session resume];
 }
 
 - (void)fetchPhotosOnSol:(int)sol
