@@ -15,6 +15,7 @@
 		27B163362498109C00F60D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B163342498109C00F60D5C /* LaunchScreen.storyboard */; };
 		27B1633E249810FC00F60D5C /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = 27B1633D249810FC00F60D5C /* LambdaSDK */; };
 		27B163422498133600F60D5C /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B163412498133600F60D5C /* MarsPhoto.swift */; };
+		27B163462498159B00F60D5C /* CMDManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B163452498159B00F60D5C /* CMDManifest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		27B163372498109C00F60D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27B1633D249810FC00F60D5C /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LambdaSDK; sourceTree = "<group>"; };
 		27B163412498133600F60D5C /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
+		27B163432498159A00F60D5C /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		27B163442498159B00F60D5C /* CMDManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDManifest.h; sourceTree = "<group>"; };
+		27B163452498159B00F60D5C /* CMDManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDManifest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				27B163402498130500F60D5C /* Models */,
+				27B1634724981AB800F60D5C /* Model Controller */,
 				27B1633F2498111900F60D5C /* Resources */,
 				27B1632D2498109900F60D5C /* ViewController.swift */,
 				27B1632F2498109900F60D5C /* Main.storyboard */,
@@ -71,6 +76,7 @@
 		27B1633F2498111900F60D5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				27B163432498159A00F60D5C /* Astronomy-Bridging-Header.h */,
 				27B163292498109900F60D5C /* AppDelegate.swift */,
 				27B1632B2498109900F60D5C /* SceneDelegate.swift */,
 				27B163322498109C00F60D5C /* Assets.xcassets */,
@@ -85,8 +91,17 @@
 			isa = PBXGroup;
 			children = (
 				27B163412498133600F60D5C /* MarsPhoto.swift */,
+				27B163442498159B00F60D5C /* CMDManifest.h */,
+				27B163452498159B00F60D5C /* CMDManifest.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		27B1634724981AB800F60D5C /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,12 +130,14 @@
 		27B1631E2498109900F60D5C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CMD;
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Chris Dobek";
 				TargetAttributes = {
 					27B163252498109900F60D5C = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -164,6 +181,7 @@
 				27B163422498133600F60D5C /* MarsPhoto.swift in Sources */,
 				27B1632E2498109900F60D5C /* ViewController.swift in Sources */,
 				27B1632A2498109900F60D5C /* AppDelegate.swift in Sources */,
+				27B163462498159B00F60D5C /* CMDManifest.m in Sources */,
 				27B1632C2498109900F60D5C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Astronomy/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,6 +335,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisdobek.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Resources/Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -325,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Astronomy/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -333,6 +355,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisdobek.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Resources/Astronomy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
