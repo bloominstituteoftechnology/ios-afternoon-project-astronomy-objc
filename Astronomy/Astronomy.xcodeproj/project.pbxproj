@@ -13,6 +13,8 @@
 		27B163312498109900F60D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B1632F2498109900F60D5C /* Main.storyboard */; };
 		27B163332498109C00F60D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B163322498109C00F60D5C /* Assets.xcassets */; };
 		27B163362498109C00F60D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B163342498109C00F60D5C /* LaunchScreen.storyboard */; };
+		27B1633E249810FC00F60D5C /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = 27B1633D249810FC00F60D5C /* LambdaSDK */; };
+		27B163422498133600F60D5C /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B163412498133600F60D5C /* MarsPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		27B163322498109C00F60D5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27B163352498109C00F60D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27B163372498109C00F60D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B1633D249810FC00F60D5C /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LambdaSDK; sourceTree = "<group>"; };
+		27B163412498133600F60D5C /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		27B163282498109900F60D5C /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
-				27B163292498109900F60D5C /* AppDelegate.swift */,
-				27B1632B2498109900F60D5C /* SceneDelegate.swift */,
+				27B163402498130500F60D5C /* Models */,
+				27B1633F2498111900F60D5C /* Resources */,
 				27B1632D2498109900F60D5C /* ViewController.swift */,
 				27B1632F2498109900F60D5C /* Main.storyboard */,
+			);
+			path = Astronomy;
+			sourceTree = "<group>";
+		};
+		27B1633F2498111900F60D5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27B163292498109900F60D5C /* AppDelegate.swift */,
+				27B1632B2498109900F60D5C /* SceneDelegate.swift */,
 				27B163322498109C00F60D5C /* Assets.xcassets */,
 				27B163342498109C00F60D5C /* LaunchScreen.storyboard */,
 				27B163372498109C00F60D5C /* Info.plist */,
+				27B1633D249810FC00F60D5C /* LambdaSDK */,
 			);
-			path = Astronomy;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		27B163402498130500F60D5C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27B163412498133600F60D5C /* MarsPhoto.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B1633E249810FC00F60D5C /* LambdaSDK in Resources */,
 				27B163362498109C00F60D5C /* LaunchScreen.storyboard in Resources */,
 				27B163332498109C00F60D5C /* Assets.xcassets in Resources */,
 				27B163312498109900F60D5C /* Main.storyboard in Resources */,
@@ -138,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B163422498133600F60D5C /* MarsPhoto.swift in Sources */,
 				27B1632E2498109900F60D5C /* ViewController.swift in Sources */,
 				27B1632A2498109900F60D5C /* AppDelegate.swift in Sources */,
 				27B1632C2498109900F60D5C /* SceneDelegate.swift in Sources */,
@@ -285,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Astronomy/Info.plist;
+				INFOPLIST_FILE = Astronomy/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +326,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Astronomy/Info.plist;
+				INFOPLIST_FILE = Astronomy/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
