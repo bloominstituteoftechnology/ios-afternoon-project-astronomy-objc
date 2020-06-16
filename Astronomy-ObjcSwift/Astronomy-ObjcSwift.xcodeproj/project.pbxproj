@@ -23,6 +23,7 @@
 		2B1327532498429700D78C4A /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327522498429700D78C4A /* PhotoCollectionViewController.swift */; };
 		2B132756249842F500D78C4A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */; };
 		2B13275B2498480600D78C4A /* HAOImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13275A2498480600D78C4A /* HAOImageFetcher.m */; };
+		2B13275F24991EEF00D78C4A /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13275E24991EEF00D78C4A /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		2B1327592498480600D78C4A /* HAOImageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOImageFetcher.h; sourceTree = "<group>"; };
 		2B13275A2498480600D78C4A /* HAOImageFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOImageFetcher.m; sourceTree = "<group>"; };
+		2B13275E24991EEF00D78C4A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,12 +93,12 @@
 				2B13273824981C6000D78C4A /* ModelControllers */,
 				2B13273924981D2600D78C4A /* LambdaSDK */,
 				2B13273524981C3300D78C4A /* AppSceneDelegate */,
-				2B13273424981C2100D78C4A /* Resourses */,
+				2B13273424981C2100D78C4A /* Resources */,
 			);
 			path = "Astronomy-ObjcSwift";
 			sourceTree = "<group>";
 		};
-		2B13273424981C2100D78C4A /* Resourses */ = {
+		2B13273424981C2100D78C4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				2B13272924981C1A00D78C4A /* Assets.xcassets */,
@@ -104,7 +106,7 @@
 				2B13272E24981C1A00D78C4A /* Info.plist */,
 				2B13274A249821C100D78C4A /* Astronomy-ObjcSwift-Bridging-Header.h */,
 			);
-			path = Resourses;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2B13273524981C3300D78C4A /* AppSceneDelegate */ = {
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				2B1327522498429700D78C4A /* PhotoCollectionViewController.swift */,
+				2B13275E24991EEF00D78C4A /* PhotoDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				2B13272124981C1700D78C4A /* AppDelegate.swift in Sources */,
 				2B13274424981D2600D78C4A /* URL+Secure.swift in Sources */,
 				2B1327532498429700D78C4A /* PhotoCollectionViewController.swift in Sources */,
+				2B13275F24991EEF00D78C4A /* PhotoDetailViewController.swift in Sources */,
 				2B13275B2498480600D78C4A /* HAOImageFetcher.m in Sources */,
 				2B13274224981D2600D78C4A /* LSIErrors.m in Sources */,
 				2B13272324981C1700D78C4A /* SceneDelegate.swift in Sources */,
@@ -408,14 +412,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MD9HPX6UP;
-				INFOPLIST_FILE = "Astronomy-ObjcSwift/Resourses/Info.plist";
+				INFOPLIST_FILE = "Astronomy-ObjcSwift/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hunteroppel.Astronomy-ObjcSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjcSwift/Resourses/Astronomy-ObjcSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjcSwift/Resources/Astronomy-ObjcSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -427,14 +431,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MD9HPX6UP;
-				INFOPLIST_FILE = "Astronomy-ObjcSwift/Resourses/Info.plist";
+				INFOPLIST_FILE = "Astronomy-ObjcSwift/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hunteroppel.Astronomy-ObjcSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjcSwift/Resourses/Astronomy-ObjcSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-ObjcSwift/Resources/Astronomy-ObjcSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
