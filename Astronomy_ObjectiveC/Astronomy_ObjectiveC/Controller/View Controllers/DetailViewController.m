@@ -10,6 +10,9 @@
 #import "KMLRoverController.h"
 #import "KMLManifest.h"
 #import "KMLSol.h"
+#import "KMLFetchPhotoOperation.h"
+#import "LSIFileHelper.h"
+#import "Astronomy_ObjectiveC-Swift.h"
 
 @interface DetailViewController ()
 
@@ -22,8 +25,17 @@
     KMLRoverController *roverController = [[KMLRoverController alloc] init];
     
     [roverController fetchSolsFromRoverWithName:@"Curiosity" completion:^(KMLManifest *manifest) {
-        [roverController fetchPhotosWithRoverName:manifest.roverName OnSol:manifest.solIDs[0] completion:^(KMLSol *sol) {
-            NSLog(@"%@", sol.photoURLs);
+        [roverController fetchPhotosWithRoverName:manifest.roverName OnSol:manifest.solIDs[1] completion:^(KMLSol *sol) {
+            NSLog(@"%@", sol.photos);
+            NSDictionary *photoDictionary = sol.photos[0];
+
+
+
+            NSURL *photoURL = photoDictionary.allValues[0];
+
+            NSURLSession *session = NSURLSession.sharedSession;
+            KMLFetchPhotoOperation *operation = [[KMLFetchPhotoOperation alloc] initWithPhotoURL:photoURL.usingHTTPS session:session];
+            [operation start];
         }];
     }];
 }

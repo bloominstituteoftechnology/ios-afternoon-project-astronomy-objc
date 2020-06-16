@@ -10,12 +10,12 @@
 
 @implementation KMLSol
 
-- (instancetype) initWithSolID:(int)solID photoURLs:(NSArray *)photoURLs
+- (instancetype) initWithSolID:(int)solID photos:(NSArray *)photoURLs
 {
     self = [super init];
     if (self) {
         _solID = solID;
-        _photoURLs = photoURLs;
+        _photos = photoURLs;
     }
     return self;
 }

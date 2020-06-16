@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///Actual Sol Objects downloaded using solIDs
 @property (nonatomic, copy) NSMutableArray *sols;
 
-- (instancetype)initWithRoverName: (NSString *)roverName solIDs:(NSArray *)sols;
-- (instancetype)initWithDictionary: (NSDictionary *)dictionary;
+- (instancetype)initWithRoverName:(NSString *)roverName solIDs:(NSArray *)sols;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 -(void)addSol:(KMLSol *)sol;
 

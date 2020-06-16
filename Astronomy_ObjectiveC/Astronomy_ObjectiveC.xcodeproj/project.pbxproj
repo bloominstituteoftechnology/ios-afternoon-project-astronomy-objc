@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18F7CD1B24981EA100A6CE9D /* KMLManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7CD1A24981EA100A6CE9D /* KMLManifest.m */; };
+		B997D7EF24995ADF003F9A4A /* KMLFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B997D7EE24995ADF003F9A4A /* KMLFetchPhotoOperation.m */; };
+		B997D7F224998AC6003F9A4A /* NSURL+UsingHTTPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B997D7F124998AC6003F9A4A /* NSURL+UsingHTTPS.swift */; };
 		B9DAE3E224980E80008A87C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE3E124980E80008A87C5 /* AppDelegate.m */; };
 		B9DAE3E524980E80008A87C5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE3E424980E80008A87C5 /* SceneDelegate.m */; };
 		B9DAE3E824980E80008A87C5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE3E724980E80008A87C5 /* DetailViewController.m */; };
@@ -19,7 +21,6 @@
 		B9DAE40F24980E91008A87C5 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE40824980E91008A87C5 /* LSILog.m */; };
 		B9DAE41024980E91008A87C5 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE40924980E91008A87C5 /* LSIErrors.m */; };
 		B9DAE41124980E91008A87C5 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE40A24980E91008A87C5 /* LSIFileHelper.m */; };
-		B9DAE41224980E91008A87C5 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE40E24980E91008A87C5 /* URL+Secure.swift */; };
 		B9DAE419249810A6008A87C5 /* KMLRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE418249810A6008A87C5 /* KMLRoverController.m */; };
 		B9DAE41E24984BD8008A87C5 /* KMLSol.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE41D24984BD8008A87C5 /* KMLSol.m */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,10 @@
 /* Begin PBXFileReference section */
 		18F7CD1924981EA100A6CE9D /* KMLManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLManifest.h; sourceTree = "<group>"; };
 		18F7CD1A24981EA100A6CE9D /* KMLManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLManifest.m; sourceTree = "<group>"; };
+		B997D7ED24995ADF003F9A4A /* KMLFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLFetchPhotoOperation.h; sourceTree = "<group>"; };
+		B997D7EE24995ADF003F9A4A /* KMLFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLFetchPhotoOperation.m; sourceTree = "<group>"; };
+		B997D7F024998AC6003F9A4A /* Astronomy_ObjectiveC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy_ObjectiveC-Bridging-Header.h"; sourceTree = "<group>"; };
+		B997D7F124998AC6003F9A4A /* NSURL+UsingHTTPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSURL+UsingHTTPS.swift"; sourceTree = "<group>"; };
 		B9DAE3DD24980E80008A87C5 /* Astronomy_ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy_ObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DAE3E024980E80008A87C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9DAE3E124980E80008A87C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		B9DAE40B24980E91008A87C5 /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
 		B9DAE40C24980E91008A87C5 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		B9DAE40D24980E91008A87C5 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
-		B9DAE40E24980E91008A87C5 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 		B9DAE417249810A6008A87C5 /* KMLRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLRoverController.h; sourceTree = "<group>"; };
 		B9DAE418249810A6008A87C5 /* KMLRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLRoverController.m; sourceTree = "<group>"; };
 		B9DAE41C24984BD8008A87C5 /* KMLSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLSol.h; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 				B9DAE41D24984BD8008A87C5 /* KMLSol.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B997D7E9249955B9003F9A4A /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				B997D7ED24995ADF003F9A4A /* KMLFetchPhotoOperation.h */,
+				B997D7EE24995ADF003F9A4A /* KMLFetchPhotoOperation.m */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		B9DAE3D424980E7F008A87C5 = {
@@ -142,7 +155,8 @@
 				B9DAE40B24980E91008A87C5 /* LSIFileHelper.h */,
 				B9DAE40C24980E91008A87C5 /* LSIErrors.h */,
 				B9DAE40D24980E91008A87C5 /* LSILog.h */,
-				B9DAE40E24980E91008A87C5 /* URL+Secure.swift */,
+				B997D7F124998AC6003F9A4A /* NSURL+UsingHTTPS.swift */,
+				B997D7F024998AC6003F9A4A /* Astronomy_ObjectiveC-Bridging-Header.h */,
 			);
 			name = LambdaSDK;
 			path = ../../LambdaSDK;
@@ -183,6 +197,7 @@
 		B9DAE41624981067008A87C5 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B997D7E9249955B9003F9A4A /* Operations */,
 				B9DAE417249810A6008A87C5 /* KMLRoverController.h */,
 				B9DAE418249810A6008A87C5 /* KMLRoverController.m */,
 			);
@@ -255,6 +270,7 @@
 				TargetAttributes = {
 					B9DAE3DC24980E80008A87C5 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					B9DAE3F724980E82008A87C5 = {
 						CreatedOnToolsVersion = 11.5;
@@ -307,9 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DAE419249810A6008A87C5 /* KMLRoverController.m in Sources */,
-				B9DAE41224980E91008A87C5 /* URL+Secure.swift in Sources */,
+				B997D7F224998AC6003F9A4A /* NSURL+UsingHTTPS.swift in Sources */,
 				B9DAE3E824980E80008A87C5 /* DetailViewController.m in Sources */,
 				B9DAE40F24980E91008A87C5 /* LSILog.m in Sources */,
+				B997D7EF24995ADF003F9A4A /* KMLFetchPhotoOperation.m in Sources */,
 				B9DAE3E224980E80008A87C5 /* AppDelegate.m in Sources */,
 				B9DAE41E24984BD8008A87C5 /* KMLSol.m in Sources */,
 				B9DAE3F324980E82008A87C5 /* main.m in Sources */,
@@ -474,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34P4RF23ET;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
@@ -483,6 +501,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hazystudios.Astronomy-ObjectiveC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../LambdaSDK/Astronomy_ObjectiveC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -491,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34P4RF23ET;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
@@ -500,6 +522,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hazystudios.Astronomy-ObjectiveC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../LambdaSDK/Astronomy_ObjectiveC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

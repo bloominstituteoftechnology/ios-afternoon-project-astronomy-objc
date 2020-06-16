@@ -105,11 +105,17 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
 
         for (NSDictionary *photo in photoArray) {
             NSString *photoString = photo[@"img_src"];
+
             NSURL *photoURL = [[NSURL alloc] initWithString:photoString];
-            [photoOutputArray addObject:photoURL];
+            NSNumber *photoID = photo[@"id"];
+
+            NSMutableDictionary *photoDictionary = [[NSMutableDictionary alloc] init];
+            [photoDictionary setValue:photoURL forKey:photoID.stringValue];
+
+            [photoOutputArray addObject:photoDictionary];
         }
 
-        KMLSol *solObject = [[KMLSol alloc] initWithSolID:sol.intValue photoURLs:photoOutputArray];
+        KMLSol *solObject = [[KMLSol alloc] initWithSolID:sol.intValue photos:photoOutputArray];
         [self.manifest addSol:solObject];
         completion(solObject);
     }];
