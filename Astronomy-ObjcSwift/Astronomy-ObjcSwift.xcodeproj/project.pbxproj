@@ -24,6 +24,7 @@
 		2B132756249842F500D78C4A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */; };
 		2B13275B2498480600D78C4A /* HAOImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13275A2498480600D78C4A /* HAOImageFetcher.m */; };
 		2B13275F24991EEF00D78C4A /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13275E24991EEF00D78C4A /* PhotoDetailViewController.swift */; };
+		2B132765249961FB00D78C4A /* HAOImageFetcherOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B132764249961FB00D78C4A /* HAOImageFetcherOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		2B1327592498480600D78C4A /* HAOImageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOImageFetcher.h; sourceTree = "<group>"; };
 		2B13275A2498480600D78C4A /* HAOImageFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOImageFetcher.m; sourceTree = "<group>"; };
 		2B13275E24991EEF00D78C4A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		2B132763249961FB00D78C4A /* HAOImageFetcherOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOImageFetcherOperation.h; sourceTree = "<group>"; };
+		2B132764249961FB00D78C4A /* HAOImageFetcherOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOImageFetcherOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +133,6 @@
 		2B13273724981C5200D78C4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2B13274E2498368C00D78C4A /* ModelFetcher */,
 				2B13274B24982BF900D78C4A /* HAOPhotoResult.h */,
 				2B13274C24982BF900D78C4A /* HAOPhotoResult.m */,
 				2B132747249820F200D78C4A /* HAOPhoto.h */,
@@ -143,6 +145,12 @@
 		2B13273824981C6000D78C4A /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B13274F2498392800D78C4A /* HAOPhotoFetcher.h */,
+				2B1327502498392800D78C4A /* HAOPhotoFetcher.m */,
+				2B1327592498480600D78C4A /* HAOImageFetcher.h */,
+				2B13275A2498480600D78C4A /* HAOImageFetcher.m */,
+				2B132763249961FB00D78C4A /* HAOImageFetcherOperation.h */,
+				2B132764249961FB00D78C4A /* HAOImageFetcherOperation.m */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -160,17 +168,6 @@
 			);
 			name = LambdaSDK;
 			path = ../../LambdaSDK;
-			sourceTree = "<group>";
-		};
-		2B13274E2498368C00D78C4A /* ModelFetcher */ = {
-			isa = PBXGroup;
-			children = (
-				2B13274F2498392800D78C4A /* HAOPhotoFetcher.h */,
-				2B1327502498392800D78C4A /* HAOPhotoFetcher.m */,
-				2B1327592498480600D78C4A /* HAOImageFetcher.h */,
-				2B13275A2498480600D78C4A /* HAOImageFetcher.m */,
-			);
-			path = ModelFetcher;
 			sourceTree = "<group>";
 		};
 		2B132754249842E100D78C4A /* Views */ = {
@@ -254,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B13274D24982BF900D78C4A /* HAOPhotoResult.m in Sources */,
+				2B132765249961FB00D78C4A /* HAOImageFetcherOperation.m in Sources */,
 				2B13274624981F3400D78C4A /* Rover.swift in Sources */,
 				2B13274324981D2600D78C4A /* LSIFileHelper.m in Sources */,
 				2B132749249820F200D78C4A /* HAOPhoto.m in Sources */,

@@ -11,3 +11,4 @@
 #import "HAOPhoto.h"
 
 #import "HAOImageFetcher.h"
+#import "HAOImageFetcherOperation.h"

@@ -14,6 +14,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     
     lazy var imageFetcher = ImageFetcher()
+    private lazy var photoFetchQueue = OperationQueue()
     
     var photo: Photo? {
         didSet {
@@ -26,26 +27,20 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             let imgURL = photo.imgURL.usingHTTPS else { return }
         activityIndicator.startAnimating()
         
-        imageFetcher.fetchImage(from: imgURL) { data, error in
-            if let error = error {
-                NSLog("Failed to fetch image with error: \(error)")
-                return
-            }
+        fetchAndSetImage(url: imgURL)
+    }
+    
+    private func fetchAndSetImage(url: URL) {
+        let fetchPhoto = ImageFetcherOperation(url: url)
+        let setImageToCell = BlockOperation {
+            let imageData = fetchPhoto.imageData
+            guard let image = UIImage(data: imageData) else { return }
             
-            guard let data = data else {
-                NSLog("No data was returned")
-                return
-            }
-            
-            guard let image = UIImage(data: data) else {
-                NSLog("Could not convert data into image")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.imageView.image = image
-                self.activityIndicator.stopAnimating()
-            }
+            self.imageView.image = image
         }
+        
+        setImageToCell.addDependency(fetchPhoto)
+        photoFetchQueue.addOperation(fetchPhoto)
+        OperationQueue.main.addOperation(setImageToCell)
     }
 }
