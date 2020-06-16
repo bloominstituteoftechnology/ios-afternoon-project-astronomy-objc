@@ -22,6 +22,7 @@
 		2B1327512498392800D78C4A /* HAOPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327502498392800D78C4A /* HAOPhotoFetcher.m */; };
 		2B1327532498429700D78C4A /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327522498429700D78C4A /* PhotoCollectionViewController.swift */; };
 		2B132756249842F500D78C4A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */; };
+		2B13275B2498480600D78C4A /* HAOImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13275A2498480600D78C4A /* HAOImageFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		2B1327502498392800D78C4A /* HAOPhotoFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPhotoFetcher.m; sourceTree = "<group>"; };
 		2B1327522498429700D78C4A /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B1327592498480600D78C4A /* HAOImageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOImageFetcher.h; sourceTree = "<group>"; };
+		2B13275A2498480600D78C4A /* HAOImageFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOImageFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				2B13274E2498368C00D78C4A /* ModelFetcher */,
+				2B13274B24982BF900D78C4A /* HAOPhotoResult.h */,
+				2B13274C24982BF900D78C4A /* HAOPhotoResult.m */,
 				2B132747249820F200D78C4A /* HAOPhoto.h */,
 				2B132748249820F200D78C4A /* HAOPhoto.m */,
 				2B13274524981F3400D78C4A /* Rover.swift */,
-				2B13274B24982BF900D78C4A /* HAOPhotoResult.h */,
-				2B13274C24982BF900D78C4A /* HAOPhotoResult.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +164,8 @@
 			children = (
 				2B13274F2498392800D78C4A /* HAOPhotoFetcher.h */,
 				2B1327502498392800D78C4A /* HAOPhotoFetcher.m */,
+				2B1327592498480600D78C4A /* HAOImageFetcher.h */,
+				2B13275A2498480600D78C4A /* HAOImageFetcher.m */,
 			);
 			path = ModelFetcher;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				2B13272124981C1700D78C4A /* AppDelegate.swift in Sources */,
 				2B13274424981D2600D78C4A /* URL+Secure.swift in Sources */,
 				2B1327532498429700D78C4A /* PhotoCollectionViewController.swift in Sources */,
+				2B13275B2498480600D78C4A /* HAOImageFetcher.m in Sources */,
 				2B13274224981D2600D78C4A /* LSIErrors.m in Sources */,
 				2B13272324981C1700D78C4A /* SceneDelegate.swift in Sources */,
 			);

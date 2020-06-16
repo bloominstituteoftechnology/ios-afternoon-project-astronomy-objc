@@ -9,3 +9,5 @@
 #import "HAOPhotoFetcher.h"
 #import "HAOPhotoResult.h"
 #import "HAOPhoto.h"
+
+#import "HAOImageFetcher.h"
