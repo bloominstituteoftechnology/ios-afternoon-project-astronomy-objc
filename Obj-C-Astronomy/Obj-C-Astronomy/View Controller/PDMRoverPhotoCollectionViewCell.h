@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PDMRoverPhotoControllerCollectionViewCell : UICollectionViewCell
+@interface PDMRoverPhotoCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, nonnull) IBOutlet UIImageView *roverImage;
 
 @end
 

@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class PDMMarsRoverController;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PDMFetchRoverImageOperation : NSObject
+@interface PDMFetchRoverImageOperation : NSOperation
+
+@property (nonatomic, nullable) NSData *imgData;
+
+- (instancetype)initWithImageURLString:(NSString *)imageURLString;
 
 @end
 

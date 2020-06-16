@@ -8,7 +8,7 @@
 
 #import "PDMRover.h"
 
-@implementation Rover
+@implementation PDMRover
 - (instancetype)initWithIdentifier:(int)identifier
                               name:(NSString *)name
                        landingDate:(NSString *)landingDate

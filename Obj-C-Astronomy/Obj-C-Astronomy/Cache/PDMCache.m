@@ -8,14 +8,14 @@
 
 #import "PDMCache.h"
 
-@interface Cache()
+@interface PDMCache()
 
 @property NSMutableDictionary *cache;
 @property dispatch_queue_t cacheQueue;
 
 @end
 
-@implementation Cache
+@implementation PDMCache
 
 - (instancetype)initWithKey:(NSString *)key value:(id)value
 {

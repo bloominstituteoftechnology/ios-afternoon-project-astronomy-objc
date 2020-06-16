@@ -8,7 +8,7 @@
 
 #import "PDMCamera.h"
 
-@implementation Camera
+@implementation PDMCamera
 
 - (instancetype)initWithIdentifier:(int)identifier
                               name:(NSString *)name

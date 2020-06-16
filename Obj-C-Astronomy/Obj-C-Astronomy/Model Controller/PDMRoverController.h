@@ -10,15 +10,15 @@
 #import <UIKit/UIKit.h>
 
 
-@class Rover;
+@class PDMRover;
 @class MarsRoverPhotos;
 
-typedef void(^MissionManifestCompletionHandler)(Rover *_Nullable rover, NSError *_Nullable error);
+typedef void(^MissionManifestCompletionHandler)(PDMRover *_Nullable rover, NSError *_Nullable error);
 typedef void(^FetchAllPhotosCompletionHandler)(MarsRoverPhotos *_Nullable rover, NSError *_Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MarsRoverController : NSObject
+@interface PDMMarsRoverController : NSObject
 
 - (void)fetchMissionManifestWithCompletionHandler:(MissionManifestCompletionHandler)completionHandler;
 

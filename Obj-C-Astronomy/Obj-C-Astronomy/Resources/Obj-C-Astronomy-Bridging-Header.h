@@ -5,4 +5,6 @@
 #import "PDMCamera.h"
 #import "PDMRover.h"
 #import "PDMRoverController.h"
+#import "PDMRoverPhotoCollectionViewCell.h"
 #import "PDMCache.h"
+#import "PDMFetchRoverImageOperation.h"

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Rover : NSObject
+@interface PDMRover : NSObject
 
 @property (nonatomic, readonly) int identifier;
 @property (nonatomic, readonly, copy) NSString *name;

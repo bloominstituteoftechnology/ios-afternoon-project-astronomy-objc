@@ -14,7 +14,7 @@ static NSString *const marsRoverAPIURL = @"https://api.nasa.gov/mars-photos/api/
 static NSString *const marsRoverAPIKey = @"rnZpxQ7kz6VUFu049fXKsoWEC4HuuFaEieYGsesJ";
 
 
-@implementation MarsRoverController
+@implementation PDMMarsRoverController
 
 - (void)fetchMissionManifestWithCompletionHandler:(MissionManifestCompletionHandler)completionHandler
 {
@@ -51,7 +51,7 @@ static NSString *const marsRoverAPIKey = @"rnZpxQ7kz6VUFu049fXKsoWEC4HuuFaEieYGs
         }
         
         NSDictionary *roverDictionary = [manifestResults valueForKey:@"photo_manifest"];
-        Rover *rover = [[Rover alloc] initWithDictionary:roverDictionary];
+        PDMRover *rover = [[PDMRover alloc] initWithDictionary:roverDictionary];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             completionHandler(rover, nil);

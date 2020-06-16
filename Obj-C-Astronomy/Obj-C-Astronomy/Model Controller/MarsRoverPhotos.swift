@@ -42,10 +42,10 @@ import Foundation
 class MarsRoverPhoto: NSObject, Decodable {
     var identifier: Int
     var sol: Int
-    var camera: Camera
+    var camera: PDMCamera
     var imgSrc: String
     var earthDate: String
-    var rover: Rover
+    var rover: PDMRover
     
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
@@ -74,7 +74,7 @@ class MarsRoverPhoto: NSObject, Decodable {
         case totalPhotos = "total_photos"
     }
     
-    init(identifier: Int, sol: Int, camera: Camera, imgSrc: String, earthDate: String, rover: Rover) {
+    init(identifier: Int, sol: Int, camera: PDMCamera, imgSrc: String, earthDate: String, rover: PDMRover) {
         self.identifier = identifier
         self.sol = sol
         self.camera = camera
@@ -95,7 +95,7 @@ class MarsRoverPhoto: NSObject, Decodable {
         let cameraName = try cameraContainer.decode(String.self, forKey: .name)
         let roverID = try cameraContainer.decode(Int32.self, forKey: .roverID)
         let fullName = try cameraContainer.decode(String.self, forKey: .fullName)
-        let camera = Camera(identifier: cameraID, name: cameraName, roverID: roverID, fullName: fullName)
+        let camera = PDMCamera(identifier: cameraID, name: cameraName, roverID: roverID, fullName: fullName)
         self.camera = camera
         
         imgSrc = try container.decode(String.self, forKey: .imgSrc)
@@ -109,7 +109,7 @@ class MarsRoverPhoto: NSObject, Decodable {
         let maxSol = try roverContainer.decode(Int32.self, forKey: .maxSol)
         let maxDate = try roverContainer.decode(String.self, forKey: .maxDate)
         let totalPhotos = try roverContainer.decode(Int32.self, forKey: .totalPhotos)
-        let rover = Rover(identifier: roverID, name: roverName, landingDate: landingDate, launchDate: launchDate, status: status, maxSol: maxSol, maxDate: maxDate, totalPhotos: totalPhotos, sols: nil)
+        let rover = PDMRover(identifier: roverID, name: roverName, landingDate: landingDate, launchDate: launchDate, status: status, maxSol: maxSol, maxDate: maxDate, totalPhotos: totalPhotos, sols: nil)
         self.rover = rover
         
         

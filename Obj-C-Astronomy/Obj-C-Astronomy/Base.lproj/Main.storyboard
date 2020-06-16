@@ -11,7 +11,7 @@
         <!--Sol Number-->
         <scene sceneID="jBO-RH-U9v">
             <objects>
-                <collectionViewController id="Ghj-vw-B3a" sceneMemberID="viewController">
+                <collectionViewController id="Ghj-vw-B3a" customClass="SolCollectionViewController" customModule="Obj_C_Astronomy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8cS-5e-Vit">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverPhotoCell" id="y77-lY-FLF">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverPhotoCell" id="y77-lY-FLF" customClass="PDMRoverPhotoCollectionViewCell">
                                 <rect key="frame" x="10" y="10" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wkY-EI-wUe">
@@ -37,6 +37,7 @@
                                     </subviews>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="roverImage" destination="paR-Bm-b1q" id="h3S-no-q8g"/>
                                     <segue destination="2aL-l3-0Kb" kind="show" identifier="ShowPhotoDetailSegue" id="8hT-yV-RCY"/>
                                 </connections>
                             </collectionViewCell>
@@ -47,18 +48,30 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sol Number" id="7cg-6h-JrF">
-                        <barButtonItem key="leftBarButtonItem" title="Previous" image="arrow.left" catalog="system" id="gXh-6n-AkA"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" image="arrow.right" catalog="system" id="xGM-55-qaB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Previous" image="arrow.left" catalog="system" id="gXh-6n-AkA">
+                            <connections>
+                                <action selector="previousSolTapped:" destination="Ghj-vw-B3a" id="io8-DC-ick"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" image="arrow.right" catalog="system" id="xGM-55-qaB">
+                            <connections>
+                                <action selector="nextSolTapped:" destination="Ghj-vw-B3a" id="i9n-hk-RDR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nextSolButton" destination="xGM-55-qaB" id="G5d-yx-cdM"/>
+                        <outlet property="previousSolButton" destination="gXh-6n-AkA" id="Dpe-H1-J8E"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSR-jz-oT9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1298.5507246376812" y="71.651785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="zkT-kR-6LN">
             <objects>
-                <viewController id="2aL-l3-0Kb" sceneMemberID="viewController">
+                <viewController id="2aL-l3-0Kb" customClass="PhotoDetailViewController" customModule="Obj_C_Astronomy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3iw-Mg-lQE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,10 +100,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-bC-c2a">
                                         <rect key="frame" x="0.0" y="90" width="398" height="30"/>
                                         <state key="normal" title="Save Photo"/>
+                                        <connections>
+                                            <action selector="savePhotoTapped:" destination="2aL-l3-0Kb" eventType="touchUpInside" id="B02-PY-Nxx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5g-nr-ouO">
                                         <rect key="frame" x="0.0" y="135" width="398" height="30"/>
                                         <state key="normal" title="Open Photo"/>
+                                        <connections>
+                                            <action selector="openPhotosTapped:" destination="2aL-l3-0Kb" eventType="touchUpInside" id="LD4-L4-Uck"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -107,6 +126,12 @@
                         <viewLayoutGuide key="safeArea" id="wsB-b1-BsS"/>
                     </view>
                     <navigationItem key="navigationItem" id="u8x-TP-FzH"/>
+                    <connections>
+                        <outlet property="cameraDetailsLabel" destination="TWc-an-728" id="6oW-NC-Elt"/>
+                        <outlet property="marsRoverImage" destination="jI6-RL-AxQ" id="uSA-rF-FHA"/>
+                        <outlet property="photoDetailsLabel" destination="vAe-cS-pHZ" id="i3U-Us-mLP"/>
+                        <outlet property="savePhotoButton" destination="Z2x-bC-c2a" id="zb8-61-Aw0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqf-2D-1c9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
