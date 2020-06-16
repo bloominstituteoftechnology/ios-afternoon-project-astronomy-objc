@@ -22,7 +22,7 @@
     KMLRoverController *roverController = [[KMLRoverController alloc] init];
     
     [roverController fetchSolsFromRoverWithName:@"Curiosity" completion:^(KMLManifest *manifest) {
-        [roverController fetchPhotosWithRoverName:manifest.roverName OnSol:manifest.solIDs[1] completion:^(KMLSol *sol) {
+        [roverController fetchPhotosWithRoverName:manifest.roverName OnSol:manifest.solIDs[0] completion:^(KMLSol *sol) {
             NSLog(@"%@", sol.photoURLs);
         }];
     }];

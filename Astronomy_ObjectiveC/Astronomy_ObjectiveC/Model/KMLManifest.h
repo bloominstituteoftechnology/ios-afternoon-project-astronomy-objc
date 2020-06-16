@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KMLManifest : NSObject
 
 @property (copy, nonatomic) NSString *roverName;
+///used to hold sol IDs in order to download sols
 @property (nonatomic, copy) NSArray *solIDs;
+///Actual Sol Objects downloaded using solIDs
 @property (nonatomic, copy) NSMutableArray *sols;
 
 - (instancetype)initWithRoverName: (NSString *)roverName solIDs:(NSArray *)sols;

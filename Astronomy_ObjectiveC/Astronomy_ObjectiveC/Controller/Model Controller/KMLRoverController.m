@@ -68,10 +68,9 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
 
 - (void)fetchPhotosWithRoverName:(NSString *)name OnSol:(NSNumber *)sol completion:(void (^)(KMLSol *))completion
 {
-//https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY
     NSURL *baseURL = [NSURL URLWithString: baseURLString];
 
-    NSString *roverString = [[@"rovers/" stringByAppendingString:name] stringByAppendingString:@"photos"];
+    NSString *roverString = [[@"rovers/" stringByAppendingString:name] stringByAppendingString:@"/photos"];
 
     NSURL *fetchRoverURL = [NSURL URLWithString:roverString relativeToURL: baseURL];
     NSURLComponents *components = [NSURLComponents componentsWithURL:fetchRoverURL resolvingAgainstBaseURL:true];
