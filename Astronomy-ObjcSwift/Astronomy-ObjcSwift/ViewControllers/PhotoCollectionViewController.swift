@@ -40,6 +40,15 @@ class PhotoCollectionViewController: UICollectionViewController {
     
      // MARK: - Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ViewPhotoSegue" {
+            guard let detailVC = segue.destination as? PhotoDetailViewController,
+                let cell = sender as? PhotoCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell) else { return }
+            detailVC.photo = photos[indexPath.row]
+        }
+    }
+    
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

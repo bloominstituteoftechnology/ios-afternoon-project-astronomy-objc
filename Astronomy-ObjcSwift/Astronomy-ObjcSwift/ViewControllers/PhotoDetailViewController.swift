@@ -18,17 +18,26 @@ class PhotoDetailViewController: UIViewController {
     var photo: Photo?
     lazy var imageFetcher = ImageFetcher()
     
+    lazy var dateFormatter: DateFormatter = {
+        var formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        updateViews()
     }
     
     private func updateViews() {
         guard let photo = photo else { return }
         
-        takenByLabel.text = "Taken by \(photo.rover.id) on \(photo.earthDate) (\(photo.sol))"
+        takenByLabel.text = "Taken by \(photo.rover.id) on \(dateFormatter.string(from: photo.earthDate)) (Sol \(photo.sol))"
         cameraLabel.text = "Camera: \(photo.camera)"
+        
+        fetchAndSetImage()
     }
     
     private func fetchAndSetImage() {

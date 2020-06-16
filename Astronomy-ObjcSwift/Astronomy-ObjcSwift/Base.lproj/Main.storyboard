@@ -52,7 +52,7 @@
                                 <connections>
                                     <outlet property="activityIndicator" destination="a9X-zH-kJo" id="0aU-YN-N2N"/>
                                     <outlet property="imageView" destination="nUH-Mc-vSM" id="wWA-mQ-dKa"/>
-                                    <segue destination="qaE-ii-cTE" kind="show" id="IBW-uW-DIR"/>
+                                    <segue destination="qaE-ii-cTE" kind="show" identifier="ViewPhotoSegue" id="IBW-uW-DIR"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
