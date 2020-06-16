@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB80952C24996C80000E7569 /* PDMCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80952B24996C80000E7569 /* PDMCamera.m */; };
+		DB80953024996D13000E7569 /* PDMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80952F24996D13000E7569 /* PDMCache.m */; };
+		DB80953324996D6C000E7569 /* PDMRover.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953224996D6C000E7569 /* PDMRover.m */; };
+		DB80953824996F75000E7569 /* PDMRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953724996F75000E7569 /* PDMRoverController.m */; };
+		DB80953B2499703F000E7569 /* MarsRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */; };
+		DB80953F2499712C000E7569 /* PDMFetchRoverImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */; };
+		DB80954824997239000E7569 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954124997239000E7569 /* LSILog.m */; };
+		DB80954924997239000E7569 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954224997239000E7569 /* LSIErrors.m */; };
+		DB80954A24997239000E7569 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954324997239000E7569 /* LSIFileHelper.m */; };
+		DB80954B24997239000E7569 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80954724997239000E7569 /* URL+Secure.swift */; };
+		DB80954E249976DB000E7569 /* PDMRoverPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954D249976DB000E7569 /* PDMRoverPhotoCollectionViewCell.m */; };
+		DB809550249976EB000E7569 /* SolCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80954F249976EB000E7569 /* SolCollectionViewController.swift */; };
+		DB809552249976F8000E7569 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB809551249976F8000E7569 /* PhotoDetailViewController.swift */; };
+		DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB972498092B0049D1A0 /* AppDelegate.m */; };
+		DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */; };
+		DB85DBA12498092B0049D1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85DB9F2498092B0049D1A0 /* Main.storyboard */; };
+		DB85DBA32498092D0049D1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB85DBA22498092D0049D1A0 /* Assets.xcassets */; };
+		DB85DBA62498092D0049D1A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85DBA42498092D0049D1A0 /* LaunchScreen.storyboard */; };
+		DB85DBA92498092D0049D1A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DBA82498092D0049D1A0 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB80952A24996C80000E7569 /* PDMCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMCamera.h; sourceTree = "<group>"; };
+		DB80952B24996C80000E7569 /* PDMCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMCamera.m; sourceTree = "<group>"; };
+		DB80952E24996D13000E7569 /* PDMCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMCache.h; sourceTree = "<group>"; };
+		DB80952F24996D13000E7569 /* PDMCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMCache.m; sourceTree = "<group>"; };
+		DB80953124996D6C000E7569 /* PDMRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMRover.h; sourceTree = "<group>"; };
+		DB80953224996D6C000E7569 /* PDMRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMRover.m; sourceTree = "<group>"; };
+		DB80953624996F75000E7569 /* PDMRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMRoverController.h; sourceTree = "<group>"; };
+		DB80953724996F75000E7569 /* PDMRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMRoverController.m; sourceTree = "<group>"; };
+		DB8095392499703F000E7569 /* Obj-C-Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Obj-C-Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhotos.swift; sourceTree = "<group>"; };
+		DB80953D2499712C000E7569 /* PDMFetchRoverImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMFetchRoverImageOperation.h; sourceTree = "<group>"; };
+		DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMFetchRoverImageOperation.m; sourceTree = "<group>"; };
+		DB80954124997239000E7569 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		DB80954224997239000E7569 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
+		DB80954324997239000E7569 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
+		DB80954424997239000E7569 /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
+		DB80954524997239000E7569 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
+		DB80954624997239000E7569 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
+		DB80954724997239000E7569 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		DB80954C249976DB000E7569 /* PDMRoverPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMRoverPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		DB80954D249976DB000E7569 /* PDMRoverPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMRoverPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		DB80954F249976EB000E7569 /* SolCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolCollectionViewController.swift; sourceTree = "<group>"; };
+		DB809551249976F8000E7569 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		DB85DB932498092B0049D1A0 /* Obj-C-Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C-Astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB85DB962498092B0049D1A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB85DB972498092B0049D1A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB85DB992498092B0049D1A0 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		DB85DBA02498092B0049D1A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB85DBA22498092D0049D1A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB85DBA52498092D0049D1A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB85DBA72498092D0049D1A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB85DBA82498092D0049D1A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB85DB902498092B0049D1A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB80952D24996D07000E7569 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				DB80952E24996D13000E7569 /* PDMCache.h */,
+				DB80952F24996D13000E7569 /* PDMCache.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		DB80953C24997112000E7569 /* Concurrency Operations */ = {
+			isa = PBXGroup;
+			children = (
+				DB80953D2499712C000E7569 /* PDMFetchRoverImageOperation.h */,
+				DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */,
+			);
+			path = "Concurrency Operations";
+			sourceTree = "<group>";
+		};
+		DB80954024997239000E7569 /* LambdaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DB80954124997239000E7569 /* LSILog.m */,
+				DB80954224997239000E7569 /* LSIErrors.m */,
+				DB80954324997239000E7569 /* LSIFileHelper.m */,
+				DB80954424997239000E7569 /* LSIFileHelper.h */,
+				DB80954524997239000E7569 /* LSIErrors.h */,
+				DB80954624997239000E7569 /* LSILog.h */,
+				DB80954724997239000E7569 /* URL+Secure.swift */,
+			);
+			path = LambdaSDK;
+			sourceTree = "<group>";
+		};
+		DB85DB8A2498092B0049D1A0 = {
+			isa = PBXGroup;
+			children = (
+				DB85DB952498092B0049D1A0 /* Obj-C-Astronomy */,
+				DB85DB942498092B0049D1A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB85DB942498092B0049D1A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB85DB932498092B0049D1A0 /* Obj-C-Astronomy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB85DB952498092B0049D1A0 /* Obj-C-Astronomy */ = {
+			isa = PBXGroup;
+			children = (
+				DB80954024997239000E7569 /* LambdaSDK */,
+				DB80953C24997112000E7569 /* Concurrency Operations */,
+				DB80952D24996D07000E7569 /* Cache */,
+				DB85DBB0249809D90049D1A0 /* Model */,
+				DB85DBB2249809E40049D1A0 /* Model Controller */,
+				DB85DBB3249809ED0049D1A0 /* View Controller */,
+				DB85DBAF249809BF0049D1A0 /* Resources */,
+				DB85DB9F2498092B0049D1A0 /* Main.storyboard */,
+				DB85DBA22498092D0049D1A0 /* Assets.xcassets */,
+				DB85DBA82498092D0049D1A0 /* main.m */,
+			);
+			path = "Obj-C-Astronomy";
+			sourceTree = "<group>";
+		};
+		DB85DBAF249809BF0049D1A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB85DB962498092B0049D1A0 /* AppDelegate.h */,
+				DB85DB972498092B0049D1A0 /* AppDelegate.m */,
+				DB85DB992498092B0049D1A0 /* SceneDelegate.h */,
+				DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */,
+				DB8095392499703F000E7569 /* Obj-C-Astronomy-Bridging-Header.h */,
+				DB85DBA42498092D0049D1A0 /* LaunchScreen.storyboard */,
+				DB85DBA72498092D0049D1A0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DB85DBB0249809D90049D1A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB80952A24996C80000E7569 /* PDMCamera.h */,
+				DB80952B24996C80000E7569 /* PDMCamera.m */,
+				DB80953124996D6C000E7569 /* PDMRover.h */,
+				DB80953224996D6C000E7569 /* PDMRover.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DB85DBB2249809E40049D1A0 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DB80953624996F75000E7569 /* PDMRoverController.h */,
+				DB80953724996F75000E7569 /* PDMRoverController.m */,
+				DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		DB85DBB3249809ED0049D1A0 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DB80954C249976DB000E7569 /* PDMRoverPhotoCollectionViewCell.h */,
+				DB80954D249976DB000E7569 /* PDMRoverPhotoCollectionViewCell.m */,
+				DB80954F249976EB000E7569 /* SolCollectionViewController.swift */,
+				DB809551249976F8000E7569 /* PhotoDetailViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB85DB922498092B0049D1A0 /* Obj-C-Astronomy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB85DBAC2498092D0049D1A0 /* Build configuration list for PBXNativeTarget "Obj-C-Astronomy" */;
+			buildPhases = (
+				DB85DB8F2498092B0049D1A0 /* Sources */,
+				DB85DB902498092B0049D1A0 /* Frameworks */,
+				DB85DB912498092B0049D1A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Obj-C-Astronomy";
+			productName = "Obj-C-Astronomy";
+			productReference = DB85DB932498092B0049D1A0 /* Obj-C-Astronomy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB85DB8B2498092B0049D1A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = PatrickMillet79;
+				TargetAttributes = {
+					DB85DB922498092B0049D1A0 = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
+					};
+				};
+			};
+			buildConfigurationList = DB85DB8E2498092B0049D1A0 /* Build configuration list for PBXProject "Obj-C-Astronomy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB85DB8A2498092B0049D1A0;
+			productRefGroup = DB85DB942498092B0049D1A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB85DB922498092B0049D1A0 /* Obj-C-Astronomy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB85DB912498092B0049D1A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB85DBA62498092D0049D1A0 /* LaunchScreen.storyboard in Resources */,
+				DB85DBA32498092D0049D1A0 /* Assets.xcassets in Resources */,
+				DB85DBA12498092B0049D1A0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB85DB8F2498092B0049D1A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB80953824996F75000E7569 /* PDMRoverController.m in Sources */,
+				DB80954824997239000E7569 /* LSILog.m in Sources */,
+				DB80953324996D6C000E7569 /* PDMRover.m in Sources */,
+				DB80952C24996C80000E7569 /* PDMCamera.m in Sources */,
+				DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */,
+				DB80954924997239000E7569 /* LSIErrors.m in Sources */,
+				DB809552249976F8000E7569 /* PhotoDetailViewController.swift in Sources */,
+				DB80954A24997239000E7569 /* LSIFileHelper.m in Sources */,
+				DB80953024996D13000E7569 /* PDMCache.m in Sources */,
+				DB80954E249976DB000E7569 /* PDMRoverPhotoCollectionViewCell.m in Sources */,
+				DB80953F2499712C000E7569 /* PDMFetchRoverImageOperation.m in Sources */,
+				DB85DBA92498092D0049D1A0 /* main.m in Sources */,
+				DB809550249976EB000E7569 /* SolCollectionViewController.swift in Sources */,
+				DB80953B2499703F000E7569 /* MarsRoverPhotos.swift in Sources */,
+				DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */,
+				DB80954B24997239000E7569 /* URL+Secure.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB85DB9F2498092B0049D1A0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB85DBA02498092B0049D1A0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB85DBA42498092D0049D1A0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB85DBA52498092D0049D1A0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB85DBAA2498092D0049D1A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB85DBAB2498092D0049D1A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB85DBAD2498092D0049D1A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C8A9CLJB2H;
+				INFOPLIST_FILE = "Obj-C-Astronomy/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PatrickMillet79.Obj-C-Astronomy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Obj-C-Astronomy/Resources/Obj-C-Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB85DBAE2498092D0049D1A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C8A9CLJB2H;
+				INFOPLIST_FILE = "Obj-C-Astronomy/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PatrickMillet79.Obj-C-Astronomy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Obj-C-Astronomy/Resources/Obj-C-Astronomy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB85DB8E2498092B0049D1A0 /* Build configuration list for PBXProject "Obj-C-Astronomy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB85DBAA2498092D0049D1A0 /* Debug */,
+				DB85DBAB2498092D0049D1A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB85DBAC2498092D0049D1A0 /* Build configuration list for PBXNativeTarget "Obj-C-Astronomy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB85DBAD2498092D0049D1A0 /* Debug */,
+				DB85DBAE2498092D0049D1A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB85DB8B2498092B0049D1A0 /* Project object */;
+}
