@@ -11,7 +11,8 @@
 @implementation KMLManifest
 
 - (instancetype)initWithRoverName: (NSString *)roverName sols:(NSArray *)sols {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         _roverName = roverName;
         _sols = sols;
     }
@@ -31,7 +32,9 @@
                 NSNumber *sol = solArray[i][@"sol"];
                 [solOutputArray addObject: sol];
             }
+
             self = [self initWithRoverName:roverName sols:solOutputArray];
+            return self;
         }
 
 

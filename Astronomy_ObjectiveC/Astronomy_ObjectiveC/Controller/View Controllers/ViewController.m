@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "KMLRoverController.h"
+#import "KMLManifest.h"
 
 @interface ViewController ()
 
@@ -19,7 +20,7 @@
     [super viewDidLoad];
     KMLRoverController *roverController = [[KMLRoverController alloc] init];
     [roverController fetchSolsFromRoverWithName:@"Curiosity" completion:^(KMLManifest *manifest) {
-        NSLog(@"%@", manifest);
+        NSLog(@"%@", manifest.sols);
     }];
 }
 
