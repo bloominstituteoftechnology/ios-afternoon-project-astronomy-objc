@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+@class KMLSol;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KMLManifest : NSObject
 
 @property (copy, nonatomic) NSString *roverName;
-@property (nonatomic) int photoId;
-@property (nonatomic) NSArray *sols;
+@property (nonatomic, copy) NSArray *solIDs;
+@property (nonatomic, copy) NSMutableArray *sols;
 
-- (instancetype)initWithRoverName: (NSString *)roverName sols:(NSArray *)sols;
+- (instancetype)initWithRoverName: (NSString *)roverName solIDs:(NSArray *)sols;
 - (instancetype)initWithDictionary: (NSDictionary *)dictionary;
+
+-(void)addSol:(KMLSol *)sol;
 
 @end
 

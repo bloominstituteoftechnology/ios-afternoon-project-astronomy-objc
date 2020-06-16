@@ -59,6 +59,7 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
         }
 
         KMLManifest *manifest = [[KMLManifest alloc] initWithDictionary:decodeDictionary];
+        self.manifest = manifest;
         completion(manifest);
 
     }];
@@ -110,6 +111,7 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
         }
 
         KMLSol *solObject = [[KMLSol alloc] initWithSolID:sol.intValue photoURLs:photoOutputArray];
+        [self.manifest addSol:solObject];
         completion(solObject);
     }];
     [session resume];
