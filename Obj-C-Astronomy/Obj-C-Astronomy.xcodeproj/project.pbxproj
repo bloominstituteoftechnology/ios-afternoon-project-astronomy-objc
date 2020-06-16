@@ -13,6 +13,10 @@
 		DB80953824996F75000E7569 /* PDMRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953724996F75000E7569 /* PDMRoverController.m */; };
 		DB80953B2499703F000E7569 /* MarsRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */; };
 		DB80953F2499712C000E7569 /* PDMFetchRoverImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */; };
+		DB80954824997239000E7569 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954124997239000E7569 /* LSILog.m */; };
+		DB80954924997239000E7569 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954224997239000E7569 /* LSIErrors.m */; };
+		DB80954A24997239000E7569 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954324997239000E7569 /* LSIFileHelper.m */; };
+		DB80954B24997239000E7569 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80954724997239000E7569 /* URL+Secure.swift */; };
 		DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB972498092B0049D1A0 /* AppDelegate.m */; };
 		DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */; };
 		DB85DBA12498092B0049D1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85DB9F2498092B0049D1A0 /* Main.storyboard */; };
@@ -34,6 +38,13 @@
 		DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhotos.swift; sourceTree = "<group>"; };
 		DB80953D2499712C000E7569 /* PDMFetchRoverImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMFetchRoverImageOperation.h; sourceTree = "<group>"; };
 		DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMFetchRoverImageOperation.m; sourceTree = "<group>"; };
+		DB80954124997239000E7569 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		DB80954224997239000E7569 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
+		DB80954324997239000E7569 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
+		DB80954424997239000E7569 /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
+		DB80954524997239000E7569 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
+		DB80954624997239000E7569 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
+		DB80954724997239000E7569 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 		DB85DB932498092B0049D1A0 /* Obj-C-Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C-Astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85DB962498092B0049D1A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB85DB972498092B0049D1A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +86,20 @@
 			path = "Concurrency Operations";
 			sourceTree = "<group>";
 		};
+		DB80954024997239000E7569 /* LambdaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DB80954124997239000E7569 /* LSILog.m */,
+				DB80954224997239000E7569 /* LSIErrors.m */,
+				DB80954324997239000E7569 /* LSIFileHelper.m */,
+				DB80954424997239000E7569 /* LSIFileHelper.h */,
+				DB80954524997239000E7569 /* LSIErrors.h */,
+				DB80954624997239000E7569 /* LSILog.h */,
+				DB80954724997239000E7569 /* URL+Secure.swift */,
+			);
+			path = LambdaSDK;
+			sourceTree = "<group>";
+		};
 		DB85DB8A2498092B0049D1A0 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +119,7 @@
 		DB85DB952498092B0049D1A0 /* Obj-C-Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				DB80954024997239000E7569 /* LambdaSDK */,
 				DB80953C24997112000E7569 /* Concurrency Operations */,
 				DB80952D24996D07000E7569 /* Cache */,
 				DB85DBB0249809D90049D1A0 /* Model */,
@@ -221,14 +247,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB80953824996F75000E7569 /* PDMRoverController.m in Sources */,
+				DB80954824997239000E7569 /* LSILog.m in Sources */,
 				DB80953324996D6C000E7569 /* PDMRover.m in Sources */,
 				DB80952C24996C80000E7569 /* PDMCamera.m in Sources */,
 				DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */,
+				DB80954924997239000E7569 /* LSIErrors.m in Sources */,
+				DB80954A24997239000E7569 /* LSIFileHelper.m in Sources */,
 				DB80953024996D13000E7569 /* PDMCache.m in Sources */,
 				DB80953F2499712C000E7569 /* PDMFetchRoverImageOperation.m in Sources */,
 				DB85DBA92498092D0049D1A0 /* main.m in Sources */,
 				DB80953B2499703F000E7569 /* MarsRoverPhotos.swift in Sources */,
 				DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */,
+				DB80954B24997239000E7569 /* URL+Secure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
