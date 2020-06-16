@@ -12,6 +12,7 @@ import Foundation
     var usingHTTPS: NSURL? {
         guard var components = URLComponents(url: self as URL, resolvingAgainstBaseURL: true) else { return nil }
         components.scheme = "https"
-        return components.url! as NSURL
+        guard let url = components.url else { return nil }
+        return url as NSURL
     }
 }
