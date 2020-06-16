@@ -6,4 +6,6 @@
 //  Copyright © 2020 LambdaSchool. All rights reserved.
 //
 
-
+#import "HAOPhotoFetcher.h"
+#import "HAOPhotoResult.h"
+#import "HAOPhoto.h"

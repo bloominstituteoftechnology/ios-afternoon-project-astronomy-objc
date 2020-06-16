@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2B13272124981C1700D78C4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13272024981C1700D78C4A /* AppDelegate.swift */; };
 		2B13272324981C1700D78C4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13272224981C1700D78C4A /* SceneDelegate.swift */; };
-		2B13272524981C1700D78C4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13272424981C1700D78C4A /* ViewController.swift */; };
 		2B13272824981C1700D78C4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B13272624981C1700D78C4A /* Main.storyboard */; };
 		2B13272A24981C1A00D78C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B13272924981C1A00D78C4A /* Assets.xcassets */; };
 		2B13272D24981C1A00D78C4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B13272B24981C1A00D78C4A /* LaunchScreen.storyboard */; };
@@ -20,13 +19,15 @@
 		2B13274624981F3400D78C4A /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13274524981F3400D78C4A /* Rover.swift */; };
 		2B132749249820F200D78C4A /* HAOPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B132748249820F200D78C4A /* HAOPhoto.m */; };
 		2B13274D24982BF900D78C4A /* HAOPhotoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13274C24982BF900D78C4A /* HAOPhotoResult.m */; };
+		2B1327512498392800D78C4A /* HAOPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327502498392800D78C4A /* HAOPhotoFetcher.m */; };
+		2B1327532498429700D78C4A /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327522498429700D78C4A /* PhotoCollectionViewController.swift */; };
+		2B132756249842F500D78C4A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B13271D24981C1700D78C4A /* Astronomy-ObjcSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-ObjcSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B13272024981C1700D78C4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B13272224981C1700D78C4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2B13272424981C1700D78C4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B13272724981C1700D78C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B13272924981C1A00D78C4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B13272C24981C1A00D78C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +45,10 @@
 		2B13274A249821C100D78C4A /* Astronomy-ObjcSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-ObjcSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B13274B24982BF900D78C4A /* HAOPhotoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPhotoResult.h; sourceTree = "<group>"; };
 		2B13274C24982BF900D78C4A /* HAOPhotoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPhotoResult.m; sourceTree = "<group>"; };
+		2B13274F2498392800D78C4A /* HAOPhotoFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPhotoFetcher.h; sourceTree = "<group>"; };
+		2B1327502498392800D78C4A /* HAOPhotoFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPhotoFetcher.m; sourceTree = "<group>"; };
+		2B1327522498429700D78C4A /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				2B13272624981C1700D78C4A /* Main.storyboard */,
+				2B132754249842E100D78C4A /* Views */,
 				2B13273624981C4700D78C4A /* ViewControllers */,
 				2B13273724981C5200D78C4A /* Models */,
 				2B13273824981C6000D78C4A /* ModelControllers */,
@@ -110,7 +116,7 @@
 		2B13273624981C4700D78C4A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2B13272424981C1700D78C4A /* ViewController.swift */,
+				2B1327522498429700D78C4A /* PhotoCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -118,6 +124,7 @@
 		2B13273724981C5200D78C4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2B13274E2498368C00D78C4A /* ModelFetcher */,
 				2B132747249820F200D78C4A /* HAOPhoto.h */,
 				2B132748249820F200D78C4A /* HAOPhoto.m */,
 				2B13274524981F3400D78C4A /* Rover.swift */,
@@ -147,6 +154,23 @@
 			);
 			name = LambdaSDK;
 			path = ../../LambdaSDK;
+			sourceTree = "<group>";
+		};
+		2B13274E2498368C00D78C4A /* ModelFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				2B13274F2498392800D78C4A /* HAOPhotoFetcher.h */,
+				2B1327502498392800D78C4A /* HAOPhotoFetcher.m */,
+			);
+			path = ModelFetcher;
+			sourceTree = "<group>";
+		};
+		2B132754249842E100D78C4A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B132755249842F500D78C4A /* PhotoCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,11 +248,13 @@
 				2B13274D24982BF900D78C4A /* HAOPhotoResult.m in Sources */,
 				2B13274624981F3400D78C4A /* Rover.swift in Sources */,
 				2B13274324981D2600D78C4A /* LSIFileHelper.m in Sources */,
-				2B13272524981C1700D78C4A /* ViewController.swift in Sources */,
 				2B132749249820F200D78C4A /* HAOPhoto.m in Sources */,
+				2B1327512498392800D78C4A /* HAOPhotoFetcher.m in Sources */,
+				2B132756249842F500D78C4A /* PhotoCollectionViewCell.swift in Sources */,
 				2B13274124981D2600D78C4A /* LSILog.m in Sources */,
 				2B13272124981C1700D78C4A /* AppDelegate.swift in Sources */,
 				2B13274424981D2600D78C4A /* URL+Secure.swift in Sources */,
+				2B1327532498429700D78C4A /* PhotoCollectionViewController.swift in Sources */,
 				2B13274224981D2600D78C4A /* LSIErrors.m in Sources */,
 				2B13272324981C1700D78C4A /* SceneDelegate.swift in Sources */,
 			);
