@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Camera : NSObject
 
-@property (nonatomic, readonly) int identifier; // named "id" in api
+@property (nonatomic, readonly) int identifier;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) int roverID; // named "rover_id" in api
+@property (nonatomic, readonly) int roverID;
 @property (nonatomic, readonly, copy) NSString *fullName;
 
 - (instancetype)initWithIdentifier:(int)identifier

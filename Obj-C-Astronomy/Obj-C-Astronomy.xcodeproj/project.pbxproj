@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB80952C24996C80000E7569 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80952B24996C80000E7569 /* Camera.m */; };
+		DB80953024996D13000E7569 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80952F24996D13000E7569 /* Cache.m */; };
+		DB80953324996D6C000E7569 /* Rover.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953224996D6C000E7569 /* Rover.m */; };
 		DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB972498092B0049D1A0 /* AppDelegate.m */; };
 		DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */; };
 		DB85DBA12498092B0049D1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85DB9F2498092B0049D1A0 /* Main.storyboard */; };
@@ -19,6 +21,10 @@
 /* Begin PBXFileReference section */
 		DB80952A24996C80000E7569 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		DB80952B24996C80000E7569 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		DB80952E24996D13000E7569 /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		DB80952F24996D13000E7569 /* Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
+		DB80953124996D6C000E7569 /* Rover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rover.h; sourceTree = "<group>"; };
+		DB80953224996D6C000E7569 /* Rover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rover.m; sourceTree = "<group>"; };
 		DB85DB932498092B0049D1A0 /* Obj-C-Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C-Astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85DB962498092B0049D1A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB85DB972498092B0049D1A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB80952D24996D07000E7569 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				DB80952E24996D13000E7569 /* Cache.h */,
+				DB80952F24996D13000E7569 /* Cache.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		DB85DB8A2498092B0049D1A0 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +76,7 @@
 		DB85DB952498092B0049D1A0 /* Obj-C-Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				DB80952D24996D07000E7569 /* Cache */,
 				DB85DBB0249809D90049D1A0 /* Model */,
 				DB85DBB2249809E40049D1A0 /* Model Controller */,
 				DB85DBB3249809ED0049D1A0 /* View Controller */,
@@ -90,6 +106,8 @@
 			children = (
 				DB80952A24996C80000E7569 /* Camera.h */,
 				DB80952B24996C80000E7569 /* Camera.m */,
+				DB80953124996D6C000E7569 /* Rover.h */,
+				DB80953224996D6C000E7569 /* Rover.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,8 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB80953324996D6C000E7569 /* Rover.m in Sources */,
 				DB80952C24996C80000E7569 /* Camera.m in Sources */,
 				DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */,
+				DB80953024996D13000E7569 /* Cache.m in Sources */,
 				DB85DBA92498092D0049D1A0 /* main.m in Sources */,
 				DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */,
 			);
