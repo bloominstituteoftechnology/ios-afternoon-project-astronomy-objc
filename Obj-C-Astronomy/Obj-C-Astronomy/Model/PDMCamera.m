@@ -6,7 +6,7 @@
 //  Copyright © 2020 PatrickMillet79. All rights reserved.
 //
 
-#import "Camera.h"
+#import "PDMCamera.h"
 
 @implementation Camera
 
