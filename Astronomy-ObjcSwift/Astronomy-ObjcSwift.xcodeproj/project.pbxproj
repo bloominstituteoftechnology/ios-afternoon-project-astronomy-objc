@@ -25,6 +25,8 @@
 		2B13275B2498480600D78C4A /* HAOImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13275A2498480600D78C4A /* HAOImageFetcher.m */; };
 		2B13275F24991EEF00D78C4A /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13275E24991EEF00D78C4A /* PhotoDetailViewController.swift */; };
 		2B132765249961FB00D78C4A /* HAOImageFetcherOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B132764249961FB00D78C4A /* HAOImageFetcherOperation.m */; };
+		2B13276824997DF300D78C4A /* HAOManifestFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13276724997DF300D78C4A /* HAOManifestFetcher.m */; };
+		2B13276B24997F3100D78C4A /* HAOManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13276A24997F3100D78C4A /* HAOManifest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,10 @@
 		2B13275E24991EEF00D78C4A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		2B132763249961FB00D78C4A /* HAOImageFetcherOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOImageFetcherOperation.h; sourceTree = "<group>"; };
 		2B132764249961FB00D78C4A /* HAOImageFetcherOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOImageFetcherOperation.m; sourceTree = "<group>"; };
+		2B13276624997DF300D78C4A /* HAOManifestFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOManifestFetcher.h; sourceTree = "<group>"; };
+		2B13276724997DF300D78C4A /* HAOManifestFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOManifestFetcher.m; sourceTree = "<group>"; };
+		2B13276924997F3100D78C4A /* HAOManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOManifest.h; sourceTree = "<group>"; };
+		2B13276A24997F3100D78C4A /* HAOManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOManifest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,8 @@
 		2B13273724981C5200D78C4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2B13276924997F3100D78C4A /* HAOManifest.h */,
+				2B13276A24997F3100D78C4A /* HAOManifest.m */,
 				2B13274B24982BF900D78C4A /* HAOPhotoResult.h */,
 				2B13274C24982BF900D78C4A /* HAOPhotoResult.m */,
 				2B132747249820F200D78C4A /* HAOPhoto.h */,
@@ -145,6 +153,8 @@
 		2B13273824981C6000D78C4A /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B13276624997DF300D78C4A /* HAOManifestFetcher.h */,
+				2B13276724997DF300D78C4A /* HAOManifestFetcher.m */,
 				2B13274F2498392800D78C4A /* HAOPhotoFetcher.h */,
 				2B1327502498392800D78C4A /* HAOPhotoFetcher.m */,
 				2B1327592498480600D78C4A /* HAOImageFetcher.h */,
@@ -264,7 +274,9 @@
 				2B13275F24991EEF00D78C4A /* PhotoDetailViewController.swift in Sources */,
 				2B13275B2498480600D78C4A /* HAOImageFetcher.m in Sources */,
 				2B13274224981D2600D78C4A /* LSIErrors.m in Sources */,
+				2B13276B24997F3100D78C4A /* HAOManifest.m in Sources */,
 				2B13272324981C1700D78C4A /* SceneDelegate.swift in Sources */,
+				2B13276824997DF300D78C4A /* HAOManifestFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

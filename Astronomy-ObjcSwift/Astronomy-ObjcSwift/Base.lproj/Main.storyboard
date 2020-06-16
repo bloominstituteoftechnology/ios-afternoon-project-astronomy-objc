@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sol 1-->
+        <!--Photo Collection View Controller-->
         <scene sceneID="ESG-FX-gYX">
             <objects>
                 <collectionViewController id="GJG-UW-1YQ" customClass="PhotoCollectionViewController" customModule="Astronomy_ObjcSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                             <outlet property="delegate" destination="GJG-UW-1YQ" id="tHm-iz-kXZ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Sol 1" id="pca-gj-HRj"/>
+                    <navigationItem key="navigationItem" id="pca-gj-HRj"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gJ-Ll-Gn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

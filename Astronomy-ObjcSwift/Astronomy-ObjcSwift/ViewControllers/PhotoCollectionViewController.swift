@@ -15,10 +15,45 @@ class PhotoCollectionViewController: UICollectionViewController {
     private let photoFetcher = PhotoFetcher()
     private var photos = [Photo]()
     
+    private lazy var manifestFetcher = ManifestFetcher()
+    private var sols = [NSNumber]()
+    private var selectedSol: NSNumber?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        photoFetcher.fetchPhotos(fromSol: 1) { (photos, error) in
+        manifestFetcher.fetchManifest { sols, error in
+            if let error = error {
+                NSLog("Failed to fetch manifest with error: \(error)")
+                return
+            }
+            
+            guard let sols = sols,
+                sols.count > 0 else {
+                NSLog("Sols array was bad")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.sols = sols
+                self.selectedSol = sols.first
+                self.updateViews()
+            }
+        }
+        
+    }
+    
+    private func updateViews() {
+        guard let selectedSol = selectedSol else { return }
+        
+        print(selectedSol.intValue)
+        
+        self.title = "Sol \(selectedSol.intValue)"
+        fetchPhotosForSol(sol: selectedSol)
+    }
+    
+    private func fetchPhotosForSol(sol: NSNumber) {
+        photoFetcher.fetchPhotos(fromSol: sol) { (photos, error) in
             if let error = error {
                 NSLog("Error fetching photos from sol 1: \(error)")
                 return
