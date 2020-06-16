@@ -17,6 +17,9 @@
 		DB80954924997239000E7569 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954224997239000E7569 /* LSIErrors.m */; };
 		DB80954A24997239000E7569 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954324997239000E7569 /* LSIFileHelper.m */; };
 		DB80954B24997239000E7569 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80954724997239000E7569 /* URL+Secure.swift */; };
+		DB80954E249976DB000E7569 /* PDMRoverPhotoControllerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80954D249976DB000E7569 /* PDMRoverPhotoControllerCollectionViewCell.m */; };
+		DB809550249976EB000E7569 /* SolCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80954F249976EB000E7569 /* SolCollectionViewController.swift */; };
+		DB809552249976F8000E7569 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB809551249976F8000E7569 /* PhotoDetailViewController.swift */; };
 		DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB972498092B0049D1A0 /* AppDelegate.m */; };
 		DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */; };
 		DB85DBA12498092B0049D1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85DB9F2498092B0049D1A0 /* Main.storyboard */; };
@@ -45,6 +48,10 @@
 		DB80954524997239000E7569 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		DB80954624997239000E7569 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		DB80954724997239000E7569 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		DB80954C249976DB000E7569 /* PDMRoverPhotoControllerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMRoverPhotoControllerCollectionViewCell.h; sourceTree = "<group>"; };
+		DB80954D249976DB000E7569 /* PDMRoverPhotoControllerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMRoverPhotoControllerCollectionViewCell.m; sourceTree = "<group>"; };
+		DB80954F249976EB000E7569 /* SolCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolCollectionViewController.swift; sourceTree = "<group>"; };
+		DB809551249976F8000E7569 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		DB85DB932498092B0049D1A0 /* Obj-C-Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C-Astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85DB962498092B0049D1A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB85DB972498092B0049D1A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,6 +178,10 @@
 		DB85DBB3249809ED0049D1A0 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DB80954C249976DB000E7569 /* PDMRoverPhotoControllerCollectionViewCell.h */,
+				DB80954D249976DB000E7569 /* PDMRoverPhotoControllerCollectionViewCell.m */,
+				DB80954F249976EB000E7569 /* SolCollectionViewController.swift */,
+				DB809551249976F8000E7569 /* PhotoDetailViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -252,10 +263,13 @@
 				DB80952C24996C80000E7569 /* PDMCamera.m in Sources */,
 				DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */,
 				DB80954924997239000E7569 /* LSIErrors.m in Sources */,
+				DB809552249976F8000E7569 /* PhotoDetailViewController.swift in Sources */,
 				DB80954A24997239000E7569 /* LSIFileHelper.m in Sources */,
 				DB80953024996D13000E7569 /* PDMCache.m in Sources */,
+				DB80954E249976DB000E7569 /* PDMRoverPhotoControllerCollectionViewCell.m in Sources */,
 				DB80953F2499712C000E7569 /* PDMFetchRoverImageOperation.m in Sources */,
 				DB85DBA92498092D0049D1A0 /* main.m in Sources */,
+				DB809550249976EB000E7569 /* SolCollectionViewController.swift in Sources */,
 				DB80953B2499703F000E7569 /* MarsRoverPhotos.swift in Sources */,
 				DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */,
 				DB80954B24997239000E7569 /* URL+Secure.swift in Sources */,
