@@ -11,6 +11,8 @@
 		DB80953024996D13000E7569 /* PDMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80952F24996D13000E7569 /* PDMCache.m */; };
 		DB80953324996D6C000E7569 /* PDMRover.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953224996D6C000E7569 /* PDMRover.m */; };
 		DB80953824996F75000E7569 /* PDMRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953724996F75000E7569 /* PDMRoverController.m */; };
+		DB80953B2499703F000E7569 /* MarsRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */; };
+		DB80953F2499712C000E7569 /* PDMFetchRoverImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */; };
 		DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB972498092B0049D1A0 /* AppDelegate.m */; };
 		DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */; };
 		DB85DBA12498092B0049D1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85DB9F2498092B0049D1A0 /* Main.storyboard */; };
@@ -28,6 +30,10 @@
 		DB80953224996D6C000E7569 /* PDMRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMRover.m; sourceTree = "<group>"; };
 		DB80953624996F75000E7569 /* PDMRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMRoverController.h; sourceTree = "<group>"; };
 		DB80953724996F75000E7569 /* PDMRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMRoverController.m; sourceTree = "<group>"; };
+		DB8095392499703F000E7569 /* Obj-C-Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Obj-C-Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhotos.swift; sourceTree = "<group>"; };
+		DB80953D2499712C000E7569 /* PDMFetchRoverImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMFetchRoverImageOperation.h; sourceTree = "<group>"; };
+		DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMFetchRoverImageOperation.m; sourceTree = "<group>"; };
 		DB85DB932498092B0049D1A0 /* Obj-C-Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C-Astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85DB962498092B0049D1A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB85DB972498092B0049D1A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +66,15 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		DB80953C24997112000E7569 /* Concurrency Operations */ = {
+			isa = PBXGroup;
+			children = (
+				DB80953D2499712C000E7569 /* PDMFetchRoverImageOperation.h */,
+				DB80953E2499712C000E7569 /* PDMFetchRoverImageOperation.m */,
+			);
+			path = "Concurrency Operations";
+			sourceTree = "<group>";
+		};
 		DB85DB8A2498092B0049D1A0 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +94,7 @@
 		DB85DB952498092B0049D1A0 /* Obj-C-Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				DB80953C24997112000E7569 /* Concurrency Operations */,
 				DB80952D24996D07000E7569 /* Cache */,
 				DB85DBB0249809D90049D1A0 /* Model */,
 				DB85DBB2249809E40049D1A0 /* Model Controller */,
@@ -98,6 +114,7 @@
 				DB85DB972498092B0049D1A0 /* AppDelegate.m */,
 				DB85DB992498092B0049D1A0 /* SceneDelegate.h */,
 				DB85DB9A2498092B0049D1A0 /* SceneDelegate.m */,
+				DB8095392499703F000E7569 /* Obj-C-Astronomy-Bridging-Header.h */,
 				DB85DBA42498092D0049D1A0 /* LaunchScreen.storyboard */,
 				DB85DBA72498092D0049D1A0 /* Info.plist */,
 			);
@@ -120,6 +137,7 @@
 			children = (
 				DB80953624996F75000E7569 /* PDMRoverController.h */,
 				DB80953724996F75000E7569 /* PDMRoverController.m */,
+				DB80953A2499703F000E7569 /* MarsRoverPhotos.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -162,6 +180,7 @@
 				TargetAttributes = {
 					DB85DB922498092B0049D1A0 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -206,7 +225,9 @@
 				DB80952C24996C80000E7569 /* PDMCamera.m in Sources */,
 				DB85DB982498092B0049D1A0 /* AppDelegate.m in Sources */,
 				DB80953024996D13000E7569 /* PDMCache.m in Sources */,
+				DB80953F2499712C000E7569 /* PDMFetchRoverImageOperation.m in Sources */,
 				DB85DBA92498092D0049D1A0 /* main.m in Sources */,
+				DB80953B2499703F000E7569 /* MarsRoverPhotos.swift in Sources */,
 				DB85DB9B2498092B0049D1A0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8A9CLJB2H;
 				INFOPLIST_FILE = "Obj-C-Astronomy/Resources/Info.plist";
@@ -356,6 +378,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PatrickMillet79.Obj-C-Astronomy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Obj-C-Astronomy/Resources/Obj-C-Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -364,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8A9CLJB2H;
 				INFOPLIST_FILE = "Obj-C-Astronomy/Resources/Info.plist";
@@ -373,6 +399,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PatrickMillet79.Obj-C-Astronomy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Obj-C-Astronomy/Resources/Obj-C-Astronomy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
