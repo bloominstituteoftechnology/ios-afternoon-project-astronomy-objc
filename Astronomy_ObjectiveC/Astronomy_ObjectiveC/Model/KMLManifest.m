@@ -7,6 +7,7 @@
 //
 
 #import "KMLManifest.h"
+#import "KMLSol.h"
 
 @implementation KMLManifest
 

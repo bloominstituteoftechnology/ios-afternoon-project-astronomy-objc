@@ -21,6 +21,7 @@
 		B9DAE41124980E91008A87C5 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE40A24980E91008A87C5 /* LSIFileHelper.m */; };
 		B9DAE41224980E91008A87C5 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE40E24980E91008A87C5 /* URL+Secure.swift */; };
 		B9DAE419249810A6008A87C5 /* KMLRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE418249810A6008A87C5 /* KMLRoverController.m */; };
+		B9DAE41E24984BD8008A87C5 /* KMLSol.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DAE41D24984BD8008A87C5 /* KMLSol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		B9DAE40E24980E91008A87C5 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 		B9DAE417249810A6008A87C5 /* KMLRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLRoverController.h; sourceTree = "<group>"; };
 		B9DAE418249810A6008A87C5 /* KMLRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLRoverController.m; sourceTree = "<group>"; };
+		B9DAE41C24984BD8008A87C5 /* KMLSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLSol.h; sourceTree = "<group>"; };
+		B9DAE41D24984BD8008A87C5 /* KMLSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLSol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 			children = (
 				18F7CD1924981EA100A6CE9D /* KMLManifest.h */,
 				18F7CD1A24981EA100A6CE9D /* KMLManifest.m */,
+				B9DAE41C24984BD8008A87C5 /* KMLSol.h */,
+				B9DAE41D24984BD8008A87C5 /* KMLSol.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				B9DAE3E824980E80008A87C5 /* ViewController.m in Sources */,
 				B9DAE40F24980E91008A87C5 /* LSILog.m in Sources */,
 				B9DAE3E224980E80008A87C5 /* AppDelegate.m in Sources */,
+				B9DAE41E24984BD8008A87C5 /* KMLSol.m in Sources */,
 				B9DAE3F324980E82008A87C5 /* main.m in Sources */,
 				B9DAE41124980E91008A87C5 /* LSIFileHelper.m in Sources */,
 				18F7CD1B24981EA100A6CE9D /* KMLManifest.m in Sources */,

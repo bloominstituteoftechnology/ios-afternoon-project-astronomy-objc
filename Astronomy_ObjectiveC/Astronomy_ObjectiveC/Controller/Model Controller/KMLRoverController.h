@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class KMLManifest;
+@class KMLSol;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)fetchSolsFromRoverWithName:(NSString *)name completion:(void (^)(KMLManifest *))completion;
 
-- (void)fetchPhotosOnSol:(int)sol;
+- (void)fetchPhotosWithRoverName:(NSString *)name OnSol:(NSNumber *)sol completion:(void (^)(KMLSol *))completion;
 
 
 @end
