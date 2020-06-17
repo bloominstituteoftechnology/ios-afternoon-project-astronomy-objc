@@ -6,7 +6,7 @@
 //  Copyright © 2020 Hazy Studios. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "KMLDetailViewController.h"
 #import "KMLRoverController.h"
 #import "KMLManifest.h"
 #import "KMLSol.h"
@@ -14,7 +14,7 @@
 #import "LSIFileHelper.h"
 #import "Astronomy_ObjectiveC-Swift.h"
 
-@interface DetailViewController ()
+@interface KMLDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UILabel *roverName;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation DetailViewController
+@implementation KMLDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
