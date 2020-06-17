@@ -28,11 +28,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self updateViews];
+}
+
+- (void)updateViews {
     KMLRoverController *roverController = [[KMLRoverController alloc] init];
-    
+
     [roverController fetchSolsFromRoverWithName:@"Curiosity" completion:^(KMLManifest *manifest) {
         [roverController fetchPhotosWithRoverName:manifest.roverName OnSol:manifest.solIDs[1] completion:^(KMLSol *sol) {
-//            NSLog(@"%@", sol.photos);
+            //            NSLog(@"%@", sol.photos);
             NSDictionary *photoDictionary = sol.photos[0];
 
             NSURL *photoURL = photoDictionary.allValues[0];
@@ -50,11 +54,9 @@
             NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
             [operationQueue addOperation:operation];
             [operationQueue addOperation:completionBlock];
-            
 
         }];
     }];
-
 
 }
 
