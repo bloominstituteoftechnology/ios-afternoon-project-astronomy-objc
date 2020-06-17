@@ -16,6 +16,12 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UILabel *roverName;
+@property (weak, nonatomic) IBOutlet UILabel *cameraLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+
+
 @end
 
 @implementation DetailViewController
@@ -26,7 +32,7 @@
     
     [roverController fetchSolsFromRoverWithName:@"Curiosity" completion:^(KMLManifest *manifest) {
         [roverController fetchPhotosWithRoverName:manifest.roverName OnSol:manifest.solIDs[1] completion:^(KMLSol *sol) {
-            NSLog(@"%@", sol.photos);
+//            NSLog(@"%@", sol.photos);
             NSDictionary *photoDictionary = sol.photos[0];
 
 
@@ -38,6 +44,8 @@
             [operation start];
         }];
     }];
+
+
 }
 
 
