@@ -44,10 +44,16 @@
             return;
         }
 
+        if (!data) {
+            NSLog(@"No data from photo operation");
+            return;
+        }
+
         UIImage *image = [UIImage imageWithData:data];
-        [self setValue:image forKey:@"_image"];
+        [self setValue:image forKey:@"privateImage"];
         NSLog(@"%@", image);
     }];
+
     [dataTask resume];
     [self setValue:dataTask forKey:@"dataTask"];
 }
@@ -58,10 +64,6 @@
 }
 
 - (UIImage *)image {
-    return _privateImage;
-}
-
--(UIImage *)getImage {
     return _privateImage;
 }
 

@@ -38,16 +38,20 @@
             NSURL *photoURL = photoDictionary.allValues[0];
 
             NSURLSession *session = NSURLSession.sharedSession;
+
             KMLFetchPhotoOperation *operation = [[KMLFetchPhotoOperation alloc] initWithPhotoURL:photoURL.usingHTTPS session:session];
             NSBlockOperation *completionBlock = [NSBlockOperation blockOperationWithBlock:^{
                 NSLog(@"done");
-                [self.photoImageView setImage:operation.getImage];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.photoImageView setImage:operation.image];
+                });
             }];
             [completionBlock addDependency:operation];
             NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
+            [operationQueue addOperation:operation];
             [operationQueue addOperation:completionBlock];
             
-            [completionBlock start];
+
         }];
     }];
 
