@@ -11,7 +11,6 @@
 
 @interface KMLFetchPhotoOperation ()
 
-@property (nonatomic, readonly) UIImage *privateImage;
 @property (nonatomic, readonly) NSURLSession *session;
 @property (nonatomic, readonly) NSURLSessionDataTask *dataTask;
 
@@ -24,6 +23,8 @@
 @implementation KMLFetchPhotoOperation
 
 @synthesize executing, finished, cancelled;
+
+UIImage *privateImage;
 
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
     return YES;
@@ -48,8 +49,8 @@
 {
     self = [super init];
     if (self) {
-        _session = session;
-        _photoURL = photoURL;
+        _session = [session copy];
+        _photoURL = [photoURL copy];
     }
     return self;
 }
@@ -90,7 +91,7 @@
 }
 
 - (UIImage *)image {
-    return self.privateImage;
+    return privateImage;
 }
 
 

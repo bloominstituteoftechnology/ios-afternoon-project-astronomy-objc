@@ -15,10 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KMLFetchPhotoOperation : NSOperation
 
 @property (nonatomic) NSDictionary *cache;
-@property (nonatomic) NSURL *photoURL;
-@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly, copy) NSURL *photoURL;
+@property (nonatomic, readonly, copy) UIImage *image;
 
-- (UIImage *)image;
 - (instancetype)initWithPhotoURL:(NSURL *)photoURL session:(NSURLSession *)session;
 
 @end
