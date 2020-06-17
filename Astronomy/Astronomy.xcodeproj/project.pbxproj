@@ -10,6 +10,7 @@
 		27780212249A6D9D00F2CA8F /* CMDCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 27780211249A6D9D00F2CA8F /* CMDCamera.m */; };
 		27780215249A6DEF00F2CA8F /* CMDRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 27780214249A6DEF00F2CA8F /* CMDRover.m */; };
 		27780217249A6FC000F2CA8F /* MarsRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27780216249A6FC000F2CA8F /* MarsRoverPhotos.swift */; };
+		2778021A249A70CA00F2CA8F /* CMDMarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27780219249A70CA00F2CA8F /* CMDMarsRoverController.m */; };
 		27B1632A2498109900F60D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B163292498109900F60D5C /* AppDelegate.swift */; };
 		27B1632C2498109900F60D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1632B2498109900F60D5C /* SceneDelegate.swift */; };
 		27B1632E2498109900F60D5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1632D2498109900F60D5C /* ViewController.swift */; };
@@ -27,6 +28,8 @@
 		27780213249A6DEF00F2CA8F /* CMDRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDRover.h; sourceTree = "<group>"; };
 		27780214249A6DEF00F2CA8F /* CMDRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDRover.m; sourceTree = "<group>"; };
 		27780216249A6FC000F2CA8F /* MarsRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhotos.swift; sourceTree = "<group>"; };
+		27780218249A70CA00F2CA8F /* CMDMarsRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDMarsRoverController.h; sourceTree = "<group>"; };
+		27780219249A70CA00F2CA8F /* CMDMarsRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDMarsRoverController.m; sourceTree = "<group>"; };
 		27B163262498109900F60D5C /* Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B163292498109900F60D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27B1632B2498109900F60D5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +105,10 @@
 			children = (
 				27B163412498133600F60D5C /* MarsRoverPhoto.swift */,
 				27780216249A6FC000F2CA8F /* MarsRoverPhotos.swift */,
+				27780210249A6D9D00F2CA8F /* CMDCamera.h */,
+				27780211249A6D9D00F2CA8F /* CMDCamera.m */,
+				27780213249A6DEF00F2CA8F /* CMDRover.h */,
+				27780214249A6DEF00F2CA8F /* CMDRover.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,10 +116,8 @@
 		27B1634724981AB800F60D5C /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				27780210249A6D9D00F2CA8F /* CMDCamera.h */,
-				27780211249A6D9D00F2CA8F /* CMDCamera.m */,
-				27780213249A6DEF00F2CA8F /* CMDRover.h */,
-				27780214249A6DEF00F2CA8F /* CMDRover.m */,
+				27780218249A70CA00F2CA8F /* CMDMarsRoverController.h */,
+				27780219249A70CA00F2CA8F /* CMDMarsRoverController.m */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				27780212249A6D9D00F2CA8F /* CMDCamera.m in Sources */,
 				27B1632A2498109900F60D5C /* AppDelegate.swift in Sources */,
 				27780217249A6FC000F2CA8F /* MarsRoverPhotos.swift in Sources */,
+				2778021A249A70CA00F2CA8F /* CMDMarsRoverController.m in Sources */,
 				27B1632C2498109900F60D5C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
