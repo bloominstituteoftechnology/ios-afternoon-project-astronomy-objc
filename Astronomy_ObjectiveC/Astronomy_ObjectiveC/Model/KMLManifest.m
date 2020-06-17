@@ -11,11 +11,27 @@
 
 @implementation KMLManifest
 
+NSString *privateRoverName;
+NSArray *privateSolIDs;
+NSMutableArray *privateSols;
+
+- (NSArray *)sols {
+    return privateSols;
+}
+
+- (NSString *)roverName {
+    return privateRoverName;
+}
+
+- (NSArray *)solIDs {
+    return privateSolIDs;
+}
+
 - (instancetype)initWithRoverName: (NSString *)roverName solIDs:(NSArray *)sols {
     self = [super init];
     if (self) {
-        _roverName = roverName;
-        _solIDs = sols;
+        privateRoverName = roverName;
+        privateSolIDs = sols;
     }
     return self;
 }
@@ -45,10 +61,10 @@
 
 -(void)addSol:(KMLSol *)sol
 {
-    if(!_sols) {
-        _sols = [[NSMutableArray alloc] init];
+    if(!privateSols) {
+        privateSols = [[NSMutableArray alloc] init];
     }
-    [_sols addObject:sol];
+    [privateSols addObject:sol];
 }
 
 @end
