@@ -11,8 +11,8 @@
 
 @interface KMLFetchPhotoOperation ()
 
-@property (nonatomic, readonly) NSURLSession *session;
-@property (nonatomic, readonly) NSURLSessionDataTask *dataTask;
+@property (nonatomic, readonly, copy) NSURLSession *session;
+@property (nonatomic, readonly, copy) NSURLSessionDataTask *dataTask;
 
 @property(atomic, assign, readwrite, getter=isExecuting) BOOL executing;
 @property(atomic, assign, readwrite, getter=isFinished) BOOL finished;
@@ -76,12 +76,12 @@ UIImage *privateImage;
         }
 
         UIImage *image = [UIImage imageWithData:data];
-        [self setValue:image forKey:@"privateImage"];
+        privateImage = image;
         NSLog(@"%@", self.image);
         [self setFinished:YES];
     }];
     [dataTask resume];
-    [self setValue:dataTask forKey:@"dataTask"];
+    [self setValue:[dataTask copy] forKey:@"dataTask"];
 
 }
 

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KMLRoverController : NSObject
 
-@property (nonatomic) KMLManifest *manifest;
+@property (nonatomic, copy, readonly) KMLManifest *manifest;
 
 - (void)fetchSolsFromRoverWithName:(NSString *)name completion:(void (^)(KMLManifest *))completion;
 

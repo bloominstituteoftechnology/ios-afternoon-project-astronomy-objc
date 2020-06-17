@@ -14,6 +14,7 @@
 
 @implementation KMLRoverController
 
+KMLManifest *privateManifest;
 static NSString *apiKey = @"Wxd9NWhBcpy0hG8AzQ7ycKyZl1ixjtwUsdFJR9Jg";
 static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
 
@@ -59,7 +60,7 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
         }
 
         KMLManifest *manifest = [[KMLManifest alloc] initWithDictionary:decodeDictionary];
-        self.manifest = manifest;
+        privateManifest = manifest;
         completion(manifest);
 
     }];
@@ -120,6 +121,10 @@ static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/";
         completion(solObject);
     }];
     [session resume];
+}
+
+- (KMLManifest *)manifest {
+    return privateManifest;
 }
 
 @end
