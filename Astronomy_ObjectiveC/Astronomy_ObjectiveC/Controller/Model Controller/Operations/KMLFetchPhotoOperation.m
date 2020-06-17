@@ -11,7 +11,7 @@
 
 @interface KMLFetchPhotoOperation ()
 
-@property (nonatomic) UIImage *_image;
+@property (nonatomic) UIImage *privateImage;
 @property (nonatomic, readonly) NSURLSession *session;
 @property (nonatomic, readonly) NSURLSessionDataTask *dataTask;
 
@@ -58,7 +58,11 @@
 }
 
 - (UIImage *)image {
-    return self.image;
+    return _privateImage;
+}
+
+-(UIImage *)getImage {
+    return _privateImage;
 }
 
 

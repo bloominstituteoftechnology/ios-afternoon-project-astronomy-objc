@@ -35,13 +35,19 @@
 //            NSLog(@"%@", sol.photos);
             NSDictionary *photoDictionary = sol.photos[0];
 
-
-
             NSURL *photoURL = photoDictionary.allValues[0];
 
             NSURLSession *session = NSURLSession.sharedSession;
             KMLFetchPhotoOperation *operation = [[KMLFetchPhotoOperation alloc] initWithPhotoURL:photoURL.usingHTTPS session:session];
-            [operation start];
+            NSBlockOperation *completionBlock = [NSBlockOperation blockOperationWithBlock:^{
+                NSLog(@"done");
+                [self.photoImageView setImage:operation.getImage];
+            }];
+            [completionBlock addDependency:operation];
+            NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
+            [operationQueue addOperation:completionBlock];
+            
+            [completionBlock start];
         }];
     }];
 

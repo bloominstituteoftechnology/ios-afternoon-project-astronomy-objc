@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) UIImage *image;
 
 - (instancetype)initWithPhotoURL:(NSURL *)photoURL session:(NSURLSession *)session;
+- (UIImage *)getImage;
 
 @end
 
