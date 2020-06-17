@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *roverName;
 @property (weak, nonatomic) IBOutlet UILabel *cameraLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
-
+@property (nonatomic) NSArray<NSDictionary *> *operationQueue;
 
 @end
 
@@ -50,8 +50,6 @@
             NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
             [operationQueue addOperation:operation];
             [operationQueue addOperation:completionBlock];
-            
-
         }];
     }];
 

@@ -11,13 +11,38 @@
 
 @interface KMLFetchPhotoOperation ()
 
-@property (nonatomic) UIImage *privateImage;
+@property (nonatomic, readonly) UIImage *privateImage;
 @property (nonatomic, readonly) NSURLSession *session;
 @property (nonatomic, readonly) NSURLSessionDataTask *dataTask;
+
+@property(atomic, assign, readwrite, getter=isExecuting) BOOL executing;
+@property(atomic, assign, readwrite, getter=isFinished) BOOL finished;
+@property(atomic, assign, readwrite, getter=isCancelled) BOOL cancelled;
 
 @end
 
 @implementation KMLFetchPhotoOperation
+
+@synthesize executing, finished, cancelled;
+
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    return YES;
+}
+
++ (NSSet *)keyPathsForValuesAffectingIsCancelled {
+  NSSet *result = [NSSet setWithObject:@"cancelled"];
+  return result;
+}
+
++ (NSSet *)keyPathsForValuesAffectingIsExecuting {
+  NSSet *result = [NSSet setWithObject:@"executing"];
+      return result;
+}
+
+ + (NSSet *)keyPathsForValuesAffectingIsFinished {
+    NSSet *result = [NSSet setWithObject:@"finished"];
+   return result;
+ }
 
 - (instancetype)initWithPhotoURL:(NSURL *)photoURL session:(NSURLSession *)session
 {
@@ -33,7 +58,7 @@
 
 - (void)start {
     
-    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:self.photoURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    __weak NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:self.photoURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         if (self.isCancelled) {
             return;
@@ -51,11 +76,12 @@
 
         UIImage *image = [UIImage imageWithData:data];
         [self setValue:image forKey:@"privateImage"];
-        NSLog(@"%@", image);
+        NSLog(@"%@", self.image);
+        [self setFinished:YES];
     }];
-
     [dataTask resume];
     [self setValue:dataTask forKey:@"dataTask"];
+
 }
 
 - (void)cancel {
@@ -64,7 +90,7 @@
 }
 
 - (UIImage *)image {
-    return _privateImage;
+    return self.privateImage;
 }
 
 
