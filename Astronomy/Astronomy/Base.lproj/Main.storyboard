@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverPhotoCell" id="y77-lY-FLF">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoverPhotoCell" id="y77-lY-FLF" customClass="PhotoCollectionViewCell" customModule="Astronomy" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wkY-EI-wUe">
@@ -37,7 +37,7 @@
                                     </subviews>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="roverImage" destination="paR-Bm-b1q" id="h3S-no-q8g"/>
+                                    <outlet property="roverImage" destination="paR-Bm-b1q" id="6Gq-Id-3zU"/>
                                     <segue destination="2aL-l3-0Kb" kind="show" identifier="ShowPhotoDetailSegue" id="8hT-yV-RCY"/>
                                 </connections>
                             </collectionViewCell>
@@ -48,9 +48,21 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sol Number" id="7cg-6h-JrF">
-                        <barButtonItem key="leftBarButtonItem" title="Previous" image="arrow.left" catalog="system" id="gXh-6n-AkA"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" image="arrow.right" catalog="system" id="xGM-55-qaB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Previous" image="arrow.left" catalog="system" id="gXh-6n-AkA">
+                            <connections>
+                                <action selector="previousSolTapped:" destination="Ghj-vw-B3a" id="FTe-gN-T34"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" image="arrow.right" catalog="system" id="xGM-55-qaB">
+                            <connections>
+                                <action selector="nextSolTapped:" destination="Ghj-vw-B3a" id="T6g-hI-9Kp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nextSolButton" destination="xGM-55-qaB" id="Bd0-S5-vZ3"/>
+                        <outlet property="previousSolButton" destination="gXh-6n-AkA" id="vqP-l2-zm3"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSR-jz-oT9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +83,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-u6-Ulf">
-                                <rect key="frame" x="8" y="502" width="398" height="165"/>
+                                <rect key="frame" x="8" y="502" width="398" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAe-cS-pHZ">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
@@ -91,13 +103,9 @@
                                         <state key="normal" title="Save Photo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5g-nr-ouO">
-                                        <rect key="frame" x="0.0" y="135" width="398" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Open Photo">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="savePhotoTapped:" destination="2aL-l3-0Kb" eventType="touchUpInside" id="NoK-9G-mpg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -114,6 +122,12 @@
                         <viewLayoutGuide key="safeArea" id="wsB-b1-BsS"/>
                     </view>
                     <navigationItem key="navigationItem" id="u8x-TP-FzH"/>
+                    <connections>
+                        <outlet property="cameraDetailsLabel" destination="TWc-an-728" id="7GP-cK-buF"/>
+                        <outlet property="marsRoverImage" destination="jI6-RL-AxQ" id="JeB-km-2xG"/>
+                        <outlet property="photoDetailsLabel" destination="vAe-cS-pHZ" id="tEu-VF-UGA"/>
+                        <outlet property="savePhotoButton" destination="Z2x-bC-c2a" id="u7b-OY-0ZI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqf-2D-1c9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

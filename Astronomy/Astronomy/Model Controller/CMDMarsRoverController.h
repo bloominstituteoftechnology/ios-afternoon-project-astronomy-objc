@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CMDMarsRoverController : NSObject
 
-
 - (void)fetchManifestWithCompletionHandler:(ManifestCompletionBlock)completionBlock;
 
 - (void)fetchPhotosForSol:(int)sol WithCompletionHandler:(FetchPhotosCompletionBlock)completionBlock;

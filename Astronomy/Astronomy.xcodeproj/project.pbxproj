@@ -11,9 +11,11 @@
 		27780215249A6DEF00F2CA8F /* CMDRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 27780214249A6DEF00F2CA8F /* CMDRover.m */; };
 		27780217249A6FC000F2CA8F /* MarsRoverPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27780216249A6FC000F2CA8F /* MarsRoverPhotos.swift */; };
 		2778021A249A70CA00F2CA8F /* CMDMarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27780219249A70CA00F2CA8F /* CMDMarsRoverController.m */; };
-		2778021E249AA2EC00F2CA8F /* CMDPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2778021D249AA2EC00F2CA8F /* CMDPhotoCollectionViewCell.m */; };
 		27780222249AA32E00F2CA8F /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27780221249AA32E00F2CA8F /* PhotoDetailViewController.swift */; };
 		27780224249AA39500F2CA8F /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27780223249AA39500F2CA8F /* PhotoCollectionViewController.swift */; };
+		2778022A249AA64B00F2CA8F /* CMDCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 27780229249AA64B00F2CA8F /* CMDCache.m */; };
+		2778022C249AA8F100F2CA8F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778022B249AA8F100F2CA8F /* PhotoCollectionViewCell.swift */; };
+		27780230249AAA6700F2CA8F /* CMDFetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2778022F249AAA6700F2CA8F /* CMDFetchPhotoOperation.m */; };
 		27B1632A2498109900F60D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B163292498109900F60D5C /* AppDelegate.swift */; };
 		27B1632C2498109900F60D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1632B2498109900F60D5C /* SceneDelegate.swift */; };
 		27B163312498109900F60D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B1632F2498109900F60D5C /* Main.storyboard */; };
@@ -32,10 +34,13 @@
 		27780216249A6FC000F2CA8F /* MarsRoverPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhotos.swift; sourceTree = "<group>"; };
 		27780218249A70CA00F2CA8F /* CMDMarsRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDMarsRoverController.h; sourceTree = "<group>"; };
 		27780219249A70CA00F2CA8F /* CMDMarsRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDMarsRoverController.m; sourceTree = "<group>"; };
-		2778021C249AA2EC00F2CA8F /* CMDPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDPhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		2778021D249AA2EC00F2CA8F /* CMDPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		27780221249AA32E00F2CA8F /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		27780223249AA39500F2CA8F /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		27780228249AA64B00F2CA8F /* CMDCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDCache.h; sourceTree = "<group>"; };
+		27780229249AA64B00F2CA8F /* CMDCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDCache.m; sourceTree = "<group>"; };
+		2778022B249AA8F100F2CA8F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2778022E249AAA6700F2CA8F /* CMDFetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDFetchPhotoOperation.h; sourceTree = "<group>"; };
+		2778022F249AAA6700F2CA8F /* CMDFetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDFetchPhotoOperation.m; sourceTree = "<group>"; };
 		27B163262498109900F60D5C /* Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B163292498109900F60D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27B1632B2498109900F60D5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,12 +69,20 @@
 		2778021B249AA2A700F2CA8F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2778021C249AA2EC00F2CA8F /* CMDPhotoCollectionViewCell.h */,
-				2778021D249AA2EC00F2CA8F /* CMDPhotoCollectionViewCell.m */,
 				27780221249AA32E00F2CA8F /* PhotoDetailViewController.swift */,
 				27780223249AA39500F2CA8F /* PhotoCollectionViewController.swift */,
+				2778022B249AA8F100F2CA8F /* PhotoCollectionViewCell.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		27780225249AA61000F2CA8F /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				27780228249AA64B00F2CA8F /* CMDCache.h */,
+				27780229249AA64B00F2CA8F /* CMDCache.m */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		27B1631D2498109900F60D5C = {
@@ -91,11 +104,14 @@
 		27B163282498109900F60D5C /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				27780225249AA61000F2CA8F /* Cache */,
 				27B163402498130500F60D5C /* Models */,
 				27B1634724981AB800F60D5C /* Model Controller */,
 				2778021B249AA2A700F2CA8F /* View Controllers */,
 				27B1633F2498111900F60D5C /* Resources */,
 				27B1632F2498109900F60D5C /* Main.storyboard */,
+				2778022E249AAA6700F2CA8F /* CMDFetchPhotoOperation.h */,
+				2778022F249AAA6700F2CA8F /* CMDFetchPhotoOperation.m */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -212,12 +228,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2778021E249AA2EC00F2CA8F /* CMDPhotoCollectionViewCell.m in Sources */,
 				27B163422498133600F60D5C /* MarsRoverPhoto.swift in Sources */,
 				27B1634D2498215300F60D5C /* LSIErrors.m in Sources */,
+				27780230249AAA6700F2CA8F /* CMDFetchPhotoOperation.m in Sources */,
 				27780215249A6DEF00F2CA8F /* CMDRover.m in Sources */,
 				27780222249AA32E00F2CA8F /* PhotoDetailViewController.swift in Sources */,
 				27780212249A6D9D00F2CA8F /* CMDCamera.m in Sources */,
+				2778022C249AA8F100F2CA8F /* PhotoCollectionViewCell.swift in Sources */,
+				2778022A249AA64B00F2CA8F /* CMDCache.m in Sources */,
 				27B1632A2498109900F60D5C /* AppDelegate.swift in Sources */,
 				27780217249A6FC000F2CA8F /* MarsRoverPhotos.swift in Sources */,
 				27780224249AA39500F2CA8F /* PhotoCollectionViewController.swift in Sources */,

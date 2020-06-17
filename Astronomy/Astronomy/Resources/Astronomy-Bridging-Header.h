@@ -4,3 +4,6 @@
 
 #import "CMDCamera.h"
 #import "CMDRover.h"
+#import "CMDMarsRoverController.h"
+#import "CMDCache.h"
+#import "CMDFetchPhotoOperation.h"
