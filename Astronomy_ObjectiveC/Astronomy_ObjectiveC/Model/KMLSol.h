@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KMLSol : NSObject
 
-@property (nonatomic) int solID;
-@property (nonatomic) NSArray *photos;
+@property (nonatomic, readonly) int solID;
+@property (nonatomic, readonly, copy) NSArray *photos;
 
 - (instancetype) initWithSolID:(int)solID photos:(NSArray *)photoURLs;
 

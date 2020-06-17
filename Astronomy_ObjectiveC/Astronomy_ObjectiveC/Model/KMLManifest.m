@@ -16,18 +16,18 @@ NSArray *privateSolIDs;
 NSMutableArray *privateSols;
 
 - (NSArray *)sols {
-    return privateSols;
+    return [privateSols copy];
 }
 
 - (NSString *)roverName {
-    return privateRoverName;
+    return [privateRoverName copy];
 }
 
 - (NSArray *)solIDs {
-    return privateSolIDs;
+    return [privateSolIDs copy];
 }
 
-- (instancetype)initWithRoverName: (NSString *)roverName solIDs:(NSArray *)sols {
+- (instancetype)initWithRoverName:(NSString *)roverName solIDs:(NSArray *)sols {
     self = [super init];
     if (self) {
         privateRoverName = roverName;

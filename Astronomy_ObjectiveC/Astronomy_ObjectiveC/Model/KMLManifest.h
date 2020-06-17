@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy, nonatomic, readonly) NSString *roverName;
 ///used to hold sol IDs in order to download sols
-@property (nonatomic, copy, readonly) NSArray *solIDs;
+@property (nonatomic, copy, readonly) NSArray<NSNumber *> *solIDs;
 ///Actual Sol Objects downloaded using solIDs
-@property (nonatomic, copy, readonly) NSArray *sols;
+@property (nonatomic, copy, readonly) NSArray<KMLSol *> *sols;
 
 - (instancetype)initWithRoverName:(NSString *)roverName solIDs:(NSArray *)sols;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
