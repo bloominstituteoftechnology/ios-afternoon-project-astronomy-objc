@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HVS-ZL-jY7">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rover Photo Collection View Controller-->
+        <scene sceneID="Wo2-pF-ZJe">
+            <objects>
+                <collectionViewController id="CIe-ab-j2E" customClass="RoverPhotoCollectionViewController" customModule="Astronomy" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="RMp-Nf-LDn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W0v-tT-BcB">
+                            <size key="itemSize" width="300" height="350"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="IAX-or-WMm" customClass="PhotoCollectionViewCell" customModule="Astronomy" customModuleProvider="target">
+                                <rect key="frame" x="57" y="0.0" width="300" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="KLO-h5-4cr">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="KLO-h5-4cr" secondAttribute="height" multiplier="1:1" id="dcU-0Y-Ubv"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-LN-iHU">
+                                            <rect key="frame" x="8" y="308" width="284" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="KLO-h5-4cr" firstAttribute="leading" secondItem="IAX-or-WMm" secondAttribute="leading" id="2DQ-c5-1vf"/>
+                                    <constraint firstItem="LSc-LN-iHU" firstAttribute="top" secondItem="KLO-h5-4cr" secondAttribute="bottom" constant="8" id="Cqd-Jj-fHJ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="LSc-LN-iHU" secondAttribute="trailing" id="d7b-F0-dR1"/>
+                                    <constraint firstItem="KLO-h5-4cr" firstAttribute="top" secondItem="IAX-or-WMm" secondAttribute="top" id="g5X-TR-ZkR"/>
+                                    <constraint firstAttribute="trailing" secondItem="KLO-h5-4cr" secondAttribute="trailing" id="yQH-rQ-cFm"/>
+                                    <constraint firstItem="LSc-LN-iHU" firstAttribute="leading" secondItem="IAX-or-WMm" secondAttribute="leadingMargin" id="yxr-Bm-l0O"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="detailLabel" destination="LSc-LN-iHU" id="BnI-4w-vDH"/>
+                                    <outlet property="photoImageView" destination="KLO-h5-4cr" id="Mii-iw-UzT"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="CIe-ab-j2E" id="Och-EV-DSt"/>
+                            <outlet property="delegate" destination="CIe-ab-j2E" id="H5f-2O-5j8"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="mhg-KN-B9W"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uep-S5-78T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250.7246376811595" y="157.36607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wfh-NQ-QuC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HVS-ZL-jY7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0PV-0c-Dbo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CIe-ab-j2E" kind="relationship" relationship="rootViewController" id="ISM-Zy-a5U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gF1-MK-3GR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340.57971014492756" y="157.36607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Blank" width="100" height="100"/>
+    </resources>
+</document>
