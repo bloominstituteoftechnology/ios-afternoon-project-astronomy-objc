@@ -22,6 +22,9 @@
 		BE4BBCDC24C62B0600F0C509 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBCD524C62B0600F0C509 /* LSIErrors.m */; };
 		BE4BBCDD24C62B0600F0C509 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBCD624C62B0600F0C509 /* LSIFileHelper.m */; };
 		BE4BBCDE24C62B0600F0C509 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBCDA24C62B0600F0C509 /* URL+Secure.swift */; };
+		BE4BBCE124C62F1200F0C509 /* MissionManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBCE024C62F1200F0C509 /* MissionManifest.m */; };
+		BE4BBCE424C62F3700F0C509 /* RoverPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBCE324C62F3700F0C509 /* RoverPhotos.m */; };
+		BE4BBCE624C62FFD00F0C509 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBCE524C62FFD00F0C509 /* Rover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,11 @@
 		BE4BBCD824C62B0600F0C509 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		BE4BBCD924C62B0600F0C509 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		BE4BBCDA24C62B0600F0C509 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		BE4BBCDF24C62F1200F0C509 /* MissionManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MissionManifest.h; sourceTree = "<group>"; };
+		BE4BBCE024C62F1200F0C509 /* MissionManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MissionManifest.m; sourceTree = "<group>"; };
+		BE4BBCE224C62F3700F0C509 /* RoverPhotos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoverPhotos.h; sourceTree = "<group>"; };
+		BE4BBCE324C62F3700F0C509 /* RoverPhotos.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoverPhotos.m; sourceTree = "<group>"; };
+		BE4BBCE524C62FFD00F0C509 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +186,11 @@
 		BE4BBCCD24C6244F00F0C509 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE4BBCDF24C62F1200F0C509 /* MissionManifest.h */,
+				BE4BBCE024C62F1200F0C509 /* MissionManifest.m */,
+				BE4BBCE224C62F3700F0C509 /* RoverPhotos.h */,
+				BE4BBCE324C62F3700F0C509 /* RoverPhotos.m */,
+				BE4BBCE524C62FFD00F0C509 /* Rover.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,10 +350,13 @@
 				BE4BBCDE24C62B0600F0C509 /* URL+Secure.swift in Sources */,
 				BE4BBCDD24C62B0600F0C509 /* LSIFileHelper.m in Sources */,
 				BE4BBCDB24C62B0600F0C509 /* LSILog.m in Sources */,
+				BE4BBCE424C62F3700F0C509 /* RoverPhotos.m in Sources */,
 				BE4BBCA924C622EF00F0C509 /* main.m in Sources */,
 				BE4BBCD224C6299500F0C509 /* RoverCollectionViewController.swift in Sources */,
 				BE4BBCDC24C62B0600F0C509 /* LSIErrors.m in Sources */,
 				BE4BBCA124C622EE00F0C509 /* Astronomy_Objc.xcdatamodeld in Sources */,
+				BE4BBCE124C62F1200F0C509 /* MissionManifest.m in Sources */,
+				BE4BBCE624C62FFD00F0C509 /* Rover.swift in Sources */,
 				BE4BBC9B24C622EE00F0C509 /* ViewController.m in Sources */,
 				BE4BBC9524C622EE00F0C509 /* AppDelegate.m in Sources */,
 				BE4BBC9824C622EE00F0C509 /* SceneDelegate.m in Sources */,
