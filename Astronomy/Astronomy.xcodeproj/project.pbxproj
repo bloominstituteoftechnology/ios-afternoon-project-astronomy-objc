@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		5EF0345624C63FB50093137A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0345524C63FB50093137A /* AppDelegate.m */; };
 		5EF0345924C63FB50093137A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0345824C63FB50093137A /* SceneDelegate.m */; };
-		5EF0345F24C63FB50093137A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0345D24C63FB50093137A /* Main.storyboard */; };
 		5EF0346124C63FC30093137A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0346024C63FC30093137A /* Assets.xcassets */; };
-		5EF0346424C63FC30093137A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0346224C63FC30093137A /* LaunchScreen.storyboard */; };
 		5EF0346724C63FC30093137A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0346624C63FC30093137A /* main.m */; };
+		5EF0347624C644B40093137A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0347424C644B30093137A /* LaunchScreen.storyboard */; };
+		5EF0347724C644B40093137A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0347524C644B40093137A /* Main.storyboard */; };
+		5EF0347D24C6461A0093137A /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */; };
+		5EF0347F24C646830093137A /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0347E24C646830093137A /* PhotoDetailViewController.swift */; };
+		5EF0348224C647540093137A /* CAMImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348124C647540093137A /* CAMImageCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +24,16 @@
 		5EF0345524C63FB50093137A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5EF0345724C63FB50093137A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		5EF0345824C63FB50093137A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		5EF0345E24C63FB50093137A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EF0346024C63FC30093137A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5EF0346324C63FC30093137A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF0346524C63FC30093137A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF0346624C63FC30093137A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EF0347424C644B30093137A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5EF0347524C644B40093137A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5EF0347B24C646190093137A /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		5EF0347E24C646830093137A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		5EF0348024C647540093137A /* CAMImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMImageCollectionViewCell.h; sourceTree = "<group>"; };
+		5EF0348124C647540093137A /* CAMImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMImageCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +66,11 @@
 		5EF0345324C63FB50093137A /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				5EF0347B24C646190093137A /* Astronomy-Bridging-Header.h */,
+				5EF0347324C643C50093137A /* Models */,
+				5EF0347124C643A30093137A /* Model Controllers */,
 				5EF0347024C6404D0093137A /* Views */,
+				5EF0347224C643B10093137A /* View Controllers */,
 				5EF0346E24C640330093137A /* Resources */,
 				5EF0346D24C640170093137A /* Application */,
 			);
@@ -89,8 +101,8 @@
 		5EF0346F24C640440093137A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5EF0345D24C63FB50093137A /* Main.storyboard */,
-				5EF0346224C63FC30093137A /* LaunchScreen.storyboard */,
+				5EF0347524C644B40093137A /* Main.storyboard */,
+				5EF0347424C644B30093137A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -98,9 +110,34 @@
 		5EF0347024C6404D0093137A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EF0348024C647540093137A /* CAMImageCollectionViewCell.h */,
+				5EF0348124C647540093137A /* CAMImageCollectionViewCell.m */,
 				5EF0346F24C640440093137A /* Storyboards */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5EF0347124C643A30093137A /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		5EF0347224C643B10093137A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */,
+				5EF0347E24C646830093137A /* PhotoDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5EF0347324C643C50093137A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,11 +166,13 @@
 		5EF0344924C63FB50093137A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CAM;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Cody Morley";
 				TargetAttributes = {
 					5EF0345024C63FB50093137A = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -160,9 +199,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EF0346424C63FC30093137A /* LaunchScreen.storyboard in Resources */,
+				5EF0347724C644B40093137A /* Main.storyboard in Resources */,
 				5EF0346124C63FC30093137A /* Assets.xcassets in Resources */,
-				5EF0345F24C63FB50093137A /* Main.storyboard in Resources */,
+				5EF0347624C644B40093137A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,29 +215,13 @@
 				5EF0345624C63FB50093137A /* AppDelegate.m in Sources */,
 				5EF0346724C63FC30093137A /* main.m in Sources */,
 				5EF0345924C63FB50093137A /* SceneDelegate.m in Sources */,
+				5EF0347F24C646830093137A /* PhotoDetailViewController.swift in Sources */,
+				5EF0348224C647540093137A /* CAMImageCollectionViewCell.m in Sources */,
+				5EF0347D24C6461A0093137A /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5EF0345D24C63FB50093137A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EF0345E24C63FB50093137A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5EF0346224C63FC30093137A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EF0346324C63FC30093137A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5EF0346824C63FC30093137A /* Debug */ = {
@@ -315,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H627294WQZ;
 				INFOPLIST_FILE = Astronomy/Info.plist;
@@ -324,6 +348,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/View Controllers/Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -332,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H627294WQZ;
 				INFOPLIST_FILE = Astronomy/Info.plist;
@@ -341,6 +369,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/View Controllers/Astronomy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
