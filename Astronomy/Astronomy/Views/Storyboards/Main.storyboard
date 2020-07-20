@@ -71,7 +71,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="x4T-SY-qY3" id="sgf-7h-CSl"/>
+                        <outlet property="collectionView" destination="x4T-SY-qY3" id="Ipd-gp-y45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

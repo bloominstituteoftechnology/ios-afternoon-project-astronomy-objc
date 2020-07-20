@@ -10,4 +10,30 @@
 
 @implementation CAMSolDescription
 
+- (instancetype)initWithSol:(int)sol
+                totalPhotos:(int)totalPhotos
+                    cameras:(NSArray<NSString *> *)cameras
+{
+    self = [super init];
+    if (self) {
+        _sol = sol;
+        _totalPhotos = totalPhotos;
+        _cameras = [cameras copy];
+    }
+    return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    NSNumber *sol = dictionary[@"sol"];
+    NSNumber *totalPhotos = dictionary[@"totalPhotos"];
+    NSArray <NSString *> *cameras = dictionary[@"cameras"];
+    
+    return [self initWithSol: sol.intValue
+                 totalPhotos: totalPhotos.intValue
+                     cameras: cameras];
+    
+}
+
+
 @end

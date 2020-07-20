@@ -34,7 +34,6 @@
 		5EF0346624C63FC30093137A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EF0347424C644B30093137A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF0347524C644B40093137A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		5EF0347B24C646190093137A /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		5EF0347E24C646830093137A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		5EF0348024C647540093137A /* CAMImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMImageCollectionViewCell.h; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		5EF0348E24C6494D0093137A /* CAMCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCamera.m; sourceTree = "<group>"; };
 		5EF0349224C649A20093137A /* CAMRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMRoverClient.h; sourceTree = "<group>"; };
 		5EF0349324C649A20093137A /* CAMRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMRoverClient.m; sourceTree = "<group>"; };
+		5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,6 @@
 		5EF0345324C63FB50093137A /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
-				5EF0347B24C646190093137A /* Astronomy-Bridging-Header.h */,
 				5EF0347324C643C50093137A /* Models */,
 				5EF0347124C643A30093137A /* Model Controllers */,
 				5EF0347024C6404D0093137A /* Views */,
@@ -142,6 +141,7 @@
 		5EF0347224C643B10093137A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */,
 				5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */,
 				5EF0347E24C646830093137A /* PhotoDetailViewController.swift */,
 			);

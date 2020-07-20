@@ -2,7 +2,7 @@
 //  PhotosCollectionViewController.swift
 //  Astronomy
 //
-//  Created by Bling Morley on 7/20/20.
+//  Created by Cody Morley on 7/20/20.
 //  Copyright © 2020 Cody Morley. All rights reserved.
 //
 
@@ -11,8 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
