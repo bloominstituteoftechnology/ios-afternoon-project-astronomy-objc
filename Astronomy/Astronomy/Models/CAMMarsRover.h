@@ -35,7 +35,7 @@ NS_SWIFT_NAME(MarsRover)
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-- (void)newDateFormatter;
+- (void)setupDateFormatter;
 
 
 @end

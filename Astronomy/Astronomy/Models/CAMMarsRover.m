@@ -30,19 +30,40 @@
         _numberOfPhotos = numberOfPhotos;
         _solDescriptions = solDesriptions;
         self.dateFormatter = [[NSDateFormatter alloc] init];
-        [self newDateFormatter];
+        [self setupDateFormatter];
     }
     return self;
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
+    NSString *name = dictionary[@"name"];
+    NSString *status = dictionary[@"status"];
     
+    NSDate *launchDate = dictionary[@"launch_date"];
+    NSDate *landingDate = dictionary[@"landing_date"];
+    NSDate *maxDate = dictionary[@"max_date"];
+    
+    NSNumber *maxSol = dictionary[@"max_sol"];
+    NSNumber *numberOfPhotos = dictionary[@"number_of_photos"];
+    
+    NSArray <CAMSolDescription *> *solDescriptions = dictionary[@"sol_descriptions"];
+    
+    return [self initWithName: name
+                   launchDate: launchDate
+                  landingDate: landingDate
+                       status: status
+                       maxSol: [maxSol intValue]
+                      maxDate: maxDate
+               numberOfPhotos: [numberOfPhotos intValue]
+              solDescriptions: solDescriptions];
 }
 
-- (void)newDateFormatter:
+- (void)setupDateFormatter
 {
-    self.dateFormatter.
+    self.dateFormatter.locale = [NSLocale localeWithLocaleIdentifier: @"en_US_POSIX"];
+    self.dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation: @"GMT"];
+    self.dateFormatter.dateFormat = @"yyyy-MM-dd";
 }
 
 @end

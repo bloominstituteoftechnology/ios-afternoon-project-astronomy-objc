@@ -26,13 +26,12 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     NSNumber *sol = dictionary[@"sol"];
-    NSNumber *totalPhotos = dictionary[@"totalPhotos"];
+    NSNumber *totalPhotos = dictionary[@"total_photos"];
     NSArray <NSString *> *cameras = dictionary[@"cameras"];
     
     return [self initWithSol: sol.intValue
                  totalPhotos: totalPhotos.intValue
                      cameras: cameras];
-    
 }
 
 

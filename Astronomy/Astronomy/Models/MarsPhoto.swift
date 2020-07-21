@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MarsPhotoReference: Codable {
+struct MarsPhotoReference {
     //MARK: - Types -
     enum CodingKeys: String, CodingKey {
         case id
@@ -38,5 +38,21 @@ struct MarsPhotoReference: Codable {
         result.keyDecodingStrategy = .convertFromSnakeCase
         result.dateDecodingStrategy = .formatted(dateFormatter)
         return result
+    }
+    
+    
+    //MARK: - Initializers -
+    init(with dictionary: [String : Any]) {
+        let id: Int = dictionary["id"] as! Int
+        let sol: Int = dictionary["sol"] as! Int
+        let camera: Camera = dictionary["camera"] as! Camera
+        let earthDate: Date = dictionary["earth_date"] as! Date
+        let imageURL: URL = dictionary["imgSrc"] as! URL
+        
+        self.id = id
+        self.sol = sol
+        self.camera = camera
+        self.earthDate = earthDate
+        self.imageURL = imageURL
     }
 }

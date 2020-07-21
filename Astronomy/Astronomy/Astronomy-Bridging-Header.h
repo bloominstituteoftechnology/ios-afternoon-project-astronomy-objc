@@ -3,7 +3,7 @@
 //
 
 #import "CAMMarsRover.h"
-#import "CAMSolDescriptions.h"
+#import "CAMSolDescription.h"
 #import "CAMCamera.h"
 #import "CAMRoverClient.h"
 #import "CAMImageCollectionViewCell.h"

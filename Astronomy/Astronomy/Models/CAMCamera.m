@@ -28,9 +28,9 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     NSNumber *cameraId = dictionary[@"id"];
-    NSNumber *roverId = dictionary[@"roverId"];
-    NSString *name = dictionary[@"fullName"];
-    NSString *fullName = dictionary[@"fullName"];
+    NSNumber *roverId = dictionary[@"rover_id"];
+    NSString *name = dictionary[@"name"];
+    NSString *fullName = dictionary[@"full_name"];
     
     return [self initWithCameraID: cameraId.intValue
                           roverId: roverId.intValue

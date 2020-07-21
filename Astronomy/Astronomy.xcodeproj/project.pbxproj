@@ -80,6 +80,7 @@
 		5EF0345324C63FB50093137A /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */,
 				5EF0347324C643C50093137A /* Models */,
 				5EF0347124C643A30093137A /* Model Controllers */,
 				5EF0347024C6404D0093137A /* Views */,
@@ -141,7 +142,6 @@
 		5EF0347224C643B10093137A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */,
 				5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */,
 				5EF0347E24C646830093137A /* PhotoDetailViewController.swift */,
 			);
@@ -392,7 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/View Controllers/Astronomy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,7 +413,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/View Controllers/Astronomy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
