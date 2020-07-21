@@ -20,7 +20,7 @@
 		5EF0348924C649000093137A /* CAMMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348824C649000093137A /* CAMMarsRover.m */; };
 		5EF0348C24C649260093137A /* CAMSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348B24C649260093137A /* CAMSolDescription.m */; };
 		5EF0348F24C6494D0093137A /* CAMCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348E24C6494D0093137A /* CAMCamera.m */; };
-		5EF0349424C649A20093137A /* CAMRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0349324C649A20093137A /* CAMRoverClient.m */; };
+		5EF0349824C6AE100093137A /* CAMMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0349724C6AE100093137A /* CAMMarsRoverClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +45,9 @@
 		5EF0348B24C649260093137A /* CAMSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMSolDescription.m; sourceTree = "<group>"; };
 		5EF0348D24C6494D0093137A /* CAMCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCamera.h; sourceTree = "<group>"; };
 		5EF0348E24C6494D0093137A /* CAMCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCamera.m; sourceTree = "<group>"; };
-		5EF0349224C649A20093137A /* CAMRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMRoverClient.h; sourceTree = "<group>"; };
-		5EF0349324C649A20093137A /* CAMRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMRoverClient.m; sourceTree = "<group>"; };
 		5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		5EF0349624C6AE100093137A /* CAMMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMMarsRoverClient.h; sourceTree = "<group>"; };
+		5EF0349724C6AE100093137A /* CAMMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMMarsRoverClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			children = (
 				5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */,
 				5EF0347324C643C50093137A /* Models */,
-				5EF0347124C643A30093137A /* Model Controllers */,
+				5EF0349024C649770093137A /* Services */,
 				5EF0347024C6404D0093137A /* Views */,
 				5EF0347224C643B10093137A /* View Controllers */,
 				5EF0346E24C640330093137A /* Resources */,
@@ -131,14 +131,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5EF0347124C643A30093137A /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				5EF0349024C649770093137A /* Services */,
-			);
-			path = "Model Controllers";
-			sourceTree = "<group>";
-		};
 		5EF0347224C643B10093137A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +165,8 @@
 		5EF0349124C649810093137A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				5EF0349224C649A20093137A /* CAMRoverClient.h */,
-				5EF0349324C649A20093137A /* CAMRoverClient.m */,
+				5EF0349624C6AE100093137A /* CAMMarsRoverClient.h */,
+				5EF0349724C6AE100093137A /* CAMMarsRoverClient.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -258,8 +250,8 @@
 				5EF0345924C63FB50093137A /* SceneDelegate.m in Sources */,
 				5EF0348C24C649260093137A /* CAMSolDescription.m in Sources */,
 				5EF0348F24C6494D0093137A /* CAMCamera.m in Sources */,
+				5EF0349824C6AE100093137A /* CAMMarsRoverClient.m in Sources */,
 				5EF0347F24C646830093137A /* PhotoDetailViewController.swift in Sources */,
-				5EF0349424C649A20093137A /* CAMRoverClient.m in Sources */,
 				5EF0348224C647540093137A /* CAMImageCollectionViewCell.m in Sources */,
 				5EF0347D24C6461A0093137A /* PhotosCollectionViewController.swift in Sources */,
 			);

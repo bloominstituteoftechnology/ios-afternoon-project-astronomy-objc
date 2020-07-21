@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "CAMSolDescription.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(MarsRover)
 
 @interface CAMMarsRover : NSObject
+
 
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSDate *launchDate;
@@ -37,8 +39,9 @@ NS_SWIFT_NAME(MarsRover)
 
 - (void)setupDateFormatter;
 
-
+NS_ASSUME_NONNULL_END
 @end
 
-NS_ASSUME_NONNULL_END
+
+
 

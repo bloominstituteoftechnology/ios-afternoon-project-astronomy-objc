@@ -8,6 +8,7 @@
 
 import Foundation
 
+@objc (CAMMarsPhoto)
 struct MarsPhotoReference {
     //MARK: - Types -
     enum CodingKeys: String, CodingKey {

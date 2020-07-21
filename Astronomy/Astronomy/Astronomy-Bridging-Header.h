@@ -5,5 +5,5 @@
 #import "CAMMarsRover.h"
 #import "CAMSolDescription.h"
 #import "CAMCamera.h"
-#import "CAMRoverClient.h"
+#import "CAMMarsRoverClient.h"
 #import "CAMImageCollectionViewCell.h"

@@ -23,6 +23,7 @@ NS_SWIFT_NAME(SolDescription)
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
+NS_ASSUME_NONNULL_END
 @end
 
-NS_ASSUME_NONNULL_END
+
