@@ -45,9 +45,9 @@
 		5EF0348B24C649260093137A /* CAMSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMSolDescription.m; sourceTree = "<group>"; };
 		5EF0348D24C6494D0093137A /* CAMCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCamera.h; sourceTree = "<group>"; };
 		5EF0348E24C6494D0093137A /* CAMCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCamera.m; sourceTree = "<group>"; };
-		5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EF0349624C6AE100093137A /* CAMMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMMarsRoverClient.h; sourceTree = "<group>"; };
 		5EF0349724C6AE100093137A /* CAMMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMMarsRoverClient.m; sourceTree = "<group>"; };
+		5EF034AA24C79E7D0093137A /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +64,7 @@
 		5EF0344824C63FB50093137A = {
 			isa = PBXGroup;
 			children = (
+				5EF034AA24C79E7D0093137A /* Astronomy-Bridging-Header.h */,
 				5EF0345324C63FB50093137A /* Astronomy */,
 				5EF0345224C63FB50093137A /* Products */,
 			);
@@ -80,7 +81,6 @@
 		5EF0345324C63FB50093137A /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
-				5EF0349524C659170093137A /* Astronomy-Bridging-Header.h */,
 				5EF0347324C643C50093137A /* Models */,
 				5EF0349024C649770093137A /* Services */,
 				5EF0347024C6404D0093137A /* Views */,
@@ -384,7 +384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/blingmorley/Desktop/DevStuff/Lambda/Unit 4/Week 3 - Advanced Objective-C/Monday - Swift & Obj-C Interoperability/ios-afternoon-project-astronomy-objc/Astronomy/Astronomy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,7 +405,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/blingmorley/Desktop/DevStuff/Lambda/Unit 4/Week 3 - Advanced Objective-C/Monday - Swift & Obj-C Interoperability/ios-afternoon-project-astronomy-objc/Astronomy/Astronomy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

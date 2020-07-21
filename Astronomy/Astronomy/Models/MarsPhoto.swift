@@ -9,7 +9,7 @@
 import Foundation
 
 @objc (CAMMarsPhoto)
-struct MarsPhotoReference {
+class MarsPhotoReference: NSObject {
     //MARK: - Types -
     enum CodingKeys: String, CodingKey {
         case id
