@@ -20,10 +20,14 @@
 		B4C8F78A24C636EA00133FED /* LSIMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F78924C636EA00133FED /* LSIMarsRoverClient.m */; };
 		B4C8F78C24C6371600133FED /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F78B24C6371600133FED /* PhotosCollectionViewController.swift */; };
 		B4C8F78E24C6372B00133FED /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F78D24C6372B00133FED /* PhotoDetailViewController.swift */; };
-		B4C8F79024C6395100133FED /* MarsPhotoReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F78F24C6395100133FED /* MarsPhotoReference.swift */; };
-		B4C8F79524C653E700133FED /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F79424C653E700133FED /* APIController.m */; };
 		B4C8F79724C654BC00133FED /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F79624C654BC00133FED /* Rover.swift */; };
-		B4C8F79A24C655B100133FED /* AstronomyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F79924C655B100133FED /* AstronomyCell.m */; };
+		B4C8F7A024C6624000133FED /* NNECamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F79F24C6624000133FED /* NNECamera.m */; };
+		B4C8F7A924C7943F00133FED /* NNECache.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F7A824C7943F00133FED /* NNECache.m */; };
+		B4C8F7AD24C7986800133FED /* MarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F7AC24C7986800133FED /* MarsRoverController.m */; };
+		B4C8F7B224C79A3E00133FED /* MarsRoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F7B124C79A3E00133FED /* MarsRoverPhoto.swift */; };
+		B4C8F7B424C79AA200133FED /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F7B324C79AA200133FED /* Photos.swift */; };
+		B4C8F7B724C79C6A00133FED /* FetchPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F7B624C79C6A00133FED /* FetchPhotoOperation.m */; };
+		B4C8F7B924C79CAF00133FED /* RoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8F7B824C79CAF00133FED /* RoverCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,12 +53,18 @@
 		B4C8F78924C636EA00133FED /* LSIMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsRoverClient.m; sourceTree = "<group>"; };
 		B4C8F78B24C6371600133FED /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		B4C8F78D24C6372B00133FED /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
-		B4C8F78F24C6395100133FED /* MarsPhotoReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoReference.swift; sourceTree = "<group>"; };
-		B4C8F79324C653E700133FED /* APIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
-		B4C8F79424C653E700133FED /* APIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
 		B4C8F79624C654BC00133FED /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
-		B4C8F79824C655B100133FED /* AstronomyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AstronomyCell.h; sourceTree = "<group>"; };
-		B4C8F79924C655B100133FED /* AstronomyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AstronomyCell.m; sourceTree = "<group>"; };
+		B4C8F79E24C6624000133FED /* NNECamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNECamera.h; sourceTree = "<group>"; };
+		B4C8F79F24C6624000133FED /* NNECamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNECamera.m; sourceTree = "<group>"; };
+		B4C8F7A724C7943F00133FED /* NNECache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNECache.h; sourceTree = "<group>"; };
+		B4C8F7A824C7943F00133FED /* NNECache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNECache.m; sourceTree = "<group>"; };
+		B4C8F7AB24C7986800133FED /* MarsRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverController.h; sourceTree = "<group>"; };
+		B4C8F7AC24C7986800133FED /* MarsRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverController.m; sourceTree = "<group>"; };
+		B4C8F7B124C79A3E00133FED /* MarsRoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhoto.swift; sourceTree = "<group>"; };
+		B4C8F7B324C79AA200133FED /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		B4C8F7B524C79C6A00133FED /* FetchPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchPhotoOperation.h; sourceTree = "<group>"; };
+		B4C8F7B624C79C6A00133FED /* FetchPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchPhotoOperation.m; sourceTree = "<group>"; };
+		B4C8F7B824C79CAF00133FED /* RoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,20 +99,15 @@
 			children = (
 				B4C8F77C24C6356300133FED /* AstronomyInteroperability-Bridging-Header.h */,
 				B4C8F77524C6200B00133FED /* main.m */,
+				B4C8F7AA24C794B900133FED /* Models */,
 				B4C8F79D24C6572B00133FED /*  Controllers */,
-				B4C8F79624C654BC00133FED /* Rover.swift */,
-				B4C8F79824C655B100133FED /* AstronomyCell.h */,
-				B4C8F79924C655B100133FED /* AstronomyCell.m */,
 				B4C8F79B24C6570900133FED /* Helpers */,
 				B4C8F76324C6200600133FED /* AppDelegate.h */,
 				B4C8F76424C6200600133FED /* AppDelegate.m */,
 				B4C8F76624C6200600133FED /* SceneDelegate.h */,
 				B4C8F76724C6200600133FED /* SceneDelegate.m */,
 				B4C8F76C24C6200600133FED /* Main.storyboard */,
-				B4C8F78F24C6395100133FED /* MarsPhotoReference.swift */,
 				B4C8F76F24C6200B00133FED /* Assets.xcassets */,
-				B4C8F78824C636EA00133FED /* LSIMarsRoverClient.h */,
-				B4C8F78924C636EA00133FED /* LSIMarsRoverClient.m */,
 				B4C8F77124C6200B00133FED /* LaunchScreen.storyboard */,
 				B4C8F77424C6200B00133FED /* Info.plist */,
 			);
@@ -126,6 +131,9 @@
 		B4C8F79C24C6571500133FED /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4C8F7B824C79CAF00133FED /* RoverCollectionViewCell.swift */,
+				B4C8F7B524C79C6A00133FED /* FetchPhotoOperation.h */,
+				B4C8F7B624C79C6A00133FED /* FetchPhotoOperation.m */,
 				B4C8F78B24C6371600133FED /* PhotosCollectionViewController.swift */,
 				B4C8F78D24C6372B00133FED /* PhotoDetailViewController.swift */,
 			);
@@ -135,11 +143,27 @@
 		B4C8F79D24C6572B00133FED /*  Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B4C8F79324C653E700133FED /* APIController.h */,
-				B4C8F79424C653E700133FED /* APIController.m */,
+				B4C8F7AB24C7986800133FED /* MarsRoverController.h */,
+				B4C8F7AC24C7986800133FED /* MarsRoverController.m */,
 				B4C8F79C24C6571500133FED /* View Controllers */,
+				B4C8F79E24C6624000133FED /* NNECamera.h */,
+				B4C8F79F24C6624000133FED /* NNECamera.m */,
 			);
 			path = " Controllers";
+			sourceTree = "<group>";
+		};
+		B4C8F7AA24C794B900133FED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4C8F7B124C79A3E00133FED /* MarsRoverPhoto.swift */,
+				B4C8F7B324C79AA200133FED /* Photos.swift */,
+				B4C8F78824C636EA00133FED /* LSIMarsRoverClient.h */,
+				B4C8F78924C636EA00133FED /* LSIMarsRoverClient.m */,
+				B4C8F7A724C7943F00133FED /* NNECache.h */,
+				B4C8F7A824C7943F00133FED /* NNECache.m */,
+				B4C8F79624C654BC00133FED /* Rover.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,16 +237,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C8F79524C653E700133FED /* APIController.m in Sources */,
+				B4C8F7B224C79A3E00133FED /* MarsRoverPhoto.swift in Sources */,
+				B4C8F7A024C6624000133FED /* NNECamera.m in Sources */,
 				B4C8F78724C6356400133FED /* URL+Secure.swift in Sources */,
-				B4C8F79A24C655B100133FED /* AstronomyCell.m in Sources */,
-				B4C8F79024C6395100133FED /* MarsPhotoReference.swift in Sources */,
+				B4C8F7AD24C7986800133FED /* MarsRoverController.m in Sources */,
 				B4C8F78524C6356400133FED /* LSIFileHelper.m in Sources */,
+				B4C8F7B424C79AA200133FED /* Photos.swift in Sources */,
+				B4C8F7B924C79CAF00133FED /* RoverCollectionViewCell.swift in Sources */,
+				B4C8F7B724C79C6A00133FED /* FetchPhotoOperation.m in Sources */,
 				B4C8F78424C6356400133FED /* LSILog.m in Sources */,
 				B4C8F78624C6356400133FED /* LSIErrors.m in Sources */,
 				B4C8F79724C654BC00133FED /* Rover.swift in Sources */,
 				B4C8F76524C6200600133FED /* AppDelegate.m in Sources */,
 				B4C8F77624C6200B00133FED /* main.m in Sources */,
+				B4C8F7A924C7943F00133FED /* NNECache.m in Sources */,
 				B4C8F78C24C6371600133FED /* PhotosCollectionViewController.swift in Sources */,
 				B4C8F76824C6200600133FED /* SceneDelegate.m in Sources */,
 				B4C8F78E24C6372B00133FED /* PhotoDetailViewController.swift in Sources */,

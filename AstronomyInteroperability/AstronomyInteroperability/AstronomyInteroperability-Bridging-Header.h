@@ -2,5 +2,9 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import "APIController.h"
-#import "AstronomyCell.h"
+#import "LSIMarsRoverClient.h"
+#import "NNECache.h"
+#import "NNECamera.h"
+#import "MarsRoverController.h"
+#import "FetchPhotoOperation.h"
+
