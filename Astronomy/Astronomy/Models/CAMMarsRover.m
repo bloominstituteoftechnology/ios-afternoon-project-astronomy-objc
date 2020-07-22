@@ -7,6 +7,7 @@
 //
 
 #import "CAMMarsRover.h"
+#import "CAMSolDescription.h"
 
 @implementation CAMMarsRover
 

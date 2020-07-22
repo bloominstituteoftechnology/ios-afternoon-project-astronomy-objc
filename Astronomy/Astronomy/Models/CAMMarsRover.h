@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CAMSolDescription.h"
 
+@class CAMSolDescription;
 
 NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(MarsRover)
