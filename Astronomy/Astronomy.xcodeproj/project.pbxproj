@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EF0345624C63FB50093137A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0345524C63FB50093137A /* AppDelegate.m */; };
+		5EF0345924C63FB50093137A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0345824C63FB50093137A /* SceneDelegate.m */; };
+		5EF0346124C63FC30093137A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0346024C63FC30093137A /* Assets.xcassets */; };
+		5EF0346724C63FC30093137A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0346624C63FC30093137A /* main.m */; };
+		5EF0347624C644B40093137A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0347424C644B30093137A /* LaunchScreen.storyboard */; };
+		5EF0347724C644B40093137A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF0347524C644B40093137A /* Main.storyboard */; };
+		5EF0347D24C6461A0093137A /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */; };
+		5EF0347F24C646830093137A /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0347E24C646830093137A /* PhotoDetailViewController.swift */; };
+		5EF0348224C647540093137A /* CAMImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348124C647540093137A /* CAMImageCollectionViewCell.m */; };
+		5EF0348424C648810093137A /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348324C648810093137A /* MarsPhoto.swift */; };
+		5EF0348924C649000093137A /* CAMMarsRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348824C649000093137A /* CAMMarsRover.m */; };
+		5EF0348C24C649260093137A /* CAMSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348B24C649260093137A /* CAMSolDescription.m */; };
+		5EF0348F24C6494D0093137A /* CAMCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0348E24C6494D0093137A /* CAMCamera.m */; };
+		5EF0349824C6AE100093137A /* CAMMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0349724C6AE100093137A /* CAMMarsRoverClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5EF0345124C63FB50093137A /* Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF0345424C63FB50093137A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5EF0345524C63FB50093137A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5EF0345724C63FB50093137A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		5EF0345824C63FB50093137A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		5EF0346024C63FC30093137A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EF0346524C63FC30093137A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF0346624C63FC30093137A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EF0347424C644B30093137A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5EF0347524C644B40093137A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		5EF0347E24C646830093137A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		5EF0348024C647540093137A /* CAMImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMImageCollectionViewCell.h; sourceTree = "<group>"; };
+		5EF0348124C647540093137A /* CAMImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMImageCollectionViewCell.m; sourceTree = "<group>"; };
+		5EF0348324C648810093137A /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
+		5EF0348724C649000093137A /* CAMMarsRover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMMarsRover.h; sourceTree = "<group>"; };
+		5EF0348824C649000093137A /* CAMMarsRover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMMarsRover.m; sourceTree = "<group>"; };
+		5EF0348A24C649260093137A /* CAMSolDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMSolDescription.h; sourceTree = "<group>"; };
+		5EF0348B24C649260093137A /* CAMSolDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMSolDescription.m; sourceTree = "<group>"; };
+		5EF0348D24C6494D0093137A /* CAMCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCamera.h; sourceTree = "<group>"; };
+		5EF0348E24C6494D0093137A /* CAMCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCamera.m; sourceTree = "<group>"; };
+		5EF0349624C6AE100093137A /* CAMMarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMMarsRoverClient.h; sourceTree = "<group>"; };
+		5EF0349724C6AE100093137A /* CAMMarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMMarsRoverClient.m; sourceTree = "<group>"; };
+		5EF034AA24C79E7D0093137A /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EF0344E24C63FB50093137A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EF0344824C63FB50093137A = {
+			isa = PBXGroup;
+			children = (
+				5EF034AA24C79E7D0093137A /* Astronomy-Bridging-Header.h */,
+				5EF0345324C63FB50093137A /* Astronomy */,
+				5EF0345224C63FB50093137A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EF0345224C63FB50093137A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0345124C63FB50093137A /* Astronomy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EF0345324C63FB50093137A /* Astronomy */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0347324C643C50093137A /* Models */,
+				5EF0349024C649770093137A /* Services */,
+				5EF0347024C6404D0093137A /* Views */,
+				5EF0347224C643B10093137A /* View Controllers */,
+				5EF0346E24C640330093137A /* Resources */,
+				5EF0346D24C640170093137A /* Application */,
+			);
+			path = Astronomy;
+			sourceTree = "<group>";
+		};
+		5EF0346D24C640170093137A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0346624C63FC30093137A /* main.m */,
+				5EF0345424C63FB50093137A /* AppDelegate.h */,
+				5EF0345524C63FB50093137A /* AppDelegate.m */,
+				5EF0345724C63FB50093137A /* SceneDelegate.h */,
+				5EF0345824C63FB50093137A /* SceneDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5EF0346E24C640330093137A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0346524C63FC30093137A /* Info.plist */,
+				5EF0346024C63FC30093137A /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5EF0346F24C640440093137A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0347524C644B40093137A /* Main.storyboard */,
+				5EF0347424C644B30093137A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5EF0347024C6404D0093137A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0348024C647540093137A /* CAMImageCollectionViewCell.h */,
+				5EF0348124C647540093137A /* CAMImageCollectionViewCell.m */,
+				5EF0346F24C640440093137A /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5EF0347224C643B10093137A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0347C24C6461A0093137A /* PhotosCollectionViewController.swift */,
+				5EF0347E24C646830093137A /* PhotoDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5EF0347324C643C50093137A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0348324C648810093137A /* MarsPhoto.swift */,
+				5EF0348724C649000093137A /* CAMMarsRover.h */,
+				5EF0348824C649000093137A /* CAMMarsRover.m */,
+				5EF0348A24C649260093137A /* CAMSolDescription.h */,
+				5EF0348B24C649260093137A /* CAMSolDescription.m */,
+				5EF0348D24C6494D0093137A /* CAMCamera.h */,
+				5EF0348E24C6494D0093137A /* CAMCamera.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5EF0349024C649770093137A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0349124C649810093137A /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5EF0349124C649810093137A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5EF0349624C6AE100093137A /* CAMMarsRoverClient.h */,
+				5EF0349724C6AE100093137A /* CAMMarsRoverClient.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EF0345024C63FB50093137A /* Astronomy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EF0346A24C63FC30093137A /* Build configuration list for PBXNativeTarget "Astronomy" */;
+			buildPhases = (
+				5EF0344D24C63FB50093137A /* Sources */,
+				5EF0344E24C63FB50093137A /* Frameworks */,
+				5EF0344F24C63FB50093137A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Astronomy;
+			productName = Astronomy;
+			productReference = 5EF0345124C63FB50093137A /* Astronomy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EF0344924C63FB50093137A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CAM;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Cody Morley";
+				TargetAttributes = {
+					5EF0345024C63FB50093137A = {
+						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
+					};
+				};
+			};
+			buildConfigurationList = 5EF0344C24C63FB50093137A /* Build configuration list for PBXProject "Astronomy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5EF0344824C63FB50093137A;
+			productRefGroup = 5EF0345224C63FB50093137A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EF0345024C63FB50093137A /* Astronomy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EF0344F24C63FB50093137A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EF0347724C644B40093137A /* Main.storyboard in Resources */,
+				5EF0346124C63FC30093137A /* Assets.xcassets in Resources */,
+				5EF0347624C644B40093137A /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EF0344D24C63FB50093137A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EF0345624C63FB50093137A /* AppDelegate.m in Sources */,
+				5EF0346724C63FC30093137A /* main.m in Sources */,
+				5EF0348424C648810093137A /* MarsPhoto.swift in Sources */,
+				5EF0348924C649000093137A /* CAMMarsRover.m in Sources */,
+				5EF0345924C63FB50093137A /* SceneDelegate.m in Sources */,
+				5EF0348C24C649260093137A /* CAMSolDescription.m in Sources */,
+				5EF0348F24C6494D0093137A /* CAMCamera.m in Sources */,
+				5EF0349824C6AE100093137A /* CAMMarsRoverClient.m in Sources */,
+				5EF0347F24C646830093137A /* PhotoDetailViewController.swift in Sources */,
+				5EF0348224C647540093137A /* CAMImageCollectionViewCell.m in Sources */,
+				5EF0347D24C6461A0093137A /* PhotosCollectionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5EF0346824C63FC30093137A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5EF0346924C63FC30093137A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EF0346B24C63FC30093137A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H627294WQZ;
+				INFOPLIST_FILE = Astronomy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/blingmorley/Desktop/DevStuff/Lambda/Unit 4/Week 3 - Advanced Objective-C/Monday - Swift & Obj-C Interoperability/ios-afternoon-project-astronomy-objc/Astronomy/Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5EF0346C24C63FC30093137A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H627294WQZ;
+				INFOPLIST_FILE = Astronomy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CodyMorley.Astronomy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/blingmorley/Desktop/DevStuff/Lambda/Unit 4/Week 3 - Advanced Objective-C/Monday - Swift & Obj-C Interoperability/ios-afternoon-project-astronomy-objc/Astronomy/Astronomy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EF0344C24C63FB50093137A /* Build configuration list for PBXProject "Astronomy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EF0346824C63FC30093137A /* Debug */,
+				5EF0346924C63FC30093137A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EF0346A24C63FC30093137A /* Build configuration list for PBXNativeTarget "Astronomy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EF0346B24C63FC30093137A /* Debug */,
+				5EF0346C24C63FC30093137A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EF0344924C63FB50093137A /* Project object */;
+}
