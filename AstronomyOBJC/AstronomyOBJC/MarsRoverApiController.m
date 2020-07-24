@@ -12,6 +12,7 @@
 //https://api.nasa.gov/planetary/apod?api_key=6uIKekXwxAAc5xXCn1jv0667fXDZJGlP813TJOhp
 
 /*
+ EXTRA https://api.nasa.gov/mars-photos/api/v1/rovers/Curiosity/photos?sol=3&api_key=qzGsj0zsKk6CA9JZP1UjAbpQHabBfaPg2M5dGMB7
  
  BASEURL - https://api.nasa.gov/mars-photos/api/v1
  

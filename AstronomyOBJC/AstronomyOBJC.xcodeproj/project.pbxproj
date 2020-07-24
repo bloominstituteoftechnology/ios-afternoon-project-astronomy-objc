@@ -21,6 +21,10 @@
 		507419BB24CA7E4100DA190D /* SolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419BA24CA7E4100DA190D /* SolsCollectionViewController.swift */; };
 		507419BE24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */; };
 		507419C124CA7F3600DA190D /* MarsRoverApiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419C024CA7F3600DA190D /* MarsRoverApiController.m */; };
+		507419C524CB418100DA190D /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419C424CB418100DA190D /* MarsRover.swift */; };
+		507419C824CB41AD00DA190D /* MarsPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419C724CB41AD00DA190D /* MarsPhotoReference.m */; };
+		507419CB24CB423F00DA190D /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419CA24CB423F00DA190D /* Camera.m */; };
+		507419CE24CB426700DA190D /* SolDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419CD24CB426700DA190D /* SolDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,13 @@
 		507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoDetailViewController.swift; sourceTree = "<group>"; };
 		507419BF24CA7F3600DA190D /* MarsRoverApiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverApiController.h; sourceTree = "<group>"; };
 		507419C024CA7F3600DA190D /* MarsRoverApiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverApiController.m; sourceTree = "<group>"; };
+		507419C424CB418100DA190D /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
+		507419C624CB41AD00DA190D /* MarsPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsPhotoReference.h; sourceTree = "<group>"; };
+		507419C724CB41AD00DA190D /* MarsPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsPhotoReference.m; sourceTree = "<group>"; };
+		507419C924CB423F00DA190D /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		507419CA24CB423F00DA190D /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		507419CC24CB426700DA190D /* SolDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolDetails.h; sourceTree = "<group>"; };
+		507419CD24CB426700DA190D /* SolDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SolDetails.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +105,13 @@
 				507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */,
 				507419BF24CA7F3600DA190D /* MarsRoverApiController.h */,
 				507419C024CA7F3600DA190D /* MarsRoverApiController.m */,
+				507419C624CB41AD00DA190D /* MarsPhotoReference.h */,
+				507419C724CB41AD00DA190D /* MarsPhotoReference.m */,
+				507419C424CB418100DA190D /* MarsRover.swift */,
+				507419C924CB423F00DA190D /* Camera.h */,
+				507419CA24CB423F00DA190D /* Camera.m */,
+				507419CC24CB426700DA190D /* SolDetails.h */,
+				507419CD24CB426700DA190D /* SolDetails.m */,
 				507419AE24CA7A5600DA190D /* LambdaSDK */,
 			);
 			path = AstronomyOBJC;
@@ -184,13 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507419CB24CB423F00DA190D /* Camera.m in Sources */,
 				507419B924CA7A5600DA190D /* URL+Secure.swift in Sources */,
 				5074199D24CA799600DA190D /* ViewController.m in Sources */,
 				507419BB24CA7E4100DA190D /* SolsCollectionViewController.swift in Sources */,
 				507419BE24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift in Sources */,
 				507419C124CA7F3600DA190D /* MarsRoverApiController.m in Sources */,
+				507419CE24CB426700DA190D /* SolDetails.m in Sources */,
+				507419C824CB41AD00DA190D /* MarsPhotoReference.m in Sources */,
 				507419B624CA7A5600DA190D /* LSILog.m in Sources */,
 				5074199724CA799600DA190D /* AppDelegate.m in Sources */,
+				507419C524CB418100DA190D /* MarsRover.swift in Sources */,
 				507419A824CA799800DA190D /* main.m in Sources */,
 				507419B824CA7A5600DA190D /* LSIFileHelper.m in Sources */,
 				5074199A24CA799600DA190D /* SceneDelegate.m in Sources */,
