@@ -7,6 +7,7 @@
 //
 
 #import "MarsRoverApiController.h"
+#import "AstronomyOBJC-Swift.h"
 
 //apikey 6uIKekXwxAAc5xXCn1jv0667fXDZJGlP813TJOhp
 //https://api.nasa.gov/planetary/apod?api_key=6uIKekXwxAAc5xXCn1jv0667fXDZJGlP813TJOhp
@@ -26,18 +27,9 @@ This will give us the pictures from the curiosity from sol 1000 from the fhaz ca
  
  This will give you one image back from the server.
  using the image url given from the json given from the url above.
- 
- 
  */
 
 @implementation MarsRoverApiController
-
-
-
-
-
-
-
 
 
 

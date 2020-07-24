@@ -10,13 +10,12 @@ import UIKit
 
 class MarsRover: NSObject {
 
+    @objc var name: String
+    @objc var totalPhotos: Int
     
-    
-    
-    
-    
-    
-    
-    
-    
+    @objc init(name: String, totalPhotos: Int) {
+        self.name = name
+        self.totalPhotos = totalPhotos
+        
+    }
 }

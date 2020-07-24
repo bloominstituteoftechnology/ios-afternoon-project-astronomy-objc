@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class MarsRover;
+
 NS_ASSUME_NONNULL_BEGIN
 
 // TODO: Uncomment this to work with model created.
@@ -15,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MarsRoverApiController : NSObject
 
-
+@property (nonatomic, readonly) MarsRover *marsRover;
 
 
 

@@ -1,21 +1,13 @@
 //
-//  SolDetails.m
+//  Camera.m
 //  AstronomyOBJC
 //
 //  Created by Kelson Hartle on 7/24/20.
 //  Copyright © 2020 Kelson Hartle. All rights reserved.
 //
 
-#import "SolDetails.h"
+#import "LSIMarsCamera.h"
 
-@implementation SolDetails
-
-
-
-
-
-
-
-
+@implementation LSIMarsCamera
 
 @end
