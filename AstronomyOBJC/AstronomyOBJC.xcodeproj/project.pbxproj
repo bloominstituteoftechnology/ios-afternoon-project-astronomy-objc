@@ -18,6 +18,8 @@
 		507419B724CA7A5600DA190D /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419B024CA7A5600DA190D /* LSIErrors.m */; };
 		507419B824CA7A5600DA190D /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419B124CA7A5600DA190D /* LSIFileHelper.m */; };
 		507419B924CA7A5600DA190D /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419B524CA7A5600DA190D /* URL+Secure.swift */; };
+		507419BB24CA7E4100DA190D /* SolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419BA24CA7E4100DA190D /* SolsCollectionViewController.swift */; };
+		507419BE24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		507419B324CA7A5600DA190D /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		507419B424CA7A5600DA190D /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		507419B524CA7A5600DA190D /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		507419BA24CA7E4100DA190D /* SolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolsCollectionViewController.swift; sourceTree = "<group>"; };
+		507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				507419A324CA799800DA190D /* LaunchScreen.storyboard */,
 				507419A624CA799800DA190D /* Info.plist */,
 				507419A724CA799800DA190D /* main.m */,
+				507419BA24CA7E4100DA190D /* SolsCollectionViewController.swift */,
+				507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */,
 				507419AE24CA7A5600DA190D /* LambdaSDK */,
 			);
 			path = AstronomyOBJC;
@@ -175,6 +181,8 @@
 			files = (
 				507419B924CA7A5600DA190D /* URL+Secure.swift in Sources */,
 				5074199D24CA799600DA190D /* ViewController.m in Sources */,
+				507419BB24CA7E4100DA190D /* SolsCollectionViewController.swift in Sources */,
+				507419BE24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift in Sources */,
 				507419B624CA7A5600DA190D /* LSILog.m in Sources */,
 				5074199724CA799600DA190D /* AppDelegate.m in Sources */,
 				507419A824CA799800DA190D /* main.m in Sources */,
