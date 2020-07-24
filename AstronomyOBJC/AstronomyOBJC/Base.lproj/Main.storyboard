@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EFN-Rn-7v7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -30,9 +30,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
-                                <connections>
-                                    <segue destination="EFN-Rn-7v7" kind="show" id="zEp-s5-eF8"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -46,21 +43,74 @@
             </objects>
             <point key="canvasLocation" x="268" y="118"/>
         </scene>
-        <!--View Controller-->
+        <!--Mars Photo Detail View Controller-->
         <scene sceneID="v0x-iN-QLf">
             <objects>
-                <viewController id="EFN-Rn-7v7" sceneMemberID="viewController">
+                <viewController id="EFN-Rn-7v7" customClass="MarsPhotoDetailViewController" customModule="AstronomyOBJC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2C-Dv-CEa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lt9-Ty-acu">
+                                <rect key="frame" x="0.0" y="129" width="414" height="359"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="359" id="2tf-11-WsX"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="lMB-Le-f75">
+                                <rect key="frame" x="78.5" y="562" width="257.5" height="71"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by _ on _, (sol _)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iak-yY-pDC">
+                                        <rect key="frame" x="0.0" y="0.0" width="257.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="kET-tY-tmR">
+                                        <rect key="frame" x="0.0" y="41" width="257.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dis-X3-NWn">
+                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mast Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmV-V0-4eW">
+                                                <rect key="frame" x="113.5" y="0.0" width="144" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ena-qP-Pbh">
+                                <rect key="frame" x="132" y="734" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save To Photo Library"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lMB-Le-f75" firstAttribute="top" secondItem="lt9-Ty-acu" secondAttribute="bottom" constant="74" id="U1j-NV-tKj"/>
+                            <constraint firstItem="lt9-Ty-acu" firstAttribute="leading" secondItem="04D-Sp-xSK" secondAttribute="leading" id="dHZ-CL-P7f"/>
+                            <constraint firstItem="lt9-Ty-acu" firstAttribute="trailing" secondItem="04D-Sp-xSK" secondAttribute="trailing" id="oWP-km-dQo"/>
+                            <constraint firstItem="lt9-Ty-acu" firstAttribute="centerX" secondItem="lMB-Le-f75" secondAttribute="centerX" id="qtF-Hg-Sph"/>
+                            <constraint firstItem="lt9-Ty-acu" firstAttribute="top" secondItem="04D-Sp-xSK" secondAttribute="top" constant="85" id="vYZ-j3-Eaj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="04D-Sp-xSK"/>
                     </view>
                     <navigationItem key="navigationItem" id="V7y-dg-Vhx"/>
+                    <connections>
+                        <outlet property="cameraUsedLabel" destination="gmV-V0-4eW" id="Msb-Kb-FQG"/>
+                        <outlet property="imageView" destination="lt9-Ty-acu" id="Zw3-2p-dxf"/>
+                        <outlet property="photoDetailLabel" destination="Iak-yY-pDC" id="tXv-S3-2IL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0E-qw-pQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="118"/>
+            <point key="canvasLocation" x="1098.5507246376812" y="117.85714285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1EH-Ol-nLk">

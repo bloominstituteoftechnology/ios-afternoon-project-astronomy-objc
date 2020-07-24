@@ -9,6 +9,14 @@
 import UIKit
 
 class MarsPhotoDetailViewController: UIViewController {
+    
+    //MARK: - Outlets
+    @IBOutlet weak var photoDetailLabel: UILabel!
+    @IBOutlet weak var cameraUsedLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +34,8 @@ class MarsPhotoDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
 
 }
