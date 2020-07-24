@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIMarsCamera : NSObject
 
-@property NSString *name;
-@property NSNumber *identifier;
-@property NSNumber *roverID;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSNumber *identifier;
+@property (nonatomic) NSNumber *roverID;
 
 -(instancetype)initWithName:(NSString *)name
                  identifier:(NSNumber *)identifier

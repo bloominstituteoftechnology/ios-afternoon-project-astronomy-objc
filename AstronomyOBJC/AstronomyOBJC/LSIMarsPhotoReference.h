@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIMarsPhotoReference : NSObject
 
-@property NSNumber *sol;
-@property NSNumber *identifier;
-@property LSIMarsCamera *camera;
-@property NSURL *imageSource;
-@property NSString *earthDate;
+@property (nonatomic) NSNumber *sol;
+@property (nonatomic) NSNumber *identifier;
+@property (nonatomic) LSIMarsCamera *camera;
+@property (nonatomic) NSURL *imageSource;
+@property (nonatomic) NSString *earthDate;
 
 -(instancetype)initWithSol:(NSNumber *)sol
                 identifier:(NSNumber *)identifier
