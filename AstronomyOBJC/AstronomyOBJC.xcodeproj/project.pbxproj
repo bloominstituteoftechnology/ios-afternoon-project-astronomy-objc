@@ -7,61 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5074199724CA799600DA190D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074199624CA799600DA190D /* AppDelegate.m */; };
-		5074199A24CA799600DA190D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074199924CA799600DA190D /* SceneDelegate.m */; };
-		5074199D24CA799600DA190D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5074199C24CA799600DA190D /* ViewController.m */; };
-		507419A024CA799600DA190D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5074199E24CA799600DA190D /* Main.storyboard */; };
-		507419A224CA799800DA190D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507419A124CA799800DA190D /* Assets.xcassets */; };
-		507419A524CA799800DA190D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507419A324CA799800DA190D /* LaunchScreen.storyboard */; };
-		507419A824CA799800DA190D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419A724CA799800DA190D /* main.m */; };
-		507419B624CA7A5600DA190D /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419AF24CA7A5600DA190D /* LSILog.m */; };
-		507419B724CA7A5600DA190D /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419B024CA7A5600DA190D /* LSIErrors.m */; };
-		507419B824CA7A5600DA190D /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419B124CA7A5600DA190D /* LSIFileHelper.m */; };
-		507419B924CA7A5600DA190D /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419B524CA7A5600DA190D /* URL+Secure.swift */; };
-		507419BB24CA7E4100DA190D /* SolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419BA24CA7E4100DA190D /* SolsCollectionViewController.swift */; };
-		507419BE24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */; };
-		507419C124CA7F3600DA190D /* MarsRoverApiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419C024CA7F3600DA190D /* MarsRoverApiController.m */; };
-		507419C524CB418100DA190D /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507419C424CB418100DA190D /* MarsRover.swift */; };
-		507419C824CB41AD00DA190D /* LSIMarsPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419C724CB41AD00DA190D /* LSIMarsPhotoReference.m */; };
-		507419CB24CB423F00DA190D /* LSIMarsCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419CA24CB423F00DA190D /* LSIMarsCamera.m */; };
-		507419CE24CB426700DA190D /* LSISolDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 507419CD24CB426700DA190D /* LSISolDetails.m */; };
+		50741A1524CCEC3E00DA190D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741A1424CCEC3E00DA190D /* AppDelegate.swift */; };
+		50741A1724CCEC3E00DA190D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741A1624CCEC3E00DA190D /* SceneDelegate.swift */; };
+		50741A1924CCEC3E00DA190D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741A1824CCEC3E00DA190D /* ViewController.swift */; };
+		50741A1C24CCEC3E00DA190D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50741A1A24CCEC3E00DA190D /* Main.storyboard */; };
+		50741A1E24CCEC4000DA190D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50741A1D24CCEC4000DA190D /* Assets.xcassets */; };
+		50741A2124CCEC4000DA190D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50741A1F24CCEC4000DA190D /* LaunchScreen.storyboard */; };
+		50741A2B24CD016A00DA190D /* LSIMarsRoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50741A2A24CD016A00DA190D /* LSIMarsRoverController.m */; };
+		50741A2D24CD018600DA190D /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741A2C24CD018600DA190D /* MarsRover.swift */; };
+		50741A3024CD019400DA190D /* LSIMarsRoverPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 50741A2F24CD019300DA190D /* LSIMarsRoverPhotoReference.m */; };
+		50741A3324CD01A200DA190D /* LSIMarsCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 50741A3224CD01A200DA190D /* LSIMarsCamera.m */; };
+		50741A3624CD01AF00DA190D /* LSISolDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 50741A3524CD01AF00DA190D /* LSISolDetails.m */; };
+		50741A3824CF484B00DA190D /* MarsPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741A3724CF484B00DA190D /* MarsPhotoDetailViewController.swift */; };
+		50741A4124CF54AD00DA190D /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 50741A3A24CF54AD00DA190D /* LSILog.m */; };
+		50741A4224CF54AD00DA190D /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 50741A3B24CF54AD00DA190D /* LSIErrors.m */; };
+		50741A4324CF54AD00DA190D /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50741A3C24CF54AD00DA190D /* LSIFileHelper.m */; };
+		50741A4424CF54AD00DA190D /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50741A4024CF54AD00DA190D /* URL+Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5074199224CA799600DA190D /* AstronomyOBJC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyOBJC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5074199524CA799600DA190D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5074199624CA799600DA190D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5074199824CA799600DA190D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		5074199924CA799600DA190D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		5074199B24CA799600DA190D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5074199C24CA799600DA190D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5074199F24CA799600DA190D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		507419A124CA799800DA190D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		507419A424CA799800DA190D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		507419A624CA799800DA190D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		507419A724CA799800DA190D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		507419AF24CA7A5600DA190D /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
-		507419B024CA7A5600DA190D /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
-		507419B124CA7A5600DA190D /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
-		507419B224CA7A5600DA190D /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
-		507419B324CA7A5600DA190D /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
-		507419B424CA7A5600DA190D /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
-		507419B524CA7A5600DA190D /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
-		507419BA24CA7E4100DA190D /* SolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolsCollectionViewController.swift; sourceTree = "<group>"; };
-		507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoDetailViewController.swift; sourceTree = "<group>"; };
-		507419BF24CA7F3600DA190D /* MarsRoverApiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverApiController.h; sourceTree = "<group>"; };
-		507419C024CA7F3600DA190D /* MarsRoverApiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverApiController.m; sourceTree = "<group>"; };
-		507419C424CB418100DA190D /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
-		507419C624CB41AD00DA190D /* LSIMarsPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIMarsPhotoReference.h; sourceTree = "<group>"; };
-		507419C724CB41AD00DA190D /* LSIMarsPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsPhotoReference.m; sourceTree = "<group>"; };
-		507419C924CB423F00DA190D /* LSIMarsCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIMarsCamera.h; sourceTree = "<group>"; };
-		507419CA24CB423F00DA190D /* LSIMarsCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsCamera.m; sourceTree = "<group>"; };
-		507419CC24CB426700DA190D /* LSISolDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSISolDetails.h; sourceTree = "<group>"; };
-		507419CD24CB426700DA190D /* LSISolDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSISolDetails.m; sourceTree = "<group>"; };
+		50741A1124CCEC3E00DA190D /* AstronomyOBJc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstronomyOBJc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50741A1424CCEC3E00DA190D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50741A1624CCEC3E00DA190D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		50741A1824CCEC3E00DA190D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50741A1B24CCEC3E00DA190D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50741A1D24CCEC4000DA190D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50741A2024CCEC4000DA190D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50741A2224CCEC4000DA190D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50741A2824CD016900DA190D /* AstronomyOBJc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AstronomyOBJc-Bridging-Header.h"; sourceTree = "<group>"; };
+		50741A2924CD016A00DA190D /* LSIMarsRoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIMarsRoverController.h; sourceTree = "<group>"; };
+		50741A2A24CD016A00DA190D /* LSIMarsRoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsRoverController.m; sourceTree = "<group>"; };
+		50741A2C24CD018600DA190D /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
+		50741A2E24CD019300DA190D /* LSIMarsRoverPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIMarsRoverPhotoReference.h; sourceTree = "<group>"; };
+		50741A2F24CD019300DA190D /* LSIMarsRoverPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsRoverPhotoReference.m; sourceTree = "<group>"; };
+		50741A3124CD01A200DA190D /* LSIMarsCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIMarsCamera.h; sourceTree = "<group>"; };
+		50741A3224CD01A200DA190D /* LSIMarsCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIMarsCamera.m; sourceTree = "<group>"; };
+		50741A3424CD01AF00DA190D /* LSISolDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSISolDetails.h; sourceTree = "<group>"; };
+		50741A3524CD01AF00DA190D /* LSISolDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSISolDetails.m; sourceTree = "<group>"; };
+		50741A3724CF484B00DA190D /* MarsPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoDetailViewController.swift; sourceTree = "<group>"; };
+		50741A3A24CF54AD00DA190D /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		50741A3B24CF54AD00DA190D /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
+		50741A3C24CF54AD00DA190D /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
+		50741A3D24CF54AD00DA190D /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
+		50741A3E24CF54AD00DA190D /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
+		50741A3F24CF54AD00DA190D /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
+		50741A4024CF54AD00DA190D /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5074198F24CA799600DA190D /* Frameworks */ = {
+		50741A0E24CCEC3E00DA190D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,102 +65,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5074198924CA799600DA190D = {
+		50741A0824CCEC3E00DA190D = {
 			isa = PBXGroup;
 			children = (
-				5074199424CA799600DA190D /* AstronomyOBJC */,
-				5074199324CA799600DA190D /* Products */,
+				50741A1324CCEC3E00DA190D /* AstronomyOBJc */,
+				50741A1224CCEC3E00DA190D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5074199324CA799600DA190D /* Products */ = {
+		50741A1224CCEC3E00DA190D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5074199224CA799600DA190D /* AstronomyOBJC.app */,
+				50741A1124CCEC3E00DA190D /* AstronomyOBJc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5074199424CA799600DA190D /* AstronomyOBJC */ = {
+		50741A1324CCEC3E00DA190D /* AstronomyOBJc */ = {
 			isa = PBXGroup;
 			children = (
-				5074199524CA799600DA190D /* AppDelegate.h */,
-				5074199624CA799600DA190D /* AppDelegate.m */,
-				5074199824CA799600DA190D /* SceneDelegate.h */,
-				5074199924CA799600DA190D /* SceneDelegate.m */,
-				5074199B24CA799600DA190D /* ViewController.h */,
-				5074199C24CA799600DA190D /* ViewController.m */,
-				5074199E24CA799600DA190D /* Main.storyboard */,
-				507419A124CA799800DA190D /* Assets.xcassets */,
-				507419A324CA799800DA190D /* LaunchScreen.storyboard */,
-				507419A624CA799800DA190D /* Info.plist */,
-				507419A724CA799800DA190D /* main.m */,
-				507419BA24CA7E4100DA190D /* SolsCollectionViewController.swift */,
-				507419BD24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift */,
-				507419BF24CA7F3600DA190D /* MarsRoverApiController.h */,
-				507419C024CA7F3600DA190D /* MarsRoverApiController.m */,
-				507419C624CB41AD00DA190D /* LSIMarsPhotoReference.h */,
-				507419C724CB41AD00DA190D /* LSIMarsPhotoReference.m */,
-				507419C424CB418100DA190D /* MarsRover.swift */,
-				507419C924CB423F00DA190D /* LSIMarsCamera.h */,
-				507419CA24CB423F00DA190D /* LSIMarsCamera.m */,
-				507419CC24CB426700DA190D /* LSISolDetails.h */,
-				507419CD24CB426700DA190D /* LSISolDetails.m */,
-				507419AE24CA7A5600DA190D /* LambdaSDK */,
+				50741A3924CF54AD00DA190D /* LambdaSDK */,
+				50741A1424CCEC3E00DA190D /* AppDelegate.swift */,
+				50741A1624CCEC3E00DA190D /* SceneDelegate.swift */,
+				50741A1824CCEC3E00DA190D /* ViewController.swift */,
+				50741A1A24CCEC3E00DA190D /* Main.storyboard */,
+				50741A1D24CCEC4000DA190D /* Assets.xcassets */,
+				50741A1F24CCEC4000DA190D /* LaunchScreen.storyboard */,
+				50741A2224CCEC4000DA190D /* Info.plist */,
+				50741A2924CD016A00DA190D /* LSIMarsRoverController.h */,
+				50741A2A24CD016A00DA190D /* LSIMarsRoverController.m */,
+				50741A2824CD016900DA190D /* AstronomyOBJc-Bridging-Header.h */,
+				50741A2C24CD018600DA190D /* MarsRover.swift */,
+				50741A2E24CD019300DA190D /* LSIMarsRoverPhotoReference.h */,
+				50741A2F24CD019300DA190D /* LSIMarsRoverPhotoReference.m */,
+				50741A3124CD01A200DA190D /* LSIMarsCamera.h */,
+				50741A3224CD01A200DA190D /* LSIMarsCamera.m */,
+				50741A3424CD01AF00DA190D /* LSISolDetails.h */,
+				50741A3524CD01AF00DA190D /* LSISolDetails.m */,
+				50741A3724CF484B00DA190D /* MarsPhotoDetailViewController.swift */,
 			);
-			path = AstronomyOBJC;
+			path = AstronomyOBJc;
 			sourceTree = "<group>";
 		};
-		507419AE24CA7A5600DA190D /* LambdaSDK */ = {
+		50741A3924CF54AD00DA190D /* LambdaSDK */ = {
 			isa = PBXGroup;
 			children = (
-				507419AF24CA7A5600DA190D /* LSILog.m */,
-				507419B024CA7A5600DA190D /* LSIErrors.m */,
-				507419B124CA7A5600DA190D /* LSIFileHelper.m */,
-				507419B224CA7A5600DA190D /* LSIFileHelper.h */,
-				507419B324CA7A5600DA190D /* LSIErrors.h */,
-				507419B424CA7A5600DA190D /* LSILog.h */,
-				507419B524CA7A5600DA190D /* URL+Secure.swift */,
+				50741A3A24CF54AD00DA190D /* LSILog.m */,
+				50741A3B24CF54AD00DA190D /* LSIErrors.m */,
+				50741A3C24CF54AD00DA190D /* LSIFileHelper.m */,
+				50741A3D24CF54AD00DA190D /* LSIFileHelper.h */,
+				50741A3E24CF54AD00DA190D /* LSIErrors.h */,
+				50741A3F24CF54AD00DA190D /* LSILog.h */,
+				50741A4024CF54AD00DA190D /* URL+Secure.swift */,
 			);
-			name = LambdaSDK;
-			path = ../../LambdaSDK;
+			path = LambdaSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5074199124CA799600DA190D /* AstronomyOBJC */ = {
+		50741A1024CCEC3E00DA190D /* AstronomyOBJc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 507419AB24CA799800DA190D /* Build configuration list for PBXNativeTarget "AstronomyOBJC" */;
+			buildConfigurationList = 50741A2524CCEC4000DA190D /* Build configuration list for PBXNativeTarget "AstronomyOBJc" */;
 			buildPhases = (
-				5074198E24CA799600DA190D /* Sources */,
-				5074198F24CA799600DA190D /* Frameworks */,
-				5074199024CA799600DA190D /* Resources */,
+				50741A0D24CCEC3E00DA190D /* Sources */,
+				50741A0E24CCEC3E00DA190D /* Frameworks */,
+				50741A0F24CCEC3E00DA190D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AstronomyOBJC;
-			productName = AstronomyOBJC;
-			productReference = 5074199224CA799600DA190D /* AstronomyOBJC.app */;
+			name = AstronomyOBJc;
+			productName = AstronomyOBJc;
+			productReference = 50741A1124CCEC3E00DA190D /* AstronomyOBJc.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5074198A24CA799600DA190D /* Project object */ = {
+		50741A0924CCEC3E00DA190D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Kelson Hartle";
 				TargetAttributes = {
-					5074199124CA799600DA190D = {
+					50741A1024CCEC3E00DA190D = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
-			buildConfigurationList = 5074198D24CA799600DA190D /* Build configuration list for PBXProject "AstronomyOBJC" */;
+			buildConfigurationList = 50741A0C24CCEC3E00DA190D /* Build configuration list for PBXProject "AstronomyOBJc" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -174,67 +165,65 @@
 				en,
 				Base,
 			);
-			mainGroup = 5074198924CA799600DA190D;
-			productRefGroup = 5074199324CA799600DA190D /* Products */;
+			mainGroup = 50741A0824CCEC3E00DA190D;
+			productRefGroup = 50741A1224CCEC3E00DA190D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5074199124CA799600DA190D /* AstronomyOBJC */,
+				50741A1024CCEC3E00DA190D /* AstronomyOBJc */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5074199024CA799600DA190D /* Resources */ = {
+		50741A0F24CCEC3E00DA190D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507419A524CA799800DA190D /* LaunchScreen.storyboard in Resources */,
-				507419A224CA799800DA190D /* Assets.xcassets in Resources */,
-				507419A024CA799600DA190D /* Main.storyboard in Resources */,
+				50741A2124CCEC4000DA190D /* LaunchScreen.storyboard in Resources */,
+				50741A1E24CCEC4000DA190D /* Assets.xcassets in Resources */,
+				50741A1C24CCEC3E00DA190D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5074198E24CA799600DA190D /* Sources */ = {
+		50741A0D24CCEC3E00DA190D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507419CB24CB423F00DA190D /* LSIMarsCamera.m in Sources */,
-				507419B924CA7A5600DA190D /* URL+Secure.swift in Sources */,
-				5074199D24CA799600DA190D /* ViewController.m in Sources */,
-				507419BB24CA7E4100DA190D /* SolsCollectionViewController.swift in Sources */,
-				507419BE24CA7E6F00DA190D /* MarsPhotoDetailViewController.swift in Sources */,
-				507419C124CA7F3600DA190D /* MarsRoverApiController.m in Sources */,
-				507419CE24CB426700DA190D /* LSISolDetails.m in Sources */,
-				507419C824CB41AD00DA190D /* LSIMarsPhotoReference.m in Sources */,
-				507419B624CA7A5600DA190D /* LSILog.m in Sources */,
-				5074199724CA799600DA190D /* AppDelegate.m in Sources */,
-				507419C524CB418100DA190D /* MarsRover.swift in Sources */,
-				507419A824CA799800DA190D /* main.m in Sources */,
-				507419B824CA7A5600DA190D /* LSIFileHelper.m in Sources */,
-				5074199A24CA799600DA190D /* SceneDelegate.m in Sources */,
-				507419B724CA7A5600DA190D /* LSIErrors.m in Sources */,
+				50741A2B24CD016A00DA190D /* LSIMarsRoverController.m in Sources */,
+				50741A4124CF54AD00DA190D /* LSILog.m in Sources */,
+				50741A3624CD01AF00DA190D /* LSISolDetails.m in Sources */,
+				50741A2D24CD018600DA190D /* MarsRover.swift in Sources */,
+				50741A3324CD01A200DA190D /* LSIMarsCamera.m in Sources */,
+				50741A4224CF54AD00DA190D /* LSIErrors.m in Sources */,
+				50741A4324CF54AD00DA190D /* LSIFileHelper.m in Sources */,
+				50741A1924CCEC3E00DA190D /* ViewController.swift in Sources */,
+				50741A1524CCEC3E00DA190D /* AppDelegate.swift in Sources */,
+				50741A3024CD019400DA190D /* LSIMarsRoverPhotoReference.m in Sources */,
+				50741A3824CF484B00DA190D /* MarsPhotoDetailViewController.swift in Sources */,
+				50741A1724CCEC3E00DA190D /* SceneDelegate.swift in Sources */,
+				50741A4424CF54AD00DA190D /* URL+Secure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5074199E24CA799600DA190D /* Main.storyboard */ = {
+		50741A1A24CCEC3E00DA190D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5074199F24CA799600DA190D /* Base */,
+				50741A1B24CCEC3E00DA190D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		507419A324CA799800DA190D /* LaunchScreen.storyboard */ = {
+		50741A1F24CCEC4000DA190D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				507419A424CA799800DA190D /* Base */,
+				50741A2024CCEC4000DA190D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -242,7 +231,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		507419A924CA799800DA190D /* Debug */ = {
+		50741A2324CCEC4000DA190D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -297,10 +286,12 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		507419AA24CA799800DA190D /* Release */ = {
+		50741A2424CCEC4000DA190D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -348,41 +339,48 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		507419AC24CA799800DA190D /* Debug */ = {
+		50741A2624CCEC4000DA190D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA5TYMFND;
-				INFOPLIST_FILE = AstronomyOBJC/Info.plist;
+				INFOPLIST_FILE = AstronomyOBJc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KelsonHartle.AstronomyOBJC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KelsonHartle.AstronomyOBJc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyOBJc/AstronomyOBJc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		507419AD24CA799800DA190D /* Release */ = {
+		50741A2724CCEC4000DA190D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA5TYMFND;
-				INFOPLIST_FILE = AstronomyOBJC/Info.plist;
+				INFOPLIST_FILE = AstronomyOBJc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KelsonHartle.AstronomyOBJC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KelsonHartle.AstronomyOBJc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AstronomyOBJc/AstronomyOBJc-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,25 +389,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5074198D24CA799600DA190D /* Build configuration list for PBXProject "AstronomyOBJC" */ = {
+		50741A0C24CCEC3E00DA190D /* Build configuration list for PBXProject "AstronomyOBJc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				507419A924CA799800DA190D /* Debug */,
-				507419AA24CA799800DA190D /* Release */,
+				50741A2324CCEC4000DA190D /* Debug */,
+				50741A2424CCEC4000DA190D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		507419AB24CA799800DA190D /* Build configuration list for PBXNativeTarget "AstronomyOBJC" */ = {
+		50741A2524CCEC4000DA190D /* Build configuration list for PBXNativeTarget "AstronomyOBJc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				507419AC24CA799800DA190D /* Debug */,
-				507419AD24CA799800DA190D /* Release */,
+				50741A2624CCEC4000DA190D /* Debug */,
+				50741A2724CCEC4000DA190D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5074198A24CA799600DA190D /* Project object */;
+	rootObject = 50741A0924CCEC3E00DA190D /* Project object */;
 }

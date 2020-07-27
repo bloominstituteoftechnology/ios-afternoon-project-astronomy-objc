@@ -1,8 +1,8 @@
 //
-//  LSISolDetails.h
-//  AstronomyOBJC
+//  LSISol.h
+//  AstronomyOBJc
 //
-//  Created by Kelson Hartle on 7/24/20.
+//  Created by Kelson Hartle on 7/25/20.
 //  Copyright © 2020 Kelson Hartle. All rights reserved.
 //
 
@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithSolNumber:(NSNumber *)solNumber
                      totalPhotos:(NSNumber *)totalPhotos
                          cameras:(NSArray<NSString *>*)cameras;
-
 
 @end
 

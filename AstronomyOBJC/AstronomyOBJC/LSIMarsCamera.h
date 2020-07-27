@@ -1,8 +1,8 @@
 //
-//  LSIMarsCamera.h
-//  AstronomyOBJC
+//  LSICamera.h
+//  AstronomyOBJc
 //
-//  Created by Kelson Hartle on 7/24/20.
+//  Created by Kelson Hartle on 7/25/20.
 //  Copyright © 2020 Kelson Hartle. All rights reserved.
 //
 
@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithName:(NSString *)name
                  identifier:(NSNumber *)identifier
                     roverID:(NSNumber *)roverID;
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

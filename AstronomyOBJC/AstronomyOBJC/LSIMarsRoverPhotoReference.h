@@ -1,8 +1,8 @@
 //
-//  LSIMarsPhotoReference.h
-//  AstronomyOBJC
+//  LSIMarsRoverPhotoReference.h
+//  AstronomyOBJc
 //
-//  Created by Kelson Hartle on 7/24/20.
+//  Created by Kelson Hartle on 7/25/20.
 //  Copyright © 2020 Kelson Hartle. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LSIMarsPhotoReference : NSObject
+@interface LSIMarsRoverPhotoReference : NSObject
 
 @property (nonatomic) NSNumber *sol;
 @property (nonatomic) NSNumber *identifier;
@@ -25,6 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
                     camera:(LSIMarsCamera *)camera
                imageSource:(NSURL *)imageSource
                  earthDate:(NSString *)earthDate;
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+
+
+
+
+
+
 
 
 @end

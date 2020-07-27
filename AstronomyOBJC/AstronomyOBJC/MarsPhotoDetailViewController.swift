@@ -1,8 +1,8 @@
 //
 //  MarsPhotoDetailViewController.swift
-//  AstronomyOBJC
+//  AstronomyOBJc
 //
-//  Created by Kelson Hartle on 7/23/20.
+//  Created by Kelson Hartle on 7/27/20.
 //  Copyright © 2020 Kelson Hartle. All rights reserved.
 //
 
@@ -10,32 +10,61 @@ import UIKit
 
 class MarsPhotoDetailViewController: UIViewController {
     
+    //MARK: - Properties
+    let controller = LSIMarsRoverController()
+    
+    var reference: LSIMarsRoverPhotoReference? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    
     //MARK: - Outlets
-    @IBOutlet weak var photoDetailLabel: UILabel!
-    @IBOutlet weak var cameraUsedLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var solDetailLabel: UILabel!
+    @IBOutlet weak var cameraTypeLabel: UILabel!
     
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        controller.fetchMarsRoverPhotos(fromRover: "curiosity", onSol: 6) { (photos, error) in
+            self.reference = photos
+            if ((photos) != nil) {
+                print("OK")
+            } else {
+                print("NOT OK")
+            }
+        }
     }
     
-
+    private func updateViews() {
+        
+        DispatchQueue.main.async {
+            guard let photo = self.reference, self.isViewLoaded else { return }
+            do {
+                let data = try Data(contentsOf: photo.imageSource.usingHTTPS!)
+                self.imageView.image = UIImage(data: data)
+            } catch {
+                NSLog("Error setting up views on detail view controller: \(error)")
+            }
+        }
+    }
+    
+    
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
-    
-    
-
 }

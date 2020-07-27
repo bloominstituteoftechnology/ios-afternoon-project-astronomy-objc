@@ -1,12 +1,12 @@
 //
 //  MarsRover.swift
-//  AstronomyOBJC
+//  AstronomyOBJc
 //
-//  Created by Kelson Hartle on 7/24/20.
+//  Created by Kelson Hartle on 7/25/20.
 //  Copyright © 2020 Kelson Hartle. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class MarsRover: NSObject {
 
@@ -18,4 +18,17 @@ class MarsRover: NSObject {
         self.totalPhotos = totalPhotos
         
     }
+    
+    @objc(initWithDictionary:)
+    init?(dictionary: [String:Any]) {
+        guard let photoManifestDictionary = dictionary["photo_manifest"] as? NSDictionary else {return nil}
+        
+        guard let name = photoManifestDictionary["name"] as? String else { return nil }
+        guard let totalPhotos = photoManifestDictionary["total_photos"] as? Int else { return nil }
+        
+        
+        self.name = name
+        self.totalPhotos = totalPhotos
+    }
 }
+
