@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSNumber *identifier;
 @property (nonatomic) LSIMarsCamera *camera;
 @property (nonatomic) NSURL *imageSource;
-@property (nonatomic) NSString *earthDate;
+@property (nonatomic, copy) NSString *earthDate;
 
 -(instancetype)initWithSol:(NSNumber *)sol
                 identifier:(NSNumber *)identifier

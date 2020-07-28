@@ -12,11 +12,12 @@ class MarsRover: NSObject {
 
     @objc var name: String
     @objc var totalPhotos: Int
+    @objc var solDetails: [LSISolDetails]
     
-    @objc init(name: String, totalPhotos: Int) {
+    @objc init(name: String, totalPhotos: Int, solDetails: [LSISolDetails]) {
         self.name = name
         self.totalPhotos = totalPhotos
-        
+        self.solDetails = solDetails
     }
     
     @objc(initWithDictionary:)
@@ -25,10 +26,12 @@ class MarsRover: NSObject {
         
         guard let name = photoManifestDictionary["name"] as? String else { return nil }
         guard let totalPhotos = photoManifestDictionary["total_photos"] as? Int else { return nil }
+        guard let solDetailDictionary = photoManifestDictionary["sol"] as? [LSISolDetails] else { return nil }
         
         
         self.name = name
         self.totalPhotos = totalPhotos
+        self.solDetails = solDetailDictionary
     }
 }
 

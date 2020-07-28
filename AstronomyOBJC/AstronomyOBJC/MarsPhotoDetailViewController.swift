@@ -11,7 +11,6 @@ import UIKit
 class MarsPhotoDetailViewController: UIViewController {
     
     //MARK: - Properties
-    let controller = LSIMarsRoverController()
     
     var reference: LSIMarsRoverPhotoReference? {
         didSet {
@@ -30,17 +29,7 @@ class MarsPhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        controller.fetchMarsRoverPhotos(fromRover: "curiosity", onSol: 6) { (photos, error) in
-            self.reference = photos
-            if ((photos) != nil) {
-                print("OK")
-            } else {
-                print("NOT OK")
-            }
-        }
     }
-    
     private func updateViews() {
         
         DispatchQueue.main.async {
@@ -60,16 +49,4 @@ class MarsPhotoDetailViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

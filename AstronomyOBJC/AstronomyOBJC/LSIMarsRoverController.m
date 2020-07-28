@@ -109,7 +109,7 @@ This will give us the pictures from the curiosity from sol 1000 from the fhaz ca
 //}
 
 
-- (void)fetchMarsRoverPhotosFromRover:(NSString *)photoRef onSol:(NSNumber *)sol completionBlock:(LSIMarsRoverPhotosFetcherCompletion)completion {
+- (void)fetchMarsRoverPhotosFromRover:(MarsRover *)photoRef onSol:(NSNumber *)sol completionBlock:(LSIMarsRoverPhotosFetcherCompletion)completion {
     
         NSURL *baseURL = [NSURL URLWithString:baseURLString];
     

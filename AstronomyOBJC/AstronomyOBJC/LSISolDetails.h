@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
                      totalPhotos:(NSNumber *)totalPhotos
                          cameras:(NSArray<NSString *>*)cameras;
 
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

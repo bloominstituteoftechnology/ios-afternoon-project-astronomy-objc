@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIMarsRoverController : NSObject
 
-- (void)fetchMarsRoverPhotosFromRover:(NSString *)photoRef onSol:(NSNumber *)sol
+- (void)fetchMarsRoverPhotosFromRover:(MarsRover *)photoRef onSol:(NSNumber *)sol
 completionBlock:(LSIMarsRoverPhotosFetcherCompletion)completion;
 
 - (void)fetchMarsRoverWithRoverName:(NSString *)roverName
