@@ -44,17 +44,22 @@ class MarsPhotoDetailViewController: UIViewController {
     private func updateViews() {
         
         DispatchQueue.main.async {
-            guard let photo = self.reference, self.isViewLoaded else { return }
+            guard let reference = self.reference, self.isViewLoaded else { return }
             do {
-                let data = try Data(contentsOf: photo.imageSource.usingHTTPS!)
+                let data = try Data(contentsOf: reference.imageSource.usingHTTPS!)
                 self.imageView.image = UIImage(data: data)
+                self.cameraTypeLabel.text = reference.camera.name
+                self.solDetailLabel.text = "Taken by \(reference.identifier) on \(reference.earthDate), (Sol \(reference.sol))"
             } catch {
                 NSLog("Error setting up views on detail view controller: \(error)")
             }
         }
     }
     
-    
+    static func dateFormatter() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+    }
     
     
     /*
