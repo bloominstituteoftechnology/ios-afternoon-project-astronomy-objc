@@ -96,13 +96,13 @@
 				50741A2A24CD016A00DA190D /* LSIMarsRoverController.m */,
 				50741A2824CD016900DA190D /* AstronomyOBJc-Bridging-Header.h */,
 				50741A2C24CD018600DA190D /* MarsRover.swift */,
+				50741A3724CF484B00DA190D /* MarsPhotoDetailViewController.swift */,
 				50741A2E24CD019300DA190D /* LSIMarsRoverPhotoReference.h */,
 				50741A2F24CD019300DA190D /* LSIMarsRoverPhotoReference.m */,
 				50741A3124CD01A200DA190D /* LSIMarsCamera.h */,
 				50741A3224CD01A200DA190D /* LSIMarsCamera.m */,
 				50741A3424CD01AF00DA190D /* LSISolDetails.h */,
 				50741A3524CD01AF00DA190D /* LSISolDetails.m */,
-				50741A3724CF484B00DA190D /* MarsPhotoDetailViewController.swift */,
 			);
 			path = AstronomyOBJc;
 			sourceTree = "<group>";
