@@ -28,21 +28,26 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
     //MARK: - Actions
     @IBAction func previousSolButtonTapped(_ sender: Any) {
         guard let solDescription = solDetails else { return }
-        guard let solDescriptions = roverInfoReturnedFromServer. else { return }
+        guard let solDescriptions = roverInfoReturnedFromServer?.solDetails else { return }
         guard let index = solDescriptions.firstIndex(of: solDescription) else { return }
         guard index > 0 else { return }
-        self.solDescription = solDescriptions[index-1]
+        self.solDetails = solDescriptions[index-1]
         
     }
+    
     @IBAction func nextSolButtonTapped(_ sender: Any) {
-        
+        guard let solDescription = solDetails else { return }
+        guard let solDescriptions = roverInfoReturnedFromServer?.solDetails else { return }
+        guard let index = solDescriptions.firstIndex(of: solDescription) else { return }
+        guard index < solDescriptions.count - 1 else { return }
+        self.solDetails = solDescriptions[index+1]
     }
     
     
     
     private var roverInfoReturnedFromServer: MarsRover? {
         didSet {
-            
+            solDetails = roverInfoReturnedFromServer?.solDetails[1]
         }
     }
     
@@ -68,7 +73,7 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpNavigationBar()
         
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
@@ -163,12 +168,12 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
         let prevButton = UIButton(type: .system)
         prevButton.accessibilityIdentifier = "PhotosCollectionViewController.PreviousSolButton"
         prevButton.setAttributedTitle(prevTitle, for: .normal)
-        prevButton.addTarget(self, action: #selector(goToPreviousSol(_:)), for: .touchUpInside)
+        prevButton.addTarget(self, action: #selector(previousSolButtonTapped(_:)), for: .touchUpInside)
         
         let nextTitle = NSAttributedString(string: ">", attributes: attrs)
         let nextButton = UIButton(type: .system)
         nextButton.setAttributedTitle(nextTitle, for: .normal)
-        nextButton.addTarget(self, action: #selector(goToNextSol(_:)), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(nextSolButtonTapped(_:)), for: .touchUpInside)
         nextButton.accessibilityIdentifier = "PhotosCollectionViewController.NextSolButton"
         
         let stackView = UIStackView(arrangedSubviews: [prevButton, solLabel, nextButton])
@@ -179,6 +184,8 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
         
         navigationItem.titleView = stackView
     }
+    
+    
     
 
 }
