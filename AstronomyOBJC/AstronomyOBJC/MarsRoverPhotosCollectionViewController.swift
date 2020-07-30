@@ -15,9 +15,9 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
     let controller = LSIMarsRoverController()
     var photoFetchOperation = PhotoFetcherOperation();
     // TODO: Implement cache
-    //private let cache = Cache<Int,Data>()
+    private let cache = Cache<NSNumber, UIImage>();
     private let photoFetchQueue = OperationQueue() //This is a background queue //main thread is serial queue
-    private var operations = [Int: Operation]()
+    private var operations = [NSNumber: Operation]()
     
     private let solLabel = UILabel()
     
@@ -122,7 +122,8 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if photoReferences.count > 0 {
             let photoRef = photoReferences[indexPath.item]
-            operations[Int(truncating: photoRef.identifier)]?.cancel()
+//            operations[truncating: photoRef.identifier]?.cancel()
+            operations[photoRef.identifier]?.cancel()
         } else {
             for (_, operation) in operations {
                 operation.cancel()
@@ -194,15 +195,29 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
     private func loadImage(forCell cell: RoverPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
         let photoReference = photoReferences[indexPath.item]
         
-        let imageOperation = PhotoFetcherOperation(marsPhotoReference: photoReference)
-        
-        if let currentIndexPath = self.collectionView.indexPath(for: cell), currentIndexPath != indexPath {
-            return
+        if let image = cache.value(forKey: NSNumber(value: indexPath.item)) {
+            OperationQueue.main.addOperation {
+                cell.imageView?.image = image
+            }
+        } else {
+            let fetchImageOperation = PhotoFetcherOperation(photoReference: photoReference)
+            let saveToCache = BlockOperation {
+                guard let image = UIImage(data: self.photoFetchOperation.imageData ?? Data()) else { return }
+                self.cache.cacheValue(image, forKey: NSNumber(value: indexPath.item))
+            }
+            let setCellImage = BlockOperation {
+                guard let image = UIImage(data: self.photoFetchOperation.imageData ?? Data()) else { return }
+                if self.collectionView.indexPath(for: cell) == indexPath {
+                    cell.imageView?.image = image
+                }
+            }
+            
+            saveToCache.addDependency(fetchImageOperation)
+            setCellImage.addDependency(fetchImageOperation)
+            
+            photoFetchQueue.addOperations([fetchImageOperation, saveToCache], waitUntilFinished: false)
+            OperationQueue.main.addOperations([setCellImage], waitUntilFinished: false)
+            operations[photoReference.identifier] = fetchImageOperation;
         }
-        
-        cell.imageView?.image = UIImage(data:imageOperation.imageData)
-        
-        
     }
-
 }

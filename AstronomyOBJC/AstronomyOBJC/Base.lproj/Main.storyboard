@@ -41,7 +41,6 @@
                                         <constraint firstItem="gnl-yB-yUb" firstAttribute="top" secondItem="DCz-Wb-y3r" secondAttribute="top" id="u4p-Af-34o"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.71372549019999998" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="imageView" destination="gnl-yB-yUb" id="JVg-8o-hrQ"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowMarsDetailSegue" id="EQZ-VY-Dge"/>

@@ -15,3 +15,12 @@ extension URL {
         return components.url
     }
 }
+
+@objc extension NSURL {
+    @objc var usingHTTPS: NSURL? {
+        let url = self as URL
+        guard var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return nil }
+        components.scheme = "https"
+        return components.url as NSURL?
+    }
+}

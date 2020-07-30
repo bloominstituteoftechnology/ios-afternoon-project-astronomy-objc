@@ -15,15 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PhotoFetcherOperation : NSOperation
 
-@property UIImage *imageData;
-@property (nonatomic, nullable) NSURL *photoURL;
+@property (nonatomic, copy, readonly, nullable) NSData* imageData;
 
-
-- (nonnull instancetype)initWithPhotoURL:(nonnull NSURL *)photoURL;
-+ (instancetype)initWithMarsPhotoReference:(nonnull LSIMarsRoverPhotoReference *)marsPhotoReference;
-
--(void)start;
--(void)cancel;
+- (nonnull instancetype)initWithPhotoReference:(LSIMarsRoverPhotoReference *_Nonnull)photoReference;
 
 @end
 

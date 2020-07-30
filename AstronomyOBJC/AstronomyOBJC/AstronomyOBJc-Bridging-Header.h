@@ -9,3 +9,4 @@
 #import "LSISolDetails.h"
 #import "PhotoFetcherOperation.h"
 #import "RoverPhotoCollectionViewCell.h"
+#import "Cache.h"

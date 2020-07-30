@@ -8,43 +8,46 @@
 
 #import "PhotoFetcherOperation.h"
 #import "LSIMarsRoverPhotoReference.h"
+#import "AstronomyOBJc-Swift.h"
 
 @interface PhotoFetcherOperation ()
 
-@property (readwrite, getter=isExecuting) BOOL isAsynchronous;
-@property (readwrite, getter=isFinished) BOOL internalFinished;
-@property (readwrite, getter=isCancelled) BOOL executingInternal;
-@property (readwrite, getter=<#method#>)
+@property (nonatomic, readwrite) LSIMarsRoverPhotoReference *photoReference;
+@property (nonatomic, copy, nullable) NSData *imageData;
+@property (nonatomic, readwrite) NSURLSessionTask *task;
 
+typedef NS_ENUM(int,State) {isReady, isExecuting, isFinished};
+@property State state;
 @property (nonatomic) NSURLSessionDataTask *dataTask;
 
 @end
 
 @implementation PhotoFetcherOperation
 
-- (instancetype)initWithPhotoURL:(NSURL *)photoURL {
-    if (self = [super init]) {
-        _photoURL = photoURL;
-        self.executingInternal = NO;
-        self.cancelled = NO:
-        
+-(instancetype)initWithPhotoReference:(LSIMarsRoverPhotoReference *)photoReference {
+    
+    self = [super init];
+    if (self) {
+        _photoReference = photoReference;
+        self.state = isReady;
     }
-    
-    
+    return self;
+}
+
+- (BOOL)isAsynchronous {
+    return YES;
 }
 
 - (void)start {
-    self.internalFinished = false; // Sends a KVO notification
+    self.state = isExecuting; // Sends a KVO notification
     NSLog(@"Start");
+    
+    //NSURL *URL = self.photoURL;
     
     NSURLSession *session = [NSURLSession sharedSession];
     //  FIXME: need to figure out how to use https: to make it secure. (url)
-    NSString *testString = @"https";
-    NSURLComponents *urlComps = [NSURLComponents componentsWithURL:self.marsPhotoReference.imageSource resolvingAgainstBaseURL:TRUE];
-    urlComps.scheme = testString;
-    NSURL *url = urlComps.URL;
-    NSLog(@"PHOTO URL: %@ ⏺ ", url);
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    
+    NSURLSessionDataTask *task = [session dataTaskWithURL:[[self.photoReference imageSource]usingHTTPS] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error fetching data for \(self.photoReference): %@", error);
             return;
@@ -53,52 +56,42 @@
             NSLog(@"RESPONSE: %@", response);
         }
         self.imageData = data;
+        
+        self.state = isFinished;
     }];
     [task resume];
     self.dataTask = task;
     
-    self.internalFinished = true; // Sends a KVO notification
+    
 }
 
-- (BOOL)isFinished {
-    return _internalFinished;
+- (void)cancel {
+    [self.dataTask cancel];
+    [super cancel];
+    
 }
 
-- (void)setInternalFinished:(BOOL)internalFinished {
-    if (internalFinished != _internalFinished) { //prevent unnecessary notifications.
-        
-        [self willChangeValueForKey:@"internalFinished"];// notify
-        _internalFinished = internalFinished;
-        [self didChangeValueForKey:@"internalFinished"];// notify
-        
-    }
-}
-
-
-@synthesize isAsynchronous = _isAsynchronous;
-
--(void)setIsAsynchronous:(BOOL)isAsynchronous {
-    if (_isAsynchronous != isAsynchronous) {
-        [self willChangeValueForKey:NSStringFromSelector(@selector(isAsynchronous))];
-        _isAsynchronous = YES;
-        [self didChangeValueForKey:NSStringFromSelector(@selector(isAsynchronous))];
-    }
+- (BOOL)isReady {
+    return self.state == isReady;
 }
 
 - (BOOL)isExecuting {
     
-    return _executingInternal;
+    return self.state == isExecuting;
 }
 
-- (void)setExecutingInternal:(BOOL)executingInternal {
+- (BOOL)isFinished {
+    return self.state == isFinished;
+}
+
++ (NSSet<NSString *> *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
     
-    if (executingInternal != _executingInternal) {
-        [self willChangeValueForKey:@"executingInternal"];
-        _executingInternal = executingInternal;
-        [self didChangeValueForKey:@"executingInternal"];
-        
+    NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+    
+    if ([key isEqualToString:@"isReady"] || [key isEqualToString:@"isExectuing"] || [key isEqualToString:@"isFinished"]) {
+        keyPaths = [keyPaths setByAddingObject:@"state"];
     }
+    return keyPaths;
 }
-
 
 @end
