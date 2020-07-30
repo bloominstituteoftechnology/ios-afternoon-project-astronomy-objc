@@ -13,6 +13,7 @@ private let reuseIdentifier = "MarsPhotoCell"
 class MarsRoverPhotosCollectionViewController: UICollectionViewController {
     
     let controller = LSIMarsRoverController()
+    var photoFetchOperation = PhotoFetcherOperation();
     // TODO: Implement cache
     //private let cache = Cache<Int,Data>()
     private let photoFetchQueue = OperationQueue() //This is a background queue //main thread is serial queue
@@ -24,6 +25,7 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
     //MARK: - Outlets
     @IBOutlet weak var previousSolButton: UIBarButtonItem!
     @IBOutlet weak var nextSolButton: UIBarButtonItem!
+    @IBOutlet weak var imageView: UIImageView!
     
     //MARK: - Actions
     @IBAction func previousSolButtonTapped(_ sender: Any) {
@@ -56,8 +58,11 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
             if let rover = roverInfoReturnedFromServer,
                 let sol = solDetails?.solNumber {
                 controller.fetchMarsRoverPhotos(from: rover, onSol: sol) { (photoReferences, error) in
-                    if let error = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(error)"); return }
                     
+                    self.photoReferences = photoReferences ?? []
+                    
+                    
+                    if let error = error { NSLog("Error fetching photos for \(rover.name) on sol \(sol): \(error)"); return }
                 }
             }
         }
@@ -84,6 +89,7 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
             }
             self.roverInfoReturnedFromServer = rover
         }
+        udpateViews()
     }
 
     
@@ -103,9 +109,9 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? RoverPhotoCollectionViewCell ?? RoverPhotoCollectionViewCell()
         
-//        loadImage()
+        loadImage(forCell: cell, forItemAt: indexPath)
     
         return cell
     }
@@ -185,7 +191,18 @@ class MarsRoverPhotosCollectionViewController: UICollectionViewController {
         navigationItem.titleView = stackView
     }
     
-    
-    
+    private func loadImage(forCell cell: RoverPhotoCollectionViewCell, forItemAt indexPath: IndexPath) {
+        let photoReference = photoReferences[indexPath.item]
+        
+        let imageOperation = PhotoFetcherOperation(marsPhotoReference: photoReference)
+        
+        if let currentIndexPath = self.collectionView.indexPath(for: cell), currentIndexPath != indexPath {
+            return
+        }
+        
+        cell.imageView?.image = UIImage(data:imageOperation.imageData)
+        
+        
+    }
 
 }

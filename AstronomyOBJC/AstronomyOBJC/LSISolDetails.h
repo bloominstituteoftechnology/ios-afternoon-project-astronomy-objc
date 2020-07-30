@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSISolDetails : NSObject
 
-@property (nonatomic) NSNumber *solNumber;
+@property (nonatomic, readonly) NSNumber *solNumber;
 @property (nonatomic) NSNumber *totalPhotos;
 @property (nonatomic, copy) NSArray<NSString *> *cameras;
 

@@ -23,15 +23,27 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="52L-UE-0Ii">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="Cell" id="52L-UE-0Ii" customClass="RoverPhotoCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DCz-Wb-y3r">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gnl-yB-yUb">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gnl-yB-yUb" firstAttribute="leading" secondItem="DCz-Wb-y3r" secondAttribute="leading" id="Mbv-wB-QJ1"/>
+                                        <constraint firstAttribute="bottom" secondItem="gnl-yB-yUb" secondAttribute="bottom" id="Vpg-Qv-PtG"/>
+                                        <constraint firstAttribute="trailing" secondItem="gnl-yB-yUb" secondAttribute="trailing" id="txG-8l-gnk"/>
+                                        <constraint firstItem="gnl-yB-yUb" firstAttribute="top" secondItem="DCz-Wb-y3r" secondAttribute="top" id="u4p-Af-34o"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.71372549019999998" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="imageView" destination="gnl-yB-yUb" id="JVg-8o-hrQ"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowMarsDetailSegue" id="EQZ-VY-Dge"/>
                                 </connections>
                             </collectionViewCell>
@@ -45,7 +57,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ru-SS-XGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="106"/>
+            <point key="canvasLocation" x="302.89855072463769" y="105.80357142857143"/>
         </scene>
         <!--Mars Photo Detail View Controller-->
         <scene sceneID="tne-QT-ifu">

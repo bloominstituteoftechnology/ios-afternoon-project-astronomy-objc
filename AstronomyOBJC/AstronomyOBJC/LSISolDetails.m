@@ -21,7 +21,6 @@
         _totalPhotos = totalPhotos;
         _cameras = [cameras copy];
         
-        
     }
     return self;
     
@@ -32,7 +31,7 @@
     NSNumber *solNumber = dictionary[@"sol"];
     NSNumber *totalPhotos = dictionary[@"total_photos"];
     NSArray *cameras = dictionary[@"cameras"];
-    NSMutableArray *cameraArray = [NSMutableArray alloc];
+    NSMutableArray *cameraArray = [[NSMutableArray alloc]init];
     
     for (NSString *camera in cameras) {
         if (camera) {

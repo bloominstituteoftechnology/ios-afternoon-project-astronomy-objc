@@ -11,9 +11,10 @@
 
 @interface PhotoFetcherOperation ()
 
-@property (nonatomic) BOOL isAsynchronous;
-@property (nonatomic) BOOL internalFinished;
-@property (nonatomic) BOOL executingInternal;
+@property (readwrite, getter=isExecuting) BOOL isAsynchronous;
+@property (readwrite, getter=isFinished) BOOL internalFinished;
+@property (readwrite, getter=isCancelled) BOOL executingInternal;
+@property (readwrite, getter=<#method#>)
 
 @property (nonatomic) NSURLSessionDataTask *dataTask;
 
@@ -21,21 +22,16 @@
 
 @implementation PhotoFetcherOperation
 
--(instancetype)initWithMarsPhotoReference:(LSIMarsRoverPhotoReference *)marsPhotoReference
-                                  //session:(NSURLSession *)session
-                                imageData:(NSData *)imageData;
-                                 //dataTask:(NSURLSessionDataTask *)dataTask;
-{
-    
-    self = [super init];
-        if (self) {
-            _marsPhotoReference = marsPhotoReference;
-//            _session = session;
-            _imageData = imageData;
-            //_dataTask = dataTask;
-        }
-        return self;
+- (instancetype)initWithPhotoURL:(NSURL *)photoURL {
+    if (self = [super init]) {
+        _photoURL = photoURL;
+        self.executingInternal = NO;
+        self.cancelled = NO:
+        
     }
+    
+    
+}
 
 - (void)start {
     self.internalFinished = false; // Sends a KVO notification
@@ -44,17 +40,19 @@
     NSURLSession *session = [NSURLSession sharedSession];
     //  FIXME: need to figure out how to use https: to make it secure. (url)
     NSString *testString = @"https";
-    NSURLComponents *componentScheme = [[NSURLComponents alloc] init];
-    componentScheme.scheme = testString;
-    NSURL *url = self.marsPhotoReference.imageSource;
+    NSURLComponents *urlComps = [NSURLComponents componentsWithURL:self.marsPhotoReference.imageSource resolvingAgainstBaseURL:TRUE];
+    urlComps.scheme = testString;
+    NSURL *url = urlComps.URL;
+    NSLog(@"PHOTO URL: %@ ⏺ ", url);
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"Error fetching data for \(self.photoReference): \(error)");
+            NSLog(@"Error fetching data for \(self.photoReference): %@", error);
             return;
         }
+        if (response) {
+            NSLog(@"RESPONSE: %@", response);
+        }
         self.imageData = data;
-        
-        
     }];
     [task resume];
     self.dataTask = task;

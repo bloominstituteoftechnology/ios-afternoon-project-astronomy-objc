@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class LSIMarsRoverPhotoReference;
 
@@ -14,15 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PhotoFetcherOperation : NSOperation
 
-@property LSIMarsRoverPhotoReference * marsPhotoReference;
-//@property NSURLSession *session;
-@property NSData *imageData;
-//@property NSURLSessionDataTask *dataTask;
+@property UIImage *imageData;
+@property (nonatomic, nullable) NSURL *photoURL;
 
--(instancetype)initWithMarsPhotoReference:(LSIMarsRoverPhotoReference *)marsPhotoReference
-//  session:(NSURLSession *)session
-                                imageData:(NSData *)imageData;
- //dataTask:(NSURLSessionDataTask *)dataTask;
+
+- (nonnull instancetype)initWithPhotoURL:(nonnull NSURL *)photoURL;
++ (instancetype)initWithMarsPhotoReference:(nonnull LSIMarsRoverPhotoReference *)marsPhotoReference;
+
+-(void)start;
+-(void)cancel;
 
 @end
 

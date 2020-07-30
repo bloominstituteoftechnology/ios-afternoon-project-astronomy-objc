@@ -11,7 +11,7 @@
 @class MarsRover;
 @class LSIMarsRoverPhotoReference;
 typedef void (^LSIMarsRoverFetcherCompletion)(MarsRover * _Nullable marsRover, NSError * _Nullable error);
-typedef void (^LSIMarsRoverPhotosFetcherCompletion)(LSIMarsRoverPhotoReference * _Nullable photo, NSError * _Nullable error);
+typedef void (^LSIMarsRoverPhotosFetcherCompletion)(NSArray<LSIMarsRoverPhotoReference *> * _Nullable photo, NSError * _Nullable error);
 
 
 NS_ASSUME_NONNULL_BEGIN

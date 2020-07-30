@@ -20,18 +20,25 @@ class MarsRover: NSObject {
         self.solDetails = solDetails
     }
     
+    var testArray: [LSISolDetails] = []
+    
     @objc(initWithDictionary:)
     init?(dictionary: [String:Any]) {
         guard let photoManifestDictionary = dictionary["photo_manifest"] as? NSDictionary else {return nil}
         
         guard let name = photoManifestDictionary["name"] as? String else { return nil }
         guard let totalPhotos = photoManifestDictionary["total_photos"] as? Int else { return nil }
-        guard let solDetailDictionary = photoManifestDictionary["sol"] as? [LSISolDetails] else { return nil }
+        guard let solDetailDict = photoManifestDictionary["photos"] as? [[String:Any]] else { return nil}
+        
+        for sol in solDetailDict {
+            let newSolDetail = LSISolDetails(dictionary: sol)
+            testArray.append(newSolDetail)
+        }
         
         
         self.name = name
         self.totalPhotos = totalPhotos
-        self.solDetails = solDetailDictionary
+        self.solDetails = testArray
     }
 }
 

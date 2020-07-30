@@ -7,3 +7,5 @@
 #import "LSIMarsRoverPhotoReference.h"
 #import "LSIMarsCamera.h"
 #import "LSISolDetails.h"
+#import "PhotoFetcherOperation.h"
+#import "RoverPhotoCollectionViewCell.h"
