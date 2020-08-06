@@ -54,6 +54,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6309B7C324DBB4E5004B7BE9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6309B7C024DBB0BE004B7BE9 /* PhotosCollectionViewController.swift */,
+				63F8565724DBA1D700661CDC /* ImageCollectionViewCell.h */,
+				63F8565824DBA1D700661CDC /* ImageCollectionViewCell.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		63F8563224DB97DA00661CDC = {
 			isa = PBXGroup;
 			children = (
@@ -77,9 +87,7 @@
 				63F8563F24DB97DA00661CDC /* AppDelegate.m */,
 				63F8564124DB97DA00661CDC /* SceneDelegate.h */,
 				63F8564224DB97DA00661CDC /* SceneDelegate.m */,
-				6309B7C024DBB0BE004B7BE9 /* PhotosCollectionViewController.swift */,
-				63F8565724DBA1D700661CDC /* ImageCollectionViewCell.h */,
-				63F8565824DBA1D700661CDC /* ImageCollectionViewCell.m */,
+				6309B7C324DBB4E5004B7BE9 /* View Controllers */,
 				63F8564724DB97DA00661CDC /* Main.storyboard */,
 				6309B7C224DBB2BD004B7BE9 /* Resources */,
 				63F8564F24DB97DC00661CDC /* Info.plist */,
