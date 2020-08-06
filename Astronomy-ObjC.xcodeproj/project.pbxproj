@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6309B7C124DBB0BE004B7BE9 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309B7C024DBB0BE004B7BE9 /* PhotosCollectionViewController.swift */; };
 		6309B7C524DBB54A004B7BE9 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309B7C424DBB54A004B7BE9 /* PhotoDetailViewController.swift */; };
+		6309B7CC24DBB9E4004B7BE9 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B7CB24DBB9E4004B7BE9 /* Camera.m */; };
 		63F8564024DB97DA00661CDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8563F24DB97DA00661CDC /* AppDelegate.m */; };
 		63F8564324DB97DA00661CDC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8564224DB97DA00661CDC /* SceneDelegate.m */; };
 		63F8564924DB97DA00661CDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F8564724DB97DA00661CDC /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		6309B7BF24DBB0BE004B7BE9 /* Astronomy-ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		6309B7C024DBB0BE004B7BE9 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		6309B7C424DBB54A004B7BE9 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		6309B7CA24DBB9E4004B7BE9 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		6309B7CB24DBB9E4004B7BE9 /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
 		63F8563B24DB97DA00661CDC /* Astronomy-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F8563E24DB97DA00661CDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63F8563F24DB97DA00661CDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +69,15 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		6309B7C624DBB968004B7BE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6309B7CA24DBB9E4004B7BE9 /* Camera.h */,
+				6309B7CB24DBB9E4004B7BE9 /* Camera.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		63F8563224DB97DA00661CDC = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 				63F8563F24DB97DA00661CDC /* AppDelegate.m */,
 				63F8564124DB97DA00661CDC /* SceneDelegate.h */,
 				63F8564224DB97DA00661CDC /* SceneDelegate.m */,
+				6309B7C624DBB968004B7BE9 /* Model */,
 				6309B7C324DBB4E5004B7BE9 /* View Controllers */,
 				63F8564724DB97DA00661CDC /* Main.storyboard */,
 				6309B7C224DBB2BD004B7BE9 /* Resources */,
@@ -175,6 +188,7 @@
 				63F8564024DB97DA00661CDC /* AppDelegate.m in Sources */,
 				63F8565924DBA1D700661CDC /* ImageCollectionViewCell.m in Sources */,
 				63F8565124DB97DC00661CDC /* main.m in Sources */,
+				6309B7CC24DBB9E4004B7BE9 /* Camera.m in Sources */,
 				6309B7C124DBB0BE004B7BE9 /* PhotosCollectionViewController.swift in Sources */,
 				63F8564324DB97DA00661CDC /* SceneDelegate.m in Sources */,
 			);
