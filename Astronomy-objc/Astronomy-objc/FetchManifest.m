@@ -7,6 +7,7 @@
 //
 
 #import "FetchManifest.h"
+#import "MarsPhotoReference.h"
 #import "Astronomy_objc-Swift.h"
 
 static NSString *const APIKey = @"CrGyhe4SzkbgKB2Ahw17krmCKU9JbRToEUxkc1Yh";
@@ -76,6 +77,55 @@ static NSString *const APIKey = @"CrGyhe4SzkbgKB2Ahw17krmCKU9JbRToEUxkc1Yh";
     
     NSURL *requestURL = urlComponents.URL;
     NSLog(@"URL: %@", requestURL);
+    
+    [[NSURLSession.sharedSession dataTaskWithURL:requestURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error fetching photos for rover: %@, on sol: %d", marsRover, sol);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        NSError *jsonError;
+        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if (!jsonDictionary) {
+            NSLog(@"Error decoding JSON: %@", jsonError);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, jsonError);
+            });
+            return;
+        }
+        
+        NSArray *photoReferenceDictionaries = [[NSArray alloc] initWithArray:[jsonDictionary valueForKey:@"photos"]];
+        if (!photoReferenceDictionaries) {
+            NSLog(@"Error creating photo reference dictionary");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        NSMutableArray *photoReferences = [[NSMutableArray alloc] initWithCapacity:photoReferenceDictionaries.count];
+        
+        for (NSDictionary *photoReferenceDictionary in photoReferenceDictionaries) {
+            if (![photoReferenceDictionaries isKindOfClass:NSDictionary.class]) continue;
+            
+            MarsPhotoReference *marsPhotoReference = [[MarsPhotoReference alloc] initWithDictionary:photoReferenceDictionary];
+            
+            if (marsPhotoReference) {
+                [photoReferences addObject:marsPhotoReference];
+            } else {
+                NSLog(@"Unable to parse photoReference dictionary: %@", photoReferenceDictionary);
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(photoReferences, nil);
+        });
+        
+    }]resume];
 }
 
 @end
