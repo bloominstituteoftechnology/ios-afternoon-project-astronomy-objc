@@ -13,8 +13,16 @@ class Rover: NSObject {
     @objc var name: String
     @objc var status: String
     
-    @objc init(name: String, status: String) {
+    
+    init(name: String, status: String) {
         self.name = name
         self.status = status
     }
+    
+    @objc convenience init?(dictionary: [String : Any]) {
+        guard let name = dictionary["name"] as? String,
+            let status = dictionary["status"] as? String else { return nil }
+        self.init(name: name, status: status)
+    }
 }
+

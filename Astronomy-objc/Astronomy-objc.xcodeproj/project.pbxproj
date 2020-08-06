@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C9AE23E124DA5F92003290A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE23E024DA5F92003290A0 /* AppDelegate.swift */; };
 		C9AE23E324DA5F92003290A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE23E224DA5F92003290A0 /* SceneDelegate.swift */; };
-		C9AE23E524DA5F92003290A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE23E424DA5F92003290A0 /* ViewController.swift */; };
 		C9AE23E824DA5F92003290A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE23E624DA5F92003290A0 /* Main.storyboard */; };
 		C9AE23EA24DA5F95003290A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AE23E924DA5F95003290A0 /* Assets.xcassets */; };
 		C9AE23ED24DA5F95003290A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE23EB24DA5F95003290A0 /* LaunchScreen.storyboard */; };
@@ -23,13 +22,13 @@
 		C9AE240824DB8D0E003290A0 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240424DB8D0E003290A0 /* LSIErrors.m */; };
 		C9AE240B24DB94EA003290A0 /* FetchManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240A24DB94EA003290A0 /* FetchManifest.m */; };
 		C9AE240D24DB98BD003290A0 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240C24DB98BD003290A0 /* Rover.swift */; };
+		C9AE240F24DBACB3003290A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240E24DBACB2003290A0 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C9AE23DD24DA5F92003290A0 /* Astronomy-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AE23E024DA5F92003290A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AE23E224DA5F92003290A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9AE23E424DA5F92003290A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C9AE23E724DA5F92003290A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9AE23E924DA5F95003290A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AE23EC24DA5F95003290A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		C9AE240924DB94EA003290A0 /* FetchManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchManifest.h; sourceTree = "<group>"; };
 		C9AE240A24DB94EA003290A0 /* FetchManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchManifest.m; sourceTree = "<group>"; };
 		C9AE240C24DB98BD003290A0 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
+		C9AE240E24DBACB2003290A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +90,8 @@
 				C9AE240324DB8D0E003290A0 /* URL+Secure.swift */,
 				C9AE23E024DA5F92003290A0 /* AppDelegate.swift */,
 				C9AE23E224DA5F92003290A0 /* SceneDelegate.swift */,
-				C9AE23E424DA5F92003290A0 /* ViewController.swift */,
 				C9AE23E624DA5F92003290A0 /* Main.storyboard */,
+				C9AE240E24DBACB2003290A0 /* ViewController.swift */,
 				C9AE23E924DA5F95003290A0 /* Assets.xcassets */,
 				C9AE23EB24DA5F95003290A0 /* LaunchScreen.storyboard */,
 				C9AE23EE24DA5F95003290A0 /* Info.plist */,
@@ -189,13 +189,13 @@
 			files = (
 				C9AE240724DB8D0E003290A0 /* URL+Secure.swift in Sources */,
 				C9AE240624DB8D0E003290A0 /* LSIFileHelper.m in Sources */,
-				C9AE23E524DA5F92003290A0 /* ViewController.swift in Sources */,
 				C9AE240B24DB94EA003290A0 /* FetchManifest.m in Sources */,
 				C9AE23F724DB8C61003290A0 /* MainCollectionViewController.swift in Sources */,
 				C9AE23E124DA5F92003290A0 /* AppDelegate.swift in Sources */,
 				C9AE240824DB8D0E003290A0 /* LSIErrors.m in Sources */,
 				C9AE23F924DB8C77003290A0 /* DetailViewController.swift in Sources */,
 				C9AE23F524DB8929003290A0 /* APIKey.swift in Sources */,
+				C9AE240F24DBACB3003290A0 /* ViewController.swift in Sources */,
 				C9AE240D24DB98BD003290A0 /* Rover.swift in Sources */,
 				C9AE240524DB8D0E003290A0 /* LSILog.m in Sources */,
 				C9AE23E324DA5F92003290A0 /* SceneDelegate.swift in Sources */,

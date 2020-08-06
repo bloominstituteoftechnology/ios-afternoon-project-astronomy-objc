@@ -46,7 +46,18 @@ static NSString *const APIKey = @"CrGyhe4SzkbgKB2Ahw17krmCKU9JbRToEUxkc1Yh";
             return;
         }
         
-        Rover *manifestInfo = [[Rover alloc] initWithName:<#(NSString * _Nonnull)#> status:<#(NSString * _Nonnull)#>]
+        Rover *manifestInfo = [[Rover alloc] initWithDictionary:manifestDictionary];
+        if (!manifestInfo) {
+            NSLog(@"Error parsing Rover data: %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(manifestInfo, nil);
+        });
         
     }]resume];
 }
