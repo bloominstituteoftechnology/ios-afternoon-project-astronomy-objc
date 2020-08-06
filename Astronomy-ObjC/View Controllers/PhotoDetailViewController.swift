@@ -10,7 +10,36 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
+    // MARK: - Properties
+
+    var photo: MarsPhoto! {
+        didSet {
+            updateViews()
+        }
+    }
+
+
+    // MARK: - IBOutlets
+
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var detailLabel: UILabel!
+    @IBOutlet var cameraLabel: UILabel!
+
+
+    // MARK: - View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    private func updateViews() {
+
+    }
+
+
+    // MARK: - Actions
+
+    @IBAction func saveToPhotoLibrary(_ sender: UIButton) {
+
     }
 }

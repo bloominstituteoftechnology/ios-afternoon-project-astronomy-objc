@@ -46,6 +46,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="imageView" destination="536-fM-39x" id="xmR-HK-sl3"/>
+                                            <segue destination="EQI-cS-UEv" kind="show" identifier="ShowDetail" id="L4L-yi-qyN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -72,6 +73,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="Nb9-yx-eWx">
+            <objects>
+                <viewController id="EQI-cS-UEv" customClass="PhotoDetailViewController" customModule="Astronomy_ObjC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x3d-HX-N0V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCm-Vx-6DW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GCm-Vx-6DW" secondAttribute="height" multiplier="1:1" id="3vh-Xe-P48"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P93-ZO-kcX">
+                                <rect key="frame" x="20" y="522" width="374" height="91"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vew-yK-pFn">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera: ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWz-Qy-QcO">
+                                        <rect key="frame" x="0.0" y="30.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1Y-F2-7Wf">
+                                        <rect key="frame" x="0.0" y="61" width="374" height="30"/>
+                                        <state key="normal" title="Save to Photo Library"/>
+                                        <connections>
+                                            <action selector="saveToPhotoLibrary:" destination="EQI-cS-UEv" eventType="touchUpInside" id="8BX-5F-hgb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="P93-ZO-kcX" firstAttribute="top" secondItem="GCm-Vx-6DW" secondAttribute="bottom" constant="20" id="2KK-hp-ymd"/>
+                            <constraint firstItem="P93-ZO-kcX" firstAttribute="leading" secondItem="N3O-eF-Org" secondAttribute="leading" constant="20" id="5Fu-AY-v9B"/>
+                            <constraint firstItem="GCm-Vx-6DW" firstAttribute="top" secondItem="N3O-eF-Org" secondAttribute="top" id="CjQ-eR-ZPW"/>
+                            <constraint firstItem="GCm-Vx-6DW" firstAttribute="trailing" secondItem="N3O-eF-Org" secondAttribute="trailing" id="NP0-m3-TgS"/>
+                            <constraint firstItem="GCm-Vx-6DW" firstAttribute="leading" secondItem="N3O-eF-Org" secondAttribute="leading" id="Y0p-rD-uyx"/>
+                            <constraint firstItem="N3O-eF-Org" firstAttribute="trailing" secondItem="P93-ZO-kcX" secondAttribute="trailing" constant="20" id="YFi-Lv-OBo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N3O-eF-Org"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SfO-rg-aeV"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="WWz-Qy-QcO" id="wRa-PS-CLj"/>
+                        <outlet property="detailLabel" destination="vew-yK-pFn" id="E6d-WC-1AJ"/>
+                        <outlet property="imageView" destination="GCm-Vx-6DW" id="qNx-Go-xPp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exB-9B-W33" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2050.7246376811595" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="90f-gm-qco">
