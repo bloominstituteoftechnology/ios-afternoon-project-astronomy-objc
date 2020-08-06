@@ -13,6 +13,16 @@
 		C9AE23E824DA5F92003290A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE23E624DA5F92003290A0 /* Main.storyboard */; };
 		C9AE23EA24DA5F95003290A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AE23E924DA5F95003290A0 /* Assets.xcassets */; };
 		C9AE23ED24DA5F95003290A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE23EB24DA5F95003290A0 /* LaunchScreen.storyboard */; };
+		C9AE23F524DB8929003290A0 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE23F424DB8929003290A0 /* APIKey.swift */; };
+		C9AE23F724DB8C61003290A0 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE23F624DB8C61003290A0 /* MainCollectionViewController.swift */; };
+		C9AE23F924DB8C77003290A0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE23F824DB8C77003290A0 /* DetailViewController.swift */; };
+		C9AE23FB24DB8C8E003290A0 /* Sol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE23FA24DB8C8E003290A0 /* Sol.swift */; };
+		C9AE240524DB8D0E003290A0 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240124DB8D0E003290A0 /* LSILog.m */; };
+		C9AE240624DB8D0E003290A0 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240224DB8D0E003290A0 /* LSIFileHelper.m */; };
+		C9AE240724DB8D0E003290A0 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240324DB8D0E003290A0 /* URL+Secure.swift */; };
+		C9AE240824DB8D0E003290A0 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240424DB8D0E003290A0 /* LSIErrors.m */; };
+		C9AE240B24DB94EA003290A0 /* FetchManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240A24DB94EA003290A0 /* FetchManifest.m */; };
+		C9AE240D24DB98BD003290A0 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240C24DB98BD003290A0 /* Rover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,21 @@
 		C9AE23E924DA5F95003290A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AE23EC24DA5F95003290A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9AE23EE24DA5F95003290A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9AE23F424DB8929003290A0 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		C9AE23F624DB8C61003290A0 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		C9AE23F824DB8C77003290A0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C9AE23FA24DB8C8E003290A0 /* Sol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sol.swift; sourceTree = "<group>"; };
+		C9AE23FD24DB8D0D003290A0 /* Astronomy-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9AE23FE24DB8D0D003290A0 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIErrors.h; path = ../../LambdaSDK/LSIErrors.h; sourceTree = "<group>"; };
+		C9AE23FF24DB8D0E003290A0 /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIFileHelper.h; path = ../../LambdaSDK/LSIFileHelper.h; sourceTree = "<group>"; };
+		C9AE240024DB8D0E003290A0 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSILog.h; path = ../../LambdaSDK/LSILog.h; sourceTree = "<group>"; };
+		C9AE240124DB8D0E003290A0 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSILog.m; path = ../../LambdaSDK/LSILog.m; sourceTree = "<group>"; };
+		C9AE240224DB8D0E003290A0 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIFileHelper.m; path = ../../LambdaSDK/LSIFileHelper.m; sourceTree = "<group>"; };
+		C9AE240324DB8D0E003290A0 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Secure.swift"; path = "../../LambdaSDK/URL+Secure.swift"; sourceTree = "<group>"; };
+		C9AE240424DB8D0E003290A0 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIErrors.m; path = ../../LambdaSDK/LSIErrors.m; sourceTree = "<group>"; };
+		C9AE240924DB94EA003290A0 /* FetchManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchManifest.h; sourceTree = "<group>"; };
+		C9AE240A24DB94EA003290A0 /* FetchManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchManifest.m; sourceTree = "<group>"; };
+		C9AE240C24DB98BD003290A0 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,13 @@
 		C9AE23DF24DA5F92003290A0 /* Astronomy-objc */ = {
 			isa = PBXGroup;
 			children = (
+				C9AE23FE24DB8D0D003290A0 /* LSIErrors.h */,
+				C9AE240424DB8D0E003290A0 /* LSIErrors.m */,
+				C9AE23FF24DB8D0E003290A0 /* LSIFileHelper.h */,
+				C9AE240224DB8D0E003290A0 /* LSIFileHelper.m */,
+				C9AE240024DB8D0E003290A0 /* LSILog.h */,
+				C9AE240124DB8D0E003290A0 /* LSILog.m */,
+				C9AE240324DB8D0E003290A0 /* URL+Secure.swift */,
 				C9AE23E024DA5F92003290A0 /* AppDelegate.swift */,
 				C9AE23E224DA5F92003290A0 /* SceneDelegate.swift */,
 				C9AE23E424DA5F92003290A0 /* ViewController.swift */,
@@ -63,8 +95,24 @@
 				C9AE23E924DA5F95003290A0 /* Assets.xcassets */,
 				C9AE23EB24DA5F95003290A0 /* LaunchScreen.storyboard */,
 				C9AE23EE24DA5F95003290A0 /* Info.plist */,
+				C9AE23F424DB8929003290A0 /* APIKey.swift */,
+				C9AE23FC24DB8C98003290A0 /* ViewControllers */,
+				C9AE23FA24DB8C8E003290A0 /* Sol.swift */,
+				C9AE240C24DB98BD003290A0 /* Rover.swift */,
+				C9AE240924DB94EA003290A0 /* FetchManifest.h */,
+				C9AE240A24DB94EA003290A0 /* FetchManifest.m */,
+				C9AE23FD24DB8D0D003290A0 /* Astronomy-objc-Bridging-Header.h */,
 			);
 			path = "Astronomy-objc";
+			sourceTree = "<group>";
+		};
+		C9AE23FC24DB8C98003290A0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9AE23F624DB8C61003290A0 /* MainCollectionViewController.swift */,
+				C9AE23F824DB8C77003290A0 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +147,7 @@
 				TargetAttributes = {
 					C9AE23DC24DA5F92003290A0 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -138,9 +187,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AE240724DB8D0E003290A0 /* URL+Secure.swift in Sources */,
+				C9AE240624DB8D0E003290A0 /* LSIFileHelper.m in Sources */,
 				C9AE23E524DA5F92003290A0 /* ViewController.swift in Sources */,
+				C9AE240B24DB94EA003290A0 /* FetchManifest.m in Sources */,
+				C9AE23F724DB8C61003290A0 /* MainCollectionViewController.swift in Sources */,
 				C9AE23E124DA5F92003290A0 /* AppDelegate.swift in Sources */,
+				C9AE240824DB8D0E003290A0 /* LSIErrors.m in Sources */,
+				C9AE23F924DB8C77003290A0 /* DetailViewController.swift in Sources */,
+				C9AE23F524DB8929003290A0 /* APIKey.swift in Sources */,
+				C9AE240D24DB98BD003290A0 /* Rover.swift in Sources */,
+				C9AE240524DB8D0E003290A0 /* LSILog.m in Sources */,
 				C9AE23E324DA5F92003290A0 /* SceneDelegate.swift in Sources */,
+				C9AE23FB24DB8C8E003290A0 /* Sol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Astronomy-objc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -292,6 +352,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattmartindale.Astronomy-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-objc/Astronomy-objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Astronomy-objc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,6 +372,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattmartindale.Astronomy-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy-objc/Astronomy-objc-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
