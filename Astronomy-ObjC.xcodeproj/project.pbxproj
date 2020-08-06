@@ -51,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				63F8564A24DB97DC00661CDC /* Assets.xcassets */,
-				63F8564C24DB97DC00661CDC /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -93,6 +92,7 @@
 				6309B7C324DBB4E5004B7BE9 /* View Controllers */,
 				63F8564724DB97DA00661CDC /* Main.storyboard */,
 				6309B7C224DBB2BD004B7BE9 /* Resources */,
+				63F8564C24DB97DC00661CDC /* LaunchScreen.storyboard */,
 				63F8564F24DB97DC00661CDC /* Info.plist */,
 				63F8565024DB97DC00661CDC /* main.m */,
 				6309B7BF24DBB0BE004B7BE9 /* Astronomy-ObjC-Bridging-Header.h */,
