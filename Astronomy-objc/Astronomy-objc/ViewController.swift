@@ -21,9 +21,11 @@ class ViewController: UIViewController {
                 print("Error fetching rover manifest in VC: \(error!)")
                 return
             }
-            
-            print(rover?.name)
-            print(rover?.status)
+            if let rover = rover {
+                self.manifestController.fetchPhotos(from: rover, onSol: 10) { (photos, error) in
+                    print(photos?.first)
+                }
+            }
         }
     }
     

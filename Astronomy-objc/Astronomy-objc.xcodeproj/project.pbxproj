@@ -23,6 +23,7 @@
 		C9AE240B24DB94EA003290A0 /* FetchManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240A24DB94EA003290A0 /* FetchManifest.m */; };
 		C9AE240D24DB98BD003290A0 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240C24DB98BD003290A0 /* Rover.swift */; };
 		C9AE240F24DBACB3003290A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240E24DBACB2003290A0 /* ViewController.swift */; };
+		C9AE241224DBAEFF003290A0 /* MarsPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE241124DBAEFF003290A0 /* MarsPhotoReference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		C9AE240A24DB94EA003290A0 /* FetchManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchManifest.m; sourceTree = "<group>"; };
 		C9AE240C24DB98BD003290A0 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 		C9AE240E24DBACB2003290A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9AE241024DBAEFF003290A0 /* MarsPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsPhotoReference.h; sourceTree = "<group>"; };
+		C9AE241124DBAEFF003290A0 /* MarsPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsPhotoReference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				C9AE240924DB94EA003290A0 /* FetchManifest.h */,
 				C9AE240A24DB94EA003290A0 /* FetchManifest.m */,
 				C9AE23FD24DB8D0D003290A0 /* Astronomy-objc-Bridging-Header.h */,
+				C9AE241024DBAEFF003290A0 /* MarsPhotoReference.h */,
+				C9AE241124DBAEFF003290A0 /* MarsPhotoReference.m */,
 			);
 			path = "Astronomy-objc";
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AE240724DB8D0E003290A0 /* URL+Secure.swift in Sources */,
+				C9AE241224DBAEFF003290A0 /* MarsPhotoReference.m in Sources */,
 				C9AE240624DB8D0E003290A0 /* LSIFileHelper.m in Sources */,
 				C9AE240B24DB94EA003290A0 /* FetchManifest.m in Sources */,
 				C9AE23F724DB8C61003290A0 /* MainCollectionViewController.swift in Sources */,

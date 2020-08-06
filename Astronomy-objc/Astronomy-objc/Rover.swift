@@ -13,7 +13,6 @@ class Rover: NSObject {
     @objc var name: String
     @objc var status: String
     
-    
     init(name: String, status: String) {
         self.name = name
         self.status = status

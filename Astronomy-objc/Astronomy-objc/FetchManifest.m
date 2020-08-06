@@ -62,4 +62,20 @@ static NSString *const APIKey = @"CrGyhe4SzkbgKB2Ahw17krmCKU9JbRToEUxkc1Yh";
     }]resume];
 }
 
+- (void)fetchPhotosFromRover:(Rover *)marsRover onSol:(int)sol completionHandler:(FetchMarsPhotosCompletionHandler)completionHandler
+{
+    if (!completionHandler) return;
+    
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.nasa.gov/mars-photos/api/v1/rovers"];
+    NSURL *url = [[baseURL URLByAppendingPathComponent:marsRover.name]
+                  URLByAppendingPathComponent:@"photos"];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
+    NSURLQueryItem *solItem = [NSURLQueryItem queryItemWithName:@"sol" value:[@(sol) stringValue]];
+    NSURLQueryItem *apiKeyItem = [NSURLQueryItem queryItemWithName:@"api_key" value:APIKey];
+    urlComponents.queryItems = @[solItem, apiKeyItem];
+    
+    NSURL *requestURL = urlComponents.URL;
+    NSLog(@"URL: %@", requestURL);
+}
+
 @end
