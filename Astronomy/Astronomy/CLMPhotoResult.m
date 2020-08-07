@@ -7,7 +7,25 @@
 //
 
 #import "CLMPhotoResult.h"
+#import "CLMPhoto.h"
 
 @implementation CLMPhotoResult
+
+-(instancetype)initWithPhotos:(NSArray<CLMPhoto *> *)photos
+{
+    self = [super init];
+    
+    if(self)
+    {
+        _photos = [photos copy];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    return nil;
+}
 
 @end

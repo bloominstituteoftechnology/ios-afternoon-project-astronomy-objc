@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class CLMPhoto;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CLMPhotoResult : NSObject
+
+@property (nonatomic, readonly, copy) NSArray<CLMPhoto *> *photos;
+
+- (instancetype)initWithPhotos:(NSArray<CLMPhoto *> *)photos;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
