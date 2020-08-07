@@ -8,3 +8,4 @@
 
 #import "CLMPhoto.h"
 #import "CLMPhotoResult.h"
+#import "CLMPhotoFetcher.h"
