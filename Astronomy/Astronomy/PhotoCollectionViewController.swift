@@ -19,7 +19,7 @@ class PhotoCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        photoFetcher.fetchPhotos(fromSol: 1) { (possiblePhotos, possibleError) in
+        photoFetcher.fetchPhotos(fromSol: 10) { (possiblePhotos, possibleError) in
             if let error = possibleError {
                 NSLog("Error fetching photos from sol: \(error)")
                 return
@@ -38,15 +38,17 @@ class PhotoCollectionViewController: UICollectionViewController {
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ViewPhotoSegue" {
+            guard let detailVC = segue.destination as? PhotoDetailViewController,
+            let cell = sender as? PhotoCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell) else { return }
+            detailVC.photo = photos[indexPath.row]
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 

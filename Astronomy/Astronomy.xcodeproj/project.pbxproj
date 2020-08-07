@@ -18,6 +18,7 @@
 		3AB6ECF924DDE73B007D6F60 /* CLMPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ECF824DDE73B007D6F60 /* CLMPhotoFetcher.m */; };
 		3AB6ECFB24DDEE14007D6F60 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ECFA24DDEE14007D6F60 /* PhotoCollectionViewCell.swift */; };
 		3AB6ECFD24DDEF21007D6F60 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ECFC24DDEF21007D6F60 /* PhotoCollectionViewController.swift */; };
+		3AB6ECFF24DE0F63007D6F60 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6ECFE24DE0F63007D6F60 /* PhotoDetailViewController.swift */; };
 		3AD1EE5924DCD644007180D7 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5224DCD644007180D7 /* LSILog.m */; };
 		3AD1EE5A24DCD644007180D7 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5324DCD644007180D7 /* LSIErrors.m */; };
 		3AD1EE5B24DCD644007180D7 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5424DCD644007180D7 /* LSIFileHelper.m */; };
@@ -44,6 +45,7 @@
 		3AB6ECF824DDE73B007D6F60 /* CLMPhotoFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLMPhotoFetcher.m; sourceTree = "<group>"; };
 		3AB6ECFA24DDEE14007D6F60 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB6ECFC24DDEF21007D6F60 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		3AB6ECFE24DE0F63007D6F60 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		3AD1EE5224DCD644007180D7 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
 		3AD1EE5324DCD644007180D7 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
 		3AD1EE5424DCD644007180D7 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				3AD1EE6524DCDB43007180D7 /* Rover.swift */,
 				3AB6ECFA24DDEE14007D6F60 /* PhotoCollectionViewCell.swift */,
 				3AB6ECFC24DDEF21007D6F60 /* PhotoCollectionViewController.swift */,
+				3AB6ECFE24DE0F63007D6F60 /* PhotoDetailViewController.swift */,
 				3A96F9EF24DCE230004C8C8F /* Astronomy-Bridging-Header.h */,
 			);
 			path = Astronomy;
@@ -202,6 +205,7 @@
 				3AD1EE6424DCD8E3007180D7 /* CLMPhotoResult.m in Sources */,
 				3AB6ECFB24DDEE14007D6F60 /* PhotoCollectionViewCell.swift in Sources */,
 				3AD1EE6124DCD708007180D7 /* CLMPhoto.m in Sources */,
+				3AB6ECFF24DE0F63007D6F60 /* PhotoDetailViewController.swift in Sources */,
 				3AD1EE5C24DCD644007180D7 /* URL+Secure.swift in Sources */,
 				3A96F9EE24DCE017004C8C8F /* Rover.swift in Sources */,
 				3A52AB5724DBB5860069485D /* ViewController.m in Sources */,

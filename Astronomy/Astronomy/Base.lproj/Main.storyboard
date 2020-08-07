@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1573.913043478261" y="119.86607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="Edh-Lh-J91">
             <objects>
-                <viewController id="qaE-ii-cTE" sceneMemberID="viewController">
+                <viewController id="qaE-ii-cTE" customClass="PhotoDetailViewController" customModule="Astronomy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cjQ-Z9-PmE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +93,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBZ-bT-O6h">
                                 <rect key="frame" x="133.5" y="610.5" width="147" height="30"/>
                                 <state key="normal" title="Save to Photo Library"/>
+                                <connections>
+                                    <action selector="saveToLibraryButtonTapped:" destination="qaE-ii-cTE" eventType="touchUpInside" id="2YN-en-S9Q"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yEF-Bo-wHh">
                                 <rect key="frame" x="188.5" y="309" width="37" height="37"/>
@@ -119,10 +122,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="I0F-Fy-i92"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="yEF-Bo-wHh" id="aK5-Sr-uEZ"/>
-                        <outlet property="cameraLabel" destination="xp1-dt-3xw" id="zAO-Ay-gf2"/>
-                        <outlet property="imageView" destination="oXe-dp-qeX" id="ndV-or-3Xd"/>
-                        <outlet property="takenByLabel" destination="chd-WJ-cQN" id="rvB-Fg-ALO"/>
+                        <outlet property="activityIndicator" destination="yEF-Bo-wHh" id="d6A-Oa-Ryk"/>
+                        <outlet property="cameraLabel" destination="xp1-dt-3xw" id="QTz-5X-srH"/>
+                        <outlet property="detailLabel" destination="chd-WJ-cQN" id="fEk-Ig-Ena"/>
+                        <outlet property="imageView" destination="oXe-dp-qeX" id="igr-eg-A5o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fA-IT-sUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

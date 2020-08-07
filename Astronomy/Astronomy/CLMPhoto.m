@@ -11,7 +11,7 @@
 
 @implementation CLMPhoto
 
-- (instancetype) initWithPhotoId:(NSNumber *)photoId sol:(NSNumber *)sol imgURL:(NSURL *)imgURL earthDate:(NSDate *)earthDate rover:(Rover *)rover
+- (instancetype) initWithPhotoId:(NSNumber *)photoId sol:(NSNumber *)sol imgURL:(NSURL *)imgURL earthDate:(NSDate *)earthDate camera:(NSString *)camera rover:(Rover *)rover
 {
     self = [super init];
     
@@ -21,6 +21,7 @@
         _sol = sol;
         _imgURL = imgURL;
         _earthDate = earthDate;
+        _camera = camera;
         _rover = rover;
     }
     
@@ -36,6 +37,9 @@
     NSNumber *sol = dictionary[@"sol"];
     NSURL *imgURL = [NSURL URLWithString:dictionary[@"img_src"]];
     NSDate *earthDate = [formatter dateFromString:dictionary[@"earth_date"]];
+    
+    NSDictionary *cameraDictionary = dictionary[@"camera"];
+    NSString *camera = cameraDictionary[@"full_name"];
 
     // Set up rover
     NSDictionary *roverDictionary = dictionary[@"rover"];
@@ -49,7 +53,7 @@
 
     Rover *rover = [[Rover alloc] initWithId:roverId.intValue name:name landingDate:landingDate launchDate:launchDate status:status];
 
-    self = [self initWithPhotoId:photoID sol:sol imgURL:imgURL earthDate:earthDate rover:rover];
+    self = [self initWithPhotoId:photoID sol:sol imgURL:imgURL earthDate:earthDate camera:camera rover:rover];
     return self;
 }
 

@@ -19,9 +19,10 @@ NS_SWIFT_NAME(Photo)
 @property (nonatomic) NSNumber *sol;
 @property (nonatomic) NSURL *imgURL;
 @property (nonatomic) NSDate *earthDate;
+@property (nonatomic) NSString *camera;
 @property (nonatomic) Rover *rover;
 
-- (instancetype)initWithPhotoId:(NSNumber *)photoId sol:(NSNumber *)sol imgURL:(NSURL *)imgURL earthDate:(NSDate *)earthDate rover:(Rover *)rover;
+- (instancetype)initWithPhotoId:(NSNumber *)photoId sol:(NSNumber *)sol imgURL:(NSURL *)imgURL earthDate:(NSDate *)earthDate camera:(NSString *)camera rover:(Rover *)rover;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
