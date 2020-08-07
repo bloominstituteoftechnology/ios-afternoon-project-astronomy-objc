@@ -14,18 +14,13 @@ import Foundation
     @objc var landingDate: Date
     @objc var launchDate: Date
     @objc var status: String
-    @objc var maxSol: Int
-    @objc var maxDate: Date
-    @objc var totalPhotos: Int
 
-    @objc init(id: Int, name: String, landingDate: Date, launchDate: Date, status: String, maxSol: Int, maxDate: Date, totalPhotos: Int) {
+    @objc init(id: Int, name: String, landingDate: Date, launchDate: Date, status: String) {
         self.id = id
         self.name = name
         self.landingDate = landingDate
         self.launchDate = launchDate
         self.status = status
-        self.maxSol = maxSol
-        self.maxDate = maxDate
-        self.totalPhotos = totalPhotos
+
     }
 }

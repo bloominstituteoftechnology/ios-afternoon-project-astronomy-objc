@@ -15,7 +15,7 @@
 
 ////https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY
 static NSString *baseURLString = @"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?";
-static NSString *APIKey = @"UGalbvgVb4Ncm7dqd6ZQpDAZneeW0232rsZyAlH";
+static NSString *APIKey = @"GUGalbvgVb4Ncm7dqd6ZQpDAZneeW0232rsZyAlH";
 
 @implementation CLMPhotoFetcher
 

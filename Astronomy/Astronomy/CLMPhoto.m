@@ -45,11 +45,9 @@
     NSDate *landingDate = [formatter dateFromString:roverDictionary[@"landing_date"]];
     NSDate *launchDate = [formatter dateFromString:roverDictionary[@"launch_date"]];
     NSString *status = roverDictionary[@"status"];
-    NSNumber *maxSol = roverDictionary[@"max_sol"];
-    NSDate *maxDate = [formatter dateFromString:roverDictionary[@"max_date"]];
-    NSNumber *totalPhotos = roverDictionary[@"total_photos"];
 
-    Rover *rover = [[Rover alloc] initWithId:roverId.intValue name:name landingDate:landingDate launchDate:launchDate status:status maxSol:maxSol.intValue maxDate:maxDate totalPhotos:totalPhotos.intValue];
+
+    Rover *rover = [[Rover alloc] initWithId:roverId.intValue name:name landingDate:landingDate launchDate:launchDate status:status];
 
     self = [self initWithPhotoId:photoID sol:sol imgURL:imgURL earthDate:earthDate rover:rover];
     return self;

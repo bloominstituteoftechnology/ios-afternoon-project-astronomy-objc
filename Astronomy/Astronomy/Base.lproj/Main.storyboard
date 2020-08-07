@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Photo Collection View Controller-->
         <scene sceneID="ESG-FX-gYX">
             <objects>
-                <collectionViewController id="GJG-UW-1YQ" sceneMemberID="viewController">
+                <collectionViewController id="GJG-UW-1YQ" customClass="PhotoCollectionViewController" customModule="Astronomy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tmg-Rv-cFh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="30" minY="10" maxX="30" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="F6g-EB-So6">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="F6g-EB-So6" customClass="PhotoCollectionViewCell" customModule="Astronomy" customModuleProvider="target">
                                 <rect key="frame" x="30" y="10" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CA9-Tc-k0f">
@@ -50,8 +50,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="activityIndicator" destination="a9X-zH-kJo" id="0aU-YN-N2N"/>
-                                    <outlet property="imageView" destination="nUH-Mc-vSM" id="wWA-mQ-dKa"/>
+                                    <outlet property="roverImage" destination="nUH-Mc-vSM" id="oPA-fC-9vf"/>
                                     <segue destination="qaE-ii-cTE" kind="show" identifier="ViewPhotoSegue" id="IBW-uW-DIR"/>
                                 </connections>
                             </collectionViewCell>
