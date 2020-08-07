@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoDetailViewController: UIViewController {
 
@@ -41,6 +42,22 @@ class PhotoDetailViewController: UIViewController {
     }
 
     @IBAction func saveToLibraryButtonTapped(_ sender: Any) {
+        guard let image = imageView.image else { return }
+        
+        PHPhotoLibrary.requestAuthorization { (status) in
+            guard status == .authorized else { return } // TODO: Handle other cases
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.creationRequestForAsset(from: image)
+            }) { (success, error) in
+                if let error = error {
+                    print("Error saving photo: \(error)")
+                    return
+                }
+                DispatchQueue.main.async {
+                    print("Saved photo")
+                }
+            }
+        }
     }
     
     
