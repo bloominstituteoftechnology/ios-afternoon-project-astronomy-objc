@@ -25,7 +25,20 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    return nil;
+    NSArray *photoDictionaries = dictionary[@"photos"];
+    NSMutableArray *photos = [[NSMutableArray alloc] init];
+
+    for (NSDictionary *photoDictionary in photoDictionaries) {
+        CLMPhoto *photo = [[CLMPhoto alloc] initWithDictionary:photoDictionary];
+        if (photo) {
+            [photos addObject:photo];
+        } else {
+            NSLog(@"Unable to parse photo dictionary: %@", photoDictionary);
+        }
+    }
+
+    self = [self initWithPhotos:photos];
+    return self;
 }
 
 @end
