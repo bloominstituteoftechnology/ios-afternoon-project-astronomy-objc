@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var roverImage: UIImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var photo: Photo? {
         didSet {
@@ -19,9 +20,11 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     func updateViews() {
         guard let photo = photo else { return }
+        activityIndicator.startAnimating()
         
         guard let imageData = try? Data(contentsOf: photo.imgURL) else { return }
         roverImage.image = UIImage(data: imageData)
+        activityIndicator.stopAnimating()
     }
     
 }

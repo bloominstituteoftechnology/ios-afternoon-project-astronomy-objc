@@ -50,6 +50,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="a9X-zH-kJo" id="Pd4-Wf-U7I"/>
                                     <outlet property="roverImage" destination="nUH-Mc-vSM" id="oPA-fC-9vf"/>
                                     <segue destination="qaE-ii-cTE" kind="show" identifier="ViewPhotoSegue" id="IBW-uW-DIR"/>
                                 </connections>
