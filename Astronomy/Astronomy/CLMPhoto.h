@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CLMPhoto : NSObject
 
+@property (nonatomic) NSNumber *photoId;
+@property (nonatomic) NSNumber *sol;
+@property (nonatomic) NSURL *imgURL;
+@property (nonatomic) NSDate *earthDate;
+
+- (instancetype)initWithPhotoId:(NSNumber *)photoId sol:(NSNumber *)sol imgURL:(NSURL *)imgURL earthDate:(NSDate *)earthDate;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
