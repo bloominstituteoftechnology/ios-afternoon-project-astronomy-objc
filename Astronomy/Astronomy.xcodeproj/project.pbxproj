@@ -36,6 +36,7 @@
 		3A52AB5E24DBB5880069485D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A52AB6024DBB5880069485D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A52AB6124DBB5880069485D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A96F9EF24DCE230004C8C8F /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
 		3AD1EE5224DCD644007180D7 /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
 		3AD1EE5324DCD644007180D7 /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
 		3AD1EE5424DCD644007180D7 /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIFileHelper.m; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 				3AD1EE6224DCD8E3007180D7 /* CLMPhotoResult.h */,
 				3AD1EE6324DCD8E3007180D7 /* CLMPhotoResult.m */,
 				3AD1EE6524DCDB43007180D7 /* Rover.swift */,
+				3A96F9EF24DCE230004C8C8F /* Astronomy-Bridging-Header.h */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -347,6 +349,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thecoderpilot.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -364,6 +367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thecoderpilot.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Astronomy-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
