@@ -18,6 +18,7 @@
 		3AD1EE5A24DCD644007180D7 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5324DCD644007180D7 /* LSIErrors.m */; };
 		3AD1EE5B24DCD644007180D7 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5424DCD644007180D7 /* LSIFileHelper.m */; };
 		3AD1EE5C24DCD644007180D7 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5824DCD644007180D7 /* URL+Secure.swift */; };
+		3AD1EE5E24DCD694007180D7 /* CLMPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5D24DCD694007180D7 /* CLMPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3AD1EE5624DCD644007180D7 /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 		3AD1EE5724DCD644007180D7 /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		3AD1EE5824DCD644007180D7 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
+		3AD1EE5D24DCD694007180D7 /* CLMPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				3A52AB5D24DBB5880069485D /* LaunchScreen.storyboard */,
 				3A52AB6024DBB5880069485D /* Info.plist */,
 				3A52AB6124DBB5880069485D /* main.m */,
+				3AD1EE5D24DCD694007180D7 /* CLMPhoto.swift */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				3A52AB5724DBB5860069485D /* ViewController.m in Sources */,
 				3AD1EE5924DCD644007180D7 /* LSILog.m in Sources */,
 				3A52AB5124DBB5860069485D /* AppDelegate.m in Sources */,
+				3AD1EE5E24DCD694007180D7 /* CLMPhoto.swift in Sources */,
 				3A52AB6224DBB5880069485D /* main.m in Sources */,
 				3AD1EE5B24DCD644007180D7 /* LSIFileHelper.m in Sources */,
 				3A52AB5424DBB5860069485D /* SceneDelegate.m in Sources */,
