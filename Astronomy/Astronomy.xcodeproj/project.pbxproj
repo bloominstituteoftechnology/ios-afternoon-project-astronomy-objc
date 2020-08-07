@@ -19,6 +19,7 @@
 		3AD1EE5B24DCD644007180D7 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5424DCD644007180D7 /* LSIFileHelper.m */; };
 		3AD1EE5C24DCD644007180D7 /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5824DCD644007180D7 /* URL+Secure.swift */; };
 		3AD1EE6124DCD708007180D7 /* CLMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE6024DCD708007180D7 /* CLMPhoto.m */; };
+		3AD1EE6424DCD8E3007180D7 /* CLMPhotoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE6324DCD8E3007180D7 /* CLMPhotoResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		3AD1EE5824DCD644007180D7 /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Secure.swift"; sourceTree = "<group>"; };
 		3AD1EE5F24DCD708007180D7 /* CLMPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLMPhoto.h; sourceTree = "<group>"; };
 		3AD1EE6024DCD708007180D7 /* CLMPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLMPhoto.m; sourceTree = "<group>"; };
+		3AD1EE6224DCD8E3007180D7 /* CLMPhotoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLMPhotoResult.h; sourceTree = "<group>"; };
+		3AD1EE6324DCD8E3007180D7 /* CLMPhotoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLMPhotoResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				3A52AB6124DBB5880069485D /* main.m */,
 				3AD1EE5F24DCD708007180D7 /* CLMPhoto.h */,
 				3AD1EE6024DCD708007180D7 /* CLMPhoto.m */,
+				3AD1EE6224DCD8E3007180D7 /* CLMPhotoResult.h */,
+				3AD1EE6324DCD8E3007180D7 /* CLMPhotoResult.m */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD1EE6424DCD8E3007180D7 /* CLMPhotoResult.m in Sources */,
 				3AD1EE6124DCD708007180D7 /* CLMPhoto.m in Sources */,
 				3AD1EE5C24DCD644007180D7 /* URL+Secure.swift in Sources */,
 				3A52AB5724DBB5860069485D /* ViewController.m in Sources */,
