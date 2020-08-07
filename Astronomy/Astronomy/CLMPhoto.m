@@ -10,7 +10,7 @@
 
 @implementation CLMPhoto
 
-- (instancetype) initWithPhotoId:(NSNumber *)photoId sol:(NSNumber *)sol imgURL:(NSURL *)imgURL earthDate:(NSDate *)earthDate
+- (instancetype) initWithPhotoId:(NSNumber *)photoId sol:(NSNumber *)sol imgURL:(NSURL *)imgURL earthDate:(NSDate *)earthDate rover:(Rover *)rover
 {
     self = [super init];
     
@@ -20,6 +20,7 @@
         _sol = sol;
         _imgURL = imgURL;
         _earthDate = earthDate;
+        _rover = rover;
     }
     
     return self;

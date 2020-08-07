@@ -14,6 +14,7 @@
 		3A52AB5C24DBB5880069485D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A52AB5B24DBB5880069485D /* Assets.xcassets */; };
 		3A52AB5F24DBB5880069485D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A52AB5D24DBB5880069485D /* LaunchScreen.storyboard */; };
 		3A52AB6224DBB5880069485D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AB6124DBB5880069485D /* main.m */; };
+		3A96F9EE24DCE017004C8C8F /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE6524DCDB43007180D7 /* Rover.swift */; };
 		3AD1EE5924DCD644007180D7 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5224DCD644007180D7 /* LSILog.m */; };
 		3AD1EE5A24DCD644007180D7 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5324DCD644007180D7 /* LSIErrors.m */; };
 		3AD1EE5B24DCD644007180D7 /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1EE5424DCD644007180D7 /* LSIFileHelper.m */; };
@@ -46,6 +47,7 @@
 		3AD1EE6024DCD708007180D7 /* CLMPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLMPhoto.m; sourceTree = "<group>"; };
 		3AD1EE6224DCD8E3007180D7 /* CLMPhotoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLMPhotoResult.h; sourceTree = "<group>"; };
 		3AD1EE6324DCD8E3007180D7 /* CLMPhotoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLMPhotoResult.m; sourceTree = "<group>"; };
+		3AD1EE6524DCDB43007180D7 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				3AD1EE6024DCD708007180D7 /* CLMPhoto.m */,
 				3AD1EE6224DCD8E3007180D7 /* CLMPhotoResult.h */,
 				3AD1EE6324DCD8E3007180D7 /* CLMPhotoResult.m */,
+				3AD1EE6524DCDB43007180D7 /* Rover.swift */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				3AD1EE6424DCD8E3007180D7 /* CLMPhotoResult.m in Sources */,
 				3AD1EE6124DCD708007180D7 /* CLMPhoto.m in Sources */,
 				3AD1EE5C24DCD644007180D7 /* URL+Secure.swift in Sources */,
+				3A96F9EE24DCE017004C8C8F /* Rover.swift in Sources */,
 				3A52AB5724DBB5860069485D /* ViewController.m in Sources */,
 				3AD1EE5924DCD644007180D7 /* LSILog.m in Sources */,
 				3A52AB5124DBB5860069485D /* AppDelegate.m in Sources */,
@@ -273,6 +277,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -324,6 +329,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
