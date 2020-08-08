@@ -14,9 +14,38 @@ static NSString *const MarsPhotosAPIKeyString = @"qzGsj0zsKk6CA9JZP1UjAbpQHabBfa
 
 @implementation MarsRoverClient
 
-- (void)fetchMarsRoverNamed:(NSString *)name completion:(FetchMarsRoverCompletionHandler)completion
+- (void)fetchMarsRoverNamed:(NSString *)name completionHandler:(FetchMarsRoverCompletionHandler)completionHandler
 {
-    
+    NSURL *url = [self urlForRover:name];
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching rover: %@", error);
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, error);
+            });
+
+            return;
+        }
+
+        NSError *jsonError;
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if (!dictionary) {
+            NSLog(@"Error decoding JSON: %@", jsonError);
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil, jsonError);
+            });
+
+            return;
+        }
+
+        MarsRover *rover = [MarsRover newRoverFrom:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(rover, nil);
+        });
+        
+    }] resume];
 }
 
 - (NSURL *)urlForRover:(NSString *)roverName

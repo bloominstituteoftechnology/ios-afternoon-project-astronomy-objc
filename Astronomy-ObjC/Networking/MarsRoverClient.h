@@ -10,10 +10,11 @@
 
 @class MarsRover;
 
-typedef void(^FetchMarsRoverCompletionHandler)(MarsRover *_Nullable quakes, NSError *_Nullable error);
+typedef void(^FetchMarsRoverCompletionHandler)(MarsRover *_Nullable rover, NSError *_Nullable error);
 
 @interface MarsRoverClient : NSObject
 
-- (void)fetchMarsRoverNamed:(nonnull NSString *)name completion:(nonnull FetchMarsRoverCompletionHandler)completion;
+- (void)fetchMarsRoverNamed:(nonnull NSString *)name
+          completionHandler:(nonnull FetchMarsRoverCompletionHandler)completionHandler;
 
 @end
