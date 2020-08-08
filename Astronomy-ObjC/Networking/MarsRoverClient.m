@@ -28,4 +28,18 @@ static NSString *const MarsPhotosAPIKeyString = @"qzGsj0zsKk6CA9JZP1UjAbpQHabBfa
     return urlComponents.URL;
 }
 
+- (NSURL *)urlForPhotosFromRover:(NSString *)roverName onSol:(int)sol
+{
+    NSURL *baseURL = [NSURL URLWithString:MarsPhotosBaseURLString];
+    NSURL *url = [[[baseURL URLByAppendingPathComponent:@"rovers"]
+                            URLByAppendingPathComponent:roverName]
+                            URLByAppendingPathComponent:@"photos"];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
+    urlComponents.queryItems = @[
+        [NSURLQueryItem queryItemWithName:@"sol" value:[NSString stringWithFormat:@"%d", sol]],
+        [NSURLQueryItem queryItemWithName:@"api_key" value:MarsPhotosAPIKeyString],
+    ];
+    return urlComponents.URL;
+}
+
 @end
