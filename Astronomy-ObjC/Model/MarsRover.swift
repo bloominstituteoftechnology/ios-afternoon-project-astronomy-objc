@@ -37,6 +37,16 @@ class MarsRover: NSObject, Codable {
         case solDescriptions = "photos"
     }
 
+    @objc static func newRover(from data: Data) -> MarsRover? {
+        do {
+            return try jsonDecoder.decode(self, from: data)
+        } catch {
+            print("Error decoding rover!")
+            dump(error)
+            return nil
+        }
+    }
+
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
