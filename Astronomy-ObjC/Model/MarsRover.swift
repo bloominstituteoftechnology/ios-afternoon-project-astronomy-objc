@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MarsRover: Codable {
+class MarsRover: NSObject, Codable {
     let name: String
 
     let launchDate: Date
