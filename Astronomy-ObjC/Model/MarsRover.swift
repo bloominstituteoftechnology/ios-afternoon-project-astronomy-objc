@@ -24,7 +24,7 @@ class MarsRover: NSObject, Codable {
 
     let numberOfPhotos: Int
 
-    //let solDescriptions: [SolDescription]
+    let solDescriptions: [SolDescription]
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -34,7 +34,7 @@ class MarsRover: NSObject, Codable {
         case maxSol
         case maxDate
         case numberOfPhotos = "totalPhotos"
-        //case solDescriptions = "photos"
+        case solDescriptions = "photos"
     }
 
     static let dateFormatter: DateFormatter = {
