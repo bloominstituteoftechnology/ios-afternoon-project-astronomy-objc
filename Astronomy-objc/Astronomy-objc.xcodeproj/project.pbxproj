@@ -22,8 +22,8 @@
 		C9AE240824DB8D0E003290A0 /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240424DB8D0E003290A0 /* LSIErrors.m */; };
 		C9AE240B24DB94EA003290A0 /* FetchManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240A24DB94EA003290A0 /* FetchManifest.m */; };
 		C9AE240D24DB98BD003290A0 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240C24DB98BD003290A0 /* Rover.swift */; };
-		C9AE240F24DBACB3003290A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE240E24DBACB2003290A0 /* ViewController.swift */; };
 		C9AE241224DBAEFF003290A0 /* MarsPhotoReference.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AE241124DBAEFF003290A0 /* MarsPhotoReference.m */; };
+		C9AE241824E0C891003290A0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE241724E0C891003290A0 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +49,9 @@
 		C9AE240924DB94EA003290A0 /* FetchManifest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchManifest.h; sourceTree = "<group>"; };
 		C9AE240A24DB94EA003290A0 /* FetchManifest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchManifest.m; sourceTree = "<group>"; };
 		C9AE240C24DB98BD003290A0 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
-		C9AE240E24DBACB2003290A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C9AE241024DBAEFF003290A0 /* MarsPhotoReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsPhotoReference.h; sourceTree = "<group>"; };
 		C9AE241124DBAEFF003290A0 /* MarsPhotoReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsPhotoReference.m; sourceTree = "<group>"; };
+		C9AE241724E0C891003290A0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,6 @@
 				C9AE23E024DA5F92003290A0 /* AppDelegate.swift */,
 				C9AE23E224DA5F92003290A0 /* SceneDelegate.swift */,
 				C9AE23E624DA5F92003290A0 /* Main.storyboard */,
-				C9AE240E24DBACB2003290A0 /* ViewController.swift */,
 				C9AE23E924DA5F95003290A0 /* Assets.xcassets */,
 				C9AE23EB24DA5F95003290A0 /* LaunchScreen.storyboard */,
 				C9AE23EE24DA5F95003290A0 /* Info.plist */,
@@ -116,6 +115,7 @@
 			children = (
 				C9AE23F624DB8C61003290A0 /* MainCollectionViewController.swift */,
 				C9AE23F824DB8C77003290A0 /* DetailViewController.swift */,
+				C9AE241724E0C891003290A0 /* PhotoCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 				C9AE240824DB8D0E003290A0 /* LSIErrors.m in Sources */,
 				C9AE23F924DB8C77003290A0 /* DetailViewController.swift in Sources */,
 				C9AE23F524DB8929003290A0 /* APIKey.swift in Sources */,
-				C9AE240F24DBACB3003290A0 /* ViewController.swift in Sources */,
 				C9AE240D24DB98BD003290A0 /* Rover.swift in Sources */,
 				C9AE240524DB8D0E003290A0 /* LSILog.m in Sources */,
+				C9AE241824E0C891003290A0 /* PhotoCollectionViewCell.swift in Sources */,
 				C9AE23E324DA5F92003290A0 /* SceneDelegate.swift in Sources */,
 				C9AE23FB24DB8C8E003290A0 /* Sol.swift in Sources */,
 			);
