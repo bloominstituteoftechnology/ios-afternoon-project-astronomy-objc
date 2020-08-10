@@ -110,7 +110,7 @@ static NSString *const APIKey = @"CrGyhe4SzkbgKB2Ahw17krmCKU9JbRToEUxkc1Yh";
         NSMutableArray *photoReferences = [[NSMutableArray alloc] initWithCapacity:photoReferenceDictionaries.count];
         
         for (NSDictionary *photoReferenceDictionary in photoReferenceDictionaries) {
-            if (![photoReferenceDictionaries isKindOfClass:NSDictionary.class]) continue;
+            if (![photoReferenceDictionary isKindOfClass:NSDictionary.class]) continue;
             
             MarsPhotoReference *marsPhotoReference = [[MarsPhotoReference alloc] initWithDictionary:photoReferenceDictionary];
             

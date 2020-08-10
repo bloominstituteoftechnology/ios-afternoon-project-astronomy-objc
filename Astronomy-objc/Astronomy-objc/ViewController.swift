@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             }
             if let rover = rover {
                 self.manifestController.fetchPhotos(from: rover, onSol: 10) { (photos, error) in
-                    print(photos?.first)
+                    print(photos)
                 }
             }
         }
