@@ -3,3 +3,6 @@
 //
 
 #import "MarsPhoto.h"
+#import "MarsRoverClient.h"
+#import "ImageCollectionViewCell.h"
+#import "Cache.h"

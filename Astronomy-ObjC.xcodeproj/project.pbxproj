@@ -14,6 +14,7 @@
 		6309B7CE24DCE57C004B7BE9 /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309B7CD24DCE57C004B7BE9 /* MarsRover.swift */; };
 		6309B7D824DE3E17004B7BE9 /* MarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6309B7D724DE3E17004B7BE9 /* MarsRoverClient.m */; };
 		6309B7DA24DE5947004B7BE9 /* SolDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309B7D924DE5947004B7BE9 /* SolDescription.swift */; };
+		6341C57B24E1E47100187CD3 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6341C57A24E1E47100187CD3 /* Cache.m */; };
 		63F8564024DB97DA00661CDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8563F24DB97DA00661CDC /* AppDelegate.m */; };
 		63F8564324DB97DA00661CDC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F8564224DB97DA00661CDC /* SceneDelegate.m */; };
 		63F8564924DB97DA00661CDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F8564724DB97DA00661CDC /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 		6309B7D624DE3E17004B7BE9 /* MarsRoverClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsRoverClient.h; sourceTree = "<group>"; };
 		6309B7D724DE3E17004B7BE9 /* MarsRoverClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarsRoverClient.m; sourceTree = "<group>"; };
 		6309B7D924DE5947004B7BE9 /* SolDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolDescription.swift; sourceTree = "<group>"; };
+		6341C57924E1E47100187CD3 /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		6341C57A24E1E47100187CD3 /* Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
 		63F8563B24DB97DA00661CDC /* Astronomy-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronomy-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F8563E24DB97DA00661CDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63F8563F24DB97DA00661CDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 		6309B7C624DBB968004B7BE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6341C57924E1E47100187CD3 /* Cache.h */,
+				6341C57A24E1E47100187CD3 /* Cache.m */,
 				6309B7C724DBB981004B7BE9 /* MarsPhoto.h */,
 				6309B7C824DBB981004B7BE9 /* MarsPhoto.m */,
 				6309B7CD24DCE57C004B7BE9 /* MarsRover.swift */,
@@ -214,6 +219,7 @@
 				63F8565124DB97DC00661CDC /* main.m in Sources */,
 				6309B7CC24DBB9E4004B7BE9 /* Camera.m in Sources */,
 				6309B7C124DBB0BE004B7BE9 /* PhotosCollectionViewController.swift in Sources */,
+				6341C57B24E1E47100187CD3 /* Cache.m in Sources */,
 				6309B7C924DBB981004B7BE9 /* MarsPhoto.m in Sources */,
 				6309B7D824DE3E17004B7BE9 /* MarsRoverClient.m in Sources */,
 				6309B7DA24DE5947004B7BE9 /* SolDescription.swift in Sources */,
