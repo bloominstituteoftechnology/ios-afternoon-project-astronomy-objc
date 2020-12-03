@@ -15,8 +15,8 @@
 		7C6B65922578933E0022B45E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65912578933E0022B45E /* main.m */; };
 		7C6B659C2578933E0022B45E /* OBJCAstronomyProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B659B2578933E0022B45E /* OBJCAstronomyProjectTests.m */; };
 		7C6B65A72578933E0022B45E /* OBJCAstronomyProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65A62578933E0022B45E /* OBJCAstronomyProjectUITests.m */; };
-		7C6B65BC257895570022B45E /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65BB257895570022B45E /* PhotosCollectionViewController.m */; };
-		7C6B65C2257895810022B45E /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65C1257895810022B45E /* PhotoDetailViewController.m */; };
+		7C6B65CF2578982E0022B45E /* PhotoCollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65CE2578982E0022B45E /* PhotoCollectionCollectionViewController.swift */; };
+		7C6B65D4257898670022B45E /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65D3257898670022B45E /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,9 @@
 		7C6B65A22578933E0022B45E /* OBJCAstronomyProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OBJCAstronomyProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C6B65A62578933E0022B45E /* OBJCAstronomyProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJCAstronomyProjectUITests.m; sourceTree = "<group>"; };
 		7C6B65A82578933E0022B45E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C6B65BA257895570022B45E /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
-		7C6B65BB257895570022B45E /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
-		7C6B65C0257895810022B45E /* PhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
-		7C6B65C1257895810022B45E /* PhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
+		7C6B65CD2578982E0022B45E /* OBJCAstronomyProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OBJCAstronomyProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		7C6B65CE2578982E0022B45E /* PhotoCollectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCollectionViewController.swift; sourceTree = "<group>"; };
+		7C6B65D3257898670022B45E /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +141,9 @@
 		7C6B65C6257895940022B45E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7C6B65BA257895570022B45E /* PhotosCollectionViewController.h */,
-				7C6B65BB257895570022B45E /* PhotosCollectionViewController.m */,
-				7C6B65C0257895810022B45E /* PhotoDetailViewController.h */,
-				7C6B65C1257895810022B45E /* PhotoDetailViewController.m */,
+				7C6B65CE2578982E0022B45E /* PhotoCollectionCollectionViewController.swift */,
+				7C6B65D3257898670022B45E /* PhotoDetailViewController.swift */,
+				7C6B65CD2578982E0022B45E /* OBJCAstronomyProject-Bridging-Header.h */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -216,6 +214,7 @@
 				TargetAttributes = {
 					7C6B657B2578933D0022B45E = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					7C6B65962578933E0022B45E = {
 						CreatedOnToolsVersion = 12.2;
@@ -280,9 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C6B65812578933D0022B45E /* AppDelegate.m in Sources */,
+				7C6B65CF2578982E0022B45E /* PhotoCollectionCollectionViewController.swift in Sources */,
 				7C6B65922578933E0022B45E /* main.m in Sources */,
-				7C6B65BC257895570022B45E /* PhotosCollectionViewController.m in Sources */,
-				7C6B65C2257895810022B45E /* PhotoDetailViewController.m in Sources */,
+				7C6B65D4257898670022B45E /* PhotoDetailViewController.swift in Sources */,
 				7C6B65842578933D0022B45E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = OBJCAstronomyProject/Info.plist;
@@ -464,6 +464,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = B.OBJCAstronomyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OBJCAstronomyProject/OBJCAstronomyProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -473,6 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = OBJCAstronomyProject/Info.plist;
@@ -482,6 +486,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = B.OBJCAstronomyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OBJCAstronomyProject/OBJCAstronomyProject-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -489,6 +495,7 @@
 		7C6B65AF2578933E0022B45E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
@@ -509,6 +516,7 @@
 		7C6B65B02578933E0022B45E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
@@ -529,6 +537,7 @@
 		7C6B65B22578933E0022B45E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = OBJCAstronomyProjectUITests/Info.plist;
@@ -547,6 +556,7 @@
 		7C6B65B32578933E0022B45E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = OBJCAstronomyProjectUITests/Info.plist;
