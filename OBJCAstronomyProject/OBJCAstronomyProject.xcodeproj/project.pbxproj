@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		7C6B65812578933D0022B45E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65802578933D0022B45E /* AppDelegate.m */; };
 		7C6B65842578933D0022B45E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65832578933D0022B45E /* SceneDelegate.m */; };
-		7C6B65872578933D0022B45E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65862578933D0022B45E /* ViewController.m */; };
 		7C6B658A2578933D0022B45E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C6B65882578933D0022B45E /* Main.storyboard */; };
 		7C6B658C2578933E0022B45E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C6B658B2578933E0022B45E /* Assets.xcassets */; };
 		7C6B658F2578933E0022B45E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C6B658D2578933E0022B45E /* LaunchScreen.storyboard */; };
 		7C6B65922578933E0022B45E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65912578933E0022B45E /* main.m */; };
 		7C6B659C2578933E0022B45E /* OBJCAstronomyProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B659B2578933E0022B45E /* OBJCAstronomyProjectTests.m */; };
 		7C6B65A72578933E0022B45E /* OBJCAstronomyProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65A62578933E0022B45E /* OBJCAstronomyProjectUITests.m */; };
+		7C6B65BC257895570022B45E /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65BB257895570022B45E /* PhotosCollectionViewController.m */; };
+		7C6B65C2257895810022B45E /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65C1257895810022B45E /* PhotoDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,6 @@
 		7C6B65802578933D0022B45E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7C6B65822578933D0022B45E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		7C6B65832578933D0022B45E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		7C6B65852578933D0022B45E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7C6B65862578933D0022B45E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7C6B65892578933D0022B45E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C6B658B2578933E0022B45E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C6B658E2578933E0022B45E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +53,10 @@
 		7C6B65A22578933E0022B45E /* OBJCAstronomyProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OBJCAstronomyProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C6B65A62578933E0022B45E /* OBJCAstronomyProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJCAstronomyProjectUITests.m; sourceTree = "<group>"; };
 		7C6B65A82578933E0022B45E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C6B65BA257895570022B45E /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
+		7C6B65BB257895570022B45E /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
+		7C6B65C0257895810022B45E /* PhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		7C6B65C1257895810022B45E /* PhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +111,12 @@
 				7C6B65802578933D0022B45E /* AppDelegate.m */,
 				7C6B65822578933D0022B45E /* SceneDelegate.h */,
 				7C6B65832578933D0022B45E /* SceneDelegate.m */,
-				7C6B65852578933D0022B45E /* ViewController.h */,
-				7C6B65862578933D0022B45E /* ViewController.m */,
 				7C6B65882578933D0022B45E /* Main.storyboard */,
 				7C6B658B2578933E0022B45E /* Assets.xcassets */,
 				7C6B658D2578933E0022B45E /* LaunchScreen.storyboard */,
 				7C6B65902578933E0022B45E /* Info.plist */,
 				7C6B65912578933E0022B45E /* main.m */,
+				7C6B65C6257895940022B45E /* View Controllers */,
 			);
 			path = OBJCAstronomyProject;
 			sourceTree = "<group>";
@@ -135,6 +137,17 @@
 				7C6B65A82578933E0022B45E /* Info.plist */,
 			);
 			path = OBJCAstronomyProjectUITests;
+			sourceTree = "<group>";
+		};
+		7C6B65C6257895940022B45E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C6B65BA257895570022B45E /* PhotosCollectionViewController.h */,
+				7C6B65BB257895570022B45E /* PhotosCollectionViewController.m */,
+				7C6B65C0257895810022B45E /* PhotoDetailViewController.h */,
+				7C6B65C1257895810022B45E /* PhotoDetailViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C6B65872578933D0022B45E /* ViewController.m in Sources */,
 				7C6B65812578933D0022B45E /* AppDelegate.m in Sources */,
 				7C6B65922578933E0022B45E /* main.m in Sources */,
+				7C6B65BC257895570022B45E /* PhotosCollectionViewController.m in Sources */,
+				7C6B65C2257895810022B45E /* PhotoDetailViewController.m in Sources */,
 				7C6B65842578933D0022B45E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
