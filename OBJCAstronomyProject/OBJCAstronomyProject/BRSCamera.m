@@ -9,4 +9,13 @@
 
 @implementation BRSCamera
 
+- (instancetype)initWithIdentifier:(NSInteger *)identifier name:(NSString *)name coverId:(NSInteger *)coverId fullName:(NSString *)fullName
+{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
+
 @end
