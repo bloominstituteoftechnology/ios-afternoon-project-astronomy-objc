@@ -79,7 +79,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="a22-MJ-Hr0">
-                                <rect key="frame" x="20" y="558" width="305.5" height="85"/>
+                                <rect key="frame" x="20" y="558" width="305.5" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by &lt;Rover&gt; on &lt;date&gt; (Sol &lt;sol&gt;)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-2X-MTT">
                                         <rect key="frame" x="0.0" y="0.0" width="305.5" height="20.5"/>
@@ -104,25 +104,35 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH1-33-zEK">
-                                        <rect key="frame" x="0.0" y="55" width="147" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="PhotoDetailViewController.SaveButton"/>
-                                        <state key="normal" title="Save to Photo Library"/>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH1-33-zEK">
+                                <rect key="frame" x="133.5" y="622" width="147" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PhotoDetailViewController.SaveButton"/>
+                                <state key="normal" title="Save to Photo Library"/>
+                                <connections>
+                                    <action selector="savePhotoTapped:" destination="jyZ-6m-pV9" eventType="touchUpInside" id="2NW-ge-ZKM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2vi-kR-zg3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DH1-33-zEK" firstAttribute="centerX" secondItem="HAW-hB-sxz" secondAttribute="centerX" id="8H3-C1-rg5"/>
                             <constraint firstItem="a22-MJ-Hr0" firstAttribute="top" secondItem="uN2-qP-GXV" secondAttribute="bottom" constant="34" id="H9m-Uo-lwB"/>
                             <constraint firstItem="uN2-qP-GXV" firstAttribute="centerX" secondItem="HAW-hB-sxz" secondAttribute="centerX" id="Imb-Vj-XWq"/>
+                            <constraint firstItem="DH1-33-zEK" firstAttribute="top" secondItem="a22-MJ-Hr0" secondAttribute="bottom" constant="16" id="WCf-O7-f3L"/>
                             <constraint firstItem="a22-MJ-Hr0" firstAttribute="leading" secondItem="HAW-hB-sxz" secondAttribute="leadingMargin" id="fsO-7E-zWe"/>
                             <constraint firstItem="uN2-qP-GXV" firstAttribute="leading" secondItem="2vi-kR-zg3" secondAttribute="leading" id="hQ4-wb-avb"/>
                             <constraint firstItem="uN2-qP-GXV" firstAttribute="top" secondItem="2vi-kR-zg3" secondAttribute="top" constant="56" id="oCO-pY-Yer"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3dI-rz-xcT"/>
+                    <connections>
+                        <outlet property="cameraLabel" destination="nt3-NL-d34" id="ltn-sA-awo"/>
+                        <outlet property="detailLabel" destination="zt0-2X-MTT" id="xC9-br-YOZ"/>
+                        <outlet property="imageView" destination="uN2-qP-GXV" id="X3v-11-CjX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XV2-1l-bZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,12 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
+    
+    //MARK: - IBOUTLETS
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var cameraLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,4 +32,9 @@ class PhotoDetailViewController: UIViewController {
     }
     */
 
+    //MARK: - METHODS
+    @IBAction func savePhotoTapped(_ sender: Any) {
+    }
+    
+    
 }
