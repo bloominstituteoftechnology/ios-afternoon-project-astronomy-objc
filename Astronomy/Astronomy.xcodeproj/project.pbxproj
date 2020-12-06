@@ -15,6 +15,10 @@
 		444C3424257DA5CF007DC2FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444C3422257DA5CF007DC2FE /* LaunchScreen.storyboard */; };
 		444C342F257DA5CF007DC2FE /* AstronomyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C342E257DA5CF007DC2FE /* AstronomyTests.swift */; };
 		444C343A257DA5CF007DC2FE /* AstronomyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C3439257DA5CF007DC2FE /* AstronomyUITests.swift */; };
+		444C3468257DA69F007DC2FE /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C3461257DA69E007DC2FE /* LSIErrors.m */; };
+		444C3469257DA69F007DC2FE /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C3462257DA69E007DC2FE /* LSILog.m */; };
+		444C346A257DA69F007DC2FE /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C3463257DA69F007DC2FE /* LSIFileHelper.m */; };
+		444C346B257DA69F007DC2FE /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C3464257DA69F007DC2FE /* URL+Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,13 @@
 		444C3435257DA5CF007DC2FE /* AstronomyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstronomyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		444C3439257DA5CF007DC2FE /* AstronomyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyUITests.swift; sourceTree = "<group>"; };
 		444C343B257DA5CF007DC2FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		444C3461257DA69E007DC2FE /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIErrors.m; path = ../../../../../../../../.Trash/LambdaSDK/LSIErrors.m; sourceTree = "<group>"; };
+		444C3462257DA69E007DC2FE /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSILog.m; path = ../../../../../../../../.Trash/LambdaSDK/LSILog.m; sourceTree = "<group>"; };
+		444C3463257DA69F007DC2FE /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIFileHelper.m; path = ../../../../../../../../.Trash/LambdaSDK/LSIFileHelper.m; sourceTree = "<group>"; };
+		444C3464257DA69F007DC2FE /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Secure.swift"; path = "../../../../../../../../.Trash/LambdaSDK/URL+Secure.swift"; sourceTree = "<group>"; };
+		444C3465257DA69F007DC2FE /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIFileHelper.h; path = ../../../../../../../../.Trash/LambdaSDK/LSIFileHelper.h; sourceTree = "<group>"; };
+		444C3466257DA69F007DC2FE /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIErrors.h; path = ../../../../../../../../.Trash/LambdaSDK/LSIErrors.h; sourceTree = "<group>"; };
+		444C3467257DA69F007DC2FE /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSILog.h; path = ../../../../../../../../.Trash/LambdaSDK/LSILog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,7 @@
 				444C3420257DA5CF007DC2FE /* Assets.xcassets */,
 				444C3422257DA5CF007DC2FE /* LaunchScreen.storyboard */,
 				444C3425257DA5CF007DC2FE /* Info.plist */,
+				444C344F257DA66F007DC2FE /* LambdaSDK */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -126,6 +138,20 @@
 				444C343B257DA5CF007DC2FE /* Info.plist */,
 			);
 			path = AstronomyUITests;
+			sourceTree = "<group>";
+		};
+		444C344F257DA66F007DC2FE /* LambdaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				444C3466257DA69F007DC2FE /* LSIErrors.h */,
+				444C3461257DA69E007DC2FE /* LSIErrors.m */,
+				444C3465257DA69F007DC2FE /* LSIFileHelper.h */,
+				444C3463257DA69F007DC2FE /* LSIFileHelper.m */,
+				444C3467257DA69F007DC2FE /* LSILog.h */,
+				444C3462257DA69E007DC2FE /* LSILog.m */,
+				444C3464257DA69F007DC2FE /* URL+Secure.swift */,
+			);
+			path = LambdaSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444C346B257DA69F007DC2FE /* URL+Secure.swift in Sources */,
+				444C346A257DA69F007DC2FE /* LSIFileHelper.m in Sources */,
 				444C341C257DA5CB007DC2FE /* ViewController.swift in Sources */,
 				444C3418257DA5CB007DC2FE /* AppDelegate.swift in Sources */,
+				444C3468257DA69F007DC2FE /* LSIErrors.m in Sources */,
+				444C3469257DA69F007DC2FE /* LSILog.m in Sources */,
 				444C341A257DA5CB007DC2FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
