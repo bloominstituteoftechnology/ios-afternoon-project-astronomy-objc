@@ -86,13 +86,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by &lt;Rover&gt; on &lt;date&gt; (Sol &lt;sol&gt;)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWT-17-T9X">
-                                <rect key="frame" x="50" y="488" width="306" height="21"/>
+                                <rect key="frame" x="54" y="488" width="306" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExU-BL-wQC">
-                                <rect key="frame" x="50" y="539" width="64" height="21"/>
+                                <rect key="frame" x="175" y="539" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -105,12 +105,12 @@
                         <viewLayoutGuide key="safeArea" id="be6-mo-bMR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YWT-17-T9X" firstAttribute="leading" secondItem="be6-mo-bMR" secondAttribute="leading" constant="50" id="2Qf-e3-bgF"/>
+                            <constraint firstItem="ExU-BL-wQC" firstAttribute="centerX" secondItem="0M0-Pf-tPC" secondAttribute="centerX" id="7ix-ZY-izr"/>
                             <constraint firstItem="6cA-A9-rWe" firstAttribute="top" secondItem="be6-mo-bMR" secondAttribute="top" constant="50" id="8ul-34-5ao"/>
                             <constraint firstItem="zOe-Nt-hVH" firstAttribute="centerX" secondItem="0M0-Pf-tPC" secondAttribute="centerX" id="OmX-ar-8R7"/>
+                            <constraint firstItem="YWT-17-T9X" firstAttribute="centerX" secondItem="0M0-Pf-tPC" secondAttribute="centerX" id="QUn-nj-DDM"/>
                             <constraint firstItem="YWT-17-T9X" firstAttribute="top" secondItem="6cA-A9-rWe" secondAttribute="bottom" constant="50" id="W5H-5j-N0d"/>
                             <constraint firstItem="ExU-BL-wQC" firstAttribute="top" secondItem="YWT-17-T9X" secondAttribute="bottom" constant="30" id="X5J-Zw-WSO"/>
-                            <constraint firstItem="ExU-BL-wQC" firstAttribute="leading" secondItem="be6-mo-bMR" secondAttribute="leading" constant="50" id="gWm-RF-AA2"/>
                             <constraint firstItem="zOe-Nt-hVH" firstAttribute="top" secondItem="YWT-17-T9X" secondAttribute="bottom" constant="80" id="oBY-Zc-Q19"/>
                             <constraint firstItem="6cA-A9-rWe" firstAttribute="centerX" secondItem="0M0-Pf-tPC" secondAttribute="centerX" id="xzw-TD-Ijc"/>
                         </constraints>
