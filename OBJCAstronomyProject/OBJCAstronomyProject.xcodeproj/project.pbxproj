@@ -11,6 +11,7 @@
 		7C2555BE257B65B20019728E /* BRSSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2555BD257B65B20019728E /* BRSSolDescription.m */; };
 		7C2555CA257B65F60019728E /* BRSMarsPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2555C9257B65F60019728E /* BRSMarsPhoto.m */; };
 		7C2555D2257B69D80019728E /* MarsRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2555D1257B69D80019728E /* MarsRover.swift */; };
+		7C2555D7257E35460019728E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2555D6257E35460019728E /* CollectionViewCell.swift */; };
 		7C6B65812578933D0022B45E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65802578933D0022B45E /* AppDelegate.m */; };
 		7C6B65842578933D0022B45E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B65832578933D0022B45E /* SceneDelegate.m */; };
 		7C6B658A2578933D0022B45E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C6B65882578933D0022B45E /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		7C2555C8257B65F60019728E /* BRSMarsPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSMarsPhoto.h; sourceTree = "<group>"; };
 		7C2555C9257B65F60019728E /* BRSMarsPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSMarsPhoto.m; sourceTree = "<group>"; };
 		7C2555D1257B69D80019728E /* MarsRover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRover.swift; sourceTree = "<group>"; };
+		7C2555D6257E35460019728E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7C6B657C2578933D0022B45E /* OBJCAstronomyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OBJCAstronomyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C6B657F2578933D0022B45E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C6B65802578933D0022B45E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				7C6B65CE2578982E0022B45E /* PhotoCollectionCollectionViewController.swift */,
+				7C2555D6257E35460019728E /* CollectionViewCell.swift */,
 				7C6B65D3257898670022B45E /* PhotoDetailViewController.swift */,
 				7C6B65CD2578982E0022B45E /* OBJCAstronomyProject-Bridging-Header.h */,
 			);
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2555D7257E35460019728E /* CollectionViewCell.swift in Sources */,
 				7C6B65812578933D0022B45E /* AppDelegate.m in Sources */,
 				7C2555CA257B65F60019728E /* BRSMarsPhoto.m in Sources */,
 				7C6B65CF2578982E0022B45E /* PhotoCollectionCollectionViewController.swift in Sources */,

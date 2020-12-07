@@ -7,6 +7,7 @@
 
 import UIKit
 
+var imageDataSource: [String] = []
 private let reuseIdentifier = "photoCell"
 
 class PhotoCollectionCollectionViewController: UICollectionViewController {
@@ -15,7 +16,7 @@ class PhotoCollectionCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,8 +50,11 @@ class PhotoCollectionCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CollectionViewCell ?? CollectionViewCell()
     
+        //cell.backgroundColor = UIColor.black
+        
+        
         
     
         return cell
