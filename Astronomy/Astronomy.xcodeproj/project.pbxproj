@@ -16,6 +16,12 @@
 		444C35AC257DC2CB007DC2FE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C35AB257DC2CB007DC2FE /* DetailViewController.swift */; };
 		444C35BA257DC435007DC2FE /* CMBMarsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C35B9257DC435007DC2FE /* CMBMarsObject.m */; };
 		444C35BF257DC4DC007DC2FE /* CMBMarsSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C35BE257DC4DC007DC2FE /* CMBMarsSol.m */; };
+		444C35C8257DC907007DC2FE /* CMBMarsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C35C7257DC907007DC2FE /* CMBMarsController.m */; };
+		444C35CC257DC92D007DC2FE /* CMBMarsSolDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C35CB257DC92D007DC2FE /* CMBMarsSolDictionary.m */; };
+		444C35E2257DCBA8007DC2FE /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C35DB257DCBA8007DC2FE /* LSIErrors.m */; };
+		444C35E3257DCBA8007DC2FE /* LSIFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C35DD257DCBA8007DC2FE /* LSIFileHelper.m */; };
+		444C35E4257DCBA8007DC2FE /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C35DE257DCBA8007DC2FE /* LSILog.m */; };
+		444C35E5257DCBA8007DC2FE /* URL+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C35DF257DCBA8007DC2FE /* URL+Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,17 @@
 		444C35B9257DC435007DC2FE /* CMBMarsObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBMarsObject.m; sourceTree = "<group>"; };
 		444C35BD257DC4DC007DC2FE /* CMBMarsSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBMarsSol.h; sourceTree = "<group>"; };
 		444C35BE257DC4DC007DC2FE /* CMBMarsSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBMarsSol.m; sourceTree = "<group>"; };
+		444C35C6257DC907007DC2FE /* CMBMarsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBMarsController.h; sourceTree = "<group>"; };
+		444C35C7257DC907007DC2FE /* CMBMarsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBMarsController.m; sourceTree = "<group>"; };
+		444C35CA257DC92D007DC2FE /* CMBMarsSolDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBMarsSolDictionary.h; sourceTree = "<group>"; };
+		444C35CB257DC92D007DC2FE /* CMBMarsSolDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBMarsSolDictionary.m; sourceTree = "<group>"; };
+		444C35DB257DCBA8007DC2FE /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIErrors.m; path = ../../../LambdaSDK/LSIErrors.m; sourceTree = "<group>"; };
+		444C35DC257DCBA8007DC2FE /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSILog.h; path = ../../../LambdaSDK/LSILog.h; sourceTree = "<group>"; };
+		444C35DD257DCBA8007DC2FE /* LSIFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSIFileHelper.m; path = ../../../LambdaSDK/LSIFileHelper.m; sourceTree = "<group>"; };
+		444C35DE257DCBA8007DC2FE /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSILog.m; path = ../../../LambdaSDK/LSILog.m; sourceTree = "<group>"; };
+		444C35DF257DCBA8007DC2FE /* URL+Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URL+Secure.swift"; path = "../../../LambdaSDK/URL+Secure.swift"; sourceTree = "<group>"; };
+		444C35E0257DCBA8007DC2FE /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIErrors.h; path = ../../../LambdaSDK/LSIErrors.h; sourceTree = "<group>"; };
+		444C35E1257DCBA8007DC2FE /* LSIFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSIFileHelper.h; path = ../../../LambdaSDK/LSIFileHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +82,13 @@
 		444C3590257DBBD4007DC2FE /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				444C35CE257DCB6E007DC2FE /* LambdaSDK */,
 				444C3591257DBBD4007DC2FE /* AppDelegate.swift */,
 				444C3593257DBBD4007DC2FE /* SceneDelegate.swift */,
 				444C35A7257DBC04007DC2FE /* MarsRoverCollectionViewController.swift */,
 				444C35AB257DC2CB007DC2FE /* DetailViewController.swift */,
+				444C35C6257DC907007DC2FE /* CMBMarsController.h */,
+				444C35C7257DC907007DC2FE /* CMBMarsController.m */,
 				444C35B6257DC41D007DC2FE /* Model */,
 				444C3597257DBBD4007DC2FE /* Main.storyboard */,
 				444C359A257DBBD8007DC2FE /* Assets.xcassets */,
@@ -86,8 +106,24 @@
 				444C35B9257DC435007DC2FE /* CMBMarsObject.m */,
 				444C35BD257DC4DC007DC2FE /* CMBMarsSol.h */,
 				444C35BE257DC4DC007DC2FE /* CMBMarsSol.m */,
+				444C35CA257DC92D007DC2FE /* CMBMarsSolDictionary.h */,
+				444C35CB257DC92D007DC2FE /* CMBMarsSolDictionary.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		444C35CE257DCB6E007DC2FE /* LambdaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				444C35E0257DCBA8007DC2FE /* LSIErrors.h */,
+				444C35DB257DCBA8007DC2FE /* LSIErrors.m */,
+				444C35E1257DCBA8007DC2FE /* LSIFileHelper.h */,
+				444C35DD257DCBA8007DC2FE /* LSIFileHelper.m */,
+				444C35DC257DCBA8007DC2FE /* LSILog.h */,
+				444C35DE257DCBA8007DC2FE /* LSILog.m */,
+				444C35DF257DCBA8007DC2FE /* URL+Secure.swift */,
+			);
+			path = LambdaSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,10 +198,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444C35E5257DCBA8007DC2FE /* URL+Secure.swift in Sources */,
+				444C35E3257DCBA8007DC2FE /* LSIFileHelper.m in Sources */,
+				444C35E4257DCBA8007DC2FE /* LSILog.m in Sources */,
 				444C35A8257DBC04007DC2FE /* MarsRoverCollectionViewController.swift in Sources */,
 				444C3592257DBBD4007DC2FE /* AppDelegate.swift in Sources */,
+				444C35E2257DCBA8007DC2FE /* LSIErrors.m in Sources */,
+				444C35CC257DC92D007DC2FE /* CMBMarsSolDictionary.m in Sources */,
 				444C3594257DBBD4007DC2FE /* SceneDelegate.swift in Sources */,
 				444C35AC257DC2CB007DC2FE /* DetailViewController.swift in Sources */,
+				444C35C8257DC907007DC2FE /* CMBMarsController.m in Sources */,
 				444C35BF257DC4DC007DC2FE /* CMBMarsSol.m in Sources */,
 				444C35BA257DC435007DC2FE /* CMBMarsObject.m in Sources */,
 			);
