@@ -53,10 +53,6 @@ class PhotoCollectionCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CollectionViewCell ?? CollectionViewCell()
     
         //cell.backgroundColor = UIColor.black
-        
-        
-        
-    
         return cell
     }
 
