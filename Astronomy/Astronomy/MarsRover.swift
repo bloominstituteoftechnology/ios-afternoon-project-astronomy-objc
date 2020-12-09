@@ -30,30 +30,24 @@ class MarsRover: NSObject {
     var numberOfPhotos: Int
     var solDescriptions: [SolDescription]
     
-    @objc init(name: String, launchDate: Date, landingDate: Date, status: String, maxSol: Int, maxDate: Date, numberOfPhotos: Int, solDescriptions: [SolDescription]) {
+    @objc init(name: String, launchDate: String, landingDate: String, status: String, maxSol: String, maxDate: String, numberOfPhotos: String, solDescriptions: [SolDescription]) {
+        let formatter = dateFormatter
         self.name = name
-        self.launchDate = launchDate
-        self.landingDate = landingDate
+        self.launchDate = formatter.date(from: launchDate) ?? Date()
+        self.landingDate = formatter.date(from: landingDate) ?? Date()
         self.status = status
-        self.maxSol = maxSol
-        self.maxDate = maxDate
-        self.numberOfPhotos = numberOfPhotos
+        self.maxSol = Int(maxSol) ?? 0
+        self.maxDate = formatter.date(from: maxDate) ?? Date()
+        self.numberOfPhotos = Int(numberOfPhotos) ?? 0
         self.solDescriptions = solDescriptions
     }
     
-    static let dateFormatter: DateFormatter = {
+    let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone(abbreviation: "GMT")
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-    
-    static var jsonDecoder: JSONDecoder {
-        let result = JSONDecoder()
-        result.keyDecodingStrategy = .convertFromSnakeCase
-        result.dateDecodingStrategy = .formatted(dateFormatter)
-        return result
-    }
     
 }

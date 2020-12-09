@@ -5,3 +5,5 @@
 #import "SolDescription.h"
 #import "MarsPhoto.h"
 #import "Camera.h"
+#import "LSIErrors.h"
+#import "LSILog.h"
